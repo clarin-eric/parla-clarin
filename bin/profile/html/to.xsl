@@ -56,9 +56,10 @@ of this software, even if advised of the possibility of such damage.
    <xsl:param name="cssFile">http://nl.ijs.si/tei/convert/profiles/jsi/html/jsi-tei.css</xsl:param>
    <xsl:param name="homeURL">https://github.com/clarin-eric/parla-clarin</xsl:param>
    <xsl:param name="homeLabel">Parla-CLARIN</xsl:param>
-   <xsl:param name="STDOUT">false</xsl:param>
+   <xsl:param name="STDOUT">true</xsl:param>
+   <!--xsl:param name="STDOUT">false</xsl:param>
    <xsl:param name="outputDir">../docs</xsl:param>
-   <xsl:param name="outputName">parla-clarin</xsl:param>
+   <xsl:param name="outputName">parla-clarin</xsl:param-->
    <xsl:param name="outputEncoding">utf-8</xsl:param>
    <xsl:param name="splitLevel">-1</xsl:param>
    <xsl:param name="autoToc">true</xsl:param>
