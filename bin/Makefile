@@ -1,7 +1,11 @@
+tst:
+	Stylesheets/bin/teitohtml    ${PARAMS} ../docs/index.html
+
 all:	schemas html
 # Have to have local source of p5subset, as my Java is too old to fetch it with https!
 PARAMS = --odd --localsource=p5subset.xml ../Schema/tei-parla-odd.xml
 schemas:
+	Stylesheets/bin/teitohtml    ${PARAMS} ../docs/index.html
 	Stylesheets/bin/teitorelaxng ${PARAMS} ../Schema/tei-parla.rng
 	Stylesheets/bin/teitornc     ${PARAMS} ../Schema/tei-parla.rnc
 	Stylesheets/bin/teitodtd     ${PARAMS} ../Schema/tei-parla.dtd
