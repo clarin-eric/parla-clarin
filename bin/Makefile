@@ -7,7 +7,7 @@ schemas:
 	Stylesheets/bin/teitodtd     ${PARAMS} ../Schema/tei-parla.dtd
 	Stylesheets/bin/teitoxsd     ${PARAMS} ../Schema/tei-parla.xsd
 html:
-	$s -xsl:profile/html/to.xsl ../Schema/tei-parla-odd.xml > ../docs/parla-clarin.html
+	$s -xsl:profile/html/to.xsl ../Schema/tei-parla-odd.xml > ../docs/index.html
 
 #s = java -jar ~/bin/saxon9he.jar
 #s = java -jar /usr/local/bin/saxon9he.jar
