@@ -62,7 +62,7 @@
           <moduleRef key="textstructure"
 		     include="TEI back body div front text docDate"/>
           <moduleRef key="corpus" except=""/>
-          <moduleRef key="transcr" except="am"/>
+          <!--moduleRef key="transcr" except="am"/-->
           <moduleRef key="spoken" except="broadcast"/>
           <moduleRef key="namesdates" except=""/>
           <moduleRef key="linking" except=""/>
@@ -70,7 +70,7 @@
           <moduleRef key="iso-fs"
 		     except="alt altGrp bicond binary cond default fDecl fDescr fsConstraints fsDescr
 			     fsdDecl fsdLink if iff then vDefault vLabel vMerge vNot vRange"/>
-          <moduleRef key="gaiji" except=""/>
+          <!--moduleRef key="gaiji" except=""/-->
 	</schemaSpec>
       </div>
     </body>
