@@ -4,7 +4,7 @@
   <teiHeader>
     <fileDesc>
       <titleStmt>
-        <title>TEI schema for parliamentary debates</title>
+        <title>Parla-CLARIN: a TEI schema for parliamentary debates</title>
         <author>Tomaž Erjavec, tomaz.erjavec@ijs.si</author>
         <author>Andrej Pančur, andrej.pancur@inz.si</author>
       </titleStmt>
@@ -50,8 +50,21 @@
 	informed participation by the public and to improve effective
 	functioning of democratic systems, making the datasets even
 	more valuable.</p>
-	
-	<p>A TEI schema for modelling parliamentary debates.</p>
+      </div>
+      <div>
+        <head>Overall document structure</head>
+      </div>
+      <div>
+        <head>Metadata</head>
+      </div>
+      <div>
+        <head>Speakers</head>
+      </div>
+      <div>
+        <head>Transcriptions</head>
+      </div>
+      <div>
+        <head>Linguistic annotation</head>
       </div>
       <div type="specification">
         <head>Specification</head>
