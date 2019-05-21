@@ -28,28 +28,50 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
-      <change when="2019-05-20">Tomaž Erjavec: first sketch.</change>
+      <change when="2019-05-21">Tomaž Erjavec: first sketch.</change>
     </revisionDesc>
   </teiHeader>
   <text>
+    <front>
+      <divGen type="toc"/>
+    </front>
     <body>
-      <p>A TEI schema for modelling parliamentary debates.</p>
-      <schemaSpec ident="tei_clarin" start="TEI teiCorpus" docLang="en" prefix="tei_" xml:lang="en">
-        <moduleRef key="core" except="gb"/>
-        <moduleRef key="tei" except=""/>
-        <moduleRef key="header" except="handNote typeNote scriptNote"/>
-        <moduleRef key="textstructure"
-          except="argument div1 div2 div3 div4 div5 div6 div7 epigraph floatingText"/>
-        <moduleRef key="corpus" except=""/>
-        <moduleRef key="transcr" except=""/>
-        <moduleRef key="dictionaries" except=""/>
-        <moduleRef key="spoken" except=""/>
-        <moduleRef key="namesdates" except=""/>
-        <moduleRef key="linking" except=""/>
-        <moduleRef key="analysis" except="interp interpGrp"/>
-        <moduleRef key="iso-fs" except="bicond cond fsConstraints fsdLink if iff then vMerge vNot"/>
-        <moduleRef key="gaiji" except=""/>
-      </schemaSpec>
+      <div>
+        <head>Introduction</head>
+	<p>Corpora of parliamentary proceedings are a quintessential
+	resource for a wide range of research questions from a number
+	of SSH disciplines, such as critical discourse analysis,
+	history, as well as Sociolinguistics. Their most
+	distinguishing characteristic is that they are transcriptions
+	of spoken language produced in controlled and regulated
+	circumstances. For this reason, they are rich in invaluable
+	(sociodemographic) metadata as well as easily available under
+	the Freedom of Information Acts set in place to enable
+	informed participation by the public and to improve effective
+	functioning of democratic systems, making the datasets even
+	more valuable.</p>
+	
+	<p>A TEI schema for modelling parliamentary debates.</p>
+      </div>
+      <div type="specification">
+	<schemaSpec ident="tei_clarin" start="TEI teiCorpus" docLang="en" prefix="tei_" xml:lang="en">
+          <moduleRef key="tei" except=""/>
+          <moduleRef key="header" except="handNote typeNote scriptNote"/>
+          <moduleRef key="core" except="gb"/>
+          <moduleRef key="textstructure"
+		     include="TEI back body div front text docDate"/>
+          <moduleRef key="corpus" except=""/>
+          <moduleRef key="transcr" except=""/>
+          <moduleRef key="spoken" except=""/>
+          <moduleRef key="namesdates" except=""/>
+          <moduleRef key="linking" except=""/>
+          <moduleRef key="analysis" except="interp interpGrp"/>
+          <moduleRef key="iso-fs"
+		     except="bicond binary cond default fDecl fDescr fsConstraints fsDescr
+			     fsdDecl fsdLink if iff then vDefault vLabel vMerge vNot vRange"/>
+          <moduleRef key="gaiji" except=""/>
+	</schemaSpec>
+      </div>
     </body>
   </text>
 </TEI>
