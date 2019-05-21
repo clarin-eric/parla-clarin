@@ -8,7 +8,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2019-05-21T09:04:49Z. .
+# Schema generated from ODD source 2019-05-21T09:55:37Z. .
 # TEI Edition: Version 3.5.0. Last updated on
 #	29th January 2019, revision 3c0c64ec4
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -1396,7 +1396,7 @@ tei_model.egLike_sequence = empty
 tei_model.egLike_sequenceOptional = empty
 tei_model.egLike_sequenceOptionalRepeatable = empty
 tei_model.egLike_sequenceRepeatable = notAllowed
-tei_model.graphicLike = tei_media | tei_graphic | tei_binaryObject
+tei_model.graphicLike = tei_media | tei_graphic
 tei_model.offsetLike = tei_offset | tei_geogFeat
 tei_model.offsetLike_alternation = tei_offset | tei_geogFeat
 tei_model.offsetLike_sequence = tei_offset, tei_geogFeat
@@ -1406,17 +1406,17 @@ tei_model.offsetLike_sequenceOptionalRepeatable =
 tei_model.offsetLike_sequenceRepeatable = tei_offset+, tei_geogFeat+
 tei_model.pPart.msdesc = notAllowed
 tei_model.pPart.editorial =
-  tei_choice | tei_abbr | tei_expan | tei_ex | tei_am | tei_subst
+  tei_choice | tei_abbr | tei_expan | tei_ex | tei_subst
 tei_model.pPart.editorial_alternation =
-  tei_choice | tei_abbr | tei_expan | tei_ex | tei_am | tei_subst
+  tei_choice | tei_abbr | tei_expan | tei_ex | tei_subst
 tei_model.pPart.editorial_sequence =
-  tei_choice, tei_abbr, tei_expan, tei_ex, tei_am, tei_subst
+  tei_choice, tei_abbr, tei_expan, tei_ex, tei_subst
 tei_model.pPart.editorial_sequenceOptional =
-  tei_choice?, tei_abbr?, tei_expan?, tei_ex?, tei_am?, tei_subst?
+  tei_choice?, tei_abbr?, tei_expan?, tei_ex?, tei_subst?
 tei_model.pPart.editorial_sequenceOptionalRepeatable =
-  tei_choice*, tei_abbr*, tei_expan*, tei_ex*, tei_am*, tei_subst*
+  tei_choice*, tei_abbr*, tei_expan*, tei_ex*, tei_subst*
 tei_model.pPart.editorial_sequenceRepeatable =
-  tei_choice+, tei_abbr+, tei_expan+, tei_ex+, tei_am+, tei_subst+
+  tei_choice+, tei_abbr+, tei_expan+, tei_ex+, tei_subst+
 tei_model.pPart.transcriptional =
   tei_sic
   | tei_corr
@@ -1862,7 +1862,6 @@ tei_model.choicePart =
   | tei_abbr
   | tei_expan
   | tei_ex
-  | tei_am
   | tei_supplied
   | tei_seg
 tei_model.imprintPart =
@@ -2973,29 +2972,6 @@ tei_graphic =
     tei_att.media.attributes,
     tei_att.resourced.attributes,
     tei_att.declaring.attributes,
-    empty
-  }
-tei_binaryObject =
-  
-  ## provides encoded binary data representing an inline graphic, audio, video or other object. [3.9. Graphics and Other Non-textual Components]
-  element binaryObject {
-    text,
-    tei_att.global.attributes,
-    tei_att.media.attributes,
-    tei_att.timed.attributes,
-    tei_att.typed.attributes,
-    [
-      a:documentation [
-        "The encoding used to encode the binary data. If not specified, this is assumed to be "
-        ns1:a [ href = "http://en.wikipedia.org/wiki/Base64" "Base64" ]
-        "."
-      ]
-    ]
-    attribute encoding {
-      list {
-        xsd:token { pattern = "(\p{L}|\p{N}|\p{P}|\p{S})+" }+
-      }
-    }?,
     empty
   }
 tei_milestone =
@@ -5480,16 +5456,6 @@ tei_handShift =
     attribute new { xsd:anyURI }?,
     empty
   }
-tei_am =
-  
-  ## (abbreviation marker) contains a sequence of letters or signs present in an abbreviation which are omitted or replaced in the expanded form of the abbreviation. [11.3.1.2. Abbreviation and Expansion]
-  element am {
-    (text | tei_model.gLike | tei_model.pPart.transcriptional)*,
-    tei_att.global.attributes,
-    tei_att.typed.attributes,
-    tei_att.editLike.attributes,
-    empty
-  }
 tei_restore =
   
   ## indicates restoration of text to an earlier state by cancellation of an editorial or authorial marking or instruction. [11.3.1.6. Cancellation of Deletions and Other Markings]
@@ -5747,11 +5713,7 @@ tei_model.global.spoken =
   | tei_writing
   | tei_shift
 tei_model.recordingPart =
-  tei_model.dateLike
-  | tei_media
-  | tei_respStmt
-  | tei_equipment
-  | tei_broadcast
+  tei_model.dateLike | tei_media | tei_respStmt | tei_equipment
 tei_model.divPart.spoken = tei_u | tei_annotationBlock
 tei_model.divPart.spoken_alternation = tei_u | tei_annotationBlock
 tei_model.divPart.spoken_sequence = tei_u, tei_annotationBlock
@@ -5804,15 +5766,6 @@ tei_equipment =
   ## provides technical details of the equipment and media used for an audio or video recording used as the source for a spoken text. [8.2. Documenting the Source of Transcribed Speech 15.3.2. Declarable Elements]
   element equipment {
     tei_model.pLike+,
-    tei_att.global.attributes,
-    tei_att.declarable.attributes,
-    empty
-  }
-tei_broadcast =
-  
-  ## describes a broadcast used as the source of a spoken text. [8.2. Documenting the Source of Transcribed Speech 15.3.2. Declarable Elements]
-  element broadcast {
-    (tei_model.pLike+ | tei_model.biblLike | tei_recording),
     tei_att.global.attributes,
     tei_att.declarable.attributes,
     empty

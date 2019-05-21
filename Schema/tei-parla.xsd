@@ -7,7 +7,7 @@
    <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.tmp"/>
    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.tmp"/>
    <!--
-    Schema generated from ODD source 2019-05-21T09:04:59Z. .
+    Schema generated from ODD source 2019-05-21T09:55:48Z. .
     TEI Edition: Version 3.5.0. Last updated on
     	29th January 2019, revision 3c0c64ec4
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -2273,7 +2273,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:abbr"/>
          <xs:element ref="tei:expan"/>
          <xs:element ref="tei:ex"/>
-         <xs:element ref="tei:am"/>
          <xs:element ref="tei:subst"/>
       </xs:choice>
    </xs:group>
@@ -2283,7 +2282,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:abbr"/>
          <xs:element ref="tei:expan"/>
          <xs:element ref="tei:ex"/>
-         <xs:element ref="tei:am"/>
          <xs:element ref="tei:subst"/>
       </xs:choice>
    </xs:group>
@@ -2293,7 +2291,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:abbr"/>
          <xs:element ref="tei:expan"/>
          <xs:element ref="tei:ex"/>
-         <xs:element ref="tei:am"/>
          <xs:element ref="tei:subst"/>
       </xs:sequence>
    </xs:group>
@@ -2303,7 +2300,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element minOccurs="0" ref="tei:abbr"/>
          <xs:element minOccurs="0" ref="tei:expan"/>
          <xs:element minOccurs="0" ref="tei:ex"/>
-         <xs:element minOccurs="0" ref="tei:am"/>
          <xs:element minOccurs="0" ref="tei:subst"/>
       </xs:sequence>
    </xs:group>
@@ -2313,7 +2309,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:abbr"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:expan"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:ex"/>
-         <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:am"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:subst"/>
       </xs:sequence>
    </xs:group>
@@ -2323,7 +2318,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element maxOccurs="unbounded" ref="tei:abbr"/>
          <xs:element maxOccurs="unbounded" ref="tei:expan"/>
          <xs:element maxOccurs="unbounded" ref="tei:ex"/>
-         <xs:element maxOccurs="unbounded" ref="tei:am"/>
          <xs:element maxOccurs="unbounded" ref="tei:subst"/>
       </xs:sequence>
    </xs:group>
@@ -3162,7 +3156,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:abbr"/>
          <xs:element ref="tei:expan"/>
          <xs:element ref="tei:ex"/>
-         <xs:element ref="tei:am"/>
          <xs:element ref="tei:supplied"/>
          <xs:element ref="tei:seg"/>
       </xs:choice>
@@ -5002,33 +4995,6 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
          <xs:attributeGroup ref="tei:tei_att.media.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.resourced.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.declaring.attributes"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="binaryObject" substitutionGroup="tei:tei_model.graphicLike">
-      <xs:annotation>
-         <xs:documentation>provides encoded binary data representing an inline graphic, audio, video or other object. [3.9. Graphics and Other Non-textual Components]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.media.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.timed.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
-         <xs:attribute name="encoding">
-            <xs:simpleType>
-               <xs:restriction>
-                  <xs:simpleType>
-                     <xs:list>
-                        <xs:simpleType>
-                           <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
-                           </xs:restriction>
-                        </xs:simpleType>
-                     </xs:list>
-                  </xs:simpleType>
-                  <xs:minLength value="1"/>
-               </xs:restriction>
-            </xs:simpleType>
-         </xs:attribute>
       </xs:complexType>
    </xs:element>
    <xs:element name="milestone" substitutionGroup="tei:tei_model.milestoneLike">
@@ -8212,20 +8178,6 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
          <xs:attribute name="new" type="xs:anyURI"/>
       </xs:complexType>
    </xs:element>
-   <xs:element name="am">
-      <xs:annotation>
-         <xs:documentation>(abbreviation marker) contains a sequence of letters or signs present in an abbreviation which are omitted or replaced in the expanded form of the abbreviation. [11.3.1.2. Abbreviation and Expansion]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType mixed="true">
-         <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element ref="tei:tei_model.gLike"/>
-            <xs:group ref="tei:tei_model.pPart.transcriptional"/>
-         </xs:choice>
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.editLike.attributes"/>
-      </xs:complexType>
-   </xs:element>
    <xs:element name="restore">
       <xs:annotation>
          <xs:documentation>indicates restoration of text to an earlier state by cancellation of an editorial or authorial marking or instruction. [11.3.1.6. Cancellation of Deletions and Other Markings]</xs:documentation>
@@ -8595,7 +8547,6 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
          <xs:element ref="tei:media"/>
          <xs:element ref="tei:respStmt"/>
          <xs:element ref="tei:equipment"/>
-         <xs:element ref="tei:broadcast"/>
       </xs:choice>
    </xs:group>
    <xs:group name="tei_model.divPart.spoken">
@@ -8699,20 +8650,6 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
       </xs:annotation>
       <xs:complexType>
          <xs:group maxOccurs="unbounded" ref="tei:tei_model.pLike"/>
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.declarable.attributes"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="broadcast">
-      <xs:annotation>
-         <xs:documentation>describes a broadcast used as the source of a spoken text. [8.2. Documenting the Source of Transcribed Speech 15.3.2. Declarable Elements]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType>
-         <xs:choice>
-            <xs:group maxOccurs="unbounded" ref="tei:tei_model.pLike"/>
-            <xs:group ref="tei:tei_model.biblLike"/>
-            <xs:element ref="tei:recording"/>
-         </xs:choice>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.declarable.attributes"/>
       </xs:complexType>

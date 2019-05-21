@@ -53,7 +53,7 @@ of this software, even if advised of the possibility of such damage.
    <xsl:output method="xhtml" indent="no" omit-xml-declaration="yes"/>
    <xsl:preserve-space elements="head p li span hi"/>
 
-   <!--xsl:param name="cssFile">http://nl.ijs.si/tei/convert/profiles/jsi/html/jsi-tei.css</xsl:param-->
+   <xsl:param name="cssFile">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/guidelines-print.css</xsl:param>
    <xsl:param name="homeURL">https://github.com/clarin-eric/parla-clarin</xsl:param>
    <xsl:param name="homeLabel">Parla-CLARIN</xsl:param>
    <xsl:param name="STDOUT">true</xsl:param>

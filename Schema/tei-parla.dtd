@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2019-05-21T09:04:54Z. .This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.
+DTD generated from ODD source 2019-05-21T09:55:43Z. .This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -655,11 +655,11 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.egLike_sequenceOptional ""> 
 <!ENTITY % model.egLike_sequenceOptionalRepeatable ""> 
 <!ENTITY % model.egLike_sequenceRepeatable ""> 
-<!ENTITY % model.graphicLike "media |graphic |binaryObject"> 
-<!ENTITY % model.graphicLike_sequence "media, graphic, binaryObject"> 
-<!ENTITY % model.graphicLike_sequenceOptional "media?, graphic?, binaryObject?"> 
-<!ENTITY % model.graphicLike_sequenceOptionalRepeatable "media*, graphic*, binaryObject*"> 
-<!ENTITY % model.graphicLike_sequenceRepeatable "media+, graphic+, binaryObject+"> 
+<!ENTITY % model.graphicLike "media |graphic"> 
+<!ENTITY % model.graphicLike_sequence "media, graphic"> 
+<!ENTITY % model.graphicLike_sequenceOptional "media?, graphic?"> 
+<!ENTITY % model.graphicLike_sequenceOptionalRepeatable "media*, graphic*"> 
+<!ENTITY % model.graphicLike_sequenceRepeatable "media+, graphic+"> 
 <!ENTITY % model.offsetLike "offset |geogFeat"> 
 <!ENTITY % model.offsetLike_sequence "offset, geogFeat"> 
 <!ENTITY % model.offsetLike_sequenceOptional "offset?, geogFeat?"> 
@@ -670,11 +670,11 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.pPart.msdesc_sequenceOptional ""> 
 <!ENTITY % model.pPart.msdesc_sequenceOptionalRepeatable ""> 
 <!ENTITY % model.pPart.msdesc_sequenceRepeatable ""> 
-<!ENTITY % model.pPart.editorial "choice |abbr |expan |ex |am |subst"> 
-<!ENTITY % model.pPart.editorial_sequence "choice, abbr, expan, ex, am, subst"> 
-<!ENTITY % model.pPart.editorial_sequenceOptional "choice?, abbr?, expan?, ex?, am?, subst?"> 
-<!ENTITY % model.pPart.editorial_sequenceOptionalRepeatable "choice*, abbr*, expan*, ex*, am*, subst*"> 
-<!ENTITY % model.pPart.editorial_sequenceRepeatable "choice+, abbr+, expan+, ex+, am+, subst+"> 
+<!ENTITY % model.pPart.editorial "choice |abbr |expan |ex |subst"> 
+<!ENTITY % model.pPart.editorial_sequence "choice, abbr, expan, ex, subst"> 
+<!ENTITY % model.pPart.editorial_sequenceOptional "choice?, abbr?, expan?, ex?, subst?"> 
+<!ENTITY % model.pPart.editorial_sequenceOptionalRepeatable "choice*, abbr*, expan*, ex*, subst*"> 
+<!ENTITY % model.pPart.editorial_sequenceRepeatable "choice+, abbr+, expan+, ex+, subst+"> 
 <!ENTITY % model.pPart.transcriptional "sic |corr |reg |orig |add |del |unclear |damage |handShift |restore |supplied |surplus |secl |mod |redo |retrace |undo"> 
 <!ENTITY % model.pPart.transcriptional_sequence "sic, corr, reg, orig, add, del, unclear, damage, handShift, restore, supplied, surplus, secl, mod, redo, retrace, undo"> 
 <!ENTITY % model.pPart.transcriptional_sequenceOptional "sic?, corr?, reg?, orig?, add?, del?, unclear?, damage?, handShift?, restore?, supplied?, surplus?, secl?, mod?, redo?, retrace?, undo?"> 
@@ -910,11 +910,11 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.divBottom_sequenceOptional "%model.divWrapper;?"> 
 <!ENTITY % model.divBottom_sequenceOptionalRepeatable "%model.divWrapper;*"> 
 <!ENTITY % model.divBottom_sequenceRepeatable "%model.divWrapper;+"> 
-<!ENTITY % model.choicePart "sic |corr |reg |orig |unclear |abbr |expan |ex |am |supplied |seg"> 
-<!ENTITY % model.choicePart_sequence "sic, corr, reg, orig, unclear, abbr, expan, ex, am, supplied, seg"> 
-<!ENTITY % model.choicePart_sequenceOptional "sic?, corr?, reg?, orig?, unclear?, abbr?, expan?, ex?, am?, supplied?, seg?"> 
-<!ENTITY % model.choicePart_sequenceOptionalRepeatable "sic*, corr*, reg*, orig*, unclear*, abbr*, expan*, ex*, am*, supplied*, seg*"> 
-<!ENTITY % model.choicePart_sequenceRepeatable "sic+, corr+, reg+, orig+, unclear+, abbr+, expan+, ex+, am+, supplied+, seg+"> 
+<!ENTITY % model.choicePart "sic |corr |reg |orig |unclear |abbr |expan |ex |supplied |seg"> 
+<!ENTITY % model.choicePart_sequence "sic, corr, reg, orig, unclear, abbr, expan, ex, supplied, seg"> 
+<!ENTITY % model.choicePart_sequenceOptional "sic?, corr?, reg?, orig?, unclear?, abbr?, expan?, ex?, supplied?, seg?"> 
+<!ENTITY % model.choicePart_sequenceOptionalRepeatable "sic*, corr*, reg*, orig*, unclear*, abbr*, expan*, ex*, supplied*, seg*"> 
+<!ENTITY % model.choicePart_sequenceRepeatable "sic+, corr+, reg+, orig+, unclear+, abbr+, expan+, ex+, supplied+, seg+"> 
 <!ENTITY % model.imprintPart "publisher |biblScope |pubPlace |distributor"> 
 <!ENTITY % model.imprintPart_sequence "publisher, biblScope, pubPlace, distributor"> 
 <!ENTITY % model.imprintPart_sequenceOptional "publisher?, biblScope?, pubPlace?, distributor?"> 
@@ -1131,11 +1131,11 @@ points CDATA  #IMPLIED'>
 <!ENTITY % model.global.spoken_sequenceOptional "pause?, vocal?, kinesic?, incident?, writing?, shift?"> 
 <!ENTITY % model.global.spoken_sequenceOptionalRepeatable "pause*, vocal*, kinesic*, incident*, writing*, shift*"> 
 <!ENTITY % model.global.spoken_sequenceRepeatable "pause+, vocal+, kinesic+, incident+, writing+, shift+"> 
-<!ENTITY % model.recordingPart "%model.dateLike; |media |respStmt |equipment |broadcast"> 
-<!ENTITY % model.recordingPart_sequence "%model.dateLike;, media, respStmt, equipment, broadcast"> 
-<!ENTITY % model.recordingPart_sequenceOptional "%model.dateLike;?, media?, respStmt?, equipment?, broadcast?"> 
-<!ENTITY % model.recordingPart_sequenceOptionalRepeatable "%model.dateLike;*, media*, respStmt*, equipment*, broadcast*"> 
-<!ENTITY % model.recordingPart_sequenceRepeatable "%model.dateLike;+, media+, respStmt+, equipment+, broadcast+"> 
+<!ENTITY % model.recordingPart "%model.dateLike; |media |respStmt |equipment"> 
+<!ENTITY % model.recordingPart_sequence "%model.dateLike;, media, respStmt, equipment"> 
+<!ENTITY % model.recordingPart_sequenceOptional "%model.dateLike;?, media?, respStmt?, equipment?"> 
+<!ENTITY % model.recordingPart_sequenceOptionalRepeatable "%model.dateLike;*, media*, respStmt*, equipment*"> 
+<!ENTITY % model.recordingPart_sequenceRepeatable "%model.dateLike;+, media+, respStmt+, equipment+"> 
 <!ENTITY % model.divPart.spoken "u |annotationBlock"> 
 <!ENTITY % model.divPart.spoken_sequence "u, annotationBlock"> 
 <!ENTITY % model.divPart.spoken_sequenceOptional "u?, annotationBlock?"> 
@@ -1379,13 +1379,6 @@ weights CDATA  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.pointing.group.attributes;
 mode (excl|incl) "excl"  >
-<!--doc:(abbreviation marker) contains a sequence of letters or signs present in an abbreviation which are omitted or replaced in the expanded form of the abbreviation. [11.3.1.2. Abbreviation and Expansion] -->
-<!ELEMENT am (#PCDATA|%model.gLike;|%model.pPart.transcriptional;)*>
-<!ATTLIST am xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST am
- %tei_att.global.attributes;
- %tei_att.typed.attributes;
- %tei_att.editLike.attributes; >
 <!--doc:(analytic level) contains bibliographic elements describing an item (e.g. an article or poem) published within a monograph or journal and not as an independent publication. [3.11.2.1. Analytic, Monographic, and Series Levels] -->
 <!ELEMENT analytic (author|editor|respStmt|title|%model.ptrLike;|date|textLang|idno|availability)*>
 <!ATTLIST analytic xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1475,15 +1468,6 @@ status (free|unknown|restricted) #IMPLIED >
  %tei_att.typed.attributes;
  %tei_att.sortable.attributes;
  %tei_att.docStatus.attributes; >
-<!--doc:provides encoded binary data representing an inline graphic, audio, video or other object. [3.9. Graphics and Other Non-textual Components] -->
-<!ELEMENT binaryObject (#PCDATA)>
-<!ATTLIST binaryObject xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST binaryObject
- %tei_att.global.attributes;
- %tei_att.media.attributes;
- %tei_att.timed.attributes;
- %tei_att.typed.attributes;
-encoding CDATA  #IMPLIED >
 <!--doc:contains information about a person's birth, such as its date and place. [15.2.2. The Participant Description] -->
 <!ELEMENT birth %macro.phraseSeq;>
 <!ATTLIST birth xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1509,12 +1493,6 @@ type %teidata.enumerated;  #IMPLIED >
 <!ATTLIST body
  %tei_att.global.attributes;
  %tei_att.declaring.attributes; >
-<!--doc:describes a broadcast used as the source of a spoken text. [8.2. Documenting the Source of Transcribed Speech 15.3.2. Declarable Elements] -->
-<!ELEMENT broadcast ((%model.pLike;)+|%model.biblLike;|recording)>
-<!ATTLIST broadcast xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST broadcast
- %tei_att.global.attributes;
- %tei_att.declarable.attributes; >
 <!--doc:(character) represents a character. [17.1. Linguistic Segment Categories] -->
 <!ELEMENT c %macro.xtext;>
 <!ATTLIST c xmlns CDATA "http://www.tei-c.org/ns/1.0">

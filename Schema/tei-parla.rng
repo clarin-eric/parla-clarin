@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-05-21T09:04:43Z. .
+Schema generated from ODD source 2019-05-21T09:55:32Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -1955,7 +1955,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <choice>
          <ref name="tei_media"/>
          <ref name="tei_graphic"/>
-         <ref name="tei_binaryObject"/>
       </choice>
    </define>
    <define name="tei_model.offsetLike">
@@ -2007,7 +2006,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="tei_abbr"/>
          <ref name="tei_expan"/>
          <ref name="tei_ex"/>
-         <ref name="tei_am"/>
          <ref name="tei_subst"/>
       </choice>
    </define>
@@ -2017,7 +2015,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="tei_abbr"/>
          <ref name="tei_expan"/>
          <ref name="tei_ex"/>
-         <ref name="tei_am"/>
          <ref name="tei_subst"/>
       </choice>
    </define>
@@ -2026,7 +2023,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <ref name="tei_abbr"/>
       <ref name="tei_expan"/>
       <ref name="tei_ex"/>
-      <ref name="tei_am"/>
       <ref name="tei_subst"/>
    </define>
    <define name="tei_model.pPart.editorial_sequenceOptional">
@@ -2041,9 +2037,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       </optional>
       <optional>
          <ref name="tei_ex"/>
-      </optional>
-      <optional>
-         <ref name="tei_am"/>
       </optional>
       <optional>
          <ref name="tei_subst"/>
@@ -2063,9 +2056,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="tei_ex"/>
       </zeroOrMore>
       <zeroOrMore>
-         <ref name="tei_am"/>
-      </zeroOrMore>
-      <zeroOrMore>
          <ref name="tei_subst"/>
       </zeroOrMore>
    </define>
@@ -2081,9 +2071,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       </oneOrMore>
       <oneOrMore>
          <ref name="tei_ex"/>
-      </oneOrMore>
-      <oneOrMore>
-         <ref name="tei_am"/>
       </oneOrMore>
       <oneOrMore>
          <ref name="tei_subst"/>
@@ -3219,7 +3206,6 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="tei_abbr"/>
          <ref name="tei_expan"/>
          <ref name="tei_ex"/>
-         <ref name="tei_am"/>
          <ref name="tei_supplied"/>
          <ref name="tei_seg"/>
       </choice>
@@ -4666,29 +4652,6 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
          <ref name="tei_att.media.attributes"/>
          <ref name="tei_att.resourced.attributes"/>
          <ref name="tei_att.declaring.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="tei_binaryObject">
-      <element name="binaryObject">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">provides encoded binary data representing an inline graphic, audio, video or other object. [3.9. Graphics and Other Non-textual Components]</a:documentation>
-         <text/>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.media.attributes"/>
-         <ref name="tei_att.timed.attributes"/>
-         <ref name="tei_att.typed.attributes"/>
-         <optional>
-            <attribute name="encoding">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">The encoding used to encode the binary data. If not specified, this is assumed to be <a xmlns="http://www.w3.org/1999/xhtml" href="http://en.wikipedia.org/wiki/Base64">Base64</a>.</a:documentation>
-               <list>
-                  <oneOrMore>
-                     <data type="token">
-                        <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
-                     </data>
-                  </oneOrMore>
-               </list>
-            </attribute>
-         </optional>
          <empty/>
       </element>
    </define>
@@ -8123,22 +8086,6 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
          <empty/>
       </element>
    </define>
-   <define name="tei_am">
-      <element name="am">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(abbreviation marker) contains a sequence of letters or signs present in an abbreviation which are omitted or replaced in the expanded form of the abbreviation. [11.3.1.2. Abbreviation and Expansion]</a:documentation>
-         <zeroOrMore>
-            <choice>
-               <text/>
-               <ref name="tei_model.gLike"/>
-               <ref name="tei_model.pPart.transcriptional"/>
-            </choice>
-         </zeroOrMore>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.typed.attributes"/>
-         <ref name="tei_att.editLike.attributes"/>
-         <empty/>
-      </element>
-   </define>
    <define name="tei_restore">
       <element name="restore">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates restoration of text to an earlier state by cancellation of an editorial or authorial marking or instruction. [11.3.1.6. Cancellation of Deletions and Other Markings]</a:documentation>
@@ -8468,7 +8415,6 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
          <ref name="tei_media"/>
          <ref name="tei_respStmt"/>
          <ref name="tei_equipment"/>
-         <ref name="tei_broadcast"/>
       </choice>
    </define>
    <define name="tei_model.divPart.spoken">
@@ -8580,23 +8526,6 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
          <oneOrMore>
             <ref name="tei_model.pLike"/>
          </oneOrMore>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.declarable.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="tei_broadcast">
-      <element name="broadcast">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">describes a broadcast used as the source of a spoken text. [8.2. Documenting the Source of Transcribed Speech 15.3.2. Declarable Elements]</a:documentation>
-         <choice>
-      
-            <oneOrMore>
-               <ref name="tei_model.pLike"/>
-            </oneOrMore>
-      
-            <ref name="tei_model.biblLike"/>
-            <ref name="tei_recording"/>
-         </choice>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.declarable.attributes"/>
          <empty/>
