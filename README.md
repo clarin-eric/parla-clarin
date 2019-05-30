@@ -1,4 +1,4 @@
-# CLARIN-Parla
+# Parla-CLARIN
 
 This project aims to develop a TEI customisation for annotating
 parliamentary debates.
