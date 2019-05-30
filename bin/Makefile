@@ -1,6 +1,6 @@
 all:	schemas html
 # Have to have local source of p5subset, as my Java is too old to fetch it with https!
-PARAMS = --odd --localsource=p5subset.xml ../Schema/tei-parla-odd.xml
+PARAMS = --localsource=p5subset.xml ../Schema/tei-parla-odd.xml
 schemas:
 	Stylesheets/bin/teitorelaxng ${PARAMS} ../Schema/tei-parla.rng
 	Stylesheets/bin/teitornc     ${PARAMS} ../Schema/tei-parla.rnc
@@ -8,7 +8,7 @@ schemas:
 	Stylesheets/bin/teitoxsd     ${PARAMS} ../Schema/tei-parla.xsd
 H = /home/tomaz/Resources/CLARIN/DARIAH-SI/Parla-CLARIN/parla-clarin/bin
 html:
-	Stylesheets/bin/teitohtml --profiledir=$H --profile=profile -- ${PARAMS} ../docs/index.html
+	Stylesheets/bin/teitohtml --profiledir=$H --profile=profile --odd ${PARAMS} ../docs/index.html
 
 #s = java -jar ~/bin/saxon9he.jar
 #s = java -jar /usr/local/bin/saxon9he.jar

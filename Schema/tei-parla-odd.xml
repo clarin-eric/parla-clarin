@@ -75,7 +75,7 @@
           <moduleRef key="textstructure"
 		     include="TEI back body div front text docDate"/>
           <moduleRef key="corpus" except=""/>
-          <!--moduleRef key="transcr" except="am"/-->
+          <moduleRef key="transcr" except="am"/>
           <moduleRef key="spoken" except="broadcast"/>
           <moduleRef key="namesdates" except=""/>
           <moduleRef key="linking" except=""/>
