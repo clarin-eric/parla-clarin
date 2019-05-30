@@ -84,6 +84,25 @@
 		     except="alt altGrp bicond binary cond default fDecl fDescr fsConstraints fsDescr
 			     fsdDecl fsdLink if iff then vDefault vLabel vMerge vNot vRange"/>
           <!--moduleRef key="gaiji" except=""/-->
+	  <elementSpec ident="div" module="textstructure" mode="change">
+	    <attList>
+	      <attDef ident="type" mode="replace" usage="opt">
+	        <valList type="open">
+	          <valItem ident="debateSection">
+	            <desc xml:lang="en">General structural text division for all parts of a parliamentary debates</desc>
+	          </valItem>
+	          <valItem ident="declarationOfVote">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to the declaration of votes</desc>
+	          </valItem>
+	          <valItem ident="">
+	            <desc xml:lang="en"></desc>
+	          </valItem>
+	          
+	        </valList>
+	      </attDef>
+	    </attList>
+	  </elementSpec>
+	  
 	</schemaSpec>
       </div>
     </body>
