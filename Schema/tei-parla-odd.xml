@@ -170,10 +170,10 @@
 	  a <gi>back</gi> element after it. While the <gi>body</gi>
 	  will contain the speeches and is obligatory, the former
 	  could contain some preamble text, while the latter various
-	  appendices or texts that are related to the speeches.</p>
+	  appendices or texts that are related to the speeches</p>
 	  
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-docstructure">
-	    <teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xml:lang="xx">
+	    <teiCorpus xml:lang="xx">
               <teiHeader>
 	        <!-- Common corpus metadata -->
 	      </teiHeader>
@@ -206,7 +206,7 @@
 	  in the Parla-CLARIN encoding, i.e. it is used when we do not want to lose some information about
 	  the source data structures.</p>
 	  
-	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-docstructure">
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-divstructure">
             <body>
 	      <div type="bla">
 		<head>Title ob bla</head>
@@ -224,7 +224,7 @@
       <div>
         <head>Speakers</head>
 
-		  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-docstructure">
+	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-speakers">
             <body>
 	      <div type="bla">
 		<head>Title ob bla</head>
