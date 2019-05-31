@@ -28,6 +28,7 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change when="2019-05-31">Tomaž Erjavec: adding some documentation.</change>
       <change when="2019-05-21">Tomaž Erjavec: first sketch.</change>
     </revisionDesc>
   </teiHeader>
@@ -50,24 +51,220 @@
 	informed participation by the public and to improve effective
 	functioning of democratic systems, making the datasets even
 	more valuable.</p>
+	<p>Given these reasons and the fact that parliamentary proceedings are more and more
+	often avaliable on-line, many researchers have already compiled corpora of
+	parliamentary proceedings.</p>
+	<div xml:id="sec-back">
+          <head>Backgorund</head>
+	</div>
+	<div xml:id="sec-scope">
+          <head>Scope and purpose of the proposal</head>
+	  
+	</div>
+	<div xml:id="sec-akoma">
+          <head>Akoma Ntoso</head>
+	  
+	</div>
       </div>
+      
+      <div xml:id="sec-general">
+        <head>General requirements</head>
+
+	<div>
+          <head>Characters</head>
+
+	  <p>A Parla-CLARIN corpus should, in general, capture as much
+	  of the text and markup from the source as possble, while the
+	  presence of graphical items or other elements that could not
+	  or were not transcribed should be indicated by markup, in
+	  particular with the use of <gi>gap</gi>.</p>
+	  
+	  <p>The corpus should be encoded in Unicode, using the UTF-8
+	  character encoding, at least for European languages.  In cases
+	  where the original contains characters from the Unicode
+	  Private Use Area, these should be either given their closest
+	  equivalents, or, preferably, be appropriatelly marked up by
+	  the use of the <gi>g</gi> element.</p>
+	  
+	  <p>End-of-line hyphens can be removed, and the split words
+	  joined in order to simplify linguistic processing.</p>
+	  
+	  <p>Two characters, esp. prevalent when the source documents
+	  are in Word, deserve special mention:</p>
+	  
+	  <list>
+	    <item>Non-breaking pace (U+00A0), which prevents, with some
+	    applications, collapsing consecutive white space characters
+	    into a single space. As TEI-Parla is not interested in
+	    preserving the details of the layout, it is recommended that
+	    this character is substituted by the regular space
+	    (U+0020).</item>
+	    <item>Soft hyphen (U+00AD), which indicates that a word can
+	    be hyphenated at that point. These characters should be
+	    removed from the corpus, as they only complicate further
+	    processing.
+	    </item>
+	  </list>
+
+	  <p>While not required, it is sensible to also normalise
+	  sequences of whitespace characters (such as tabulators,
+	  end-of-line characters and spaces) into a single space or
+	  end-of-line character. Again, this simplifies further
+	  (esp. linguistic) processing.</p>
+	 
+	</div>
+
+	<div>
+          <head>Documenting the encoding process</head>
+
+	  <p>Difficult encoding situations that are not covered by the
+	  TEI Guidelines should be documented in the
+	  <gi>editorialDecl</gi> of the corpus TEI header.
+
+	  In particular, if the source texts has been changed (so,
+	  ommitting or normalising figures, text, EOL hyphens, special
+	  characters, etc. as discussed above) this practice should be
+	  documented in the <gi>correction</gi> and
+	  <gi>normalization</gi> elements of the editorial
+	  declaration.</p>
+	  
+	</div>
+
+	<head>Files</head>
+
       <div>
+	<p>While this proposal makes the assumption that a complete
+	corpus is one TEI document, this does not mean that it
+	should also be stored in one file, as the file structure is
+	distinct from the concept of XML documents. To enable one XML document to
+	be composed of several files, the XInclude recommendation should be used</p>
+      </div>
+      </div>
+      
+      <div xml:id="sec-overall">
         <head>Overall document structure</head>
+
+	<div>
+          <head>Corpus structure</head>
+	  
+	  <p>As illustrated below, a CLARIN-Parla corpus is rooted in
+	  an <gi>teiCorpus</gi> element, which should also contain the
+	  <att>xml:lang</att> attribute with the appropriate language
+	  code<note>For multilingual document, this code would be
+	  <q>mul</q> for <q>multiple languages</q></note>. The
+	  <gi>teiHeader</gi> of the corpus then contains the metadata
+	  for the complete corpus, including the metadata that is
+	  referred to by the subordinate <gi>TEI</gi> elements, such
+	  as the defined taxonomies and the list of speakers.</p>
+	  
+	  <p>We do not specify what an individual <gi>TEI</gi> element should contain, as the
+	  size and granularity of parliamentary debate corpora, not to mention the national rules
+	  of structuring the workings of the parliament will differ substantially. Typically, however,
+	  and individual <gi>TEI</gi> element would contain one sitting or session or one day, in any case
+	  such data that has common metadata that distinguishes it from the other
+	  <gi>TEI</gi> elements in the corpus.</p>
+
+	  <p>Finally, although not given in the Figure below, a
+	  <gi>text</gi> element can contain, apart from the
+	  <gi>body</gi> also a <gi>front</gi> element before it and/or
+	  a <gi>back</gi> element after it. While the <gi>body</gi>
+	  will contain the speeches and is obligatory, the former
+	  could contain some preamble text, while the latter various
+	  appendices or texts that are related to the speeches.</p>
+	  
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-docstructure">
+	    <teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xml:lang="xx">
+              <teiHeader>
+	        <!-- Common corpus metadata -->
+	      </teiHeader>
+              <TEI xml:id="id.1">
+		<teiHeader>
+		  <!-- Document metadata -->
+		</teiHeader>
+		<text>
+                  <body>
+		    <!-- Document text -->
+		  </body>
+		</text>
+	      </TEI>
+	      <!-- More TEI elements here -->
+	    </teiCorpus>
+	  </egXML>
+	</div>
+	
+	<div>
+          <head>Text divisions</head>
+
+	  <p>In the text body, as well as in the front and back matter, the element that further
+	  organises their content is the division, <gi>div</gi>, and each of the three elements (if present)
+	  should contain at least one division.</p>
+
+	  <p>The divisions can be nested, and are further specified by their <att>type</att> and, possibly,
+	  <att>subtype</att> attributes. For the recommended values of <att>type</att> we take as our model
+	  the structure elements as defined by Akoma Ntoso. The <att>subtype</att> attribute is to
+	  be used for cases where some facets of structures in the source data cannot be otherwise retained
+	  in the Parla-CLARIN encoding, i.e. it is used when we do not want to lose some information about
+	  the source data structures.</p>
+	  
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-docstructure">
+            <body>
+	      <div type="bla">
+		<head>Title ob bla</head>
+		<div type="bla" subtype="foo">
+		</div>
+	      </div>
+            </body>
+	  </egXML>
+	</div>
+
       </div>
       <div>
-        <head>Metadata</head>
+        <head>Corpus metadata</head>
       </div>
       <div>
         <head>Speakers</head>
+
+		  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-docstructure">
+            <body>
+	      <div type="bla">
+		<head>Title ob bla</head>
+		<div type="bla" subtype="foo">
+		</div>
+	      </div>
+            </body>
+	  </egXML>
+
       </div>
       <div>
         <head>Transcriptions</head>
       </div>
       <div>
+        <head>Multimedia</head>
+	Parliamentary corpora can also have data from other modalities associated with the transcripts.
+	<div>
+          <head>Speech and video</head>
+	</div>
+	<div>
+          <head>Facsimile</head>
+	</div>
+      </div>
+      <div>
         <head>Linguistic annotation</head>
       </div>
+      <div>
+        <head>Conversions</head>
+	<p>A TEI encoded document is, in general, not meant to be used directly by software programs, rather
+	it serves as an interchange and storage format.
+	Furthermore, most TEI documents are not "born TEI", but rather converted into TEI from
+	some source format.
+	In this section we discuss some up- and down-conversion scripts that have already been developed
+	for transforming source formats into Parla-CLARIN and from Parla-CLARIN into formats immediatelly
+	usable by software.</p>
+      </div>
+    </body>
+    <back>
       <div type="specification">
-        <head>Specification</head>
+        <head>Formal specification</head>
 	<schemaSpec ident="tei_clarin" start="TEI teiCorpus" docLang="en" prefix="tei_" xml:lang="en">
           <moduleRef key="tei" except=""/>
           <moduleRef key="header" except="handNote typeNote scriptNote"/>
@@ -102,9 +299,8 @@
 	      </attDef>
 	    </attList>
 	  </elementSpec>
-	  
 	</schemaSpec>
       </div>
-    </body>
+    </back>
   </text>
 </TEI>
