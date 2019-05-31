@@ -159,6 +159,50 @@
 	      </attDef>
 	    </attList>
 	  </elementSpec>
+	  <elementSpec ident="note" mode="change" module="core">
+	    <attList>
+	      <attDef ident="type" mode="replace" usage="rec">
+	        <valList type="open">
+	          <!-- AKN -->
+	          <valItem ident="narrative">
+	            <desc xml:lang="en">Description in the third person of events taking place in the meeting, e.g. "Mr X. takes the Chair"</desc>
+	          </valItem>
+	          <valItem ident="summary">
+	            <desc xml:lang="en">Summaries of speeches that are individually not interesting (e.g.: "Question put and agreed to")</desc>
+	          </valItem>
+	          <!-- AKN and slovParl -->
+	          <valItem ident="speaker">
+	            <desc xml:lang="en">Name, role and possible description of a person doing the speech</desc>
+	          </valItem>
+	          <valItem ident="vote">
+	            <desc xml:lang="en">Outcome of a vote</desc>
+	          </valItem>
+	          <!-- slovParl -->
+	          <valItem ident="location">
+	            <desc xml:lang="en">the location of the speaker, who was not on the podium</desc>
+	          </valItem>
+	          <valItem ident="date">
+	            <desc xml:lang="en">date of the session</desc>
+	          </valItem>
+	          <valItem ident="president">
+	            <desc xml:lang="en">chairman of a meeting</desc>
+	          </valItem>
+	          <valItem ident="comment">
+	            <desc xml:lang="en">comment of parliamentary reporter</desc>
+	          </valItem>
+	          <valItem ident="time">
+	            <desc xml:lang="en">the date and time of the beginning and end of the debate</desc>
+	          </valItem>
+	          <valItem ident="quorum">
+	            <desc xml:lang="en">the presence of the members of parliament</desc>
+	          </valItem>
+	          <valItem ident="debate">
+	            <desc xml:lang="en">comments on the conduct of debates</desc>
+	          </valItem>
+	        </valList>
+	      </attDef>
+	    </attList>
+	  </elementSpec>
 	  
 	</schemaSpec>
       </div>
