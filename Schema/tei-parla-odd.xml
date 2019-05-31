@@ -130,9 +130,8 @@
 	  
 	</div>
 
-	<head>Files</head>
-
       <div>
+	<head>Files</head>
 	<p>While this proposal makes the assumption that a complete
 	corpus is one TEI document, this does not mean that it
 	should also be stored in one file, as the file structure is
@@ -227,7 +226,7 @@
 	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-speakers">
             <body>
 	      <div type="bla">
-		<head>Title ob bla</head>
+		<head>Title of bla</head>
 		<div type="bla" subtype="foo">
 		</div>
 	      </div>
@@ -240,7 +239,9 @@
       </div>
       <div>
         <head>Multimedia</head>
-	Parliamentary corpora can also have data from other modalities associated with the transcripts.
+	
+	<p>Parliamentary corpora can also have data from other modalities associated with the transcripts.</p>
+
 	<div>
           <head>Speech and video</head>
 	</div>
