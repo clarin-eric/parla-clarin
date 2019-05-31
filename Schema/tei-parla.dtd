@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2019-05-30T13:37:17Z. .This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.
+DTD generated from ODD source 2019-05-31T16:01:44Z. .This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -1761,9 +1761,10 @@ social %teidata.text;  #IMPLIED >
 <!ATTLIST div
  %tei_att.global.attributes;
  %tei_att.divLike.attributes;
- %tei_att.typed.attributes;
+ %tei_att.typed.attribute.subtype;
  %tei_att.declaring.attributes;
- %tei_att.written.attributes; >
+ %tei_att.written.attributes;
+type CDATA  #IMPLIED >
 <!--doc:(automatically generated text division) indicates the location at which a textual division generated automatically by a text-processing application is to appear. [3.8.2. Index Entries] -->
 <!ELEMENT divGen (%model.headLike;)*>
 <!ATTLIST divGen xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -2477,8 +2478,9 @@ method (silent|markup) "silent"  >
  %tei_att.global.attributes;
  %tei_att.placement.attributes;
  %tei_att.pointing.attributes;
- %tei_att.typed.attributes;
+ %tei_att.typed.attribute.subtype;
  %tei_att.written.attributes;
+type CDATA  #IMPLIED
 anchored %teidata.truthValue;  "true" 
 targetEnd CDATA  #IMPLIED >
 <!--doc:(notes statement) collects together any notes providing information about a text additional to that recorded in other parts of the bibliographic description. [2.2.6. The Notes Statement 2.2. The File Description] -->

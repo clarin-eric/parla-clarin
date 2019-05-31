@@ -8,7 +8,7 @@ namespace teix = "http://www.tei-c.org/ns/Examples"
 namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 
-# Schema generated from ODD source 2019-05-30T13:37:12Z. .
+# Schema generated from ODD source 2019-05-31T16:01:39Z. .
 # TEI Edition: Version 3.5.0. Last updated on
 #	29th January 2019, revision 3c0c64ec4
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -2916,8 +2916,12 @@ tei_note =
     tei_att.global.attributes,
     tei_att.placement.attributes,
     tei_att.pointing.attributes,
-    tei_att.typed.attributes,
+    tei_att.typed.attribute.subtype,
     tei_att.written.attributes,
+    
+    ## 
+    ## Sample values include: 1] narrative; 2] summary; 3] speaker; 4] vote; 5] location; 6] date; 7] president; 8] comment; 9] time; 10] quorum; 11] debate
+    attribute type { text }?,
     
     ## indicates whether the copy text shows the exact place of reference for the note.
     [ a:defaultValue = "true" ] attribute anchored { xsd:boolean }?,
@@ -4629,9 +4633,13 @@ tei_div =
        ],
     tei_att.global.attributes,
     tei_att.divLike.attributes,
-    tei_att.typed.attributes,
+    tei_att.typed.attribute.subtype,
     tei_att.declaring.attributes,
     tei_att.written.attributes,
+    
+    ## 
+    ## Sample values include: 1] debate; 2] administrationOfOath; 3] rollCall; 4] prayers; 5] oralStatements; 6] writtenStatements; 7] personalStatements; 8] ministerialStatements; 9] resolutions; 10] nationalInterest; 11] declarationOfVote; 12] communication; 13] petitions; 14] papers; 15] noticesOfMotion; 16] questions; 17] address; 18] proceduralMotions; 19] pointOfOrder; 20] adjournment; 21] speech
+    attribute type { text }?,
     empty
   }
 tei_docDate =
