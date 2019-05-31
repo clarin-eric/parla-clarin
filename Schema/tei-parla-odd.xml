@@ -285,16 +285,117 @@
 	    <attList>
 	      <attDef ident="type" mode="replace" usage="opt">
 	        <valList type="open">
-	          <valItem ident="debateSection">
-	            <desc xml:lang="en">General structural text division for all parts of a parliamentary debates</desc>
+	          <!-- debateSection -->
+	          <valItem ident="debate">
+	            <desc xml:lang="en">General purpose text division for all parts of a parliamentary debates.
+	              This is markup for a generic structural container for all other parts of a debates that are
+	              not explicitly supported with the other values of this attribute. It is a good practice to use
+	              the @subtype attribute for additional content classification.</desc>
+	          </valItem>
+	          <valItem ident="administrationOfOath">
+	            <desc xml:lang="en">Text division for parts of a debates that contain the administration of an oath</desc>
+	          </valItem>
+	          <valItem ident="rollCall">
+	            <desc xml:lang="en">Text division for parts of a debates that contain a roll call of individuals</desc>
+	          </valItem>
+	          <valItem ident="prayers">
+	            <desc xml:lang="en">Text division for parts of a debates that contain prayers</desc>
+	          </valItem>
+	          <valItem ident="oralStatements">
+	            <desc xml:lang="en">Text division for parts of a debates that contain oral statements by participants</desc>
+	          </valItem>
+	          <valItem ident="writtenStatements">
+	            <desc xml:lang="en">Text division for parts of a debates that contain written statements by participants</desc>
+	          </valItem>
+	          <valItem ident="personalStatements">
+	            <desc xml:lang="en">Text division for parts of a debates that contain written statements by participants</desc>
+	          </valItem>
+	          <valItem ident="ministerialStatements">
+	            <desc xml:lang="en">Text division for parts of a debates that contain written statements by participants</desc>
+	          </valItem>
+	          <valItem ident="resolutions">
+	            <desc xml:lang="en">Text division for parts of a debates that contain resolutions</desc>
+	          </valItem>
+	          <valItem ident="nationalInterest">
+	            <desc xml:lang="en">Text division for parts of a debates that contain resolutions</desc>
 	          </valItem>
 	          <valItem ident="declarationOfVote">
 	            <desc xml:lang="en">Text division for parts of a debates that are relevant to the declaration of votes</desc>
 	          </valItem>
-	          <valItem ident="">
-	            <desc xml:lang="en"></desc>
+	          <valItem ident="communication">
+	            <desc xml:lang="en">Text division for parts of a debates that contain communications from the house</desc>
 	          </valItem>
-	          
+	          <valItem ident="petitions">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to petitions</desc>
+	          </valItem>
+	          <valItem ident="papers">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to the display of papers</desc>
+	          </valItem>
+	          <valItem ident="noticesOfMotion">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to the notices of motions</desc>
+	          </valItem>
+	          <valItem ident="questions">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to questions</desc>
+	          </valItem>
+	          <valItem ident="address">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to addresses</desc>
+	          </valItem>
+	          <valItem ident="proceduralMotions">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to procedural motions</desc>
+	          </valItem>
+	          <valItem ident="pointOfOrder">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to points of order</desc>
+	          </valItem>
+	          <valItem ident="adjournment">
+	            <desc xml:lang="en">Text division for parts of a debates that contain adjournment notices</desc>
+	          </valItem>
+	          <valItem ident="speech">
+	            <desc xml:lang="en">General purpuse text division for one or more speeches that were not necessarily held in parliament</desc>
+	          </valItem>
+	        </valList>
+	      </attDef>
+	    </attList>
+	  </elementSpec>
+	  <elementSpec ident="note" mode="change" module="core">
+	    <attList>
+	      <attDef ident="type" mode="replace" usage="rec">
+	        <valList type="open">
+	          <!-- AKN -->
+	          <valItem ident="narrative">
+	            <desc xml:lang="en">Description in the third person of events taking place in the meeting, e.g. "Mr X. takes the Chair"</desc>
+	          </valItem>
+	          <valItem ident="summary">
+	            <desc xml:lang="en">Summaries of speeches that are individually not interesting (e.g.: "Question put and agreed to")</desc>
+	          </valItem>
+	          <!-- AKN and slovParl -->
+	          <valItem ident="speaker">
+	            <desc xml:lang="en">Name, role and possible description of a person doing the speech</desc>
+	          </valItem>
+	          <valItem ident="vote">
+	            <desc xml:lang="en">Outcome of a vote</desc>
+	          </valItem>
+	          <!-- slovParl -->
+	          <valItem ident="location">
+	            <desc xml:lang="en">the location of the speaker, who was not on the podium</desc>
+	          </valItem>
+	          <valItem ident="date">
+	            <desc xml:lang="en">date of the session</desc>
+	          </valItem>
+	          <valItem ident="president">
+	            <desc xml:lang="en">chairman of a meeting</desc>
+	          </valItem>
+	          <valItem ident="comment">
+	            <desc xml:lang="en">comment of parliamentary reporter</desc>
+	          </valItem>
+	          <valItem ident="time">
+	            <desc xml:lang="en">the date and time of the beginning and end of the debate</desc>
+	          </valItem>
+	          <valItem ident="quorum">
+	            <desc xml:lang="en">the presence of the members of parliament</desc>
+	          </valItem>
+	          <valItem ident="debate">
+	            <desc xml:lang="en">comments on the conduct of debates</desc>
+	          </valItem>
 	        </valList>
 	      </attDef>
 	    </attList>
