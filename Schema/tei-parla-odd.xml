@@ -323,7 +323,7 @@
           <!--moduleRef key="gaiji" except=""/-->
 	  <elementSpec ident="div" module="textstructure" mode="change">
 	    <attList>
-	      <attDef ident="type" mode="replace" usage="opt">
+	      <attDef ident="type" mode="replace" usage="rec">
 	        <valList type="open">
 	          <!-- debateSection -->
 	          <valItem ident="debate">
