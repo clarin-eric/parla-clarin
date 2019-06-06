@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<TEI xmlns:rng="http://relaxng.org/ns/structure/1.0" xmlns="http://www.tei-c.org/ns/1.0"
+<TEI xmlns:rng="http://relaxng.org/ns/structure/1.0" 
+  xmlns="http://www.tei-c.org/ns/1.0"
+  xmlns:sch="http://purl.oclc.org/dsdl/schematron" 
+  xmlns:eg="http://www.tei-c.org/ns/Examples"
+  xmlns:egXML="http://www.tei-c.org/ns/Examples"
+  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+  xmlns:tei="http://www.tei-c.org/ns/1.0"
   xml:lang="en" n="tei_clarin">
   <teiHeader>
     <fileDesc>
@@ -283,6 +289,16 @@
 			     fsdDecl fsdLink if iff then vDefault vLabel vMerge vNot vRange"/>
           <!--moduleRef key="gaiji" except=""/-->
 	  <elementSpec ident="div" module="textstructure" mode="change">
+	    <constraintSpec scheme="schematron" ident="divtype">
+	      <constraint>
+	        <sch:rule context="tei:div[@type = $div.types.debate]">
+	          <sch:assert test="parent::tei:div[not(@type = $div.types.debate)]">
+	            A text division of type <sch:value-of select="@type"/> should not occur inside div with type value <sch:value-of select="parent::tei:div/@type"/>.
+	          </sch:assert>
+	          <sch:report></sch:report>
+	        </sch:rule>
+	      </constraint>
+	    </constraintSpec>
 	    <attList>
 	      <attDef ident="type" mode="replace" usage="rec">
 	        <valList type="open">
@@ -293,53 +309,44 @@
 	              not explicitly supported with the other values of this attribute. It is a good practice to use
 	              the @subtype attribute for additional content classification.</desc>
 	          </valItem>
+	          <valItem ident="speech">
+	            <desc xml:lang="en">General purpuse text division for one or more speeches that were not necessarily held in parliament</desc>
+	          </valItem>
+	          <valItem ident="address">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to addresses</desc>
+	          </valItem>
+	          <valItem ident="adjournment">
+	            <desc xml:lang="en">Text division for parts of a debates that contain adjournment notices</desc>
+	          </valItem>
 	          <valItem ident="administrationOfOath">
 	            <desc xml:lang="en">Text division for parts of a debates that contain the administration of an oath</desc>
-	          </valItem>
-	          <valItem ident="rollCall">
-	            <desc xml:lang="en">Text division for parts of a debates that contain a roll call of individuals</desc>
-	          </valItem>
-	          <valItem ident="prayers">
-	            <desc xml:lang="en">Text division for parts of a debates that contain prayers</desc>
-	          </valItem>
-	          <valItem ident="oralStatements">
-	            <desc xml:lang="en">Text division for parts of a debates that contain oral statements by participants</desc>
-	          </valItem>
-	          <valItem ident="writtenStatements">
-	            <desc xml:lang="en">Text division for parts of a debates that contain written statements by participants</desc>
-	          </valItem>
-	          <valItem ident="personalStatements">
-	            <desc xml:lang="en">Text division for parts of a debates that contain written statements by participants</desc>
-	          </valItem>
-	          <valItem ident="ministerialStatements">
-	            <desc xml:lang="en">Text division for parts of a debates that contain written statements by participants</desc>
-	          </valItem>
-	          <valItem ident="resolutions">
-	            <desc xml:lang="en">Text division for parts of a debates that contain resolutions</desc>
-	          </valItem>
-	          <valItem ident="nationalInterest">
-	            <desc xml:lang="en">Text division for parts of a debates that contain resolutions</desc>
-	          </valItem>
-	          <valItem ident="declarationOfVote">
-	            <desc xml:lang="en">Text division for parts of a debates that are relevant to the declaration of votes</desc>
 	          </valItem>
 	          <valItem ident="communication">
 	            <desc xml:lang="en">Text division for parts of a debates that contain communications from the house</desc>
 	          </valItem>
-	          <valItem ident="petitions">
-	            <desc xml:lang="en">Text division for parts of a debates that are relevant to petitions</desc>
+	          <valItem ident="declarationOfVote">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to the declaration of votes</desc>
 	          </valItem>
-	          <valItem ident="papers">
-	            <desc xml:lang="en">Text division for parts of a debates that are relevant to the display of papers</desc>
+	          <valItem ident="ministerialStatements">
+	            <desc xml:lang="en">Text division for parts of a debates that contain written statements by participants</desc>
+	          </valItem>
+	          <valItem ident="nationalInterest">
+	            <desc xml:lang="en">Text division for parts of a debates that contain resolutions</desc>
 	          </valItem>
 	          <valItem ident="noticesOfMotion">
 	            <desc xml:lang="en">Text division for parts of a debates that are relevant to the notices of motions</desc>
 	          </valItem>
-	          <valItem ident="questions">
-	            <desc xml:lang="en">Text division for parts of a debates that are relevant to questions</desc>
+	          <valItem ident="oralStatements">
+	            <desc xml:lang="en">Text division for parts of a debates that contain oral statements by participants</desc>
 	          </valItem>
-	          <valItem ident="address">
-	            <desc xml:lang="en">Text division for parts of a debates that are relevant to addresses</desc>
+	          <valItem ident="papers">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to the display of papers</desc>
+	          </valItem>
+	          <valItem ident="petitions">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to petitions</desc>
+	          </valItem>
+	          <valItem ident="prayers">
+	            <desc xml:lang="en">Text division for parts of a debates that contain prayers</desc>
 	          </valItem>
 	          <valItem ident="proceduralMotions">
 	            <desc xml:lang="en">Text division for parts of a debates that are relevant to procedural motions</desc>
@@ -347,11 +354,20 @@
 	          <valItem ident="pointOfOrder">
 	            <desc xml:lang="en">Text division for parts of a debates that are relevant to points of order</desc>
 	          </valItem>
-	          <valItem ident="adjournment">
-	            <desc xml:lang="en">Text division for parts of a debates that contain adjournment notices</desc>
+	          <valItem ident="personalStatements">
+	            <desc xml:lang="en">Text division for parts of a debates that contain written statements by participants</desc>
 	          </valItem>
-	          <valItem ident="speech">
-	            <desc xml:lang="en">General purpuse text division for one or more speeches that were not necessarily held in parliament</desc>
+	          <valItem ident="questions">
+	            <desc xml:lang="en">Text division for parts of a debates that are relevant to questions</desc>
+	          </valItem>
+	          <valItem ident="resolutions">
+	            <desc xml:lang="en">Text division for parts of a debates that contain resolutions</desc>
+	          </valItem>
+	          <valItem ident="rollCall">
+	            <desc xml:lang="en">Text division for parts of a debates that contain a roll call of individuals</desc>
+	          </valItem>
+	          <valItem ident="writtenStatements">
+	            <desc xml:lang="en">Text division for parts of a debates that contain written statements by participants</desc>
 	          </valItem>
 	        </valList>
 	      </attDef>
@@ -401,6 +417,15 @@
 	      </attDef>
 	    </attList>
 	  </elementSpec>
+	  
+	  <constraintSpec scheme="schematron" ident="tei-parla.sch-variables">
+	    <constraint>
+	      <sch:pattern>
+	        <sch:let name="div.types.debate" value="('address', 'adjournment', 'administrationOfOath', 'communication', 'declarationOfVote', 'ministerialStatements', 'nationalInterest', 'noticesOfMotion', 'oralStatements', 'papers', 'petitions', 'prayers', 'proceduralMotions', 'pointOfOrder', 'personalStatements', 'questions', 'resolutions', 'rollCall', 'writtenStatements')"/>
+	      </sch:pattern>
+	    </constraint>
+	  </constraintSpec>
+	  
 	</schemaSpec>
       </div>
     </back>
