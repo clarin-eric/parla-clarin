@@ -51,20 +51,29 @@
 	informed participation by the public and to improve effective
 	functioning of democratic systems, making the datasets even
 	more valuable.</p>
-	<p>Given these reasons and the fact that parliamentary proceedings are more and more
-	often avaliable on-line, many researchers have already compiled corpora of
-	parliamentary proceedings.</p>
+	<p>Given these reasons and the fact that parliamentary
+	proceedings are more and more often avaliable on-line, many
+	researchers have already compiled corpora of parliamentary
+	proceedings.  However, these corpora are encoded in a variety of
+	different annotation schemes, limiting their interchange and
+	re-use.</p>
 	<div xml:id="sec-back">
-          <head>Backgorund</head>
+          <head>Background</head>
 	</div>
 	<div xml:id="sec-scope">
           <head>Scope and purpose of the proposal</head>
-	  
+	  <p>
+	  </p>
+	  <p>Wide, i.e. permissive schema.</p>
+	  <p>Poglejmo primer politicalmashup: "A Scene is when a speaker stands in front of the speaker chair." Toda: "For UK data, a Scene represents not the time a speaker is in front of the speaker chair, but is used as a subdivision of topics in subtopics."</p>
 	</div>
 	<div xml:id="sec-akoma">
           <head>Akoma Ntoso</head>
-	  
+	  <!-- Še zelo pomembna glede Akoma Ntoso (AKN): Sem vse skupaj še bolj natančno pogledal. Praktično je tako, da ima slednji "samo" dve večji pomankljivosti:
+	       - manjkajočo jezikoslovno označevanje (o čemer sva že debatirala): se pravi, da bi bilo potrebno v teh primerih  uporabiti kaj drugega kot pa AKN;
+	       - med udeleženci delavnice bo veliko politiologov, sociologov ipd., za katere so zelo pomembni metapodatki o govornikih; v tem pogledu pa je AKN zelo neroden za uporabo: te metapodatke je potrebno zapisovati v URI (potrebuješ tudi URI reslover), pri čemer ni nobene ontologije; sem zato našel primer, kjer v teh primerih priporočajo uporabo drugih shem kot pa AKN-->
 	</div>
+	<!-- RDF: https://github.com/TEIC/TEI/issues/1860 -->
       </div>
       
       <div xml:id="sec-general">
@@ -176,6 +185,8 @@
 	should also be stored in one file, as the file structure is
 	distinct from the concept of XML documents. To enable one XML document to
 	be composed of several files, the XInclude recommendation should be used</p>
+	<p>We recomment that the file has the same name as the value of the
+	<att>xml:id</att> attribute of the root element of the file. This e.g. guarantees that each file of the corpus has a unique name.</p>
       </div>
       </div>
       
@@ -185,15 +196,17 @@
 	<div>
           <head>Corpus structure</head>
 	  
-	  <p>As illustrated below, a CLARIN-Parla corpus is rooted in
-	  an <gi>teiCorpus</gi> element, which should also contain the
-	  <att>xml:lang</att> attribute with the appropriate language
-	  code<note>For multilingual document, this code would be
-	  <q>mul</q> for <q>multiple languages</q></note>. The
-	  <gi>teiHeader</gi> of the corpus then contains the metadata
-	  for the complete corpus, including the metadata that is
-	  referred to by the subordinate <gi>TEI</gi> elements, such
-	  as the defined taxonomies and the list of speakers.</p>
+	  <p>As illustrated below, a CLARIN-Parla corpus should be
+	  rooted in an <gi>teiCorpus</gi> element, which should also
+	  contain the <att>xml:lang</att> attribute with the
+	  appropriate language code<note>For multilingual documents
+	  (excluding cases where only a minor part of the text is in
+	  another language), this code would be <q>mul</q> for
+	  <q>multiple languages</q></note>. The <gi>teiHeader</gi> of
+	  the corpus then contains the metadata for the complete
+	  corpus, including the metadata that is referred to by the
+	  subordinate <gi>TEI</gi> elements, such as the defined
+	  taxonomies and the list of speakers.</p>
 	  
 	  <p>We do not specify what an individual <gi>TEI</gi> element should contain, as the
 	  size and granularity of parliamentary debate corpora, not to mention the national rules
