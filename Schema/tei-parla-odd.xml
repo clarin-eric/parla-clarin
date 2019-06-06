@@ -332,12 +332,15 @@
 	  subordinate <gi>TEI</gi> elements, such as the defined
 	  taxonomies and the list of speakers.</p>
 	  
-	  <p>We do not specify what an individual <gi>TEI</gi> element should contain, as the
-	  size and granularity of parliamentary debate corpora, not to mention the national rules
-	  of structuring the workings of the parliament will differ substantially. Typically, however,
-	  and individual <gi>TEI</gi> element would contain one sitting or session or one day, in any case
-	  such data that has common metadata that distinguishes it from the other
-	  <gi>TEI</gi> elements in the corpus.</p>
+	  <p>We do not specify what an individual <gi>TEI</gi> element
+	  should contain, as the size and granularity of parliamentary
+	  debate corpora, not to mention the national rules of
+	  structuring the workings of the parliament will differ
+	  substantially. Typically, however, and individual
+	  <gi>TEI</gi> element would contain one sitting or session or
+	  one day, in any case such data that has common metadata that
+	  distinguishes it from the other <gi>TEI</gi> elements in the
+	  corpus.</p>
 	  
 	  <p>Finally, although not given in the Figure below, a
 	  <gi>text</gi> element can contain, apart from the
@@ -400,7 +403,13 @@
       
       <div>
 	<head>Speakers</head>
-	
+	<p>Unlike some other proposals, in particular Akoma Ntoso,
+	this recommendation assumes that speaker meta-data is also
+	included in the corpus<note>Of course, this does not meant
+	that external links with URIs are not allowed.</note>, as this
+	allows the corpus to be stand-alone with all the relevant data
+	necessary for analysis already included in it.</p>
+
 	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-speakers">
           <body>
 	    <div type="bla">
@@ -415,6 +424,8 @@
       
       <div>
 	<head>Transcriptions</head>
+	<p>The transcriptions of the speeches are the central part of this recommendation. 
+	</p>
       </div>
       <div>
 	<head>Multimedia</head>
@@ -423,6 +434,8 @@
 	
 	<div>
           <head>Speech and video</head>
+	  <p>The transcription can refer to and align with external audio and video data using the
+	  <gi>timeline</gi> element.</p>
 	</div>
 	<div>
           <head>Facsimile</head>
@@ -461,6 +474,7 @@
 		     except="alt altGrp bicond binary cond default fDecl fDescr fsConstraints fsDescr
 			     fsdDecl fsdLink if iff then vDefault vLabel vMerge vNot vRange"/>
           <!--moduleRef key="gaiji" except=""/-->
+
 	  <elementSpec ident="div" module="textstructure" mode="change">
 	    <constraintSpec scheme="schematron" ident="divtype">
 	      <constraint>
@@ -485,9 +499,16 @@
 	            @subtype attribute for additional content
 	            classification.</desc>
 	          </valItem>
+		  <!-- Should this be rather called "speeches", as it can be one or more?
+		       Otherwise people might get the mistaken impression that each speech must go in
+		       a separate div. Of course, this is then a departure from AKN... -->
 	          <valItem ident="speech">
 	            <desc xml:lang="en">General purpose text division for one or more speeches that were not necessarily held in parliament</desc>
 	          </valItem>
+		  <!-- Below we constantly have "Parts of a debate", but
+		       a) this is surely 1 part, not many, and
+		       b) We actually don't define what a "debate" is!
+		   -->
 	          <valItem ident="address">
 	            <desc xml:lang="en">Parts of a debate relevant to addresses</desc>
 	          </valItem>
@@ -549,6 +570,7 @@
 	      </attDef>
 	    </attList>
 	  </elementSpec>
+	  
 	  <elementSpec ident="note" mode="change" module="core">
 	    <attList>
 	      <attDef ident="type" mode="replace" usage="rec">
@@ -593,6 +615,14 @@
 	      </attDef>
 	    </attList>
 	  </elementSpec>
+	  
+	  <!--elementSpec ident="u" module="spoken" mode="change">
+	    <attList>
+	      <attDef ident="xml:id" mode="replace" usage="req">
+		<datatype><dataRef name="ID"/></datatype>
+	      </attDef>
+	    </attList>
+	  </elementSpec-->
 	  
 	  <constraintSpec scheme="schematron" ident="tei-parla.sch-variables">
 	    <constraint>
