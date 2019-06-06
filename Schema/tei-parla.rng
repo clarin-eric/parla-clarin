@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-05-30T13:37:07Z. .
+Schema generated from ODD source 2019-05-31T16:01:34Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -4566,8 +4566,15 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.placement.attributes"/>
          <ref name="tei_att.pointing.attributes"/>
-         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.typed.attribute.subtype"/>
          <ref name="tei_att.written.attributes"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+Sample values include: 1] narrative; 2] summary; 3] speaker; 4] vote; 5] location; 6] date; 7] president; 8] comment; 9] time; 10] quorum; 11] debate</a:documentation>
+               <text/>
+            </attribute>
+         </optional>
          <optional>
             <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="anchored"
                        a:defaultValue="true">
@@ -7034,44 +7041,33 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
       <element name="div">
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(text division) contains a subdivision of the front, body, or back of a text. [4.1. Divisions of the Body]</a:documentation>
          <group>
-      
             <zeroOrMore>
                <choice>
                   <ref name="tei_model.divTop"/>
-          
                   <ref name="tei_model.global"/>
                </choice>
             </zeroOrMore>
-      
             <optional>
                <group>
                   <choice>
-          
                      <oneOrMore>
                         <group>
                            <choice>
                               <ref name="tei_model.divLike"/>
                               <ref name="tei_model.divGenLike"/>
                            </choice>
-              
                            <zeroOrMore>
                               <ref name="tei_model.global"/>
                            </zeroOrMore>
-              
                         </group>
                      </oneOrMore>
-          
                      <group>
                         <oneOrMore>
                            <group>
-              
                               <ref name="tei_model.common"/>
-              
-              
                               <zeroOrMore>
                                  <ref name="tei_model.global"/>
                               </zeroOrMore>
-              
                            </group>
                         </oneOrMore>
                         <zeroOrMore>
@@ -7080,25 +7076,19 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
                                  <ref name="tei_model.divLike"/>
                                  <ref name="tei_model.divGenLike"/>
                               </choice>
-              
                               <zeroOrMore>
                                  <ref name="tei_model.global"/>
                               </zeroOrMore>
-              
                            </group>
                         </zeroOrMore>
                      </group>
                   </choice>
                   <zeroOrMore>
                      <group>
-          
                         <ref name="tei_model.divBottom"/>
-          
-          
                         <zeroOrMore>
                            <ref name="tei_model.global"/>
                         </zeroOrMore>
-          
                      </group>
                   </zeroOrMore>
                </group>
@@ -7123,9 +7113,16 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
          </pattern>
          <ref name="tei_att.global.attributes"/>
          <ref name="tei_att.divLike.attributes"/>
-         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.typed.attribute.subtype"/>
          <ref name="tei_att.declaring.attributes"/>
          <ref name="tei_att.written.attributes"/>
+         <optional>
+            <attribute name="type">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
+Sample values include: 1] debate; 2] administrationOfOath; 3] rollCall; 4] prayers; 5] oralStatements; 6] writtenStatements; 7] personalStatements; 8] ministerialStatements; 9] resolutions; 10] nationalInterest; 11] declarationOfVote; 12] communication; 13] petitions; 14] papers; 15] noticesOfMotion; 16] questions; 17] address; 18] proceduralMotions; 19] pointOfOrder; 20] adjournment; 21] speech</a:documentation>
+               <text/>
+            </attribute>
+         </optional>
          <empty/>
       </element>
    </define>

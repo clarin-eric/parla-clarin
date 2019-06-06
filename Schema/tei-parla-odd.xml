@@ -136,6 +136,45 @@
 	  
 	</div>
 
+	<div>
+          <head>Languages</head>
+	  <p>The language of an element's text content is in TEI, as
+	  in XML, signaled by the value of its <att>xml:lang</att>
+	  attribute.  The Parla-CLARIN proposal requires that the root
+	  element of the corpus should have an <att>xml:lang</att>
+	  attribute, and, furthermore, that each element that contains
+	  text is either marked by this attribute, or one of its
+	  ancestors is. Note that if, going by the ancestor axis, the
+	  values of two <att>xml:lang</att> are in conflict, the one
+	  closer to the context node is relevant one.
+	  </p>
+
+	  <p>The values of <att>xml:lang</att> should follow <ref
+	  target="https://tools.ietf.org/html/bcp47">BCP 47</ref>,
+	  cf. also <q><ref
+	  target="https://www.w3.org/International/questions/qa-when-xmllang">xml:lang
+	  in XML document schemas</ref></q>.</p>
+
+	  <p>It is good practice to document the languages used in the
+	  <gi>langUsage</gi> element of the TEI header.</p>
+
+	  <p>Apart from the above considerations, a related question
+	  is where to draw the line between the object and meta
+	  languages, i.e. the language of the corpus and the language
+	  of the mark-up. The TEI defines the names of the elements
+	  and attributes in English, and the language of the corpus
+	  will, of course, depend on the country of the parliament. It
+	  is less clear in which language the names of the attribute
+	  values should be. Parla-CLARIN recommends that these should
+	  also be in English.</p>
+	</div>
+		  
+	<div>
+          <head>Identifiers</head>
+	  <p><att>xml:id</att>. <gi>listPrefix</gi>.
+	  </p>
+	</div>
+	
       <div>
 	<head>Files</head>
 	<p>While this proposal makes the assumption that a complete
