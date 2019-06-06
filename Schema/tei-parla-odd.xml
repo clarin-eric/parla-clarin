@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns:rng="http://relaxng.org/ns/structure/1.0" 
-  xmlns="http://www.tei-c.org/ns/1.0"
-  xmlns:sch="http://purl.oclc.org/dsdl/schematron" 
-  xmlns:eg="http://www.tei-c.org/ns/Examples"
-  xmlns:egXML="http://www.tei-c.org/ns/Examples"
-  xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
-  xmlns:tei="http://www.tei-c.org/ns/1.0"
-  xml:lang="en" n="tei_clarin">
+     xmlns="http://www.tei-c.org/ns/1.0"
+     xmlns:sch="http://purl.oclc.org/dsdl/schematron" 
+     xmlns:eg="http://www.tei-c.org/ns/Examples"
+     xmlns:egXML="http://www.tei-c.org/ns/Examples"
+     xmlns:xsl="http://www.w3.org/1999/XSL/Transform" 
+     xmlns:tei="http://www.tei-c.org/ns/1.0"
+     xml:lang="en" n="tei_clarin">
   <teiHeader>
     <fileDesc>
       <titleStmt>
@@ -34,7 +34,7 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
-      <change when="2019-05-31">Tomaž Erjavec: adding some documentation.</change>
+      <change when="2019-06-06">Tomaž Erjavec: adding some documentation.</change>
       <change when="2019-05-21">Tomaž Erjavec: first sketch.</change>
     </revisionDesc>
   </teiHeader>
@@ -57,37 +57,126 @@
 	informed participation by the public and to improve effective
 	functioning of democratic systems, making the datasets even
 	more valuable.</p>
+	
 	<p>Given these reasons and the fact that parliamentary
 	proceedings are more and more often avaliable on-line, many
 	researchers have already compiled corpora of parliamentary
 	proceedings.  However, these corpora are encoded in a variety of
 	different annotation schemes, limiting their interchange and
 	re-use.</p>
-	<div xml:id="sec-back">
-          <head>Background</head>
-	</div>
+	
+	<p>In order to overcome this problem, the presented recommendation
+	proposes a schema that can be used for encoding of corpora of
+	parliamentary proceedings, primarily for the purposes of scholarly
+	investigations, and that could serve as a storage and interchange format
+	for such corpora. This recommendations attempts to 
+	take into account the following aspects of corpora parliamentary proceedings:
+	<list>
+	  <item>Structure: legislative periods, sessions, topics, speeches</item>
+	  <item>Metadata: mandates, titles, parliamentary bodies, location, date
+	  and time</item>
+	  <item>Speakers: age, party membership, links to external resources</item>
+	  <item>Political parties: name(s), history</item>
+	  <item>Speeches: speaker, text, comments, verbal and non-verbal interruptions</item>
+	  <item>Text versions: verbatim or redacted records</item>
+	  <item>Multimedia: audio and video, facsimile of original</item>
+	  <item>Linguistic annotation: PoS tagging, normalisation, syntax</item>
+	  <item>Legislative aspects: specification of laws, roll-calls</item>
+	</list>
+	</p>
+	
+	<p>The recommendation is implemented as a parametrisation of
+	the TEI Guidelines, ...</p>
+	
+	<p>The rest of these guidelines are structured as follows...</p>
+	
 	<div xml:id="sec-scope">
-          <head>Scope and purpose of the proposal</head>
+          <head>Scope and purpose of the recommendation</head>
+	  <p>This recommendation consists of guidelines and a formal TEI and XML
+	  schema and is intended for the encoding of corpora of parliamentary
+	  debates, regardless of the langauge or country of origin, for the
+	  purposes of scholarly investigations, be they from the field of
+	  linguistics, political science, history or other humanities and social
+	  sciences disciplines. The recommendation is <emph>not</emph> meant as
+	  the primary storage format of parliamentary debates, such as kept by
+	  govermental offices, for which <ref target="sec-akoma">Akomo
+	  Ntoso</ref> is preferred.</p>
+	  
 	  <p>
 	  </p>
-	  <p>Wide, i.e. permissive schema.</p>
-	  <p>Poglejmo primer politicalmashup: "A Scene is when a speaker stands in front of the speaker chair." Toda: "For UK data, a Scene represents not the time a speaker is in front of the speaker chair, but is used as a subdivision of topics in subtopics."</p>
+	  
+	  <p>In developing a schema for structuring of data, two approaches can
+	  be adopted, either a descriptive one, whereby as much as possible of
+	  the original data distinctions are kept in the target encoding, and
+	  the perscriptive one, where the target encoding is severly
+	  constrained, to enable seamless data interchange and
+	  esp. interoperability with software tools. The present recommendation
+	  adopts the <emph>descriptive</emph> approach, as the source data, time
+	  and effort devoted to converting it, the intended applications, as
+	  well as country-specific rules of parliamentary debates will differ
+	  considerably, and it is likely that any perscriptive schema would soon
+	  turn out to be too restrictive. Nevertheless, the recommendation does
+	  try to limit the plethora of encoding options otherwise available in
+	  TEI to those that could be sensibly applied to corpora of
+	  parliamentary debates, and where more than one option is available in
+	  TEI to encode a given phenomenon, the descriptive guidelines or the
+	  schema attempt to allow only one option.</p>
 	</div>
-	<div xml:id="sec-akoma">
-          <head>Akoma Ntoso</head>
-	  <!-- Še zelo pomembna glede Akoma Ntoso (AKN): Sem vse skupaj še bolj natančno pogledal. Praktično je tako, da ima slednji "samo" dve večji pomankljivosti:
-	       - manjkajočo jezikoslovno označevanje (o čemer sva že debatirala): se pravi, da bi bilo potrebno v teh primerih  uporabiti kaj drugega kot pa AKN;
-	       - med udeleženci delavnice bo veliko politiologov, sociologov ipd., za katere so zelo pomembni metapodatki o govornikih; v tem pogledu pa je AKN zelo neroden za uporabo: te metapodatke je potrebno zapisovati v URI (potrebuješ tudi URI reslover), pri čemer ni nobene ontologije; sem zato našel primer, kjer v teh primerih priporočajo uporabo drugih shem kot pa AKN-->
+	
+	<div xml:id="sec-back">
+          <head>Background</head>
+	  
+	  <div xml:id="sec-clarin">
+            <head>CLARIN and parliamentary proceedings</head>
+	    
+	    <p>The <ref target="https://www.clarin.eu/">CLARIN</ref>
+	    European Research Infrastructure for Language Resources
+	    and Technology has already organised a number of
+	    initatives and events that deal with parliamentary
+	    corpora:
+	    <list>
+	      <item>CLARIN-PLUS cross-disciplinary workshop
+	      <ref target="https://www.clarin.eu/event/2017/clarin-plus-workshop-working-parliamentary-records">Working with parliamentary records</ref>, Sofia 2017</item>
+	      <item>CLARIN Resource Families <ref target="https://www.clarin.eu/resource-families/parliamentary-corpora">Parliamentary corpora</ref>, 2018-2019</item>
+	      <item><ref target="http://lrec-conf.org/workshops/lrec2018/W2/index.html">ParlaCLARIN workshop</ref> at LREC 2018</item>
+	      <item><ref target="https://www.clarin.eu/event/2018/clarin-annual-conference-2018-pisa-italy">CLARIN Annual Conference</ref>, Pisa 2018: Work on proposal for COST Action Parlant: "Parliamentary Data and Language Technology" (proposers Maciej Ogrodniczuk, Petya Osenova)</item>
+  	    </list>
+	    At these events it became clear that existing
+	    parliamentary corpora are encoded in many different way,
+	    presenting a barrier to their interchange. Therefore the
+	    CLARIN Interoperability Committee organised a focused
+	    <q><ref
+		   target="https://www.clarin.eu/blog/clarin-parlaformat-workshop">CLARIN
+	    ParlaFormat</ref></q> workshop (May 23-24, 2019,
+	    Amersfoort) with selected participants at which the idea
+	    of the present recommendation was introduced, the
+	    participants presented their own experiences with encoding
+	    parliamentary corpora and their comments to the draft
+	    proposal, and the authors of the proposal gave responses
+	    to these comments. The details are given in the <ref
+	    target="https://www.clarin.eu/event/2019/parlaformat-workshop">slides
+	    of the workshop</ref>.
+            </p>
+	  </div>
+	  
+	  <div xml:id="sec-akoma">
+            <head>Akoma Ntoso</head>
+	    <p>Akoma Ntoso is a 
+	    <!-- Še zelo pomembna glede Akoma Ntoso (AKN): Sem vse skupaj še bolj natančno pogledal. Praktično je tako, da ima slednji "samo" dve večji pomankljivosti:
+		 - manjkajočo jezikoslovno označevanje (o čemer sva že debatirala): se pravi, da bi bilo potrebno v teh primerih  uporabiti kaj drugega kot pa AKN;
+		 - med udeleženci delavnice bo veliko politiologov, sociologov ipd., za katere so zelo pomembni metapodatki o govornikih; v tem pogledu pa je AKN zelo neroden za uporabo: te metapodatke je potrebno zapisovati v URI (potrebuješ tudi URI reslover), pri čemer ni nobene ontologije; sem zato našel primer, kjer v teh primerih priporočajo uporabo drugih shem kot pa AKN-->
+	    </p>
+	  </div>
+	  <!-- RDF: https://github.com/TEIC/TEI/issues/1860 -->
 	</div>
-	<!-- RDF: https://github.com/TEIC/TEI/issues/1860 -->
       </div>
       
       <div xml:id="sec-general">
         <head>General requirements</head>
-
+	
 	<div>
           <head>Characters</head>
-
+	  
 	  <p>A Parla-CLARIN corpus should, in general, capture as much
 	  of the text and markup from the source as possble, while the
 	  presence of graphical items or other elements that could not
@@ -105,7 +194,7 @@
 	  joined in order to simplify linguistic processing.</p>
 	  
 	  <p>Two characters, esp. prevalent when the source documents
-	  are in Word, deserve special mention:</p>
+	  are in Word, deserve special mention:
 	  
 	  <list>
 	    <item>Non-breaking pace (U+00A0), which prevents, with some
@@ -114,28 +203,29 @@
 	    preserving the details of the layout, it is recommended that
 	    this character is substituted by the regular space
 	    (U+0020).</item>
+	    
 	    <item>Soft hyphen (U+00AD), which indicates that a word can
 	    be hyphenated at that point. These characters should be
 	    removed from the corpus, as they only complicate further
-	    processing.
-	    </item>
+	    processing.</item>
 	  </list>
-
+	  </p>
+	  
 	  <p>While not required, it is sensible to also normalise
 	  sequences of whitespace characters (such as tabulators,
 	  end-of-line characters and spaces) into a single space or
 	  end-of-line character. Again, this simplifies further
 	  (esp. linguistic) processing.</p>
-	 
+	  
 	</div>
-
+	
 	<div>
           <head>Documenting the encoding process</head>
-
+	  
 	  <p>Difficult encoding situations that are not covered by the
 	  TEI Guidelines should be documented in the
 	  <gi>editorialDecl</gi> of the corpus TEI header.
-
+	  
 	  In particular, if the source texts has been changed (so,
 	  ommitting or normalising figures, text, EOL hyphens, special
 	  characters, etc. as discussed above) this practice should be
@@ -144,12 +234,12 @@
 	  declaration.</p>
 	  
 	</div>
-
+	
 	<div>
           <head>Languages</head>
 	  <p>The language of an element's text content is in TEI, as
 	  in XML, signaled by the value of its <att>xml:lang</att>
-	  attribute.  The Parla-CLARIN proposal requires that the root
+	  attribute.  The Parla-CLARIN recommendation requires that the root
 	  element of the corpus should have an <att>xml:lang</att>
 	  attribute, and, furthermore, that each element that contains
 	  text is either marked by this attribute, or one of its
@@ -157,16 +247,16 @@
 	  values of two <att>xml:lang</att> are in conflict, the one
 	  closer to the context node is relevant one.
 	  </p>
-
+	  
 	  <p>The values of <att>xml:lang</att> should follow <ref
 	  target="https://tools.ietf.org/html/bcp47">BCP 47</ref>,
 	  cf. also <q><ref
 	  target="https://www.w3.org/International/questions/qa-when-xmllang">xml:lang
 	  in XML document schemas</ref></q>.</p>
-
+	  
 	  <p>It is good practice to document the languages used in the
 	  <gi>langUsage</gi> element of the TEI header.</p>
-
+	  
 	  <p>Apart from the above considerations, a related question
 	  is where to draw the line between the object and meta
 	  languages, i.e. the language of the corpus and the language
@@ -177,28 +267,56 @@
 	  values should be. Parla-CLARIN recommends that these should
 	  also be in English.</p>
 	</div>
-		  
+	
 	<div>
-          <head>Identifiers</head>
-	  <p><att>xml:id</att>. <gi>listPrefix</gi>.
+          <head>Identifiers and referencing</head>
+	  <p>In order to simply refer to elements of a TEI document
+	  (i.e. a Parla-CLARIN corpus), these are given an
+	  <att>xml:id</att> attribute, as defined by <ref
+	  target="https://www.w3.org/TR/xml-id/">W3C</ref>.</p>
+	  
+	  <p>Parla-CLARIN requires an <att>xml:id</att> attribute on
+	  the root element of each corpus file, which should,
+	  furthermore, be identical to the filename (modulo the file
+	  extension).
+	  Parla-CLARIN also recommends that the divisions
+	  of the document (element <gi>div</gi>) should also be given
+	  identifiers. While any element can be given an
+	  <att>xml:id</att>, this is in general, not a good idea;
+	  rather, only those elements that will be referenced should
+	  be marked with this attribute.
 	  </p>
+	  <p>TEI offers a number of attributes that contain (URI)
+	  pointers.  Where the reference is to an element inside the
+	  document, the value of the <att>xml:id</att> being referred
+	  to should be preceded by a hash (#), as mandated by the XML
+	  standard. However, TEI also offers another way of pointing,
+	  which can be used to shorten otherwise long URI references,
+	  and this is defined by the <gi>listPrefixDef</gi> element in
+	  the TEI header.</p>
 	</div>
 	
-      <div>
-	<head>Files</head>
-	<p>While this proposal makes the assumption that a complete
-	corpus is one TEI document, this does not mean that it
-	should also be stored in one file, as the file structure is
-	distinct from the concept of XML documents. To enable one XML document to
-	be composed of several files, the XInclude recommendation should be used</p>
-	<p>We recomment that the file has the same name as the value of the
-	<att>xml:id</att> attribute of the root element of the file. This e.g. guarantees that each file of the corpus has a unique name.</p>
-      </div>
+	<div>
+	  <head>Files</head>
+	  <p>While this recommendation makes the assumption that a
+	  complete corpus is one TEI XML document, this does not mean
+	  that it should also be stored in one file, as the file
+	  structure is distinct from the concept of XML documents. To
+	  enable one XML document to be composed of several files, the
+	  <ref target="https://www.w3.org/TR/xinclude/">XInclude</ref>
+	  recommendation should be used.</p>
+	  
+	  <p>We recommend that the file has the same name as the value
+	  of the <att>xml:id</att> attribute of the root element of the
+	  file. This e.g. guarantees that each file of the corpus has a
+	  unique name.</p>
+	</div>
+	
       </div>
       
       <div xml:id="sec-overall">
-        <head>Overall document structure</head>
-
+	<head>Overall document structure</head>
+	
 	<div>
           <head>Corpus structure</head>
 	  
@@ -220,7 +338,7 @@
 	  and individual <gi>TEI</gi> element would contain one sitting or session or one day, in any case
 	  such data that has common metadata that distinguishes it from the other
 	  <gi>TEI</gi> elements in the corpus.</p>
-
+	  
 	  <p>Finally, although not given in the Figure below, a
 	  <gi>text</gi> element can contain, apart from the
 	  <gi>body</gi> also a <gi>front</gi> element before it and/or
@@ -232,7 +350,7 @@
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-docstructure">
 	    <teiCorpus xml:lang="xx">
               <teiHeader>
-	        <!-- Common corpus metadata -->
+		<!-- Common corpus metadata -->
 	      </teiHeader>
               <TEI xml:id="id.1">
 		<teiHeader>
@@ -251,11 +369,11 @@
 	
 	<div>
           <head>Text divisions</head>
-
+	  
 	  <p>In the text body, as well as in the front and back matter, the element that further
 	  organises their content is the division, <gi>div</gi>, and each of the three elements (if present)
 	  should contain at least one division.</p>
-
+	  
 	  <p>The divisions can be nested, and are further specified by their <att>type</att> and, possibly,
 	  <att>subtype</att> attributes. For the recommended values of <att>type</att> we take as our model
 	  the structure elements as defined by Akoma Ntoso. The <att>subtype</att> attribute is to
@@ -273,33 +391,36 @@
             </body>
 	  </egXML>
 	</div>
-
+	
       </div>
+      
       <div>
-        <head>Corpus metadata</head>
+	<head>Corpus metadata</head>
       </div>
+      
       <div>
-        <head>Speakers</head>
-
+	<head>Speakers</head>
+	
 	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-speakers">
-            <body>
-	      <div type="bla">
-		<head>Title of bla</head>
-		<div type="bla" subtype="foo">
-		</div>
+          <body>
+	    <div type="bla">
+	      <head>Title of bla</head>
+	      <div type="bla" subtype="foo">
 	      </div>
-            </body>
-	  </egXML>
-
+	    </div>
+          </body>
+	</egXML>
+	
+      </div>
+      
+      <div>
+	<head>Transcriptions</head>
       </div>
       <div>
-        <head>Transcriptions</head>
-      </div>
-      <div>
-        <head>Multimedia</head>
+	<head>Multimedia</head>
 	
 	<p>Parliamentary corpora can also have data from other modalities associated with the transcripts.</p>
-
+	
 	<div>
           <head>Speech and video</head>
 	</div>
@@ -308,10 +429,10 @@
 	</div>
       </div>
       <div>
-        <head>Linguistic annotation</head>
+	<head>Linguistic annotation</head>
       </div>
       <div>
-        <head>Conversions</head>
+	<head>Conversions</head>
 	<p>A TEI encoded document is, in general, not meant to be used directly by software programs, rather
 	it serves as an interchange and storage format.
 	Furthermore, most TEI documents are not "born TEI", but rather converted into TEI from
@@ -323,7 +444,7 @@
     </body>
     <back>
       <div type="specification">
-        <head>Formal specification</head>
+	<head>Formal specification</head>
 	<schemaSpec ident="tei_clarin" start="TEI teiCorpus" docLang="en" prefix="tei_" xml:lang="en">
           <moduleRef key="tei" except=""/>
           <moduleRef key="header" except="handNote typeNote scriptNote"/>
@@ -347,7 +468,6 @@
 	          <sch:assert test="parent::tei:div[not(@type = $div.types.debate)]">
 	            A text division of type <sch:value-of select="@type"/> should not occur inside div with type value <sch:value-of select="parent::tei:div/@type"/>.
 	          </sch:assert>
-	          <sch:report></sch:report>
 	        </sch:rule>
 	      </constraint>
 	    </constraintSpec>
