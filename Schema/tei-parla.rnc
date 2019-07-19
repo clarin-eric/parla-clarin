@@ -11,7 +11,7 @@ namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 namespace xsl = "http://www.w3.org/1999/XSL/Transform"
 
-# Schema generated from ODD source 2019-06-06T14:02:55Z. .
+# Schema generated from ODD source 2019-07-19T10:04:04Z. .
 # TEI Edition: Version 3.5.0. Last updated on
 #	29th January 2019, revision 3c0c64ec4
 # TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -1570,7 +1570,7 @@ tei_model.global.meta =
   | tei_fvLib
 tei_model.milestoneLike =
   tei_milestone | tei_pb | tei_lb | tei_cb | tei_fw | tei_anchor
-tei_model.gLike = notAllowed
+tei_model.gLike = tei_g
 tei_model.oddDecl = notAllowed
 tei_model.oddDecl_alternation = notAllowed
 tei_model.oddDecl_sequence = empty
@@ -2012,6 +2012,7 @@ tei_model.encodingDescPart =
   | tei_geoDecl
   | tei_appInfo
   | tei_transcriptionDesc
+  | tei_charDecl
 tei_model.editorialDeclPart =
   tei_correction
   | tei_normalization
@@ -8099,6 +8100,104 @@ tei_fvLib =
   element fvLib {
     tei_model.featureVal*, tei_att.global.attributes, empty
   }
+tei_g =
+  
+  ## (character or glyph) represents a glyph, or a non-standard character. [5. Characters, Glyphs, and Writing Modes]
+  element g {
+    text,
+    tei_att.global.attributes,
+    tei_att.typed.attributes,
+    
+    ## points to a description of the character or glyph intended.
+    attribute ref { xsd:anyURI }?,
+    empty
+  }
+tei_char =
+  
+  ## (character) provides descriptive information about a character. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element char {
+    (tei_charName?,
+     tei_model.descLike*,
+     tei_charProp*,
+     tei_mapping*,
+     tei_model.graphicLike*,
+     tei_model.noteLike*),
+    tei_att.global.attributes,
+    empty
+  }
+tei_charName =
+  
+  ## (character name) contains the name of a character, expressed following Unicode conventions. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element charName { text, tei_att.global.attributes, empty }
+tei_charProp =
+  
+  ## (character property) provides a name and value for some property of the parent character or glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element charProp {
+    ((tei_unicodeName | tei_localName), tei_value),
+    tei_att.global.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_charDecl =
+  
+  ## (character declarations) provides information about nonstandard characters and glyphs. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element charDecl {
+    (tei_desc?, (tei_char | tei_glyph)+),
+    tei_att.global.attributes,
+    empty
+  }
+tei_glyph =
+  
+  ## (character glyph) provides descriptive information about a character glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element glyph {
+    (tei_glyphName?,
+     tei_model.descLike*,
+     tei_charProp*,
+     tei_mapping*,
+     tei_model.graphicLike*,
+     tei_model.noteLike*),
+    tei_att.global.attributes,
+    empty
+  }
+tei_glyphName =
+  
+  ## (character glyph name) contains the name of a glyph, expressed following Unicode conventions for character names. [5.2. Markup Constructs for Representation of Characters and Glyphs]
+  element glyphName { text, tei_att.global.attributes, empty }
+tei_localName =
+  
+  ## (locally-defined property name) contains a locally defined name for some property. [5.2.1. Character Properties]
+  element localName { text, tei_att.global.attributes, empty }
+tei_mapping =
+  [
+    a:documentation [
+      "(character mapping) contains one or more characters which are related to the parent character or glyph in some respect, as specified by the "
+      ns1:code [ "@type" ]
+      " attribute. [5.2. Markup Constructs for Representation of Characters and Glyphs]"
+    ]
+  ]
+  element mapping {
+    tei_macro.xtext,
+    tei_att.global.attributes,
+    tei_att.typed.attributes,
+    empty
+  }
+tei_unicodeName =
+  
+  ## (unicode property name) contains the name of a registered Unicode normative or informative property. [5.2.1. Character Properties]
+  element unicodeName {
+    text,
+    tei_att.global.attributes,
+    
+    ## specifies the version number of the Unicode Standard in which this property name is defined.
+    attribute version {
+      xsd:token { pattern = "[\d]+(\.[\d]+){0,2}" }
+    }?,
+    empty
+  }
+tei_value =
+  
+  ## contains a single value for some property, attribute, or other analysis. [5.2.1. Character Properties]
+  element value { tei_macro.xtext, tei_att.global.attributes, empty }
 start = tei_TEI | tei_teiCorpus
 sch:pattern [
   "\x{a}" ~

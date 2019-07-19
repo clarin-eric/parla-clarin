@@ -7,13 +7,14 @@
    <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.tmp"/>
    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.tmp"/>
    <!--
-    Schema generated from ODD source 2019-06-06T14:03:06Z. .
+    Schema generated from ODD source 2019-07-19T10:04:15Z. .
     TEI Edition: Version 3.5.0. Last updated on
     	29th January 2019, revision 3c0c64ec4
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
     
   --><!-- This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions. --><xs:complexType name="tei_macro.paraContent" mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element ref="tei:tei_model.gLike"/>
          <xs:group ref="tei:tei_model.phrase"/>
          <xs:group ref="tei:tei_model.inter"/>
          <xs:group ref="tei:tei_model.global"/>
@@ -29,6 +30,7 @@
    </xs:complexType>
    <xs:complexType name="tei_macro.phraseSeq" mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element ref="tei:tei_model.gLike"/>
          <xs:group ref="tei:tei_model.qLike"/>
          <xs:group ref="tei:tei_model.phrase"/>
          <xs:group ref="tei:tei_model.global"/>
@@ -42,11 +44,17 @@
    </xs:complexType>
    <xs:complexType name="tei_macro.specialPara" mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
+         <xs:element ref="tei:tei_model.gLike"/>
          <xs:group ref="tei:tei_model.phrase"/>
          <xs:group ref="tei:tei_model.inter"/>
          <xs:group ref="tei:tei_model.divPart"/>
          <xs:group ref="tei:tei_model.global"/>
       </xs:choice>
+   </xs:complexType>
+   <xs:complexType name="tei_macro.xtext" mixed="true">
+      <xs:sequence>
+         <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.gLike"/>
+      </xs:sequence>
    </xs:complexType>
    <xs:group name="anyElement-xenoData">
       <xs:choice>
@@ -2489,6 +2497,17 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       </xs:choice>
    </xs:group>
    <xs:element name="tei_model.milestoneLike" abstract="true"/>
+   <xs:element name="tei_model.gLike" abstract="true">
+      <xs:complexType mixed="true">
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+         <xs:attribute name="ref" type="xs:anyURI">
+            <xs:annotation>
+               <xs:documentation>points to a description of the character or glyph intended.</xs:documentation>
+            </xs:annotation>
+         </xs:attribute>
+      </xs:complexType>
+   </xs:element>
    <xs:group name="tei_model.biblLike">
       <xs:choice>
          <xs:element ref="tei:bibl"/>
@@ -4594,7 +4613,10 @@ Measures]</xs:documentation>
          <xs:documentation>(measure group) contains a group of dimensional specifications which relate to the same object, for example the height and width of a manuscript page. [10.3.4. Dimensions]</xs:documentation>
       </xs:annotation>
       <xs:complexType mixed="true">
-         <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.measureLike"/>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.gLike"/>
+            <xs:group ref="tei:tei_model.measureLike"/>
+         </xs:choice>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.measurement.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
@@ -4621,6 +4643,7 @@ Measures]</xs:documentation>
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.gLike"/>
             <xs:group ref="tei:tei_model.phrase"/>
             <xs:group ref="tei:tei_model.global"/>
          </xs:choice>
@@ -4639,6 +4662,7 @@ Measures]</xs:documentation>
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.gLike"/>
             <xs:group ref="tei:tei_model.phrase"/>
             <xs:group ref="tei:tei_model.global"/>
          </xs:choice>
@@ -4844,6 +4868,7 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
             <xs:element ref="tei:lg"/>
+            <xs:element ref="tei:tei_model.gLike"/>
             <xs:group ref="tei:tei_model.phrase"/>
             <xs:group ref="tei:tei_model.inter"/>
             <xs:group ref="tei:tei_model.lLike"/>
@@ -5133,6 +5158,7 @@ Elements]</xs:documentation>
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.gLike"/>
             <xs:element ref="tei:title"/>
             <xs:element ref="tei:tei_model.ptrLike"/>
             <xs:element ref="tei:editor"/>
@@ -5362,6 +5388,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.gLike"/>
             <xs:group ref="tei:tei_model.highlighted"/>
             <xs:group ref="tei:tei_model.pPart.data"/>
             <xs:group ref="tei:tei_model.pPart.edit"/>
@@ -5448,6 +5475,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.gLike"/>
             <xs:group ref="tei:tei_model.phrase"/>
             <xs:group ref="tei:tei_model.inter"/>
             <xs:group ref="tei:tei_model.global"/>
@@ -5915,9 +5943,10 @@ Suggested values include: 1] setting; 2] entrance; 3] exit; 4] business; 5] nove
          <xs:documentation>(identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [2.2.4. Publication, Distribution, Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Document, and Reprint Information]</xs:documentation>
       </xs:annotation>
       <xs:complexType mixed="true">
-         <xs:sequence>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:idno"/>
-         </xs:sequence>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.gLike"/>
+            <xs:element ref="tei:idno"/>
+         </xs:choice>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.sortable.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.datable.attributes"/>
@@ -8111,10 +8140,14 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</xs:documentation>
       <xs:annotation>
          <xs:documentation>(editorial expansion) contains a sequence of letters added by an editor or transcriber when expanding an abbreviation. [11.3.1.2. Abbreviation and Expansion]</xs:documentation>
       </xs:annotation>
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.editLike.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.dimensions.attributes"/>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:tei_macro.xtext">
+               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.editLike.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.dimensions.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
       </xs:complexType>
    </xs:element>
    <xs:element name="fw" substitutionGroup="tei:tei_model.milestoneLike">
@@ -8368,6 +8401,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
             <xs:group ref="tei:tei_model.global"/>
+            <xs:element ref="tei:tei_model.gLike"/>
             <xs:group ref="tei:tei_model.linePart"/>
          </xs:choice>
          <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
@@ -11268,6 +11302,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.gLike"/>
             <xs:element ref="tei:seg"/>
             <xs:element ref="tei:w"/>
             <xs:element ref="tei:m"/>
@@ -11290,6 +11325,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.gLike"/>
             <xs:group ref="tei:tei_model.hiLike"/>
             <xs:element ref="tei:seg"/>
             <xs:element ref="tei:m"/>
@@ -11316,11 +11352,15 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
       <xs:annotation>
          <xs:documentation>(character) represents a character. [17.1. Linguistic Segment Categories]</xs:documentation>
       </xs:annotation>
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.segLike.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.notated.attributes"/>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:tei_macro.xtext">
+               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.segLike.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.notated.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
       </xs:complexType>
    </xs:element>
    <xs:element name="pc" substitutionGroup="tei:tei_model.segLike">
@@ -11329,6 +11369,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.gLike"/>
             <xs:element ref="tei:c"/>
             <xs:group ref="tei:tei_model.pPart.edit"/>
          </xs:choice>
@@ -11528,9 +11569,13 @@ Feature Value]</xs:documentation>
       <xs:annotation>
          <xs:documentation>(string value) represents the value part of a feature-value specification which contains a string. [18.3. Other Atomic Feature Values]</xs:documentation>
       </xs:annotation>
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.datcat.attributes"/>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:tei_macro.xtext">
+               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.datcat.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
       </xs:complexType>
    </xs:element>
    <xs:element name="vColl">
@@ -11595,6 +11640,138 @@ Feature Value]</xs:documentation>
       <xs:complexType>
          <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.featureVal"/>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="g" substitutionGroup="tei:tei_model.gLike">
+      <xs:annotation>
+         <xs:documentation>(character or glyph) represents a glyph, or a non-standard character. [5. Characters, Glyphs, and Writing Modes]</xs:documentation>
+      </xs:annotation>
+   </xs:element>
+   <xs:element name="char">
+      <xs:annotation>
+         <xs:documentation>(character) provides descriptive information about a character. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element minOccurs="0" ref="tei:charName"/>
+            <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.descLike"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:charProp"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:mapping"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.graphicLike"/>
+            <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.noteLike"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="charName">
+      <xs:annotation>
+         <xs:documentation>(character name) contains the name of a character, expressed following Unicode conventions. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType mixed="true">
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="charProp">
+      <xs:annotation>
+         <xs:documentation>(character property) provides a name and value for some property of the parent character or glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:choice>
+               <xs:element ref="tei:unicodeName"/>
+               <xs:element ref="tei:localName"/>
+            </xs:choice>
+            <xs:element ref="tei:value"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="charDecl" substitutionGroup="tei:tei_model.encodingDescPart">
+      <xs:annotation>
+         <xs:documentation>(character declarations) provides information about nonstandard characters and glyphs. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element minOccurs="0" ref="tei:desc"/>
+            <xs:choice maxOccurs="unbounded">
+               <xs:element ref="tei:char"/>
+               <xs:element ref="tei:glyph"/>
+            </xs:choice>
+         </xs:sequence>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="glyph">
+      <xs:annotation>
+         <xs:documentation>(character glyph) provides descriptive information about a character glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element minOccurs="0" ref="tei:glyphName"/>
+            <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.descLike"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:charProp"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:mapping"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.graphicLike"/>
+            <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.noteLike"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="glyphName">
+      <xs:annotation>
+         <xs:documentation>(character glyph name) contains the name of a glyph, expressed following Unicode conventions for character names. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType mixed="true">
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="localName">
+      <xs:annotation>
+         <xs:documentation>(locally-defined property name) contains a locally defined name for some property. [5.2.1. Character Properties]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType mixed="true">
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="mapping">
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:tei_macro.xtext">
+               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="unicodeName">
+      <xs:annotation>
+         <xs:documentation>(unicode property name) contains the name of a registered Unicode normative or informative property. [5.2.1. Character Properties]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType mixed="true">
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attribute name="version">
+            <xs:annotation>
+               <xs:documentation>specifies the version number of the Unicode Standard in which this property name is defined.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+               <xs:restriction base="xs:token">
+                  <xs:pattern value="[\d]+(\.[\d]+){0,2}"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:attribute>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="value">
+      <xs:annotation>
+         <xs:documentation>contains a single value for some property, attribute, or other analysis. [5.2.1. Character Properties]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:tei_macro.xtext">
+               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
       </xs:complexType>
    </xs:element>
 </xs:schema>
