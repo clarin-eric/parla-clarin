@@ -14,10 +14,11 @@
    <xsl:output method="xhtml" indent="no" omit-xml-declaration="yes"/>
    <xsl:preserve-space elements="head p li span hi"/>
 
-   <xsl:param name="cssFile">https://www.tei-c.org/release/xml/tei/stylesheet/tei.css</xsl:param>
-   <xsl:param name="cssPrintFile">https://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css</xsl:param>
-   <!--xsl:param name="cssFile">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/guidelines.css</xsl:param>
-   <xsl:param name="cssPrintFile">https://www.tei-c.org/release/doc/tei-p5-doc/en/html/guidelines-print.css</xsl:param-->
+   <!-- Use local copy -->
+   <xsl:param name="cssFile">tei.css</xsl:param>
+   <xsl:param name="cssPrintFile">tei-print.css</xsl:param>
+   <!--xsl:param name="cssFile">https://www.tei-c.org/release/xml/tei/stylesheet/tei.css</xsl:param-->
+   <!--xsl:param name="cssPrintFile">https://www.tei-c.org/release/xml/tei/stylesheet/tei-print.css</xsl:param-->
 
    <xsl:param name="homeURL">https://github.com/clarin-eric/parla-clarin</xsl:param>
    <xsl:param name="homeLabel">Parla-CLARIN</xsl:param>
