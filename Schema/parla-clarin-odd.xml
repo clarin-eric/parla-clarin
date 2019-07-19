@@ -233,7 +233,7 @@
 	  
 	  <list>
 	    <item>Non-breaking pace (U+00A0), which prevents, with some applications,
-	    collapsing consecutive white space characters into a single space. As TEI-Parla
+	    collapsing consecutive white space characters into a single space. As Parla-CLARIN
 	    is not interested in preserving the details of the layout, it is recommended
 	    that this character is substituted by the regular space (U+0020).</item>
 	    
@@ -734,7 +734,7 @@
 	    </attList>
 	  </elementSpec-->
 	  
-	  <constraintSpec scheme="schematron" ident="tei-parla.sch-variables">
+	  <constraintSpec scheme="schematron" ident="parla-clarin.sch-variables">
 	    <constraint>
 	      <sch:pattern>
 	        <sch:let name="div.types.debate" value="('address', 'adjournment', 'administrationOfOath', 'communication', 'declarationOfVote', 'ministerialStatements', 'nationalInterest', 'noticesOfMotion', 'oralStatements', 'papers', 'petitions', 'prayers', 'proceduralMotions', 'pointOfOrder', 'personalStatements', 'questions', 'resolutions', 'rollCall', 'writtenStatements')"/>
