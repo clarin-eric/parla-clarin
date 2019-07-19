@@ -34,6 +34,7 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change when="2019-07-19">Tomaž Erjavec: more documentation.</change>
       <change when="2019-06-06">Tomaž Erjavec: adding some documentation.</change>
       <change when="2019-05-21">Tomaž Erjavec: first sketch.</change>
     </revisionDesc>
@@ -45,32 +46,26 @@
     <body>
       <div xml:id="sec-intro">
         <head>Introduction</head>
-	<p>Corpora of parliamentary proceedings are a quintessential
-	resource for a wide range of research questions from a number
-	of SSH disciplines, such as critical discourse analysis,
-	history, as well as Sociolinguistics. Their most
-	distinguishing characteristic is that they are (typically
-	corrected) transcriptions of spoken language produced in
-	controlled and regulated circumstances. They are also rich in
-	invaluable (sociodemographic) metadata as well as easily
-	available under the Freedom of Information Acts set in place
-	to enable informed participation by the public and to improve
-	effective functioning of democratic systems, making the
-	datasets even more valuable.</p>
+	<p>Corpora of parliamentary proceedings are a quintessential resource for a wide
+	range of research questions from a number of SSH disciplines, such as critical
+	discourse analysis, history, as well as Sociolinguistics. Their most distinguishing
+	characteristic is that they are (typically corrected) transcriptions of spoken
+	language produced in controlled and regulated circumstances. They are also rich in
+	invaluable (sociodemographic) metadata as well as easily available under the Freedom
+	of Information Acts set in place to enable informed participation by the public and
+	to improve effective functioning of democratic systems, making the datasets even more
+	valuable.</p>
 	
-	<p>Given these reasons and the fact that parliamentary
-	proceedings are often avaliable on-line, many researchers have
-	already compiled corpora of parliamentary proceedings.
-	However, these corpora are encoded in a variety of different
-	annotation schemes, limiting their interchange and re-use.</p>
+	<p>Given these reasons and the fact that parliamentary proceedings are often
+	avaliable on-line, many researchers have already compiled corpora of parliamentary
+	proceedings.  However, these corpora are encoded in a variety of different annotation
+	schemes, limiting their interchange and re-use.</p>
 	
-	<p>In order to overcome this problem, the presented
-	recommendation, called Parla-CLARIN, proposes a schema that can
-	be used for encoding of parliamentary proceedings corpora
-	(PPC), primarily for the purposes of scholarly investigations,
-	and that could serve as a storage and interchange format for
-	such corpora. This recommendations attempts to take into
-	account the following aspects of PPC:
+	<p>In order to overcome this problem, the presented recommendation, called
+	Parla-CLARIN, proposes a schema that can be used for encoding of parliamentary
+	proceedings corpora (PPC), primarily for the purposes of scholarly investigations,
+	and that could serve as a storage and interchange format for such corpora. This
+	recommendations attempts to take into account the following aspects of PPC:
 	<list>
 	  <item>Structure: legislative periods, sessions, topics, speeches</item>
 	  <item>Metadata: mandates, titles, parliamentary bodies, location, date
@@ -85,21 +80,17 @@
 	</list>
 	</p>
 	
-	<p>The recommendation is implemented as a parametrisation of
-	the
+	<p>The recommendation is implemented as a parametrisation of the
 	<ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI
-	Guidelines</ref>, and XML-based recommendation for encoding
-	texts for scholarly purposes. As oposed to most other such
-	recommendations, the TEI Guidelines have the ambition to be
-	applicable to texts in any natural language, of any date, in
-	any literary genre or text type, without restriction on form
-	or content. The TEI parametrisation proposed for Parla-CLARIN
-	also allows a wide range of PPC to encoded, while making
-	explicit recommendations on the manner of encoding various
-	phenomena. The recommendation itself is formalised as a TEI
-	ODD document, on the basis of which it is possible to derive
-	an XML schema expressed either as a RelaxNG schema, a DTD or a
-	W3C schema.</p>
+	Guidelines</ref>, and XML-based recommendation for encoding texts for scholarly
+	purposes. As oposed to most other such recommendations, the TEI Guidelines have the
+	ambition to be applicable to texts in any natural language, of any date, in any
+	literary genre or text type, without restriction on form or content. The TEI
+	parametrisation proposed for Parla-CLARIN also allows a wide range of PPC to encoded,
+	while making explicit recommendations on the manner of encoding various
+	phenomena. The recommendation itself is formalised as a TEI ODD document, on the
+	basis of which it is possible to derive an XML schema expressed either as a RelaxNG
+	schema, a DTD or a W3C schema.</p>
 	
 	<p>The rest of these guidelines are structured as follows:
 	the rest of this section details the scope, purpose and background of this recommendation;
@@ -115,35 +106,29 @@
 	
 	<div xml:id="sec-scope">
           <head>Scope and purpose of the recommendation</head>
-	  <p>This recommendation consists of guidelines and a formal TEI and XML
-	  schema and is intended for the encoding of corpora of parliamentary
-	  proceedings, regardless of the langauge or country of origin, for the
-	  purposes of scholarly investigations, be they from the field of
-	  linguistics, political science, history or other humanities and social
-	  sciences disciplines. The recommendation is <emph>not</emph> meant as
+	  <p>This recommendation consists of guidelines and a formal TEI and XML schema and
+	  is intended for the encoding of corpora of parliamentary proceedings, regardless of
+	  the langauge or country of origin, for the purposes of scholarly investigations, be
+	  they from the field of linguistics, political science, history or other humanities
+	  and social sciences disciplines. The recommendation is <emph>not</emph> meant as
 	  the primary storage format of parliamentary proceedings, such as kept by
-	  govermental offices, for which <ref target="sec-akoma">Akomo
-	  Ntoso</ref> is preferred.</p>
+	  govermental offices, for which <ref target="sec-akoma">Akomo Ntoso</ref> is
+	  preferred.</p>
 	  
-	  <p>In developing a schema for structuring of data, two
-	  approaches can be adopted: a descriptive one, where as much
-	  as possible of the original data distinctions are kept in
-	  the target encoding; or a perscriptive one, where the target
-	  encoding is severly constrained, to enable seamless data
-	  interchange and esp. interoperability with software
-	  tools. The Parla-CLARIN recommendation adopts the
-	  <emph>descriptive</emph> approach, as the source data, time
-	  and effort devoted to converting it, the intended
-	  applications, as well as country-specific rules of
-	  parliamentary proceedings will differ considerably, and it is
-	  likely that any perscriptive schema would soon turn out to
-	  be too restrictive. Nevertheless, the recommendation does
-	  try to limit the plethora of encoding options otherwise
-	  available in TEI to those that could be sensibly applied to
-	  corpora of parliamentary proceedings, and where more than one
-	  option is available in TEI to encode a given phenomenon, the
-	  text guidelines and the schema attempt to allow only one
-	  option.</p>
+	  <p>In developing a schema for structuring of data, two approaches can be adopted: a
+	  descriptive one, where as much as possible of the original data distinctions are
+	  kept in the target encoding; or a perscriptive one, where the target encoding is
+	  severly constrained, to enable seamless data interchange and esp. interoperability
+	  with software tools. The Parla-CLARIN recommendation adopts the
+	  <emph>descriptive</emph> approach, as the source data, time and effort devoted to
+	  converting it, the intended applications, as well as country-specific rules of
+	  parliamentary proceedings will differ considerably, and it is likely that any
+	  perscriptive schema would soon turn out to be too restrictive. Nevertheless, the
+	  recommendation does try to limit the plethora of encoding options otherwise
+	  available in TEI to those that could be sensibly applied to corpora of
+	  parliamentary proceedings, and where more than one option is available in TEI to
+	  encode a given phenomenon, the text guidelines and the schema attempt to allow only
+	  one option.</p>
 	</div>
 	
 	<div xml:id="sec-back">
@@ -152,12 +137,11 @@
 	  <div xml:id="sec-clarin">
             <head>CLARIN and parliamentary proceedings</head>
 	    
-	    <p>The Parla-CLARIN proposal is developed as a project of
-	    the <ref target="https://www.clarin.eu/">CLARIN</ref>
-	    European Research Infrastructure for Language Resources
-	    and Technology. Before the begining of this development
-	    CLARIN had already organised a number of initatives
-	    and events that deal with parliamentary corpora:
+	    <p>The Parla-CLARIN proposal is developed as a project of the <ref
+	    target="https://www.clarin.eu/">CLARIN</ref> European Research Infrastructure for
+	    Language Resources and Technology. Before the begining of this development CLARIN
+	    had already organised a number of initatives and events that deal with
+	    parliamentary corpora:
 	    <list>
 	      <item>CLARIN-PLUS cross-disciplinary workshop
 	      <ref target="https://www.clarin.eu/event/2017/clarin-plus-workshop-working-parliamentary-records">Working with parliamentary records</ref>, Sofia 2017</item>
@@ -204,14 +188,13 @@
       
       <div xml:id="sec-general">
         <head>General requirements</head>
-	<div>
+	<div xml:id="sec-chars">
           <head>Characters</head>
 	  
-	  <p>A Parla-CLARIN corpus should, in general, capture as much
-	  of the text and markup from the source as possble, while the
-	  presence of graphical items or other elements that could not
-	  or were not transcribed should be indicated by markup, in
-	  particular with the use of <gi>gap</gi>.</p>
+	  <p>A Parla-CLARIN corpus should, in general, capture as much of the text and markup
+	  from the source as possble, while the presence of graphical items or other elements
+	  that could not or were not transcribed should be indicated by markup, in particular
+	  with the use of <gi>gap</gi>.</p>
 	  
 	  <p>The corpus should be encoded in Unicode, using the UTF-8 character encoding, at
 	  least for European languages.  In cases where the original contains characters
@@ -250,7 +233,7 @@
 	  
 	</div>
 	
-	<div>
+	<div xml:id="sec-document">
           <head>Documenting the encoding process</head>
 	  
 	  <p>Difficult encoding situations that are not covered by the TEI Guidelines should
@@ -263,7 +246,7 @@
 	  
 	</div>
 	
-	<div>
+	<div xml:id="sec-langs">
           <head>Languages</head>
 	  <p>The language of an element's text content is in TEI, as in XML, signaled by the
 	  value of its <att>xml:lang</att> attribute.  The Parla-CLARIN recommendation
@@ -292,7 +275,33 @@
 	  also be in English.</p>
 	</div>
 	
-	<div>
+	<div xml:id="sec-temporal">
+          <head>Temporal information</head>
+	  <p>Parliamentary corpora can contain significant time-related information, e.g. the
+	  date and time of a sitting, the start and end of an MP's affiliation to a
+	  particular party, the dates of the begining and end of a policial party etc. In
+	  general, such information in TEI is stored in the attributes of the pertinent
+	  element, which take as as their values a date and possibly time, according to the
+	  ISO 8601 Date and Time Formats, and specified in the <ref
+	  target="https://www.w3.org/TR/xmlschema-2/">XML Schema Part 2: Datatypes Second
+	  Edition</ref>. TEI offers a very rich set of attributes and anciliary elements to
+	  specify time-related information, which are discussed in the <ref
+	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONADA">Section
+	  on Dates and Times</ref> in the TEI Guidelines.</p>
+
+	  <p>Parla-CLARIN users are free to use any of the TEI temporal attributes and
+	  elements, however, for most purposes, the following five attributes will suffice:
+	  <list>
+	    <item><att>when</att>: when a certain event happened:</item>
+	    <item><att>from</att>, <att>to</att>: the start and end of an event or state;</item>
+	    <item><att>notBefore</att>, <att>notAfter</att>: the earliest and latest known
+	    time that where an event or state took place, used in cases where the exact time
+	    is not known.</item>
+	  </list>
+	  </p>
+	</div>
+	
+	<div xml:id="sec-idents">
           <head>Identifiers and referencing</head>
 	  <p>In order to simply refer to elements of a TEI document (i.e. a Parla-CLARIN
 	  corpus), these are given an <att>xml:id</att> attribute, as defined by <ref
@@ -314,7 +323,7 @@
 	  <gi>listPrefixDef</gi> element in the TEI header.</p>
 	</div>
 	
-	<div>
+	<div xml:id="sec-files">
 	  <head>Files</head>
 	  <p>While this recommendation makes the assumption that a complete corpus is one
 	  TEI XML document, this does not mean that it should also be stored in one file, as
@@ -490,10 +499,11 @@
 	  </egXML>
 	  </p>
 
-	  <p>Finally, it is often advantageous to refer to external knowledge sources about
-	  a person, such as Wikipedia or VIAF. This is encoded using the <gi>idno</gi>
-	  element, whose content is typically an URI, while the <att>type</att> attribute
-	  denotes the kind of knowledge source referred to.
+	  <p>It is often advantageous to refer to external knowledge sources about a person,
+	  such as Wikipedia or VIAF. This is encoded using the <gi>idno</gi> element, whose
+	  content is typically an URI, while the <att>type</att> attribute denotes the kind
+	  of knowledge source referred to.
+	  
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-speakers">
             <person xml:id="KucanMilan1941">
               <persName>
@@ -506,27 +516,112 @@
             </person>
 	  </egXML>
 	  </p>
-
-	  <div xml:id="sec-party">
-	    <head>Party metadata</head>
-	    <p>Information on political parties, as well as other groupings of people, such
-	    as ministries, is contained in the <gi>listOrg</gi> element, which is, just as
-	    <gi>listPerson</gi> element, contained in the <gi>particDesc</gi> element. Each
-	    organisation
-	    </p>
-	  </div>
-	  
-	  <div xml:id="sec-relations">
-	    <head>Relations between people and organisations</head>
-	    <p></p>
-	  </div>
-
 	</div>
 	
+	<div xml:id="sec-party">
+	  <head>Party metadata</head>
+	  <p>Information on political parties, as well as other groupings of people, such
+	  as ministries, is contained in the <gi>listOrg</gi> element, which is, just as
+	  <gi>listPerson</gi> element, contained in the <gi>particDesc</gi> element; an example of two
+	  <gi>org</gi> elemets is given below.
+	  
+          <!-- I don't like the fact that you cant put @from and @to on <org> but only on the <orgName>
+	       because there it suggest that the name of the party has changed, but not the
+	       "identity" of the party -->
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-parties">
+            <org xml:id="pp.SDZ" next="#pp.DS" role="political_party">
+              <orgName full="yes" from="1989-01-11" to="1991-10-13">Slovenska demokratična zveza</orgName>
+              <orgName full="init" from="1989-01-11" to="1991-10-13">SDZ</orgName>
+            </org>
+            <org xml:id="pp.DS" prev="#pp.SDZ" next="#pp.LDS.1994" role="political_party">
+              <orgName full="yes" from="1991-10-13" to="1994-03-12">Demokratska stranka</orgName>
+              <orgName full="init" from="1991-10-13" to="1994-03-12">DS</orgName>
+            </org>
+	  </egXML>
+	  <!-- Note that @full="init" is misused, at least according to the TEI definition -->
+	  
+	  As with persons, each organisation must contain an <att>xml:id</att> attribute,
+	  so that <gi>person</gi> elements can refer to it. The fact that the organisation
+	  is a political party is encoded in the <att>role</att> attribute, where the
+	  suggested values are defined in the Parla-CLARIN schema. The name(s) of the party
+	  are given in the <gi>orgName</gi> element, which also uses the <att>full</att>
+	  attribute to distinguish betwen the full name of the part and the initials of the
+	  party. Parties also tend to change their names, and we indicate this with
+	  <att>from</att> and <att>to</att> attributes on the <gi>orgName</gi> for the
+	  duration of one name, and with <att>prev</att> and <att>next</att> that link the
+	  names of the party together.</p>
+	</div>
+	
+	<div xml:id="sec-relation">
+	  <head>Relationships between people and parties</head>
+	  <p>It is also possible to encode relations between people and - apart from
+	  termporal ones, as mentioned - parties, e.g. kinship between PMs, or coalitions
+	  between parties. For this prurpose, TEI defines the <gi>listRelation</gi> element
+	  explained in detail in the
+	  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSREL">Section
+	  on Personal Relationships</ref> of the TEI Guidelines. This element can be
+	  contained either by the <gi>listPerson</gi> or <gi>listOrg</gi> elements and, in
+	  turn, contains the <gi>relation</gi> element that defines one relation. The example
+	  below shows a relation between people.
+
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relatpers">
+	    <relation name="parents" passive="#sbi243926" active="#sbi243926-0 #sbi243926-1"/>
+	  </egXML>
+
+	  The relation defines the relationship "parents" between the <att>active</att>
+	  persons of this relationship (i.e. those defined in the <gi>person</gi> element
+	  with the <att>xml:id</att> values of <code>sbi243926-0</code> and
+	  <code>sbi243926-1</code>) and the <att>passive</att> person of this relationship
+	  (i.e. the <gi>person</gi> element with the <att>xml:id</att> value of
+	  <code>sbi243926</code>).</p>
+
+	  <p>Relationships can also be mutual, as the example of a defintion of a coallitions
+	  below illustrates.
+
+	  <!-- Not too happy with this encoding, at the listRelations is not a
+	       part of org (and it can't be, according to the Guidelines). It might
+	       be better to defined DEMOS as a <org role="coallition"> and then have
+	       an active relationship with its parties -->
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relatorg">
+            <listOrg>
+              <head>Koalicije</head>
+              <org xml:id="cl.DEMOS">
+                <orgName full="init">DEMOS</orgName>
+              </org>
+              <listRelation>
+                <relation type="membership"
+                          mutual="#pp.SDZ #pp.SDSS #pp.SKD #pp.SKZ #pp.SOS #pp.ZS"/>
+              </listRelation>
+            </listOrg>
+	  </egXML>
+	  Needs discussion!
+	  </p>
+	</div>
       </div>
+
       <div xml:id="sec-transcript">
 	<head>Transcriptions</head>
-	<p>The transcriptions of the speeches are the central part of this recommendation. 
+	<p>The transcriptions of the speeches are the central part of this recommendation.
+
+	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relations">
+          <div type="minutes">
+            <head>REPUBLIKA SLOVENIJA DRŽAVNI ZBOR</head>
+            <head type="session">nadaljevanje 39. seje</head>
+            <note type="chairman">Sejo so vodili predsednik Državnega zbora dr. Milan Brglez
+            in podpredsednika Primož Hainz ter Matjaž Nemec.</note>
+            <note type="time">Seja se je začela ob 10.03.</note>
+            <note type="speaker">PREDSEDNIK DR. MILAN BRGLEZ:</note>
+            <u who="#SDZ7.BrglezMilan" ana="#chair">
+              <seg xml:id="SDZ7-Redna-39-2018-03-27.seg1">Spoštovani kolegice poslanke in
+              kolegi poslanci, gospe in gospodje!</seg>
+              <seg xml:id="SDZ7-Redna-39-2018-03-27.seg2">Začenjam z nadaljevanjem 39. seje
+              Državnega zbora.</seg>
+	      ...
+	    </u>
+	    ...
+	  </div>
+	</egXML>
+	    
 	</p>
       </div>
       
@@ -742,8 +837,4 @@
 	    </constraint>
 	  </constraintSpec>
 	  
-	</schemaSpec>
-      </div>
-    </back>
-  </text>
-</TEI>
+	</schemaSpec> </div> </back> </text> </TEI>
