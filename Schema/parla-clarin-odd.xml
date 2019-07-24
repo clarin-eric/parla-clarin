@@ -391,9 +391,10 @@
 	<div>
           <head>Text divisions</head>
 	  
-	  <p>In the text body, as well as in the front and back ¸ matter, the element that
-	  further organises the content is the division, <gi>div</gi>, and each of the three
-	  elements (if present) should contain at least one division.</p>
+	  <p>In the text <gi>body</gi>, as well as in the <gi>front</gi> and <gi>back</gi>
+	  matter, the element that further organises the content is the division,
+	  <gi>div</gi>, and each of the three <gi>text</gi> elements (if present) should
+	  contain at least one division.</p>
 	  
 	  <p>The divisions can be nested, and are further specified by their <att>type</att>
 	  and, possibly, <att>subtype</att> attributes. For the recommended values of
@@ -499,13 +500,25 @@
 	  </egXML>
 	  </p>
 
+	  <p>Persons can have futher attributes, and TEI offers various elements (typically
+	  typed) to express them; they are introduced in the <ref
+	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSEpc">Section
+	  on Personal Characteristics</ref> in the TEI Guidelines. The two more general ones
+	  are <gi>state</gi>, which contains the description of some status or quality
+	  attributed to a person,(or organization) often at some specific time or for a
+	  specific date range and <gi>trait</gi>, which differs from <gi>state</gi> that it is
+	  independent of the volition or action of the holder and usually not at some specific
+	  time or for a specific date range. The former could, for example, be used to encode
+	  the fact that a PM was jailed for a given period of time, while the latter would
+	  e.g. be used for the fact that a PM is handicaped.</p>
+
 	  <p>It is often advantageous to refer to external knowledge sources about a person,
 	  such as Wikipedia or VIAF. This is encoded using the <gi>idno</gi> element, whose
 	  content is typically an URI, while the <att>type</att> attribute denotes the kind
 	  of knowledge source referred to.
 	  
-	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-speakers">
-            <person xml:id="KucanMilan1941">
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-external">
+            <person xml:id="Kucan_Milan1941">
               <persName>
                 <surname>Kučan</surname>
                 <forename>Milan</forename>
@@ -520,49 +533,58 @@
 	
 	<div xml:id="sec-party">
 	  <head>Party metadata</head>
-	  <p>Information on political parties, as well as other groupings of people, such
-	  as ministries, is contained in the <gi>listOrg</gi> element, which is, just as
-	  <gi>listPerson</gi> element, contained in the <gi>particDesc</gi> element; an example of two
-	  <gi>org</gi> elemets is given below.
+	  <p>Information on political parties, as well as other groupings of people, such as
+	  ministries, is contained in the <gi>listOrg</gi> element, which is, just as
+	  <gi>listPerson</gi> element, contained in the <gi>particDesc</gi> element of the
+	  corpus TEI header. The <ref
+	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#ND-org">Section
+	  on Organizational Data</ref> of the TEI Guidelines gives the particulars on how to
+	  encode data on organisatons, and an example of two <gi>org</gi> elemets is given
+	  below.
 	  
-          <!-- I don't like the fact that you cant put @from and @to on <org> but only on the <orgName>
-	       because there it suggest that the name of the party has changed, but not the
-	       "identity" of the party -->
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-parties">
-            <org xml:id="pp.SDZ" next="#pp.DS" role="political_party">
-              <orgName full="yes" from="1989-01-11" to="1991-10-13">Slovenska demokratična zveza</orgName>
-              <orgName full="init" from="1989-01-11" to="1991-10-13">SDZ</orgName>
+            <org xml:id="pp.SDZ" role="political_party">
+	      <event type="existence" from="1989-01-11" to="1991-10-13"/>
+              <orgName full="yes" >Slovenska demokratična zveza</orgName>
+              <orgName full="init">SDZ</orgName>
             </org>
-            <org xml:id="pp.DS" prev="#pp.SDZ" next="#pp.LDS.1994" role="political_party">
-              <orgName full="yes" from="1991-10-13" to="1994-03-12">Demokratska stranka</orgName>
-              <orgName full="init" from="1991-10-13" to="1994-03-12">DS</orgName>
+            <org xml:id="pp.DS">
+	      <event type="existence" from="1991-10-14" to="1994-03-12"/>
+              <orgName full="yes" from="1991-10-14" to="1992-01-05">Demokratska stranka</orgName>
+              <orgName full="init" from="1991-10-14" to="1992-01-05">DS</orgName>
+              <orgName full="yes" from="1992-01-05" to="1994-03-12">Socialdemokratska stranka</orgName>
+              <orgName full="init" from="1992-01-05" to="1994-03-12">SDS</orgName>
             </org>
 	  </egXML>
 	  <!-- Note that @full="init" is misused, at least according to the TEI definition -->
 	  
-	  As with persons, each organisation must contain an <att>xml:id</att> attribute,
-	  so that <gi>person</gi> elements can refer to it. The fact that the organisation
-	  is a political party is encoded in the <att>role</att> attribute, where the
-	  suggested values are defined in the Parla-CLARIN schema. The name(s) of the party
-	  are given in the <gi>orgName</gi> element, which also uses the <att>full</att>
-	  attribute to distinguish betwen the full name of the part and the initials of the
-	  party. Parties also tend to change their names, and we indicate this with
-	  <att>from</att> and <att>to</att> attributes on the <gi>orgName</gi> for the
-	  duration of one name, and with <att>prev</att> and <att>next</att> that link the
-	  names of the party together.</p>
+	  As with persons, each organisation must contain an <att>xml:id</att> attribute, so
+	  that <gi>person</gi> elements can refer to it. The fact that the organisation is a
+	  political party is encoded in the <att>role</att> attribute, where the suggested
+	  values are defined in the Parla-CLARIN schema. The name(s) of the party are given in
+	  the <gi>orgName</gi> element, which also uses the <att>full</att> attribute to
+	  distinguish betwen the full name of the part and the initials of the party. Parties
+	  are also created and dissolved, and can also change their name.  The former is
+	  indicated by the <gi>event</gi> element, which, in the example above, we have typed
+	  as "existence" and where the dates of its existence are given in the <att>from</att>
+	  and <att>to</att> attributes. The same attributes on the <gi>orgName</gi> elements
+	  indicate the temporal duration of the parties names.<note>Note that there can exist a
+	  date where both names are valid names of the party - it is up to the processing
+	  software to make sense of this situation.</note></p>
 	</div>
-	
+
 	<div xml:id="sec-relation">
 	  <head>Relationships between people and parties</head>
-	  <p>It is also possible to encode relations between people and - apart from
-	  termporal ones, as mentioned - parties, e.g. kinship between PMs, or coalitions
-	  between parties. For this prurpose, TEI defines the <gi>listRelation</gi> element
-	  explained in detail in the
-	  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSREL">Section
-	  on Personal Relationships</ref> of the TEI Guidelines. This element can be
-	  contained either by the <gi>listPerson</gi> or <gi>listOrg</gi> elements and, in
-	  turn, contains the <gi>relation</gi> element that defines one relation. The example
-	  below shows a relation between people.
+	  
+	  <p>It is also possible to encode relations between people and parties, e.g. kinship
+	  between PMs, or the fact that one party is the successor of another one. For this
+	  purpose, TEI defines the <gi>listRelation</gi> element explained in detail in
+	  the <ref
+	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSREL">Section
+	  on Personal Relationships</ref> of the TEI Guidelines. This element can be contained
+	  either by the <gi>listPerson</gi> or <gi>listOrg</gi> elements and, in turn, contains
+	  the <gi>relation</gi> element that defines one relation. The example below shows a
+	  relation between people.
 
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relatpers">
 	    <relation name="parents" passive="#sbi243926" active="#sbi243926-0 #sbi243926-1"/>
@@ -575,36 +597,58 @@
 	  (i.e. the <gi>person</gi> element with the <att>xml:id</att> value of
 	  <code>sbi243926</code>).</p>
 
-	  <p>Relationships can also be mutual, as the example of a defintion of a coallitions
-	  below illustrates.
+	  <p>Relationships can also be mutual, e.g. in the case of spouses, as illustrated below
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relatmutual">
+	    <relation name="spouse" mutual="#sbi243926 #sbi243929"/>
+	  </egXML>
+	  </p>
 
-	  <!-- Not too happy with this encoding, at the listRelations is not a
-	       part of org (and it can't be, according to the Guidelines). It might
-	       be better to defined DEMOS as a <org role="coallition"> and then have
-	       an active relationship with its parties -->
+	  <p>Relationship can also exist between parties (i.e. organisations), for example the
+	  fact that one party is a successor of another. This can be expressed as in the
+	  example below.
+
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-succparty">
+	    <relation name="successor" passive="#pp.SDZ" active="#pp.DS"/>
+	  </egXML>
+
+	  Another exaples is of a coallition of parties, where the coallition is also encoded
+	  as an organisation, while the <gi>relation</gi> gives the membership of the
+	  individual parties in the coallition.
+	  
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relatorg">
             <listOrg>
-              <head>Koalicije</head>
-              <org xml:id="cl.DEMOS">
+              <org xml:id="cl.DEMOS" role="coallition">
                 <orgName full="init">DEMOS</orgName>
               </org>
               <listRelation>
-                <relation type="membership"
-                          mutual="#pp.SDZ #pp.SDSS #pp.SKD #pp.SKZ #pp.SOS #pp.ZS"/>
+                <relation type="members"
+                          pasive="#cl.DEMOS"
+			  active="#pp.SDZ #pp.SDSS #pp.SKD #pp.SKZ #pp.SOS #pp.ZS"/>
               </listRelation>
             </listOrg>
 	  </egXML>
-	  Needs discussion!
 	  </p>
 	</div>
       </div>
 
       <div xml:id="sec-transcript">
 	<head>Transcriptions</head>
+	
 	<p>The transcriptions of the speeches are the central part of this recommendation.
+	Here, the main distinction to be made is between the transcriptions of the
+	utterances of the speakers against the commentary inserted by the transcriber, such
+	as the titles of the divisions, results of voting, comments on what is happening in
+	the chamber etc. The former will be encoded using the utterance element, <gi>u</gi>,
+	defined by the
+	<ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html">TEI module for
+	Transcriptions of Speech</ref>, which also defines a number of other useful
+	elements. The latter are encoded using a variety of elements, such as <gi>head</gi>
+	or <gi>note</gi>, and possibly others, as further discussed below. We first give an
+	example of a rather straighforward start of a division:
 
+	<!-- Do we / will we have a typology of notes as well? -->
 	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relations">
-          <div type="minutes">
+          <div type="???">
             <head>REPUBLIKA SLOVENIJA DRŽAVNI ZBOR</head>
             <head type="session">nadaljevanje 39. seje</head>
             <note type="chairman">Sejo so vodili predsednik Državnega zbora dr. Milan Brglez
@@ -621,8 +665,80 @@
 	    ...
 	  </div>
 	</egXML>
-	    
+
+	The example starts with the division heading, saying that this is the National
+	Assembly of the Republic of Slovenia, with the second heading specifying that this
+	is the continuation of the 39th session. Next come three notes, first one specifying
+	who chaired the session, the second when the session started and the third, who is
+	the first speaker. It should be noted that these are not formal specifications,
+	rather, they are simply parts of the transcript that have been wrapped in certain
+	elements.</p>
+
+	<p>After these preliminary notes comes the transcript of the speech proper, which,
+	as mentionedm, is encoded using the <gi>u</gi> element. Its main attribute is
+	<att>who</att>, giving the pointer to the definition of the speaker. The element can
+	also have the <att>ana</att> attribute giving one or more pointers to a typology of
+	types of speakers; in our case, it defines that the speaker is the chair of the
+	session. The utterances can (but are not required) to be segmented using the generic
+	TEI element for segments, <gi>seg</gi>, encoding the paragraphs of the source
+	transcription.<note>The reason why the TEI element for paragraphs (<gi>p</gi>) is
+	not used is that utterances, being essentially (transcriptions of) spoken text, do
+	not allow for internal paragraphs, a concept pertinent to written text.</note></p>
+
+	<p>If, in general, comments on the transcription are encoded using <gi>note</gi>,
+	some such comments allow for more precise TEI elements to encode them.<note>Whether
+	these specific elements will be used or simply encoded using notes, and, indeed,
+	whether such notes are preserved in the Parla-CLARIN encoding at all, will depend on
+	the needs and resources of each particular project.</note> In particular, the TEI
+	module for Transcriptions of Speech (<q><ref
+	target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSBA">Elements
+	unique to spoken texts</ref></q>) defines the following elements that can correspond
+	to various types of transcriber's comments:
+	<list>
+	  <item><gi>vocal</gi> marks any vocalized but not necessarily lexical phenomenon,
+	  e.g. laughter, sounds of (dis)agreement from the benches etc.</item>
+	  <item><gi>kinesic</gi> marks any communicative phenomenon, not necessarily
+	  vocalized, for example a gesture, frown, etc.</item>
+	  <item><gi>incident</gi> marks any phenomenon or occurrence, not necessarily
+	  vocalized or communicative, for example incidental noises or other events
+	  affecting communication.</item>
+	</list>
+
+	The artifical example below illustrates the use of these three elements.
+	
+	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-incidents">
+          <u who="#SDZ5.AhačičMonika">
+	    Spoštovani kolegice poslanke!
+	    <vocal who="#opposition"><desc>shouting</desc></vocal>
+	    <kinesic who="#SDZ5.AhačičMonika"><desc>banging of the gavel</desc></kinesic>
+	    <incident><desc>police storm the parliament</desc></incident>
+	  </u>
+	</egXML>
 	</p>
+
+	<p>A special case occurs when the <q>notes</q> of the transcription of a speaker state
+	that another (possibly named) person interrupted the speaker and give the content of
+	the interruption, and the main speaker continues with their speech, e.g. <q>I propose a
+	no-deal Brexit. /Jeremy Corbyn shouts: Traitor!/ The reason for this is...</q>. While
+	the interruption might be encoded as a <gi>note</gi>, it would better be encoded as a
+	separate utterace, which brings with it the problem that nested utterances are not
+	allowed, so the main utterance needs to be split into two (or more) pieces. The example
+	below gives an illustration how this is realised.
+	
+	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-splitu">
+          <u who="#BorisJohnson" xml:id="GB001.8.3" next="#GB001.8.5">I propose a no-deal Brexit.</u>
+          <u who="#JeremyCorbyn" xml:id="GB001.8.4">Traitor!</u>
+          <u who="#BorisJohnson" xml:id="GB001.8.5" prev="#GB001.8.3">The reason for this is...</u>
+	</egXML>
+	
+	As can be see, the split is indicated by the use of the <att>next</att> attribute on
+	the first part of the split utterance, and, if so desired, by the <att>prev</att>
+	attribute of the next part of the split utterace. Both attribute must contain a pointer
+	to the next of previous part of the split utterance.<note>Note that, in general, the
+	utterance can also be split in the middle of a sentence, which brings with it problems
+	for automatic linguistic processing, as, ideally, the parts should be first joined, and
+	only then processed.</note></p>
+	
       </div>
       
       <div xml:id="sec-multimedia">
