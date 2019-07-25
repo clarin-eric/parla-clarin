@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xml:id="corpus.id">
-     <teiHeader>
+<?xml-model href="../Schema/tei-parla.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../Schema/tei-parla.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xml:id="corpus.id" xml:lang="sl">
+     <teiHeader xml:lang="en">
          <fileDesc>
              <titleStmt>
                  <title>Title of corpus</title>
@@ -13,7 +15,16 @@
                      <persName>Tomaž Erjavec</persName>
                      <resp>Linguistic processing</resp>
                  </respStmt>
+                 <funder>CLARIN ERIC</funder>
              </titleStmt>
+             <editionStmt>
+                 <edition>1.0</edition>
+             </editionStmt>
+             <extent>
+                 <measure unit="texts" quantity="11351">11351 texts</measure>
+                 <measure unit="utterances" quantity="1083233">1083233 utterances</measure>
+                 <measure unit="tokens" quantity="227896145">227896145 tokens</measure>
+             </extent>
              <publicationStmt>
                  <authority>CLARIN.SI</authority>
                  <authority>DARIAN-SI</authority>
@@ -33,6 +44,8 @@
              </publicationStmt>
              <!-- Source description for the whole corpus. -->
              <sourceDesc>
+                 <!-- Use a more or less structured bibliographic record in accordance with the guidelines in
+                      https://tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3 -->
                  <bibl>
                      <title>Portal Državnega zbora Republike Slovenije</title>
                      <idno type="URI">https://www.dz-rs.si</idno>
@@ -40,6 +53,20 @@
              </sourceDesc>
          </fileDesc>
          <profileDesc>
+             <settingDesc>
+                 <setting>
+                     <!-- Location (posible values: city, street, address) of parliamentary sessions -->
+                     <name type="city">Ljubljana</name>
+                     <!-- In which country the parliament is located: in attribute @key use ISO 3166 country code -->
+                     <name type="country" key="YU" notAfter="1991-06-25">Yugoslavia</name>
+                     <!-- In the case of regional parliament: the name of the region -->
+                     <name type="region" notAfter="1991-06-25">Slovenia</name>
+                     <!-- An example of a country change -->
+                     <name type="country" key="SI" notBefore="1991-06-25">Slovenia</name>
+                     <!-- Time range of the whole corpus of parliamentary debates -->
+                     <date from="1990-05-05" to="2018-06-22"/>
+                 </setting>
+             </settingDesc>
              <particDesc>
                  <listPerson>
                      <person xml:id="HalbJanko1957">
@@ -52,10 +79,18 @@
                              <date when="1957-07-13">13. 7. 1957</date>
                              <placeName ref="https://www.geonames.org/3193481">Pertoča</placeName>
                          </birth>
-                         <education>economist</education>
+                         <education>Economics postgraduate</education>
+                         <occupation>Economist</occupation>
+                         <nationality>Slovenian</nationality>
                          <trait type="ethnicity">
-                             <desc>Slovenian</desc>
+                             <desc>Slovene</desc>
                          </trait>
+                         <residence>
+                             <address>
+                                 <addrLine>Pertoča 63</addrLine>
+                                 <addrLine>9262 Rogašovci.</addrLine>
+                             </address>
+                         </residence>
                          <affiliation ref="#parliament" role="#grp.member" from="1990-05-08" to="1992-12-23"/>
                          <affiliation ref="#SKZ" role="#grp.member" notBefore="1988-05-12" notAfter="1992-06-27"/>
                          <affiliation ref="#SLS" role="#grp.member" notBefore="1992-06-27" notAfter="2000-04-15"/>
@@ -83,7 +118,9 @@
                      <org xml:id="DZ">
                          <orgName xml:lang="sl">Državni zbor Republike Slovenije</orgName>
                          <orgName xml:lang="en">National Assembly of the Republic of Slovenia</orgName>
+                         <!-- List of important events in the parliament -->
                          <listEvent>
+                             <!-- eg. voting data -->
                              <event xml:id="vote.1" type="voting" corresp="#quorum.1 #vote.1.ayes #vote.1.noes">
                                  <label>Voting</label>
                                  <desc>
@@ -91,7 +128,9 @@
                                      <measure type="ayes" quantity="47"/>
                                      <measure type="noes" quantity="19"/>
                                      <date when="2019-03-08T15:49:50"/>
+                                     <!-- voting about this document: -->
                                      <title>Glasovanje o posameznem kandidatu - kandidat za ministra za kulturo, mag. Zoran Poznič</title>
+                                     <!-- possible document identifier -->
                                      <idno type="EPA">424-VIII</idno>
                                  </desc>
                              </event>
@@ -99,6 +138,10 @@
                      </org>
                  </listOrg>
              </particDesc>
+             <langUsage>
+                 <language ident="sl">Slovenian</language>
+                 <language ident="en">English</language>
+             </langUsage>
          </profileDesc>
          <encodingDesc>
              <appInfo>
@@ -108,6 +151,7 @@
                  </application>
              </appInfo>
              <classDecl>
+                 <!-- One or more optional taxonomies, with which we further classify the content and structure of parliamentary debates -->
                  <taxonomy>
                      <desc>Types of speakers</desc>
                      <category xml:id="chair">
@@ -116,11 +160,53 @@
                      </category>
                      <category xml:id="regular">
                          <catDesc>
-                             <term>Regular speaker</term>:</catDesc>
+                             <term>Regular speaker</term>: the main speaker -  speaker is in front of the speaker chair</catDesc>
                      </category>
                      <category xml:id="unauthorized">
                          <catDesc>
-                             <term>Unauthorized speaker</term>: unauthorized intervention in the speech of the main speaker.</catDesc>
+                             <term>Unauthorized speaker</term>: unauthorized intervention in the speech of the main (regular) speaker.</catDesc>
+                     </category>
+                 </taxonomy>
+                 <!-- Project-specific classification of the structure of parliamentary periods: -->
+                 <taxonomy>
+                     <category xml:id="parl.term">
+                         <catDesc><term>Legislative period</term>: term of the parliament between
+                             general elections.</catDesc>
+                         <category xml:id="parl.session">
+                             <catDesc><term>Legislative session</term>: the period of time in which
+                                 a legislature is convened for purpose of lawmaking, usually being
+                                 one of two or more smaller divisions of the entire time between two
+                                 elections. A session is a meeting or series of connected meetings
+                                 devoted to a single order of business, program, agenda, or announced
+                                 purpose.</catDesc>
+                             <category xml:id="parl.meeting">
+                                 <catDesc><term>Meeting</term>: Each meeting may be a
+                                     separate session or part of a group of meetings constituting a
+                                     session. The session/meeting may take one or more
+                                     days.</catDesc>
+                                 <category>
+                                     <desc xml:lang="en">Types of meetings</desc>
+                                     <category xml:id="parl.meeting.regular">
+                                         <catDesc><term>Regular meeting</term></catDesc>
+                                     </category>
+                                     <category xml:id="parl.meeting.special">
+                                         <catDesc><term>Special meeting</term></catDesc>
+                                     </category>
+                                     <category xml:id="parl.meeting.continued">
+                                         <catDesc><term>Continued meeting</term></catDesc>
+                                     </category>
+                                     <category xml:id="parl.meeting.public">
+                                         <catDesc><term>Public meeting</term></catDesc>
+                                     </category>
+                                     <category xml:id="parl.meeting.executive">
+                                         <catDesc><term>Executive meeting</term></catDesc>
+                                     </category>
+                                 </category>
+                                 <category xml:id="parl.sitting">
+                                     <catDesc><term>Sitting</term>: sitting day</catDesc>
+                                 </category>
+                             </category>
+                         </category>
                      </category>
                  </taxonomy>
              </classDecl>
@@ -130,7 +216,12 @@
          <teiHeader>
              <fileDesc>
                  <titleStmt>
+                     <!-- There are no rules on how these titles should be written -->
                      <title>Title of the session</title>
+                     <!-- All relevant information about the type of session/meeting/sitting (in accordance with the project specific taxonomy) is given in the meeting element:
+                          - 
+                     -->
+                     <meeting></meeting>
                  </titleStmt>
                  <!-- Publication statement same as in teiCorpus/teiHeader -->
                  <publicationStmt>
