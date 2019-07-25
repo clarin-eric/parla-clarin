@@ -1,22 +1,23 @@
 test:
 	date
-all:	val schema html
+all:	val-exa schema html
 
-val:
+val-exa:
+	$j ../Schema/parla-clarin.rng ../Examples/example-akn-ke.xml
+	$j ../Schema/parla-clarin.rng ../Examples/example-si.xml
+val-odd:
 	$j tei_odds.rng ../Schema/parla-clarin-odd.xml
-	$j ../Schema/parla-clarin.rng ../Resources/example-akn-ke.xml
-	$j ../Schema/parla-clarin.rng ../Resources/example-si.xml
 
 # Have to have local source of p5subset, as my Java is too old to fetch it with https!
 PARAMS = --localsource=p5subset.xml ../Schema/parla-clarin-odd.xml
-schema:	val
+schema:	val-odd
 	Stylesheets/bin/teitorelaxng    ${PARAMS} ../Schema/parla-clarin.rng
 	Stylesheets/bin/teitornc        ${PARAMS} ../Schema/parla-clarin.rnc
 	Stylesheets/bin/teitodtd        ${PARAMS} ../Schema/parla-clarin.dtd
 	Stylesheets/bin/teitoxsd        ${PARAMS} ../Schema/parla-clarin.xsd
 	Stylesheets/bin/teitoschematron ${PARAMS} ../Schema/parla-clarin.sch
 H = /home/tomaz/Resources/CLARIN/DARIAH-SI/Parla-CLARIN/parla-clarin/bin
-html:	val
+html:	val-odd
 	Stylesheets/bin/teitohtml --profiledir=$H --profile=profile --odd ${PARAMS} ../docs/index.html
 
 j = java -jar /usr/local/bin/jing.jar
