@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
    <title>ISO Schematron rules</title>
-   <!-- This file generated 2019-07-19T13:50:27Z by 'extract-isosch.xsl'. -->
+   <!-- This file generated 2019-07-25T09:26:33Z by 'extract-isosch.xsl'. -->
 
 <!-- ********************* -->
 <!-- namespaces, declared: -->
@@ -18,7 +18,7 @@
 <!-- ************ -->
 <pattern id="schematron-constraint-tei_clarin-div-divtype-1">
 	        <rule context="tei:div[@type = $div.types.debate]">
-	          <assert test="parent::tei:div[not(@type = $div.types.debate)]">
+	          <assert test="not(parent::tei:div[@type = $div.types.debate])">
 	            A text division of type <value-of select="@type"/> should not occur inside div with type value <value-of select="parent::tei:div/@type"/>.
 	          </assert>
 	        </rule>
