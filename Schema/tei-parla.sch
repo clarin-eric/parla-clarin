@@ -21,7 +21,6 @@
 	          <assert test="parent::tei:div[not(@type = $div.types.debate)]">
 	            A text division of type <value-of select="@type"/> should not occur inside div with type value <value-of select="parent::tei:div/@type"/>.
 	          </assert>
-	          <report/>
 	        </rule>
 	      </pattern>
 	      <pattern>
