@@ -34,7 +34,7 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
-      <change when="2019-07-19">Tomaž Erjavec: more documentation.</change>
+      <change when="2019-07-25">Tomaž Erjavec: more documentation.</change>
       <change when="2019-06-06">Tomaž Erjavec: adding some documentation.</change>
       <change when="2019-05-21">Tomaž Erjavec: first sketch.</change>
     </revisionDesc>
@@ -98,8 +98,8 @@
 	<ref target="#sec-overall">Section 3</ref> explains the overall document structure of a Parla-CLARIN PPC;
 	<ref target="#sec-metadata">Section 4</ref> concentrates on encoding the corpus metadata, such as information on speakers or political parties;
 	<ref target="#sec-transcript">Section 5</ref> on encoding the transcripts;
-	<ref target="#sec-multimedia">Section 6</ref> on multimedia information;
-	<ref target="#sec-linguistic">Section 7</ref> on linguistic annotations;
+	<ref target="#sec-linguistic">Section 6</ref> on linguistic annotations;
+	<ref target="#sec-multimedia">Section 7</ref> on multimedia information;
 	<ref target="#sec-rdf">Section 8</ref> sketches ways how the proposed Parla-CLARIN format can be linked with RDF; and
 	<ref target="#sec-conversion">Section 9</ref> discusses conversions to and from the Parla-CLARIN format; and
 	<ref target="#specification">Appendix A</ref> gives the formal specification of the Parla-CLARIN schema.</p>
@@ -716,19 +716,22 @@
 	</egXML>
 	</p>
 
-	<p>A special case occurs when the <q>notes</q> of the transcription of a speaker state
-	that another (possibly named) person interrupted the speaker and give the content of
-	the interruption, and the main speaker continues with their speech, e.g. <q>I propose a
-	no-deal Brexit. /Jeremy Corbyn shouts: Traitor!/ The reason for this is...</q>. While
-	the interruption might be encoded as a <gi>note</gi>, it would better be encoded as a
-	separate utterace, which brings with it the problem that nested utterances are not
-	allowed, so the main utterance needs to be split into two (or more) pieces. The example
-	below gives an illustration how this is realised.
+	<p>A special case occurs when the <q>notes</q> of the transcription of a speaker
+	state that another (possibly named) person interrupted the speaker and give the
+	content of the interruption, and the main speaker continues with their speech, as in
+	this snippet of a made-up transcript:
+
+	<eg>Boris Johnson: I propose a no-deal Brexit. /Jeremy Corbyn: Traitor!/ The reason for this is that England does not need or want any dealings with the European Union.</eg>
+
+	While the interruption might be encoded as a <gi>note</gi>, it would better be
+	encoded as a separate utterace, which brings with it the problem that nested
+	utterances are not allowed, so the main utterance needs to be split into two (or
+	more) pieces. The example below gives an illustration how this is realised.
 	
 	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-splitu">
           <u who="#BorisJohnson" xml:id="GB001.8.3" next="#GB001.8.5">I propose a no-deal Brexit.</u>
           <u who="#JeremyCorbyn" xml:id="GB001.8.4">Traitor!</u>
-          <u who="#BorisJohnson" xml:id="GB001.8.5" prev="#GB001.8.3">The reason for this is...</u>
+          <u who="#BorisJohnson" xml:id="GB001.8.5" prev="#GB001.8.3">The reason for this is that England does not need or want any dealings with the European Union.</u>
 	</egXML>
 	
 	As can be see, the split is indicated by the use of the <att>next</att> attribute on
@@ -738,6 +741,141 @@
 	utterance can also be split in the middle of a sentence, which brings with it problems
 	for automatic linguistic processing, as, ideally, the parts should be first joined, and
 	only then processed.</note></p>
+	
+      </div>
+      
+      <div xml:id="sec-linguistic">
+	<head>Linguistic annotation</head>
+	<p>To be useful, text corpora are typlically linguistically annotated and this
+	section introduces some basic types of linguistic annotation that can be added to
+	PPCs; these examples should be sufficient for users to be able to add futher types of
+	linguistic annotation to PPC corpora.</p>
+	<p>It should be noted that this recommendation recommends that linguistically
+	annotated PPCs are stored in two versions, one with the linguistic annotations, and
+	the other without them. The reason for this is that many users prefer to use the
+	plain-text version, e.g. as they want to perform their own linguistic annotation, or
+	this kind of annotation is simply not relevant for their research questions.</p>
+
+	<p>The TEI Guidelines discuss basic linguistic annotation in their <ref
+	target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html">Chapter on
+	Simple Analytic Mechanisms</ref> and we follow one particular option from these
+	recommendations, for the annotation levels that they cover. This, inter alia, means
+	that (where possible) the annotation is in-line (as opposed to stand-off), i.e. that
+	the linguistic annotation is given in the main document, and therefore mixed with the
+	other annotations, rather than in a separate document with pointers into the base
+	text.</p>
+	
+	<div xml:id="sec-anawords">
+	  <head>Word-level annotation</head>
+	  
+	  <p>Basic linguistic annotation comprises tokenisation, part-of-speech tagging and
+	  lemmatisation, and (from a processing point of view) also sentence
+	  segmentation. This recommendation specialises the principles given in the <ref
+	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILALW">Section
+	  on Lightweight Linguistic Annotation</ref> of the TEI Guidelines. The following
+	  example shows the basic principles of the annotation:
+	  
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis1">
+	    <s>
+              <w msd="UposTag=DET|Case=Gen|Gender=Neut|Number=Sing|PronType=Dem" lemma="ta">Tega</w>
+              <w msd="UposTag=PRON|PronType=Prs|Reflex=Yes|Variant=Short" lemma="se">se</w>
+              <w msd="UposTag=PART" lemma="sploh">sploh</w>
+              <w msd="UposTag=AUX|Mood=Ind|Number=Sing|Person=1|Polarity=Neg|Tense=Pres|VerbForm=Fin" lemma="biti">nisem</w>
+              <w msd="UposTag=VERB|Aspect=Perf|Gender=Masc|Number=Sing|VerbForm=Part" lemma="zavesti" join="right">zavedel</w>
+              <pc msd="UposTag=PUNCT">.</pc>
+	    </s>
+	  </egXML>
+
+	  Sentences are marked up using the <gi>s</gi> element, words with the <gi>w</gi>
+	  element and punctuation symbols with the <gi>pc</gi> element. To retain
+	  linguistically significant whitespace, the <att>join</att> element is used, with
+	  the main relevant values being <code>no</code> (assumed to be the default),
+	  <code>right</code> (no whitespace to the right of the token) and <code>left</code>
+	  (no whitespace to the left of the token). While, in the preceding example, it would
+	  be more intuitive to have <code>@join="left"</code> marked on the full-stop, we
+	  recommend that <code>@join="right"</code> is always used on the preceding token, as
+	  this simplifies processing.</p>
+
+	  <p>The base form of words is given in the <att>lemma</att> attribute,<note>Note
+	  that punctuation characters, <gi>pc</gi>, do not have a <att>lemma</att> attribute,
+	  as they cannot sensibly be said to have lemmas.</note> while situation with the
+	  part-of-speech tags is somewhat more complicated. For analytic tagsets, where a
+	  "part-of-speech tag" is actually a set of attribute-values, as in the example
+	  above, the <att>msd</att> attribute should be used. For synthetic tagsets, such as
+	  the <ref
+	  target="https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html">Penn
+	  Treebank tagset</ref>, which have atomic tags that cannot always be decomposed into
+	  attribute-value pairs (e.g. "TO" for the word "to"), a better alternative is the
+	  <att>pos</att> attribute. There is also the third option, for tags that are
+	  strings, however, they are just shorthands for a feature-structure representation,
+	  as is the case with the <ref target="http://nl.ijs.si/ME/V6/msd/html/">MULTEXT-East
+	  tagset</ref>. For these, it is best to use the generic <att>ana</att> attribute, as
+	  shown in the following example:
+	  
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis2">
+	    <s>
+              <w ana="#Pd-nsg" lemma="ta">Tega</w>
+              <w ana="#Px------y" lemma="se">se</w>
+              <w ana="#Q" lemma="sploh">sploh</w>
+              <w ana="#Va-r1s-y" lemma="biti">nisem</w>
+              <w ana="#Vmep-sm" lemma="zavesti" join="right">zavedel</w>
+              <pc ana="#Z">.</pc>
+	    </s>
+	  </egXML>
+	  Here, the tags are simply pointers to identifiers<note>Here the identifiers must be
+	  defined in the same document as the analysed sentence, however, this need not be
+	  the case: the value of <att>ana</att> could be a full URI, but, as this then makes
+	  for very log "tag" names, it is better to use the element <gi>prefixDef</gi> in the
+	  TEI header to define a special prefix for such tags (e.g. "mte" for MULTEXT-East,
+	  so <code>@ana="mte:Pd-nsg"</code>, which is then, via a regular expression mapping,
+	  converted to a URI such as
+	  <code>@ana="http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml/#Pd-nsg"</code>.</note>
+	  which define the appropriate feature-structures, i.e. pairs of attribute-values, as
+	  in the example below:
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis3">
+	    <fs xml:id="Pd-nsg" xml:lang="en" corresp="#Zk-ser">
+	      <f name="CATEGORY"><symbol value="Pronoun"/></f>
+	      <f name="Type"><symbol value="demonstrative"/></f>
+	      <f name="Gender"><symbol value="neuter"/></f>
+	      <f name="Number"><symbol value="singular"/></f>
+	      <f name="Case"><symbol value="genitive"/></f>
+	    </fs>
+	  </egXML>
+	  </p>
+	</div>
+	
+	<div xml:id="sec-anasegment">
+	  <head>Named entities and other segmental annotation</head>
+	  <p>A common annotation type, used especially for marking named entities is
+	  segmental annotation, where a stretch of text is simply enclosed in XML tags. 
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis4">
+	    <s xml:id="ssj1.1.5">
+              <w ana="mte:Pd-nsg" lemma="ta" xml:id="ssj1.1.5.t1">Tega</w>
+              <w ana="mte:Px------y" lemma="se" xml:id="ssj1.1.5.t2">se</w>
+              <w ana="mte:Q" lemma="sploh" xml:id="ssj1.1.5.t3">sploh</w>
+              <w ana="mte:Va-r1s-y" lemma="biti" xml:id="ssj1.1.5.t4">nisem</w>
+              <w ana="mte:Vmep-sm" lemma="zavesti" join="right" xml:id="ssj1.1.5.t5">zavedel</w>
+              <pc ana="mte:Z" xml:id="ssj1.1.5.t6">.</pc>
+	    </s>
+	  </egXML>
+	  </p>
+	</div>
+	
+	<div xml:id="sec-analinking">
+	  <head>Syntactic dependencies and other linking annotation</head>
+	  <p>
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis5">
+	    <s xml:id="ssj1.1.5">
+              <w ana="mte:Pd-nsg" lemma="ta" xml:id="ssj1.1.5.t1">Tega</w>
+              <w ana="mte:Px------y" lemma="se" xml:id="ssj1.1.5.t2">se</w>
+              <w ana="mte:Q" lemma="sploh" xml:id="ssj1.1.5.t3">sploh</w>
+              <w ana="mte:Va-r1s-y" lemma="biti" xml:id="ssj1.1.5.t4">nisem</w>
+              <w ana="mte:Vmep-sm" lemma="zavesti" join="right" xml:id="ssj1.1.5.t5">zavedel</w>
+              <pc ana="mte:Z" xml:id="ssj1.1.5.t6">.</pc>
+	    </s>
+	  </egXML>
+	  </p>
+	</div>
 	
       </div>
       
@@ -754,10 +892,6 @@
 	<div>
           <head>Facsimile</head>
 	</div>
-      </div>
-      
-      <div xml:id="sec-linguistic">
-	<head>Linguistic annotation</head>
       </div>
       
       <div xml:id="sec-rdf">
@@ -953,4 +1087,8 @@
 	    </constraint>
 	  </constraintSpec>
 	  
-	</schemaSpec> </div> </back> </text> </TEI>
+	</schemaSpec>
+      </div>
+    </back>
+  </text>
+</TEI>
