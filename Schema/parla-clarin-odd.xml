@@ -432,7 +432,7 @@
 	
 	<p>It is outside the scope of this specification to give all the details of a
 	<gi>teiHeader</gi> element, for this, the user is referred to the
-	<ref arget="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html">Section on the
+	<ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/HD.html">Section on the
 	TEI header</ref> of the TEI Guidelines, and, of course, to the example corpora that
 	are part of the Parla-CLARIN Git repository. Here we do, however, give some examples
 	and concentrate on the metadata that is esp. relevant to parliamentary proceedings
