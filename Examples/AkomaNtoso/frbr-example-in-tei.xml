@@ -1,0 +1,21 @@
+<!-- This example is taken from "Best Practices for TEI in Libraries" Sec. "4.1.5. The TEI Header and FRBR"
+     cf. https://tei-c.org/extra/teiinlibraries/4.0.0/bptl-driver.html#frbr
+     and https://github.com/kshawkin/Best-Practices-for-TEI-in-Libraries/issues/64
+-->
+<teiHeader>
+  <fileDesc>
+    <sourceDesc>
+      <listRelation>
+	<relation ref="http://purl.org/vocab/frbr/core#realization"
+		  active="http://d-nb.info/gnd/4128140-8"
+		  passive="http://d-nb.info/gnd/4217850-2"/>
+	<relation ref="http://purl.org/vocab/frbr/core#embodiment"
+		  active="http://d-nb.info/gnd/4217850-2"
+		  passive="http://d-nb.info/1022142836"/>
+	<relation ref="http://purl.org/vocab/frbr/core#exemplar"
+		  active="http://d-nb.info/1022142836"
+		  passive="http://lobid.org/items/HT017412936:DE-361:NA088.88-4442721#!"/>
+      </listRelation>
+    </sourceDesc>
+  </fileDesc>
+</teiHeader>
