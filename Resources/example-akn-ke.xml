@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-model href="../Schema/tei-parla.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
+<?xml-model href="../Schema/tei-parla.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xml:id="corpus.id" xml:lang="en">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>Title of corpus</title>
+            <author>Author of corpus</author>
+            <!-- Other persons responsible for creating a corpus, for exampla -->
+            <respStmt>
+               <resp>TEI corpus encoding</resp>
+               <persName ref="http://viaf.org/viaf/305936424">Andrej Pančur</persName>
+               <persName ref="https://orcid.org/0000-0002-1560-4099 http://viaf.org/viaf/15145066459666591823">Tomaž Erjavec</persName>
+            </respStmt>
+            <respStmt>
+               <resp>Linguistic processing</resp>
+               <persName ref="https://orcid.org/0000-0002-1560-4099 http://viaf.org/viaf/15145066459666591823">Tomaž Erjavec</persName>
+            </respStmt>
+            <editor>
+               <persName xml:id="palmirani" ref="http://viaf.org/viaf/311235586">Monica Palmirani</persName>
+            </editor>
+            <funder>CLARIN ERIC</funder>
+         </titleStmt>
+         <editionStmt>
+            <edition>1.0</edition>
+         </editionStmt>
+         <extent>
+            <measure unit="texts" quantity="1">1 texts</measure>
+            <measure unit="utterances" quantity="11">11 utterances</measure>
+         </extent>
+         <!-- Include information about FRBRManifestation! -->
+         <publicationStmt>
+            <authority>CLARIN ERIC</authority>
+            <availability>
+               <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+               <p>This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                  Attribution 4.0 International License</ref>.</p>
+            </availability>
+            <distributor>CLARIN Git repository</distributor>
+            <address>
+               <street>Drift 10</street>
+               <postCode>3512 BS</postCode>
+               <placeName>Utrecht</placeName>
+               <country>Netherlands</country>
+            </address>
+            <!-- FRBRdate -->
+            <date when="2019-07-24">24. 7. 2019</date>
+            <idno type="FRBRthis">/akn/ke/minutes/2011-06-10/eng@/!main.xml</idno>
+            <idno type="FRBRuri">/akn/ke/minutes/2011-06-10/eng@.akn</idno>
+         </publicationStmt>
+         <!-- Source description for the whole corpus. Include information about FRBRWork! -->
+         <sourceDesc>
+            <!-- Use a more or less structured bibliographic record in accordance with the guidelines in
+                      https://tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3 -->
+            <bibl>
+               <title>Akoma Ntoso Version 1.0</title>
+               <idno type="URI">https://www.oasis-open.org/standards#akn-v1.0</idno>
+            </bibl>
+            <!-- example of FRBRWork -->
+            <bibl>
+               <idno type="FRBRthis">/akn/ke/debaterecord/2011-06-10/!main</idno>
+               <idno type="FRBRuri">/akn/ke/debaterecord/2011-06-10</idno>
+               <date when="2011-06-10" type="generation"/>
+               <author ref="#parla.ke"/>
+               <country key="ak"/>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <appInfo>
+            <application version="0.1" ident="ReLDI">
+               <label>ReLDI</label>
+               <desc>Tokenisation, MSD tagging and lemmatisation with ReLDI programs by Nikola Ljubešić trained for Slovene, c.f. <ref target="https://github.com/uzh/reldi">GitHub</ref></desc>
+            </application>
+         </appInfo>
+         <classDecl>
+            <!-- One or more optional taxonomies, with which we further classify the content and structure of parliamentary debates -->
+            <taxonomy>
+               <desc>Types of speakers</desc>
+               <category xml:id="chair">
+                  <catDesc>
+                     <term>Chairperson</term>: chairman of a meeting. See also <term>The Speaker</term>: an MP who has been elected by other MPs to act as Chair during debates in the House of Commons.</catDesc>
+               </category>
+               <category xml:id="regular">
+                  <catDesc>
+                     <term>Regular speaker</term>: the main speaker -  speaker is in front of the speaker chair</catDesc>
+               </category>
+               <category xml:id="unauthorized">
+                  <catDesc>
+                     <term>Unauthorized speaker</term>: unauthorized intervention in the speech of the main (regular) speaker.</catDesc>
+               </category>
+            </taxonomy>
+            <!-- Project-specific classification of the structure of parliamentary periods: -->
+            <taxonomy>
+               <category xml:id="parla.term">
+                  <catDesc><term>Legislative period</term>: term of the parliament between
+                     general elections.</catDesc>
+                  <category xml:id="parla.session">
+                     <catDesc><term>Legislative session</term>: the period of time in which
+                        a legislature is convened for purpose of lawmaking, usually being
+                        one of two or more smaller divisions of the entire time between two
+                        elections. A session is a meeting or series of connected meetings
+                        devoted to a single order of business, program, agenda, or announced
+                        purpose.</catDesc>
+                     <category xml:id="parla.meeting">
+                        <catDesc><term>Meeting</term>: Each meeting may be a
+                           separate session or part of a group of meetings constituting a
+                           session. The session/meeting may take one or more
+                           days.</catDesc>
+                        <category>
+                           <desc xml:lang="en">Types of meetings</desc>
+                           <category xml:id="parl.meeting.regular">
+                              <catDesc><term>Regular meeting</term></catDesc>
+                           </category>
+                           <category xml:id="parla.meeting.special">
+                              <catDesc><term>Special meeting</term></catDesc>
+                           </category>
+                           <category xml:id="parla.meeting.continued">
+                              <catDesc><term>Continued meeting</term></catDesc>
+                           </category>
+                           <category xml:id="parla.meeting.public">
+                              <catDesc><term>Public meeting</term></catDesc>
+                           </category>
+                           <category xml:id="parla.meeting.executive">
+                              <catDesc><term>Executive meeting</term></catDesc>
+                           </category>
+                        </category>
+                        <category xml:id="parla.sitting">
+                           <catDesc><term>Sitting</term>: sitting day</catDesc>
+                        </category>
+                     </category>
+                  </category>
+               </category>
+            </taxonomy>
+            <taxonomy>
+               <category>
+                  <desc xml:lang="en">Parliamentary Organization</desc>
+                  <category>
+                     <desc xml:lang="en">Chambers</desc>
+                     <category xml:id="parla.uni">
+                        <catDesc xml:lang="en"><term>Unicameralism</term></catDesc>
+                     </category>
+                     <category xml:id="parla.bi">
+                        <catDesc xml:lang="en"><term>Bicameralism</term></catDesc>
+                        <category xml:id="parla.upper">
+                           <catDesc xml:lang="en"><term>Upper house</term></catDesc>
+                        </category>
+                        <category xml:id="parla.lower">
+                           <catDesc xml:lang="en"><term>Lower house</term></catDesc>
+                        </category>
+                     </category>
+                     <category xml:id="parla.multi">
+                        <catDesc xml:lang="en"><term>Multicameralism</term></catDesc>
+                     </category>
+                  </category>
+               </category>
+            </taxonomy>
+         </classDecl>
+      </encodingDesc>
+      <profileDesc>
+         <settingDesc>
+            <setting>
+               <!-- Location (posible values: city, street, address) of parliamentary sessions -->
+               <name type="city">Nairobi</name>
+               <!-- In which country the parliament is located: in attribute @key use ISO 3166 country code -->
+               <name type="country" key="KE">Kenya</name>
+               <!-- Time range of the whole corpus of parliamentary debates -->
+               <date from="2011-05-05" to="2019-06-22"/>
+            </setting>
+         </settingDesc>
+         <particDesc>
+            <listPerson>
+               <!-- An example of encoding a group of people who have a specific role.
+                    In the example below, the name of the Chairperson is not known, so we encode it as a group of people. -->
+               <personGrp xml:id="speaker" role="chair">
+                  <name>Mr. Speaker</name>
+               </personGrp>
+               <person xml:id="alfa">
+                  <persName>Mr. Alfa</persName>
+               </person>
+               <person xml:id="beta">
+                  <persName>Mr. Beta</persName>
+               </person>
+               <person xml:id="gamma">
+                  <persName>Mr. Gamma</persName>
+                  <affiliation ref="#MI" role="minister" from="2010-02-03" to="2014-05-06"/>
+               </person>
+               <person xml:id="delta">
+                  <persName>Mr. Delta</persName>
+               </person>
+               <person xml:id="epsilon">
+                  <persName>Mr. epsilon</persName>
+               </person>
+               <person xml:id="kappa">
+                  <persName>Mr. Kappa</persName>
+               </person>
+               <person xml:id="eta">
+                  <persName>Mr. Eta</persName>
+                  <affiliation ref="#MEST" role="minister" from="2010-02-03" to="2014-05-06"/>
+               </person>
+               <person xml:id="zeta">
+                  <persName>Mr. Zeta</persName>
+               </person>
+            </listPerson>
+            <listOrg>
+               <org ana="#parla.lower" xml:id="parla.ke">
+                  <orgName>National Assembly of Kenya</orgName>
+                  <!-- List of important events in the parliament -->
+                  <!-- eg. list of voting records -->
+                  <listEvent type="voting">
+                     <event xml:id="vote.1" type="voting" corresp="#quantity_1 #quantity_2">
+                        <desc>
+                           <measure xml:id="vot1-quo1" type="majority" quantity="80"/><!-- Quorum Majority -->
+                           <measure xml:id="vot1-cnt2" type="ayes" quantity="72"/>
+                           <measure xml:id="vot1-cnt3" type="noes" quantity="56"/>
+                           <date when="2011-06-25T15:49:50"/>
+                        </desc>
+                     </event>
+                     <event xml:id="vote.2" type="recount" corresp="#quantity_3 #quantity_4">
+                        <desc>
+                           <measure xml:id="vot-cnt1" type="ayes" quantity="76"/>
+                        </desc>
+                     </event>
+                     <listRelation>
+                        <relation name="recount" active="#vot-cnt1" passive="#vot1-cnt2"/>
+                     </listRelation>
+                  </listEvent>
+               </org>
+               <org xml:id="MEST">
+                  <orgName>Ministry of Education, Science and Technology</orgName>
+                  <idno type="wikimedia">https://en.wikipedia.org/wiki/Ministry_of_Education,_Science_and_Technology_(Kenya)</idno>
+               </org>
+               <org xml:id="MI">
+                  <orgName>Ministry of Interior</orgName>
+                  <idno type="wikimedia">https://en.wikipedia.org/wiki/Ministry_of_Interior_and_Coordination_of_National_Government</idno>
+               </org>
+            </listOrg>
+         </particDesc>
+         <langUsage>
+            <language ident="en">English</language>
+         </langUsage>
+      </profileDesc>
+      <revisionDesc>
+         <!-- How to include FRBRExpression! -->
+         <change>
+            <bibl>
+               <idno type="FRBRthis">/akn/ke/minutes/2011-06-10/eng@/!main</idno>
+               <idno type="FRBRuri">/akn/ke/minutes/2011-06-10/eng@</idno>
+               <date when="2011-06-25" type="markup"/>
+               <editor></editor>
+            </bibl>
+         </change>
+      </revisionDesc>
+   </teiHeader>
+   <TEI xmlns="http://www.tei-c.org/ns/1.0" xml:id="document.id">
+      <teiHeader>
+         <fileDesc>
+            <titleStmt>
+               <!-- There are no rules on how these titles should be written -->
+               <title>Title of the session</title>
+               <!-- All relevant information about the type of session/meeting/sitting (in accordance with the project specific taxonomy) is given in the meeting element:
+                          - @n: ordinal number of the session/meeting/sitting
+                          - @corresp: a link to an organization holding a meeting
+                          - @ana: one or more links to taxonomy on the different types of parliamentary sessions
+                     -->
+               <meeting n="2" corresp="#parla.ke" ana="#parla.meeting"/>
+            </titleStmt>
+            <!-- Publication statement same as in teiCorpus/teiHeader -->
+            <publicationStmt>
+               <authority>CLARIN ERIC</authority>
+               <availability>
+                  <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                  <p>This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                     Attribution 4.0 International License</ref>.</p>
+               </availability>
+               <distributor>CLARIN Git repository</distributor>
+               <address>
+                  <street>Drift 10</street>
+                  <postCode>3512 BS</postCode>
+                  <placeName>Utrecht</placeName>
+                  <country>Netherlands</country>
+               </address>
+               <date when="2019-07-24">24. 7. 2019</date>
+            </publicationStmt>
+            <sourceDesc>
+               <bibl>
+                  <title>Debate Bungeni</title>
+                  <idno type="URI">http://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part2-specs/examples/ke_Debate_Bungeni_2011-06-10.xml</idno>
+               </bibl>
+            </sourceDesc>
+         </fileDesc>
+         <profileDesc>
+            <settingDesc>
+               <setting>
+                  <!-- Location (posible values: city, street, address) of parliamentary sessions -->
+                  <name type="city">Nairobi</name>
+                  <!-- In which country the parliament is located: in attribute @key use ISO 3166 country code -->
+                  <name type="country" key="KE">Kenya</name>
+                  <!-- Date of the parliamentary debate. An ana attribute may contain additional classifications -->
+                  <date when="2011-06-10" ana="#parl.sitting">10th June 2011</date>
+               </setting>
+            </settingDesc>
+         </profileDesc>
+      </teiHeader>
+      <text type="debate" subtype="hansard">
+         <front>
+            <!-- nujno dodaj v ODD še:
+               - preface vrednost za div/@type
+         -->
+            <div type="preface">
+               <!-- text before speeches started -->
+               <head>THE PARLIAMENT OF THE REPUBLIC OF BUNGENI</head>
+               <head>SECOND MEETING, 2011</head>
+               <docDate>Friday, 10th June 2011</docDate>
+            </div>
+         </front>
+         <body>
+            <div type="debate" subtype="minutes">
+               
+            </div>
+            <div type="debate" subtype="opening" xml:id="dbsect_0">
+               <!-- example of recordedTime -->
+               <note type="time">The House met at <time when="2011-06-10T10:02:00+02:00" xml:id="time.1">10.02 a.m.</time></note>
+               <!-- example of scene -->
+               <note>[MR. SPEAKER IN THE CHAIR]</note>
+            </div>
+            <!-- example of prayers -->
+            <!-- Popravi schematron parent::tei:div[not(@type = $div.types.debate)] v not(parent::tei:div[@type = $div.types.debate]) -->
+            <div type="prayers" xml:id="prayers_1">
+               <head>PRAYERS</head>
+            </div>
+            <!-- example of motions section -->
+            <div type="debate" subtype="motions" xml:id="dbsect_1">
+               <head>MOTIONS</head>
+               <div type="debate" subtype="motion" xml:id="dbsect_1__dbsect_1">
+                  <note type="speaker">Mr. Alfa:</note>
+                  <u who="#alfa" decls="#chair">
+                     <seg>Mr. Deputy Speaker, I beg to move to the following Motion-</seg>
+                     <seg>THAT this House do grant leave to introduce a Bill for.....</seg> <!-- (30 pages of dabate) -->
+                  </u>
+               </div>
+            </div>
+            <!-- example of quorum section -->
+            <div type="debate" subtype="quorum" xml:id="dbsect_2">
+               <head>QUORUM</head>
+               <div type="debate" subtype="quorum" xml:id="dbsect_2__dbsect_1">
+                  <note type="speaker">Mr. Epsilon:</note>
+                  <u who="#epsilon">
+                     <seg>On a point of order,  Mr. Speaker, Sir. We are discussing the President's Speech. The mere fact that we do not have enough hon. Members might mean that it is not a popular Speech. There is no quorum in this House and could you ensure that there is quorum and then we can continue in order to show that themPresident's Speech is popular and he is also a popular President as well?</seg>
+                  </u>
+                  <note type="speaker">The  Speaker:</note>
+                  <u who="#speaker" decls="#chair">
+                     <seg>Hon. Members, yes, I have checked and apparently the House lacks quorum at the moment. Ring the Division Bell.</seg>
+                  </u>
+                  <note type="summary">(The Division Bell was rung)</note>
+                  <note type="speaker">The  Speaker:</note>
+                  <u who="#speaker" decls="#chair">
+                     <seg>Order, hon. Members! We have a quorum now. Please, proceed with the Division!</seg>
+                  </u>
+               </div>
+            </div>
+            <!-- example of Division Section -->
+            <div type="debate" subtype="division" xml:id="dbsect_3">
+               <head>DIVISION</head>
+               <note type="summary">(Question put and the House divided)</note>
+               <div type="debate" subtype="division" xml:id="dbsect_3__dbsect_1">
+                  <note type="speaker">The  Speaker:</note>
+                  <u who="#speaker" decls="#chair">
+                     <seg>Order! Order! 15 minutes are now over and those who wish to vote must be in the lobbies. If you are not wihtin the lobbies, you will not allowd to vote any more</seg>
+                  </u>
+                  <incident>
+                     <desc>(Loud consultation)</desc>
+                  </incident>
+                  <note type="speaker">The  Speaker:</note>
+                  <u who="#speaker" decls="#chair">
+                     <seg>Order! Order! The Division is now over and it is time to receive the results</seg>
+                  </u>
+                  <note type="vote" xml:id="summary_1">(Question carried by <measure xml:id="quantity_1" quantity="72" type="ayes">72</measure> to <measure quantity="56" xml:id="quantity_2" type="noes"> 56</measure> votes)</note>
+                  <note type="AYES" xml:id="dbsect_3__dbsect_2">AYES: <persName corresp="#alfa">Mr. Alfa</persName>,
+                     <persName corresp="#beta">Mr. Beta</persName>,
+                     <persName corresp="#delta">Mr. Delta</persName>, etc.</note>
+                  <note type="NOES" xml:id="dbsect_3__dbsect_3">NOES: <persName corresp="#gamma">Mr. Gamma</persName>,
+                     <persName corresp="#epsilon"> Mr. Epsilon</persName>,
+                     <persName corresp="#zeta">Mr. Zeta</persName>, etc.</note>
+               </div>
+            </div>
+            <!-- example of Recount of Votes -->
+            <div type="debate" subtype="corrections" xml:id="dbsect_4">
+               <head>RECOUT OF VOTES</head>
+               <note type="speaker">The  Speaker:</note>
+               <u who="#alfa" xml:id="dbsect_4__speech_1" decls="#chair">
+                  <seg>Order! Order! Hon. Members, Mr. Theta is entitled to recount the votes.</seg>
+               </u>
+               <note type="summary" xml:id="summary_2">(Proceed with the recount.)</note>
+               <!-- example of correction of quorum connected with teiHeader -->
+               <note type="speaker">Mr. Beta</note>
+               <u who="#beta" xml:id="dbsect_4__speech_2">
+                  <seg>Mr. Speaker, we made an error in the vote numbers: we have
+                     AYES <measure xml:id="quantity_3" quantity="76" type="ayes">76</measure> instead of <measure xml:id="quantity_4" quantity="72" type="ayes">72</measure>. 
+                  </seg>
+               </u>
+               <incident>
+                  <desc>(Applause)</desc>
+               </incident>
+            </div>
+            <!-- example of complex oralStatements -->
+            <div type="debate" subtype="statement" xml:id="bsect_5__dbsect_2">
+               <note type="time"><time when="2011-06-10T10:30:00+02:00">10.30 a.m.</time></note>
+               <head>STATEMENTS</head>
+               <div type="oralStatements" xml:id="bsect_5__dbsect_3">
+                  <head>Flood into the Republic of BUNGENI</head>
+                  <note type="speaker">Minister for the Interior (Mr Iota):</note>
+                  <u who="#gamma">
+                     <seg>Mr. Speaker, in a report from the BUNGENI Immigration Service dated 6th May, 2011, 
+                        addressed to the Ministry of the Interior, covering the period, 15th April to 5th May, 2011, 
+                        it was reported that following the flood in the Northern Region on March 18 and April 21, 2011, 
+                        calm has returned to the district.</seg>
+                  </u>
+               </div>
+            </div>
+            <!-- example of oral answers to questions -->
+            <div type="debate" subtype="questionAnswer" xml:id="dbsect_6">
+               <head>ORAL ANSWERS TO QUESTIONS</head>
+               <div type="debate" subtype="minedu" xml:id="dbsect_6__dbsect_1">
+                  <head>MINISTRY OF EDUCATION AND SPORTS</head>
+                  <div type="debate" subtype="questionAnswer" xml:id="dbsect_6__dbsect_1__dbsect_1">
+                     <head>Professional Training in the Republic of BUNGENI</head>
+                     <note type="speaker">Mr. Kappa</note>
+                     <u who="#kappa" xml:id="dbsect_6__dbsect_1__dbsect_1__question_1">
+                        <seg>asked the Minister for Education and
+                           Sports the organic relations between the BUNGENI National Association
+                           of Teachers (BNAT) and the International Association of Graduate Teachers
+                           (IAGRAT) in pursuance of the professional and trade union rights of
+                           teachers in the country and trade union rights of teachers in the
+                           country, because the two are not the same. And in his Answer, he
+                           referred to professional rights of both members. Does it mean that
+                           the IAGRAT has no trade union rights as his Answer states? Because,
+                           the two are not the same. Professional rights are different from
+                           trade</seg>
+                     </u>
+                     <note type="speaker">Mr. Eta</note>
+                     <u who="#eta" xml:id="dbsect_6__dbsect_1__dbsect_1__answer_1">
+                        <seg>Mr. Speaker, BNAT was the only umbrella professional body for
+                           teachers in the country until when some graduate teachers started
+                           agitation for recognition and finally broke away and formed the
+                           National Association of Graduate Teachers (NAGRAT).</seg>
+                        <seg>Currently, there are two (2) associations serving the interest of
+                           teachers in the BES<note place="foot" n="1" resp="#palmirani">BES: definition of Educational System</note>. 
+                           Whereas members of IAGRAT consist of a section
+                           of graduate teachers, BNATcovers nongraduates as well as graduate teachers.</seg>
+                        <seg>The professional rights of both members of BNAT and IAGRAT are
+                           assured as outlined in the Conditions and Scheme of Service for
+                           teachers. In the event, where a member of the Service has a problem,
+                           he approaches the association to which he belongs and that
+                           association handles the problem with BES in the light of the
+                           Conditions of Service.</seg>
+                        <seg>In the area of professional development, BNAT organizes in-service
+                           training for its members.</seg>
+                        <seg>Mr. Speaker, BNAT joins the ‘FORUM’ comprising the Judicial Service
+                           Staff Association of BUNGENI (JUSSAB), the Registered Nurses
+                           Association (BRNA) and the Civil Servants Association (CSA) for the
+                           negotiation of salaries for all teachers.</seg>
+                     </u>
+                     <listRelation>
+                        <relation name="questionAnswer" active="#dbsect_6__dbsect_1__dbsect_1__question_1" passive="#dbsect_6__dbsect_1__dbsect_1__answer_1"/>
+                     </listRelation>
+                  </div>
+               </div>
+            </div>
+            <div type="debate" subtype="omissis" xml:id="dbsect_7">
+               <incident>
+                  <desc>(Applause)</desc>
+               </incident>
+            </div>
+            <!-- example of adjournment -->
+            <div type="adjournment" xml:id="adjournment_1">
+               <head>ADJOURNMENT</head>
+               <note type="time">The House was  at <time when="2011-06-10T02:07:00+02:00">2.07 p.m.</time> till <time when="2011-06-11T10:00:00+02:00">11th June, 2011 at 10.00 a.m.</time></note>
+            </div>
+         </body>
+         <back>
+            <div type="conclusions">
+               <note type="date">Date, <date when="2011-06-11">10th June, 2011</date></note>
+            </div>
+         </back>
+      </text>
+   </TEI>
+</teiCorpus>
