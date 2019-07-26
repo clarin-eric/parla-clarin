@@ -279,7 +279,8 @@
 	<div xml:id="sec-langs">
           <head>Languages</head>
 	  <p>The language of an element's text content is in TEI, as in XML, signaled by the
-	  value of its <att>xml:lang</att> attribute.  The Parla-CLARIN recommendation
+	  value of its <att>xml:lang</att> attribute.
+	  The Parla-CLARIN recommendation
 	  requires that the root element of the corpus should have an <att>xml:lang</att>
 	  attribute, and, furthermore, that each element that contains text is either marked
 	  by this attribute, or one of its ancestors is. Note that if, going by the ancestor
