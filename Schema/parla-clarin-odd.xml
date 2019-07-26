@@ -305,6 +305,38 @@
 	  also be in English.</p>
 	</div>
 	
+	<div xml:id="sec-idents">
+          <head>Identifiers and referencing</head>
+	  <p>In order to simply refer to elements of a TEI document (i.e. a Parla-CLARIN
+	  corpus), elements can be marked with an ID, i.e. given the <att>xml:id</att> attribute
+	  with a unique value, obeying certain format requirements as defined by
+	  <ref target="https://www.w3.org/TR/xml-id/">W3C</ref>.</p>
+	  
+	  <p>Parla-CLARIN requires an <att>xml:id</att> attribute on the root element of
+	  each corpus file, which should, furthermore, be identical to the filename (modulo
+	  the file extension).  Parla-CLARIN also recommends that the divisions of the
+	  document (element <gi>div</gi>) should also be given identifiers. While any
+	  element can be given an <att>xml:id</att>, this is in general, not a good idea;
+	  rather, only those elements that will or could be referenced should be marked with
+	  this attribute.</p>
+	  
+	  <p>TEI offers a number of attributes that contain (URI) pointers.  Where the reference
+	  is to an element inside the document, the value of the <att>xml:id</att> being
+	  referred to should be preceded by a hash (#), as mandated by the XML standard. If the
+	  ID pointed to is from another document, them the full URI needs to be used.  However,
+	  as such URIs can be very long, TEI also offers another way of pointing, which can be
+	  used to shorten such long URIs, and this is defined by the <gi>prefixDef</gi> element
+	  in the TEI header. So, for example, if the defintions of MULTEXT-East feature
+	  structures are stored in the XML document
+	  <val>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml</val>, while the corpus uses
+	  pointers to these definitions
+	  (e.g. <val>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml#Pd-nsg</val>), then,
+	  with the appropriate definition of the prefix, we can use in the corpus much sorter
+	  pointers such as <val>mte:Pd-nsg</val>, which are then, via a regular expression
+	  mapping in the prefix definition converted to the full URI.
+	  </p>
+	</div>
+	
 	<div xml:id="sec-temporal">
           <head>Temporal information</head>
 	  <p>Parliamentary corpora can contain significant time-related information, e.g. the
@@ -317,7 +349,7 @@
 	  Edition</ref>. TEI offers a very rich set of attributes and anciliary elements to
 	  specify time-related information, which are discussed in the <ref
 	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONADA">Section
-	  on Dates and Times</ref> in the TEI Guidelines.</p>
+	  on Dates and Times</ref> of the TEI Guidelines.</p>
 
 	  <p>Parla-CLARIN users are free to use any of the TEI temporal attributes and
 	  elements, however, for most purposes, the following five attributes will suffice:
@@ -329,28 +361,6 @@
 	    is not known.</item>
 	  </list>
 	  </p>
-	</div>
-	
-	<div xml:id="sec-idents">
-          <head>Identifiers and referencing</head>
-	  <p>In order to simply refer to elements of a TEI document (i.e. a Parla-CLARIN
-	  corpus), these are given an <att>xml:id</att> attribute, as defined by <ref
-	  target="https://www.w3.org/TR/xml-id/">W3C</ref>.</p>
-	  
-	  <p>Parla-CLARIN requires an <att>xml:id</att> attribute on the root element of
-	  each corpus file, which should, furthermore, be identical to the filename (modulo
-	  the file extension).  Parla-CLARIN also recommends that the divisions of the
-	  document (element <gi>div</gi>) should also be given identifiers. While any
-	  element can be given an <att>xml:id</att>, this is in general, not a good idea;
-	  rather, only those elements that will or could be referenced should be marked with
-	  this attribute.</p>
-	  
-	  <p>TEI offers a number of attributes that contain (URI) pointers.  Where the
-	  reference is to an element inside the document, the value of the <att>xml:id</att>
-	  being referred to should be preceded by a hash (#), as mandated by the XML
-	  standard. However, TEI also offers another way of pointing, which can be used to
-	  shorten otherwise long URI references, and this is defined by the
-	  <gi>listPrefixDef</gi> element in the TEI header.</p>
 	</div>
 	
 	<div xml:id="sec-files">
@@ -372,7 +382,7 @@
       <div xml:id="sec-overall">
 	<head>Overall document structure</head>
 	
-	<div>
+	<div xml:id="sec-corpstruct">
           <head>Corpus structure</head>
 	  
 	  <p>As illustrated below, a CLARIN-Parla corpus should be rooted in an
@@ -418,7 +428,7 @@
 	  </egXML>
 	</div>
 	
-	<div>
+	<div xml:id="sec-textstruct">
           <head>Text divisions</head>
 	  
 	  <p>In the text <gi>body</gi>, as well as in the <gi>front</gi> and <gi>back</gi>
@@ -445,7 +455,19 @@
 	  </egXML>
 	</div>
 	
-      </div>
+	<div xml:id="sec-docvariants">
+          <head>Document variants</head>
+	  
+	  <p>Parliamentary proceedings often exists in two version, the original, <q>raw</q>
+	  transcription, and the edited, <q>redacted</q> transcription, which is then
+	  published. As both versions can be available, it is interesting for some research
+	  questions to also have both versions transcriptions available for study in the scope
+	  of a PPC.
+	  
+	  </p>
+	</div>
+	
+	</div>
 
       <div xml:id="sec-metadata">
 	<head>Corpus metadata</head>
@@ -502,7 +524,7 @@
 	  into the person surname(s) and forename(s) as well as giving more details on the
 	  decomposition of their name, as explained in the <ref
 	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPER">Section
-	  on Personal Names</ref> in the TEI Guidelines.</p>
+	  on Personal Names</ref> of the TEI Guidelines.</p>
 
 	  <p>As illustrated, further person metadata can contain the sex of the person and
 	  their birth date and place. Further elements are the persons <gi>death</gi> date and
@@ -533,7 +555,7 @@
 	  <p>Persons can have futher attributes, and TEI offers various elements (typically
 	  typed) to express them; they are introduced in the <ref
 	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSEpc">Section
-	  on Personal Characteristics</ref> in the TEI Guidelines. The two more general ones
+	  on Personal Characteristics</ref> of the TEI Guidelines. The two more general ones
 	  are <gi>state</gi>, which contains the description of some status or quality
 	  attributed to a person,(or organization) often at some specific time or for a
 	  specific date range and <gi>trait</gi>, which differs from <gi>state</gi> that it is
@@ -853,16 +875,9 @@
 	    </s>
 	  </egXML>
 	  
-	  Here, the tags are simply pointers to identifiers<note>Here the identifiers must be
-	  defined in the same document as the analysed sentence, however, this need not be
-	  the case: the value of <att>ana</att> could be a full URI, but, as this then makes
-	  for very log "tag" names, it is better to use the element <gi>prefixDef</gi> in the
-	  TEI header to define a special prefix for such tags (e.g. "mte" for MULTEXT-East,
-	  so the value <val>mte:Pd-nsg</val>, which is then, via a regular expression mapping,
-	  converted to a URI such as
-	  <val>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml/#Pd-nsg</val>.</note>
-	  which define the appropriate feature-structures, i.e. pairs of attribute-values, as
-	  in the example below:
+	  Here, the tags are simply pointers to identifiers, where the elements bearing these
+	  identifiers define the appropriate feature-structures, i.e. pairs of attribute-values,
+	  as in the example below:
 
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis3">
 	    <fs xml:id="Pd-nsg" xml:lang="en" corresp="#Zk-ser">
@@ -987,11 +1002,12 @@
  	  relation, while the <att>ana</att> attribute specifies what kind of a relation this
  	  is. It should be noted that the value of the analysis attribute is a pointer, and, in
  	  the example, we use the TEI prefix mechanism, which is then expanded via the
- 	  <gi>prefixDef</gi> element in the TEI header to resolve into a URI pointer, most
- 	  likely to pointing to <gi>taxonomy</gi> categories that give the definitions of the
- 	  relations. A further point to notice is that the sentence serves as the Root element
- 	  of the sentence, i.e. the fifth link of the UD analysis ties together the sentence
- 	  with the top-most token of the sentence.</p>
+ 	  <gi>prefixDef</gi> element in the TEI header to resolve into a URI pointer (as
+ 	  explained in <ref target="#sec-idents">Section on Identifiers and referencing</ref>),
+ 	  most likely to pointing to <gi>taxonomy</gi> categories that give the definitions of
+ 	  the relations. A further point to notice is that the sentence serves as the Root
+ 	  element of the sentence, i.e. the fifth link of the UD analysis ties together the
+ 	  sentence with the top-most token of the sentence.</p>
 	</div>
 	
       </div>
