@@ -34,7 +34,7 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
-      <change when="2019-07-25">Tomaž Erjavec: more documentation.</change>
+      <change when="2019-07-26">Tomaž Erjavec: more documentation.</change>
       <change when="2019-06-06">Tomaž Erjavec: adding some documentation.</change>
       <change when="2019-05-21">Tomaž Erjavec: first sketch.</change>
     </revisionDesc>
@@ -67,16 +67,16 @@
 	and that could serve as a storage and interchange format for such corpora. This
 	recommendations attempts to take into account the following aspects of PPC:
 	<list>
-	  <item>Structure: legislative periods, sessions, topics, speeches</item>
-	  <item>Metadata: mandates, titles, parliamentary bodies, location, date
-	  and time</item>
-	  <item>Speakers: age, party membership, links to external resources</item>
-	  <item>Political parties: name(s), history</item>
+	  <item>Structure: legislative periods, sessions, topics, speeches, variants
+	  of transcriptions</item>
+	  <item>Metadata: mandates, titles, parliamentary bodies, locations, dates
+	  and times</item>
+	  <item>Speakers: sex, date of birth, education, party membership, links to external
+	  resources</item>
+	  <item>Political parties: name(s), history, relations</item>
 	  <item>Speeches: speaker, text, comments, verbal and non-verbal interruptions</item>
-	  <item>Text versions: verbatim or redacted records</item>
-	  <item>Multimedia: audio and video, facsimile of original</item>
 	  <item>Linguistic annotation: PoS tagging, normalisation, syntax</item>
-	  <item>Legislative aspects: specification of laws, roll-calls</item>
+	  <item>Multimedia: audio and video, facsimile of original</item>
 	</list>
 	</p>
 	
@@ -91,18 +91,48 @@
 	phenomena. The recommendation itself is formalised as a TEI ODD document, on the
 	basis of which it is possible to derive an XML schema expressed either as a RelaxNG
 	schema, a DTD or a W3C schema.</p>
+
+	<p>When using these recommendations, the following points should be taken in consideration:
+	<list>
+	  <item>The TEI Guidelines are a large and complex set of specifications, and the
+	  Parla-CLARIN recommendation does not attempt to give an introduction to them. Rather,
+	  it concentrates only on aspects of the Guidelines that are most likely to be of use
+	  in encoding PPCs.</item>
+	  <item>It is difficult if not impossible to determine in advance what research
+	  questions a developer of a PPC will want to ask, and so what kind of phenomena they
+	  will want to encode. While we tried to cater for the more obvious encoding needs, it
+	  is possible that new users will have to use TEI elements or attributes that are not
+	  mentioned here.</item>
+	  <item>The recommendation is very much work in progress, so we have left the formal
+	  specification (i.e. the XML schema) rather unconstrained, so it can accomodate
+	  encoding practices that we have not (yet) forseen. The downside of this is that the
+	  XML schemas will allow constructs that are at odds to those that we propose in the
+	  prose of the recommendations. Therefore the prose should be taken as the definitive
+	  way of encoding the phenomena under discussion, i.e. even if a PPC validates agains
+	  the schema, it might still not be encoded according to these recommendations.</item>
+	  <item>In the text of these recommendations, every mention of a element is linked to
+	  its defintion, where examples of use are also given. The text also makes frequent
+	  reference to the text of the TEI Guidelines. However, both the definitions and the TEI
+	  Guidelines give generic examples and explanations, which can be at odds with the
+	  particular recommendation that are made here, so they should be taken with a grain of
+	  salt.</item>
+	</list>
+	</p>
 	
-	<p>The rest of these guidelines are structured as follows:
-	the rest of this section details the scope, purpose and background of this recommendation;
-	<ref target="#sec-general">Section 2</ref> gives the general requirements that a Parla-CLARIN PPC has to meet;
-	<ref target="#sec-overall">Section 3</ref> explains the overall document structure of a Parla-CLARIN PPC;
-	<ref target="#sec-metadata">Section 4</ref> concentrates on encoding the corpus metadata, such as information on speakers or political parties;
-	<ref target="#sec-transcript">Section 5</ref> on encoding the transcripts;
-	<ref target="#sec-linguistic">Section 6</ref> on linguistic annotations;
-	<ref target="#sec-multimedia">Section 7</ref> on multimedia information;
-	<ref target="#sec-rdf">Section 8</ref> sketches ways how the proposed Parla-CLARIN format can be linked with RDF; and
-	<ref target="#sec-conversion">Section 9</ref> discusses conversions to and from the Parla-CLARIN format; and
-	<ref target="#specification">Appendix A</ref> gives the formal specification of the Parla-CLARIN schema.</p>
+	<p>The rest of these guidelines are structured as follows: the rest of this section
+	details the scope, purpose and background of this recommendation; <ref
+	target="#sec-general">Section 2</ref> gives the general requirements that a Parla-CLARIN
+	PPC has to meet; <ref target="#sec-overall">Section 3</ref> explains the overall
+	document structure of a Parla-CLARIN PPC; <ref target="#sec-metadata">Section 4</ref>
+	concentrates on encoding the corpus metadata, such as information on speakers or
+	political parties; <ref target="#sec-transcript">Section 5</ref> on encoding the
+	transcripts; <ref target="#sec-linguistic">Section 6</ref> on linguistic annotations;
+	<ref target="#sec-multimedia">Section 7</ref> on multimedia information; <ref
+	target="#sec-rdf">Section 8</ref> sketches ways how the proposed Parla-CLARIN format can
+	be linked with RDF; and <ref target="#sec-conversion">Section 9</ref> discusses
+	conversions to and from the Parla-CLARIN format; and <ref
+	target="#specification">Appendix A</ref> gives the formal specification of the
+	Parla-CLARIN schema.</p>
 	
 	<div xml:id="sec-scope">
           <head>Scope and purpose of the recommendation</head>
@@ -592,10 +622,10 @@
 
 	  The relation defines the relationship "parents" between the <att>active</att>
 	  persons of this relationship (i.e. those defined in the <gi>person</gi> element
-	  with the <att>xml:id</att> values of <code>sbi243926-0</code> and
-	  <code>sbi243926-1</code>) and the <att>passive</att> person of this relationship
+	  with the <att>xml:id</att> values of <val>sbi243926-0</val> and
+	  <val>sbi243926-1</val>) and the <att>passive</att> person of this relationship
 	  (i.e. the <gi>person</gi> element with the <att>xml:id</att> value of
-	  <code>sbi243926</code>).</p>
+	  <val>sbi243926</val>).</p>
 
 	  <p>Relationships can also be mutual, e.g. in the case of spouses, as illustrated below
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relatmutual">
@@ -721,7 +751,8 @@
 	content of the interruption, and the main speaker continues with their speech, as in
 	this snippet of a made-up transcript:
 
-	<eg>Boris Johnson: I propose a no-deal Brexit. /Jeremy Corbyn: Traitor!/ The reason for this is that England does not need or want any dealings with the European Union.</eg>
+	<eg>Boris Johnson: I propose a no-deal Brexit. /Jeremy Corbyn: Traitor!/ Because 
+	England does not want any dealings with the European Union.</eg>
 
 	While the interruption might be encoded as a <gi>note</gi>, it would better be
 	encoded as a separate utterace, which brings with it the problem that nested
@@ -731,7 +762,7 @@
 	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-splitu">
           <u who="#BorisJohnson" xml:id="GB001.8.3" next="#GB001.8.5">I propose a no-deal Brexit.</u>
           <u who="#JeremyCorbyn" xml:id="GB001.8.4">Traitor!</u>
-          <u who="#BorisJohnson" xml:id="GB001.8.5" prev="#GB001.8.3">The reason for this is that England does not need or want any dealings with the European Union.</u>
+          <u who="#BorisJohnson" xml:id="GB001.8.5" prev="#GB001.8.3">Because England does not want any dealings with the European Union.</u>
 	</egXML>
 	
 	As can be see, the split is indicated by the use of the <att>next</att> attribute on
@@ -787,14 +818,13 @@
 	  </egXML>
 
 	  Sentences are marked up using the <gi>s</gi> element, words with the <gi>w</gi>
-	  element and punctuation symbols with the <gi>pc</gi> element. To retain
-	  linguistically significant whitespace, the <att>join</att> element is used, with
-	  the main relevant values being <code>no</code> (assumed to be the default),
-	  <code>right</code> (no whitespace to the right of the token) and <code>left</code>
-	  (no whitespace to the left of the token). While, in the preceding example, it would
-	  be more intuitive to have <code>@join="left"</code> marked on the full-stop, we
-	  recommend that <code>@join="right"</code> is always used on the preceding token, as
-	  this simplifies processing.</p>
+	  element and punctuation symbols with the <gi>pc</gi> element. To retain linguistically
+	  significant whitespace, the <att>join</att> element is used, with the main relevant
+	  values being <val>no</val> (assumed to be the default), <val>right</val> (no
+	  whitespace to the right of the token) and <val>left</val> (no whitespace to the left
+	  of the token). While, in the preceding example, it would be more intuitive to have the
+	  value <val>left</val> marked on the full-stop, we recommend that <val>right</val> is
+	  used on the preceding token, as this simplifies processing.</p>
 
 	  <p>The base form of words is given in the <att>lemma</att> attribute,<note>Note
 	  that punctuation characters, <gi>pc</gi>, do not have a <att>lemma</att> attribute,
@@ -822,16 +852,18 @@
               <pc ana="#Z">.</pc>
 	    </s>
 	  </egXML>
+	  
 	  Here, the tags are simply pointers to identifiers<note>Here the identifiers must be
 	  defined in the same document as the analysed sentence, however, this need not be
 	  the case: the value of <att>ana</att> could be a full URI, but, as this then makes
 	  for very log "tag" names, it is better to use the element <gi>prefixDef</gi> in the
 	  TEI header to define a special prefix for such tags (e.g. "mte" for MULTEXT-East,
-	  so <code>@ana="mte:Pd-nsg"</code>, which is then, via a regular expression mapping,
+	  so the value <val>mte:Pd-nsg</val>, which is then, via a regular expression mapping,
 	  converted to a URI such as
-	  <code>@ana="http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml/#Pd-nsg"</code>.</note>
+	  <val>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml/#Pd-nsg</val>.</note>
 	  which define the appropriate feature-structures, i.e. pairs of attribute-values, as
 	  in the example below:
+
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis3">
 	    <fs xml:id="Pd-nsg" xml:lang="en" corresp="#Zk-ser">
 	      <f name="CATEGORY"><symbol value="Pronoun"/></f>
@@ -845,36 +877,121 @@
 	</div>
 	
 	<div xml:id="sec-anasegment">
-	  <head>Named entities and other segmental annotation</head>
-	  <p>A common annotation type, used especially for marking named entities is
-	  segmental annotation, where a stretch of text is simply enclosed in XML tags. 
+	  <head>Segmental annotation</head>
+
+	  <p>A common annotation type, used e.g. for marking named entities or terms, is
+	  segmental annotation, where a stretch of text or tokens is simply enclosed in XML
+	  tags, as the following example illustrates:
+	  
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis4">
-	    <s xml:id="ssj1.1.5">
-              <w ana="mte:Pd-nsg" lemma="ta" xml:id="ssj1.1.5.t1">Tega</w>
-              <w ana="mte:Px------y" lemma="se" xml:id="ssj1.1.5.t2">se</w>
-              <w ana="mte:Q" lemma="sploh" xml:id="ssj1.1.5.t3">sploh</w>
-              <w ana="mte:Va-r1s-y" lemma="biti" xml:id="ssj1.1.5.t4">nisem</w>
-              <w ana="mte:Vmep-sm" lemma="zavesti" join="right" xml:id="ssj1.1.5.t5">zavedel</w>
+	    <s>
+	      <name type="person">
+		<w>John</w>
+		<w>Malkovič</w>
+	      </name>
+              <w>went</w>
+              <w>to</w>
+	      <name type="location">
+		<w>New</w>
+		<w>York</w>
+	      </name>
               <pc ana="mte:Z" xml:id="ssj1.1.5.t6">.</pc>
 	    </s>
+	  </egXML>
+	  
+	  TEI offers a number of elements that can be used for such annotations,
+	  e.g.:
+	  <list>
+	    <item><gi>term</gi> for marking up terms, discussed in the <ref
+	    target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHQU">Section
+	    on Terms, Glosses, Equivalents, and Descriptions</ref>of the TEI Guidelines;</item>
+
+	    <item><gi>name</gi> for various types of names, or, the more general <gi>rs</gi> for
+	    <q>referring string</q>, e.g. <tag>rs type="person"</tag>her husband<tag>/rs</tag>,
+	    discussed in the <ref
+	    target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONARS">Section
+	    on Referring Strings</ref> of the TEI Guidelines;</item>
+	    
+	    <item><gi>num</gi> for numbers and <gi>measure</gi>, usually comprising a number, a
+	    unit, and a commodity name (e.g. <tag>measure type="weight" quantity="5000"
+	    unit="ton" commodity="coal"</tag>five thousand tones of coal<tag>/measure</tag>,
+	    discussed in the <ref
+	    target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONANU">Section
+	    on Numbers and Measures</ref> of the TEI Guidelines;</item>
+
+	    <item><gi>date</gi> and <gi>time</gi>, discussed in the <ref
+	    target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONADA">Section
+	    on Dates and Times</ref> of the TEI Guidelines;</item>
+
+	    <item><gi>seg</gi> for cases where TEI does not have a specific element for some
+	    type of segmental markup, e.g. <tag>seg type="swearword"
+	    subtype="religious"</tag>Damn<tag>/seg</tag>; this element is discussed in the <ref
+	    target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SASE">Section
+	    on Blocks, Segments, and Anchors</ref> of the TEI Guidelines.</item>
+	  </list>
+	  It should be noted that for cases of discontinuity of the segment, the <att>prev</att>
+	  and <att>next</att> attributes can be used to link its parts together. Furthermore,
+	  the <att>part</att> attribute can be used to specify the type of the fragments, as
+	  shown in the folllowing example:
+	  
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis5">
+	    <term xml:id="t1" part="I" next="#t3">di-</term> and
+	    <term xml:id="t2" part="I" next="#t3">poli</term><term xml:id="t3" part="F">methyl</term>
 	  </egXML>
 	  </p>
 	</div>
 	
 	<div xml:id="sec-analinking">
-	  <head>Syntactic dependencies and other linking annotation</head>
-	  <p>
-	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis5">
+	  <head>Linking annotation</head>
+	  
+	  <p>For analyses that establish relations between tokens or segments, such as syntactic
+	  dependecy analysis or semantic role labeling, the <gi>linkGrp</gi> element, explained
+	  in the <ref
+	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html">Chapter on
+	  Linking, Segmentation, and Alignment</ref> is used. It is composed of <gi>link</gi>
+	  elements, which give two or more references to IDs, as illustrated in the following
+	  example:
+	    
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis6">
 	    <s xml:id="ssj1.1.5">
-              <w ana="mte:Pd-nsg" lemma="ta" xml:id="ssj1.1.5.t1">Tega</w>
-              <w ana="mte:Px------y" lemma="se" xml:id="ssj1.1.5.t2">se</w>
-              <w ana="mte:Q" lemma="sploh" xml:id="ssj1.1.5.t3">sploh</w>
-              <w ana="mte:Va-r1s-y" lemma="biti" xml:id="ssj1.1.5.t4">nisem</w>
-              <w ana="mte:Vmep-sm" lemma="zavesti" join="right" xml:id="ssj1.1.5.t5">zavedel</w>
-              <pc ana="mte:Z" xml:id="ssj1.1.5.t6">.</pc>
+              <w xml:id="ssj1.1.5.t1">Tega</w>
+              <w xml:id="ssj1.1.5.t2">se</w>
+              <w xml:id="ssj1.1.5.t3">sploh</w>
+              <w xml:id="ssj1.1.5.t4">nisem</w>
+              <w join="right" xml:id="ssj1.1.5.t5">zavedel</w>
+              <pc xml:id="ssj1.1.5.t6">.</pc>
+	      <linkGrp type="UD-SYN" targFunc="head argument">
+		<link ana="ud-syn:obj" target="#ssj1.1.5.t5 #ssj1.1.5.t1"/>
+		<link ana="ud-syn:expl" target="#ssj1.1.5.t5 #ssj1.1.5.t2"/>
+		<link ana="ud-syn:advmod" target="#ssj1.1.5.t5 #ssj1.1.5.t3"/>
+		<link ana="ud-syn:aux" target="#ssj1.1.5.t5 #ssj1.1.5.t4"/>
+		<link ana="ud-syn:root" target="#ssj1.1.5 #ssj1.1.5.t5"/>
+		<link ana="ud-syn:punct" target="#ssj1.1.5.t5 #ssj1.1.5.t6"/>
+              </linkGrp>
+              <linkGrp type="SRL" targFunc="head argument" corresp="#ssj1.1.5" >
+		<link ana="srl:PAT" target="#ssj1.1.5.t5 #ssj1.1.5.t1"/>
+              </linkGrp>
 	    </s>
 	  </egXML>
-	  </p>
+	  
+	  In the example, each token, as well as the sentence element are given an ID, and the
+	  first link group specifies the Universal Dependencies syntactic analysis of the
+	  sentence, while the second one give its semantic role labels.  The are distinguished
+	  by their <att>type</att> attribute<note>We do not specify the values of
+	  <att>type</att> of the link gropu as the range of possibilities is too great and not
+	  known in advance.</note>, while the <att>targFunc</att> attribute explains the
+	  functions of the references given in the <att>target</att> attributes of the contained
+	  <gi>link</gi> elements.</p>
+
+ 	  <p>The contained links then give the references to the head and argument tokens of the
+ 	  relation, while the <att>ana</att> attribute specifies what kind of a relation this
+ 	  is. It should be noted that the value of the analysis attribute is a pointer, and, in
+ 	  the example, we use the TEI prefix mechanism, which is then expanded via the
+ 	  <gi>prefixDef</gi> element in the TEI header to resolve into a URI pointer, most
+ 	  likely to pointing to <gi>taxonomy</gi> categories that give the definitions of the
+ 	  relations. A further point to notice is that the sentence serves as the Root element
+ 	  of the sentence, i.e. the fifth link of the UD analysis ties together the sentence
+ 	  with the top-most token of the sentence.</p>
 	</div>
 	
       </div>
@@ -911,7 +1028,8 @@
     </body>
     
     <back>
-      <div type="specification">
+      <divGen type="subtoc"/>
+      <div>
 	<head>Formal specification</head>
 	<schemaSpec ident="tei_clarin" start="TEI teiCorpus" docLang="en" prefix="tei_" xml:lang="en">
           <moduleRef key="tei" except=""/>
