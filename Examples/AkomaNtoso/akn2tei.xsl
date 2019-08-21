@@ -130,7 +130,7 @@
     </xsl:template>
     
     <xsl:template match="akn:conclusions | akn:attachments | akn:components">
-        <div type="{node-name(.)}">
+        <div type="{name()}">
             <!-- Do we also need this content for the parla-clarin project? -->
         </div>
     </xsl:template>
@@ -143,7 +143,7 @@
     </xsl:template>
     
     <xsl:template match="akn:debateSection">
-        <div type="{node-name()}" subtype="{@name}">
+        <div type="{name()}" subtype="{@name}">
             <xsl:call-template name="att-coreopt"/>
             <xsl:apply-templates/>
             <xsl:call-template name="questionAnswer"/>
@@ -151,7 +151,7 @@
     </xsl:template>
     
     <xsl:template match="akn:*[xs:string(node-name(.)) = ('address', 'adjournment', 'administrationOfOath', 'communication', 'declarationOfVote', 'ministerialStatements', 'nationalInterest', 'noticesOfMotion', 'oralStatements', 'papers', 'petitions', 'prayers', 'proceduralMotions', 'pointOfOrder', 'personalStatements', 'questions', 'resolutions', 'rollCall', 'writtenStatements')]">
-        <div type="{node-name()}">
+        <div type="{name()}">
             <xsl:call-template name="att-coreopt"/>
             <xsl:apply-templates/>
             <xsl:call-template name="questionAnswer"/>
@@ -176,13 +176,13 @@
         </u>
     </xsl:template>
     <xsl:template match="akn:other">
-        <note type="{node-name()}">
+        <note type="{name()}">
             <xsl:call-template name="att-coreopt"/>
             <xsl:apply-templates/>
         </note>
     </xsl:template>
     <xsl:template match="akn:narrative | akn:summary">
-        <note type="{node-name()}">
+        <note type="{name()}">
             <xsl:call-template name="att-coreopt"/>
             <xsl:apply-templates/>
         </note>

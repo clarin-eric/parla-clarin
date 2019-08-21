@@ -1,0 +1,272 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     type="debate"
+     subtype="hansard"
+     xml:lang="eng">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title>PARLIAMENT OF THE REPUBLIC OF BUNGENI</title>
+            <title>SECOND MEETING, 2011</title>
+            <title>10th June 2011</title>
+         </titleStmt>
+         <publicationStmt>
+            <p>Publication Information</p>
+         </publicationStmt>
+         <sourceDesc>
+            <p>FLBR data</p>
+         </sourceDesc>
+      </fileDesc>
+      <profileDesc>
+         <particDesc>
+            <listPerson>
+               <person xml:id="palmirani">
+                  <persName ref="/akn/ontology/person/ita/editors/palmirani">palmirani</persName>
+               </person>
+               <person xml:id="alfa">
+                  <persName ref="/akn/ontology/person/akn/parliament/alfa">Mr. Alfa</persName>
+               </person>
+               <person xml:id="beta">
+                  <persName ref="/akn/ontology/person/akn/parliament/beta">Mr. Beta</persName>
+               </person>
+               <person xml:id="gamma">
+                  <persName ref="/akn/ontology/person/akn/parliament/gamma">Mr. Gamma</persName>
+               </person>
+               <person xml:id="delta">
+                  <persName ref="/akn/ontology/person/akn/parliament/delta">Mr. Delta</persName>
+               </person>
+               <person xml:id="epsilon">
+                  <persName ref="/akn/ontology/person/akn/parliament/eta">Mr. epsilon</persName>
+               </person>
+               <person xml:id="kappa">
+                  <persName ref="/akn/ontology/person/akn/parliament/kappa">Mr. Kappa</persName>
+               </person>
+               <person xml:id="eta">
+                  <persName ref="/akn/ontology/person/akn/parliament/eta">Mr. Eta</persName>
+               </person>
+               <person xml:id="zeta">
+                  <persName ref="/akn/ontology/person/akn/parliament/zeta">Mr. zeta</persName>
+               </person>
+            </listPerson>
+         </particDesc>
+         <listOrg>
+            <org>
+               <head>Parliament: Analysis of voting, recount, and quorum verification</head>
+               <listEvent>
+                  <event xml:id="vot1" type="voting">
+                     <desc>
+                        <measure/>
+                        <measure/>
+                        <measure/>
+                     </desc>
+                  </event>
+               </listEvent>
+            </org>
+         </listOrg>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="preface">
+			         <p rend="heading">THE PARLIAMENT OF THE REPUBLIC OF BUNGENI
+			</p>
+			         <p>
+				SECOND MEETING, 2011
+			</p>
+			         <p>Friday, 10th June 2011
+			</p>
+		       </div>
+      </front>
+      <body>
+			      <div type="debateSection" subtype="opening" xml:id="dbsect_0">
+				
+				        <p>The House met at <time when="2011-06-10T10:02:00+02:00" type="recordedTime"> 10.02 a.m.</time>
+				        </p>
+				
+				        <note type="narrative">[MR. SPEAKER IN THE CHAIR]</note>
+			      </div>
+			
+			      <div type="prayers" xml:id="prayers_1">
+				        <head>PRAYERS</head>
+			      </div>
+			      <div type="debateSection" subtype="motions" xml:id="dbsect_1">
+				
+				        <head>MOTIONS	</head>
+				        <div type="debateSection" subtype="motion" xml:id="dbsect_1__dbsect_1">
+					          <u who="#alfa">
+						            <note type="speaker">Mr. Alfa:</note>
+						            <seg>Mr. Deputy Speaker, I beg to move to the following Motion-</seg>
+						            <seg>THAT this House do grant leave to introduce a Bill for.....(30 pages of dabate)</seg>
+					          </u>
+				        </div>
+			      </div>
+			      <div type="debateSection" subtype="quorum" xml:id="dbsect_2">
+				
+				        <head>QUORUM
+			</head>
+				        <div type="debateSection" subtype="quorum" xml:id="dbsect_2__dbsect_1">
+					          <u who="#epsilon">
+						            <note type="speaker">
+Mr. Epsilon: </note>
+						            <seg>On a point of order,  Mr. Speaker, Sir. We are discussing the President's Speech. The mere fact that we do not have enough hon. Members might mean that it is not a popular Speech. There is no quorum in this House and could you ensure that there is quorum and then we can continue in order to show that themPresident's Speech is popular and he is also a popular President as well?</seg>
+					          </u>
+					          <u who="#speaker">
+						            <note type="speaker">The  Speaker:</note>
+						            <seg>Hon. Members, yes, I have checked and apparently the House lacks quorum at the moment. Ring the Division Bell.</seg>
+					          </u>
+					          <note type="summary">(The Division Bell was rung)</note>
+					
+					          <u who="#speaker">
+						            <note type="speaker">The Speaker:</note>
+						            <seg>
+ Order, hon. Members! We have a quorum now. Please, proceed with the Division!</seg>
+					          </u>
+				        </div>
+			      </div>
+			      <div type="debateSection" subtype="division" xml:id="dbsect_3">
+				
+				        <head>DIVISION</head>
+				        <note type="summary">(Question put and the House divided)</note>
+				        <div type="debateSection" subtype="division" xml:id="dbsect_3__dbsect_1">
+					          <u who="#speaker">
+						            <note type="speaker">Mr. Speaker:</note>
+						            <seg>Order! Order! 15 minutes are now over and those who wish to vote must be in the lobbies. If you are not wihtin the lobbies, you will not allowd to vote any more</seg>
+					          </u>
+					          <incident>
+                  <desc>(Loud consultation)</desc>
+               </incident>
+					          <u who="#speaker">
+						            <note type="speaker">Mr. Speaker:</note>
+						            <seg>Order! Order! The Division is now over and it is time to receive the results</seg>
+					          </u>
+					          <note type="summary" xml:id="summary_1">(Question carried by <measure xml:id="quantity_1" corresp="#ayes" quantity="72">72</measure> to <measure xml:id="quantity_2" corresp="#noes" quantity="56"> 56</measure> votes)</note>
+				        </div>
+				        <div type="debateSection" subtype="AYES" xml:id="dbsect_3__dbsect_2">
+					          <p>AYES: <persName xml:id="person_3321" corresp="#alfa">Mr. Alfa,</persName>
+						            <persName xml:id="person_3322" corresp="#beta">Mr. Beta,</persName>
+						            <persName xml:id="person_3323" corresp="#delta">Mr. Delta</persName>, etc.</p>
+				        </div>
+				        <div type="debateSection" subtype="NOES" xml:id="dbsect_3__dbsect_3">
+					          <p>NOES: <persName xml:id="person_3331" corresp="#gamma">Mr. Gamma,</persName>
+						            <persName xml:id="person_3332" corresp="#epsilon"> Mr. Epsilon,</persName>
+						            <persName xml:id="person_3333" corresp="#zeta">Mr. Zeta, etc.</persName>
+					          </p>
+				        </div>
+			      </div>
+			      <div type="debateSection" subtype="corrections" xml:id="dbsect_4">
+				
+				        <head>RECOUT OF VOTES </head>
+				        <u xml:id="dbsect_4__speech_1" who="#alfa" decls="speaker">
+					          <note type="speaker">Mr. Speaker</note>
+					          <seg>Order! Order! Hon. Members, Mr. Theta is entitled to recount the votes.</seg>
+				        </u>
+				
+				        <note type="summary" xml:id="summary_2">(Proceed with the recount.)</note>
+				
+				        <u xml:id="dbsect_4__speech_2" who="#beta">
+					          <note type="speaker">Mr. Beta</note>
+					          <seg>Mr. Speaker, we made an error in the vote numbers: we have
+					AYES <measure xml:id="quantity_3" corresp="#ayes" quantity="76">76</measure> instead of <measure xml:id="quantity_4" corresp="#ayes" quantity="72">72</measure>. 
+					</seg>
+				        </u>
+				        <incident>
+               <desc>(Applause)</desc>
+            </incident>
+			      </div>
+			
+			      <div type="debateSection" subtype="statement" xml:id="dbsect_5">
+				        <div type="debateSection"
+                 subtype="recorderdTime"
+                 xml:id="dbsect_5__dbsect_1">
+					          <p>
+						            <time when="2011-06-10T10:30:00+02:00" type="recordedTime">10.30 a.m.</time>
+					          </p>
+				        </div>
+				        <div type="debateSection" subtype="speech" xml:id="bsect_5__dbsect_2">
+					          <head>STATEMENTS</head>
+					          <div type="oralStatements" xml:id="bsect_5__dbsect_3">
+						            <head>Flood into the Republic of BUNGENI</head>
+						            <u corresp="#ministerInterior" who="#gamma">
+							              <note type="speaker">Minister for the Interior (Mr Iota): </note>
+							              <seg>Mr. Speaker, in a report from the BUNGENI Immigration Service dated 6th May, 2011, 
+							addressed to the Ministry of the Interior, covering the period, 15th April to 5th May, 2011, 
+							it was reported that following the flood in the Northern Region on March 18 and April 21, 2011, 
+							calm has returned to the district.</seg>
+						            </u>
+					          </div>
+				        </div>
+			      </div>
+			
+			      <div type="debateSection" subtype="questionAnswer" xml:id="dbsect_6">
+				        <head>ORAL ANSWERS TO QUESTIONS</head>
+				        <div type="debateSection" subtype="minedu" xml:id="dbsect_6__dbsect_1">
+					          <head>MINISTRY OF EDUCATION AND SPORTS</head>
+					          <div type="debateSection"
+                    subtype="questionAnswer"
+                    xml:id="dbsect_6__dbsect_1__dbsect_1">
+						            <head>Professional Training in the Republic of BUNGENI</head>
+						            <u xml:id="dbsect_6__dbsect_1__dbsect_1__question_1"
+                     who="#kappa"
+                     corresp="#ministerEducation">
+							              <note type="speaker">Mr. Kappa</note>
+							              <seg>asked the Minister for Education and
+                                Sports the organic relations between the BUNGENI National Association
+                                of Teachers (BNAT) and the International Association of Graduate Teachers
+                                (IAGRAT) in pursuance of the professional and trade union rights of
+                                teachers in the country and trade union rights of teachers in the
+                                country, because the two are not the same. And in his Answer, he
+                                referred to professional rights of both members. Does it mean that
+                                the IAGRAT has no trade union rights as his Answer states? Because,
+                                the two are not the same. Professional rights are different from
+                                trade</seg>
+						            </u>
+						            <u xml:id="dbsect_6__dbsect_1__dbsect_1__answer_1"
+                     who="#eta"
+                     decls="#ministerEducation">
+							              <note type="speaker">Mr. Eta</note>
+							              <seg>Mr. Speaker, BNAT was the only umbrella professional body for
+                                teachers in the country until when some graduate teachers started
+                                agitation for recognition and finally broke away and formed the
+                                National Association of Graduate Teachers (NAGRAT). </seg>
+							              <seg> Currently, there are two (2) associations serving the interest of
+                                teachers in the BES. 
+                                Whereas members of IAGRAT consist of a section
+                                of graduate teachers, BNATcovers nongraduates as well as graduate teachers.</seg>
+							              <seg> The professional rights of both members of BNAT and IAGRAT are
+                                assured as outlined in the Conditions and Scheme of Service for
+                                teachers. In the event, where a member of the Service has a problem,
+                                he approaches the association to which he belongs and that
+                                association handles the problem with BES in the light of the
+                                Conditions of Service.</seg>
+							              <seg> In the area of professional development, BNAT organizes in-service
+                                training for its members.</seg>
+							              <seg> Mr. Speaker, BNAT joins the ‘FORUM’ comprising the Judicial Service
+                                Staff Association of BUNGENI (JUSSAB), the Registered Nurses
+                                Association (BRNA) and the Civil Servants Association (CSA) for the
+                                negotiation of salaries for all teachers.</seg>
+						            </u>
+					             <listRelation>
+                     <relation name="questionAnswer"
+                               active="#dbsect_6__dbsect_1__dbsect_1__question_1"
+                               passive="#dbsect_6__dbsect_1__dbsect_1__answer_1"/>
+                  </listRelation>
+               </div>
+				        </div>
+			      </div>
+			      <div type="debateSection" subtype="omissis" xml:id="dbsect_7">
+				        <incident>
+               <desc>(Applause)</desc>
+            </incident>
+			      </div>
+			      <div type="adjournment" xml:id="adjournment_1">
+				
+				        <head> ADJOURNMENT</head>
+				        <p>The House was  at <time when="2011-06-10T02:07:00+02:00" type="recordedTime">2.07 p.m. </time> till <date when="2011-06-11">11th June, 2011</date>  at <time when="2011-06-11T10:00:00+02:00" type="recordedTime">10.00 a.m. </time>
+				        </p>
+			      </div>
+		    </body>
+      <back>
+         <div type="conclusions"/>
+      </back>
+   </text>
+</TEI>
