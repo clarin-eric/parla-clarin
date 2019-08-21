@@ -5,15 +5,19 @@
      <teiHeader xml:lang="en">
          <fileDesc>
              <titleStmt>
-                 <title>Title of corpus</title>
-                 <author>Author of corpus</author>
+                 <title>An example of the parlaCLARIN parliamentary corps</title>
+                 <author ref="http://viaf.org/viaf/305936424">
+                     <forename>Andrej</forename>
+                     <surname>Pančur</surname>
+                 </author>
+                 <editor ref="https://orcid.org/0000-0002-1560-4099 http://viaf.org/viaf/15145066459666591823">
+                     <forename>Tomaž</forename>
+                     <surname>Erjavec</surname>
+                 </editor>
                  <respStmt>
-                     <persName>Andrej Pančur</persName>
                      <resp>TEI corpus encoding</resp>
-                 </respStmt>
-                 <respStmt>
-                     <persName>Tomaž Erjavec</persName>
-                     <resp>Linguistic processing</resp>
+                     <persName ref="http://viaf.org/viaf/305936424">Andrej Pančur</persName>
+                     <persName ref="https://orcid.org/0000-0002-1560-4099 http://viaf.org/viaf/15145066459666591823">Tomaž Erjavec</persName>
                  </respStmt>
                  <funder>CLARIN ERIC</funder>
              </titleStmt>
@@ -45,10 +49,17 @@
              <!-- Source description for the whole corpus. -->
              <sourceDesc>
                  <!-- Use a more or less structured bibliographic record in accordance with the guidelines in
-                      https://tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3 -->
+                      https://tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3
+                      Minimum requirements:
+                       - Use the <bibl> element with the following child elements:
+                           - mandatory <title> and 
+                           - optional <idno> and <date>
+                 -->
                  <bibl>
-                     <title>Portal Državnega zbora Republike Slovenije</title>
-                     <idno type="URI">https://www.dz-rs.si</idno>
+                     <title>Portal DZ</title>
+                     <title>Seje Državnega zbora</title>
+                     <idno type="URI">https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N3INMjAw8Db0tQ3x8fQwNvM30wwkpiAJKG-AAjgb6BbmhigCWEc4T/dz/d5/L2dBISEvZ0FBIS9nQSEh/</idno>
+                     <date from="1990-05-08" to="2018-06-22"/>
                  </bibl>
              </sourceDesc>
          </fileDesc>

@@ -49,22 +49,43 @@
             <idno type="FRBRthis">/akn/ke/minutes/2011-06-10/eng@/!main.xml</idno>
             <idno type="FRBRuri">/akn/ke/minutes/2011-06-10/eng@.akn</idno>
          </publicationStmt>
-         <!-- Source description for the whole corpus. Include information about FRBRWork! -->
+         <!-- Source description for the whole corpus. -->
+         <!-- <sourceDesc> can contain FLBR metadata: https://tei-c.org/extra/teiinlibraries/4.0.0/bptl-driver.html#frbr -->
          <sourceDesc>
             <!-- Use a more or less structured bibliographic record in accordance with the guidelines in
                       https://tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3 -->
             <bibl>
-               <title>Akoma Ntoso Version 1.0</title>
-               <idno type="URI">https://www.oasis-open.org/standards#akn-v1.0</idno>
+               <title type="main">Akoma Ntoso Version 1.0</title>
+               <title type="sub">Examples</title>
+               <idno type="URI">http://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part2-specs/examples/</idno>
             </bibl>
-            <!-- example of FRBRWork -->
-            <bibl>
-               <idno type="FRBRthis">/akn/ke/debaterecord/2011-06-10/!main</idno>
-               <idno type="FRBRuri">/akn/ke/debaterecord/2011-06-10</idno>
-               <date when="2011-06-10" type="generation"/>
-               <author ref="#parla.ke"/>
-               <country key="ak"/>
-            </bibl>
+            <!-- FLBR, http://vocab.org/frbr/core.html
+                 [Work] realization [Exspression] embodiment [Manifestation] exemplar [Item]
+                 http://vocab.org/frbr/core.html
+                 https://rawgit.com/essepuntato/allot/master/ontology/current/allot.html
+                 https://unsceb-hlcm.github.io/onto-undo/
+                 https://www.balisage.net/Proceedings/vol5/print/Barabucci01/BalisageVol5-Barabucci01.html#d84554e336
+                 http://www.dublincore.org/specifications/dublin-core/dcmi-terms/
+                 https://www.w3.org/TR/owl-ref/
+                 
+                 
+            -->
+            <listRelation type="FRBR" resp="#palmirani">
+               <relation active="/akn/ke/debaterecord/2011-06-10/!main" ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" passive="http://purl.org/vocab/frbr/core#Work"/>
+               <relation active="http://purl.org/vocab/frbr/core#Work" ref="http://www.w3.org/2002/07/owl#sameAs" passive="https://w3id.org/akn/ontology/allot/FRBRWork"/>
+               <relation active="/akn/ke/debaterecord/2011-06-10/!main" ref="http://purl.org/dc/terms/isPartOf" passive="/akn/ke/debaterecord/2011-06-10"/>
+               <relation active="/akn/ke/debaterecord/2011-06-10/!main" ref="http://purl.org/dc/elements/1.1/date" passive="2011-06-10" name="generation"/>
+               
+               <relation active="/akn/ke/debaterecord/2011-06-10/!main" ref="http://purl.org/vocab/frbr/core#realization" passive="/akn/ke/minutes/2011-06-10/eng@/!main"/>
+               
+               <relation active="/akn/ke/minutes/2011-06-10/eng@/!main" ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" passive="http://purl.org/vocab/frbr/core#Expression"/>
+               <relation active="/akn/ke/minutes/2011-06-10/eng@/!main" ref="http://purl.org/dc/terms/isPartOf" passive="/akn/ke/minutes/2011-06-10/eng@"/>
+               
+               <relation active="/akn/ke/minutes/2011-06-10/eng@/!main" ref="http://purl.org/vocab/frbr/core#embodiment" passive="/akn/ke/minutes/2011-06-10/eng@/!main.xml"/>
+               
+               <relation active="/akn/ke/minutes/2011-06-10/eng@/!main.xml" ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" passive="http://vocab.org/frbr/core.html#term-Manifestation"/>
+               <relation active="/akn/ke/minutes/2011-06-10/eng@/!main.xml" ref="http://purl.org/dc/terms/isPartOf" passive="/akn/ke/minutes/2011-06-10/eng@.akn"/>
+            </listRelation>
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
