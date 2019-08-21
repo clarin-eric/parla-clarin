@@ -119,23 +119,40 @@
 	</list>
 	</p>
 	
-	<p>The rest of these guidelines are structured as follows: the rest of this section
-	details the scope, purpose and background of this recommendation; <ref
-	target="#sec-general">Section 2</ref> gives the general requirements that a Parla-CLARIN
-	PPC has to meet; <ref target="#sec-overall">Section 3</ref> explains the overall
-	document structure of a Parla-CLARIN PPC; <ref target="#sec-metadata">Section 4</ref>
-	concentrates on encoding the corpus metadata, such as information on speakers or
-	political parties; <ref target="#sec-transcript">Section 5</ref> on encoding the
-	transcripts; <ref target="#sec-linguistic">Section 6</ref> on linguistic annotations;
-	<ref target="#sec-multimedia">Section 7</ref> on multimedia information; <ref
-	target="#sec-rdf">Section 8</ref> sketches ways how the proposed Parla-CLARIN format can
-	be linked with RDF; and <ref target="#sec-conversion">Section 9</ref> discusses
-	conversions to and from the Parla-CLARIN format; and <ref
-	target="#specification">Appendix A</ref> gives the formal specification of the
-	Parla-CLARIN schema.</p>
+	<p>The rest of these guidelines are structured as follows:
+	<list>
+	  <item>the rest of this section details the scope, purpose and background of this
+	  recommendation;</item>
+
+	  <item><ref target="#sec-general">Section 2</ref> gives the general requirements that
+	  a Parla-CLARIN PPC has to meet;</item>
+
+	  <item><ref target="#sec-overall">Section 3</ref> explains the overall document
+	  structure of a Parla-CLARIN PPC;</item>
+
+	  <item><ref target="#sec-metadata">Section 4</ref> concentrates on encoding the corpus
+	  metadata, such as information on speakers or political parties;</item>
+	  
+	  <item><ref target="#sec-transcript">Section 5</ref> on encoding the
+	  transcripts;</item>
+
+	  <item><ref target="#sec-linguistic">Section 6</ref> on linguistic annotations;</item>
+
+	  <item><ref target="#sec-multimedia">Section 7</ref> on multimedia information;</item>
+
+	  <item><ref target="#sec-rdf">Section 8</ref> sketches ways how the proposed
+	  Parla-CLARIN format can be linked with RDF;</item>
+
+	  <item><ref target="#sec-conversion">Section 9</ref> discusses conversions to and from
+	  the Parla-CLARIN format;</item>
+
+	  <item><ref target="#specification">Appendix A</ref> gives the formal specification of
+	  the Parla-CLARIN schema.</item>
+	</list>
+      </p>
 	
-	<div xml:id="sec-scope">
-          <head>Scope and purpose of the recommendation</head>
+      <div xml:id="sec-scope">
+          <head>Scope and purpose</head>
 	  <p>This recommendation consists of guidelines and a formal TEI and XML schema and
 	  is intended for the encoding of corpora of parliamentary proceedings, regardless of
 	  the langauge or country of origin, for the purposes of scholarly investigations, be
