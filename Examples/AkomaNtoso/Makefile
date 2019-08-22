@@ -1,6 +1,8 @@
 cnv:
 	$s -xsl:akn2tei.xsl Examples/ke_Debate_Bungeni_2011-06-10.xml > ../AkomaNtosoKE-Example.xml
 	$j ../../Schema/parla-clarin.rng ../AkomaNtosoKE-Example.xml
+	$s -xsl:akn2tei.xsl Examples/cl_Sesion56_2.xml > ../AkomaNtosoCL-Example.xml
+	$j ../../Schema/parla-clarin.rng ../AkomaNtosoCL-Example.xml
 get:
 	rm -f *.xsd
 	rm -f *.xml

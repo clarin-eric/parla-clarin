@@ -8,6 +8,8 @@
     version="2.0">
     
     <xsl:output method="xml" indent="yes"/>
+    <xsl:strip-space elements="*"/>
+    <!--xsl:preserve-space elements="p"/-->
     
     <xsl:param name="authority">CLARIN ERIC</xsl:param>
     
@@ -455,7 +457,7 @@
     
     <!-- TOC -->
     <xsl:template match="akn:toc">
-        <list type="TOC">
+        <list type="toc">
             <xsl:call-template name="att-coreopt"/>
             <xsl:apply-templates/>
         </list>
