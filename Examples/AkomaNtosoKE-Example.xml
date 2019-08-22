@@ -11,70 +11,195 @@
             <title>10th June 2011</title>
          </titleStmt>
          <publicationStmt>
-            <p>Publication Information</p>
+            <authority>CLARIN ERIC</authority>
          </publicationStmt>
          <sourceDesc>
-            <p>FLBR data</p>
+            <bibl>
+               <title type="main">Akoma Ntoso Version 1.0</title>
+               <title type="sub">Examples</title>
+               <idno type="URI">http://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part2-specs/examples/</idno>
+            </bibl>
+            <listRelation type="FRBR" resp="#palmirani">
+               <relation ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                         active="/akn/ke/debaterecord/2011-06-10/!main"
+                         passive="http://purl.org/vocab/frbr/core#Work"/>
+               <relation ref="http://www.w3.org/2002/07/owl#sameAs"
+                         active="http://purl.org/vocab/frbr/core#Work"
+                         passive="https://w3id.org/akn/ontology/allot/FRBRWork"/>
+               <relation ref="http://purl.org/dc/terms/isPartOf"
+                         active="/akn/ke/debaterecord/2011-06-10/!main"
+                         passive="/akn/ke/debaterecord/2011-06-10"/>
+               <relation name="generation"
+                         ref="http://purl.org/dc/elements/1.1/date"
+                         active="/akn/ke/debaterecord/2011-06-10/!main"
+                         passive="2011-06-10"/>
+               <relation active="/akn/ke/debaterecord/2011-06-10/!main"
+                         ref="http://purl.org/vocab/frbr/core#realization"
+                         passive="/akn/ke/minutes/2011-06-10/eng@/!main"/>
+               <relation ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                         active="/akn/ke/minutes/2011-06-10/eng@/!main"
+                         passive="http://purl.org/vocab/frbr/core#Expression"/>
+               <relation ref="http://www.w3.org/2002/07/owl#sameAs"
+                         active="http://purl.org/vocab/frbr/core#Expression"
+                         passive="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
+               <relation ref="http://purl.org/dc/terms/isPartOf"
+                         active="/akn/ke/minutes/2011-06-10/eng@/!main"
+                         passive="/akn/ke/minutes/2011-06-10/eng@"/>
+               <relation name="markup"
+                         ref="http://purl.org/dc/elements/1.1/date"
+                         active="/akn/ke/minutes/2011-06-10/eng@/!main"
+                         passive="2011-06-25"/>
+               <relation active="/akn/ke/minutes/2011-06-10/eng@/!main"
+                         ref="http://purl.org/vocab/frbr/core#embodiment"
+                         passive="/akn/ke/minutes/2011-06-10/eng@/!main.xml"/>
+               <relation ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                         active="/akn/ke/minutes/2011-06-10/eng@/!main.xml"
+                         passive="http://vocab.org/frbr/core.html#term-Manifestation"/>
+               <relation ref="http://www.w3.org/2002/07/owl#sameAs"
+                         active="http://vocab.org/frbr/core.html#term-Manifestation"
+                         passive="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
+               <relation ref="http://purl.org/dc/terms/isPartOf"
+                         active="/akn/ke/minutes/2011-06-10/eng@/!main.xml"
+                         passive="/akn/ke/minutes/2011-06-10/eng@.akn"/>
+               <relation name="publication"
+                         ref="http://purl.org/dc/elements/1.1/date"
+                         active="/akn/ke/minutes/2011-06-10/eng@/!main.xml"
+                         passive="2011-06-25"/>
+            </listRelation>
          </sourceDesc>
       </fileDesc>
+      <encodingDesc>
+         <classDecl>
+            <taxonomy>
+               <desc>
+                  <term>TLCConcept</term>
+               </desc>
+               <category xml:id="majority">
+                  <catDesc>
+                     <term>Quorum Majority</term>
+                     <idno type="AKN">/akn/ontology/concept/akn/majority</idno>
+                  </catDesc>
+               </category>
+               <category xml:id="ayes">
+                  <catDesc>
+                     <term>AYES</term>
+                     <idno type="AKN">/akn/ontology/concept/akn/ayes</idno>
+                  </catDesc>
+               </category>
+               <category xml:id="noes">
+                  <catDesc>
+                     <term>NOES</term>
+                     <idno type="AKN">/akn/ontology/concept/akn/noes</idno>
+                  </catDesc>
+               </category>
+            </taxonomy>
+            <taxonomy>
+               <desc>
+                  <term>TLCProcess</term>
+               </desc>
+               <category xml:id="approved">
+                  <catDesc>
+                     <term>Approved</term>
+                     <idno type="AKN">/akn/ontology/process/ita/editors/approved</idno>
+                  </catDesc>
+               </category>
+            </taxonomy>
+            <taxonomy>
+               <desc>
+                  <term>TLCRole</term>
+               </desc>
+               <category xml:id="author">
+                  <catDesc>
+                     <term>Author of Document</term>
+                     <idno type="AKN">/akn/ontology/role/akn/author</idno>
+                  </catDesc>
+               </category>
+               <category xml:id="editor">
+                  <catDesc>
+                     <term>Editor of Document</term>
+                     <idno type="AKN">/akn/ontology/role/akn/editor</idno>
+                  </catDesc>
+               </category>
+               <category xml:id="speaker">
+                  <catDesc>
+                     <term>Mr. Speaker</term>
+                     <idno type="AKN">/akn/ontology/role/akn/speaker</idno>
+                  </catDesc>
+               </category>
+               <category xml:id="ministerEducation">
+                  <catDesc>
+                     <term>Minister for Education and Sports</term>
+                     <idno type="AKN">/akn/ontology/role/akn/mes</idno>
+                  </catDesc>
+               </category>
+               <category xml:id="ministerInterior">
+                  <catDesc>
+                     <term>Minister for Interior</term>
+                     <idno type="AKN">/akn/ontology/role/akn/ministerInterior</idno>
+                  </catDesc>
+               </category>
+            </taxonomy>
+         </classDecl>
+      </encodingDesc>
       <profileDesc>
          <particDesc>
+            <listOrg>
+               <org xml:id="parliament">
+                  <orgName>Parliament</orgName>
+                  <idno type="AKN">/akn/ontology/organization/akn/parliament</idno>
+               </org>
+            </listOrg>
             <listPerson>
                <person xml:id="palmirani">
-                  <persName ref="/akn/ontology/person/ita/editors/palmirani">palmirani</persName>
+                  <persName>palmirani</persName>
+                  <idno type="AKN">/akn/ontology/person/ita/editors/palmirani</idno>
                </person>
                <person xml:id="alfa">
-                  <persName ref="/akn/ontology/person/akn/parliament/alfa">Mr. Alfa</persName>
+                  <persName>Mr. Alfa</persName>
+                  <idno type="AKN">/akn/ontology/person/akn/parliament/alfa</idno>
                </person>
                <person xml:id="beta">
-                  <persName ref="/akn/ontology/person/akn/parliament/beta">Mr. Beta</persName>
+                  <persName>Mr. Beta</persName>
+                  <idno type="AKN">/akn/ontology/person/akn/parliament/beta</idno>
                </person>
                <person xml:id="gamma">
-                  <persName ref="/akn/ontology/person/akn/parliament/gamma">Mr. Gamma</persName>
+                  <persName>Mr. Gamma</persName>
+                  <idno type="AKN">/akn/ontology/person/akn/parliament/gamma</idno>
                </person>
                <person xml:id="delta">
-                  <persName ref="/akn/ontology/person/akn/parliament/delta">Mr. Delta</persName>
+                  <persName>Mr. Delta</persName>
+                  <idno type="AKN">/akn/ontology/person/akn/parliament/delta</idno>
                </person>
                <person xml:id="epsilon">
-                  <persName ref="/akn/ontology/person/akn/parliament/eta">Mr. epsilon</persName>
+                  <persName>Mr. epsilon</persName>
+                  <idno type="AKN">/akn/ontology/person/akn/parliament/eta</idno>
                </person>
                <person xml:id="kappa">
-                  <persName ref="/akn/ontology/person/akn/parliament/kappa">Mr. Kappa</persName>
+                  <persName>Mr. Kappa</persName>
+                  <idno type="AKN">/akn/ontology/person/akn/parliament/kappa</idno>
                </person>
                <person xml:id="eta">
-                  <persName ref="/akn/ontology/person/akn/parliament/eta">Mr. Eta</persName>
+                  <persName>Mr. Eta</persName>
+                  <idno type="AKN">/akn/ontology/person/akn/parliament/eta</idno>
                </person>
                <person xml:id="zeta">
-                  <persName ref="/akn/ontology/person/akn/parliament/zeta">Mr. zeta</persName>
+                  <persName>Mr. zeta</persName>
+                  <idno type="AKN">/akn/ontology/person/akn/parliament/zeta</idno>
                </person>
             </listPerson>
          </particDesc>
-         <listOrg>
-            <org>
-               <head>Parliament: Analysis of voting, recount, and quorum verification</head>
-               <listEvent>
-                  <event xml:id="vot1" type="voting">
-                     <desc>
-                        <measure/>
-                        <measure/>
-                        <measure/>
-                     </desc>
-                  </event>
-               </listEvent>
-            </org>
-         </listOrg>
       </profileDesc>
    </teiHeader>
    <text>
       <front>
          <div type="preface">
-			         <p rend="heading">THE PARLIAMENT OF THE REPUBLIC OF BUNGENI
-			</p>
+			         <p rend="heading">THE <name type="docProponent">PARLIAMENT OF THE REPUBLIC OF BUNGENI</name>
+			         </p>
 			         <p>
-				SECOND MEETING, 2011
-			</p>
-			         <p>Friday, 10th June 2011
-			</p>
+				           <title type="docTitle">SECOND MEETING, 2011</title>
+			         </p>
+			         <p>Friday, <date type="docDate" when="2011-06-10">10th June 2011</date>
+			         </p>
 		       </div>
       </front>
       <body>
@@ -192,7 +317,10 @@ Mr. Epsilon: </note>
 							addressed to the Ministry of the Interior, covering the period, 15th April to 5th May, 2011, 
 							it was reported that following the flood in the Northern Region on March 18 and April 21, 2011, 
 							calm has returned to the district.</seg>
-						            </u>
+						               <listRelation>
+                        <relation name="speechRelation" active="#gamma" passive="#ministerInterior"/>
+                     </listRelation>
+                  </u>
 					          </div>
 				        </div>
 			      </div>
@@ -219,7 +347,10 @@ Mr. Epsilon: </note>
                                 the IAGRAT has no trade union rights as his Answer states? Because,
                                 the two are not the same. Professional rights are different from
                                 trade</seg>
-						            </u>
+						               <listRelation>
+                        <relation name="speechRelation" active="#kappa" passive="#ministerEducation"/>
+                     </listRelation>
+                  </u>
 						            <u xml:id="dbsect_6__dbsect_1__dbsect_1__answer_1"
                      who="#eta"
                      decls="#ministerEducation">
@@ -266,7 +397,28 @@ Mr. Epsilon: </note>
 			      </div>
 		    </body>
       <back>
-         <div type="conclusions"/>
+         <listEvent>
+            <event xml:id="vot1" type="voting">
+               <desc>
+                  <measure type="quorum" xml:id="vot1-quo1" ana="#majority" quantity="80"/>
+                  <measure type="count"
+                           xml:id="vot1-cnt2"
+                           ana="#ayes"
+                           corresp="#quantity_1"
+                           quantity="72"/>
+                  <measure type="count"
+                           xml:id="vot1-cnt3"
+                           ana="#noes"
+                           corresp="#quantity_2"
+                           quantity="34"/>
+               </desc>
+            </event>
+         </listEvent>
+         <div type="conclusions">
+			         <p>
+               <date when="2011-06-11">Date, 10th June, 2011</date>
+            </p>
+		       </div>
       </back>
    </text>
 </TEI>

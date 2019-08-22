@@ -9,6 +9,16 @@
     
     <xsl:output method="xml" indent="yes"/>
     
+    <xsl:param name="authority">CLARIN ERIC</xsl:param>
+    
+    <xsl:param name="sourceDesc">
+        <bibl>
+            <title type="main">Akoma Ntoso Version 1.0</title>
+            <title type="sub">Examples</title>
+            <idno type="URI">http://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part2-specs/examples/</idno>
+        </bibl>
+    </xsl:param>
+    
     <xsl:template match="/">
         <xsl:apply-templates/>
     </xsl:template>
@@ -37,10 +47,44 @@
             <xsl:apply-templates select="akn:debateBody"/>
             <xsl:if test="akn:conclusions | akn:attachments | akn:components">
                 <back>
+                    <xsl:call-template name="voting"/>
                     <xsl:apply-templates select="akn:conclusions | akn:attachments | akn:components"/>
                 </back>
             </xsl:if>
         </text>
+    </xsl:template>
+    
+    <xsl:template name="voting">
+        <xsl:if test="akn:meta/akn:analysis/akn:parliamentary">
+            <listEvent>
+                <xsl:for-each select="akn:meta/akn:analysis/akn:parliamentary/akn:voting">
+                    <event xml:id="{@eId}" type="voting">
+                        <desc>
+                            <xsl:for-each select="akn:quorum | akn:count">
+                                <measure type="{name()}">
+                                    <xsl:call-template name="att-idopt"/>
+                                    <xsl:if test="@refersTo">
+                                        <xsl:attribute name="ana">
+                                            <xsl:value-of select="@refersTo"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:if test="@href">
+                                        <xsl:attribute name="corresp">
+                                            <xsl:value-of select="@href"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:if test="@value">
+                                        <xsl:attribute name="quantity">
+                                            <xsl:value-of select="@value"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                </measure>
+                            </xsl:for-each>
+                        </desc>
+                    </event>
+                </xsl:for-each>
+            </listEvent>
+        </xsl:if>
     </xsl:template>
     
     <xsl:template match="akn:meta">
@@ -61,7 +105,7 @@
                             </xsl:for-each>
                         </xsl:when>
                         <xsl:otherwise>
-                            <title>Default title???!!</title>
+                            <title>Akoma Ntoso: An example of parliamentary debate</title>
                         </xsl:otherwise>
                     </xsl:choose>
                     <xsl:for-each select="//akn:docDate">
@@ -71,56 +115,162 @@
                     </xsl:for-each>
                 </titleStmt>
                 <publicationStmt>
-                    <p>Publication Information</p>
+                    <authority>
+                        <xsl:value-of select="$authority"/>
+                    </authority>
+                    <xsl:for-each select="//*[@eId][@wId or @GUID]">
+                        <!-- @GUID is processed as idno element in teiHeader/fileDesc/publicationStmt/idno[@type='GUID'][@corresp=$akn-eId] -->
+                        <idno type="{if (@wId) then 'wId' else 'GUID'}" corresp="#{@eId}">
+                            <xsl:value-of select="@wId or @GUID"/>
+                        </idno>
+                    </xsl:for-each>
                 </publicationStmt>
                 <sourceDesc>
-                    <p>FLBR data</p>
+                    <xsl:copy-of select="$sourceDesc"/>
+                    <xsl:call-template name="FRBR"/>
                 </sourceDesc>
             </fileDesc>
-            <profileDesc>
-                <xsl:if test="akn:references/akn:TLCPerson">
+            <xsl:if test="akn:references/akn:TLCRole | akn:references/akn:TLCConcept | akn:references/akn:TLCProcess">
+                <encodingDesc>
+                    <classDecl>
+                        <!-- add also other TLC -->
+                        <xsl:call-template name="TLCConcept"/>
+                        <xsl:call-template name="TLCProcess"/>
+                        <xsl:call-template name="TLCRole"/>
+                    </classDecl>
+                </encodingDesc>
+            </xsl:if>
+            <xsl:if test="akn:references/akn:TLCPerson | akn:references/akn:TLCOrganization">
+                <profileDesc>
                     <particDesc>
-                        <listPerson>
-                            <xsl:for-each select="akn:references/akn:TLCPerson">
-                                <person xml:id="{@eId}">
-                                    <persName ref="{@href}">
-                                        <xsl:value-of select="@showAs"/>
-                                    </persName>
-                                </person>
-                            </xsl:for-each>
-                        </listPerson>
+                        <xsl:call-template name="TLCOrganization"/>
+                        <xsl:call-template name="TLCPerson"/>
                     </particDesc>
-                </xsl:if>
-                <xsl:if test="akn:analysis/akn:parliamentary">
-                    <listOrg>
-                        <org>
-                            <head>Parliament: Analysis of voting, recount, and quorum verification</head>
-                            <listEvent>
-                                <xsl:for-each select="akn:analysis/akn:parliamentary/akn:voting">
-                                    <event xml:id="{@eId}" type="voting">
-                                        <desc>
-                                            <xsl:for-each select="akn:quorum | akn:count">
-                                                <measure></measure>
-                                            </xsl:for-each>
-                                            <!--<measure xml:id="vot1-quo1" type="majority" quantity="80"/><!-\- Quorum Majority -\->
-                                            <measure xml:id="vot1-cnt2" type="ayes" quantity="72"/>
-                                            <measure xml:id="vot1-cnt3" type="noes" quantity="56"/>
-                                            <date when="2011-06-25T15:49:50"/>-->
-                                        </desc>
-                                    </event>
-                                </xsl:for-each>
-                            </listEvent>
-                        </org>
-                    </listOrg>
-                </xsl:if>
-            </profileDesc>
+                </profileDesc>
+            </xsl:if>
         </teiHeader>
     </xsl:template>
     
+    <xsl:template name="FRBR">
+        <xsl:for-each select="akn:identification">
+            <listRelation type="FRBR" resp="{@source}">
+                <xsl:for-each select="akn:FRBRWork">
+                    <relation ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" active="{akn:FRBRthis/@value}" passive="http://purl.org/vocab/frbr/core#Work"/>
+                    <relation ref="http://www.w3.org/2002/07/owl#sameAs" active="http://purl.org/vocab/frbr/core#Work" passive="https://w3id.org/akn/ontology/allot/FRBRWork"/>
+                    <xsl:call-template name="FRBRuri"/>
+                    <xsl:call-template name="FRBRdate"/>
+                </xsl:for-each>
+                <relation active="{akn:FRBRWork/akn:FRBRthis/@value}" ref="http://purl.org/vocab/frbr/core#realization" passive="{akn:FRBRExpression/akn:FRBRthis/@value}"/>
+                <xsl:for-each select="akn:FRBRExpression">
+                    <relation ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" active="{akn:FRBRthis/@value}" passive="http://purl.org/vocab/frbr/core#Expression"/>
+                    <relation ref="http://www.w3.org/2002/07/owl#sameAs" active="http://purl.org/vocab/frbr/core#Expression" passive="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
+                    <xsl:call-template name="FRBRuri"/>
+                    <xsl:call-template name="FRBRdate"/>
+                </xsl:for-each>
+                <relation active="{akn:FRBRExpression/akn:FRBRthis/@value}" ref="http://purl.org/vocab/frbr/core#embodiment" passive="{akn:FRBRManifestation/akn:FRBRthis/@value}"/>
+                <xsl:for-each select="akn:FRBRManifestation">
+                    <relation ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" active="{akn:FRBRthis/@value}" passive="http://vocab.org/frbr/core.html#term-Manifestation"/>
+                    <relation ref="http://www.w3.org/2002/07/owl#sameAs" active="http://vocab.org/frbr/core.html#term-Manifestation" passive="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
+                    <xsl:call-template name="FRBRuri"/>
+                    <xsl:call-template name="FRBRdate"/>
+                </xsl:for-each>
+            </listRelation>
+        </xsl:for-each>
+    </xsl:template>
+    <xsl:template name="FRBRuri">
+        <xsl:if test="akn:FRBRuri">
+            <relation ref="http://purl.org/dc/terms/isPartOf" active="{akn:FRBRthis/@value}" passive="{akn:FRBRuri/@value}"/>
+        </xsl:if>
+    </xsl:template>
+    <xsl:template name="FRBRdate">
+        <xsl:if test="akn:FRBRdate">
+            <relation name="{akn:FRBRdate/@name}" ref="http://purl.org/dc/elements/1.1/date" active="{akn:FRBRthis/@value}" passive="{akn:FRBRdate/@date}"/>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="TLCConcept">
+        <xsl:if test="akn:references/akn:TLCConcept">
+            <taxonomy>
+                <desc><term>TLCConcept</term></desc>
+                <xsl:for-each select="akn:references/akn:TLCConcept">
+                    <xsl:call-template name="TLC-category"/>
+                </xsl:for-each>
+            </taxonomy>
+        </xsl:if>
+    </xsl:template>
+    <xsl:template name="TLCProcess">
+        <xsl:if test="akn:references/akn:TLCProcess">
+            <taxonomy>
+                <desc><term>TLCProcess</term></desc>
+                <xsl:for-each select="akn:references/akn:TLCProcess">
+                    <xsl:call-template name="TLC-category"/>
+                </xsl:for-each>
+            </taxonomy>
+        </xsl:if>
+    </xsl:template>
+    <xsl:template name="TLCRole">
+        <xsl:if test="akn:references/akn:TLCRole">
+            <taxonomy>
+                <desc><term>TLCRole</term></desc>
+                <xsl:for-each select="akn:references/akn:TLCRole">
+                    <xsl:call-template name="TLC-category"/>
+                </xsl:for-each>
+            </taxonomy>
+        </xsl:if>
+    </xsl:template>
+    <xsl:template name="TLC-category">
+        <category xml:id="{@eId}">
+            <catDesc>
+                <term>
+                    <xsl:value-of select="@showAs"/>
+                </term>
+                <idno type="AKN">
+                    <xsl:value-of select="@href"/>
+                </idno>
+            </catDesc>
+        </category>
+    </xsl:template>
+    <xsl:template name="TLCOrganization">
+        <xsl:if test="akn:references/akn:TLCOrganization">
+            <listOrg>
+                <xsl:for-each select="akn:references/akn:TLCOrganization">
+                    <org xml:id="{@eId}">
+                        <orgName>
+                            <xsl:value-of select="@showAs"/>
+                        </orgName>
+                        <xsl:if test="@href">
+                            <idno type="AKN">
+                                <xsl:value-of select="@href"/>
+                            </idno>
+                        </xsl:if>
+                    </org>
+                </xsl:for-each>
+            </listOrg>
+        </xsl:if>
+    </xsl:template>
+    <xsl:template name="TLCPerson">
+        <xsl:if test="akn:references/akn:TLCPerson">
+            <listPerson>
+                <xsl:for-each select="akn:references/akn:TLCPerson">
+                    <person xml:id="{@eId}">
+                        <persName>
+                            <xsl:value-of select="@showAs"/>
+                        </persName>
+                        <xsl:if test="@href">
+                            <idno type="AKN">
+                                <xsl:value-of select="@href"/>
+                            </idno>
+                        </xsl:if>
+                    </person>
+                </xsl:for-each>
+            </listPerson>
+        </xsl:if>
+    </xsl:template>
+    
     <xsl:template match="akn:coverPage">
-        <titlePage>
+        <div type="coverPage">
             <xsl:apply-templates/>
-        </titlePage>
+        </div>
     </xsl:template>
     
     <xsl:template match="akn:preface">
@@ -132,6 +282,7 @@
     <xsl:template match="akn:conclusions | akn:attachments | akn:components">
         <div type="{name()}">
             <!-- Do we also need this content for the parla-clarin project? -->
+            <xsl:apply-templates/>
         </div>
     </xsl:template>
     
@@ -168,11 +319,25 @@
         </annotationBlock>
     </xsl:template>
     <xsl:template match="akn:speech | akn:question | akn:answer">
+        <xsl:choose>
+            <xsl:when test=" preceding-sibling::akn:*[xs:string(node-name(.)) = ('debateSection', 'address', 'adjournment', 'administrationOfOath', 'communication', 'declarationOfVote', 'ministerialStatements', 'nationalInterest', 'noticesOfMotion', 'oralStatements', 'papers', 'petitions', 'prayers', 'proceduralMotions', 'pointOfOrder', 'personalStatements', 'questions', 'resolutions', 'rollCall', 'writtenStatements')]">
+                <div>
+                    <xsl:call-template name="utterance"/>
+                </div>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:call-template name="utterance"/>
+            </xsl:otherwise>
+        </xsl:choose>
+    </xsl:template>
+    <xsl:template name="utterance">
         <u>
             <!-- speechType -->
             <xsl:call-template name="att-coreopt"/>
             <xsl:call-template name="att-speechAtts"/>
             <xsl:apply-templates/>
+            <!-- Speech relations -->
+            <xsl:call-template name="speech-relation"/>
         </u>
     </xsl:template>
     <xsl:template match="akn:other">
@@ -197,11 +362,18 @@
     </xsl:template>
     
     <xsl:template name="questionAnswer">
-        <xsl:if test="akn:question | akn:answer">
+        <xsl:if test="akn:question[following-sibling::*[1][self::akn:answer]]">
             <listRelation>
-                <xsl:for-each select="akn:question">
-                    <relation name="questionAnswer" active="#{@eId}" passive="#{following-sibling::akn:answer[1]/@eId}"/>
+                <xsl:for-each select="akn:question[following-sibling::*[1][self::akn:answer]]">
+                    <relation name="questionAnswer" active="#{@eId}" passive="#{following-sibling::*[1][self::akn:answer]/@eId}"/>
                 </xsl:for-each>
+            </listRelation>
+        </xsl:if>
+    </xsl:template>
+    <xsl:template name="speech-relation">
+        <xsl:if test="@by and (@to or @refersTo)">
+            <listRelation>
+                <relation name="speechRelation" active="{@by}" passive="{if (@to) then @to else @refersTo}"/>
             </listRelation>
         </xsl:if>
     </xsl:template>
@@ -210,7 +382,6 @@
     <xsl:template match="akn:from">
         <note type="speaker">
             <xsl:call-template name="att-coreopt"/>
-            
             <xsl:apply-templates/>
         </note>
     </xsl:template>
@@ -219,13 +390,15 @@
     <!-- ANblock: blockList, blockContainer, tblock, toc -->
     <!-- HTMLblock: ul, ol, table, p -->
     <xsl:template match="akn:ul">
-        <list rend="bulleted">
+        <!-- rend="bulleted" -->
+        <list>
             <xsl:call-template name="att-coreopt"/>
             <xsl:apply-templates/>
         </list>
     </xsl:template>
     <xsl:template match="akn:ol">
-        <list rend="numbered">
+        <!-- rend="numbered" -->
+        <list>
             <xsl:call-template name="att-coreopt"/>
             <xsl:apply-templates/>
         </list>
@@ -236,14 +409,22 @@
         </table>
     </xsl:template>
     <xsl:template match="akn:p">
-        <xsl:element name="{if (parent::akn:speech or parent::akn:question or parent::akn:answer) then 'seg' else 'p'}">
-            <xsl:call-template name="att-coreopt"/>
-            <xsl:apply-templates/>
-        </xsl:element>
+        <xsl:choose>
+            <xsl:when test="string-length(normalize-space(.)) = 0">
+                <!-- remove empty paragraphs -->
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:element name="{if (parent::akn:speech or parent::akn:question or parent::akn:answer) then 'seg' else 'p'}">
+                    <xsl:call-template name="att-coreopt"/>
+                    <xsl:apply-templates/>
+                </xsl:element>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="akn:li">
         <item>
+            <!-- dodaj atribute -->
             <xsl:apply-templates/>
         </item>
     </xsl:template>
@@ -272,14 +453,36 @@
         </cell>
     </xsl:template>
     
+    <!-- TOC -->
+    <xsl:template match="akn:toc">
+        <list type="TOC">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:apply-templates/>
+        </list>
+    </xsl:template>
+    <xsl:template match="akn:tocItem">
+        <item>
+            <xsl:call-template name="att-coreopt"/>
+            <!--<xsl:call-template name="att-link"/>-->
+            <xsl:if test="@level">
+                <xsl:attribute name="n">
+                    <xsl:value-of select="@level"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:call-template name="att-link"/>
+            <xsl:apply-templates/>
+        </item>
+    </xsl:template>
+    
     <!-- basehierarchy (complexType): heading, subheadin, num -->
     <xsl:template match="akn:heading">
         <head>
             <xsl:call-template name="att-coreopt"/>
             <xsl:if test="preceding-sibling::*[1][self::akn:num]">
-                <xsl:attribute name="n">
+                <num>
                     <xsl:value-of select="preceding-sibling::*[1][self::akn:num]"/>
-                </xsl:attribute>
+                    <xsl:text> </xsl:text>
+                </num>
             </xsl:if>
             <xsl:apply-templates/>
         </head>
@@ -333,6 +536,48 @@
         </time>
     </xsl:template>
     
+    <!-- ANtitleInline: docType, docTitle, docNumber, docProponent, docDate, legislature, session, shortTitle, docAuthority, docPurpose,
+                        docCommittee, docIntroducer, docStage, docStatus, docJurisdiction, docketNumber -->
+    <xsl:template match="akn:docTitle">
+        <title type="{name()}">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:apply-templates/>
+        </title>
+    </xsl:template>
+    <xsl:template match="akn:docProponent">
+        <name type="{name()}">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:call-template name="att-role"/>
+            <xsl:apply-templates/>
+        </name>
+    </xsl:template>
+    <xsl:template match="akn:docDate">
+        <date type="{name()}">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:call-template name="att-date"/>
+            <xsl:apply-templates/>
+        </date>
+    </xsl:template>
+    <xsl:template match="akn:docType">
+        <term type="{name()}">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:apply-templates/>
+        </term>
+    </xsl:template>
+    <xsl:template match="akn:docNumber">
+        <num type="{name()}">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:apply-templates/>
+        </num>
+    </xsl:template>
+    <xsl:template match="akn:legislature | akn:session">
+        <term type="{name()}">
+            <xsl:call-template name="att-coreopt"/>
+            <!-- also add @value -->
+            <xsl:apply-templates/>
+        </term>
+    </xsl:template>
+    
     <!-- All three attribute groups (coreopt, corereq and corereqreq) are processed as optional -->
     <xsl:template name="att-coreopt">
         <xsl:call-template name="att-core"/>
@@ -351,11 +596,23 @@
     
     <xsl:template name="att-HTMLattrs">
         <!-- AKN: These attributes are used to specify class, style and title of the element, exactly as in HTML -->
-        <xsl:if test="@class and not(self::akn:ol or self::akn:ul)">
-            <xsl:attribute name="rend">
-                <xsl:value-of select="@class"/>
-            </xsl:attribute>
-        </xsl:if>
+        <xsl:choose>
+            <xsl:when test="self::akn:ol or self::akn:ul">
+                <xsl:attribute name="rend">
+                    <xsl:value-of select="if (self::akn:ol) then 'numbered' else 'bulleted'"/>
+                    <xsl:if test="@class">
+                        <xsl:value-of select="concat(' ',@class)"/>
+                    </xsl:if>
+                </xsl:attribute>
+            </xsl:when>
+            <xsl:otherwise>
+                <xsl:if test="@class">
+                    <xsl:attribute name="rend">
+                        <xsl:value-of select="@class"/>
+                    </xsl:attribute>
+                </xsl:if>
+            </xsl:otherwise>
+        </xsl:choose>
         <xsl:if test="@style">
             <xsl:attribute name="style">
                 <xsl:value-of select="@style"/>
@@ -369,7 +626,7 @@
                   plus the attribute status, that allows to specify the status of the piece of text it wraps. -->
         <xsl:call-template name="att-period"/>
         <xsl:if test="@status">
-            <!-- Uredi možnost, kako bodo vrednosti atributa status vplivale na dodatne child elemente -->
+            <!-- Uredi možnost, kako bodo vrednosti atributa status vplivale na dodatne child elemente. Druga možnost je, da gre v @ana in spodnjev vrednosti v taxonomy -->
             <!-- AKN: This is the list of allowed values for the status attribute. This is the list of possible reasons for a dscrepancy between the manifestation as it should be (e.g., a faithful representation of the content of an expression), and the manifestation as it actually is. Values should be interpreted as follows:
                       - removed: the content of the element is present in the markup (manifestation) but is not present in the real content of the document (expression level) because it has been definitely removed (either ex tunc, as in annullments, or ex nunc, as in abrogations).
                         tei:del[@type='removed']
@@ -394,7 +651,14 @@
                   Connection to akn:temporalData element: the ability to describe the entire historical text of a document, associating different text
                   with different time periods. The akn:temporalData container is used to define time periods which are used when associating text
                   with the time period for which it applies. -->
-        <!-- Potrebno se bo odločiti, na kaj jih bom vezal: tei:listEvent/tei:event ali tei:timeline?! -->
+        <xsl:if test="@period">
+            <!-- Make a proper connection (with @corresp or @ana) to the tei:taxomnomy (See: https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDATTSda ) -->
+            <!-- AKN example: <temporalData source="{source}">
+                                 <temporalGroup eId="{identifier}">
+                                    <timeInterval refersTo="{ontologyRef}" [start="{eventRefRef}"] [end="{eventRefRef}"] [duration="{duration}"]/>
+                                 <temporalGroup>
+                              </temporalData> -->
+        </xsl:if>
     </xsl:template>
     
     <xsl:template name="att-idopt">
@@ -407,6 +671,7 @@
             <xsl:attribute name="xml:id">
                 <xsl:value-of select="@eId"/>
             </xsl:attribute>
+            <!-- daj v source -->
             <!-- @wId is processed as idno element in teiHeader/fileDesc/publicationStmt/idno[@type='wId'][@corresp=$akn-eId] -->
         </xsl:if>
         <xsl:if test="@eId and @GUID">
@@ -493,7 +758,7 @@
                 <xsl:when test="self::akn:person">
                     <xsl:choose>
                         <!-- overrides original transformation from @refersTo to @corresp -->
-                        <xsl:when test="@refersTo and @ad">
+                        <xsl:when test="@refersTo and @as">
                             <xsl:attribute name="corresp">
                                 <xsl:for-each select="@refersTo and @as">
                                     <xsl:value-of select="."/>
@@ -563,6 +828,27 @@
                 <xsl:value-of select="@normalized"/>
             </xsl:attribute>
         </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="att-link">
+        <xsl:choose>
+            <!-- overrides original transformation from @refersTo to @corresp -->
+            <xsl:when test="@refersTo and @href">
+                <xsl:attribute name="corresp">
+                    <xsl:for-each select="@refersTo and @href">
+                        <xsl:value-of select="."/>
+                        <xsl:if test="position() != last()">
+                            <xsl:text> </xsl:text>
+                        </xsl:if>
+                    </xsl:for-each>
+                </xsl:attribute>
+            </xsl:when>
+            <xsl:when test="not(@refersTo) and @href">
+                <xsl:attribute name="corresp">
+                    <xsl:value-of select="@href"/>
+                </xsl:attribute>
+            </xsl:when>
+        </xsl:choose>
     </xsl:template>
     
 </xsl:stylesheet>

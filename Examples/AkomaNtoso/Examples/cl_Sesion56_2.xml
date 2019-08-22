@@ -10,7 +10,7 @@
 -->
 <!-- edited with XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) by Christian Sifaqui (Biblioteca del Congreso Nacional de Chile) -->
 <!-- Level of compliance 1 -->
-<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0 akomantoso30.xsd" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:bcn="http://chile/propetary.xsd">
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0 ../Schema/akomantoso30.xsd" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:bcn="http://chile/propetary.xsd">
 	<debate name="recurso">
 		<meta>
 			<identification source="#bcn">

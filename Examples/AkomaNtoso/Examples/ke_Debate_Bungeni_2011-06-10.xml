@@ -8,7 +8,9 @@
      Latest version of the specification:  http://docs.oasis-open.org.legaldocml/akn-core/v1.0/akn-core-v1.0-part2-specs.html
      TC IPR Statement: https://www.oasis-open.org/committees/legaldocml/ipr.php
 -->
-<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0 akomantoso30.xsd " xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" >
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0 ../Schema/akomantoso30.xsd"
+ xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
 	<!-- Level 5 of compliance -->
 	<!--  Analysis and markup performed by Monica Palmirani, CIRSFID, University of Bologna -->
 	<debate name="hansard">

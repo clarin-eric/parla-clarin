@@ -59,7 +59,7 @@
                <title type="sub">Examples</title>
                <idno type="URI">http://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part2-specs/examples/</idno>
             </bibl>
-            <!-- FLBR, http://vocab.org/frbr/core.html
+            <!-- FRBR, http://vocab.org/frbr/core.html
                  [Work] realization [Exspression] embodiment [Manifestation] exemplar [Item]
                  http://vocab.org/frbr/core.html
                  https://rawgit.com/essepuntato/allot/master/ontology/current/allot.html
@@ -68,7 +68,7 @@
                  http://www.dublincore.org/specifications/dublin-core/dcmi-terms/
                  https://www.w3.org/TR/owl-ref/
                  
-                 
+                 ALLOT: https://w3id.org/akn/ontology/allot
             -->
             <listRelation type="FRBR" resp="#palmirani">
                <relation active="/akn/ke/debaterecord/2011-06-10/!main" ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" passive="http://purl.org/vocab/frbr/core#Work"/>

@@ -9,7 +9,7 @@
      TC IPR Statement: https://www.oasis-open.org/committees/legaldocml/ipr.php
 -->
 <xsd:schema xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://docs.oasis-open.org/legaldocml/ns/akn/3.0" elementFormDefault="qualified">
-	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="./xml.xsd"/>
+	<xsd:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.xsd"/>
 	<xsd:annotation>
 		<xsd:documentation>
 		 =====================================================================
