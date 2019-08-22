@@ -1,4 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- Add:
+- div types
+- voting and voting results
+- markup of person names in the text
+-->
 <TEI xmlns:rng="http://relaxng.org/ns/structure/1.0" 
      xmlns="http://www.tei-c.org/ns/1.0"
      xmlns:sch="http://purl.oclc.org/dsdl/schematron" 
@@ -42,6 +47,14 @@
   </teiHeader>
   <text>
     <front>
+      <titlePage>
+	<docTitle>
+	  <titlePart type="main"><ref target="https://github.com/clarin-eric/parla-clarin/">Parla-CLARIN</ref></titlePart>
+	  <titlePart type="sub">A TEI Schema for Corpora of Parliamentary Proceedings</titlePart>
+	</docTitle>
+	<!--docEdition></docEdition-->
+	<!--byline>Tomaž Erjavec and Andrej Pančur</byline-->
+      </titlePage>
       <divGen type="toc"/>
     </front>
     <body>
@@ -122,9 +135,9 @@
 	
 	<p>The rest of these guidelines are structured as follows:
 	<list>
-	  <item>the rest of this section details the scope, purpose and background of this
-	  recommendation and discussed two competing proposals for encoding of
-	  parliamentary data;</item>
+	  <item>the rest of this section details the <ref target="#sec-scope">scope and
+	  purpose</ref> of the recommendation and its
+	  <ref target="#sec-back">background</ref>;</item>
 
 	  <item><ref target="#sec-general">Section 2</ref> gives the general requirements that
 	  a Parla-CLARIN PPC has to meet;</item>
@@ -152,14 +165,15 @@
 	
       <div xml:id="sec-scope">
           <head>Scope and purpose</head>
-	  <p>This recommendation consists of guidelines, a formal TEI schema and derived XML
-	  schemas in various schema langauges, and is intended for the encoding of corpora of
-	  parliamentary proceedings, regardless of the langauge or country of origin, for the
-	  purposes of scholarly investigations, be they from the field of linguistics,
-	  political science, history or other humanities and social sciences disciplines. The
-	  recommendation is <emph>not</emph> meant as the primary storage format of
-	  parliamentary proceedings, such as kept by govermental offices, for which <ref
-	  target="sec-akoma">Akomo Ntoso</ref> is preferred.</p>
+	  <p>This recommendation consists of guidelines, a formal TEI schema and derived
+	  XML schemas in various schema langauges, and is intended for the encoding of
+	  corpora of parliamentary proceedings, regardless of the langauge or country of
+	  origin, for the purposes of scholarly investigations, be they from the field of
+	  linguistics, political science, history or other humanities and social sciences
+	  disciplines. The recommendation is, in principle, not meant as the primary
+	  storage format of parliamentary proceedings, such as kept by govermental
+	  offices, for which <ref target="sec-akoma">Akomo Ntoso</ref> might be 
+	  preferred.</p>
 	  
 	  <p>In developing a schema for structuring of data, two approaches can be adopted: a
 	  descriptive one, where as much as possible of the original data distinctions are kept
@@ -188,26 +202,32 @@
 	    had already organised a number of initatives and events that deal with
 	    parliamentary corpora:
 	    <list>
+	      <item>CLARIN Traveling Campus <q>Talk of Europe</q>, where three <q>Creative
+	      Camps</q> were organised in 2014 and 2015 and which used the proceedings of
+	      the European Parliament, curated as
+	      <ref target="https://doi.org/10.17026/dans-x62-ew3m">linked open data</ref></item>
 	      <item>CLARIN-PLUS cross-disciplinary workshop
 	      <ref target="https://www.clarin.eu/event/2017/clarin-plus-workshop-working-parliamentary-records">Working with parliamentary records</ref>, Sofia 2017</item>
 	      <item>CLARIN Resource Families <ref target="https://www.clarin.eu/resource-families/parliamentary-corpora">Parliamentary corpora</ref>, 2018-2019</item>
 	      <item><ref target="http://lrec-conf.org/workshops/lrec2018/W2/index.html">ParlaCLARIN workshop</ref> at LREC 2018</item>
 	      <item><ref target="https://www.clarin.eu/event/2018/clarin-annual-conference-2018-pisa-italy">CLARIN Annual Conference</ref>, Pisa 2018: Work on proposal for COST Action Parlant: "Parliamentary Data and Language Technology" (proposers Maciej Ogrodniczuk, Petya Osenova)</item>
   	    </list>
-	    At these events it became clear that existing
-	    parliamentary corpora are encoded in many different way,
-	    presenting a barrier to their interchange. Therefore the
-	    CLARIN Interoperability Committee organised a focused
+	    At these events it became clear that existing parliamentary corpora are
+	    encoded in many different way, presenting a barrier to their
+	    interchange. Therefore the CLARIN Interoperability Committee organised a
+	    focused
 	    <q><ref target="https://www.clarin.eu/blog/clarin-parlaformat-workshop">CLARIN
-	    ParlaFormat</ref></q> workshop (May 23-24, 2019,
-	    Amersfoort) with selected participants at which the idea
-	    of the present recommendation was introduced, the
-	    participants presented their own experiences with encoding
-	    parliamentary corpora and their comments to the draft
-	    proposal, and the authors of the proposal gave responses
-	    to these comments. The details are given in the
-	    <ref target="https://www.clarin.eu/event/2019/parlaformat-workshop">slides
-	    of the workshop</ref>.
+	    ParlaFormat</ref></q> workshop (May 23-24, 2019, Amersfoort) with selected
+	    participants at which the idea of the present recommendation was introduced,
+	    the participants presented their own experiences with encoding parliamentary
+	    corpora and their comments to the draft proposal, and the authors of the
+	    proposal gave responses to these comments. The details are given in the <ref
+	    target="https://www.clarin.eu/event/2019/parlaformat-workshop">slides of the
+	    workshop</ref>, where the following two by Tomaž Erjavec and Andrej Pančur might be esp. relevant:
+	    <list>
+	      <item><ref target="https://www.clarin.eu/sites/default/files/erjavec-pancur-teiparla_2019_slides_.pdf">Introduction to the proposed annotation scheme</ref></item>
+	      <item><ref target="https://www.clarin.eu/sites/default/files/erjavec-pancur-teiparla_2019_response_.pdf">Response to the presentations</ref></item>
+	    </list>
             </p>
 	  </div>
 	  
@@ -219,44 +239,70 @@
 	    it was explicitly developed as an XML format for encoding parliamentary
 	    proceedings, as well as other legislative and judiciary documents. Akoma Ntoso is a
 	    OASIS standard and has already been used to encode various legal documents in a
-	    number of countries. It combines an extensive XML vocabulary for legal documents,
+	    number of countries. It defines an XML schema for modelling for legal documents (called AKN),
 	    uses
 	    <ref target="https://en.wikipedia.org/wiki/Functional_Requirements_for_Bibliographic_Records">FRBR
 	    concepts</ref> and has a built-in relation to ontologies.</p>
 
-	    <p>It is thus a reasonable question why CLARIN did not simply adopt Akoma Ntoso for
-	    its schema, rather than developing conceptually very different parametrisation of
-	    TEI. The main reason for this are the following:
+	    <p>It is thus a reasonable question why CLARIN does not simply adopt AKN, rather
+	    than developing a conceptually very different parametrisation of TEI. The main
+	    reason for this are the following:
 	    <list>
 	      <item>Unfamiliarity of corpus compilers and users with AKN, and relative
-	      familiarity with TEI, e.g. the workshop examples.</item>
-	      <item>No support for linguistic annotation</item>
-	      <item>Speaker meta-data stored in separate ontologies, rather as part of the corpus</item>
+	      familiarity with TEI: for example, of the 16 talks presenting PPCs at the <ref
+	      target="https://www.clarin.eu/event/2019/parlaformat-workshop">CLARIN ParlaFormat
+	      workshop</ref>, 10 used a TEI encoding, or an encoding <q>inspired by TEI</q>. It
+	      should also be noted that for most corpus compiler PPCs will be only one type of
+	      corpora they will be compiling, so it is somewhat unrealistic for them to lear
+	      AKN and develop conversion scripts from it for just one type of corpus; on the
+	      other hand, TEI can be used for practically any type of corpora.</item>
+	      <item>AKN makes no provisions for storing speaker meta-data, which is rather
+	      accessed from separate ontologies; on the other hand, TEI has a number of
+	      elements for recording details about persons. For reasons of completeness,
+	      uniform and easier processing, and experimental replicability it seems better to
+	      include these data directly in the corpus.</item>
+	      <item>AKN has no built-in support for linguistic annotation (apart from named
+	      entities). And while it would be possible to add elements for such annotation via
+	      a different namespace to AKN, TEI already has such element available. As the main
+	      purpose of this proposal is to cater for linguistic analyses of parliamentary
+	      proceedings, TEI seems a better choice.</item>
 	    </list>
-	    Nevertheless, elements of AKN were used in developing the Parla-CLARIN proposal, in
+	    Nevertheless, AKN is an important schema for modelling parliamentary proceedings,
+	    and some solutions of AKN were used in developing the Parla-CLARIN proposal, in
 	    particular the typology of divisions of a document. Also developed was a conversion
-	    for AKN to Parla-CLARIN, which covers an example document.
-	    </p>
+	    for AKN to Parla-CLARIN, which covers an example document, further discussed in the
+	    <ref target="#sec-convakn">Section on converting Akomo Ntoso</ref>.</p>
 	  </div>
-	  <!-- RDF: https://github.com/TEIC/TEI/issues/1860 -->
-	</div>
 
         <div xml:id="sec-rdf">
+	  <!-- RDF: https://github.com/TEIC/TEI/issues/1860 -->
 	  <head>RDF</head>
-	  <p>To do</p>
+	  <p>The Resource Description Framework (RDF) is W3C specification and a standard model
+	  for computer-processable data interchange on the Web. It is also the base format for
+	  modelling information in the context of Linked Open Data (LOD), an influential model
+	  for linking data on the Web. RDF/LOD has also been quite popular for modelling
+	  parliamentary debates, so, again, the question arises why not use RDF to encode such
+	  data, rather than developing a TEI-based solution. The main reason for this are the
+	  following:
+	    <list>
+	      <item>RDF is hardly human readable or editable, while TEI is.</item>
+	      <item>...</item>
+	    </list>
+	  </p>
 	</div>
       
       </div>
+    </div>
       
-      <div xml:id="sec-general">
-        <head>General requirements</head>
-
-	<p>A Parla-CLARIN corpus should, in general, capture as much of the text and markup
-	  from the source as possble, while the presence of graphical items or other elements
-	  that could not or were not transcribed should be indicated by markup, in particular
-	  with the use of <gi>gap</gi>.</p>
-	  
-	<div xml:id="sec-chars">
+    <div xml:id="sec-general">
+      <head>General requirements</head>
+      
+      <p>A Parla-CLARIN corpus should, in general, capture as much of the text and markup
+      from the source as possble, while the presence of graphical items or other elements
+      that could not or were not transcribed should be indicated by markup, in particular
+      with the use of <gi>gap</gi>.</p>
+      
+      <div xml:id="sec-chars">
           <head>Characters</head>
 	  
 	  <p>The corpus should be encoded in Unicode, using the UTF-8 character encoding, at
