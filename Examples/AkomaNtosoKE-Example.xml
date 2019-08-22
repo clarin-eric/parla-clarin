@@ -12,6 +12,7 @@
          </titleStmt>
          <publicationStmt>
             <authority>CLARIN ERIC</authority>
+            <date when="2019-08-22+02:00">22. 8. 2019</date>
          </publicationStmt>
          <sourceDesc>
             <bibl>
@@ -203,6 +204,35 @@
          </div>
       </front>
       <body>
+         <listEvent>
+            <event type="voting" xml:id="vot1" ana="#approved" corresp="true">
+               <desc>
+                  <measure type="quorum" xml:id="vot1-quo1" ana="#majority" quantity="80"/>
+                  <measure type="count"
+                           xml:id="vot1-cnt2"
+                           ana="#ayes"
+                           corresp="#quantity_1"
+                           quantity="72"/>
+                  <measure type="count"
+                           xml:id="vot1-cnt3"
+                           ana="#noes"
+                           corresp="#quantity_2"
+                           quantity="34"/>
+               </desc>
+            </event>
+            <event type="recount" xml:id="rct1" ana="#approved" corresp="true">
+               <desc>
+                  <measure type="count"
+                           xml:id="vot-cnt1"
+                           ana="#ayes"
+                           corresp="#quantity_3"
+                           quantity="76"/>
+               </desc>
+            </event>
+            <listRelation>
+               <relation name="recount" active="#rct1" passive="#vot1"/>
+            </listRelation>
+         </listEvent>
          <div type="debateSection" subtype="opening" xml:id="dbsect_0">
             <p>The House met at <time when="2011-06-10T10:02:00+02:00" type="recordedTime"> 10.02 a.m.</time>
             </p>
@@ -224,41 +254,37 @@
          <div type="debateSection" subtype="quorum" xml:id="dbsect_2">
             <head>QUORUM
 			</head>
-            <div type="debateSection" subtype="quorum" xml:id="dbsect_2__dbsect_1">
-               <u who="#epsilon">
-                  <note type="speaker">
+            <u who="#epsilon">
+               <note type="speaker">
 Mr. Epsilon: </note>
-                  <seg>On a point of order,  Mr. Speaker, Sir. We are discussing the President's Speech. The mere fact that we do not have enough hon. Members might mean that it is not a popular Speech. There is no quorum in this House and could you ensure that there is quorum and then we can continue in order to show that themPresident's Speech is popular and he is also a popular President as well?</seg>
-               </u>
-               <u who="#speaker">
-                  <note type="speaker">The  Speaker:</note>
-                  <seg>Hon. Members, yes, I have checked and apparently the House lacks quorum at the moment. Ring the Division Bell.</seg>
-               </u>
-               <note type="summary">(The Division Bell was rung)</note>
-               <u who="#speaker">
-                  <note type="speaker">The Speaker:</note>
-                  <seg>
+               <seg>On a point of order,  Mr. Speaker, Sir. We are discussing the President's Speech. The mere fact that we do not have enough hon. Members might mean that it is not a popular Speech. There is no quorum in this House and could you ensure that there is quorum and then we can continue in order to show that themPresident's Speech is popular and he is also a popular President as well?</seg>
+            </u>
+            <u who="#speaker">
+               <note type="speaker">The  Speaker:</note>
+               <seg>Hon. Members, yes, I have checked and apparently the House lacks quorum at the moment. Ring the Division Bell.</seg>
+            </u>
+            <note type="summary">(The Division Bell was rung)</note>
+            <u who="#speaker">
+               <note type="speaker">The Speaker:</note>
+               <seg>
  Order, hon. Members! We have a quorum now. Please, proceed with the Division!</seg>
-               </u>
-            </div>
+            </u>
          </div>
          <div type="debateSection" subtype="division" xml:id="dbsect_3">
             <head>DIVISION</head>
             <note type="summary">(Question put and the House divided)</note>
-            <div type="debateSection" subtype="division" xml:id="dbsect_3__dbsect_1">
-               <u who="#speaker">
-                  <note type="speaker">Mr. Speaker:</note>
-                  <seg>Order! Order! 15 minutes are now over and those who wish to vote must be in the lobbies. If you are not wihtin the lobbies, you will not allowd to vote any more</seg>
-               </u>
-               <incident>
-                  <desc>(Loud consultation)</desc>
-               </incident>
-               <u who="#speaker">
-                  <note type="speaker">Mr. Speaker:</note>
-                  <seg>Order! Order! The Division is now over and it is time to receive the results</seg>
-               </u>
-               <note type="summary" xml:id="summary_1">(Question carried by <measure xml:id="quantity_1" corresp="#ayes" quantity="72">72</measure> to <measure xml:id="quantity_2" corresp="#noes" quantity="56"> 56</measure> votes)</note>
-            </div>
+            <u who="#speaker">
+               <note type="speaker">Mr. Speaker:</note>
+               <seg>Order! Order! 15 minutes are now over and those who wish to vote must be in the lobbies. If you are not wihtin the lobbies, you will not allowd to vote any more</seg>
+            </u>
+            <incident>
+               <desc>(Loud consultation)</desc>
+            </incident>
+            <u who="#speaker">
+               <note type="speaker">Mr. Speaker:</note>
+               <seg>Order! Order! The Division is now over and it is time to receive the results</seg>
+            </u>
+            <note type="summary" xml:id="summary_1">(Question carried by <measure xml:id="quantity_1" corresp="#ayes" quantity="72">72</measure> to <measure xml:id="quantity_2" corresp="#noes" quantity="56"> 56</measure> votes)</note>
             <div type="debateSection" subtype="AYES" xml:id="dbsect_3__dbsect_2">
                <p>AYES: <persName xml:id="person_3321" corresp="#alfa">Mr. Alfa,</persName>
                   <persName xml:id="person_3322" corresp="#beta">Mr. Beta,</persName>
@@ -273,7 +299,7 @@ Mr. Epsilon: </note>
          </div>
          <div type="debateSection" subtype="corrections" xml:id="dbsect_4">
             <head>RECOUT OF VOTES </head>
-            <u xml:id="dbsect_4__speech_1" who="#alfa" decls="speaker">
+            <u xml:id="dbsect_4__speech_1" who="#alfa" ana="speaker">
                <note type="speaker">Mr. Speaker</note>
                <seg>Order! Order! Hon. Members, Mr. Theta is entitled to recount the votes.</seg>
             </u>
@@ -307,7 +333,7 @@ Mr. Epsilon: </note>
 							it was reported that following the flood in the Northern Region on March 18 and April 21, 2011, 
 							calm has returned to the district.</seg>
                      <listRelation>
-                        <relation name="speechRelation" active="#gamma" passive="#ministerInterior"/>
+                        <relation name="directedTo" active="#gamma" passive="#ministerInterior"/>
                      </listRelation>
                   </u>
                </div>
@@ -336,12 +362,12 @@ Mr. Epsilon: </note>
                                 the two are not the same. Professional rights are different from
                                 trade</seg>
                      <listRelation>
-                        <relation name="speechRelation" active="#kappa" passive="#ministerEducation"/>
+                        <relation name="directedTo" active="#kappa" passive="#ministerEducation"/>
                      </listRelation>
                   </u>
                   <u xml:id="dbsect_6__dbsect_1__dbsect_1__answer_1"
                      who="#eta"
-                     decls="#ministerEducation">
+                     ana="#ministerEducation">
                      <note type="speaker">Mr. Eta</note>
                      <seg>Mr. Speaker, BNAT was the only umbrella professional body for
                                 teachers in the country until when some graduate teachers started
@@ -384,23 +410,6 @@ Mr. Epsilon: </note>
          </div>
       </body>
       <back>
-         <listEvent>
-            <event xml:id="vot1" type="voting">
-               <desc>
-                  <measure type="quorum" xml:id="vot1-quo1" ana="#majority" quantity="80"/>
-                  <measure type="count"
-                           xml:id="vot1-cnt2"
-                           ana="#ayes"
-                           corresp="#quantity_1"
-                           quantity="72"/>
-                  <measure type="count"
-                           xml:id="vot1-cnt3"
-                           ana="#noes"
-                           corresp="#quantity_2"
-                           quantity="34"/>
-               </desc>
-            </event>
-         </listEvent>
          <div type="conclusions">
             <p>
                <date when="2011-06-11">Date, 10th June, 2011</date>

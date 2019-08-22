@@ -49,44 +49,10 @@
             <xsl:apply-templates select="akn:debateBody"/>
             <xsl:if test="akn:conclusions | akn:attachments | akn:components">
                 <back>
-                    <xsl:call-template name="voting"/>
                     <xsl:apply-templates select="akn:conclusions | akn:attachments | akn:components"/>
                 </back>
             </xsl:if>
         </text>
-    </xsl:template>
-    
-    <xsl:template name="voting">
-        <xsl:if test="akn:meta/akn:analysis/akn:parliamentary">
-            <listEvent>
-                <xsl:for-each select="akn:meta/akn:analysis/akn:parliamentary/akn:voting">
-                    <event xml:id="{@eId}" type="voting">
-                        <desc>
-                            <xsl:for-each select="akn:quorum | akn:count">
-                                <measure type="{name()}">
-                                    <xsl:call-template name="att-idopt"/>
-                                    <xsl:if test="@refersTo">
-                                        <xsl:attribute name="ana">
-                                            <xsl:value-of select="@refersTo"/>
-                                        </xsl:attribute>
-                                    </xsl:if>
-                                    <xsl:if test="@href">
-                                        <xsl:attribute name="corresp">
-                                            <xsl:value-of select="@href"/>
-                                        </xsl:attribute>
-                                    </xsl:if>
-                                    <xsl:if test="@value">
-                                        <xsl:attribute name="quantity">
-                                            <xsl:value-of select="@value"/>
-                                        </xsl:attribute>
-                                    </xsl:if>
-                                </measure>
-                            </xsl:for-each>
-                        </desc>
-                    </event>
-                </xsl:for-each>
-            </listEvent>
-        </xsl:if>
     </xsl:template>
     
     <xsl:template match="akn:meta">
@@ -120,6 +86,7 @@
                     <authority>
                         <xsl:value-of select="$authority"/>
                     </authority>
+                    <date when="{current-date()}"><xsl:value-of select="format-date(current-date(),'[D1]. [M1]. [Y0001]')"/></date>
                     <xsl:for-each select="//*[@eId][@wId or @GUID]">
                         <!-- @GUID is processed as idno element in teiHeader/fileDesc/publicationStmt/idno[@type='GUID'][@corresp=$akn-eId] -->
                         <idno type="{if (@wId) then 'wId' else 'GUID'}" corresp="#{@eId}">
@@ -291,31 +258,93 @@
     <xsl:template match="akn:debateBody">
         <body>
             <xsl:call-template name="att-coreopt"/>
+            <!-- First, we add any voting metadata. -->
+            <xsl:call-template name="voting"/>
             <xsl:apply-templates/>
         </body>
     </xsl:template>
     
+    <xsl:template name="voting">
+        <xsl:for-each select="ancestor::akn:debate/akn:meta/akn:analysis/akn:parliamentary">
+            <listEvent>
+                <xsl:for-each select="akn:voting | akn:recount">
+                    <event type="{name()}">
+                        <xsl:call-template name="att-idopt"/>
+                        <xsl:call-template name="att-outcome_ana"/>
+                        <xsl:call-template name="att-refers"/>
+                        <xsl:call-template name="att-link"/>
+                        <desc>
+                            <xsl:for-each select="akn:quorum | akn:count">
+                                <measure type="{name()}">
+                                    <xsl:call-template name="att-idopt"/>
+                                    <xsl:if test="@refersTo">
+                                        <xsl:attribute name="ana">
+                                            <xsl:value-of select="@refersTo"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:if test="@href">
+                                        <xsl:attribute name="corresp">
+                                            <xsl:value-of select="@href"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                    <xsl:if test="@value">
+                                        <xsl:attribute name="quantity">
+                                            <xsl:value-of select="@value"/>
+                                        </xsl:attribute>
+                                    </xsl:if>
+                                </measure>
+                            </xsl:for-each>
+                        </desc>
+                    </event>
+                </xsl:for-each>
+                <xsl:for-each select="akn:recount">
+                    <listRelation>
+                        <relation name="recount" active="#{@eId}" passive="#{preceding-sibling::akn:voting/@eId}"/>
+                    </listRelation>
+                </xsl:for-each>
+            </listEvent>
+        </xsl:for-each>
+    </xsl:template>
+    
     <xsl:template match="akn:debateSection">
-        <div type="{name()}" subtype="{@name}">
-            <xsl:call-template name="att-coreopt"/>
-            <xsl:apply-templates/>
-            <xsl:call-template name="questionAnswer"/>
-        </div>
+        <xsl:variable name="element-name" select="name()"/>
+        <xsl:variable name="element-att-name" select="@name"/>
+        <xsl:choose>
+            <!-- Removes debate sections without heding that are the same as their parent or child section. -->
+            <xsl:when test="not(akn:heading) and (parent::*[name(.) = $element-name][@name=$element-att-name] or child::*[name(.) = $element-name][@name=$element-att-name])">
+                <xsl:apply-templates/>
+            </xsl:when>
+            <xsl:otherwise>
+                <div type="{name()}" subtype="{@name}">
+                    <xsl:call-template name="att-coreopt"/>
+                    <xsl:apply-templates/>
+                    <xsl:call-template name="questionAnswer"/>
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <xsl:template match="akn:*[xs:string(node-name(.)) = ('address', 'adjournment', 'administrationOfOath', 'communication', 'declarationOfVote', 'ministerialStatements', 'nationalInterest', 'noticesOfMotion', 'oralStatements', 'papers', 'petitions', 'prayers', 'proceduralMotions', 'pointOfOrder', 'personalStatements', 'questions', 'resolutions', 'rollCall', 'writtenStatements')]">
-        <div type="{name()}">
-            <xsl:call-template name="att-coreopt"/>
-            <xsl:apply-templates/>
-            <xsl:call-template name="questionAnswer"/>
-        </div>
+        <xsl:variable name="element-name" select="name()"/>
+        <xsl:choose>
+            <!-- Removes debate sections without heding that are the same as their parent or child section. -->
+            <xsl:when test="not(akn:heading) and (parent::*[name(.) = $element-name] or child::*[name(.) = $element-name])">
+                <xsl:apply-templates/>
+            </xsl:when>
+            <xsl:otherwise>
+                <div type="{name()}">
+                    <xsl:call-template name="att-coreopt"/>
+                    <xsl:apply-templates/>
+                    <xsl:call-template name="questionAnswer"/>
+                </div>
+            </xsl:otherwise>
+        </xsl:choose>
     </xsl:template>
     
     <!-- ANcontainers (group): specific to the Akoma Ntoso debate vocabulary: speechGroup, speech, question, answer, other, scene, narrative, summary -->
     <xsl:template match="akn:speechGroup">
         <annotationBlock>
             <xsl:call-template name="att-coreopt"/>
-            <!-- Unlike element tei:u tei:annotationBlock has no TEI @decls attribute: remove or include in @corresp -->
             <xsl:call-template name="att-speechAtts"/>
             <xsl:apply-templates/>
         </annotationBlock>
@@ -375,7 +404,7 @@
     <xsl:template name="speech-relation">
         <xsl:if test="@by and (@to or @refersTo)">
             <listRelation>
-                <relation name="speechRelation" active="{@by}" passive="{if (@to) then @to else @refersTo}"/>
+                <relation name="directedTo" active="{@by}" passive="{if (@to) then @to else @refersTo}"/>
             </listRelation>
         </xsl:if>
     </xsl:template>
@@ -755,34 +784,10 @@
     </xsl:template>
     
     <xsl:template name="att-role">
-        <xsl:if test="@as and not(self::akn:speechGroup)">
-            <xsl:choose>
-                <xsl:when test="self::akn:person">
-                    <xsl:choose>
-                        <!-- overrides original transformation from @refersTo to @corresp -->
-                        <xsl:when test="@refersTo and @as">
-                            <xsl:attribute name="corresp">
-                                <xsl:for-each select="@refersTo and @as">
-                                    <xsl:value-of select="."/>
-                                    <xsl:if test="position() != last()">
-                                        <xsl:text> </xsl:text>
-                                    </xsl:if>
-                                </xsl:for-each>
-                            </xsl:attribute>
-                        </xsl:when>
-                        <xsl:when test="not(@refersTo) and @as">
-                            <xsl:attribute name="corresp">
-                                <xsl:value-of select="@as"/>
-                            </xsl:attribute>
-                        </xsl:when>
-                    </xsl:choose>
-                </xsl:when>
-                <xsl:otherwise>
-                    <xsl:attribute name="decls">
-                        <xsl:value-of select="@as"/>
-                    </xsl:attribute>
-                </xsl:otherwise>
-            </xsl:choose>
+        <xsl:if test="@as">
+            <xsl:attribute name="ana">
+                <xsl:value-of select="@as"/>
+            </xsl:attribute>
         </xsl:if>
     </xsl:template>
     
@@ -851,6 +856,14 @@
                 </xsl:attribute>
             </xsl:when>
         </xsl:choose>
+    </xsl:template>
+    
+    <xsl:template name="att-outcome_ana">
+        <xsl:if test="@outcome">
+            <xsl:attribute name="ana">
+                <xsl:value-of select="@outcome"/>
+            </xsl:attribute>
+        </xsl:if>
     </xsl:template>
     
 </xsl:stylesheet>
