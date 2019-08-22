@@ -123,7 +123,8 @@
 	<p>The rest of these guidelines are structured as follows:
 	<list>
 	  <item>the rest of this section details the scope, purpose and background of this
-	  recommendation;</item>
+	  recommendation and discussed two competing proposals for encoding of
+	  parliamentary data;</item>
 
 	  <item><ref target="#sec-general">Section 2</ref> gives the general requirements that
 	  a Parla-CLARIN PPC has to meet;</item>
@@ -140,9 +141,6 @@
 	  <item><ref target="#sec-linguistic">Section 6</ref> on linguistic annotations;</item>
 
 	  <item><ref target="#sec-multimedia">Section 7</ref> on multimedia information;</item>
-
-	  <item><ref target="#sec-rdf">Section 8</ref> sketches ways how the proposed
-	  Parla-CLARIN format can be linked with RDF;</item>
 
 	  <item><ref target="#sec-conversion">Section 9</ref> discusses conversions to and from
 	  the Parla-CLARIN format;</item>
@@ -242,6 +240,12 @@
 	  </div>
 	  <!-- RDF: https://github.com/TEIC/TEI/issues/1860 -->
 	</div>
+
+        <div xml:id="sec-rdf">
+	  <head>RDF</head>
+	  <p>To do</p>
+	</div>
+      
       </div>
       
       <div xml:id="sec-general">
@@ -297,18 +301,64 @@
 	<div xml:id="sec-document">
           <head>Documenting the encoding process</head>
 	  
-	  <p>Difficult encoding situations that are not covered by the TEI Guidelines should be
-	  documented in the <gi>editorialDecl</gi> of the corpus TEI header.  In particular, if
-	  the source texts has been changed (so, ommitting or normalising figures, text, EOL
-	  hyphens, special characters, etc. as discussed above) this practice should be
-	  documented in the <gi>correction</gi>, <gi>normalization</gi>, and, as mentioned, in
-	  the <gi>hyphenation</gi> element of the editorial declaration.</p>
+	  <p>Difficult encoding situations that are not covered by the TEI Guidelines
+	  should be documented in the <gi>editorialDecl</gi> of the corpus TEI header.  In
+	  particular, if the source texts has been changed (so, ommitting or normalising
+	  figures, text, EOL hyphens, quotes, special characters, etc. as discussed above)
+	  this practice should be documented in the <gi>correction</gi>,
+	  <gi>normalization</gi>, <gi>quotation</gi>, and, as mentioned, in the
+	  <gi>hyphenation</gi> element of the editorial declaration. Two further elements,
+	  namely <gi>segmentation</gi> and <gi>interpretation</gi> can also be used to
+	  document these aspects of the encoding process. The example below illustrates
+	  the use of these elements:
+
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-editorial">
+	    <editorialDecl>
+              <correction>
+		<p>Found typos in the source have been silently corrected.</p>
+              </correction>
+              <normalisation>
+		<p>Tables have been ommitted from the corpus. Spacing has been normalised
+		to single space. Soft hyphens have been removed.</p>
+              </normalisation>
+              <hyphenation>
+		<p>End-of-line hyphens have been silently removed.</p>
+              </hyphenation>
+              <quotation>
+		<p>Quotation marks have been left in the text and are not explicitly
+		marked up.</p>
+              </quotation>
+              <segmentation>
+		<p>The texts are segmented into utterances, segments (corresponding to
+		paragraphs in the source transcription), sentences, words and
+		punctuation.</p>
+              </segmentation>
+              <interpretation>
+		<p>Word-level linguistic annotation comprises the lemma of a word and its
+		morphosyntactic description, which follow the
+		<ref target="http://nl.ijs.si/ME/V6/msd/">MULTEXT-East morphosyntactic
+		specification Version 6</ref> for Slovene.</p>
+              </interpretation>
+	    </editorialDecl>
+	  </egXML>
+	  </p>
 
 	  <p>When automatic procedures have been used to encode the texts (most prominently, to
 	  add linguistic markup, as discussed in the <ref target="sec-linguistic">Section on
 	  Linguistic annotation</ref>) this should be documented in the <gi>appInfo</gi>
-	  element of the TEI header.</p>
-	  
+	  element of the <gi>encodingDesc</gi>, as shown in the example below:
+
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-appinfo">
+            <appInfo>
+              <application version="1.0" ident="reldi-tagger">
+               <label>ReLDI morphosyntactic tagger and lemmatiser</label>
+               <desc>MSD tagging and lemmatisation performed with ReLDI Tagger trained for
+               Slovene and available from
+	       <ref target="https://github.com/clarinsi/reldi-tagger">GitHub</ref>.</desc>
+              </application>
+            </appInfo>
+	  </egXML>
+	  </p>
 	</div>
 	
 	<div xml:id="sec-langs">
@@ -479,6 +529,7 @@
 	  source data structures.</p>
 	  
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-divstructure">
+	    <!-- This needs to be specified!!! -->
             <body>
 	      <div type="bla">
 		<head>Title of bla</head>
@@ -492,16 +543,38 @@
 	<div xml:id="sec-docvariants">
           <head>Document variants</head>
 	  
-	  <p>Parliamentary proceedings often exists in two version, the original, <q>raw</q>
-	  transcription, and the edited, <q>redacted</q> transcription, which is then
-	  published. As both versions can be available, it is interesting for some research
-	  questions to also have both versions transcriptions available for study in the scope
-	  of a PPC.
-	  
-	  </p>
+	  <p>Parliamentary proceedings often exists in two version, the original,
+	  <q>raw</q> transcription, and the edited, <q>redacted</q> transcription, which
+	  is then published. If both versions can be available, it is interesting for some
+	  research questions to also have both versions transcriptions available for study
+	  in the scope of a PPC.</p>
+
+	  <p>TEI offers a number of options on how to encode variant texts, most of them
+	  discussed in the <ref
+	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.htm">Chapter on
+	  Linking, Segmentation, and Alignment</ref>. We here present the simplest option,
+	  where it is assumed that each transcription exists in a separate TEI document
+	  and that the segments that should be aligned between the raw and redacted
+	  transcriptions are explicitly marked up in the text. As shown in the example
+	  below, which gives one segment from the file <code>trans-raw.xml</code>
+	  and one from the file <code>trans-red.xml</code> it is in this case
+	  enough to specify the <att>xml:id</att> on both elements and use the
+	  <att>corresp</att> attribute to point to the aligned segment:
+
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-variants">
+	    <!-- From trans-raw.xml: -->
+	    <seg xml:id="raw.1" corresp="trans-red.xml#red.1">What did, uh, who say that?</seg>
+	    <!-- From trans-red.xml: -->
+	    <seg xml:id="red.1" corresp="trans-raw.xml#raw.1">Who said that?</seg>
+	  </egXML>
+	  It should be noted that the relation between the aligned elements does not need
+	  to be 1-1: if the relation is 0-1 or 1-0, then the non-aligned element is simply
+	  not given in a <att>corresp</att>; if the relation is n-1 or 1-n, then several
+	  IDs are given as values of the <att>corresp</att> attribute,
+	  e.g. <code>corresp="trans-raw.xml#raw.3 trans-raw.xml#raw.4"</code></p>
 	</div>
 	
-	</div>
+      </div>
 
       <div xml:id="sec-metadata">
 	<head>Corpus metadata</head>
@@ -1196,10 +1269,6 @@
 	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html#PHFAX">Section
 	  on Digital Facsimiles</ref>.</p>
 	</div>
-      </div>
-      
-      <div xml:id="sec-rdf">
-	<head>Parla-CLARIN in RDF</head>
       </div>
       
       <div xml:id="sec-conversion">
