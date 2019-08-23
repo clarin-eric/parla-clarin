@@ -24,7 +24,7 @@
         <date>2019</date>
         <availability status="free">
           <p>This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.</p>
-        </availability>
+       </availability>
         <pubPlace>
           <ref target="https://github.com/clarin-eric/parla-clarin">https://github.com/clarin-eric/parla-clarin</ref>
         </pubPlace>
@@ -177,7 +177,7 @@
 	  linguistics, political science, history or other humanities and social sciences
 	  disciplines. The recommendation is, in principle, not meant as the primary
 	  storage format of parliamentary proceedings, such as kept by governmental
-	  offices, for which <ref target="sec-akoma">Akoma Ntoso</ref> might be 
+	  offices, for which <ref target="#sec-akoma">Akoma Ntoso</ref> might be 
 	  preferred.</p>
 	  
 	  <p>In developing a schema for structuring of data, two approaches can be adopted: a
@@ -445,15 +445,17 @@
 	  value of its <att>xml:lang</att> attribute.  The Parla-CLARIN recommendation requires
 	  that each element that contains text is either marked by this attribute, or one of
 	  its ancestors is; in particular, the root element of the corpus should have an
-	  <att>xml:lang</att> attribute. Note that if, going by the ancestor axis, the values
-	  of two <att>xml:lang</att> are in conflict, the one closer to the context node is
-	  relevant one.
+	  <att>xml:lang</att> attribute. For multilingual documents (excluding cases where only
+	  a minor part of the text is in another language), the language code if the root
+	  element should be <q>mul</q> for <q>multiple languages</q>. Note that if, going by
+	  the ancestor axis, the values of two <att>xml:lang</att> are in conflict, the one
+	  closer to the context node is relevant one.
 	  </p>
 	  
-	  <p>The values of <att>xml:lang</att> should follow
-	  <ref target="https://tools.ietf.org/html/bcp47">BCP 47</ref>, cf. also
-	  <q><ref target="https://www.w3.org/International/questions/qa-when-xmllang">xml:lang in
-	  XML document schemas</ref></q>.</p>
+	  <p>The values of <att>xml:lang</att> should follow <ref
+	  target="https://tools.ietf.org/html/bcp47">BCP 47</ref>, cf. also <q><ref
+	  target="https://www.w3.org/International/questions/qa-when-xmllang">xml:lang in XML
+	  document schemas</ref></q>.</p>
 	  
 	  <p>It is good practice to document the languages used in the <gi>langUsage</gi>
 	  element of the TEI header.</p>
@@ -527,12 +529,20 @@
 	
 	<div xml:id="sec-files">
 	  <head>Files</head>
-	  <p>While this recommendation makes the assumption that a complete corpus is one
-	  TEI XML document, this does not mean that it should also be stored in one file, as
-	  the file structure is distinct from the concept of XML documents. To enable one
-	  XML document to be composed of several files, the <ref
+	  <p>While this recommendation makes the assumption that a complete PPC is one TEI XML
+	  document, this does not mean that it also has to be stored in one file, as the file
+	  structure is distinct from the concept of XML documents. To enable one XML document
+	  to be composed of many files, the <ref
 	  target="https://www.w3.org/TR/xinclude/">XInclude</ref> recommendation should be
-	  used.</p>
+	  used. Typically, a corpus will then be composed of a file containing the root XML
+	  element and the corpus header, while individual text files will be included in the
+	  corpus using the <gi>include</gi> element from the XInclude namespace, as illustrated
+	  by the following example:
+
+	  <eg xml:id="exa-xinclude">
+	    <![CDATA[<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sk-11/1990-05-07-01.xml"/>]]>
+	  </eg>
+	  </p>
 	  
 	  <p>As mentioned, we recommend that the file has the same name as the value of the
 	  <att>xml:id</att> attribute of the root element of the file. This e.g. guarantees
@@ -546,29 +556,14 @@
 	
 	<div xml:id="sec-corpstruct">
           <head>Corpus structure</head>
+
+	  <!-- Komentar, da <teiCorpus> ni nujen -->
 	  
-	  <p>As illustrated below, a CLARIN-Parla corpus should be rooted in an
-	  <gi>teiCorpus</gi> element, which should also contain the <att>xml:lang</att>
-	  attribute with the appropriate language code<note>For multilingual documents
-	  (excluding cases where only a minor part of the text is in another language), this
-	  code would be <q>mul</q> for <q>multiple languages</q></note>. The
-	  <gi>teiHeader</gi> of the corpus then contains the metadata for the complete
-	  corpus, including the metadata that is referred to by the subordinate <gi>TEI</gi>
-	  elements, such as the defined taxonomies and the list of speakers.</p>
-	  
-	  <p>We do not specify what an individual <gi>TEI</gi> element should contain, as
-	  the size and granularity of parliamentary proceedings corpora, not to mention the
-	  national rules of structuring the workings of the parliament will differ
-	  substantially. Typically, however, and individual <gi>TEI</gi> element would
-	  contain one sitting or session or one day, in any case such data that has common
-	  metadata that distinguishes it from the other <gi>TEI</gi> elements in the
-	  corpus.</p>
-	  
-	  <p>Finally, although not given in the Figure below, a <gi>text</gi> element can
-	  contain, apart from the <gi>body</gi> also a <gi>front</gi> element before it
-	  and/or a <gi>back</gi> element after it. While the <gi>body</gi> will contain the
-	  speeches and is obligatory, the former can contain preamble text, and the latter
-	  various appendices or texts that are related to the speeches.</p>
+	  <p>As illustrated below, a CLARIN-Parla corpus is typically rooted in an
+	  <gi>teiCorpus</gi> element. The <gi>teiHeader</gi> of the corpus then contains the
+	  metadata for the complete corpus, including the metadata that is marked withe
+	  <att>xml:id</att> and referred to by the subordinate <gi>TEI</gi> elements, such as
+	  the defined taxonomies and the list of speakers.</p>
 	  
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-docstructure">
 	    <teiCorpus xml:lang="xx">
@@ -588,39 +583,151 @@
 	      <!-- More TEI elements here -->
 	    </teiCorpus>
 	  </egXML>
+
+	  <p>We do not specify what an individual <gi>TEI</gi> element should contain, as
+	  the size and granularity of parliamentary proceedings corpora, not to mention the
+	  national rules of structuring the workings of the parliament will differ
+	  substantially. Typically, however, and individual <gi>TEI</gi> element would
+	  contain one sitting or session or one day, in any case such data that has common
+	  metadata that distinguishes it from the other <gi>TEI</gi> elements in the
+	  corpus.</p>
+
+	  <p>In cases of smaller corpora, the top level <gi>teiCorpus</gi> can also be omitted,
+	  so the complete corpus is rooted simply in a <gi>TEI</gi> element.</p>
+	  
+	  <p>As illustrated below, the <gi>text</gi> element can, apart from the obligatory
+	  <gi>body</gi>, also contain front matter in <gi>front</gi> and back matter in
+	  <gi>back</gi>. While the <gi>body</gi> will contain the transcription proper
+	  (i.e. the speeches), the former contains preamble text, and the latter various
+	  appendices or texts that are related to the speeches.</p>
+	  
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-textstructure">
+            <TEI xml:id="id.1">
+	      <teiHeader>
+		<!-- Document metadata -->
+	      </teiHeader>
+	      <text>
+		<front>
+		  <!-- Front matter -->
+		</front>
+                <body>
+		  <!-- Transcription text -->
+		</body>
+		<back>
+		  <!-- Back matter -->
+		</back>
+	      </text>
+	    </TEI>
+	  </egXML>
+
 	</div>
 	
 	<div xml:id="sec-textstruct">
           <head>Text divisions</head>
 	  
 	  <p>In the text <gi>body</gi>, as well as in the <gi>front</gi> and <gi>back</gi>
-	  matter, the element that further organises the content is the division,
+	  matter, the element that further organises the content into sections is the division,
 	  <gi>div</gi>, and each of the three <gi>text</gi> elements (if present) should
 	  contain at least one division.</p>
-	  
-	  <p>The divisions can be nested, and are further specified by their <att>type</att>
-	  and, possibly, <att>subtype</att> attributes. For the recommended values of
-	  <att>type</att> we take as our model the structure elements as defined by Akoma
-	  Ntoso. The <att>subtype</att> attribute is to be used for cases where some facets
-	  of structures in the source data cannot be otherwise retained in the Parla-CLARIN
-	  encoding, i.e. it is used when we do not want to lose some information about the
-	  source data structures.</p>
-	  
-	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-divstructure">
-	    <!-- This needs to be specified!!! -->
-            <body>
-	      <div type="bla">
-		<head>Title of bla</head>
-		<div type="bla" subtype="foo">
+
+	  <p>The divisions can be nested, as shown in the example below:
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-divsimple">
+	    <body>
+	      <div>
+		...
+		<div>
+		  <head>Representation of members of the Federal Government</head>
+		  ...
+		</div>
+		<div>
+		  <head>Hour of topical interest</head>
+		  ...
+		</div>
+		<div>
+		  <head>Announcement of an urgent request</head>
+		  ...
 		</div>
 	      </div>
-            </body>
+	    </body>
 	  </egXML>
+	  In general it is a complicated question what should constitute a division of a
+	  transcription, with the pragmatic solution being that a division will be whatever has
+	  a heading (than can be recognised by the up-conversion sofware) in the source
+	  transcription.</p>
+
+	  <p>The divisions can be further characterised by their <att>type</att> and, possibly,
+	  <att>subtype</att> attributes. The use of these attributes makes sense in cases where
+	  the source either explicitly (e.g. via its structure, as in Akoma Ntoso) or
+	  implicitly (e.g. via pattern matching the content of the headings) indicates what
+	  kind of a division it is. For example:
+	  
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-divtype">
+	    <body>
+	      <div>
+		...
+		<div type="representation">
+		  <head>Representation of members of the Federal Government</head>
+		  ...
+		</div>
+		<div type="topical">
+		  <head>Hour of topical interest</head>
+		  ...
+		</div>
+		<div type="request">
+		  <head>Announcement of an urgent request</head>
+		  ...
+		</div>
+	      </div>
+	    </body>
+	  </egXML>
+	  </p>
+	  
+	  <p>If used, the values of the <att>type</att> and <att>subtype</att> attributes will
+	  depend on the parliamentary rules of the particular country, on the need to
+	  distinguish the types of divisions, as well as on on the ability to automatically
+	  recognise them or the available effort to manually add them. The Parla-CLARIN
+	  specification does therefore not enforce the use of these attributes nor does it
+	  restrict their values.  However, the definition of <gi>div</gi> does give a set of
+	  sample values for <att>type</att>, which correspond to the names of the structure
+	  elements defined by <ref target="#sec-akoma">Akoma Ntoso</ref>. Below we give an
+	  example of a relatively complex structure automatically converted from a source Akoma
+	  Ntoso document, where the <att>subtype</att> attribute encodes the values of the
+	  corresponding <att>name</att> attribute of AKN:
+	  
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-divakn">
+	    <body>
+	      <div type="prayers">
+	        <head>Prayers</head>
+		...
+	      </div>
+	      <div type="oralStatements">
+	        <head>Speaker’s Statement</head>
+		...
+	      </div>
+	      <div type="questions">
+	        <head>Oral Answers to Questions</head>
+	        <div type="debateSection" subtype="topic">
+		  <head>Health</head>
+		  <div type="debateSection" subtype="askedPerson">
+		    <head>The Secretary of State was asked—</head>
+		    <div type="debateSection" subtype="questionAnswer">
+		      <head>Ambulance Waiting Times</head>
+		      ...
+		    </div>
+		  </div>
+		</div>
+	      </div>
+	      <div type="pointOfOrder">
+	        <head>Points of Order</head>
+		...
+	      </div>
+	    </body>
+	  </egXML>
+	  </p>
 	</div>
 	
 	<div xml:id="sec-docvariants">
           <head>Document variants</head>
-	  
 	  <p>Parliamentary proceedings often exists in two version, the original,
 	  <q>raw</q> transcription, and the edited, <q>redacted</q> transcription, which
 	  is then published. If both versions can be available, it is interesting for some
@@ -690,16 +797,16 @@
 	  information on an individual person, as the example below illustrates.
 	  
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-speakers">
-            <person xml:id="KucanMilan1941">
+	    <person xml:id="KucanMilan1941">
               <persName>
-                <surname>Kučan</surname>
-                <forename>Milan</forename>
-              </persName>
-              <sex value="M">moški</sex>
-              <birth when="1941-01-14">
-                <placeName>Križevci v Prekmurju</placeName>
-              </birth>
-            </person>
+		<surname>Kučan</surname>
+		<forename>Milan</forename>
+	      </persName>
+	      <sex value="M">male</sex>
+	      <birth when="1941-01-14">
+		<placeName ref="http://www.geonames.org/3197229">Križevci</placeName>
+	      </birth>
+	    </person>
 	  </egXML>
 
 	  Each <gi>person</gi> must have an <att>xml:id</att> attribute, so that it can be
@@ -775,23 +882,30 @@
 	  corpus TEI header. The Section on <ref
 	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#ND-org">Organizational
 	  Data</ref> of the TEI Guidelines gives the particulars on how to encode data on
-	  organisations, and an example of two <gi>org</gi> elements is given below.
+	  organisations. An example of two <gi>org</gi> elements with a complex name
+	  structure and interdependencies is given below:
 	  
-	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-parties">
-            <org xml:id="pp.SDZ" role="political_party">
-	      <event type="existence" from="1989-01-11" to="1991-10-13"/>
-              <orgName full="yes" >Slovenska demokratična zveza</orgName>
-              <orgName full="init">SDZ</orgName>
-            </org>
-            <org xml:id="pp.DS">
-	      <event type="existence" from="1991-10-14" to="1994-03-12"/>
-              <orgName full="yes" from="1991-10-14" to="1992-01-05">Demokratska stranka</orgName>
-              <orgName full="init" from="1991-10-14" to="1992-01-05">DS</orgName>
-              <orgName full="yes" from="1992-01-05" to="1994-03-12">Socialdemokratska stranka</orgName>
-              <orgName full="init" from="1992-01-05" to="1994-03-12">SDS</orgName>
-            </org>
-	  </egXML>
 	  <!-- Note that @full="init" is misused, at least according to the TEI definition -->
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-parties">
+            <org xml:id="pp.SDZ" role="political_party" xml:lang="sl">
+	      <event from="1989-01-11" to="1991-10-13">
+	        <label xml:lang="en">existence</label>
+	      </event>
+	      <orgName full="yes">Slovenska demokratična zveza</orgName>
+	      <orgName full="yes" xml:lang="en">Slovenian Democratic Union</orgName>
+	      <orgName full="init">SDZ</orgName>
+	      <idno type="wikimedia">https://en.wikipedia.org/wiki/Slovenian_Democratic_Union</idno>
+	    </org>
+	    <org xml:id="pp.DS" role="political_party">
+	      <orgName full="yes" from="1989-02-16" to="2003-09">Socialdemokratska stranka Slovenije</orgName>
+	      <orgName full="yes"  xml:lang="en" from="1989-02-16" to="2003-09">Social Democratic Party of Slovenia</orgName>
+	      <orgName full="init" from="1989-02-16" to="2003-09">SDSS</orgName>
+	      <orgName full="yes" from="2003-09">Slovenska demokratska stranka</orgName>
+	      <orgName full="yes"  xml:lang="en" from="2003-09">Slovenian Democratic Party</orgName>
+	      <orgName full="init" from="2003-09">SDS</orgName>
+	      <idno type="wikimedia">https://en.wikipedia.org/wiki/Slovenian_Democratic_Party</idno>
+	    </org>
+	  </egXML>
 	  
 	  As with persons, each organisation must contain an <att>xml:id</att> attribute, so
 	  that <gi>person</gi> elements can refer to it. The fact that the organisation is a
@@ -869,115 +983,129 @@
       <div xml:id="sec-transcript">
 	<head>Transcriptions</head>
 	
-	<p>The transcriptions of the speeches are the central part of this recommendation.
-	Here, the main distinction to be made is between the transcriptions of the
-	utterances of the speakers against the commentary inserted by the transcriber, such
-	as the titles of the divisions, results of voting, comments on what is happening in
-	the chamber etc. The former will be encoded using the utterance element, <gi>u</gi>,
-	defined by the
-	<ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html">TEI module for
-	Transcriptions of Speech</ref>, which also defines a number of other useful
-	elements. The latter are encoded using a variety of elements, such as <gi>head</gi>
-	or <gi>note</gi>, and possibly others, as further discussed below. We first give an
-	example of a rather straightforward start of a division:
-
-	<!-- Do we / will we have a typology of notes as well? -->
-	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relations">
-          <div type="???">
-            <head>REPUBLIKA SLOVENIJA DRŽAVNI ZBOR</head>
-            <head type="session">nadaljevanje 39. seje</head>
-            <note type="chairman">Sejo so vodili predsednik Državnega zbora dr. Milan Brglez
-            in podpredsednika Primož Hainz ter Matjaž Nemec.</note>
-            <note type="time">Seja se je začela ob 10.03.</note>
-            <note type="speaker">PREDSEDNIK DR. MILAN BRGLEZ:</note>
-            <u who="#SDZ7.BrglezMilan" ana="#chair">
-              <seg xml:id="SDZ7-Redna-39-2018-03-27.seg1">Spoštovani kolegice poslanke in
-              kolegi poslanci, gospe in gospodje!</seg>
-              <seg xml:id="SDZ7-Redna-39-2018-03-27.seg2">Začenjam z nadaljevanjem 39. seje
-              Državnega zbora.</seg>
+	<p>The transcriptions of the parliamentary debates the central part of this
+	recommendation and this section explains how to encode the transcrptions of speeches
+	proper, the commentary inserted by the transcribers, and the encoding of interruption
+	of speeches and various verbal and non-verbal incidents in the parliament. Most of
+	these elements are explained in the Chapter on <ref
+	target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html">Transcription of
+	Speech</ref> of the TEI Guidelines.</p>
+	
+	<div xml:id="sec-uterrance">
+	  <head>Utterances and commentary</head>
+	  <p>In the transcriptions the main distinction to be made is between the
+	  transcriptions of the utterances of the speakers against the commentary inserted by
+	  the transcriber, such as the titles of the divisions, results of voting, comments on
+	  what is happening in the chamber etc. The former should be encoded using the
+	  utterance element, <gi>u</gi>, while latter are encoded using a variety of elements,
+	  such as <gi>head</gi> or <gi>note</gi>, and possibly others, as further discussed
+	  below. Below we give an example of a rather straightforward start of a division:
+	
+	  <!-- Do we / will we have a typology of notes as well? -->
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relations">
+            <div>
+              <head>REPUBLIKA SLOVENIJA DRŽAVNI ZBOR</head>
+              <head type="session">nadaljevanje 39. seje</head>
+              <note type="chairman">Sejo so vodili predsednik Državnega zbora dr. Milan Brglez
+              in podpredsednika Primož Hainz ter Matjaž Nemec.</note>
+              <note type="time">Seja se je začela ob 10.03.</note>
+              <note type="speaker">PREDSEDNIK DR. MILAN BRGLEZ:</note>
+              <u who="#SDZ7.BrglezMilan" ana="#chair">
+		<seg xml:id="SDZ7-Redna-39-2018-03-27.seg1">Spoštovani kolegice poslanke in
+		kolegi poslanci, gospe in gospodje!</seg>
+		<seg xml:id="SDZ7-Redna-39-2018-03-27.seg2">Začenjam z nadaljevanjem 39. seje
+		Državnega zbora.</seg>
+		...
+	      </u>
 	      ...
-	    </u>
-	    ...
-	  </div>
-	</egXML>
-
-	The example starts with the division heading, saying that this is the National
-	Assembly of the Republic of Slovenia, with the second heading specifying that this
-	is the continuation of the 39th session. Next come three notes, first one specifying
-	who chaired the session, the second when the session started and the third, who is
-	the first speaker. It should be noted that these are not formal specifications,
-	rather, they are simply parts of the transcript that have been wrapped in certain
-	elements.</p>
-
-	<p>After these preliminary notes comes the transcript of the speech proper, which,
-	as mentioned, is encoded using the <gi>u</gi> element. Its main attribute is
-	<att>who</att>, giving the pointer to the definition of the speaker. The element can
-	also have the <att>ana</att> attribute giving one or more pointers to a typology of
-	types of speakers; in our case, it defines that the speaker is the chair of the
-	session. The utterances can (but are not required) to be segmented using the generic
-	TEI element for segments, <gi>seg</gi>, encoding the paragraphs of the source
-	transcription.<note>The reason why the TEI element for paragraphs (<gi>p</gi>) is
-	not used is that utterances, being essentially (transcriptions of) spoken text, do
-	not allow for internal paragraphs, a concept pertinent to written text.</note></p>
-
-	<p>If, in general, comments on the transcription are encoded using <gi>note</gi>,
-	some such comments allow for more precise TEI elements to encode them.<note>Whether
-	these specific elements will be used or simply encoded using notes, and, indeed,
-	whether such notes are preserved in the Parla-CLARIN encoding at all, will depend on
-	the needs and resources of each particular project.</note> In particular, the TEI
-	module for Transcriptions of Speech (<q><ref
-	target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSBA">Elements
-	unique to spoken texts</ref></q>) defines the following elements that can correspond
-	to various types of transcriber's comments:
-	<list>
-	  <item><gi>vocal</gi> marks any vocalized but not necessarily lexical phenomenon,
-	  e.g. laughter, sounds of (dis)agreement from the benches etc.</item>
-	  <item><gi>kinesic</gi> marks any communicative phenomenon, not necessarily
-	  vocalized, for example a gesture, frown, etc.</item>
-	  <item><gi>incident</gi> marks any phenomenon or occurrence, not necessarily
-	  vocalized or communicative, for example incidental noises or other events
-	  affecting communication.</item>
-	</list>
-
-	The artifical example below illustrates the use of these three elements:
+	    </div>
+	  </egXML>
+	  
+	  The example starts with the division heading, saying that this is the National Assembly
+	  of the Republic of Slovenia, with the second heading specifying that this is the
+	  continuation of the 39th session. Next come three notes, first one specifying who
+	  chaired the session, the second when the session started and the third the name of the
+	  first speaker. It should be noted that these are not formal specifications, rather,
+	  they are simply parts of the transcript that have been wrapped in certain elements.</p>
+	  
+	  <p>After these preliminary notes comes the transcript of the speech proper, which, as
+	  mentioned, is encoded using the <gi>u</gi> element. Its main attribute is
+	  <att>who</att>, giving the pointer to the <gi>person</gi> element containing the
+	  metadata of the speaker. The <gi>u</gi> element can also have the <att>ana</att>
+	  attribute giving one or more pointers to a typology of types of speakers. In our case,
+	  it would point to a category that specifies that the speaker is the chair of the
+	  session.</p>
+	  
+	  <p>The utterances can (but are not required) to be segmented using the generic
+	  TEI element for segments, <gi>seg</gi>, encoding the paragraphs of the source
+	  transcription.<note>The reason why the TEI element for paragraphs (<gi>p</gi>) is not
+	  used is that utterances, being essentially (transcriptions of) spoken text, do not
+	  allow for internal paragraphs, a concept pertinent to written text.</note></p>
+	</div>
 	
-	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-incidents">
-          <u who="#SDZ5.AhačičMonika">
-	    Spoštovani kolegice poslanke!
-	    <vocal who="#opposition"><desc>shouting</desc></vocal>
-	    <kinesic who="#SDZ5.AhačičMonika"><desc>banging of the gavel</desc></kinesic>
-	    <incident><desc>police storm the parliament</desc></incident>
-	  </u>
-	</egXML>
-	</p>
-
-	<p>A special case occurs when the <q>notes</q> of the transcription of a speaker
-	state that another (possibly named) person interrupted the speaker and give the
-	content of the interruption, and the main speaker continues with their speech, as in
-	this snippet of a made-up transcript:
-
-	<eg>Boris Johnson: I propose a no-deal Brexit. /Jeremy Corbyn: Traitor!/ Because 
-	England does not want any dealings with the European Union.</eg>
-
-	While the interruption might be encoded as a <gi>note</gi>, it would better be
-	encoded as a separate utterance, which brings with it the problem that nested
-	utterances are not allowed, so the main utterance needs to be split into two (or
-	more) pieces. The example below gives an illustration how this is realised.
+	<div xml:id="sec-interruptions">
+	  <head>Interrupted utterances</head>
+	  <p>A special case occurs when a transcription note states that somebody interrupted
+	  the speaker and gives the transcript of the interruption, with the main speaker
+	  then continuing with their speech, as in this snippet of a made-up transcript:
+	  
+	  <eg>Boris Johnson: I propose a no-deal Brexit. /Jeremy Corbyn: Traitor!/ Because 
+	  England does not want any dealings with the European Union.</eg>
+	  
+	  While the interruption might be encoded as a <gi>note</gi>, it is more precisely
+	  encoded as a separate utterance, which brings with it the problem that nested
+	  utterances are not allowed, so the main utterance needs to be split into two (or
+	  more) pieces. The example below illustrates how this is encoded:
+	  
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-splitu">
+            <u who="#BorisJohnson" xml:id="GB001.8.3" next="#GB001.8.5">I propose a no-deal Brexit.</u>
+            <u who="#JeremyCorbyn" xml:id="GB001.8.4">Traitor!</u>
+            <u who="#BorisJohnson" xml:id="GB001.8.5" prev="#GB001.8.3">Because England does not want any dealings with the European Union.</u>
+	  </egXML>
+	  
+	  As can be see, the split is indicated by the use of the <att>next</att> attribute on
+	  the first part of the split utterance, and, if so desired, by the <att>prev</att>
+	  attribute of the next part of the split utterace. The values of the attributes are
+	  pointers to the next of previous part of the split utterance.<note>Note that, in
+	  general, the utterance can also be split in the middle of a sentence, which brings
+	  with it problems for automatic linguistic processing, as, ideally, the parts should
+	  be first joined, and only then processed.</note></p>
+	</div>
 	
-	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-splitu">
-          <u who="#BorisJohnson" xml:id="GB001.8.3" next="#GB001.8.5">I propose a no-deal Brexit.</u>
-          <u who="#JeremyCorbyn" xml:id="GB001.8.4">Traitor!</u>
-          <u who="#BorisJohnson" xml:id="GB001.8.5" prev="#GB001.8.3">Because England does not want any dealings with the European Union.</u>
-	</egXML>
-	
-	As can be see, the split is indicated by the use of the <att>next</att> attribute on
-	the first part of the split utterance, and, if so desired, by the <att>prev</att>
-	attribute of the next part of the split utterace. Both attribute must contain a pointer
-	to the next of previous part of the split utterance.<note>Note that, in general, the
-	utterance can also be split in the middle of a sentence, which brings with it problems
-	for automatic linguistic processing, as, ideally, the parts should be first joined, and
-	only then processed.</note></p>
-	
+	<div xml:id="sec-incidents">
+	  <head>Incidents</head>
+	  <p>In general, transcriber comments are encoded using <gi>note</gi> but some such
+	  comments can be encoded using more precise TEI elements.<note>Whether these specific
+	  elements will be used or simply encoded using notes, and, indeed, whether such notes
+	  are preserved in the Parla-CLARIN encoding at all, will depend on the needs and
+	  resources of each particular project.</note> In particular, the TEI module for
+	  Transcription of Speech (<q><ref
+	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSBA">Elements
+	  unique to spoken texts</ref></q>) defines the following elements that can correspond
+	  to various types of transcriber's comments:
+	  <list>
+	    <item><gi>vocal</gi> marks any vocalized but not necessarily lexical phenomenon,
+	    e.g. laughter, sounds of (dis)agreement from the benches etc.</item>
+	    <item><gi>kinesic</gi> marks any communicative phenomenon, not necessarily
+	    vocalized, for example a gesture, frown, etc.</item>
+	    <item><gi>incident</gi> marks any phenomenon or occurrence, not necessarily
+	    vocalized or communicative, for example incidental noises or other events
+	    affecting communication.</item>
+	  </list>
+	  
+	  The artifical example below illustrates the use of these three elements:
+	  
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-incidents">
+            <u xml:lang="sl" who="#SDZ5.AhačičMonika">Spoštovani kolegice poslanke!</u>
+	    <vocal who="#opposition"><desc xml:lang="en">shouting</desc></vocal>
+	    <kinesic who="#SDZ5.AhačičMonika"><desc xml:lang="en">banging of the gavel</desc></kinesic>
+	    <incident><desc xml:lang="en">Army storms the parliament</desc></incident>
+	  </egXML>
+	  It should be noted that the three <q>incident</q> elements could have been also
+	  encoded within the <gi>u</gi> element, however, it is recommended to have them placed
+	  outside, because, ideally, the utterance elements should contain pure text only, as
+	  this significantly simplifies their linguistic processing.</p>
+	</div>
       </div>
       
       <div xml:id="sec-linguistic">
@@ -991,15 +1119,14 @@
 	the other without them. The reason for this is that many users prefer to use the
 	plain-text version, e.g. as they want to perform their own linguistic annotation, or
 	this kind of annotation is simply not relevant for their research questions.</p>
-
-	<p>The TEI Guidelines discuss basic linguistic annotation in their <ref
-	target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html">Chapter on
-	Simple Analytic Mechanisms</ref> and we follow one particular option from these
-	recommendations, for the annotation levels that they cover. This, inter alia, means
-	that (where possible) the annotation is in-line (as opposed to stand-off), i.e. that
-	the linguistic annotation is given in the main document, and therefore mixed with the
-	other annotations, rather than in a separate document with pointers into the base
-	text.</p>
+	
+	<p>The TEI Guidelines discuss basic linguistic annotation in their Chapter on <ref
+	target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html">Simple Analytic
+	Mechanisms</ref> and we follow one particular option from these recommendations, for the
+	annotation levels that they cover. This, inter alia, means that (where possible) the
+	annotation is in-line (as opposed to stand-off), i.e. that the linguistic annotation is
+	given in the main document, and therefore mixed with the other annotations, rather than
+	in a separate document with pointers into the base text.</p>
 	
 	<div xml:id="sec-anawords">
 	  <head>Word-level annotation</head>
@@ -1021,7 +1148,7 @@
               <pc msd="UposTag=PUNCT">.</pc>
 	    </s>
 	  </egXML>
-
+	  
 	  Sentences are marked up using the <gi>s</gi> element, words with the <gi>w</gi>
 	  element and punctuation symbols with the <gi>pc</gi> element. To retain linguistically
 	  significant whitespace, the <att>join</att> element is used, with the main relevant
@@ -1030,7 +1157,7 @@
 	  of the token). While, in the preceding example, it would be more intuitive to have the
 	  value <val>left</val> marked on the full-stop, we recommend that <val>right</val> is
 	  used on the preceding token, as this simplifies processing.</p>
-
+	  
 	  <p>The base form of words is given in the <att>lemma</att> attribute,<note>Note
 	  that punctuation characters, <gi>pc</gi>, do not have a <att>lemma</att> attribute,
 	  as they cannot sensibly be said to have lemmas.</note> while situation with the
@@ -1061,7 +1188,7 @@
 	  Here, the tags are simply pointers to identifiers, where the elements bearing these
 	  identifiers define the appropriate feature-structures, i.e. pairs of attribute-values,
 	  as in the example below:
-
+	  
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis3">
 	    <fs xml:id="Pd-nsg" xml:lang="en" corresp="#Zk-ser">
 	      <f name="CATEGORY"><symbol value="Pronoun"/></f>
@@ -1076,7 +1203,7 @@
 	
 	<div xml:id="sec-anasegment">
 	  <head>Segmental annotation</head>
-
+	  
 	  <p>A common annotation type, used e.g. for marking named entities or terms, is
 	  segmental annotation, where a stretch of text or tokens is simply enclosed in XML
 	  tags, as the following example illustrates:
@@ -1103,7 +1230,7 @@
 	    <item><gi>term</gi> for marking up terms, discussed in the Section on <ref
 	    target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#COHQU">Terms,
 	    Glosses, Equivalents, and Descriptions</ref> of the TEI Guidelines;</item>
-
+	    
 	    <item><gi>name</gi> for various types of names, or, the more general <gi>rs</gi>
 	    for <q>referring string</q>, e.g. <tag>rs type="person"</tag> her
 	    husband<tag>/rs</tag>, discussed in the Section on <ref
@@ -1116,11 +1243,11 @@
 	    discussed in the Section on <ref
 	    target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONANU">Numbers
 	    and Measures</ref> of the TEI Guidelines;</item>
-
+	    
 	    <item><gi>date</gi> and <gi>time</gi>, discussed in the Section on <ref
 	    target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/CO.html#CONADA">Dates
 	    and Times</ref> of the TEI Guidelines;</item>
-
+	    
 	    <item><gi>seg</gi> for cases where TEI does not have a specific element for some
 	    type of segmental markup, e.g. <tag>seg type="swearword"
 	    subtype="religious"</tag>Damn<tag>/seg</tag>; this element is discussed in the
@@ -1128,7 +1255,7 @@
 	    target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SASE">Blocks,
 	    Segments, and Anchors</ref> of the TEI Guidelines.</item>
 	  </list>
-
+	  
 	  It should be noted that for cases of discontinuity of the segment, the <att>prev</att>
 	  and <att>next</att> attributes can be used to link its parts together. Furthermore,
 	  the <att>part</att> attribute can be used to specify the type of the fragments, as
@@ -1151,7 +1278,7 @@
 	  Linking, Segmentation, and Alignment</ref> is used. It is composed of <gi>link</gi>
 	  elements, which give two or more references to IDs, as illustrated in the following
 	  example:
-	    
+	  
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis6">
 	    <s xml:id="ssj1.1.5">
               <w xml:id="ssj1.1.5.t1">Tega</w>
@@ -1182,7 +1309,7 @@
 	  known in advance.</note>, while the <att>targFunc</att> attribute explains the
 	  functions of the references given in the <att>target</att> attributes of the contained
 	  <gi>link</gi> elements.</p>
-
+	  
  	  <p>The contained links then give the references to the head and argument tokens of
  	  the relation, while the <att>ana</att> attribute specifies what kind of a relation
  	  this is. It should be noted that the value of the analysis attribute is a pointer,
@@ -1232,32 +1359,32 @@
 	  datatype</ref>.</note> and a pointer to the file, possibly a responsibility statement
 	  (<gi>respStmt</gi>) of the person or agency that made the recording, the date when
 	  the recording file was made and the equipment used:
-
+	  
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-recordingStmt">
 	    <recordingStmt>
               <recording type="audio" dur="PT43M45S">
-                <media mimeType="audio/wav" url="WAV/Session_2018-12-01a.wav"/>
-                <respStmt>
+		<media mimeType="audio/wav" url="WAV/Session_2018-12-01a.wav"/>
+		<respStmt>
                   <resp>Audio capture</resp>
                   <name>John Dury</name>
 		</respStmt>
-                <time>2016-04-15</time>
-                  <equipment>
-                    <ab>Video downloaded from U.K. parliament site.</ab>
-		    <ab>Audio extracted from video with Audacity 1.4</ab>
-                  </equipment>
-               </recording>
+		<time>2016-04-15</time>
+		<equipment>
+                  <ab>Video downloaded from U.K. parliament site.</ab>
+		  <ab>Audio extracted from video with Audacity 1.4</ab>
+		</equipment>
+              </recording>
             </recordingStmt>
 	  </egXML>
 	  </p>
-
+	  
 	  <p>The mapping of time intervals of the recording to IDs in the TEI document is
 	  encoded in the <gi>timeline</gi> element, in particular in the contained
 	  <gi>when</gi> elements. As explained below, these IDs are then used to link elements
 	  in the transcription to the timeline, therefore each <gi>when</gi> element must have
 	  the <att>xml:id</att> attribute. The <gi>when</gi> elements must also be in the same
 	  order as the time-points they encode.</p>
-
+	  
 	  <p>As the example below shows, the timeline gives the unit in which the intervals are
 	  specified (typically second, <code>s</code>) and the time origin of the timeline,
 	  here referring to the first <gi>when</gi> element, at the very start of the
@@ -1275,7 +1402,7 @@
 	    </timeline>
 	  </egXML>
 	  </p>
-
+	  
 	  <p>The IDs of the timeline synchronisation are then used by elements in the
 	  transcription (e.g. <gi>u</gi> or <gi>seg</gi>) via their <att>start</att> and
 	  <att>end</att> attributes. In the examples below we see three cases of such linking:
@@ -1286,12 +1413,12 @@
 	  that in such cases we would also use the <att>prev</att> and <att>next</att>
 	  attributes, as shown in the <ref target="#exa-splitu">Example on split
 	  utterances</ref>.</note>:
-	    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-utiming">
-	      <u who="#SPK0" start="#T0" end="#T1" xml:id="u2">Good morning!</u>
-	      <u who="#SPK1" start="#T1" end="#T3">Good morning, <anchor synch="#T2"/>Mr. president!</u>
-	      <u who="#SPK0" start="#T4" end="#T7">You do not have the <anchor synch="#T5"/>floor!</u>
-	      <u who="#SPK1" start="#T5" end="#T6">Sorry, <anchor synch="#T2"/>mate!</u>
-	    </egXML>
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-utiming">
+	    <u who="#SPK0" start="#T0" end="#T1" xml:id="u2">Good morning!</u>
+	    <u who="#SPK1" start="#T1" end="#T3">Good morning, <anchor synch="#T2"/>Mr. president!</u>
+	    <u who="#SPK0" start="#T4" end="#T7">You do not have the <anchor synch="#T5"/>floor!</u>
+	    <u who="#SPK1" start="#T5" end="#T6">Sorry, <anchor synch="#T2"/>mate!</u>
+	  </egXML>
 	  </p>
 	</div>
 	
@@ -1303,18 +1430,18 @@
 	  explained in the <ref
 	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html">Chapter on
 	  Representation of Primary Sources</ref> of the TEI Guidelines.</p>
-
+	  
 	  <p>The simplest but also the most limiting way to achieve this is to have per-page
 	  facsimile files and use the page break i.e. <gi>pb</gi> element to mark page
 	  boundaries in the transcript and then directly specify the image file of the page
 	  with the <att>facs</att> attribute, as illustrated in the example below:
-
+	  
 	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-pb">
 	    <body>
 	      <pb facs="PNG/page1.png"/>
-	        <!-- text contained on page 1 encoded here -->
+	      <!-- text contained on page 1 encoded here -->
 	      <pb facs="PNG/page2.png"/>
-	        <!-- text contained on page 2 encoded here -->
+	      <!-- text contained on page 2 encoded here -->
 	    </body>
 	  </egXML>
 	  </p>
@@ -1322,7 +1449,7 @@
 	  <p>By convention, this encoding indicates that the image indicated by the <att>facs</att>
 	  attribute represents the whole of the text following the <gi>pb</gi> element, up
 	  to the next <gi>pb</gi> element.</p>
-
+	  
 	  <p>A more complicated solution, where it is possible to have several images per page
 	  (e.g. in different resolutions) or to specify areas of a page is enabled by the
 	  <gi>facsimile</gi> element, which should appear immediately before the <gi>text</gi>
@@ -1341,7 +1468,7 @@
 	    </facsimile>
 	  </egXML>
 	  </p>
-
+	  
 	  <p>More complicated cases, such as delimiting portions of a page are also supported
 	  by the TEI Guidelines, and for these the reader is referred directly to the Section
 	  on <ref
@@ -1359,7 +1486,7 @@
 	In this section we discuss some up- and down-conversion scripts that have already been developed
 	for transforming source formats into Parla-CLARIN and from Parla-CLARIN into formats immediately
 	usable by software.</p>
-
+	
 	<p>To do...</p>
 	
 	<div xml:id="sec-convakn">
@@ -1369,6 +1496,14 @@
 	  countries, and this section introduces the developed conversion of AKN documents to
 	  Parla-CLARIN.</p>
 
+	  <list>
+	    <item>treatment of FRBR</item>
+	    <item><att>by</att>, <att>to</att>, <att>as</att> => <code>tei:relation[@name='directedTo']</code></item>
+	    <item>question, answer  => <code>tei:relation[@name='questionAnswer']</code></item>
+	    <item>voting => <code>tei:back/tei:listEvent/tei:event[@type = (voting, recount)]</code></item>
+	    <item><att>wId</att> and <att>GUID</att> => <code>tei:publicationStmt/tei:idno[@type][@corresp]</code></item>
+	  </list>
+	  
 	  <p>...</p>
 	</div>
 	
@@ -1378,20 +1513,20 @@
 	  data model is seen as an interesting <q>down-conversion</q> of Parla-CLARIN
 	  corpora. While there is currently no such conversion yet, this section gives some
 	  background on how the Parla-CLARIN should be extended to make it possible.</p>
-
+	  
 	  <p>On the tei-l mailing list there have already been several discussion on how to
 	  link TEI with RDF, and the issues are summarised and further links given in the <ref
 	  target="https://github.com/TEIC/TEI/issues/1860">Issue #1860</ref> in the TEI GitHub
 	  page. The best way seems to be to either directly turn TEI markup into RDF triples,
 	  or, where this is not possible, to use RDFa attribute on TEI elements.</p>
-
+	  
 	  <p>...</p>
 	</div>
       </div>
       
       <div xml:id="sec-ack">
 	<head>Acknowledgements</head>
-
+	
 	<p>The authors would like to thank all the participants of the <ref
 	target="https://www.clarin.eu/blog/clarin-parlaformat-workshop">CLARIN
 	ParlaFormat</ref> workshop (May 23-24, 2019, Amersfoort) for their very useful comments
@@ -1404,7 +1539,7 @@
 	Lex0</ref> to develop an interchange encoding for machine readable dictionaries, and
 	the <ref target="https://www.distant-reading.net/eltec/">ELTeC corpus</ref> initiative
 	by the COST Action CA16204 <q>Distant Reading for European Literary History</q>.</p>
-
+	
 	<p>The work on this recommendation is funded by the <ref target="https://www.clarin.eu/">CLARIN</ref>
 	Research Infrastructure for Language Resources and Tools.</p>
       </div>
@@ -1430,96 +1565,84 @@
 		     except="alt altGrp bicond binary cond default fDecl fDescr fsConstraints fsDescr
 			     fsdDecl fsdLink if iff then vDefault vLabel vMerge vNot vRange"/>
           <moduleRef key="gaiji" except=""/>
-
+	  
 	  <elementSpec ident="div" module="textstructure" mode="change">
 	    <constraintSpec scheme="schematron" ident="divtype">
 	      <constraint>
-	        <sch:rule context="tei:div[@type = $div.types.debate]">
+		<sch:rule context="tei:div[@type = $div.types.debate]">
 	          <sch:assert test="not(parent::tei:div[@type = $div.types.debate])">
 	            A text division of type <sch:value-of select="@type"/> should not occur inside div with type value <sch:value-of select="parent::tei:div/@type"/>.
 	          </sch:assert>
-	        </sch:rule>
+		</sch:rule>
 	      </constraint>
 	    </constraintSpec>
 	    <attList>
 	      <attDef ident="type" mode="replace" usage="rec">
-	        <valList type="open">
+		<valList type="open">
 	          <!-- debateSection -->
-	          <valItem ident="debate">
+	          <valItem ident="debateSection">
 	            <desc xml:lang="en">General purpose text division for all parts of
-	            parliamentary proceedings.  This is markup for a generic structural
-	            container for all other parts of a debates that are not explicitly
-	            supported with the other values of this attribute. It is a good practice to
-	            use the @subtype attribute for additional content classification.</desc>
+	            parliamentary proceedings. It is a good practice to use the @subtype
+	            attribute for additional content classification.</desc>
 	          </valItem>
-		  <!-- Should this be rather called "speeches", as it can be one or more?
-		       Otherwise people might get the mistaken impression that each speech must go in
-		       a separate div. Of course, this is then a departure from AKN... -->
-	          <valItem ident="speech">
-	            <desc xml:lang="en">General purpose text division for one or more speeches that were not necessarily held in parliament</desc>
-	          </valItem>
-		  <!-- Below we constantly have "Parts of a debate", but
-		       a) this is surely 1 part, not many, and
-		       b) We actually don't define what a "debate" is!
-		   -->
 	          <valItem ident="address">
-	            <desc xml:lang="en">Parts of a debate relevant to addresses</desc>
+	            <desc xml:lang="en">Part of a debate relevant to addresses</desc>
 	          </valItem>
 	          <valItem ident="adjournment">
-	            <desc xml:lang="en">Parts of a debate containing adjournment notices</desc>
+	            <desc xml:lang="en">Part of a debate containing adjournment notices</desc>
 	          </valItem>
 	          <valItem ident="administrationOfOath">
-	            <desc xml:lang="en">Parts of a debate containing the administration of an oath</desc>
+	            <desc xml:lang="en">Part of a debate containing the administration of an oath</desc>
 	          </valItem>
 	          <valItem ident="communication">
-	            <desc xml:lang="en">Parts of a debate containing communications from the house</desc>
+	            <desc xml:lang="en">Part of a debate containing communications from the house</desc>
 	          </valItem>
 	          <valItem ident="declarationOfVote">
-	            <desc xml:lang="en">Parts of a debate relevant to the declaration of votes</desc>
+	            <desc xml:lang="en">Part of a debate relevant to the declaration of votes</desc>
 	          </valItem>
 	          <valItem ident="ministerialStatements">
-	            <desc xml:lang="en">Parts of a debate containing written statements by participants</desc>
+	            <desc xml:lang="en">Part of a debate containing written statements by participants</desc>
 	          </valItem>
 	          <valItem ident="nationalInterest">
-	            <desc xml:lang="en">Parts of a debate containing resolutions</desc>
+	            <desc xml:lang="en">Part of a debate containing resolutions</desc>
 	          </valItem>
 	          <valItem ident="noticesOfMotion">
-	            <desc xml:lang="en">Parts of a debate relevant to the notices of motions</desc>
+	            <desc xml:lang="en">Part of a debate relevant to the notices of motions</desc>
 	          </valItem>
 	          <valItem ident="oralStatements">
-	            <desc xml:lang="en">Parts of a debate containing oral statements by participants</desc>
+	            <desc xml:lang="en">Part of a debate containing oral statements by participants</desc>
 	          </valItem>
 	          <valItem ident="papers">
-	            <desc xml:lang="en">Parts of a debate relevant to the display of papers</desc>
+	            <desc xml:lang="en">Part of a debate relevant to the display of papers</desc>
 	          </valItem>
 	          <valItem ident="petitions">
-	            <desc xml:lang="en">Parts of a debate relevant to petitions</desc>
+	            <desc xml:lang="en">Part of a debate relevant to petitions</desc>
 	          </valItem>
 	          <valItem ident="prayers">
-	            <desc xml:lang="en">Parts of a debate containing prayers</desc>
+	            <desc xml:lang="en">Part of a debate containing prayers</desc>
 	          </valItem>
 	          <valItem ident="proceduralMotions">
-	            <desc xml:lang="en">Parts of a debate relevant to procedural motions</desc>
+	            <desc xml:lang="en">Part of a debate relevant to procedural motions</desc>
 	          </valItem>
 	          <valItem ident="pointOfOrder">
-	            <desc xml:lang="en">Parts of a debate relevant to points of order</desc>
+	            <desc xml:lang="en">Part of a debate relevant to points of order</desc>
 	          </valItem>
 	          <valItem ident="personalStatements">
-	            <desc xml:lang="en">Parts of a debate containing written statements by participants</desc>
+	            <desc xml:lang="en">Part of a debate containing written statements by participants</desc>
 	          </valItem>
 	          <valItem ident="questions">
-	            <desc xml:lang="en">Parts of a debate relevant to questions</desc>
+	            <desc xml:lang="en">Part of a debate relevant to questions</desc>
 	          </valItem>
 	          <valItem ident="resolutions">
-	            <desc xml:lang="en">Parts of a debate containing resolutions</desc>
+	            <desc xml:lang="en">Part of a debate containing resolutions</desc>
 	          </valItem>
 	          <valItem ident="rollCall">
-	            <desc xml:lang="en">Parts of a debate containing a roll call of individuals</desc>
+	            <desc xml:lang="en">Part of a debate containing a roll call of individuals</desc>
 	          </valItem>
 	          <valItem ident="writtenStatements">
-	            <desc xml:lang="en">Parts of a debate containing written statements by participants</desc>
+	            <desc xml:lang="en">Part of a debate containing written statements by participants</desc>
 	          </valItem>
-	        </valList>
+		</valList>
 	      </attDef>
 	    </attList>
 	  </elementSpec>
@@ -1527,7 +1650,7 @@
 	  <elementSpec ident="note" mode="change" module="core">
 	    <attList>
 	      <attDef ident="type" mode="replace" usage="rec">
-	        <valList type="open">
+		<valList type="open">
 	          <!-- AKN -->
 	          <valItem ident="narrative">
 	            <desc xml:lang="en">Description in the third person of events taking place in the meeting, e.g. "Mr X. takes the Chair".</desc>
@@ -1564,23 +1687,23 @@
 	          <valItem ident="debate">
 	            <desc xml:lang="en">Comments on the conduct of debates</desc>
 	          </valItem>
-	        </valList>
+		</valList>
 	      </attDef>
 	    </attList>
 	  </elementSpec>
 	  
 	  <!--elementSpec ident="u" module="spoken" mode="change">
-	    <attList>
+	      <attList>
 	      <attDef ident="xml:id" mode="replace" usage="req">
-		<datatype><dataRef name="ID"/></datatype>
+	      <datatype><dataRef name="ID"/></datatype>
 	      </attDef>
-	    </attList>
-	  </elementSpec-->
+	      </attList>
+	      </elementSpec-->
 	  
 	  <constraintSpec scheme="schematron" ident="parla-clarin.sch-variables">
 	    <constraint>
 	      <sch:pattern>
-	        <sch:let name="div.types.debate" value="('address', 'adjournment', 'administrationOfOath', 'communication', 'declarationOfVote', 'ministerialStatements', 'nationalInterest', 'noticesOfMotion', 'oralStatements', 'papers', 'petitions', 'prayers', 'proceduralMotions', 'pointOfOrder', 'personalStatements', 'questions', 'resolutions', 'rollCall', 'writtenStatements')"/>
+		<sch:let name="div.types.debate" value="('address', 'adjournment', 'administrationOfOath', 'communication', 'declarationOfVote', 'ministerialStatements', 'nationalInterest', 'noticesOfMotion', 'oralStatements', 'papers', 'petitions', 'prayers', 'proceduralMotions', 'pointOfOrder', 'personalStatements', 'questions', 'resolutions', 'rollCall', 'writtenStatements')"/>
 	      </sch:pattern>
 	    </constraint>
 	  </constraintSpec>
