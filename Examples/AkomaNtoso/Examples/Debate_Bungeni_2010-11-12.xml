@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0 ../Schema/akomantoso30.xsd" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+    <!-- Task funded by UN/DESA. Analysis and markup performed by Monica Palmirani, CIRSFID, University of Bologna -->
+    <!-- Example of debate that includes amendment. 
+	Interesting example of mmod, modification in the modification -->
+    <debate name="hansard">
+        <meta>
+            <identification source="#somebody">
+                <FRBRWork>
+                    <FRBRthis value="/ak/debaterecord/2010-11-12/main"/>
+                    <FRBRuri value="/ak/debaterecord/2010-11-12"/>
+                    <FRBRdate date="2010-11-12" name="generation"/>
+                    <FRBRauthor href="#parliament" as="#author"/>
+                    <FRBRcountry value="ak"/>
+                </FRBRWork>
+                <FRBRExpression>
+                    <FRBRthis value="/ak/debaterecord/2010-11-12/eng@/main"/>
+                    <FRBRuri value="/ak/debaterecord/2010-11-12/eng@"/>
+                    <FRBRdate date="2010-11-12" name="markup"/>
+                    <FRBRauthor href="#somebody" as="#editor"/>
+                    <FRBRlanguage language="eng"/>
+                </FRBRExpression>
+                <FRBRManifestation>
+                    <FRBRthis value="/ak/debaterecord/2010-11-12/eng@/main.xml"/>
+                    <FRBRuri value="/ak/debaterecord/2010-11-12/eng@.akn"/>
+                    <FRBRdate date="2010-11-12" name="publication"/>
+                    <FRBRauthor href="#somebody" as="#editor"/>
+                </FRBRManifestation>
+            </identification>
+            <publication date="2010-11-12" name="internal" showAs="Internal Use Only" number="134"/>
+            <analysis source="#somebody">
+                <activeModifications>
+                    <textualMod eId="txm1" type="substitution">
+                        <source href="mod1-mmod1-mod1"/>
+                        <destination href="/ak/bill/234/main#sec5"/>
+                        <new href="qdt1"/>
+                    </textualMod>
+                    <textualMod eId="txm2" type="substitution">
+                        <source href="mod1-mmod1-mod2"/>
+                        <destination href="/ak/bill/234/main#sec5"/>
+                        <new href="qdt2"/>
+                    </textualMod>
+                    <textualMod eId="txm3" type="substitution">
+                        <source href="mod1-mmod1-mod3"/>
+                        <destination href="/ak/bill/234/main#sec5"/>
+                        <new href="qdt3"/>
+                    </textualMod>
+                    <textualMod eId="txm4" type="substitution">
+                        <source href="mod1-mmod1-mod4"/>
+                        <destination href="/ak/bill/234/main#sec5"/>
+                        <new href="qdt4"/>
+                    </textualMod>
+                    <textualMod eId="txm5" type="substitution">
+                        <source href="mod1-mmod1-mod5"/>
+                        <destination href="/ak/bill/234/main#sec5"/>
+                        <new href="qdt5"/>
+                    </textualMod>
+                </activeModifications>
+            </analysis>
+            <references source="#somebody">
+                <original eId="ro1" href="/ak/debaterecord/2010-11-12/eng@/main" showAs="Debate"/>
+                <TLCPerson eId="somebody" href="/ontology/persone/akn/somebody" showAs="somebody"/>
+                <TLCRole eId="editor" href="/ontology/role/akn/editor" showAs="Editor"/>
+                <TLCRole eId="author" href="/ontology/role/akn/author" showAs="Author"/>
+                <TLCOrganization eId="parliament" href="/ontology/organization/akn/parliament" showAs="Parliament"/>
+            </references>
+        </meta>
+        <coverPage>
+            <block name="block">
+                Republic of Cameroon Peace Work Fatherland
+                <docProponent> NATIONAL ASSEMBLY</docProponent>
+                <legislature period="8"> 8TH LEGISLATIVE PERIOD</legislature>
+                <legislature period="2010">2010 LEGISLATIVE YEAR </legislature>
+                <session>3RD ORDINARY SESSION</session> 
+                (NOVEMBER 2010)				
+                <docNumber>No. 055 /R/AN/8</docNumber>
+                <docType>R  E  P  O  R  T</docType>
+                <docTitle> On Bill No. 867/PJL/AN: Finance Bill of the Republic of Cameroon
+                    for the 2011 Financial Year  Presented  On behalf of the Committee on Finance 
+                    and the Budget </docTitle>
+                By <docIntroducer>Hon. KOA Luc, Rapporteur General</docIntroducer>
+            </block>
+        </coverPage>
+        <debateBody>
+            <debateSection name="amendments" eId="sub1">
+                <heading>Amendments</heading>
+            </debateSection>
+            <debateSection eId="sec1" name="section">
+                <p>Under <ref eId="ref1" href="/ak/bill/234/main#sec5">SECTION FIVE</ref>, Government introduced an amendment which seeks to take into account all sectors of activities covered by the reevaluation of the nature of investments giving rise to exemption from taxation of capital gains tax, referring the modalities for application of this provision to the regulatory instrument.  </p>
+                <p>This amendment was accepted by your Committee and <ref href="/ak/bill/234/main#sec5-subsec7" eId="ref2">SECTION FIVE (7)</ref> is reformulated as follows:
+                    <mod eId="mod1">
+                        <ref href="/ak/bill/234/main#sec5-subsec7" eId="ref3">SECTION FIVE:</ref>
+                        “ <quotedStructure eId="qtd1">
+                            <subsection eId="sec5-subsec7">
+                                <content>
+                                    <p>
+                                        <mmod eId="mod1-mmod1">
+                                            <ref href="/ak/bill/345/main#sec10" eId="ref4">Section Ten </ref> of the Finance Law of the 2010 financial year is hereby amended and supplemented as follows:
+                                            
+                                            <mod eId="mod1-mmod1-mod1">
+                                                <quotedText eId="qtd2">1)	 A legal system for the revaluation of tangible and intangible depreciable and non-depreciable fixed assets is hereby instituted.</quotedText>
+                                            </mod>
+                                            <omissis>…………………………………………………………………………………………………………………………………………………………………………</omissis>
+                                            <mod eId="mod1-mmod1-mod3">
+                                                <quotedText eId="qtd3"> 4)	Revaluation shall be carried out no later than 31 December 2013.</quotedText>
+                                            </mod>
+                                            <omissis>…………………………………………………………………………………………………………………………………………………………………………
+                                                ……					</omissis>
+                                            <mod eId="mod1-mmod1-mod4">
+                                                <quotedText eId="qtd4">6) The revaluation surplus shall be subject to a 5% levy in discharge from 
+                                                    any other tax, duty, levy and royalty.</quotedText>
+                                            </mod>
+                                            <mod eId="mod1-mmod1-mod5">
+                                                <quotedText eId="qtd5">7) However, the above 5% levy in discharge shall not be applicable in the            case of reinvestment of the revaluation surplus within two fiscal years ended, in accordance with the forms and conditions specified in Sections 105 et seq of the General Tax Code by regulation.</quotedText>
+                                            </mod>”
+                                        </mmod>
+                                    </p>
+                                </content>
+                            </subsection>
+                        </quotedStructure>
+                    </mod>
+                </p>
+                <scene>SECTION FIVE was adopted after this amendment.</scene>
+            </debateSection>
+            <adjournment eId="adj1">
+                <p>The House rose at <recordedTime time="2010-11-12T06:30:00+02:00" type="endEvent"/>6.30 p.m. 				</p>
+            </adjournment>
+        </debateBody>
+    </debate>
+</akomaNtoso>
