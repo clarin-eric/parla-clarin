@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0 ../Schema/akomantoso30.xsd" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+    <!-- Task funded by UN/DESA. Analysis and markup performed by Monica Palmirani, CIRSFID, University of Bologna -->
+    <!-- Oral Question Document -->
+    <debate name="hansard" contains="originalVersion">
+        <meta>
+            <identification source="#somebody">
+                <FRBRWork>
+                    <FRBRthis value="/ak/questions/2010-11-11/main"/>
+                    <FRBRuri value="/ak/questions/2010-11-11/"/>
+                    <FRBRdate date="2010-11-07" name="generation"/>
+                    <FRBRauthor href="#parliament" as="#author"/>
+                    <FRBRcountry value="ak"/>
+                </FRBRWork>
+                <FRBRExpression>
+                    <FRBRthis value="/ak/questions/2010-11-11/eng@/main"/>
+                    <FRBRuri value="/ak/questions/2010-11-11/eng@"/>
+                    <FRBRdate date="2011-01-23" name="markup"/>
+                    <FRBRauthor href="#somebody" as="#editor"/>
+                    <FRBRlanguage language="eng"/>
+                </FRBRExpression>
+                <FRBRManifestation>
+                    <FRBRthis value="/ak/questions/2010-11-11/eng@/main.xml"/>
+                    <FRBRuri value="/ak/questions/2010-11-11/eng@.akn"/>
+                    <FRBRdate date="2011-01-23" name="publication"/>
+                    <FRBRauthor href="#somebody" as="#editor"/>
+                </FRBRManifestation>
+            </identification>
+            <publication date="2010-11-11" name="internal" showAs="Internal Use Only" number="567"/>
+            <references source="#somebody">
+                <!-- example of TLC use: organization, role, person, concept-->
+                <original eId="ro1" href="/ak/questions/2010-11-11/eng@" showAs="Original"/>
+                <TLCOrganization eId="parliament" href="/ontology/organizations/akn/parliament" showAs="Parliament"/>
+                <TLCRole eId="author" href="/ontology/roles/akn/author" showAs="Author of Document"/>
+                <TLCRole eId="editor" href="/ontology/roles/ita/editor" showAs="Editor of Document"/>
+                <TLCRole eId="memberPaliament" href="/ontology/roles/akn/member" showAs="Member of Parliament"/>
+                <TLCRole eId="deputyPresident" href="/ontology/roles/akn/deputyPresident" showAs="Deputy of President"/>
+                <TLCPerson eId="somebody" href="/ontology/persons/ita/editors/somebody" showAs="somebody"/>
+                <TLCPerson eId="smith" href="/ontology/persons/gha/parliament/JohnSmith" showAs="Mr. J. Smith"/>
+                <TLCPerson eId="brown" href="/ontology/persons/gha/parliament/JohnBrown" showAs="Mr. J. Brown" shortForm="Brown"/>
+                <TLCConcept eId="identificationCode" href="/ontology/concept/gha/parliament/identificationCode" showAs="Internal Identification Code"/>
+            </references>
+            <notes source="#somebody">
+                <note eId="not01">
+                    <p>Note example</p>
+                </note>
+            </notes>
+        </meta>
+        <coverPage>
+            <p class="publication">[No 7—2010] </p>
+            <p>
+                <session value="second">SECOND SESSION</session>, <legislature value="fourth">FOURTH PARLIAMENT</legislature>
+            </p>
+            <p>
+                <docProponent>NATIONAL COUNCIL OF PROVINCES</docProponent>
+            </p>
+            <p>
+                <docType title="Question Paper">QUESTION PAPER</docType>
+            </p>
+            <p>
+                <authorialNote eId="ath1" marker="1" refersTo="publicationNote">
+                    <p>NOTE:</p>
+                    <p>1. † Indicates translated version of the question.</p>
+                    <p>2. * Indicates a question for oral reply.</p>
+                </authorialNote>
+            </p>
+            <p class="table">Table of Contents</p>
+            <toc>
+                <tocItem href="#qst1" level="1"> Deputy President pp. 30, 31</tocItem>
+            </toc>
+        </coverPage>
+        <preface>
+            <p>
+                <docType>QUESTIONS FOR ORAL REPLY</docType>
+            </p>
+            <p>
+                <docDate date="2010-11-11">THURSDAY, 11 NOVEMBER 2010</docDate>
+            </p>
+        </preface>
+        <debateBody>
+            <questions eId="qst1">
+                <num>*19.</num>
+                <heading>DEPUTY PRESIDENT</heading>
+                <question by="#smith" to="#deputyPresident" as="#memberPaliament">
+                    <from> Mr Smith</from>
+                    <p>ask the Deputy President:</p>
+                    <p>Whether current sanctions on commercial matters against X which Y supported are
+                        justified; if not, what is the position in this regard; if so, what are the relevant details? <docNumber refersTo="#identificationCode">CO364E </docNumber>
+                    </p>
+                </question>
+            </questions>
+            <questions eId="qst2">
+                <num>*20.</num>
+                <question by="#brown" to="#deputyPresident" as="#memberPaliament">
+                    <from> Mr Brown  	</from>
+                    <p>to ask the Deputy President:</p>
+                    <p>Whether the XXX Movement (MRM) has held any meetings during the
+                        period 1 January 2009 up to the latest specified date for which information is available; if
+                        not, why not; if so, (a) with whom were the meetings held, 
+                        <a href="www.somebody.org">link</a>
+                        (b) what subjects were covered in
+                        the meetings, (c) what (i) decisions and (ii) recommendations were made at such meetings
+                        and (d) who attended the meetings?<docNumber refersTo="#identificationCode">CO539E </docNumber>
+                    </p>
+                </question>
+            </questions>
+        </debateBody>
+        <conclusions>
+            <p class="heading">ADJOURNMENT</p>
+            <p>The House was adjourned at 2.07 p.m.<recordedTime time="2010-11-11T02:07:00" type="endEvent"/> till <date date="2011-02-20">20th Febraury, 2011 </date>at 10.00 a.m.
+                <recordedTime time="2011-02-20T10:00:00" type="startEvent"/>
+            </p>
+            <p>
+                <noteRef href="#not01" marker="1" placement="bottom" placementBase="#qst2"/>
+            </p>
+        </conclusions>
+    </debate>
+</akomaNtoso>

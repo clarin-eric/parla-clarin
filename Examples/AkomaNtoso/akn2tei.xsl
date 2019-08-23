@@ -99,6 +99,14 @@
                     <xsl:call-template name="FRBR"/>
                 </sourceDesc>
             </fileDesc>
+            <profileDesc>
+                <settingDesc>
+                    <setting>
+                        <name type="country" key="{akn:identification/akn:FRBRWork/akn:FRBRcountry/@value}"/>
+                        <date when="{akn:identification/akn:FRBRWork/akn:FRBRdate/@date}"/>
+                    </setting>
+                </settingDesc>
+            </profileDesc>
             <xsl:if test="akn:references/akn:TLCRole | akn:references/akn:TLCConcept | akn:references/akn:TLCProcess">
                 <encodingDesc>
                     <classDecl>
@@ -109,14 +117,17 @@
                     </classDecl>
                 </encodingDesc>
             </xsl:if>
-            <xsl:if test="akn:references/akn:TLCPerson | akn:references/akn:TLCOrganization">
-                <profileDesc>
+            <profileDesc>
+                <xsl:if test="akn:references/akn:TLCPerson | akn:references/akn:TLCOrganization">
                     <particDesc>
                         <xsl:call-template name="TLCOrganization"/>
                         <xsl:call-template name="TLCPerson"/>
                     </particDesc>
-                </profileDesc>
-            </xsl:if>
+                </xsl:if>
+                <langUsage>
+                    <language ident="{akn:identification/akn:FRBRExpression/akn:FRBRlanguage/@language}"/>
+                </langUsage>
+            </profileDesc>
         </teiHeader>
     </xsl:template>
     
@@ -128,6 +139,8 @@
                     <relation ref="http://www.w3.org/2002/07/owl#sameAs" active="http://purl.org/vocab/frbr/core#Work" passive="https://w3id.org/akn/ontology/allot/FRBRWork"/>
                     <xsl:call-template name="FRBRuri"/>
                     <xsl:call-template name="FRBRdate"/>
+                    <xsl:call-template name="FRBRauthor"/>
+                    <relation ref="http://purl.org/vocab/frbr/core#Place" active="{akn:FRBRthis/@value}" passive="http://eulersharp.sourceforge.net/2003/03swap/countries#{akn:FRBRcountry/@value}"/>
                 </xsl:for-each>
                 <relation active="{akn:FRBRWork/akn:FRBRthis/@value}" ref="http://purl.org/vocab/frbr/core#realization" passive="{akn:FRBRExpression/akn:FRBRthis/@value}"/>
                 <xsl:for-each select="akn:FRBRExpression">
@@ -135,6 +148,8 @@
                     <relation ref="http://www.w3.org/2002/07/owl#sameAs" active="http://purl.org/vocab/frbr/core#Expression" passive="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
                     <xsl:call-template name="FRBRuri"/>
                     <xsl:call-template name="FRBRdate"/>
+                    <xsl:call-template name="FRBRauthor"/>
+                    <relation ref="http://purl.org/dc/elements/1.1/language" active="{akn:FRBRthis/@value}" passive="{akn:FRBRlanguage/@language}"/>
                 </xsl:for-each>
                 <relation active="{akn:FRBRExpression/akn:FRBRthis/@value}" ref="http://purl.org/vocab/frbr/core#embodiment" passive="{akn:FRBRManifestation/akn:FRBRthis/@value}"/>
                 <xsl:for-each select="akn:FRBRManifestation">
@@ -142,6 +157,7 @@
                     <relation ref="http://www.w3.org/2002/07/owl#sameAs" active="http://vocab.org/frbr/core.html#term-Manifestation" passive="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
                     <xsl:call-template name="FRBRuri"/>
                     <xsl:call-template name="FRBRdate"/>
+                    <xsl:call-template name="FRBRauthor"/>
                 </xsl:for-each>
             </listRelation>
         </xsl:for-each>
@@ -154,6 +170,14 @@
     <xsl:template name="FRBRdate">
         <xsl:if test="akn:FRBRdate">
             <relation name="{akn:FRBRdate/@name}" ref="http://purl.org/dc/elements/1.1/date" active="{akn:FRBRthis/@value}" passive="{akn:FRBRdate/@date}"/>
+        </xsl:if>
+    </xsl:template>
+    <xsl:template name="FRBRauthor">
+        <xsl:if test="akn:FRBRauthor">
+            <xsl:variable name="authorId" select="substring-after(akn:FRBRauthor/@href,'#')"/>
+            <xsl:variable name="roleId" select="substring-after(akn:FRBRauthor/@as,'#')"/>
+            <relation ref="http://purl.org/dc/elements/1.1/creator" active="{//akn:*[@eId=$authorId]/@href}" passive="{akn:FRBRthis/@value}"/>
+            <relation ref="{//akn:*[@eId=$roleId]/@href}" active="{//akn:*[@eId=$authorId]/@href}" passive="{akn:FRBRthis/@value}"/>
         </xsl:if>
     </xsl:template>
     
@@ -569,7 +593,7 @@
     
     <!-- ANtitleInline: docType, docTitle, docNumber, docProponent, docDate, legislature, session, shortTitle, docAuthority, docPurpose,
                         docCommittee, docIntroducer, docStage, docStatus, docJurisdiction, docketNumber -->
-    <xsl:template match="akn:docTitle">
+    <xsl:template match="akn:docTitle | akn:shortTitle | akn:docStage">
         <title type="{name()}">
             <xsl:call-template name="att-coreopt"/>
             <xsl:apply-templates/>
@@ -582,6 +606,12 @@
             <xsl:apply-templates/>
         </name>
     </xsl:template>
+    <xsl:template match="akn:docAuthority | akn:docCommittee | docIntroducer">
+        <name type="{name()}">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:apply-templates/>
+        </name>
+    </xsl:template>
     <xsl:template match="akn:docDate">
         <date type="{name()}">
             <xsl:call-template name="att-coreopt"/>
@@ -589,7 +619,7 @@
             <xsl:apply-templates/>
         </date>
     </xsl:template>
-    <xsl:template match="akn:docType">
+    <xsl:template match="akn:docType | akn:docPurpose | akn:docStatus | akn:docJurisdiction | akn:docketNumber">
         <term type="{name()}">
             <xsl:call-template name="att-coreopt"/>
             <xsl:apply-templates/>

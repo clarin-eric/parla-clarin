@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<akomaNtoso xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://docs.oasis-open.org/legaldocml/ns/akn/3.0 ../Schema/akomantoso30.xsd" xmlns="http://docs.oasis-open.org/legaldocml/ns/akn/3.0">
+    <debate name="hansard">
+        <!-- Task funded by UN/DESA. Analysis and markup performed by Monica Palmirani, CIRSFID, University of Bologna -->
+        <!-- debate with scene, summary, narrative -->
+        <!-- Several example of debateContent: questions, pointOfOrder, ministerialStatements -->
+        <!-- Inspired to the original http://www.parliament.go.ke/index.php?option=com_docman&task=doc_download&gid=720&Itemid=-->
+        <meta>
+            <identification source="#somebody">
+                <FRBRWork>
+                    <FRBRthis value="/ak/debaterecord/2010-12-07/main"/>
+                    <FRBRuri value="/ak/debaterecord/2010-12-07"/>
+                    <FRBRdate date="2010-12-07" name="generation"/>
+                    <FRBRauthor href="#parliament" as="#author"/>
+                    <FRBRcountry value="ak"/>
+                </FRBRWork>
+                <FRBRExpression>
+                    <FRBRthis value="/ak/debaterecord/2010-12-07/eng@/main"/>
+                    <FRBRuri value="/ak/debaterecord/2010-12-07/eng@"/>
+                    <FRBRdate date="2010-12-07" name="markup"/>
+                    <FRBRauthor href="#somebody" as="#editor"/>
+                    <FRBRlanguage language="eng"/>
+                </FRBRExpression>
+                <FRBRManifestation>
+                    <FRBRthis value="/ak/debaterecord/2010-12-07/eng@/main.xml"/>
+                    <FRBRuri value="/ak/debaterecord/2010-12-07/eng@.akn"/>
+                    <FRBRdate date="2012-01-31" name="markup"/>
+                    <FRBRauthor href="#somebody" as="#editor"/>
+                </FRBRManifestation>
+            </identification>
+            <publication date="2010-12-08" name="internal" showAs="Internal Use Only" number="234"/>
+            <references source="#somebody">
+                <original eId="ro1" href="/ak/debaterecord/2010-12-07/eng@/main" showAs="Original"/>
+                <TLCPerson eId="somebody" href="/ontology/person/akn/somebody" showAs="somebody"/>
+                <TLCOrganization eId="parliament" href="/ontology/organization/akn/parliament" showAs="Parliament"/>
+                <TLCPerson eId="alfa" href="/ontology/person/akn/parliament/alfa" showAs="Mr Alfa"/>
+                <TLCPerson eId="beta" href="/ontology/person/akn/parliament/beta" showAs="Mr. Beta"/>
+                <TLCPerson eId="gamma" href="/ontology/person/akn/parliament/gamma" showAs="Mr. Gamma"/>
+                <TLCPerson eId="delta" href="/ontology/person/akn/parliament/delta" showAs="Mr. Delta"/>
+                <TLCPerson eId="omega" href="/ontology/person/akn/parliament/omega" showAs="Mr. Omega"/>
+                <TLCPerson eId="epsilon" href="/ontology/person/akn/parliament/epsilon" showAs="Mr. Epsilon"/>
+                <TLCRole eId="author" href="/ontology/role/akn/author" showAs="Author of Document"/>
+                <TLCRole eId="editor" href="/ontology/role/ita/editor" showAs="Editor of Document"/>
+                <TLCRole eId="speaker" href="/ontology/role/akn/speaker" showAs="Mr. Speaker"/>
+                <TLCRole eId="mhest" href="/ontology/role/akn/mhest" showAs="Minister for Higher Education, Science and Technology"/>
+                <TLCRole eId="dpm" href="/ontology/role/akn/dpm" showAs="Deputy Prime Ministe"/>
+                <TLCRole eId="sec" href="/ontology/role/akn/sec" showAs="Secretary"/>
+                <TLCRole eId="pm" href="/ontology/role/akn/pm" showAs="Member of Parliament"/>
+            </references>
+        </meta>
+        <preface>
+            <p class="heading">NATIONAL ASSEMBLY</p>
+            <p class="subheading">OFFICIAL REPORT</p>
+            <p class="center">Tuesday, <docDate date="2010-12-07">7th December, 2010</docDate>
+            </p>
+            <p class="center">The House met at <recordedTime time="2010-12-07T02:30:00+02:00" type="startEvent"/>2.30 p.m.</p>
+        </preface>
+        <debateBody>
+            <debateSection eId="sec1" name="preamble">
+                <narrative>[Mr. Speaker in the Chair]</narrative>
+            </debateSection>
+            <prayers eId="pry1">
+                <heading>PRAYERS</heading>
+            </prayers>
+            <papers eId="pap1">
+                <heading>PAPERS LAID</heading>
+                <other eId="pap1-oth1">
+                    <p> The following Papers were laid on the Table:-</p>
+                    <ul eId="pap1-oth1-ul1">
+                        <li>Report of the Parliament delegation to the 12th Annual Conference of
+                            the Association of Public Accounts Committees of the Republic of Bungeni held
+                            from 11th to 14th October, 2010 at the  International Conference
+                            Centre in Bungeni , Africa.</li>
+                        <li>Report of the Public Accounts Committee on the Government of Bungeni 
+                            Accounts for the year 2007/2008.</li>
+                    </ul>
+                </other>
+                <narrative>(By <person eId="person1234" refersTo="#alfa">Dr. Alfa</person>)</narrative>
+                <other eId="pap1-oth2">
+                    <ul eId="pap1-oth2-ul1">
+                        <li>The Quarterly Economic and Budgetary Review, Fourth Quarter, 2009/2010</li>
+                        <li>The Quarterly Economic and Budgetary Review, First Quarter, 2010/2011.</li>
+                    </ul>
+                </other>
+                <narrative>(By the Assistant Minister, Office of the Deputy Prime Minister and Ministry of Finance (Dr. Beta), on behalf of the Deputy Prime Minister and Minister for Finance)</narrative>
+            </papers>
+            <noticesOfMotion eId="nom1">
+                <heading>NOTICE OF MOTION</heading>
+                <debateSection name="notice" eId="nom1-not1">
+                    <heading>ADOPTION OF 2007/2008 PAC REPORT</heading>
+                    <speech by="#gamma" to="#speaker" as="#pm">
+                        <from>Mr. Gamma</from>
+                        <p>Mr. Speaker, Sir, I beg to give notice of the following Motion:-</p>
+                        <p>THAT, this House adopts the Report of the Public Accounts
+                            Committee on the Government of Kenya Accounts for the year
+                            2007/2008 laid on the Table of the House today 7th December, 2010.</p>
+                    </speech>
+                </debateSection>
+            </noticesOfMotion>
+            <questions eId="qaa1">
+                <heading>QUESTIONS BY PRIVATE NOTICE</heading>
+                <debateSection name="question" eId="qaa1-que1">
+                    <heading>ENGINEERING COURSES OFFERED BY Bungeni  UNIVERSITY</heading>
+                    <question by="#delta" to="#mhest" as="#pm">
+                        <from>Mr. Delta</from>
+                        <p> Mr. Speaker, Sir, I beg to ask the Minister for Higher Education,
+                            Science and Technology the following Question by Private Notice.</p>
+                        <ul eId="qaa1-que1-ul1">
+                            <li>(a) Could the Minister list all the engineering courses currently offered by
+                                Egerton University whose graduates are not eligible for registration by the Engineers
+                                Registration Board of Kenya (ERB), provide a list of all the graduates of the
+                                respective courses and explain why the Joint Admissions Board (JAB) continues to
+                                admit students to those courses?</li>
+                            <li>who instructed these people to pursue the heavily armed bandits;
+                                and,</li>
+                            <li>(b) What steps, including inter-ministerial consultations, is the Government
+                                taking to ensure that JAB admits students only to engineering courses whose
+                                graduates are eligible for registration by the ERB?
+                            </li>
+                        </ul>
+                    </question>
+                    <answer by="#beta" as="#mhest">
+                        <from> The Assistant Minister for Higher Education, Science and Technology
+                            (Mr. Beta): </from>
+                        <p>Mr. Speaker, Sir, I beg to reply.</p>
+                        <ul eId="qaa1-ans1-ul1">
+                            <li>
+                                (a) Egerton University offers the following courses whose graduates have not
+                                been registered by the ERB. However, these courses were approved by the Egerton
+                                University Senate in accordance with the University Act and Statutes between 1999
+                                and 2001. The courses are as follows:-
+                                <ol eId="qaa1-ans1-ul2">
+                                    <li>1. Bachelor of Industrial Technology</li>
+                                    <li>2. Bachelor of Technology in Civil Engineering</li>
+                                    <li>3. Bachelor of Science in Instrumentation and Control Engineering</li>
+                                    <li>4. Bachelor of Science in Manufacturing Engineering and Technology</li>
+                                    <li>5. Bachelor of Science in Water and Environmental Engineering</li>
+                                </ol>
+                                I wish to table the list of graduands in the named courses who have not been
+                                registered by the ERB.</li>
+                        </ul>
+                    </answer>
+                    <narrative>(Mr. Beta laid the document on the Table)</narrative>
+                </debateSection>
+                <summary>(Question deferred)</summary>
+                <scene>(Laughter)</scene>
+            </questions>
+            <pointOfOrder eId="pto1">
+                <heading>POINTS OF ORDER</heading>
+                <debateSection eId="pto1-dbt1" name="pointOfOrder">
+                    <heading>DISMAL PERFORMANCE BY HARAMBEE STARS
+                        IN THE CECAFA CUP TOURNAMENT</heading>
+                    <speech by="#gamma" to="#speaker">
+                        <from>Mr. Gamma: </from>
+                        <p>Mr. Speaker, Sir, I rise to request for a Ministerial Statement
+                            from the Minister for Youth Affairs and Sports. I wish to request the Minister to
+                            explain the circumstances that led to Harambee Stars’ dismal performance in the
+                            recently concluded CECAFA Cup Tournament held in Dar es Salaam.</p>
+                    </speech>
+                </debateSection>
+            </pointOfOrder>
+            <petitions eId="pts1">
+                <heading>PRESENTATION  OF PETITION</heading>
+                <debateSection eId="pts1-dbs1" name="petition">
+                    <p>
+                        <recordedTime time="2010-12-07T03:50:00+02:00" type="endEvent"/>3.50</p>
+                </debateSection>
+                <debateSection eId="pts1-dbs2" name="petition">
+                    <speech by="#gamma" to="#speaker">
+                        <from>Mr. Gamma:</from>
+                        <p> Madam Speaker, honourable members, presentation of a petition under Rule 27 of the Rules of Procedure of the Parliament of Bungeni . This is a humble petition of the people living on X Hills in Y District, represented by Gamma. It states that:</p>
+                        <!--<p>
+                            <extractText>
+                                "WHEREAS a land dispute has arisen occasioned by a recent claim that Government has been exploring minerals in Osukuru and Rubongi sub-counties, using an aeroplane that has been flying at a very low altitude without clear communication to the occupants;" 
+                                <omissis/>
+                            </extractText>
+                        </p>-->
+                    </speech>
+                </debateSection>
+            </petitions>
+            <ministerialStatements eId="mst1">
+                <heading>MINISTERIAL STATEMENT</heading>
+                <debateSection name="ministerialStatement" eId="mst1-issue1">
+                    <heading> USE OF PUBLIC FUNDS BY COUNCILORS TO ATTEND PRIVATE MEETING</heading>
+                    <speech by="#omega" as="#dpm">
+                        <from>The Deputy Prime Minister and Minister for Local Government (Mr.Omega): </from>
+                        <p>Mr. Speaker, Sir, I wish to make a Statement in response to a request made by Dr. Alfa on Tuesday 30th November, regarding the Ministry of Local Government.</p>
+                        <p>Mr. Speaker, Sir, first of all, I wish to inform the House that no authority was
+                            granted by me to facilitate councilors to attend a private meeting in Gatundu South
+                            Constituency on 21st and 23rd November, 2010. In addition, I would like to state as
+                            follows that no council has requested for my authority to use public funds to attend
+                            the meeting referred to by the hon. Member.</p>
+                    </speech>
+                </debateSection>
+            </ministerialStatements>
+            <debateSection eId="bill1" name="bill">
+                <heading>BILL</heading>
+                <debateSection eId="bill2" name="bill">
+                    <heading>First Reading</heading>
+                    <subheading>THE VETERINARY SURGEONS AND PARA-PROFESSIONALS BILL</subheading>
+                    <summary>(Order for First Reading read – Read the First Time and ordered
+                        to be referred to the relevant Departmental Committee)</summary>
+                </debateSection>
+            </debateSection>
+            <communication eId="com1">
+                <heading>COMMUNICATION FROM THE CHAIR</heading>
+                <debateSection eId="com1-dbs1" name="com">
+                    <heading>DEFERMENT OF ORDER NO.9</heading>
+                    <speech by="#speaker">
+                        <from>
+                            Mr. Speaker: </from>
+                        <p>Hon. Members, I wish to communicate to the House as follows:
+                            That Order No.9 will be deferred to tomorrow afternoon <remark type="sceneDescription">(applause)</remark> on the ground that
+                            contrary to the Minister’s expectations, pertinent amendments that have been
+                            generated under the auspices of the Minister’s Office were not conclu<eop breakAt="6"/>ded in time to
+                            transact this business. It is our expectation that they will be finalized by tomorrow so
+                            that this business can proceed at 2.30 p.m. 
+                            <!-- this end of page with break at the character 6-->
+                        </p>
+                        <p>Next order!</p>
+                    </speech>
+                </debateSection>
+            </communication>
+            <proceduralMotions eId="mts1">
+                <heading>MOTION</heading>
+                <debateSection eId="mts1-dbs1" name="motion">
+                    <heading>ADOPTION OF 2006/2007 PAC REPORT</heading>
+                    <p>THAT, this House adopts the Report of the Public Accounts Committee on the
+                        Government of Kenya Accounts for the Year 2006/2007 laid on the Table of the
+                        House on Thursday, 25th November 2010.</p>
+                </debateSection>
+            </proceduralMotions>
+            <adjournment eId="adj1">
+                <heading>ADJOURNMENT</heading>
+                <speech by="#epsilon" as="#sec">
+                    <from>Mr. Epsilon</from>
+                    <p>The Temporary Deputy Speaker (Mr. Chachu): Hon. Kaino, you will have
+                        18 minutes next time. Hon. Members, it is time for the interruption of business. The
+                        House stands adjourned until tomorrow, Wednesday, 8th December, at 9.00 a.m.
+                        <recordedTime time="2010-12-08T09:00:00+02:00" type="startEvent"/>9.00 a.m.</p>
+                </speech>
+                <p>The House rose at <recordedTime time="2010-12-07T06:30:00+02:00" type="endEvent"/>6.30 p.m. 
+                </p>
+            </adjournment>
+        </debateBody>
+    </debate>
+</akomaNtoso>

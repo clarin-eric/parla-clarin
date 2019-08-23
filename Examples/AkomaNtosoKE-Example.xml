@@ -34,6 +34,15 @@
                          ref="http://purl.org/dc/elements/1.1/date"
                          active="/akn/ke/debaterecord/2011-06-10/!main"
                          passive="2011-06-10"/>
+               <relation ref="http://purl.org/dc/elements/1.1/creator"
+                         active="/akn/ontology/organization/akn/parliament"
+                         passive="/akn/ke/debaterecord/2011-06-10/!main"/>
+               <relation ref="/akn/ontology/role/akn/author"
+                         active="/akn/ontology/organization/akn/parliament"
+                         passive="/akn/ke/debaterecord/2011-06-10/!main"/>
+               <relation ref="http://purl.org/vocab/frbr/core#Place"
+                         active="/akn/ke/debaterecord/2011-06-10/!main"
+                         passive="http://eulersharp.sourceforge.net/2003/03swap/countries#ak"/>
                <relation active="/akn/ke/debaterecord/2011-06-10/!main"
                          ref="http://purl.org/vocab/frbr/core#realization"
                          passive="/akn/ke/minutes/2011-06-10/eng@/!main"/>
@@ -50,6 +59,15 @@
                          ref="http://purl.org/dc/elements/1.1/date"
                          active="/akn/ke/minutes/2011-06-10/eng@/!main"
                          passive="2011-06-25"/>
+               <relation ref="http://purl.org/dc/elements/1.1/creator"
+                         active="/akn/ontology/person/ita/editors/palmirani"
+                         passive="/akn/ke/minutes/2011-06-10/eng@/!main"/>
+               <relation ref="/akn/ontology/role/akn/editor"
+                         active="/akn/ontology/person/ita/editors/palmirani"
+                         passive="/akn/ke/minutes/2011-06-10/eng@/!main"/>
+               <relation ref="http://purl.org/dc/elements/1.1/language"
+                         active="/akn/ke/minutes/2011-06-10/eng@/!main"
+                         passive="eng"/>
                <relation active="/akn/ke/minutes/2011-06-10/eng@/!main"
                          ref="http://purl.org/vocab/frbr/core#embodiment"
                          passive="/akn/ke/minutes/2011-06-10/eng@/!main.xml"/>
@@ -66,9 +84,23 @@
                          ref="http://purl.org/dc/elements/1.1/date"
                          active="/akn/ke/minutes/2011-06-10/eng@/!main.xml"
                          passive="2011-06-25"/>
+               <relation ref="http://purl.org/dc/elements/1.1/creator"
+                         active="/akn/ontology/person/ita/editors/palmirani"
+                         passive="/akn/ke/minutes/2011-06-10/eng@/!main.xml"/>
+               <relation ref="/akn/ontology/role/akn/editor"
+                         active="/akn/ontology/person/ita/editors/palmirani"
+                         passive="/akn/ke/minutes/2011-06-10/eng@/!main.xml"/>
             </listRelation>
          </sourceDesc>
       </fileDesc>
+      <profileDesc>
+         <settingDesc>
+            <setting>
+               <name type="country" key="ak"/>
+               <date when="2011-06-10"/>
+            </setting>
+         </settingDesc>
+      </profileDesc>
       <encodingDesc>
          <classDecl>
             <taxonomy>
