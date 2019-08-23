@@ -333,11 +333,12 @@ div.eg{
     clear:both;
     margin-top:1em;
     margin-bottom:1em;
-    border-top-width:4px;
-    border-bottom-width:4px;
+    border-top-width:3px;
+    border-bottom-width:3px;
     border-left-width:2px;
     border-right-width:2px;
     border-style:solid;
+    border-color: #A9A9A9;
     padding-top:10px;
     padding-right:10px;
     padding-bottom:10px;
