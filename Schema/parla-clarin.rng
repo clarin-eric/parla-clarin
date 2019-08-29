@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-07-25T09:25:54Z. .
+Schema generated from ODD source 2019-08-29T09:06:24Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -7178,7 +7178,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
 	              <sch:assert test="not(parent::tei:div[@type = $div.types.debate])">
 	            A text division of type <sch:value-of select="@type"/> should not occur inside div with type value <sch:value-of select="parent::tei:div/@type"/>.
 	          </sch:assert>
-	           </sch:rule>
+		          </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="tei_clarin-div-abstractModel-structure-l-constraint-report-13">
@@ -7214,7 +7214,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
          <optional>
             <attribute name="type">
                <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">
-Sample values include: 1] debate; 2] speech; 3] address; 4] adjournment; 5] administrationOfOath; 6] communication; 7] declarationOfVote; 8] ministerialStatements; 9] nationalInterest; 10] noticesOfMotion; 11] oralStatements; 12] papers; 13] petitions; 14] prayers; 15] proceduralMotions; 16] pointOfOrder; 17] personalStatements; 18] questions; 19] resolutions; 20] rollCall; 21] writtenStatements</a:documentation>
+Sample values include: 1] debateSection; 2] address; 3] adjournment; 4] administrationOfOath; 5] communication; 6] declarationOfVote; 7] ministerialStatements; 8] nationalInterest; 9] noticesOfMotion; 10] oralStatements; 11] papers; 12] petitions; 13] prayers; 14] proceduralMotions; 15] pointOfOrder; 16] personalStatements; 17] questions; 18] resolutions; 19] rollCall; 20] writtenStatements</a:documentation>
                <text/>
             </attribute>
          </optional>
@@ -11881,7 +11881,7 @@ Feature Value]</a:documentation>
                 xmlns:eg="http://www.tei-c.org/ns/Examples"
                 xmlns:egXML="http://www.tei-c.org/ns/Examples"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-	        <sch:let name="div.types.debate"
+		    <sch:let name="div.types.debate"
                value="('address', 'adjournment', 'administrationOfOath', 'communication', 'declarationOfVote', 'ministerialStatements', 'nationalInterest', 'noticesOfMotion', 'oralStatements', 'papers', 'petitions', 'prayers', 'proceduralMotions', 'pointOfOrder', 'personalStatements', 'questions', 'resolutions', 'rollCall', 'writtenStatements')"/>
 	      </sch:pattern>
 </grammar>
