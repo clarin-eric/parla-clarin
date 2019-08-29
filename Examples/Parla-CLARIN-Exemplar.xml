@@ -6,32 +6,26 @@
       <fileDesc>
          <titleStmt>
             <title>Corpus of minutes of parliamentary sessions</title>
-            <!-- Persons responsible for creating a corpus, for exampla -->
+            <!-- Persons responsible for creating a corpus, for example: -->
             <respStmt>
                <resp>TEI corpus encoding</resp>
                <persName ref="http://viaf.org/viaf/305936424">Andrej Pančur</persName>
                <persName ref="https://orcid.org/0000-0002-1560-4099 http://viaf.org/viaf/15145066459666591823">Tomaž Erjavec</persName>
             </respStmt>
-            <editor>
-               <name>Analysis and markup of Akoma Ntoso source example</name>
-               <persName xml:id="palmirani" ref="http://viaf.org/viaf/311235586">Monica Palmirani</persName>
-            </editor>
             <funder>CLARIN ERIC</funder>
          </titleStmt>
          <editionStmt>
-            <edition>1.0</edition>
+            <edition>0.1</edition>
          </editionStmt>
          <extent>
             <measure unit="texts" quantity="1">1 texts</measure>
-            <measure unit="utterances" quantity="11">11 utterances</measure>
+            <measure unit="utterances" quantity="14">14 utterances</measure>
          </extent>
-         <!-- Include information about FRBRManifestation! -->
          <publicationStmt>
             <authority>CLARIN ERIC</authority>
             <availability>
                <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-               <p>This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
-                  Attribution 4.0 International License</ref>.</p>
+               <p>This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</ref>.</p>
             </availability>
             <distributor>CLARIN Git repository</distributor>
             <address>
@@ -41,18 +35,36 @@
                <country>Netherlands</country>
             </address>
          </publicationStmt>
-         <!-- Source description for the whole corpus. -->
+         <!-- Source description for the whole corpus: -->
          <sourceDesc>
             <!-- Use a more or less structured bibliographic record in accordance with the guidelines in
                       https://tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3 -->
             <bibl>
-               <title type="main">Akoma Ntoso Version 1.0</title>
-               <title type="sub">Examples</title>
-               <idno type="URI">http://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part2-specs/examples/</idno>
+              <title type="main">Akoma Ntoso Version 1.0</title>
+              <title type="sub">Example document ke_Debate_Bungeni_2011-06-10.xml</title>
+              <idno type="URI">http://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part2-specs/examples/ke_Debate_Bungeni_2011-06-10.xml</idno>
             </bibl>
          </sourceDesc>
       </fileDesc>
       <encodingDesc>
+	<editorialDecl>
+	  <correction>
+	    <p>Not correction was performed.</p>
+	  </correction>
+	  <normalisation>
+	    <p>Only parts relevant to the example document were retained.</p>
+	  </normalisation>
+	  <hyphenation>
+	    <p>No end-of-line hyphens were present in the source.</p>
+	  </hyphenation>
+	  <quotation>
+	    <p>Quotation marks have been left in the text and are not explicitly marked up.</p>
+	  </quotation>
+	  <segmentation>
+	    <p>The texts are segmented into utterances and segments (corresponding to paragraphs in the source
+	    transcription).</p>
+	  </segmentation>
+	</editorialDecl>
          <classDecl>
             <!-- One or more optional taxonomies, with which we further classify the content and structure of parliamentary debates -->
             <taxonomy>
@@ -183,37 +195,37 @@
                </person>
             </listPerson>
             <listOrg>
-               <org xml:id="MEST">
-                  <orgName>Ministry of Education, Science and Technology</orgName>
-                  <idno type="wikimedia">https://en.wikipedia.org/wiki/Ministry_of_Education,_Science_and_Technology_(Kenya)</idno>
-               </org>
-               <org xml:id="MI">
-                  <orgName>Ministry of Interior</orgName>
-                  <idno type="wikimedia">https://en.wikipedia.org/wiki/Ministry_of_Interior_and_Coordination_of_National_Government</idno>
-               </org>
+              <org xml:id="MEST">
+                <orgName>Ministry of Education, Science and Technology</orgName>
+                <idno type="wikimedia">https://en.wikipedia.org/wiki/Ministry_of_Education,_Science_and_Technology_(Kenya)</idno>
+              </org>
+              <org xml:id="MI">
+                <orgName>Ministry of Interior</orgName>
+                <idno type="wikimedia">https://en.wikipedia.org/wiki/Ministry_of_Interior_and_Coordination_of_National_Government</idno>
+              </org>
             </listOrg>
             <listPerson>
-               <personGrp xml:id="opposition.1" role="opposition" sex="mixed" size="320"/>
-               <person xml:id="KucanMilan1941">
-                  <persName>
-                     <surname>Kučan</surname>
-                     <forename>Milan</forename>
-                  </persName>
-                  <sex value="M">male</sex>
-                  <birth when="1941-01-14">
-                     <placeName ref="http://www.geonames.org/3197229">Križevci</placeName>
-                  </birth>
-                  <idno type="wikimedia" xml:lang="sl">https://sl.wikipedia.org/wiki/Milan_Ku%C4%8Dan</idno>
-                  <idno type="wikimedia" xml:lang="en">https://en.wikipedia.org/wiki/Milan_Ku%C4%8Dan</idno>
-                  <idno type="viaf">https://viaf.org/viaf/68121580/</idno>
-               </person>
-               <person xml:id="JohnDoe1960">
-                  <persName>
-                     <surname>John</surname>
-                     <forename>Doe</forename>
-                  </persName>
-                  <affiliation ref="#party.SDZ" from="1990-05-16" to="1991-05-08"/>
-                  <affiliation ref="#party.DZ" from="1991-05-08"/>
+              <personGrp xml:id="opposition.1" role="opposition" sex="mixed" size="320"/>
+              <person xml:id="KucanMilan1941">
+                <persName>
+                  <surname>Kučan</surname>
+                  <forename>Milan</forename>
+                </persName>
+                <sex value="M">male</sex>
+                <birth when="1941-01-14">
+                  <placeName ref="http://www.geonames.org/3197229">Križevci</placeName>
+                </birth>
+                <idno type="wikimedia" xml:lang="sl">https://sl.wikipedia.org/wiki/Milan_Ku%C4%8Dan</idno>
+                <idno type="wikimedia" xml:lang="en">https://en.wikipedia.org/wiki/Milan_Ku%C4%8Dan</idno>
+                <idno type="viaf">https://viaf.org/viaf/68121580/</idno>
+              </person>
+              <person xml:id="JohnDoe1960">
+                <persName>
+                  <surname>John</surname>
+                  <forename>Doe</forename>
+                </persName>
+                <affiliation ref="#party.SDZ" from="1990-05-16" to="1991-05-08"/>
+                <affiliation ref="#party.DZ" from="1991-05-08"/>
                </person>
                <person xml:id="JohnsonBoris1964">
                   <persName>
@@ -274,56 +286,56 @@
       </profileDesc>
    </teiHeader>
    <TEI xml:id="document.id" xml:lang="en">
-      <teiHeader>
-         <fileDesc>
-            <titleStmt>
-               <!-- There are no rules on how these titles should be written -->
-               <title>The parliament of the Republic of Kenya</title>
-               <title>Second meeting, 2011</title>
-               <title>Friday, 10th June 2011</title>
-               <!-- All relevant information about the type of session/meeting/sitting (in accordance with the project specific taxonomy) is given in the meeting element:
-                          - @n: ordinal number of the session/meeting/sitting
-                          - @corresp: a link to an organization holding a meeting
-                          - @ana: one or more links to taxonomy on the different types of parliamentary sessions
-                     -->
-               <meeting n="2" corresp="#parla.ke" ana="#parla.meeting"/>
-            </titleStmt>
-            <!-- Publication statement same as in teiCorpus/teiHeader -->
-            <publicationStmt>
-               <authority>CLARIN ERIC</authority>
-               <availability>
-                  <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-                  <p>This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
-                     Attribution 4.0 International License</ref>.</p>
-               </availability>
-               <distributor>CLARIN Git repository</distributor>
-               <address>
-                  <street>Drift 10</street>
-                  <postCode>3512 BS</postCode>
-                  <placeName>Utrecht</placeName>
-                  <country>Netherlands</country>
-               </address>
-               <date when="2019-07-24">24. 7. 2019</date>
-            </publicationStmt>
-            <sourceDesc>
-               <bibl>
-                  <title>Debate Bungeni</title>
-                  <idno type="URI">http://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part2-specs/examples/ke_Debate_Bungeni_2011-06-10.xml</idno>
-               </bibl>
-            </sourceDesc>
-         </fileDesc>
-         <profileDesc>
-            <settingDesc>
-               <setting>
-                  <!-- Location (posible values: city, street, address) of parliamentary sessions -->
-                  <name type="city">Nairobi</name>
-                  <!-- In which country the parliament is located: in attribute @key use ISO 3166 country code -->
-                  <name type="country" key="KE">Kenya</name>
-                  <!-- Date of the parliamentary debate. An ana attribute may contain additional classifications -->
-                  <date when="2011-06-10" ana="#parl.sitting">10th June 2011</date>
-               </setting>
-            </settingDesc>
-         </profileDesc>
+     <teiHeader>
+       <fileDesc>
+         <titleStmt>
+           <!-- There are no rules on how these titles should be written -->
+           <title>The parliament of the Republic of Kenya</title>
+           <title>Second meeting, 2011</title>
+           <title>Friday, 10th June 2011</title>
+           <!-- All relevant information about the type of session/meeting/sitting (in accordance with the project specific taxonomy) is given in the meeting element:
+                - @n: ordinal number of the session/meeting/sitting
+                - @corresp: a link to an organization holding a meeting
+                - @ana: one or more links to taxonomy on the different types of parliamentary sessions
+           -->
+           <meeting n="2" corresp="#parla.ke" ana="#parla.meeting"/>
+         </titleStmt>
+         <!-- Publication statement same as in teiCorpus/teiHeader -->
+         <publicationStmt>
+           <authority>CLARIN ERIC</authority>
+           <availability>
+             <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+             <p>This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+             Attribution 4.0 International License</ref>.</p>
+           </availability>
+           <distributor>CLARIN Git repository</distributor>
+           <address>
+             <street>Drift 10</street>
+             <postCode>3512 BS</postCode>
+             <placeName>Utrecht</placeName>
+             <country>Netherlands</country>
+           </address>
+           <date when="2019-07-24">24. 7. 2019</date>
+         </publicationStmt>
+         <sourceDesc>
+           <bibl>
+             <title>Debate Bungeni</title>
+             <idno type="URI">http://docs.oasis-open.org/legaldocml/akn-core/v1.0/os/part2-specs/examples/ke_Debate_Bungeni_2011-06-10.xml</idno>
+           </bibl>
+         </sourceDesc>
+       </fileDesc>
+       <profileDesc>
+         <settingDesc>
+           <setting>
+             <!-- Location (posible values: city, street, address) of parliamentary sessions -->
+             <name type="city">Nairobi</name>
+             <!-- In which country the parliament is located: in attribute @key use ISO 3166 country code -->
+             <name type="country" key="KE">Kenya</name>
+             <!-- Date of the parliamentary debate. An ana attribute may contain additional classifications -->
+             <date when="2011-06-10" ana="#parl.sitting">10th June 2011</date>
+           </setting>
+         </settingDesc>
+       </profileDesc>
       </teiHeader>
       <text type="debate" subtype="hansard">
          <front>
@@ -335,19 +347,18 @@
             </div>
          </front>
          <body>
-            <div type="debateSection">
+            <div>
                <!-- example of recordedTime -->
                <note type="time">The House met at <time when="2011-06-10T10:02:00+02:00">10.02 a.m.</time></note>
-               <!-- example of scene -->
                <note>[MR. SPEAKER IN THE CHAIR]</note>
                <note type="speaker">Mr. Alfa:</note>
                <u who="#alfa" ana="#chair">
-                  <seg>Mr. Deputy Speaker, I beg to move to the following Motion-</seg>
-                  <seg>THAT this House do grant leave to introduce a Bill for.....</seg> <!-- (30 pages of dabate) -->
+                 <seg>Mr. Deputy Speaker, I beg to move to the following Motion-</seg>
+                 <seg>THAT this House do grant leave to introduce a Bill for.....</seg> <!-- (30 pages of dabate) -->
                </u>
                <note type="speaker">Mr. Epsilon:</note>
                <u who="#epsilon">
-                  <seg>On a point of order,  Mr. Speaker, Sir. We are discussing the President's Speech. The mere fact that we do not have enough hon. Members might mean that it is not a popular Speech. There is no quorum in this House and could you ensure that there is quorum and then we can continue in order to show that themPresident's Speech is popular and he is also a popular President as well?</seg>
+                 <seg>On a point of order,  Mr. Speaker, Sir. We are discussing the President's Speech. The mere fact that we do not have enough hon. Members might mean that it is not a popular Speech. There is no quorum in this House and could you ensure that there is quorum and then we can continue in order to show that themPresident's Speech is popular and he is also a popular President as well?</seg>
                </u>
                <note type="speaker">The  Speaker:</note>
                <u who="#speaker" ana="#chair">
@@ -360,7 +371,7 @@
                </u>
             </div>
             <!-- example of Division Section -->
-            <div type="debateSection" subtype="division">
+            <div type="division">
                <head>DIVISION</head>
                <note type="summary">(Question put and the House divided)</note>
                <div type="debate" subtype="division" xml:id="dbsect_3__dbsect_1">
@@ -369,14 +380,14 @@
                      <seg>Order! Order! 15 minutes are now over and those who wish to vote must be in the lobbies. If you are not wihtin the lobbies, you will not allowd to vote any more</seg>
                   </u>
                   <incident>
-                     <desc>(Loud consultation)</desc>
+                     <desc>Loud consultation</desc>
                   </incident>
                   <note type="speaker">The  Speaker:</note>
                   <u who="#speaker" ana="#chair">
                      <seg>Order! Order! The Division is now over and it is time to receive the results</seg>
                   </u>
                   <!-- example of voting -->
-                  <note type="vote" xml:id="summary_1">(Question carried by <measure xml:id="quantity_1" quantity="72" type="ayes">72</measure> to <measure quantity="56" xml:id="quantity_2" type="noes"> 56</measure> votes)</note>
+                  <note type="vote" xml:id="summary_1">Question carried by <measure xml:id="quantity_1" quantity="72" type="ayes">72</measure> to <measure quantity="56" xml:id="quantity_2" type="noes"> 56</measure> votes</note>
                   <note type="AYES" xml:id="dbsect_3__dbsect_2">AYES: <persName corresp="#alfa">Mr. Alfa</persName>,
                      <persName corresp="#beta">Mr. Beta</persName>,
                      <persName corresp="#delta">Mr. Delta</persName>, etc.</note>
@@ -397,7 +408,7 @@
                      </seg>
                   </u>
                   <incident>
-                     <desc>(Applause)</desc>
+                     <desc>Applause</desc>
                   </incident>
                   <listEvent>
                      <event type="voting" xml:id="vot1">
@@ -441,7 +452,7 @@
                      agitation for recognition and finally broke away and formed the
                      National Association of Graduate Teachers (NAGRAT).</seg>
                   <seg>Currently, there are two (2) associations serving the interest of
-                     teachers in the BES<note place="foot" n="1" resp="#palmirani">BES: definition of Educational System</note>. 
+                     teachers in the BES.  
                      Whereas members of IAGRAT consist of a section
                      of graduate teachers, BNATcovers nongraduates as well as graduate teachers.</seg>
                   <seg>The professional rights of both members of BNAT and IAGRAT are
