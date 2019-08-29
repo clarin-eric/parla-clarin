@@ -1106,6 +1106,65 @@
 	  outside, because, ideally, the utterance elements should contain pure text only, as
 	  this significantly simplifies their linguistic processing.</p>
 	</div>
+
+	<div xml:id="sec-voting">
+	  <head>Voting results</head>
+	  <p>One further aspects of the transcripts, which can be of particular interest for
+	  some researchers, needs to be mentioned, namely voting results. Voting results are
+	  typically mentioned in the transcripts as a note, and we follow Akoma Ntoso in its
+	  treatment. Assuming a <gi>taxonomy</gi> in the TEI header that defines "ayes" and
+	  "noes", the note can be marked up using the <gi>measure</gi> element, as the
+	  following example shows:
+	  
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-voting1">
+	    <note type="summary">(Question carried by
+	    <measure xml:id="quantity_1" corresp="#ayes" quantity="72">72</measure> to
+	    <measure xml:id="quantity_2" corresp="#noes" quantity="56">56</measure>
+	    votes)</note>
+	  </egXML>
+	  </p>
+
+	  <p>In addition to marking up the voting results in-line, they can also be more
+	  formally encoding at the start of the <gi>body</gi>, using the <gi>listEvent</gi>
+	  element to contain the list of individual votes in the <gi>event</gi> elements. Below
+	  we give a more complicated examples, where the voting was followed by a recount, and
+	  this fact is encoded in the <gi>relation</gi> element, of course, again assuming the
+	  appropriate taxonomies in the teiHeader:
+
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-voting2">
+            <listEvent>
+              <event type="voting" xml:id="vot1" ana="#approved" corresp="true">
+		<desc>
+                  <measure type="quorum" xml:id="vot1-quo1" ana="#majority" quantity="80"/>
+                  <measure type="count"
+                           xml:id="vot1-cnt2"
+                           ana="#ayes"
+                           corresp="#quantity_1"
+                           quantity="72"/>
+                  <measure type="count"
+                           xml:id="vot1-cnt3"
+                           ana="#noes"
+                           corresp="#quantity_2"
+                           quantity="34"/>
+		</desc>
+              </event>
+              <event type="recount" xml:id="rct1" ana="#approved" corresp="true">
+		<desc>
+                  <measure type="count"
+                           xml:id="vot-cnt1"
+                           ana="#ayes"
+                           corresp="#quantity_3"
+                           quantity="76"/>
+		</desc>
+              </event>
+              <listRelation>
+		<relation name="recount" active="#rct1" passive="#vot1"/>
+              </listRelation>
+            </listEvent>
+	  </egXML>
+	  </p>
+	</div>
+
       </div>
       
       <div xml:id="sec-linguistic">
