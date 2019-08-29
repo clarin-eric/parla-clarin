@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <!-- Add:
 - div types
 - voting and voting results
@@ -690,7 +690,7 @@
 	  restrict their values.  However, the definition of <gi>div</gi> does give a set of
 	  sample values for <att>type</att>, which correspond to the names of the structure
 	  elements defined by <ref target="#sec-akoma">Akoma Ntoso</ref>. Below we give an
-	  example of a relatively complex structure automatically converted from a source Akoma
+	  example of a relatively complex structure made on the basis of an Akoma
 	  Ntoso document, where the <att>subtype</att> attribute encodes the values of the
 	  corresponding <att>name</att> attribute of AKN:
 	  
@@ -1538,32 +1538,257 @@
       
       <div xml:id="sec-conversion">
 	<head>Conversions</head>
-	<p>A TEI encoded document is, in general, not meant to be used directly by software programs, rather
-	it serves as an interchange and storage format.
-	Furthermore, most TEI documents are not "born TEI", but rather converted into TEI from
-	some source format.
-	In this section we discuss some up- and down-conversion scripts that have already been developed
-	for transforming source formats into Parla-CLARIN and from Parla-CLARIN into formats immediately
-	usable by software.</p>
-	
-	<p>To do...</p>
+	<p>A TEI encoded document is, in general, not meant to be used directly by software
+	programs, rather it serves as an interchange and storage format.  Furthermore, most TEI
+	documents are not "born TEI", but rather converted into TEI from some source format.
+	In this section we discuss some up- and down-conversion scripts that have already been
+	developed for transforming source formats into Parla-CLARIN and from Parla-CLARIN into
+	formats immediately usable by software and are available in the Git repository of
+	Parla-CLARIN.</p>
 	
 	<div xml:id="sec-convakn">
 	  <head>Conversion from Akoma Ntoso</head>
-	  <p>As explained in the Section on <ref target="#sec-akoma">Introducing Akoma
+	  <p>As mentioned in the Section on <ref target="#sec-akoma">Introducing Akoma
 	  Ntoso</ref>, this standard is used to encode parliamentary proceedings of several
 	  countries, and this section introduces the developed conversion of AKN documents to
-	  Parla-CLARIN.</p>
+	  Parla-CLARIN. The example documents and conversion script can be found in the
+	  <code>Examples/AkomaNtoso</code> folder of the Parla-CLARIN Git repository. For a
+	  detailed treatment of the conversion, the XSLT script <code>akn2tei.xsl</code> should
+	  be consulted, while we here mention only some of the more aspects of the
+	  conversion.</p>
 
-	  <list>
-	    <item>treatment of FRBR</item>
-	    <item><att>by</att>, <att>to</att>, <att>as</att> => <code>tei:relation[@name='directedTo']</code></item>
-	    <item>question, answer  => <code>tei:relation[@name='questionAnswer']</code></item>
-	    <item>voting => <code>tei:back/tei:listEvent/tei:event[@type = (voting, recount)]</code></item>
-	    <item><att>wId</att> and <att>GUID</att> => <code>tei:publicationStmt/tei:idno[@type][@corresp]</code></item>
-	  </list>
-	  
-	  <p>...</p>
+	  <p>First, and on a minor point, the conversion to TEI attempts to preserve the IDs of
+	  the source AKN document, however, Akoma Ntoso distinguishes three ID-bearing
+	  attributes, namely <att>eId</att> (expression identifier), <att>wId</att> (work
+	  identifier) and <att>GUID</att> (globally unique identifier). The first is simply
+	  mapped to the <att>xml:id</att> attribute of the TEI document, while the latter two
+	  are given in the <gi>publicationStmt</gi> of the TEI header, as the content of the
+	  <gi>idno</gi> attribute, as the following example illustrates:
+
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-akn-id">
+	    <idno type="wId" corresp="#section_2_1">section_2_2</idno>
+	    <idno type="GUID" corresp="#section_2_2">X13242</idno>
+	  </egXML>
+	  </p>
+
+	  <div xml:id="sec-convakn-frbr">
+	    <head>FRBR data</head>
+	    <p>Akoma Ntoso makes use of <ref
+	    target="https://en.wikipedia.org/wiki/Functional_Requirements_for_Bibliographic_Records">FRBR</ref>,
+	    in particular to distinguish a <q>work</q> from its <q>expression</q>, and this one
+	    from its <q>manifestation</q>. This information is in AKN encoded in the
+	    <gi>identification</gi> element, which appears inside the <gi>meta</gi> element, as
+	    shown in the example below:
+
+	    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-frbr-akn">
+	      <identification source="#palmirani">
+		<FRBRWork>
+		  <FRBRthis value="/akn/ke/debaterecord/2011-06-10/!main"/>
+		  <FRBRuri value="/akn/ke/debaterecord/2011-06-10"/>
+		  <FRBRdate date="2011-06-10" name="generation"/>
+		  <FRBRauthor href="#parliament" as="#author"/>
+		  <FRBRcountry value="ak"/>
+		</FRBRWork>
+		<FRBRExpression>
+		  <FRBRthis value="/akn/ke/minutes/2011-06-10/eng@/!main"/>
+		  <FRBRuri value="/akn/ke/minutes/2011-06-10/eng@"/>
+		  <FRBRdate date="2011-06-25" name="markup"/>
+		  <FRBRauthor href="#palmirani" as="#editor"/>
+		  <FRBRlanguage language="eng"/>
+		</FRBRExpression>
+		<FRBRManifestation>
+		  <FRBRthis value="/akn/ke/minutes/2011-06-10/eng@/!main.xml"/>
+		  <FRBRuri value="/akn/ke/minutes/2011-06-10/eng@.akn"/>
+		  <FRBRdate date="2011-06-25" name="publication"/>
+		  <FRBRauthor href="#palmirani" as="#editor"/>
+		</FRBRManifestation>
+	      </identification>
+	    </egXML>
+	    
+	    Some of these elements are mapped to specific TEI elements or attributes, e.g. the
+	    language of the text specified in the <gi>FRBRExpression</gi> maps to the
+	    <att>xml:lang</att> of the <gi>TEI</gi> element, but this does not hold for all the
+	    FRBR information, which we also wanted to retain in the TEI document.</p>
+	    
+	    <p>To convert all FRBR information to TEI, we used the recommendations of <ref
+	    target="https://tei-c.org/extra/teiinlibraries/">Best Practices for TEI in
+	    Libraries</ref>, in particular as given the Section on <ref
+	    target="https://tei-c.org/extra/teiinlibraries/4.0.0/bptl-driver.html#frbr">The TEI
+	    Header and FRBR</ref><note>Encoding FRBR in TEI is (at greater length than in the
+	    official documentation) also discussed in <ref
+	    target="https://github.com/kshawkin/Best-Practices-for-TEI-in-Libraries/issues/64">Issue
+	    #64</ref> of Best-Practices-for-TEI-in-Libraries GitHub repository.</note>, where
+	    it is recommended that FRBR information is encoded in the <gi>sourceDesc</gi>
+	    element of the TEI header as a <gi>listRelation</gi>. As opposed to the original
+	    AKN <gi>identification</gi> the <gi>listRelation</gi> contains simply a list of
+	    <gi>relation</gi> elements, so these must specify also the relation between the
+	    particular piece of data and the fact that it belongs to the FRBR <q>work</q>,
+	    <q>expression</q>, or <q>manifestation</q>. These, and other formalised relations
+	    are taken from the formal vocabularies of <ref
+	    target="https://www.w3.org/">W3C</ref> (for RDF and OWL) and (via <ref
+	    target="http://purl.org/">purl.org</ref>) of <ref
+	    target="https://www.dublincore.org/">Dublin Core</ref> and <ref
+	    target="http://vocab.org/">vocab.org</ref>.
+	    The example below exemplifies the conversion of the preceding AKN example into TEI:
+	    
+	    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-frbr-tei">
+	      <listRelation type="FRBR" resp="#palmirani">
+		<relation ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                          active="/akn/ke/debaterecord/2011-06-10/!main"
+                          passive="http://purl.org/vocab/frbr/core#Work"/>
+		<relation ref="http://www.w3.org/2002/07/owl#sameAs"
+                          active="http://purl.org/vocab/frbr/core#Work"
+                          passive="https://w3id.org/akn/ontology/allot/FRBRWork"/>
+		<relation ref="http://purl.org/dc/terms/isPartOf"
+                          active="/akn/ke/debaterecord/2011-06-10/!main"
+                          passive="/akn/ke/debaterecord/2011-06-10"/>
+		<relation name="generation"
+                          ref="http://purl.org/dc/elements/1.1/date"
+                          active="/akn/ke/debaterecord/2011-06-10/!main"
+                          passive="2011-06-10"/>
+		<relation ref="http://purl.org/dc/elements/1.1/creator"
+                          active="/akn/ontology/organization/akn/parliament"
+                          passive="/akn/ke/debaterecord/2011-06-10/!main"/>
+		<relation ref="/akn/ontology/role/akn/author"
+                          active="/akn/ontology/organization/akn/parliament"
+                          passive="/akn/ke/debaterecord/2011-06-10/!main"/>
+		<relation ref="http://purl.org/vocab/frbr/core#Place"
+                          active="/akn/ke/debaterecord/2011-06-10/!main"
+                          passive="http://eulersharp.sourceforge.net/2003/03swap/countries#ak"/>
+		<relation active="/akn/ke/debaterecord/2011-06-10/!main"
+                          ref="http://purl.org/vocab/frbr/core#realization"
+                          passive="/akn/ke/minutes/2011-06-10/eng@/!main"/>
+		<relation ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                          active="/akn/ke/minutes/2011-06-10/eng@/!main"
+                          passive="http://purl.org/vocab/frbr/core#Expression"/>
+		<relation ref="http://www.w3.org/2002/07/owl#sameAs"
+                          active="http://purl.org/vocab/frbr/core#Expression"
+                          passive="https://w3id.org/akn/ontology/allot/FRBRExpression"/>
+		<relation ref="http://purl.org/dc/terms/isPartOf"
+                          active="/akn/ke/minutes/2011-06-10/eng@/!main"
+                          passive="/akn/ke/minutes/2011-06-10/eng@"/>
+		<relation name="markup"
+                          ref="http://purl.org/dc/elements/1.1/date"
+                          active="/akn/ke/minutes/2011-06-10/eng@/!main"
+                          passive="2011-06-25"/>
+		<relation ref="http://purl.org/dc/elements/1.1/creator"
+                          active="/akn/ontology/person/ita/editors/palmirani"
+                          passive="/akn/ke/minutes/2011-06-10/eng@/!main"/>
+		<relation ref="/akn/ontology/role/akn/editor"
+                          active="/akn/ontology/person/ita/editors/palmirani"
+                          passive="/akn/ke/minutes/2011-06-10/eng@/!main"/>
+		<relation ref="http://purl.org/dc/elements/1.1/language"
+                          active="/akn/ke/minutes/2011-06-10/eng@/!main"
+                          passive="eng"/>
+		<relation active="/akn/ke/minutes/2011-06-10/eng@/!main"
+                          ref="http://purl.org/vocab/frbr/core#embodiment"
+                          passive="/akn/ke/minutes/2011-06-10/eng@/!main.xml"/>
+		<relation ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type"
+                          active="/akn/ke/minutes/2011-06-10/eng@/!main.xml"
+                          passive="http://purl.org/vocab/frbr/core.html#term-Manifestation"/>
+		<relation ref="http://www.w3.org/2002/07/owl#sameAs"
+                          active="http://purl.org/vocab/frbr/core.html#term-Manifestation"
+                          passive="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
+		<relation ref="http://purl.org/dc/terms/isPartOf"
+                          active="/akn/ke/minutes/2011-06-10/eng@/!main.xml"
+                          passive="/akn/ke/minutes/2011-06-10/eng@.akn"/>
+		<relation name="publication"
+                          ref="http://purl.org/dc/elements/1.1/date"
+                          active="/akn/ke/minutes/2011-06-10/eng@/!main.xml"
+                          passive="2011-06-25"/>
+		<relation ref="http://purl.org/dc/elements/1.1/creator"
+                          active="/akn/ontology/person/ita/editors/palmirani"
+                          passive="/akn/ke/minutes/2011-06-10/eng@/!main.xml"/>
+		<relation ref="/akn/ontology/role/akn/editor"
+                          active="/akn/ontology/person/ita/editors/palmirani"
+                          passive="/akn/ke/minutes/2011-06-10/eng@/!main.xml"/>
+              </listRelation>
+	    </egXML>
+	    There are few points to notice in this conversion:
+	    <list>
+	      <item>Where AKN qualifies its FRBR statements with the addionaly <att>name</att>
+	      attribute, which does not have a controlled vocablary, its value is retained in
+	      the <att>name</att> attribute of the TEI <gi>relation</gi>.</item>
+
+	      <item>The conversion als specifies the formal equivalence (OWL
+	      <code>sameAs</code>) of the official FRBR definition of <q>work</q>,
+	      <q>expression</q>, and <q>manifestation</q> (so, <ref
+	      target="http://purl.org/vocab/frbr/">http://purl.org/vocab/frbr/</ref>) with the
+	      AKN recommended ontology of these terms, namely <ref
+	      target="https://w3id.org/akn/ontology/allot">https://w3id.org/akn/ontology/allot/</ref>.</item>
+	    </list>
+	  </p>
+	</div>
+
+	  <div xml:id="sec-convakn-qa">
+	    <head>Coverting adressee, role, questions and answers</head>
+	    <p>Akoma Ntoso can directly specify not only the speaker of an utterance (as the
+	    value of the <att>by</att> attribute) but also the role of the speaker for a
+	    particular utterance (<att>as</att> attrbibute) and to whom the speech is addressed
+	    to (<att>to</att> attribute), as exemplified below:
+	    
+	    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-akn-to">
+	      <speech by="#khalwale" to="#speaker" as="#pm">
+		<p>Mr. Speaker, Sir, I beg to give notice of the following Motion:-</p>
+		...
+	      </speech>
+	    </egXML>
+
+	    TEI does not have attributes directly corresponding to the AKN <att>as</att> and
+	    <att>to</att>, so the former is encoded as the value of the general <att>ana</att>
+	    attribute, which should point to the appropriate <gi>category</gi> of the pertinent
+	    ontology, while the latter is encoed (as also discussed in the Section on <ref
+	    target="#sec-relation">Relationships between people and parties</ref>) as a
+	    <gi>relation</gi> element with the <att>name</att> value <code>directedTo</code>
+	    which should be included in the utterance to which it is pertinent, as exemplified
+	    below:
+
+	    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-akn-totei">
+              <u who="#khalwale" ana="#pm">
+		<seg>Mr. Speaker, Sir, I beg to give notice of the following Motion:-</seg>
+		...
+		<listRelation>
+                  <relation name="directedTo" active="#khalwale" passive="#speaker"/>
+		</listRelation>
+	      </u>
+	    </egXML>
+	    </p>
+	    
+	    <p>A similar problem, and its solution, concerns the distinction made in Akoma
+	    Ntoso between questions and answers, each of which has in AKN a dedicated element,
+	    as shown in the following example:
+	    
+	    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-akn-qa">
+	      <question eId="question_1" by="#kappa" to="#ministerEducation">
+		<p>Mr. Kappa asked the Minister for Education and ...</p>
+	      </question>
+	      <answer eId="answer_1" by="#eta" as="#ministerEducation">
+		<p>Mr. Speaker, BNAT was the only umbrella professional body for...</p>
+	      </answer>
+	    </egXML>
+
+	    In the conversion to TEI the relation between the questions and its answer is also
+	    expressed as a <gi>relation</gi> element, but this time using <att>name</att> with
+	    the value <code>questionAnswer</code>. Furthermore, the <gi>listRelation</gi> is
+	    placed in an arbitrary portion of the document, as it contains links to IDs;
+	    however, by convention it is best to place it after the answer. We exemplify below:
+	    
+	    <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-akn-qa-tei">
+	      <u xml:id="question_1" who="#kappa">
+                <seg>Mr. Kappa asked the Minister for Education and ...</seg>
+		<listRelation>
+                  <relation name="directedTo" active="#kappa" passive="#ministerEducation"/>
+		</listRelation>
+	      </u>
+              <u xml:id="answer_1" who="#eta" ana="#ministerEducation">
+                <seg>Mr. Speaker, BNAT was the only umbrella professional body for ...</seg>
+	      </u>
+              <listRelation>
+                <relation name="questionAnswer" active="#question_1" passive="#answer_1"/>
+              </listRelation>
+	    </egXML>
+	    </p>
+	  </div>	  
 	</div>
 	
 	<div xml:id="sec-conrdf">
