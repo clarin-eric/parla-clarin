@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="ke_Debate_Bungeni_2011-06-10"
      type="debate"
      subtype="hansard"
      xml:lang="eng">
@@ -12,7 +13,7 @@
          </titleStmt>
          <publicationStmt>
             <authority>CLARIN ERIC</authority>
-            <date when="2019-08-22+02:00">22. 8. 2019</date>
+            <date when="2019-08-23+02:00">23. 8. 2019</date>
          </publicationStmt>
          <sourceDesc>
             <bibl>
@@ -221,6 +222,9 @@
                </person>
             </listPerson>
          </particDesc>
+         <langUsage>
+            <language ident="eng"/>
+         </langUsage>
       </profileDesc>
    </teiHeader>
    <text>

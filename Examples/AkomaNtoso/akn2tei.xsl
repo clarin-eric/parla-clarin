@@ -22,7 +22,10 @@
     </xsl:param>
     
     <xsl:template match="/">
-        <xsl:apply-templates/>
+        <xsl:variable name="document-name" select="substring-before(tokenize(document-uri(.),'/')[last()],'.xml')"/>
+        <xsl:apply-templates>
+            <xsl:with-param name="document-name" select="$document-name"/>
+        </xsl:apply-templates>
     </xsl:template>
     
     <!-- AKN root element: each AKN document is a TEI document -->
@@ -30,9 +33,10 @@
          So we only process debate subelement, and we don't process other AKN documentType elements: 
          amendmentList, officialGazette, documentCollection, act, bill, debateReport, statement, amendment, judgment, portion, doc. -->
     <xsl:template match="akn:akomaNtoso[akn:debate]">
+        <xsl:param name="document-name"/>
         <!-- values of the AKN documentType and his @name are enclosed in TEI @type and @subtype -->
         <!-- Parla-CLARIN recommendation requires that the root element of the corpus should have an xml:lang attribute -->
-        <TEI type="{name(*[not(self::akn:components)])}" subtype="{*[not(self::akn:components)]/@name}" xml:lang="{akn:debate/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRlanguage/@language}">
+        <TEI xml:id="{$document-name}" type="{name(*[not(self::akn:components)])}" subtype="{*[not(self::akn:components)]/@name}" xml:lang="{akn:debate/akn:meta/akn:identification/akn:FRBRExpression/akn:FRBRlanguage/@language}">
             <xsl:apply-templates select="*[not(self::akn:components)]"/>
             <!-- What to do with akn:components? I would need examples of how these elements are used. -->
         </TEI>
@@ -153,8 +157,8 @@
                 </xsl:for-each>
                 <relation active="{akn:FRBRExpression/akn:FRBRthis/@value}" ref="http://purl.org/vocab/frbr/core#embodiment" passive="{akn:FRBRManifestation/akn:FRBRthis/@value}"/>
                 <xsl:for-each select="akn:FRBRManifestation">
-                    <relation ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" active="{akn:FRBRthis/@value}" passive="http://vocab.org/frbr/core.html#term-Manifestation"/>
-                    <relation ref="http://www.w3.org/2002/07/owl#sameAs" active="http://vocab.org/frbr/core.html#term-Manifestation" passive="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
+                    <relation ref="http://www.w3.org/1999/02/22-rdf-syntax-ns#type" active="{akn:FRBRthis/@value}" passive="http://purl.org/vocab/frbr/core#Manifestation"/>
+                    <relation ref="http://www.w3.org/2002/07/owl#sameAs" active="http://purl.org/vocab/frbr/core#Manifestation" passive="https://w3id.org/akn/ontology/allot/FRBRManifestation"/>
                     <xsl:call-template name="FRBRuri"/>
                     <xsl:call-template name="FRBRdate"/>
                     <xsl:call-template name="FRBRauthor"/>
