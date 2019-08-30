@@ -1793,18 +1793,20 @@
 	
 	<div xml:id="sec-conrdf">
 	  <head>Conversion to RDF</head>
-	  <p>As explained in the Section on <ref target="#sec-rdf">Introducing RDF</ref>, this
-	  data model is seen as an interesting <q>down-conversion</q> of Parla-CLARIN
-	  corpora. While there is currently no such conversion yet, this section gives some
-	  background on how the Parla-CLARIN should be extended to make it possible.</p>
+	  <p>As explained in the Section on <ref target="#sec-rdf">Introducing
+	  RDF</ref>, this data model would be a useful <q>down-conversion</q> of
+	  Parla-CLARIN corpora.</p>
 	  
-	  <p>On the tei-l mailing list there have already been several discussion on how to
-	  link TEI with RDF, and the issues are summarised and further links given in the <ref
-	  target="https://github.com/TEIC/TEI/issues/1860">Issue #1860</ref> in the TEI GitHub
-	  page. The best way seems to be to either directly turn TEI markup into RDF triples,
-	  or, where this is not possible, to use RDFa attribute on TEI elements.</p>
-	  
-	  <p>...</p>
+	  <p>On the tei-l mailing list there have already been discussions on how to
+	  link TEI with RDF, summarised and with further links in <ref
+	  target="https://github.com/TEIC/TEI/issues/1860">Issue #1860</ref> of the
+	  <ref target="https://github.com/TEIC/TEI/">TEI GitHub project</ref>.
+	  The best way seems to be to either directly turn TEI markup into RDF triples,
+	  or, where this is not possible, to use the RDFa attribute on TEI elements.</p>
+
+	  <p>An implementation might be best approaches from the opposite direction,
+	  i.e. developing an <q>up-conversion</q> to TEI of an existing RDF-encoded
+	  CPP.</p>
 	</div>
       </div>
       
