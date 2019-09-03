@@ -540,7 +540,7 @@
 	  by the following example:
 
 	  <eg xml:id="exa-xinclude">
-	    <![CDATA[<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sk-11/1990-05-07-01.xml"/>]]>
+	    <![CDATA[<xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="Sk-11/SI-1990-05-07-01.xml"/>]]>
 	  </eg>
 	  </p>
 	  
