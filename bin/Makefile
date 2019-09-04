@@ -4,9 +4,9 @@ all:	schema val-exa html
 
 val:	val-exa val-odd
 val-exa:
+	$j ../Schema/parla-clarin.rng ../Examples/Parla-CLARIN-Exemplar.xml
 	$j ../Schema/parla-clarin.rng ../Examples/AkomaNtosoCL-Example.xml
 	$j ../Schema/parla-clarin.rng ../Examples/AkomaNtosoKE-Example.xml
-	$j ../Schema/parla-clarin.rng ../Examples/example-si.xml
 val-odd:
 	$j tei_odds.rng ../Schema/parla-clarin-odd.xml
 

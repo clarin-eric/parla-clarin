@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../Schema/parla-clarin.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../Schema/parla-clarin.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xml:id="corpus.id" xml:lang="en">
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xml:id="Parla-CLARIN-Exemplar" xml:lang="en">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Corpus of minutes of parliamentary sessions</title>
+            <title>Exemplar PPC to illustrate Parla-CLARIN encoding</title>
             <!-- Persons responsible for creating a corpus, for example: -->
             <!-- author of the corpus -->
             <author ref="http://viaf.org/viaf/305936424">
@@ -39,14 +39,8 @@
                <p>This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</ref>.</p>
             </availability>
             <distributor>CLARIN Git repository</distributor>
-            <address>
-               <street>Drift 10</street>
-               <postCode>3512 BS</postCode>
-               <placeName>Utrecht</placeName>
-               <country>Netherlands</country>
-            </address>
             <!-- date of corpus construction or publication -->
-            <date when="2019-09-03">3. 9. 2019</date>
+            <date when="2019-09-04">September 4th, 2019</date>
          </publicationStmt>
          <!-- Source description for the whole corpus: -->
          <sourceDesc>
@@ -57,7 +51,7 @@
                            - mandatory <title> and 
                            - optional <idno> and <date>  -->
             <bibl>
-               <title type="main">Website of the Natioan Assembly</title>
+               <title type="main">Website of the National Assembly</title>
                <title type="sub">Hansard</title>
                <idno type="URI">https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/sejeDrzavnegaZbora/PoDatumuSeje/!ut/p/z1/04_Sj9CPykssy0xPLMnMz0vMAfIjo8zivT39gy2dDB0N3INMjAw8Db0tQ3x8fQwNvM30wwkpiAJKG-AAjgb6BbmhigCWEc4T/dz/d5/L2dBISEvZ0FBIS9nQSEh/</idno>
                <date from="1990-05-08" to="2018-06-22"/>
@@ -67,7 +61,7 @@
       <encodingDesc>
          <editorialDecl>
             <correction>
-               <p>No correction was performed.</p>
+               <p>No correction of source texts was performed.</p>
             </correction>
             <normalization>
                <p>Only parts relevant to the example document were retained.</p>
@@ -79,8 +73,7 @@
                <p>Quotation marks have been left in the text and are not explicitly marked up.</p>
             </quotation>
             <segmentation>
-               <p>The texts are segmented into utterances and segments (corresponding to paragraphs in the source
-                  transcription).</p>
+               <p>The texts are segmented into utterances (speeches) and segments (corresponding to paragraphs in the source transcription).</p>
             </segmentation>
          </editorialDecl>
          <classDecl>
@@ -130,8 +123,12 @@
             </setting>
          </settingDesc>
          <particDesc>
-            <listPerson>
+	   <!-- List of speakers with their metadata -->
+           <listPerson>
+	     
+	      <!-- The opposition is defined as a group of persons -->
               <personGrp xml:id="opposition.1" role="opposition" sex="mixed"/>
+	      
               <person xml:id="KucanMilan1941">
                 <persName>
                   <surname>Kučan</surname>
@@ -176,7 +173,8 @@
                   </birth>
                   <idno type="wikimedia">https://en.wikipedia.org/wiki/Jeremy_Corbyn</idno>
                </person>
-            </listPerson>
+           </listPerson>
+	   <!-- List of "organisations", i.e. political parties and other formally established groupings -->
             <listOrg>
                <org xml:id="DZ">
                   <orgName xml:lang="sl">Državni zbor Republike Slovenije</orgName>
@@ -239,16 +237,9 @@
            <authority>CLARIN ERIC</authority>
            <availability>
              <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-             <p>This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
-             Attribution 4.0 International License</ref>.</p>
+             <p>This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</ref>.</p>
            </availability>
            <distributor>CLARIN Git repository</distributor>
-           <address>
-             <street>Drift 10</street>
-             <postCode>3512 BS</postCode>
-             <placeName>Utrecht</placeName>
-             <country>Netherlands</country>
-           </address>
            <date when="2019-07-24">24. 7. 2019</date>
          </publicationStmt>
          <sourceDesc>
