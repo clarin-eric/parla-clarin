@@ -52,9 +52,10 @@
 	  <titlePart type="main"><ref target="https://github.com/clarin-eric/parla-clarin/">Parla-CLARIN</ref></titlePart>
 	  <titlePart type="sub">A TEI Schema for Corpora of Parliamentary Proceedings</titlePart>
 	</docTitle>
-	<!--docEdition></docEdition-->
+	<docEdition>v0.1</docEdition>
 	<!--byline>Tomaž Erjavec and Andrej Pančur</byline-->
       </titlePage>
+      <p></p>
       <divGen type="toc"/>
     </front>
     <body>
@@ -218,20 +219,20 @@
 	      <item><ref target="https://www.clarin.eu/event/2018/clarin-annual-conference-2018-pisa-italy">CLARIN Annual Conference</ref>, Pisa 2018: Work on proposal for COST Action Parlant: "Parliamentary Data and Language Technology" (proposers Maciej Ogrodniczuk, Petya Osenova)</item>
   	    </list>
 	    At these events it became clear that existing parliamentary corpora are
-	    encoded in many different way, presenting a barrier to their
+	    encoded in many different ways, presenting a barrier to their
 	    interchange. Therefore the CLARIN Interoperability Committee organised a
 	    focused
 	    <q><ref target="https://www.clarin.eu/blog/clarin-parlaformat-workshop">CLARIN
 	    ParlaFormat</ref></q> workshop (May 23-24, 2019, Amersfoort) with selected
-	    participants at which the idea of the present recommendation was introduced,
+	    participants at which the idea of the Parla-CLARIN recommendation was introduced,
 	    the participants presented their own experiences with encoding parliamentary
-	    corpora and their comments to the draft proposal, and the authors of the
-	    proposal gave responses to these comments. The details are given in the <ref
+	    corpora and gave their comments to the draft proposal.
+	    The details are given in the <ref
 	    target="https://www.clarin.eu/event/2019/parlaformat-workshop">slides of the
-	    workshop</ref>, where the following two by Tomaž Erjavec and Andrej Pančur might be esp. relevant:
+	    workshop</ref>, with the introduction and response to comments being:
 	    <list>
-	      <item><ref target="https://www.clarin.eu/sites/default/files/erjavec-pancur-teiparla_2019_slides_.pdf">Introduction to the proposed annotation scheme</ref></item>
-	      <item><ref target="https://www.clarin.eu/sites/default/files/erjavec-pancur-teiparla_2019_response_.pdf">Response to the presentations</ref></item>
+	      <item>Tomaž Erjavec and Andrej Pančur: <ref target="https://www.clarin.eu/sites/default/files/erjavec-pancur-teiparla_2019_slides_.pdf">Introduction to the proposed annotation scheme</ref></item>
+	      <item>Tomaž Erjavec and Andrej Pančur: <ref target="https://www.clarin.eu/sites/default/files/erjavec-pancur-teiparla_2019_response_.pdf">Response to the comments by the participants</ref></item>
 	    </list>
             </p>
 	  </div>
@@ -1804,7 +1805,7 @@
 	  The best way seems to be to either directly turn TEI markup into RDF triples,
 	  or, where this is not possible, to use the RDFa attribute on TEI elements.</p>
 
-	  <p>An implementation might be best approaches from the opposite direction,
+	  <p>An implementation might be best approached from the opposite direction,
 	  i.e. developing an <q>up-conversion</q> to TEI of an existing RDF-encoded
 	  CPP.</p>
 	</div>

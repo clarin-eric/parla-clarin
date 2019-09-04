@@ -2,6 +2,7 @@ test:
 	date
 all:	schema val-exa html
 
+val:	val-exa val-odd
 val-exa:
 	$j ../Schema/parla-clarin.rng ../Examples/AkomaNtosoCL-Example.xml
 	$j ../Schema/parla-clarin.rng ../Examples/AkomaNtosoKE-Example.xml
