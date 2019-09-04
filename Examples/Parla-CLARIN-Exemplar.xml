@@ -76,8 +76,14 @@
                <p>The texts are segmented into utterances (speeches) and segments (corresponding to paragraphs in the source transcription).</p>
             </segmentation>
          </editorialDecl>
+         <appInfo>
+           <application version="1.0" ident="web-scraper">
+             <label>WebScraper WWW spider</label>
+             <desc>Tool used to download source documents for this corpus.</desc>
+           </application>
+         </appInfo>
          <classDecl>
-            <!-- One or more optional taxonomies, with which we further classify the content and structure of parliamentary debates -->
+           <!-- One or more optional taxonomies, with which we further classify the content and structure of parliamentary debates -->
             <taxonomy>
                <desc>Types of speakers</desc>
                <category xml:id="chair">
@@ -123,12 +129,12 @@
             </setting>
          </settingDesc>
          <particDesc>
-	   <!-- List of speakers with their metadata -->
+           <!-- List of speakers with their metadata -->
            <listPerson>
-	     
-	      <!-- The opposition is defined as a group of persons -->
+             
+              <!-- The opposition is defined as a group of persons -->
               <personGrp xml:id="opposition.1" role="opposition" sex="mixed"/>
-	      
+              
               <person xml:id="KucanMilan1941">
                 <persName>
                   <surname>Kučan</surname>
@@ -174,7 +180,7 @@
                   <idno type="wikimedia">https://en.wikipedia.org/wiki/Jeremy_Corbyn</idno>
                </person>
            </listPerson>
-	   <!-- List of "organisations", i.e. political parties and other formally established groupings -->
+           <!-- List of "organisations", i.e. political parties and other formally established groupings -->
             <listOrg>
                <org xml:id="DZ">
                   <orgName xml:lang="sl">Državni zbor Republike Slovenije</orgName>
@@ -329,7 +335,7 @@
                   <!-- example of recount of votes -->
                   <note type="recount">For <measure xml:id="recount.1.ayes" type="ayes" quantity="48">48</measure>.</note>
                </div>
-               <!-- new agenda (British exmple) -->
+               <!-- new agenda (British example) -->
                <div xml:id="agenda.2">
                   <head>BREXIT</head>
                   <!-- Interrupted utterances: Boris Johnson: I propose a no-deal Brexit. /Jeremy Corbyn: Traitor!/ Because England does not want any dealings with the European Union. -->
