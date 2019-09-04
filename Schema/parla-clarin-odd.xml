@@ -164,7 +164,10 @@
 	  <item><ref target="#sec-conversion">Section 9</ref> discusses conversions to and from
 	  the Parla-CLARIN format;</item>
 
-	  <item><ref target="#schema">Appendix A</ref> gives the formal specification of
+	  <item><ref target="#examplar">Appendix A</ref> gives a complete example document that illustrates
+	  encodings according to the Parla-CLARIN schema.</item>
+
+	  <item><ref target="#schema">Appendix B</ref> gives the formal specification of
 	  the Parla-CLARIN schema.</item>
 	</list>
       </p>
@@ -1834,6 +1837,13 @@
     
     <back>
       <divGen type="subtoc"/>
+      <div xml:id="examplar">
+	<head>Example document</head>
+	<p>This section gives a complete example document that validates according to Parla-CLARIN and aims toillustrate the encoding of various aspects of parliamentary proceedings corpora.</p>
+	<egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-exemplar">
+	  <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="../Examples/Parla-CLARIN-Exemplar.xml"/>
+	</egXML>
+      </div>
       <div xml:id="schema">
 	<head>Formal specification</head>
 	<schemaSpec ident="tei_clarin" start="TEI teiCorpus" docLang="en" prefix="tei_" xml:lang="en">
