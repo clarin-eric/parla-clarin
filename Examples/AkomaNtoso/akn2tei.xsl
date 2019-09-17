@@ -447,6 +447,27 @@
     
     <!-- blockElements (group): ANblock, HTMLblock, foreign, block -->
     <!-- ANblock: blockList, blockContainer, tblock, toc -->
+    <!-- toc -->
+    <xsl:template match="akn:toc">
+        <list type="toc">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:apply-templates/>
+        </list>
+    </xsl:template>
+    <xsl:template match="akn:tocItem">
+        <item>
+            <xsl:call-template name="att-coreopt"/>
+            <!--<xsl:call-template name="att-link"/>-->
+            <xsl:if test="@level">
+                <xsl:attribute name="n">
+                    <xsl:value-of select="@level"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:call-template name="att-link"/>
+            <xsl:apply-templates/>
+        </item>
+    </xsl:template>
+    
     <!-- HTMLblock: ul, ol, table, p -->
     <xsl:template match="akn:ul">
         <!-- rend="bulleted" -->
@@ -512,28 +533,7 @@
         </cell>
     </xsl:template>
     
-    <!-- TOC -->
-    <xsl:template match="akn:toc">
-        <list type="toc">
-            <xsl:call-template name="att-coreopt"/>
-            <xsl:apply-templates/>
-        </list>
-    </xsl:template>
-    <xsl:template match="akn:tocItem">
-        <item>
-            <xsl:call-template name="att-coreopt"/>
-            <!--<xsl:call-template name="att-link"/>-->
-            <xsl:if test="@level">
-                <xsl:attribute name="n">
-                    <xsl:value-of select="@level"/>
-                </xsl:attribute>
-            </xsl:if>
-            <xsl:call-template name="att-link"/>
-            <xsl:apply-templates/>
-        </item>
-    </xsl:template>
-    
-    <!-- basehierarchy (complexType): heading, subheadin, num -->
+    <!-- basehierarchy (complexType): heading, subheading, num -->
     <xsl:template match="akn:heading">
         <head>
             <xsl:call-template name="att-coreopt"/>
@@ -556,37 +556,10 @@
         <!-- processed by following-sibling::akn:heading as TEI @n -->
     </xsl:template>
     
-    <!-- ANsemanticInline (group): date, time, person, organization, concept, object, event, location, process, role, term, quantity, def, entity -->
-    <xsl:template match="akn:date">
-        <date>
-            <xsl:call-template name="att-coreopt"/>
-            <xsl:call-template name="att-date"/>
-            <xsl:apply-templates/>
-        </date>
-    </xsl:template>
-    <xsl:template match="akn:time">
-        <time>
-            <xsl:call-template name="att-coreopt"/>
-            <xsl:call-template name="att-time"/>
-            <xsl:apply-templates/>
-        </time>
-    </xsl:template>
-    <xsl:template match="akn:person">
-        <persName>
-            <xsl:call-template name="att-coreopt"/>
-            <xsl:call-template name="att-role"/>
-            <xsl:apply-templates/>
-        </persName>
-    </xsl:template>
-    <xsl:template match="akn:quantity">
-        <measure>
-            <xsl:call-template name="att-coreopt"/>
-            <xsl:call-template name="att-normalizedAtt"/>
-            <xsl:apply-templates/>
-        </measure>
-    </xsl:template>
-    
-    <!-- ANinline (group): ref, mref, rref, mod, mmod, rmod, remark, recordedTime, vote, outcome, ins, del, omissis, embeddedText, embeddedStructure, opinion, placeholder, fillIn, decoration -->
+    <!-- inlineElements (group of groups): ANinline (group), HTMLinline (group), ANtitleInline (group), ANsemanticInline (group), ANheaderInline (group),
+                                           amendmentInline (group), inline (element) -->
+    <!-- ANinline (group): ref, mref, rref, mod, mmod, rmod, remark, recordedTime, vote, outcome, ins, del, omissis, embeddedText,
+                           embeddedStructure, opinion, placeholder, fillIn, decoration -->
     <xsl:template match="akn:recordedTime">
         <time>
             <xsl:call-template name="att-coreopt"/>
@@ -594,7 +567,93 @@
             <xsl:apply-templates/>
         </time>
     </xsl:template>
-    
+    <!-- HTMLinline (group): b, i, a, u, sub, sup, abbr, span -->
+    <xsl:template match="akn:b">
+        <hi rend="bold">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:if test="@class">
+                <!-- overrides @rend made by previous call-template -->
+                <xsl:attribute name="rend">
+                    <xsl:value-of select="concat('bold ',@class)"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </hi>
+    </xsl:template>
+    <xsl:template match="akn:i">
+        <hi rend="italic">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:if test="@class">
+                <!-- overrides @rend made by previous call-template -->
+                <xsl:attribute name="rend">
+                    <xsl:value-of select="concat('italic ',@class)"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </hi>
+    </xsl:template>
+    <xsl:template match="akn:a">
+        <ref>
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:if test="@href">
+                <xsl:attribute name="target">
+                    <xsl:value-of select="@href"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:if test="@target">
+                <!-- @target (same as in HTML) has no equivalent in TEI -->
+            </xsl:if>
+            <xsl:apply-templates/>
+        </ref>
+    </xsl:template>
+    <xsl:template match="akn:u">
+        <hi rend="underline">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:if test="@class">
+                <!-- overrides @rend made by previous call-template -->
+                <xsl:attribute name="rend">
+                    <xsl:value-of select="concat('underline ',@class)"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </hi>
+    </xsl:template>
+    <xsl:template match="akn:sub">
+        <hi rend="sub">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:if test="@class">
+                <!-- overrides @rend made by previous call-template -->
+                <xsl:attribute name="rend">
+                    <xsl:value-of select="concat('sub ',@class)"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </hi>
+    </xsl:template>
+    <xsl:template match="akn:sup">
+        <hi rend="sup">
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:if test="@class">
+                <!-- overrides @rend made by previous call-template -->
+                <xsl:attribute name="rend">
+                    <xsl:value-of select="concat('sup ',@class)"/>
+                </xsl:attribute>
+            </xsl:if>
+            <xsl:apply-templates/>
+        </hi>
+    </xsl:template>
+    <xsl:template match="akn:abbr">
+        <abbr>
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:apply-templates/>
+        </abbr>
+    </xsl:template>
+    <xsl:template match="akn:span">
+        <span>
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:apply-templates/>
+        </span>
+    </xsl:template>
     <!-- ANtitleInline: docType, docTitle, docNumber, docProponent, docDate, legislature, session, shortTitle, docAuthority, docPurpose,
                         docCommittee, docIntroducer, docStage, docStatus, docJurisdiction, docketNumber -->
     <xsl:template match="akn:docTitle | akn:shortTitle | akn:docStage">
@@ -642,6 +701,55 @@
             <xsl:apply-templates/>
         </term>
     </xsl:template>
+    <!-- ANsemanticInline (group): date, time, person, organization, concept, object, event, location, process, role, term, quantity, def, entity -->
+    <xsl:template match="akn:date">
+        <date>
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:call-template name="att-date"/>
+            <xsl:apply-templates/>
+        </date>
+    </xsl:template>
+    <xsl:template match="akn:time">
+        <time>
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:call-template name="att-time"/>
+            <xsl:apply-templates/>
+        </time>
+    </xsl:template>
+    <xsl:template match="akn:person">
+        <persName>
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:call-template name="att-role"/>
+            <xsl:apply-templates/>
+        </persName>
+    </xsl:template>
+    <xsl:template match="akn:quantity">
+        <measure>
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:call-template name="att-normalizedAtt"/>
+            <xsl:apply-templates/>
+        </measure>
+    </xsl:template>
+    <!-- ANheaderInline (group): !!!!!!! -->
+    <!-- amendmentInline (group): !!!!!!!!! -->
+    <!-- inline (element) !!!!!!! -->
+    
+    <!-- markerElements (group of groups): ANmarker (group), HTMLmarker (group), marker (element) -->
+    <!-- ANmarker (group): noteRef, eol, eop -->
+    <!-- HTMLmarker (group): img, br -->
+    <xsl:template match="akn:img">
+        <graphic>
+            <xsl:call-template name="att-coreopt"/>
+            <xsl:call-template name="att-src"/>
+            <xsl:call-template name="att-imgAtts"/>
+        </graphic>
+    </xsl:template>
+    <xsl:template match="akn:br">
+        <lb>
+            <xsl:call-template name="att-coreopt"/>
+        </lb>
+    </xsl:template>
+    <!-- marker (element) -->
     
     <!-- All three attribute groups (coreopt, corereq and corereqreq) are processed as optional -->
     <xsl:template name="att-coreopt">
@@ -896,6 +1004,35 @@
         <xsl:if test="@outcome">
             <xsl:attribute name="ana">
                 <xsl:value-of select="@outcome"/>
+            </xsl:attribute>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="att-src">
+        <xsl:if test="@src">
+            <xsl:attribute name="src">
+                <xsl:value-of select="@src"/>
+            </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="@title">
+            <!-- Maybe it's not a good idea, but I can't find a better solution than html:img/@title = tei:graphic/@n -->
+            <xsl:attribute name="n">
+                <xsl:value-of select="@title"/>
+            </xsl:attribute>
+        </xsl:if>
+    </xsl:template>
+    
+    <xsl:template name="att-imgAtts">
+        <!-- AKN @width and @height are xs:integer. The equivalent TEI attributes are outputMeasurement, along with the unit of measurement (See https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-teidata.outputMeasurement.html)
+             Since they are images, I assume that units of measure are always px. -->
+        <xsl:if test="@width">
+            <xsl:attribute name="width">
+                <xsl:value-of select="concat(@width,'px')"/>
+            </xsl:attribute>
+        </xsl:if>
+        <xsl:if test="@height">
+            <xsl:attribute name="height">
+                <xsl:value-of select="concat(@height,'px')"/>
             </xsl:attribute>
         </xsl:if>
     </xsl:template>
