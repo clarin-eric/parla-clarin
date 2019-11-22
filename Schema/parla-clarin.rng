@@ -5,7 +5,7 @@
          xmlns:teix="http://www.tei-c.org/ns/Examples"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2019-08-29T13:10:23Z. .
+Schema generated from ODD source 2019-11-22T10:00:26Z. .
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -1979,6 +1979,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <choice>
          <ref name="tei_media"/>
          <ref name="tei_graphic"/>
+         <ref name="tei_formula"/>
       </choice>
    </define>
    <define name="tei_model.offsetLike">
@@ -2558,6 +2559,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="tei_listRelation"/>
          <ref name="tei_listObject"/>
          <ref name="tei_listNym"/>
+         <ref name="tei_table"/>
       </choice>
    </define>
    <define name="tei_model.listLike_alternation">
@@ -2570,6 +2572,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="tei_listRelation"/>
          <ref name="tei_listObject"/>
          <ref name="tei_listNym"/>
+         <ref name="tei_table"/>
       </choice>
    </define>
    <define name="tei_model.listLike_sequence">
@@ -2581,6 +2584,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <ref name="tei_listRelation"/>
       <ref name="tei_listObject"/>
       <ref name="tei_listNym"/>
+      <ref name="tei_table"/>
    </define>
    <define name="tei_model.listLike_sequenceOptional">
       <optional>
@@ -2606,6 +2610,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       </optional>
       <optional>
          <ref name="tei_listNym"/>
+      </optional>
+      <optional>
+         <ref name="tei_table"/>
       </optional>
    </define>
    <define name="tei_model.listLike_sequenceOptionalRepeatable">
@@ -2633,6 +2640,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <zeroOrMore>
          <ref name="tei_listNym"/>
       </zeroOrMore>
+      <zeroOrMore>
+         <ref name="tei_table"/>
+      </zeroOrMore>
    </define>
    <define name="tei_model.listLike_sequenceRepeatable">
       <oneOrMore>
@@ -2658,6 +2668,9 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       </oneOrMore>
       <oneOrMore>
          <ref name="tei_listNym"/>
+      </oneOrMore>
+      <oneOrMore>
+         <ref name="tei_table"/>
       </oneOrMore>
    </define>
    <define name="tei_model.noteLike">
@@ -3413,6 +3426,8 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <ref name="tei_model.global.edit"/>
          <ref name="tei_metamark"/>
          <ref name="tei_model.global.spoken"/>
+         <ref name="tei_notatedMusic"/>
+         <ref name="tei_figure"/>
       </choice>
    </define>
    <define name="tei_model.featureVal">
@@ -7175,10 +7190,10 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                       context="tei:div[@type = $div.types.debate]">
-	              <sch:assert test="not(parent::tei:div[@type = $div.types.debate])">
-	            A text division of type <sch:value-of select="@type"/> should not occur inside div with type value <sch:value-of select="parent::tei:div/@type"/>.
-	          </sch:assert>
-		          </sch:rule>
+                  <sch:assert test="not(parent::tei:div[@type = $div.types.debate])">
+                    A text division of type <sch:value-of select="@type"/> should not occur inside div with type value <sch:value-of select="parent::tei:div/@type"/>.
+                  </sch:assert>
+                </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
                   id="tei_clarin-div-abstractModel-structure-l-constraint-report-13">
@@ -11185,6 +11200,194 @@ You must supply at least two values for @target on <name/>
          <empty/>
       </element>
    </define>
+   <define name="tei_att.tableDecoration.attributes">
+      <ref name="tei_att.tableDecoration.attribute.role"/>
+      <ref name="tei_att.tableDecoration.attribute.rows"/>
+      <ref name="tei_att.tableDecoration.attribute.cols"/>
+   </define>
+   <define name="tei_att.tableDecoration.attribute.role">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="role"
+                    a:defaultValue="data">
+            <a:documentation>indicates the kind of information held in this cell or in each cell of this row.
+Suggested values include: 1] label; 2] data</a:documentation>
+            <choice>
+               <value>label</value>
+               <a:documentation>labelling or descriptive information only.</a:documentation>
+               <value>data</value>
+               <a:documentation>data values.</a:documentation>
+               <data type="token">
+                  <param name="pattern">(\p{L}|\p{N}|\p{P}|\p{S})+</param>
+               </data>
+            </choice>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.tableDecoration.attribute.rows">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="rows"
+                    a:defaultValue="1">
+            <a:documentation>indicates the number of rows occupied by this cell or row.</a:documentation>
+            <data type="nonNegativeInteger"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_att.tableDecoration.attribute.cols">
+      <optional>
+         <attribute xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0" name="cols"
+                    a:defaultValue="1">
+            <a:documentation>(columns) indicates the number of columns occupied by this cell or row.</a:documentation>
+            <data type="nonNegativeInteger"/>
+         </attribute>
+      </optional>
+   </define>
+   <define name="tei_table">
+      <element name="table">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains text displayed in tabular form, in rows and columns. [14.1.1. TEI Tables]</a:documentation>
+         <group>
+      
+            <zeroOrMore>
+               <choice>
+                  <ref name="tei_model.headLike"/>
+                  <ref name="tei_model.global"/>
+               </choice>
+            </zeroOrMore>
+      
+            <choice>
+               <oneOrMore>
+                  <group>
+                     <ref name="tei_row"/>
+          
+                     <zeroOrMore>
+                        <ref name="tei_model.global"/>
+                     </zeroOrMore>
+          
+                  </group>
+               </oneOrMore>
+               <oneOrMore>
+                  <group>
+          
+                     <ref name="tei_model.graphicLike"/>
+          
+          
+                     <zeroOrMore>
+                        <ref name="tei_model.global"/>
+                     </zeroOrMore>
+          
+                  </group>
+               </oneOrMore>
+            </choice>
+            <zeroOrMore>
+               <group>
+        
+                  <ref name="tei_model.divBottom"/>
+        
+        
+                  <zeroOrMore>
+                     <ref name="tei_model.global"/>
+                  </zeroOrMore>
+        
+               </group>
+            </zeroOrMore>
+         </group>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <optional>
+            <attribute name="rows">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">indicates the number of rows in the table.</a:documentation>
+               <data type="nonNegativeInteger"/>
+            </attribute>
+         </optional>
+         <optional>
+            <attribute name="cols">
+               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(columns) indicates the number of columns in each row of the table.</a:documentation>
+               <data type="nonNegativeInteger"/>
+            </attribute>
+         </optional>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_row">
+      <element name="row">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one row of a table. [14.1.1. TEI Tables]</a:documentation>
+         <oneOrMore>
+            <ref name="tei_cell"/>
+         </oneOrMore>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.tableDecoration.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_cell">
+      <element name="cell">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains one cell of a table. [14.1.1. TEI Tables]</a:documentation>
+         <ref name="tei_macro.specialPara"/>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.tableDecoration.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_formula">
+      <element name="formula">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">contains a mathematical or other formula. [14.2. Formulæ and Mathematical Expressions]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <text/>
+               <ref name="tei_model.graphicLike"/>
+               <ref name="tei_model.hiLike"/>       
+            </choice>
+         </zeroOrMore>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.notated.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_notatedMusic">
+      <element name="notatedMusic">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">encodes the presence of music notation in a text [14.3. Notated Music in Written Text]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <ref name="tei_model.labelLike"/>
+               <ref name="tei_model.ptrLike"/>
+               <ref name="tei_graphic"/>
+        
+               <ref name="tei_seg"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.placement.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_figure">
+      <element name="figure">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">groups elements representing or containing graphic information such as an illustration, formula, or figure. [14.4. Specific Elements for Graphic Images]</a:documentation>
+         <zeroOrMore>
+            <choice>
+               <ref name="tei_model.headLike"/>
+               <ref name="tei_model.common"/>
+               <ref name="tei_figDesc"/>
+               <ref name="tei_model.graphicLike"/>
+               <ref name="tei_model.global"/>
+               <ref name="tei_model.divBottom"/>
+            </choice>
+         </zeroOrMore>
+         <ref name="tei_att.global.attributes"/>
+         <ref name="tei_att.placement.attributes"/>
+         <ref name="tei_att.typed.attributes"/>
+         <ref name="tei_att.written.attributes"/>
+         <empty/>
+      </element>
+   </define>
+   <define name="tei_figDesc">
+      <element name="figDesc">
+         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. Specific Elements for Graphic Images]</a:documentation>
+         <ref name="tei_macro.limitedContent"/>
+         <ref name="tei_att.global.attributes"/>
+         <empty/>
+      </element>
+   </define>
    <define name="tei_att.linguistic.attributes">
       <ref name="tei_att.linguistic.attribute.lemma"/>
       <ref name="tei_att.linguistic.attribute.lemmaRef"/>
@@ -11716,7 +11919,9 @@ Feature Value]</a:documentation>
             </zeroOrMore>
       
       
-        
+            <zeroOrMore>
+               <ref name="tei_figure"/>
+            </zeroOrMore>
       
       
             <zeroOrMore>
@@ -11803,7 +12008,9 @@ Feature Value]</a:documentation>
             </zeroOrMore>
       
       
-        
+            <zeroOrMore>
+               <ref name="tei_figure"/>
+            </zeroOrMore>
       
       
             <zeroOrMore>
@@ -11881,7 +12088,7 @@ Feature Value]</a:documentation>
                 xmlns:eg="http://www.tei-c.org/ns/Examples"
                 xmlns:egXML="http://www.tei-c.org/ns/Examples"
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
-		    <sch:let name="div.types.debate"
+                <sch:let name="div.types.debate"
                value="('address', 'adjournment', 'administrationOfOath', 'communication', 'declarationOfVote', 'ministerialStatements', 'nationalInterest', 'noticesOfMotion', 'oralStatements', 'papers', 'petitions', 'prayers', 'proceduralMotions', 'pointOfOrder', 'personalStatements', 'questions', 'resolutions', 'rollCall', 'writtenStatements')"/>
-	      </sch:pattern>
+              </sch:pattern>
 </grammar>

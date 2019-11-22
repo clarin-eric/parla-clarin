@@ -7,7 +7,7 @@
    <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.tmp"/>
    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.tmp"/>
    <!--
-    Schema generated from ODD source 2019-08-29T13:10:39Z. .
+    Schema generated from ODD source 2019-11-22T10:00:43Z. .
     TEI Edition: Version 3.5.0. Last updated on
     	29th January 2019, revision 3c0c64ec4
     TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -2632,6 +2632,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:listRelation"/>
          <xs:element ref="tei:listObject"/>
          <xs:element ref="tei:listNym"/>
+         <xs:element ref="tei:table"/>
       </xs:choice>
    </xs:group>
    <xs:group name="tei_model.listLike_alternation">
@@ -2644,6 +2645,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:listRelation"/>
          <xs:element ref="tei:listObject"/>
          <xs:element ref="tei:listNym"/>
+         <xs:element ref="tei:table"/>
       </xs:choice>
    </xs:group>
    <xs:group name="tei_model.listLike_sequence">
@@ -2656,6 +2658,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:listRelation"/>
          <xs:element ref="tei:listObject"/>
          <xs:element ref="tei:listNym"/>
+         <xs:element ref="tei:table"/>
       </xs:sequence>
    </xs:group>
    <xs:group name="tei_model.listLike_sequenceOptional">
@@ -2668,6 +2671,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element minOccurs="0" ref="tei:listRelation"/>
          <xs:element minOccurs="0" ref="tei:listObject"/>
          <xs:element minOccurs="0" ref="tei:listNym"/>
+         <xs:element minOccurs="0" ref="tei:table"/>
       </xs:sequence>
    </xs:group>
    <xs:group name="tei_model.listLike_sequenceOptionalRepeatable">
@@ -2680,6 +2684,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:listRelation"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:listObject"/>
          <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:listNym"/>
+         <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:table"/>
       </xs:sequence>
    </xs:group>
    <xs:group name="tei_model.listLike_sequenceRepeatable">
@@ -2692,6 +2697,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element maxOccurs="unbounded" ref="tei:listRelation"/>
          <xs:element maxOccurs="unbounded" ref="tei:listObject"/>
          <xs:element maxOccurs="unbounded" ref="tei:listNym"/>
+         <xs:element maxOccurs="unbounded" ref="tei:table"/>
       </xs:sequence>
    </xs:group>
    <xs:group name="tei_model.noteLike">
@@ -3302,6 +3308,8 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:tei_model.global.edit"/>
          <xs:element ref="tei:metamark"/>
          <xs:element ref="tei:tei_model.global.spoken"/>
+         <xs:element ref="tei:notatedMusic"/>
+         <xs:element ref="tei:figure"/>
       </xs:choice>
    </xs:group>
    <xs:group name="tei_model.featureVal">
@@ -11169,6 +11177,184 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
          </xs:attribute>
       </xs:complexType>
    </xs:element>
+   <xs:attributeGroup name="tei_att.tableDecoration.attributes">
+      <xs:attributeGroup ref="tei:tei_att.tableDecoration.attribute.role"/>
+      <xs:attributeGroup ref="tei:tei_att.tableDecoration.attribute.rows"/>
+      <xs:attributeGroup ref="tei:tei_att.tableDecoration.attribute.cols"/>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="tei_att.tableDecoration.attribute.role">
+      <xs:attribute name="role" default="data">
+         <xs:annotation>
+            <xs:documentation>indicates the kind of information held in this cell or in each cell of this row.
+Suggested values include: 1] label; 2] data</xs:documentation>
+         </xs:annotation>
+         <xs:simpleType>
+            <xs:union>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="label">
+                        <xs:annotation>
+                           <xs:documentation>labelling or descriptive information only.</xs:documentation>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="data">
+                        <xs:annotation>
+                           <xs:documentation>data values.</xs:documentation>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  </xs:restriction>
+               </xs:simpleType>
+            </xs:union>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="tei_att.tableDecoration.attribute.rows">
+      <xs:attribute name="rows" default="1" type="xs:nonNegativeInteger">
+         <xs:annotation>
+            <xs:documentation>indicates the number of rows occupied by this cell or row.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="tei_att.tableDecoration.attribute.cols">
+      <xs:attribute name="cols" default="1" type="xs:nonNegativeInteger">
+         <xs:annotation>
+            <xs:documentation>(columns) indicates the number of columns occupied by this cell or row.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+   </xs:attributeGroup>
+   <xs:element name="table">
+      <xs:annotation>
+         <xs:documentation>contains text displayed in tabular form, in rows and columns. [14.1.1. TEI Tables]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+               <xs:group ref="tei:tei_model.headLike"/>
+               <xs:group ref="tei:tei_model.global"/>
+            </xs:choice>
+            <xs:choice>
+               <xs:sequence maxOccurs="unbounded">
+                  <xs:element ref="tei:row"/>
+                  <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.global"/>
+               </xs:sequence>
+               <xs:sequence maxOccurs="unbounded">
+                  <xs:element ref="tei:tei_model.graphicLike"/>
+                  <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.global"/>
+               </xs:sequence>
+            </xs:choice>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+               <xs:group ref="tei:tei_model.divBottom"/>
+               <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.global"/>
+            </xs:sequence>
+         </xs:sequence>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+         <xs:attribute name="rows" type="xs:nonNegativeInteger">
+            <xs:annotation>
+               <xs:documentation>indicates the number of rows in the table.</xs:documentation>
+            </xs:annotation>
+         </xs:attribute>
+         <xs:attribute name="cols" type="xs:nonNegativeInteger">
+            <xs:annotation>
+               <xs:documentation>(columns) indicates the number of columns in each row of the table.</xs:documentation>
+            </xs:annotation>
+         </xs:attribute>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="row">
+      <xs:annotation>
+         <xs:documentation>contains one row of a table. [14.1.1. TEI Tables]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" ref="tei:cell"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.tableDecoration.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="cell">
+      <xs:annotation>
+         <xs:documentation>contains one cell of a table. [14.1.1. TEI Tables]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:tei_macro.specialPara">
+               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.tableDecoration.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="formula" substitutionGroup="tei:tei_model.graphicLike">
+      <xs:annotation>
+         <xs:documentation>contains a mathematical or other formula. [14.2. Formulæ and Mathematical Expressions]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType mixed="true">
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.graphicLike"/>
+            <xs:group ref="tei:tei_model.hiLike"/>
+         </xs:choice>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.notated.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="notatedMusic">
+      <xs:annotation>
+         <xs:documentation>encodes the presence of music notation in a text [14.3. Notated Music in Written Text]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="tei:tei_model.labelLike"/>
+            <xs:element ref="tei:tei_model.ptrLike"/>
+            <xs:element ref="tei:graphic"/>
+            <xs:element ref="tei:seg"/>
+         </xs:choice>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.placement.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="figure">
+      <xs:annotation>
+         <xs:documentation>groups elements representing or containing graphic information such as an illustration, formula, or figure. [14.4. Specific Elements for Graphic Images]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:group ref="tei:tei_model.headLike"/>
+            <xs:group ref="tei:tei_model.common"/>
+            <xs:element ref="tei:figDesc"/>
+            <xs:element ref="tei:tei_model.graphicLike"/>
+            <xs:group ref="tei:tei_model.global"/>
+            <xs:group ref="tei:tei_model.divBottom"/>
+         </xs:choice>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.placement.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.written.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="figDesc">
+      <xs:annotation>
+         <xs:documentation>(description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. Specific Elements for Graphic Images]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:tei_macro.limitedContent">
+               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
    <xs:attributeGroup name="tei_att.linguistic.attributes">
       <xs:attributeGroup ref="tei:tei_att.linguistic.attribute.lemma"/>
       <xs:attributeGroup ref="tei:tei_att.linguistic.attribute.lemmaRef"/>
@@ -11657,6 +11843,7 @@ Feature Value]</xs:documentation>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.descLike"/>
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:charProp"/>
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:mapping"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:figure"/>
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.graphicLike"/>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.noteLike"/>
          </xs:sequence>
@@ -11712,6 +11899,7 @@ Feature Value]</xs:documentation>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.descLike"/>
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:charProp"/>
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:mapping"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:figure"/>
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.graphicLike"/>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.noteLike"/>
          </xs:sequence>

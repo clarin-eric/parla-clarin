@@ -1,6 +1,6 @@
 
 <!--
-DTD generated from ODD source 2019-08-29T13:10:33Z. .This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.
+DTD generated from ODD source 2019-11-22T10:00:38Z. .This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.
 TEI Edition: Version 3.5.0. Last updated on
 	29th January 2019, revision 3c0c64ec4
 TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
@@ -655,11 +655,11 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.egLike_sequenceOptional ""> 
 <!ENTITY % model.egLike_sequenceOptionalRepeatable ""> 
 <!ENTITY % model.egLike_sequenceRepeatable ""> 
-<!ENTITY % model.graphicLike "media |graphic"> 
-<!ENTITY % model.graphicLike_sequence "media, graphic"> 
-<!ENTITY % model.graphicLike_sequenceOptional "media?, graphic?"> 
-<!ENTITY % model.graphicLike_sequenceOptionalRepeatable "media*, graphic*"> 
-<!ENTITY % model.graphicLike_sequenceRepeatable "media+, graphic+"> 
+<!ENTITY % model.graphicLike "media |graphic |formula"> 
+<!ENTITY % model.graphicLike_sequence "media, graphic, formula"> 
+<!ENTITY % model.graphicLike_sequenceOptional "media?, graphic?, formula?"> 
+<!ENTITY % model.graphicLike_sequenceOptionalRepeatable "media*, graphic*, formula*"> 
+<!ENTITY % model.graphicLike_sequenceRepeatable "media+, graphic+, formula+"> 
 <!ENTITY % model.offsetLike "offset |geogFeat"> 
 <!ENTITY % model.offsetLike_sequence "offset, geogFeat"> 
 <!ENTITY % model.offsetLike_sequenceOptional "offset?, geogFeat?"> 
@@ -745,11 +745,11 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.labelLike_sequenceOptional "desc?, label?"> 
 <!ENTITY % model.labelLike_sequenceOptionalRepeatable "desc*, label*"> 
 <!ENTITY % model.labelLike_sequenceRepeatable "desc+, label+"> 
-<!ENTITY % model.listLike "list |listOrg |listEvent |listPerson |listPlace |listRelation |listObject |listNym"> 
-<!ENTITY % model.listLike_sequence "list, listOrg, listEvent, listPerson, listPlace, listRelation, listObject, listNym"> 
-<!ENTITY % model.listLike_sequenceOptional "list?, listOrg?, listEvent?, listPerson?, listPlace?, listRelation?, listObject?, listNym?"> 
-<!ENTITY % model.listLike_sequenceOptionalRepeatable "list*, listOrg*, listEvent*, listPerson*, listPlace*, listRelation*, listObject*, listNym*"> 
-<!ENTITY % model.listLike_sequenceRepeatable "list+, listOrg+, listEvent+, listPerson+, listPlace+, listRelation+, listObject+, listNym+"> 
+<!ENTITY % model.listLike "list |listOrg |listEvent |listPerson |listPlace |listRelation |listObject |listNym |table"> 
+<!ENTITY % model.listLike_sequence "list, listOrg, listEvent, listPerson, listPlace, listRelation, listObject, listNym, table"> 
+<!ENTITY % model.listLike_sequenceOptional "list?, listOrg?, listEvent?, listPerson?, listPlace?, listRelation?, listObject?, listNym?, table?"> 
+<!ENTITY % model.listLike_sequenceOptionalRepeatable "list*, listOrg*, listEvent*, listPerson*, listPlace*, listRelation*, listObject*, listNym*, table*"> 
+<!ENTITY % model.listLike_sequenceRepeatable "list+, listOrg+, listEvent+, listPerson+, listPlace+, listRelation+, listObject+, listNym+, table+"> 
 <!ENTITY % model.noteLike "note"> 
 <!ENTITY % model.noteLike_sequence "note"> 
 <!ENTITY % model.noteLike_sequenceOptional "note?"> 
@@ -945,11 +945,11 @@ to %teidata.word;  #IMPLIED'>
 <!ENTITY % model.nameLike_sequenceOptional "%model.nameLike.agent;?, %model.offsetLike;?, %model.placeStateLike;?, rs?, idno?, %model.persNamePart;?, objectName?"> 
 <!ENTITY % model.nameLike_sequenceOptionalRepeatable "%model.nameLike.agent;*, %model.offsetLike;*, %model.placeStateLike;*, rs*, idno*, %model.persNamePart;*, objectName*"> 
 <!ENTITY % model.nameLike_sequenceRepeatable "%model.nameLike.agent;+, %model.offsetLike;+, %model.placeStateLike;+, rs+, idno+, %model.persNamePart;+, objectName+"> 
-<!ENTITY % model.global "%model.global.meta; |%model.milestoneLike; |%model.noteLike; |%model.global.edit; |metamark |%model.global.spoken;"> 
-<!ENTITY % model.global_sequence "%model.global.meta;, %model.milestoneLike;, %model.noteLike;, %model.global.edit;, metamark, %model.global.spoken;"> 
-<!ENTITY % model.global_sequenceOptional "%model.global.meta;?, %model.milestoneLike;?, %model.noteLike;?, %model.global.edit;?, metamark?, %model.global.spoken;?"> 
-<!ENTITY % model.global_sequenceOptionalRepeatable "%model.global.meta;*, %model.milestoneLike;*, %model.noteLike;*, %model.global.edit;*, metamark*, %model.global.spoken;*"> 
-<!ENTITY % model.global_sequenceRepeatable "%model.global.meta;+, %model.milestoneLike;+, %model.noteLike;+, %model.global.edit;+, metamark+, %model.global.spoken;+"> 
+<!ENTITY % model.global "%model.global.meta; |%model.milestoneLike; |%model.noteLike; |%model.global.edit; |metamark |%model.global.spoken; |notatedMusic |figure"> 
+<!ENTITY % model.global_sequence "%model.global.meta;, %model.milestoneLike;, %model.noteLike;, %model.global.edit;, metamark, %model.global.spoken;, notatedMusic, figure"> 
+<!ENTITY % model.global_sequenceOptional "%model.global.meta;?, %model.milestoneLike;?, %model.noteLike;?, %model.global.edit;?, metamark?, %model.global.spoken;?, notatedMusic?, figure?"> 
+<!ENTITY % model.global_sequenceOptionalRepeatable "%model.global.meta;*, %model.milestoneLike;*, %model.noteLike;*, %model.global.edit;*, metamark*, %model.global.spoken;*, notatedMusic*, figure*"> 
+<!ENTITY % model.global_sequenceRepeatable "%model.global.meta;+, %model.milestoneLike;+, %model.noteLike;+, %model.global.edit;+, metamark+, %model.global.spoken;+, notatedMusic+, figure+"> 
 <!ENTITY % model.featureVal "%model.featureVal.complex; |%model.featureVal.single;"> 
 <!ENTITY % model.featureVal_sequence "%model.featureVal.complex;, %model.featureVal.single;"> 
 <!ENTITY % model.featureVal_sequenceOptional "%model.featureVal.complex;?, %model.featureVal.single;?"> 
@@ -1226,6 +1226,18 @@ select CDATA  #IMPLIED'>
  %tei_att.global.linking.attribute.prev;
  %tei_att.global.linking.attribute.exclude;
  %tei_att.global.linking.attribute.select;'> 
+<!ENTITY % tei_att.tableDecoration.attribute.role '
+role %teidata.enumerated;  "data" '>
+
+<!ENTITY % tei_att.tableDecoration.attribute.rows '
+rows %teidata.count;  "1" '>
+
+<!ENTITY % tei_att.tableDecoration.attribute.cols '
+cols %teidata.count;  "1" '>
+<!ENTITY % tei_att.tableDecoration.attributes '
+ %tei_att.tableDecoration.attribute.role;
+ %tei_att.tableDecoration.attribute.rows;
+ %tei_att.tableDecoration.attribute.cols;'> 
 <!ENTITY % tei_att.linguistic.attribute.lemma '
 lemma %teidata.text;  #IMPLIED'>
 
@@ -1545,6 +1557,12 @@ Elements] -->
  %tei_att.edition.attributes;
  %tei_att.spanning.attributes;
  %tei_att.breaking.attributes; >
+<!--doc:contains one cell of a table. [14.1.1. TEI Tables] -->
+<!ELEMENT cell %macro.specialPara;>
+<!ATTLIST cell xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST cell
+ %tei_att.global.attributes;
+ %tei_att.tableDecoration.attributes; >
 <!--doc:documents a change or set of changes made during the production of a source document, or during the revision of an electronic file. [2.6. The Revision Description 2.4.1. Creation 11.7. Identifying Changes and Revisions] -->
 <!ELEMENT change %macro.specialPara;>
 <!ATTLIST change xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1922,6 +1940,19 @@ type (fiction|fact|mixed|inapplicable) #IMPLIED >
  %tei_att.canonical.attributes;
  %tei_att.typed.attribute.subtype;
 type %teidata.enumerated;  #IMPLIED >
+<!--doc:(description of figure) contains a brief prose description of the appearance or content of a graphic figure, for use when documenting an image without displaying it. [14.4. Specific Elements for Graphic Images] -->
+<!ELEMENT figDesc %macro.limitedContent;>
+<!ATTLIST figDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST figDesc
+ %tei_att.global.attributes; >
+<!--doc:groups elements representing or containing graphic information such as an illustration, formula, or figure. [14.4. Specific Elements for Graphic Images] -->
+<!ELEMENT figure (%model.headLike;|%model.common;|figDesc|%model.graphicLike;|%model.global;|%model.divBottom;)*>
+<!ATTLIST figure xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST figure
+ %tei_att.global.attributes;
+ %tei_att.placement.attributes;
+ %tei_att.typed.attributes;
+ %tei_att.written.attributes; >
 <!--doc:(file description) contains a full bibliographic description of an electronic file. [2.2. The File Description 2.1.1. The TEI Header and Its Components] -->
 <!ELEMENT fileDesc (((titleStmt,(editionStmt)?,(extent)?,publicationStmt,(seriesStmt)?,(notesStmt)?),(sourceDesc)+))>
 <!ATTLIST fileDesc xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -1947,6 +1978,12 @@ type %teidata.enumerated;  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.personal.attributes;
  %tei_att.typed.attributes; >
+<!--doc:contains a mathematical or other formula. [14.2. Formulæ and Mathematical Expressions] -->
+<!ELEMENT formula (#PCDATA|%model.graphicLike;|%model.hiLike;)*>
+<!ATTLIST formula xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST formula
+ %tei_att.global.attributes;
+ %tei_att.notated.attributes; >
 <!--doc:(front matter) contains any prefatory matter (headers, abstracts, title page, prefaces, dedications, etc.) found at the start of a document, before the main body. [4.6. Title Pages 4. Default Text Structure] -->
 <!ELEMENT front (((%model.frontPart;|%model.pLike;|%model.pLike.front;|%model.global;)*,((((_DUMMY_model.div1Like),(_DUMMY_model.div1Like|%model.frontPart;|%model.global;)*)|((%model.divLike;),(%model.divLike;|%model.frontPart;|%model.global;)*)),((%model.divBottom;),(%model.divBottom;|%model.global;)*)?)?))>
 <!ATTLIST front xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -2520,6 +2557,13 @@ type %teidata.enumerated;  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.declarable.attributes;
 method (silent|markup) "silent"  >
+<!--doc:encodes the presence of music notation in a text [14.3. Notated Music in Written Text] -->
+<!ELEMENT notatedMusic (%model.labelLike;|%model.ptrLike;|graphic|binaryObject|seg)*>
+<!ATTLIST notatedMusic xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST notatedMusic
+ %tei_att.global.attributes;
+ %tei_att.placement.attributes;
+ %tei_att.typed.attributes; >
 <!--doc:contains a note or annotation. [3.8.1. Notes and Simple Annotation 2.2.6. The Notes Statement 3.11.2.8. Notes and Statement of Language 9.3.5.4. Notes within Entries] -->
 <!ELEMENT note %macro.specialPara;>
 <!ATTLIST note xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -3011,6 +3055,12 @@ type %teidata.enumerated;  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.personal.attributes;
  %tei_att.typed.attributes; >
+<!--doc:contains one row of a table. [14.1.1. TEI Tables] -->
+<!ELEMENT row (cell)+>
+<!ATTLIST row xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST row
+ %tei_att.global.attributes;
+ %tei_att.tableDecoration.attributes; >
 <!--doc:(referencing string) contains a general purpose name or referring string. [13.2.1. Personal Names 3.5.1. Referring Strings] -->
 <!ELEMENT rs %macro.phraseSeq;>
 <!ATTLIST rs xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -3324,6 +3374,14 @@ reason CDATA  #IMPLIED >
  %tei_att.global.attributes;
  %tei_att.datcat.attributes;
 value %teidata.word;  #REQUIRED >
+<!--doc:contains text displayed in tabular form, in rows and columns. [14.1.1. TEI Tables] -->
+<!ELEMENT table (((%model.headLike;|%model.global;)*,((row,(%model.global;)*)+|((%model.graphicLike;),(%model.global;)*)+),((%model.divBottom;),(%model.global;)*)*))>
+<!ATTLIST table xmlns CDATA "http://www.tei-c.org/ns/1.0">
+<!ATTLIST table
+ %tei_att.global.attributes;
+ %tei_att.typed.attributes;
+rows %teidata.count;  #IMPLIED
+cols %teidata.count;  #IMPLIED >
 <!--doc:documents the usage of a specific element within a specified document. [2.3.4. The Tagging Declaration] -->
 <!ELEMENT tagUsage %macro.limitedContent;>
 <!ATTLIST tagUsage xmlns CDATA "http://www.tei-c.org/ns/1.0">

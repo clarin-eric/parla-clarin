@@ -1853,6 +1853,7 @@
           <moduleRef key="spoken" except="broadcast"/>
           <moduleRef key="namesdates" except=""/>
           <moduleRef key="linking" except=""/>
+          <moduleRef key="figures" except=""/>
           <moduleRef key="analysis" except="interp interpGrp"/>
           <moduleRef key="iso-fs"
                      except="alt altGrp bicond binary cond default fDecl fDescr fsConstraints fsDescr
