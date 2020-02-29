@@ -89,13 +89,13 @@
         </list>
         </p>
         
-        <p>The recommendations are implemented as a parametrisation of the
+        <p>The recommendations are implemented as a parameterisation of the
         <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/index.html">TEI
         Guidelines</ref>, which are XML-based recommendations for encoding texts for scholarly
         purposes. As opposed to most other such recommendations, the TEI Guidelines have the
         ambition to be applicable to texts in any natural language, of any date, in any
         literary genre or text type, without restriction on form or content. The TEI
-        parametrisation proposed for Parla-CLARIN also allows a wide range of PPC to encoded,
+        parameterisation proposed for Parla-CLARIN also allows a wide range of PPC to be encoded,
         while making explicit recommendations on the manner of encoding various
         phenomena. The recommendations are written as a TEI ODD document, on the
         basis of which it is possible to derive an XML schema expressed either as a RelaxNG
@@ -249,7 +249,7 @@
             concepts</ref> and has a built-in relation to ontologies.</p>
 
             <p>It is thus a reasonable question why CLARIN does not simply adopt AKN, rather
-            than developing a conceptually very different parametrisation of TEI. The main
+            than developing a conceptually very different parameterisation of TEI. The main
             reasons for this are the following:
             <list>
               <item>Unfamiliarity of corpus compilers and users with AKN, and relatively
@@ -335,14 +335,14 @@
           
           <p>The corpus should be encoded in Unicode, using the UTF-8 character encoding, at
           least for European languages.  In cases where the original contains characters from
-          the Unicode Private Use Area, these should be either given their closest
-          equivalents.<note>TEI also allows for preserving the original codepoint even for PUA
+          the Unicode Private Use Area, these should be given their closest Unicode
+          equivalents.<note>TEI supports preserving the original Private Use Area codepoints
           by using the <gi>g</gi> element, the use of which is further explained in the Section
           on <ref
           target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/WD.html">Characters,
           Glyphs, and Writing Modes</ref> of the TEI Guidelines. However, such characters will
           rarely if ever be used in PPCs, so the current Parla-CLARIN proposal does not include
-          the gaiji module which allows these elements - if they are needed, then the
+          the gaiji module which allows the use of this element - if they are needed, then the
           Parla-CLARIN ODD needs to be changed.</note></p>
           
           <p>End-of-line hyphens can be removed, and the split words joined in order to
@@ -353,16 +353,18 @@
           special mention:
           
           <list>
-            <item>No-Break Space (U+00A0) prevents, with some applications, collapsing
-            consecutive white space characters into a single space. As Parla-CLARIN is not
-            interested in preserving the details of the layout, it is recommended that this
-            character is substituted by the normal space (U+0020). The same holds for other
-            variants of spaces (U+2000 - U+200A), which are, however, used much less
-            frequently.</item>
+            <item>No-Break Space (U+00A0) prevents, with some applications, an automatic
+            line break at its position and collapsing consecutive white space characters
+            into a single space. As Parla-CLARIN is not interested in preserving the
+            details of the layout, and the use of this character complicates (or breaks)
+            further processing esp. lingistic annotation, it is recommended that this
+            character is substituted by the normal space character (U+0020). The same
+            holds for other variants of spaces (U+2000 - U+200A), which are, however,
+            used much less frequently.</item>
             
             <item>Soft Hyphen (U+00AD) indicates that a word can be hyphenated at that
-            point. This character should be removed from the corpus, as they only complicate
-            further processing.</item>
+            point. Occurences of this character should be removed from the corpus,
+            because they only complicate or break further processing.</item>
           </list>
           </p>
           
