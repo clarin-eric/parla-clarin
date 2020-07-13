@@ -1,3 +1,9 @@
+val:
+	$s -xi -xsl:bin/pretty.xsl siParl.tei/SDT2-sample.xml | $j Schema/parla-clarin.rng
+	$s -xi -xsl:bin/pretty.xsl siParl.ana/siParl-ana-sample.xml | $j Schema/parla-clarin.rng
+	$s -xi -xsl:bin/pretty.xsl siParl.ana/SDT2-ana-sample.xml | $j Schema/parla-clarin.rng
+	$s -xi -xsl:bin/pretty.xsl siParl.tei/siParl-sample.xml | $j Schema/parla-clarin.rng
+
 all:	get sample conllu vert text meta
 meta:
 	rm -fr siParl.meta
