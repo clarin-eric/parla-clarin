@@ -495,7 +495,7 @@
           <val>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml</val>, while the corpus uses
           pointers to these definitions
           (e.g. <val>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml#Pd-nsg</val>), then,
-          with the appropriate definition of the prefix, we can use in the corpus much sorter
+          with the appropriate definition of the prefix, we can use in the corpus much shorter
           pointers such as <val>mte:Pd-nsg</val>, which are then, via a regular expression
           mapping in the prefix definition converted to the full URI.
           </p>
