@@ -1,0 +1,28 @@
+Speech-ID	Speaker-ID	Speaker-Name	Sex	Birth	Death	Type-slv	Type-eng	Role-slv	Role-eng	Party-Init	Party-slv	Party-eng	notes	gaps	names	segs	sents	words	tokens
+KPZONOJFSPD-Redna-021-1998-11-25.u1	KužnikRafael	Kužnik, Rafael	M	1958-01-01	-	predsedujoči	Chairperson	član parlamenta	MP	SNS	Slovenska nacionalna stranka	Slovenian National Party	0	1	9	2	9	250	274
+KPZONOJFSPD-Redna-021-1998-11-25.u2	KorunVladimir	Korun, Vladimir	M	-	-	redni govornik	Regular speaker	zunanji govornik	External speaker	-	-	-	0	0	2	1	6	158	185
+KPZONOJFSPD-Redna-021-1998-11-25.u3	KužnikRafael	Kužnik, Rafael	M	1958-01-01	-	predsedujoči	Chairperson	član parlamenta	MP	SNS	Slovenska nacionalna stranka	Slovenian National Party	1	0	2	2	4	13	17
+KPZONOJFSPD-Redna-021-1998-11-25.u4	IlcJože	Ilc, Jože	M	-	-	redni govornik	Regular speaker	zunanji govornik	External speaker	-	-	-	0	0	0	1	4	57	66
+KPZONOJFSPD-Redna-021-1998-11-25.u5	KužnikRafael	Kužnik, Rafael	M	1958-01-01	-	predsedujoči	Chairperson	član parlamenta	MP	SNS	Slovenska nacionalna stranka	Slovenian National Party	0	0	1	1	2	7	9
+KPZONOJFSPD-Redna-021-1998-11-25.u6	SchiffrerMarijan	Schiffrer, Marijan	M	1922-06-04	-	redni govornik	Regular speaker	član parlamenta	MP	SKD	Slovenski krščanski demokrati	Slovene Christian Democrats	0	0	0	1	5	44	52
+KPZONOJFSPD-Redna-021-1998-11-25.u7	KužnikRafael	Kužnik, Rafael	M	1958-01-01	-	predsedujoči	Chairperson	član parlamenta	MP	SNS	Slovenska nacionalna stranka	Slovenian National Party	0	0	1	1	2	4	6
+KPZONOJFSPD-Redna-021-1998-11-25.u8	KorunVladimir	Korun, Vladimir	M	-	-	redni govornik	Regular speaker	zunanji govornik	External speaker	-	-	-	0	0	0	1	11	137	159
+KPZONOJFSPD-Redna-021-1998-11-25.u9	KužnikRafael	Kužnik, Rafael	M	1958-01-01	-	predsedujoči	Chairperson	član parlamenta	MP	SNS	Slovenska nacionalna stranka	Slovenian National Party	4	0	5	11	19	212	246
+OZKGIP-Redna-025-1998-12-08.u1	PotočnikFranc	Potočnik, Franc	M	1955-08-23	2005-01-02	predsedujoči	Chairperson	član parlamenta	MP	SLS	Slovenska ljudska stranka	Slovenian People's Party	1	1	9	4	11	134	153
+OZKGIP-Redna-025-1998-12-08.u2	unknown-M	Neidentificiran govornik	M	-	-	redni govornik	Regular speaker	zunanji govornik	External speaker	-	-	-	6	10	38	16	88	1353	1547
+OZKGIP-Redna-025-1998-12-08.u3	PotočnikFranc	Potočnik, Franc	M	1955-08-23	2005-01-02	predsedujoči	Chairperson	član parlamenta	MP	SLS	Slovenska ljudska stranka	Slovenian People's Party	0	0	1	1	4	15	19
+OZKGIP-Redna-025-1998-12-08.u4	GaspariniMario	Gasparini, Mario	M	1935-08-23	-	redni govornik	Regular speaker	član parlamenta	MP	LDS	Liberalna demokracija Slovenije	Liberal Democracy of Slovenia	1	1	5	3	15	225	273
+OZKGIP-Redna-025-1998-12-08.u5	PotočnikFranc	Potočnik, Franc	M	1955-08-23	2005-01-02	predsedujoči	Chairperson	član parlamenta	MP	SLS	Slovenska ljudska stranka	Slovenian People's Party	0	0	1	1	3	6	9
+OZKGIP-Redna-025-1998-12-08.u6	BožičIvan	Božič, Ivan	M	1939-08-03	-	redni govornik	Regular speaker	član parlamenta	MP	SKD	Slovenski krščanski demokrati	Slovene Christian Democrats	0	0	5	1	4	98	118
+OZKGIP-Redna-025-1998-12-08.u7	PotočnikFranc	Potočnik, Franc	M	1955-08-23	2005-01-02	predsedujoči	Chairperson	član parlamenta	MP	SLS	Slovenska ljudska stranka	Slovenian People's Party	0	0	1	1	1	4	7
+OZKGIP-Redna-025-1998-12-08.u8	unknown-M	Neidentificiran govornik	M	-	-	redni govornik	Regular speaker	zunanji govornik	External speaker	-	-	-	0	0	5	1	3	63	80
+OZKGIP-Redna-025-1998-12-08.u9	PotočnikFranc	Potočnik, Franc	M	1955-08-23	2005-01-02	predsedujoči	Chairperson	član parlamenta	MP	SLS	Slovenska ljudska stranka	Slovenian People's Party	3	0	6	8	23	215	255
+OZKSIS-Redna-034-2000-05-18.u1	MežanJanez	Mežan, Janez	M	1952-11-22	-	predsedujoči	Chairperson	član parlamenta	MP	SDS	Socialdemokratska stranka Slovenije	Social Democratic Union of Slovenia	9	0	2	13	29	168	212
+OZKSIS-Redna-034-2000-05-18.u2	unknown-F	Neidentificirana govornica	F	-	-	redni govornik	Regular speaker	zunanji govornik	External speaker	-	-	-	0	0	0	4	11	331	376
+OZKSIS-Redna-034-2000-05-18.u3	MežanJanez	Mežan, Janez	M	1952-11-22	-	predsedujoči	Chairperson	član parlamenta	MP	SDS	Socialdemokratska stranka Slovenije	Social Democratic Union of Slovenia	0	0	0	1	5	36	43
+OZKSIS-Redna-034-2000-05-18.u4	unknown-F	Neidentificirana govornica	F	-	-	redni govornik	Regular speaker	zunanji govornik	External speaker	-	-	-	0	0	0	6	16	349	395
+OZKSIS-Redna-034-2000-05-18.u5	MežanJanez	Mežan, Janez	M	1952-11-22	-	predsedujoči	Chairperson	član parlamenta	MP	SDS	Socialdemokratska stranka Slovenije	Social Democratic Union of Slovenia	0	0	1	1	7	115	136
+OZKSIS-Redna-034-2000-05-18.u6	TaštanoskaAlenka	Taštanoska, Alenka	F	-	-	redni govornik	Regular speaker	zunanji govornik	External speaker	-	-	-	0	0	0	1	1	30	35
+OZKSIS-Redna-034-2000-05-18.u7	MežanJanez	Mežan, Janez	M	1952-11-22	-	predsedujoči	Chairperson	član parlamenta	MP	SDS	Socialdemokratska stranka Slovenije	Social Democratic Union of Slovenia	0	0	1	1	3	39	49
+OZKSIS-Redna-034-2000-05-18.u8	MogeRudolf	Moge, Rudolf	M	1944-03-20	-	redni govornik	Regular speaker	član parlamenta	MP	LDS	Liberalna demokracija Slovenije	Liberal Democracy of Slovenia	0	0	1	1	4	163	192
+OZKSIS-Redna-034-2000-05-18.u9	MežanJanez	Mežan, Janez	M	1952-11-22	-	predsedujoči	Chairperson	član parlamenta	MP	SDS	Socialdemokratska stranka Slovenije	Social Democratic Union of Slovenia	0	0	1	1	5	59	71

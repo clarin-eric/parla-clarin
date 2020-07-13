@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="OZKGIP-Redna-025-1998-12-08"
+     xml:lang="sl"
+     ana="#parl.sitting">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="main" xml:lang="sl">Dobesedni zapis seje delovnih teles Državnega zbora Republike Slovenije [siParl]</title>
+            <title type="main" xml:lang="en">Verbatim record of the session of the working bodies of the National Assembly of the Republic of Slovenia [siParl]</title>
+            <title type="sub" xml:lang="sl">Odbor za kmetijstvo gozdarstvo in prehrano: 25. redna seja (8. 12. 1998)</title>
+            <meeting n="25" corresp="#OZKGIP" ana="#parl.meeting.regular">Redna</meeting>
+            <meeting n="2" corresp="#DZ" ana="#parl.term #DZ.2">2. mandat</meeting>
+            <respStmt>
+               <persName>Andrej Pančur</persName>
+               <resp xml:lang="sl">Kodiranje TEI</resp>
+               <resp xml:lang="en">TEI corpus encoding</resp>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:lang="sl">Inštitut za novejšo zgodovino</orgName>
+               <orgName xml:lang="en">Institute of Contemporary History</orgName>
+               <ref target="http://www.inz.si/">http://www.inz.si/</ref>
+               <email>inz@inz.si</email>
+            </publisher>
+            <distributor>DARIAH-SI</distributor>
+            <distributor>CLARIN.SI</distributor>
+            <pubPlace>http://hdl.handle.net/11356/1300</pubPlace>
+            <availability status="free">
+               <licence>http://creativecommons.org/licenses/by/4.0/</licence>
+               <p xml:lang="en">This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International License</ref>.</p>
+               <p xml:lang="sl">To delo je ponujeno pod <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Priznanje avtorstva 4.0 mednarodna licenca</ref>.</p>
+            </availability>
+            <date when="2020-04-08+02:00">8. 4. 2020</date>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <title>Odbor za kmetijstvo gozdarstvo in prehrano: 25. redna seja (8. 12. 1998)</title>
+               <edition xml:lang="sl">Nepreverjen zapis seje</edition>
+               <edition xml:lang="en">Unverified session record</edition>
+               <date when="1998-12-08"/>
+               <idno type="URI">https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/evidenca?mandat=II&amp;type=magdt&amp;uid=4CA2CC2814045A01C12566D5002C55F8</idno>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <tagsDecl>
+            <namespace name="http://www.tei-c.org/ns/1.0">
+               <tagUsage gi="text" occurs="1"/>
+               <tagUsage gi="front" occurs="1"/>
+               <tagUsage gi="div" occurs="2"/>
+               <tagUsage gi="head" occurs="2"/>
+               <tagUsage gi="note" occurs="23"/>
+               <tagUsage gi="body" occurs="1"/>
+               <tagUsage gi="u" occurs="9"/>
+               <tagUsage gi="seg" occurs="36"/>
+               <tagUsage gi="gap" occurs="12"/>
+            </namespace>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <abstract>
+            <list type="agenda">
+               <item xml:id="OZKGIP-Redna-025-1998-12-08.toc-item0">
+                  <title>Pred dnevnim redom</title>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg1"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg2"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg3"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg4"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg5"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg6"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg7"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg8"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg9"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg10"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg11"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg12"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg13"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg14"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg15"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg16"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg17"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg18"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg19"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg20"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg21"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg22"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg23"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg24"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg25"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg26"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg27"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg28"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg29"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg30"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg31"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg32"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg33"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg34"/>
+               </item>
+               <item xml:id="OZKGIP-Redna-025-1998-12-08.toc-item1">
+                  <title>TOČKA RAZNO.</title>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg35"/>
+                  <ptr target="#OZKGIP-Redna-025-1998-12-08.seg36"/>
+               </item>
+            </list>
+         </abstract>
+         <settingDesc>
+            <setting>
+               <name type="city">Ljubljana</name>
+               <name type="country" key="SI">Slovenija</name>
+               <date when="1998-12-08" ana="#parl.sitting">8. 12. 1998</date>
+            </setting>
+         </settingDesc>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="preface">
+            <head>ODBOR DRŽAVNEGA ZBORA REPUBLIKE SLOVENIJE ZA KMETIJSTVO, GOZDARSTVO IN PREHRANO</head>
+            <head type="session">25. seja</head>
+            <note type="chairman">Sejo je vodil Franc Potočnik, predsednik odbora.</note>
+         </div>
+      </front>
+      <body>
+         <div>
+            <note type="time">Seja se je pričela ob 18.14 uri.</note>
+            <note type="speaker">PREDSEDNIK FRANC POTOČNIK:</note>
+            <u who="#PotočnikFranc"
+               xml:id="OZKGIP-Redna-025-1998-12-08.u1"
+               ana="#chair">
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg1">
+                  <gap reason="inaudible"/> državnega zbora Republike Slovenije za kmetijstvo, gozdarstvo in prehrano. Na naši sredi posebej pozdravljam državnega sekretarja gospoda Mohoriča</seg>
+               <note>?</note>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg2">. Dnevni red, predlog dnevnega reda je: dopolnitev delne pobude za pogajanje sklenitev mednarodne pogodbe o članstvu evropske unije za področje delovne skupine osem, to je ribištvo in pa točka razno. Še preden preidemo na razpravo o dnevnem redu naj povem, da sta se za današnjo sejo upravičila gospod Jerovšek in gospod Čebulj. Da pa je po pooblastilu vodje poslanske skupine namesto Andreja Fabjana na seji prisoten gospod Štefan Klinc. Želi kdo o dnevnem redu razpravljati? V kolikor ne ga dajem na glasovanje.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg3">Kdo je za?</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg4">Soglasno je dnevni red sprejet. Uvodno besedo dajem gospodu Mohoriču, državnemu sekretarju na ministrstvu za kmetijstvo, gozdarstvo in prehrano, ki je tudi odgovoren za področje, med drugim tudi za področje ribištva.</seg>
+            </u>
+            <note type="speaker">GOSPOD MOHORIČ:</note>
+            <u who="#unknown-M"
+               xml:id="OZKGIP-Redna-025-1998-12-08.u2"
+               ana="#regular">
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg5">Hvala gospod predsednik. Na kratko bi želel predstaviti pogajalska izhodišča Republike Slovenije za področje številka 8, to je ribištvo.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg6">Slovensko ribištvo, ki zajema tako ribolov na teritorialnem morju, ribolov na odprtem morju, mari kulturo, gojenje školjk in gojenje rib. Potem je predelava, trženje, toplovodno in hladnovodno ribogojstvo v sladkih vodah in pa zelo razvito športno ribogojstvo po obsegu dejavnosti ni veliko vendar imamo to vašo obvezo, da moramo sprejeti enotno evropsko zakonodajo. Celotno evropsko ureditev, kljub razmeroma majhnemu obsegu dejavnosti.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg7">Evropa je razdelila po evropskih razdelitvah je to področje razdelila na štiri poglavja z vidika zakonodaje in z vidika upravnih aktov. In sicer prvo poglavje je upravljanje, izviri in nadzor. Drugo poglavje je skupna tržna ureditev. Tretje poglavje so strukturni ukrepi državne pomoči in pa mednarodni sporazumi. Ugotovili smo, da je naš pravni red delno usklajen z pravnim redom evropske unije vendar bo za učinkovito prilagoditev slovenske zakonodaje potrebno prilagoditi naše zakone in podzakonske akte, zaradi tega ni bilo smiselno, da bi hiteli s spremembo zakona o morskem ribištvu, bo pa ena izmed prioritetnih nalog, ki je pred nami, tako da bi tekom drugega leta pripravili strategijo na področju morskega ribištva in pa novelo verjetno zakona o morskem ribištvu. Potem je pred nami tudi zakonodaja iz področja sladkovodnega ribištva, zakon o sladkovodnem ribištvu in podzakonski akti.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg8">Poleg tega bo potrebno postaviti vse inštitucije, ki bodo zagotavljale izvajanje te zakonodaje, kakor tudi zagotoviti ustrezna finančna sredstva in pa kadre. Ocenjujemo, da sprejem pravnega reda za Slovenijo ne bo prinesel pomembnejših posledic. Slovenija na tem področju ne zahteva prehodnega obdobja ali posebnih izjem. Na področju upravljanja z viri in nadzor, to je nadzor nad ribolovnimi fondi in nadzor nad možnostmi ribolova, ki se je v okviru evropske unije izvaja z tako imenovanimi kvotami, ki praktično regulirajo poseganje v fonde rib, jate rib, in posamezne vrste. Kot veste imamo te kvote ima Unija z direktivo opredeljene kvote za severno morje, za Atlantik, Biskajski zaliv, Baltiški, Baltik in Bortniški zaliv in delno tudi za sredozemlje. Na področju Jadrana teh kvot ni, razen za tuno, ki je bila sprejeta tekom letošnjega leta. Direktiva z uredbami z kvotami za tuno. V slovenski zakonodaji v našem morju imamo urejen pristop do virov in varstvo virov z našo zakonodajo. Sicer z uporabo selektivnih ribolovnih sredstev. To so mreže z določeno velikostjo od 6, da se ne lovi premajhne ribe. Zaradi tega, da se omogoča razvoj in ohranitev vrst. Poleg tega je tudi prepoved ribolova v tistih obdobjih, ko se v morju vrši biološka reprodukcija vrst.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg9">Zakonodaja, ki to pokriva je sedaj veljavni zakon o morskem ribištvu. Potrebne statistične podatke pridobivamo iz naslova oziroma v okviru zakona o statistiki. Strokovno delo na morju pa vrši biološka postaja, ki spremlja stanje rib v morju. Nadzor nad zakonodajno razvoja izvaja ribiška inšpekcija, policija in luška kapatanija. Z vidika predpisov področja varovanja virov in uporabljanje ribolovnih sredstev je v Sloveniji restrektivnejši režim, kot je v Evropski uniji. Na bilateralnem in multilateralnem screeningu smo zadevo izpostavili in smo dobili odgovor, da bo tak režim dovoljen tudi po pristopu Slovenije k Evropski uniji. Naše morje je majho in zelo občutljivo. Zaradi tega je potrebno, da to kvaliteto čuvamo.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg10">Zaradi racionalizacije nalog iz vidika izvajanja zakonodaje na področju morju, je v pripravi organizacija medresorskega nadzornega centra. Center, to je podobno kot imajo rešitev v praksi na zahodni obali lokanalov, kjer je promet najgostejši. Gre za to, da se vse te institucije, ki delujejo na morju povežejo in da delujejo povezano. S tem se doseže večja učinkovitost pri reševanju na morju, pri nadzoru nad plovbo in plovnimi sredstvi. Pri reševanju v primeru izlivov raznih olj in podobnih zadev. Nadzor nad uporabo zakonodaje in zasnova varstva virov in uporabe predpisanih sredstev. Zaradi majhnosti oziroma do sedaj Slovenija ni vodila registra ribiških ladij v takem obsegu, kot ga predvideva Evropa. Mi smo imeli samo vpisnik ladij, ki pa ne zajema vseh podatkov, kot jih zahteva register. To področje bomo uredili z sprejemom pomorskega zakonika, ki je v stvarni pristojnosti oziroma v pristojnosti ministrstva za promet in zveze. Tako, da bomo zadevo pokrili, potem je potrebno imenovati tudi institucijo oziroma vlado z sklepom določi institucijo, ki bo izvajala tehnične preglede plovil z plovnega vidika in ribolovnega vidika. Ministrstvo za kmetijstvo in gozdarstvo je že pripravilo v vladi predlog sklepa, da se za te naloge imenuje slovenski Loid, ki je podružnica <gap reason="inaudible"/>
+               </seg>
+               <note>Ni razumljivo.</note>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg11">
+                  <gap reason="inaudible"/> In ima homonologirana pravila za Evropsko unijo. Cenovna politika, ki se vodi v slovenskem ribištvu ni popolnoma enaka, kot je v Evropski uniji. Mi imamo nekoliko drugačen pristop, kar je razumljivo. Vendar delamo v smeri poenotenja teh programov. Evropska unija pozna ukrepe <gap reason="inaudible"/>
+               </seg>
+               <note>Ni razumljivo.</note>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg12">
+                  <gap reason="inaudible"/> Začasnega skladiščenja presežkov tržnih. Tako, da bomo potem v okviru institucije, ki jo bomo ustanavljali oziroma jo bomo ustanovili. To je agencija za kmetijske trge. Potem bi lahko izvajali potrebne ukrepe na tem področju, skupne tržne ureditve. Cel proces bi pa potekal preko izvajanja oziroma sprejete reforme kmetijske politike, s spremembami in dopolnitvami zakona o spremembah in dopolnitvah pravilnikov kakvosti rib, rakov, školj in morskih alg, želv, polžev. Ta pravilnik je že v veljavi in lahko zadevo operacionaliziramo na osnovi spremembe tega pravilnika in zakon o morskem ribištvu in na njegovi podlagi izdani predpisi.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg13">Potem so strokovni ukrepi in ukrepi državne pomoči. Mi v okviru proračuna že izvajamo določene strukturne ukrepe, ki so po vsebini primerljivi z strukturno politiko na področju Evropske unije s tem, da podpiramo razvoj male kulture, razvoj sladkovodnega ribogojstva, predvsem za <gap reason="inaudible"/>
+               </seg>
+               <note>Ni razumljivo.</note>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg14">
+                  <gap reason="inaudible"/> Ribnike smo letos razpisali sredstva. Tako, da ti projekti tečejo. Imamo tudi nastavljene projekte socialne pomoči ribičem, ki so delno primerljivi z ukrepi Evropske unije. Kajti ta Evropska unija pomaga v primeru, ko bistveno višji doseženi starosti pred <gap reason="inaudible"/>
+               </seg>
+               <note>Ni razumljivo.</note>
+               <gap reason="inaudible"/>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg15">Delno so naši ukrepi primerljivi. Nekateri pa še niso in jih bo potrebno uskladiti. Na tem področju sem že enkrat omenil, <gap reason="inaudible"/>
+               </seg>
+               <note>Ni razumljivo.</note>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg16">
+                  <gap reason="inaudible"/> Situacija strategije razvoja ribištva in ribogojstva in strukturni sektorski plan. To je operativni plan, ki ga bodo morale pripravite upravne in strokovne institucije in bo predložen komisiji svetu Evrope, ustrezni komisiji. V tem obsegu, ko ga potrdi bodo tudi zagotovljena sredstva za strukturne ukrepe. Kajti pri vseh teh ukrepih, ki se vodijo so pripravljeni določeni razdeliniki s strani Evropske unije. V nekaterih primerih plača Evropska unija 50%, potem mora prispevati država skozi proračun. Tam so od 30, 20 do 40% in lastniki. Ker še ni interesa lastnikov oziroma organizacije, ki predstavlja in združenje proizvajalcev, zainteresirane ribiče ali tovarnarjev, ladjarje. Potem tudi Evropa ne prispeva. Najprej mora biti brez proizvajalca izkaza, potem država podpira projekt in podpira ga tudi Evropska unija.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg17">Ukrepi na področju strukturnih oziroma to področje bi izvajala agencija za razvoj podeželja kot organ v sestavi ministrstva. Kajti vedno mora Evropa imeti določeno inštitucijo v državi članici, na katero se obrača in preko katere transakcije potekajo. Predvidevamo, da bo za potrebe ribištva agencija do konca leta 2002 kadrovsko usposobljena. Predvidevamo tudi, da bomo delno že koristili sredstva tretje</seg>
+               <note>?-nerazločno</note>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg18">stopnje pomoči PHARE v okviru tudi kmetijskih sredstev.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg19">Mednarodni sporazumi. Mi imamo podpisan en mednarodni sporazum z Republiko Hrvaško, vendar se tega sporazuma ne izvaja. V glavnem ribiči posredujejo informacije, da ga je praktično nemogoče izvajati. Da je sicer na vladni ravni, na meddržavni ravni zadeva podpisana, na operativni ravni pa je zadeva zelo težko izvedljiva. Vendar Slovenija kljub temu insistira na tem sporazumu. Poskušali se bomo dogovoriti, da bi ga operacionalizirali, kajti tudi tu bi bila možnost za nekaj ribičev, da bi lahko lovili v obalnem morju do Umaga, kjer bi lovili predvsem - oziroma ta sporazum je zajemal predvsem 1.500 ton plave ribe, kjer je država izplačala 20% od vrednosti. Tako, da bi se nekako tudi s strani države s proračunskimi sredstvi podprlo izvajanje tega sporazuma. Do sedaj se ta sporazum ni izvajal. Poskušali se bomo dogovoriti, da bi se v bodoče sporazum izvajal. To je zelo pomembno zaradi tega, ker po pristopu v Evropsko unijo, ko bomo polnopravna članica, Evropa prevzame obveznosti, ki jih imamo v tem trenutku mi do Republike Hrvaške, tako da dejansko se nam ta strošek zniža. Koliko bomo dosegli pripravljenosti, da bo zadeva operativna, to je pač stvar lokalnih oblasti in dogovora med ribiči.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg20">Gospod predsednik, zaenkrat bi bila moja informacija v tem obsegu, če bodo vprašanja, bom pa poskušal odgovoriti.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK FRANC POTOČNIK:</note>
+            <u who="#PotočnikFranc"
+               xml:id="OZKGIP-Redna-025-1998-12-08.u3"
+               ana="#chair">
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg21">Hvala lepa za uvodno predstavitev problematike. Zdaj pa odpiram razpravo. Želi kdo razpravljati? Gospod Gasparini.</seg>
+            </u>
+            <note type="speaker">MARIO GASPARINI:</note>
+            <u who="#GaspariniMario"
+               xml:id="OZKGIP-Redna-025-1998-12-08.u4"
+               ana="#regular">
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg22">Čisto na kratko. Na tistem našem večjem igrišču za golf, ki se imenuje slovensko morje - jasno, tu moramo zakonodajo, kot tisti, ki imajo <gap reason="inaudible"/>
+               </seg>
+               <note>nerazločno!</note>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg23">. Tukaj je največji problem, po mojem mnenju. No, mi imamo stari zakon o ribištvu, ki je še iz SFRJ, tam notri imamo vse to. In imamo tudi predlog zakona, ki so ga stari poslanci dali, tako da bo neka ovira, jaz vidim, tukaj za sprejem novega zakona, ker bomo morali tistega - se ukvarjati samo s koncesijami in s statusom ribičev. Tako, da bi bilo treba to urediti. Mislim, da je to glavni problem pri sprejemu tega zakona. In, seveda, pomorski zakonik nam bo delal probleme, ker je v proceduri, samo tam so te bruto registrske tone in tako naprej.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg24">Ampak hotel sem dodati še nekaj drugega. S Hrvaško imamo sporazum, samo se ga ne izvaja zaradi povsem tehničnih zadev in tako naprej. Bi pa zelo pomagalo, če bi mi sporazum s Hrvaško sprejeli, ta maloobmejni sporazum, ki smo ga imeli na 10. seji, pa na 12., pa na 13., pa na izredni, pa ne vem kam, torej tu ne vidim ne konca ne kraja, kdaj bo to, ampak s tem imajo pravico loviti ribe vse do Rovinja, ne samo do Umaga. Torej samo s tem majhnim sprejem tega sporazuma bi že marsikaj pomagalo dol ribičem. O statusu, da ne govorim. Hvala lepa.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK FRANC POTOČNIK:</note>
+            <u who="#PotočnikFranc"
+               xml:id="OZKGIP-Redna-025-1998-12-08.u5"
+               ana="#chair">
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg25">Hvala. Še želi kdo? Gospod Božič.</seg>
+            </u>
+            <note type="speaker">IVAN BOŽIČ:</note>
+            <u who="#BožičIvan"
+               xml:id="OZKGIP-Redna-025-1998-12-08.u6"
+               ana="#regular">
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg26">Samo majhno vprašanje, ker nisem ribič, ampak ponavadi se, kadar se kakšna reč sprejme, potem maščuje, ker je, vsaj tu na strani 3, mednarodni sporazumi, nič ne piše, da se to ne izvaja. Nam omogoča letni ulov 1.500 ton male plave ribe in da bomo kljub pristopu k Evropski uniji in brez škode za izvajanje "Aqija", še ohranili to pogodbo. Da se nam ne bo zgodilo tako kot Italijanom, ki so podpisali z Evropsko unijo, koliko mleka bodo imeli v kmetijstvu, potem so ga imeli pa 10 milijonov preveč, pa jim ga je Evropska unija zaračunala. Samo pripomba.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK FRANC POTOČNIK:</note>
+            <u who="#PotočnikFranc"
+               xml:id="OZKGIP-Redna-025-1998-12-08.u7"
+               ana="#chair">
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg27">Ja, prosim, gospod Ilič.</seg>
+            </u>
+            <note type="speaker">GOSPOD ILIČ:</note>
+            <u who="#unknown-M"
+               xml:id="OZKGIP-Redna-025-1998-12-08.u8"
+               ana="#regular">
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg28">Čisto kratko. To je tisti problem, si v hrvaškem morju, uloviš, ne vem, 10 ton sardel, moraš iti jih stehtati, potem sem pa tja, rabiš en dan, da to urediš in zato se izogibajo temu, čisto enostavno, ampak Slovenija ima sporazum s Hrvaško, da lahko ulovi. Zdaj, jaz tudi, če bi bil na morju, ne bi šel v Umag ali pa v Rovinj.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK FRANC POTOČNIK:</note>
+            <u who="#PotočnikFranc"
+               xml:id="OZKGIP-Redna-025-1998-12-08.u9"
+               ana="#chair">
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg29">Dobro. Še želi kdo?</seg>
+               <note>Ne.</note>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg30">Jaz imam, pripravili smo dva predloga sklepov. Mi smo namreč zainteresirano delovno telo, matično delovno telo je odbor za mednarodne odnose in sicer prvi sklep bi bil takšen, predlog sklepa. Odbor za kmetijstvo, gozdarstvo in prehrano podpira dopolnitev delne pobude za pogajanje in sklenitev mednarodne pogodbe o članstvu v Evropski uniji za področje 8, to je ribištvo. To je načelni sklep.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg31">Drugi pa. Odbor predlaga odboru državnega zbora za mednarodne odnose, da predlaga vladi Republike Slovenije, da v nadaljnjem procesu pogajanj vključi pričakovanje Slovenije po tehnični pomoči Evropske unije za informacijsko in izvedbeno uskladitev z merili EU na področju ribištva. Državni sekretar se strinja s takšnim predlogom sklepa. Ima kdo kaj za dopolniti? Dobro. Ampak glede na to, da se tukaj okrog zelo malo ljudi z ribištvom ukvarja, on pa je tudi po strokovni plati nekje v vladi oziroma v ministrstvu zadolžen za ribištvo, je pač prav, da pove svoje mnenje o predlogih sklepov. Torej, če nima kdo kakšnih pripomb na takšna dva sklepa, ju dajem na glasovanje.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg32">Kdo je za?</seg>
+               <note>12 članov.</note>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg33">Je kdo proti?</seg>
+               <note>Nihče.</note>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg34">(Medsebojni pogovor)</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg35">Tretjega nismo. V redu. Torej, 1. točko smo s tem glasovanjem zaključili. TOČKA RAZNO.</seg>
+               <seg xml:id="OZKGIP-Redna-025-1998-12-08.seg36">Ima kdo kaj? V kolikor ne, tudi to točko zaključujem, in s tem zaključujem tudi 25. sejo. Hvala lepa za sodelovanje!</seg>
+            </u>
+            <note type="time">Seja je bila končana ob 18.33 uri.</note>
+         </div>
+      </body>
+   </text>
+</TEI>

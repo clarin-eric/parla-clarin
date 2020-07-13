@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="KPZONOJFSPD-Redna-021-1998-11-25"
+     xml:lang="sl"
+     ana="#parl.sitting">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="main" xml:lang="sl">Dobesedni zapis seje delovnih teles Državnega zbora Republike Slovenije [siParl]</title>
+            <title type="main" xml:lang="en">Verbatim record of the session of the working bodies of the National Assembly of the Republic of Slovenia [siParl]</title>
+            <title type="sub" xml:lang="sl">Komisija po zakonu o nezdružljivosti opravljanja javne funkcije s pridobitno dejavnostjo: 21. redna seja (25. 11. 1998)</title>
+            <meeting n="21" corresp="#KPZONOJFSPD" ana="#parl.meeting.regular">Redna</meeting>
+            <meeting n="2" corresp="#DZ" ana="#parl.term #DZ.2">2. mandat</meeting>
+            <respStmt>
+               <persName>Andrej Pančur</persName>
+               <resp xml:lang="sl">Kodiranje TEI</resp>
+               <resp xml:lang="en">TEI corpus encoding</resp>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:lang="sl">Inštitut za novejšo zgodovino</orgName>
+               <orgName xml:lang="en">Institute of Contemporary History</orgName>
+               <ref target="http://www.inz.si/">http://www.inz.si/</ref>
+               <email>inz@inz.si</email>
+            </publisher>
+            <distributor>DARIAH-SI</distributor>
+            <distributor>CLARIN.SI</distributor>
+            <pubPlace>http://hdl.handle.net/11356/1300</pubPlace>
+            <availability status="free">
+               <licence>http://creativecommons.org/licenses/by/4.0/</licence>
+               <p xml:lang="en">This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International License</ref>.</p>
+               <p xml:lang="sl">To delo je ponujeno pod <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Priznanje avtorstva 4.0 mednarodna licenca</ref>.</p>
+            </availability>
+            <date when="2020-04-08+02:00">8. 4. 2020</date>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <title>Komisija po zakonu o nezdružljivosti opravljanja javne funkcije s pridobitno dejavnostjo: 21. redna seja (25. 11. 1998)</title>
+               <edition xml:lang="sl">Nepreverjen zapis seje</edition>
+               <edition xml:lang="en">Unverified session record</edition>
+               <date when="1998-11-25"/>
+               <idno type="URI">https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/evidenca?mandat=II&amp;type=magdt&amp;uid=EE4DFD2D282DF15CC12566C70035CC3A</idno>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <tagsDecl>
+            <namespace name="http://www.tei-c.org/ns/1.0">
+               <tagUsage gi="text" occurs="1"/>
+               <tagUsage gi="front" occurs="1"/>
+               <tagUsage gi="div" occurs="2"/>
+               <tagUsage gi="head" occurs="2"/>
+               <tagUsage gi="note" occurs="17"/>
+               <tagUsage gi="body" occurs="1"/>
+               <tagUsage gi="u" occurs="9"/>
+               <tagUsage gi="seg" occurs="21"/>
+               <tagUsage gi="gap" occurs="1"/>
+            </namespace>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <abstract>
+            <list type="agenda">
+               <item xml:id="KPZONOJFSPD-Redna-021-1998-11-25.toc-item0">
+                  <title>Pred dnevnim redom</title>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg1"/>
+               </item>
+               <item xml:id="KPZONOJFSPD-Redna-021-1998-11-25.toc-item1">
+                  <title>1. TOČKA DNEVNEGA REDA - OBRAVNAVA SKLEPA DRŽAVNEGA ZBORA REPUBLIKE SLOVENIJE ŠT. 412.01/93-9/12, EPA 619-II Z DNE 13.11.1998 O PREDLOGU ODLOKA O IMENOVANJU PREDSEDNIKA IN DVEH ČLANOV UPRAVNEGA ODBORA SKLADA ZA FINANCIRANJE RAZGRADNJE NUKLEARNE ELEKTRARNE KRŠKO IN ODLAGANJA RADIOAKTIVNIH ODPADKOV IZ NUKLEARNE ELEKTRARNE KRŠKO.</title>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg2"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg3"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg4"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg5"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg6"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg7"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg8"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg9"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg10"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg11"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg12"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg13"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg14"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg15"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg16"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg17"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg18"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg19"/>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg20"/>
+               </item>
+               <item xml:id="KPZONOJFSPD-Redna-021-1998-11-25.toc-item2">
+                  <title>2. TOČKA DNEVNEGA REDA - RAZNO.</title>
+                  <ptr target="#KPZONOJFSPD-Redna-021-1998-11-25.seg21"/>
+               </item>
+            </list>
+         </abstract>
+         <settingDesc>
+            <setting>
+               <name type="city">Ljubljana</name>
+               <name type="country" key="SI">Slovenija</name>
+               <date when="1998-11-25" ana="#parl.sitting">25. 11. 1998</date>
+            </setting>
+         </settingDesc>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="preface">
+            <head>KOMISIJA DRŽAVNEGA ZBORA REPUBLIKE SLOVENIJE PO ZAKONU O NEZDRUŽLJIVOSTI OPRAVLJANJA JAVNE FUNKCIJE S PRIDOBITNO DEJAVNOSTJO</head>
+            <head type="session">21. SEJA</head>
+            <note type="chairman">Sejo je vodil Rafael Kužnik, predsednik komisije.</note>
+         </div>
+      </front>
+      <body>
+         <div>
+            <note type="time">Seja se je pričela ob 9.30 uri.</note>
+            <note type="speaker">PREDSEDNIK RAFAEL KUŽNIK:</note>
+            <u who="#KužnikRafael"
+               xml:id="KPZONOJFSPD-Redna-021-1998-11-25.u1"
+               ana="#chair">
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg1">
+                  <gap reason="inaudible"/> in potem še točko razno. Ali ima kdo kakšno pripombo k dnevnemu redu? Če nima, bi prosil, da bi šli kar na obravnavo 1. točke.</seg>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg2">Prehajamo na 1. TOČKO DNEVNEGA REDA - OBRAVNAVA SKLEPA DRŽAVNEGA ZBORA REPUBLIKE SLOVENIJE ŠT. 412.01/93-9/12, EPA 619-II Z DNE 13.11.1998 O PREDLOGU ODLOKA O IMENOVANJU PREDSEDNIKA IN DVEH ČLANOV UPRAVNEGA ODBORA SKLADA ZA FINANCIRANJE RAZGRADNJE NUKLEARNE ELEKTRARNE KRŠKO IN ODLAGANJA RADIOAKTIVNIH ODPADKOV IZ NUKLEARNE ELEKTRARNE KRŠKO. Predsednik državnega zbora se je pač obrnil na našo komisijo s sklepom, ki je bil sprejet na državnem zboru Republike Slovenije ob obravnavi predloga odloka o imenovanju predsednika in dveh članov upravnega odbora sklada za financiranje razgradnje Nuklearne elektrarne Krško in odlaganje radioaktivnih odpadkov iz Nuklearne elektrarne Krško na 10. seji dne 12.11.1998 na podlagi 123. člena poslovnika državnega zbora in sprejel naslednji sklep. Državni zbor pred odločanjem o predlogu odloka o imenovanju predsednika in dveh članov upravnega odbora sklada za financiranje razgradnje Nuklearne elektrarne Krško in odlaganja radioaktivnih odpadkov iz Nuklearne elektrarne Krško pridobi mnenje komisije po zakonu o nezdružljivosti opravljanja javne funkcije s pridobitno dejavnostjo. Zdaj, naša komisija naj bi se odločila o tem, ali je opravljanje funkcije v tem skladu nezdružljiva z opravljanjem funkcije poslanca v državnem zboru in bi prosil člane komisije, da glede na mnenje, ki so ga dobili s strani sekretariata pač podajo svoje mnenje in potem sprejmemo sklep, s katerim bi obvestili državni zbor o tem, kaj menimo. Ali ima kdo od članov komisije mogoče, želi besedo mogoče? Ja, gospod Rozman, izvolite.</seg>
+            </u>
+            <note type="speaker">DR. VLADIMIR KORUN:</note>
+            <u who="#KorunVladimir"
+               xml:id="KPZONOJFSPD-Redna-021-1998-11-25.u2"
+               ana="#regular">
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg3">Hvala za besedo. No, glede na kratkost časa, v katerem smo se lahko seznanili s tole korespondenco oziroma tudi mnenjem sekretariata, v katerem na koncu v zadnjem stavku navezujoč se na določilo 12. člena zakona o poslancih, nekako sekretariat za pravne zadeve zaključuje, češ, da primerjava sklada in pa statusom gospodarskih družb ne bi bila združljiva. Menim, da to ne more biti, vsaj ne po vsebinski plati točno. Res, da sklad ni enako gospodarska družba, vendar, če vsebinsko gledamo, lahko sklad razpolaga z ogromnimi materialnimi sredstvi. Vplivanje je lahko tu enormno in podobno in posebno, če gre za poslanca, ki naj bi bil predsednik ali pa član tega nadzornega organa, je seveda lahko tudi seveda bistveno, tako da mislim, da v tem pogledu bi lahko v vsebinskem smislu, seveda ne čisto formalno, izenačili tisto, kar govori 12. člen zakona o poslancih v zvezi s sodelovanjem poslancev v teh organih gospodarskih družb, tudi v skladu s tistimi. Hvala lepa.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK RAFAEL KUŽNIK:</note>
+            <u who="#KužnikRafael"
+               xml:id="KPZONOJFSPD-Redna-021-1998-11-25.u3"
+               ana="#chair">
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg4">Hvala lepa. Ali ima še kdo od poslancev mogoče besedo? Gospod</seg>
+               <note>?</note>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg5">Ilc, izvolite.</seg>
+            </u>
+            <note type="speaker">JOŽE ILC:</note>
+            <u who="#IlcJože"
+               xml:id="KPZONOJFSPD-Redna-021-1998-11-25.u4"
+               ana="#regular">
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg6">Če je sklad in če se ne motim, v bistvu državni sklad, ga lahko razdružuje država, to se pravi parlament. Kako bo zdaj sklad samega sebe nadzoroval, če bo poslanec predsednik enega upravnega odbora, potem bo pa isti poslanec obravnaval na primer revizijsko poročilo o poslovanju sklada. To je malo vprašanje nadzora ali kontrole vprašljivo. Hvala lepa.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK RAFAEL KUŽNIK:</note>
+            <u who="#KužnikRafael"
+               xml:id="KPZONOJFSPD-Redna-021-1998-11-25.u5"
+               ana="#chair">
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg7">Ali želi še kdo besedo? Gospod Schiffrer.</seg>
+            </u>
+            <note type="speaker">MAG. MARIJAN SCHIFFRER:</note>
+            <u who="#SchiffrerMarijan"
+               xml:id="KPZONOJFSPD-Redna-021-1998-11-25.u6"
+               ana="#regular">
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg8">V glavnem soglašam s predgovornikoma, ker je v bistvu res tako. Zlasti glede nadzora je ta stvar zelo kočljiva. Če sem predsednik sklada, hkrati pa poslanec in glasujem. Absolutno tega ne morem neodvisno in po svoji vesti izvajati. Mislim, da to oboje ni združljivo.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK RAFAEL KUŽNIK:</note>
+            <u who="#KužnikRafael"
+               xml:id="KPZONOJFSPD-Redna-021-1998-11-25.u7"
+               ana="#chair">
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg9">Hvala lepa. Gospod Korun.</seg>
+            </u>
+            <note type="speaker">DR. VLADIMIR KORUN:</note>
+            <u who="#KorunVladimir"
+               xml:id="KPZONOJFSPD-Redna-021-1998-11-25.u8"
+               ana="#regular">
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg10">Dovolite mi samo še dodatno. Vrtimo se kot mačke okoli vrele kaše vseskozi. Zaradi tega ker imamo upravne podlage kakršne imamo. Vendar vseeno bom rekel. Manevrski prostor nam v razmišljanju, da moramo od primera do primera, s tem se tudi z mnenjem sekretariata strinjam, presojati razmere in tu smo, da to zadevo presojamo. Res je, da nam ne daje izhodišča tu naš zakon. Vendar pravi, če je to nezdružljivost tu v tem zakonu, ker ne daje nobenega konkretiziranega odgovora. Nič ne našteva. Nič ni eksplicitnega, se moramo odločiti in pretehtati in presoditi vse posledice in vplivnosti kot je tudi gospod poslanec rekel in v tem primeru rekel in v tem primeru menim in ponovno podčrtujem, da v tem primeru bi bilo nedopustno, da se to dopusti. Res pa je, da bomo morali enkrat zadevo preseči. Hvala lepa.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK RAFAEL KUŽNIK:</note>
+            <u who="#KužnikRafael"
+               xml:id="KPZONOJFSPD-Redna-021-1998-11-25.u9"
+               ana="#chair">
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg11">Hvala. Še kdo? Ali ima mogoče kdo kakšen sklep?</seg>
+               <note>Ne.</note>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg12">Če ne, bi predlagal svojega. Sicer sem ga pripravil malo drugače kot ste predlagali vi, ampak ga bomo lahko priredili temu, če boste za to.</seg>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg13">Sklep naj bi se glasil: "Komisija po zakonu o nezdružljivosti upravljanja javne funkcije s pridobitno dejavnostjo je 25.11.1998 obravnavala sklep državnega zbora Republike Slovenije št. 412/01-93/9-12 EPA 619-II z dne 13.11.1998 o predlogu odloka o imenovanju predsednika in dveh članov upravnega odbora sklada za financiranje razgradnje nuklearne elektrarne Krško in odlaganje radioaktivnih odpadkov iz nuklearne elektrarne Krško. Po razpravi in na podlagi pridobljenega mnenja sekretariata za zakonodajo in pravne zadeve komisija ugotavlja, da funkcija poslanca v državnem zboru upoštevajoč določbe zakona o poslancih in zakona o nezdružljivosti upravljanja javne funkcije s pridobitno dejavnostjo je nezdružljiva s funkcijo organov sklada." Ker pa ste trije člani predlagali bomo napisali "je nezdružljiva s funkcijo organa sklada". Se strinjate s tem formuliranim sklepom?</seg>
+               <note>Da.</note>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg14">Potem bi ga dal na glasovanje.</seg>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg15">Kdo je za?</seg>
+               <note>4 člani.</note>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg16">Je kdo proti?</seg>
+               <note>Nihče.</note>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg17">Vzdržal sem se pa sam.</seg>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg18">Ugotavljam, da je bil sklep sprejet.</seg>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg19">Kot takega ga lahko posredujemo predsedniku državnega zbora.</seg>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg20">Potem bi to 1. točko zaključili.</seg>
+               <seg xml:id="KPZONOJFSPD-Redna-021-1998-11-25.seg21">Prehajamo na 2. TOČKO DNEVNEGA REDA - RAZNO. Ima mogoče kdo pod Razno kaj? Če ne, se vam zahvaljujem. Hvala lepa.</seg>
+            </u>
+            <note type="time">Seja je bila končana 25. novembra 1998 ob 9.47 uri.</note>
+         </div>
+      </body>
+   </text>
+</TEI>

@@ -1,0 +1,1782 @@
+# newdoc id = OZKSIS-Redna-034-2000-05-18
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg1
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg1.s1
+# text = Gospodje poslanci, spoštovani predstavniki vlade in ostali vabljeni.
+1	Gospodje	gospod	NOUN	Ncmpn	Case=Nom|Gender=Masc|Number=Plur	0	root	_	_
+2	poslanci	poslanec	NOUN	Ncmpn	Case=Nom|Gender=Masc|Number=Plur	1	nmod	_	SpaceAfter=No
+3	,	,	PUNCT	Z	_	5	punct	_	_
+4	spoštovani	spoštovan	ADJ	Appmpn	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur|VerbForm=Part	5	amod	_	_
+5	predstavniki	predstavnik	NOUN	Ncmpn	Case=Nom|Gender=Masc|Number=Plur	1	conj	_	_
+6	vlade	vlada	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	5	nmod	_	_
+7	in	in	CCONJ	Cc	_	9	cc	_	_
+8	ostali	ostal	ADJ	Appmpn	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur|VerbForm=Part	9	amod	_	_
+9	vabljeni	vabljen	ADJ	Appmpn	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur|VerbForm=Part	1	conj	_	SpaceAfter=No
+10	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg1.s2
+# text = Lepo pozdravljeni na 34. seji odbora državnega zbora Republike Slovenije za kulturo in šport.
+1	Lepo	lepo	ADV	Rgp	Degree=Pos	2	advmod	_	_
+2	pozdravljeni	pozdravljen	ADJ	Appmsny	Case=Nom|Degree=Pos|Gender=Masc|Number=Sing|VerbForm=Part	0	root	_	_
+3	na	na	ADP	Sl	Case=Loc	5	case	_	_
+4	34.	34.	NUM	Mdo	NumForm=Digit|NumType=Ord	5	nummod	_	_
+5	seji	seja	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	2	obl	_	_
+6	odbora	odbor	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	5	nmod	_	_
+7	državnega	državen	ADJ	Agpmsg	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	8	amod	_	_
+8	zbora	zbor	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	6	nmod	_	_
+9	Republike	republika	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	8	nmod	_	_
+10	Slovenije	Slovenija	PROPN	Npfsg	Case=Gen|Gender=Fem|Number=Sing	9	nmod	_	_
+11	za	za	ADP	Sa	Case=Acc	12	case	_	_
+12	kulturo	kultura	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	9	nmod	_	_
+13	in	in	CCONJ	Cc	_	14	cc	_	_
+14	šport	šport	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	12	conj	_	SpaceAfter=No
+15	.	.	PUNCT	Z	_	2	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg1.s3
+# text = Dnevni red ste dobili s sklicem.
+1	Dnevni	dneven	ADJ	Agpmsay	Case=Acc|Definite=Def|Degree=Pos|Gender=Masc|Number=Sing	2	amod	_	_
+2	red	red	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	4	obj	_	_
+3	ste	biti	AUX	Va-r2p-n	Mood=Ind|Number=Plur|Person=2|Polarity=Pos|Tense=Pres|VerbForm=Fin	4	aux	_	_
+4	dobili	dobiti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	0	root	_	_
+5	s	z	ADP	Si	Case=Ins	6	case	_	_
+6	sklicem	sklic	NOUN	Ncmsi	Case=Ins|Gender=Masc|Number=Sing	4	obl	_	SpaceAfter=No
+7	.	.	PUNCT	Z	_	4	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg1.s4
+# text = Sprašujem, če kdo želi dodati kaj k dnevnemu redu?
+1	Sprašujem	spraševati	VERB	Vmpr1s	Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+2	,	,	PUNCT	Z	_	5	punct	_	_
+3	če	če	SCONJ	Cs	_	5	mark	_	_
+4	kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	5	nsubj	_	_
+5	želi	želeti	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	1	ccomp	_	_
+6	dodati	dodati	VERB	Vmen	Aspect=Perf|VerbForm=Inf	5	xcomp	_	_
+7	kaj	kaj	PRON	Pq-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Int	6	obj	_	_
+8	k	k	ADP	Sd	Case=Dat	10	case	_	_
+9	dnevnemu	dneven	ADJ	Agpmsd	Case=Dat|Degree=Pos|Gender=Masc|Number=Sing	10	amod	_	_
+10	redu	red	NOUN	Ncmsd	Case=Dat|Gender=Masc|Number=Sing	6	obl	_	SpaceAfter=No
+11	?	?	PUNCT	Z	_	1	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg2
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg2.s1
+# text = Potem predlagam, da delamo po tem dnevnem redu.
+1	Potem	potem	ADV	Rgp	Degree=Pos	2	advmod	_	_
+2	predlagam	predlagati	VERB	Vmbr1s	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+3	,	,	PUNCT	Z	_	5	punct	_	_
+4	da	da	SCONJ	Cs	_	5	mark	_	_
+5	delamo	delati	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	2	ccomp	_	_
+6	po	po	ADP	Sl	Case=Loc	9	case	_	_
+7	tem	ta	DET	Pd-msl	Case=Loc|Gender=Masc|Number=Sing|PronType=Dem	9	det	_	_
+8	dnevnem	dneven	ADJ	Agpmsl	Case=Loc|Degree=Pos|Gender=Masc|Number=Sing	9	amod	_	_
+9	redu	red	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	5	obl	_	SpaceAfter=No
+10	.	.	PUNCT	Z	_	2	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg2.s2
+# text = 1. TOČKA - POTRDITEV ZAPISNIKOV 31., 32.
+1	1.	1.	NUM	Mdo	NumForm=Digit|NumType=Ord	2	nummod	_	_
+2	TOČKA	točka	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	4	nsubj	_	_
+3	-	-	PUNCT	Z	_	2	punct	_	_
+4	POTRDITEV	potrditev	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+5	ZAPISNIKOV	zapisnik	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	4	nmod	_	_
+6	31.	31.	NUM	Mdo	NumForm=Digit|NumType=Ord	5	nummod	_	SpaceAfter=No
+7	,	,	PUNCT	Z	_	8	punct	_	_
+8	32.	32.	NUM	Mdo	NumForm=Digit|NumType=Ord	6	conj	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg2.s3
+# text = IN 33.
+1	IN	in	CCONJ	Cc	_	0	root	_	_
+2	33.	33.	NUM	Mdo	NumForm=Digit|NumType=Ord	1	fixed	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg2.s4
+# text = SEJE ODBORA ZA KULTURO, ŠOLSTVO IN ŠPORT.
+1	SEJE	seja	NOUN	Ncfpn	Case=Nom|Gender=Fem|Number=Plur	0	root	_	_
+2	ODBORA	odbor	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	1	nmod	_	_
+3	ZA	za	ADP	Sa	Case=Acc	4	case	_	_
+4	KULTURO	kultura	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	2	nmod	_	SpaceAfter=No
+5	,	,	PUNCT	Z	_	6	punct	_	_
+6	ŠOLSTVO	šolstvo	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	4	conj	_	_
+7	IN	in	CCONJ	Cc	_	8	cc	_	_
+8	ŠPORT	šport	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	4	conj	_	SpaceAfter=No
+9	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg2.s5
+# text = 31. seja.
+1	31.	31.	NUM	Mdo	NumForm=Digit|NumType=Ord	2	nummod	_	_
+2	seja	seja	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	SpaceAfter=No
+3	.	.	PUNCT	Z	_	2	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg2.s6
+# text = Želi kdo kaj reči k temu zapisniku?
+1	Želi	želeti	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+2	kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	1	nsubj	_	_
+3	kaj	kaj	PRON	Pq-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Int	4	obj	_	_
+4	reči	reči	VERB	Vmen	Aspect=Perf|VerbForm=Inf	1	xcomp	_	_
+5	k	k	ADP	Sd	Case=Dat	7	case	_	_
+6	temu	ta	DET	Pd-msd	Case=Dat|Gender=Masc|Number=Sing|PronType=Dem	7	det	_	_
+7	zapisniku	zapisnik	NOUN	Ncmsd	Case=Dat|Gender=Masc|Number=Sing	4	obl	_	SpaceAfter=No
+8	?	?	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg2.s7
+# text = Če ne, predlagam, da ga podpremo.
+1	Če	če	SCONJ	Cs	_	2	mark	_	_
+2	ne	ne	PART	Q	Polarity=Neg	4	discourse	_	SpaceAfter=No
+3	,	,	PUNCT	Z	_	2	punct	_	_
+4	predlagam	predlagati	VERB	Vmbr1s	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+5	,	,	PUNCT	Z	_	8	punct	_	_
+6	da	da	SCONJ	Cs	_	8	mark	_	_
+7	ga	on	PRON	Pp3msa--y	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs|Variant=Short	8	obj	_	_
+8	podpremo	podpreti	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	4	ccomp	_	SpaceAfter=No
+9	.	.	PUNCT	Z	_	4	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg3
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg3.s1
+# text = Kdo je za?
+1	Kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	2	nsubj	_	_
+2	je	biti	VERB	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	za	za	ADV	Rgp	Degree=Pos	2	advmod	_	SpaceAfter=No
+4	?	?	PUNCT	Z	_	2	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg4
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg4.s1
+# text = Je kdo proti?
+1	Je	biti	VERB	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	0	root	_	_
+2	kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	1	nsubj	_	_
+3	proti	proti	ADV	Rgp	Degree=Pos	1	advmod	_	SpaceAfter=No
+4	?	?	PUNCT	Z	_	1	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg5
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg5.s1
+# text = 32. seja - zapisnik.
+1	32.	32.	NUM	Mdo	NumForm=Digit|NumType=Ord	2	nummod	_	_
+2	seja	seja	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+3	-	-	PUNCT	Z	_	4	punct	_	_
+4	zapisnik	zapisnik	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	2	conj	_	SpaceAfter=No
+5	.	.	PUNCT	Z	_	4	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg5.s2
+# text = Želi kdo kaj reči?
+1	Želi	želeti	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+2	kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	1	nsubj	_	_
+3	kaj	kaj	PRON	Pq-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Int	4	obj	_	_
+4	reči	reči	VERB	Vmen	Aspect=Perf|VerbForm=Inf	1	xcomp	_	SpaceAfter=No
+5	?	?	PUNCT	Z	_	1	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg6
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg6.s1
+# text = Predlagam, da ga podpremo.
+1	Predlagam	predlagati	VERB	Vmbr1s	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+2	,	,	PUNCT	Z	_	5	punct	_	_
+3	da	da	SCONJ	Cs	_	5	mark	_	_
+4	ga	on	PRON	Pp3msa--y	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs|Variant=Short	5	obj	_	_
+5	podpremo	podpreti	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	1	ccomp	_	SpaceAfter=No
+6	.	.	PUNCT	Z	_	1	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg7
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg7.s1
+# text = Kdo je za?
+1	Kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	2	nsubj	_	_
+2	je	biti	VERB	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	za	za	ADV	Rgp	Degree=Pos	2	advmod	_	SpaceAfter=No
+4	?	?	PUNCT	Z	_	2	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg8
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg8.s1
+# text = Kdo proti?
+1	Kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	2	nmod	_	_
+2	proti	proti	ADV	Rgp	Degree=Pos	0	root	_	SpaceAfter=No
+3	?	?	PUNCT	Z	_	2	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg9
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg9.s1
+# text = 33. seja.
+1	33.	33.	NUM	Mdo	NumForm=Digit|NumType=Ord	2	nummod	_	_
+2	seja	seja	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	SpaceAfter=No
+3	.	.	PUNCT	Z	_	2	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg9.s2
+# text = Kdo želi kaj reči?
+1	Kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	2	nsubj	_	_
+2	želi	želeti	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	kaj	kaj	PRON	Pq-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Int	4	obj	_	_
+4	reči	reči	VERB	Vmen	Aspect=Perf|VerbForm=Inf	2	xcomp	_	SpaceAfter=No
+5	?	?	PUNCT	Z	_	2	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg10
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg10.s1
+# text = Predlagam, da ga podpremo.
+1	Predlagam	predlagati	VERB	Vmbr1s	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+2	,	,	PUNCT	Z	_	5	punct	_	_
+3	da	da	SCONJ	Cs	_	5	mark	_	_
+4	ga	on	PRON	Pp3msa--y	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs|Variant=Short	5	obj	_	_
+5	podpremo	podpreti	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	1	ccomp	_	SpaceAfter=No
+6	.	.	PUNCT	Z	_	1	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg11
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg11.s1
+# text = Kdo je za?
+1	Kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	2	nsubj	_	_
+2	je	biti	VERB	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	za	za	ADV	Rgp	Degree=Pos	2	advmod	_	SpaceAfter=No
+4	?	?	PUNCT	Z	_	2	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg12
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg12.s1
+# text = Proti?
+1	Proti	proti	ADV	Rgp	Degree=Pos	0	root	_	SpaceAfter=No
+2	?	?	PUNCT	Z	_	1	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg13
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg13.s1
+# text = Prvo točko smo zaključili.
+1	Prvo	prvi	ADJ	Mlofsa	Case=Acc|Gender=Fem|NumType=Ord|Number=Sing	2	amod	_	_
+2	točko	točka	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	4	obj	_	_
+3	smo	biti	AUX	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	4	aux	_	_
+4	zaključili	zaključiti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	0	root	_	SpaceAfter=No
+5	.	.	PUNCT	Z	_	4	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg13.s2
+# text = 2. TOČKA - PREDLOG ZAKONA O USMERJANJU OTROK S POSEBNIMI VZGOJNOIZOBRAŽEVALNIMI POTREBAMI - TRETJA OBRAVNAVA.
+1	2.	2.	NUM	Mdo	NumForm=Digit|NumType=Ord	2	nummod	_	_
+2	TOČKA	točka	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	4	parataxis	_	_
+3	-	-	PUNCT	Z	_	2	punct	_	_
+4	PREDLOG	predlog	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	0	root	_	_
+5	ZAKONA	zakon	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	4	nmod	_	_
+6	O	o	ADP	Sl	Case=Loc	7	case	_	_
+7	USMERJANJU	usmerjanje	NOUN	Ncnsl	Case=Loc|Gender=Neut|Number=Sing	5	nmod	_	_
+8	OTROK	otrok	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	7	nmod	_	_
+9	S	z	ADP	Si	Case=Ins	12	case	_	_
+10	POSEBNIMI	poseben	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	12	amod	_	_
+11	VZGOJNOIZOBRAŽEVALNIMI	vzgojnoizobraževalen	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	12	amod	_	_
+12	POTREBAMI	potreba	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	7	nmod	_	_
+13	-	-	PUNCT	Z	_	15	punct	_	_
+14	TRETJA	tretji	ADJ	Mlofsn	Case=Nom|Gender=Fem|NumType=Ord|Number=Sing	15	amod	_	_
+15	OBRAVNAVA	obravnava	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	4	conj	_	SpaceAfter=No
+16	.	.	PUNCT	Z	_	15	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg13.s3
+# text = Predlog zakona z amandmaji vlade je bil objavljen v Poročevalcu državnega zbora številka 25, 12. aprila 2000.
+1	Predlog	predlog	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	8	nsubj	_	_
+2	zakona	zakon	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	1	nmod	_	_
+3	z	z	ADP	Si	Case=Ins	4	case	_	_
+4	amandmaji	amandma	NOUN	Ncmpi	Case=Ins|Gender=Masc|Number=Plur	2	nmod	_	_
+5	vlade	vlada	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	4	nmod	_	_
+6	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	8	aux	_	_
+7	bil	biti	AUX	Va-p-sm	Gender=Masc|Number=Sing|VerbForm=Part	8	cop	_	_
+8	objavljen	objavljen	ADJ	Appmsnn	Case=Nom|Definite=Ind|Degree=Pos|Gender=Masc|Number=Sing|VerbForm=Part	0	root	_	_
+9	v	v	ADP	Sl	Case=Loc	10	case	_	_
+10	Poročevalcu	poročevalec	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	8	obl	_	_
+11	državnega	državen	ADJ	Agpmsg	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	12	amod	_	_
+12	zbora	zbor	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	10	nmod	_	_
+13	številka	številka	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	12	nmod	_	_
+14	25	25	NUM	Mdc	NumForm=Digit|NumType=Card	17	nummod	_	SpaceAfter=No
+15	,	,	PUNCT	Z	_	17	punct	_	_
+16	12.	12.	NUM	Mdo	NumForm=Digit|NumType=Ord	17	nummod	_	_
+17	aprila	april	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	13	appos	_	_
+18	2000.	2000.	NUM	Mdo	NumForm=Digit|NumType=Ord	17	nummod	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg13.s4
+# text = Mnenje sekretariata ste dobili danes na klop.
+1	Mnenje	mnenje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	4	obj	_	_
+2	sekretariata	sekretariat	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	1	nmod	_	_
+3	ste	biti	AUX	Va-r2p-n	Mood=Ind|Number=Plur|Person=2|Polarity=Pos|Tense=Pres|VerbForm=Fin	4	aux	_	_
+4	dobili	dobiti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	0	root	_	_
+5	danes	danes	ADV	Rgp	Degree=Pos	4	advmod	_	_
+6	na	na	ADP	Sa	Case=Acc	7	case	_	_
+7	klop	klop	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	4	obl	_	SpaceAfter=No
+8	.	.	PUNCT	Z	_	4	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg13.s5
+# text = Predlagam, da za začetek damo najprej besedo predlagatelju.
+1	Predlagam	predlagati	VERB	Vmbr1s	Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+2	,	,	PUNCT	Z	_	6	punct	_	_
+3	da	da	SCONJ	Cs	_	6	mark	_	_
+4	za	za	ADP	Sa	Case=Acc	5	case	_	_
+5	začetek	začetek	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	6	obl	_	_
+6	damo	dati	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	1	ccomp	_	_
+7	najprej	najprej	ADV	Rgs	Degree=Sup	6	advmod	_	_
+8	besedo	beseda	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	6	obj	_	_
+9	predlagatelju	predlagatelj	NOUN	Ncmsd	Case=Dat|Gender=Masc|Number=Sing	6	iobj	_	SpaceAfter=No
+10	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg13.s6
+# text = Gospa, verjetno državna sekretarka, prosim, vaša je beseda.
+1	Gospa	gospa	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	5	nsubj	_	SpaceAfter=No
+2	,	,	PUNCT	Z	_	5	punct	_	_
+3	verjetno	verjetno	ADV	Rgp	Degree=Pos	5	advmod	_	_
+4	državna	državen	ADJ	Agpfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	5	amod	_	_
+5	sekretarka	sekretarka	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	7	ccomp	_	SpaceAfter=No
+6	,	,	PUNCT	Z	_	5	punct	_	_
+7	prosim	prositi	VERB	Vmpr1s	Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+8	,	,	PUNCT	Z	_	11	punct	_	_
+9	vaša	vaš	DET	Ps2fsnp	Case=Nom|Gender=Fem|Number=Sing|Number[psor]=Plur|Person=2|Poss=Yes|PronType=Prs	11	nsubj	_	_
+10	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	11	cop	_	_
+11	beseda	beseda	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	7	parataxis	_	SpaceAfter=No
+12	.	.	PUNCT	Z	_	7	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg14
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg14.s1
+# text = Hvala lepa gospod predsednik.
+1	Hvala	hvala	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+2	lepa	lep	ADJ	Agpfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	3	amod	_	_
+3	gospod	gospod	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	1	nsubj	_	_
+4	predsednik	predsednik	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	3	nmod	_	SpaceAfter=No
+5	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg14.s2
+# text = V tretji obravnavi je bil zakon o posebnih potrebah o usmerjanju otrok s posebnimi potrebami obravnavan na 18. seji državnega zbora 10. februarja in takrat je bilo sprejeto sedem amandmajev in amandma k naslovu.
+1	V	v	ADP	Sl	Case=Loc	3	case	_	_
+2	tretji	tretji	ADJ	Mlofsl	Case=Loc|Gender=Fem|NumType=Ord|Number=Sing	3	amod	_	_
+3	obravnavi	obravnava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	16	obl	_	_
+4	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	16	aux	_	_
+5	bil	biti	AUX	Va-p-sm	Gender=Masc|Number=Sing|VerbForm=Part	16	cop	_	_
+6	zakon	zakon	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	16	nsubj	_	_
+7	o	o	ADP	Sl	Case=Loc	9	case	_	_
+8	posebnih	poseben	ADJ	Agpfpl	Case=Loc|Degree=Pos|Gender=Fem|Number=Plur	9	amod	_	_
+9	potrebah	potreba	NOUN	Ncfpl	Case=Loc|Gender=Fem|Number=Plur	6	nmod	_	_
+10	o	o	ADP	Sl	Case=Loc	11	case	_	_
+11	usmerjanju	usmerjanje	NOUN	Ncnsl	Case=Loc|Gender=Neut|Number=Sing	9	nmod	_	_
+12	otrok	otrok	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	11	nmod	_	_
+13	s	z	ADP	Si	Case=Ins	15	case	_	_
+14	posebnimi	poseben	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	15	amod	_	_
+15	potrebami	potreba	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	16	obl	_	_
+16	obravnavan	obravnavan	ADJ	Appmsnn	Case=Nom|Definite=Ind|Degree=Pos|Gender=Masc|Number=Sing|VerbForm=Part	0	root	_	_
+17	na	na	ADP	Sl	Case=Loc	19	case	_	_
+18	18.	18.	NUM	Mdo	NumForm=Digit|NumType=Ord	19	nummod	_	_
+19	seji	seja	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	16	obl	_	_
+20	državnega	državen	ADJ	Agpmsg	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	21	amod	_	_
+21	zbora	zbor	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	19	nmod	_	_
+22	10.	10.	NUM	Mdo	NumForm=Digit|NumType=Ord	23	nummod	_	_
+23	februarja	februar	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	21	nmod	_	_
+24	in	in	CCONJ	Cc	_	28	cc	_	_
+25	takrat	takrat	ADV	Rgp	Degree=Pos	28	advmod	_	_
+26	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	28	aux	_	_
+27	bilo	biti	AUX	Va-p-sn	Gender=Neut|Number=Sing|VerbForm=Part	28	cop	_	_
+28	sprejeto	sprejet	ADJ	Appnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing|VerbForm=Part	16	conj	_	_
+29	sedem	sedem	NUM	Mlc-pn	Case=Nom|NumForm=Word|NumType=Card|Number=Plur	30	nummod	_	_
+30	amandmajev	amandma	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	28	nsubj	_	_
+31	in	in	CCONJ	Cc	_	32	cc	_	_
+32	amandma	amandma	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	30	conj	_	_
+33	k	k	ADP	Sd	Case=Dat	34	case	_	_
+34	naslovu	naslov	NOUN	Ncmsd	Case=Dat|Gender=Masc|Number=Sing	32	nmod	_	SpaceAfter=No
+35	.	.	PUNCT	Z	_	16	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg14.s3
+# text = Pri pregledu teh amandmajev smo upoštevali sprejete amandmaje in pripravili predlog zakona za tretjo obravnavo, k nekaterim členom pa smo vložili amandmaje, in sicer so to večinoma redakcijskega značaja, razen 2. člena, kjer se nam zdi, da je pa bistveni poseg bil v vsebino zakona in zato smo pripravili amandma v smislu, ki namesto tega, kar je bilo sprejeto, sedmina otroci s težjimi specifičnimi motnjami učenja uvaja termin, otroci z nevrološkimi razvojnimi motnjami.
+1	Pri	pri	ADP	Sl	Case=Loc	2	case	_	_
+2	pregledu	pregled	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	6	obl	_	_
+3	teh	ta	DET	Pd-mpg	Case=Gen|Gender=Masc|Number=Plur|PronType=Dem	4	det	_	_
+4	amandmajev	amandma	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	2	nmod	_	_
+5	smo	biti	AUX	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	6	aux	_	_
+6	upoštevali	upoštevati	VERB	Vmbp-pm	Gender=Masc|Number=Plur|VerbForm=Part	0	root	_	_
+7	sprejete	sprejet	ADJ	Appmpa	Case=Acc|Degree=Pos|Gender=Masc|Number=Plur|VerbForm=Part	8	amod	_	_
+8	amandmaje	amandma	NOUN	Ncmpa	Case=Acc|Gender=Masc|Number=Plur	6	obj	_	_
+9	in	in	CCONJ	Cc	_	10	cc	_	_
+10	pripravili	pripraviti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	6	conj	_	_
+11	predlog	predlog	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	10	obj	_	_
+12	zakona	zakon	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	11	nmod	_	_
+13	za	za	ADP	Sa	Case=Acc	15	case	_	_
+14	tretjo	tretji	ADJ	Mlofsa	Case=Acc|Gender=Fem|NumType=Ord|Number=Sing	15	amod	_	_
+15	obravnavo	obravnava	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	12	nmod	_	SpaceAfter=No
+16	,	,	PUNCT	Z	_	22	punct	_	_
+17	k	k	ADP	Sd	Case=Dat	19	case	_	_
+18	nekaterim	nekateri	DET	Pi-mpd	Case=Dat|Gender=Masc|Number=Plur|PronType=Ind	19	det	_	_
+19	členom	člen	NOUN	Ncmpd	Case=Dat|Gender=Masc|Number=Plur	22	obl	_	_
+20	pa	pa	CCONJ	Cc	_	22	advmod	_	_
+21	smo	biti	AUX	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	22	aux	_	_
+22	vložili	vložiti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	6	parataxis	_	_
+23	amandmaje	amandma	NOUN	Ncmpa	Case=Acc|Gender=Masc|Number=Plur	22	obj	_	SpaceAfter=No
+24	,	,	PUNCT	Z	_	22	punct	_	_
+25	in	in	CCONJ	Cc	_	31	cc	_	_
+26	sicer	sicer	CCONJ	Cc	_	31	cc	_	_
+27	so	biti	AUX	Va-r3p-n	Mood=Ind|Number=Plur|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	31	cop	_	_
+28	to	ta	DET	Pd-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	31	nsubj	_	_
+29	večinoma	večinoma	ADV	Rgp	Degree=Pos	31	advmod	_	_
+30	redakcijskega	redakcijski	ADJ	Agpmsg	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	31	amod	_	_
+31	značaja	značaj	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	22	conj	_	SpaceAfter=No
+32	,	,	PUNCT	Z	_	35	punct	_	_
+33	razen	razen	ADP	Sg	Case=Gen	35	case	_	_
+34	2.	2.	NUM	Mdo	NumForm=Digit|NumType=Ord	35	nummod	_	_
+35	člena	člen	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	31	appos	_	SpaceAfter=No
+36	,	,	PUNCT	Z	_	40	punct	_	_
+37	kjer	kjer	SCONJ	Cs	_	40	mark	_	_
+38	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	40	expl	_	_
+39	nam	jaz	PRON	Pp1-pd	Case=Dat|Number=Plur|Person=1|PronType=Prs	40	obj	_	_
+40	zdi	zdeti	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	35	acl	_	SpaceAfter=No
+41	,	,	PUNCT	Z	_	47	punct	_	_
+42	da	da	SCONJ	Cs	_	47	mark	_	_
+43	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	47	aux	_	_
+44	pa	pa	CCONJ	Cc	_	47	advmod	_	_
+45	bistveni	bistven	ADJ	Agpmsny	Case=Nom|Definite=Def|Degree=Pos|Gender=Masc|Number=Sing	46	amod	_	_
+46	poseg	poseg	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	47	nsubj	_	_
+47	bil	biti	AUX	Va-p-sm	Gender=Masc|Number=Sing|VerbForm=Part	40	csubj	_	_
+48	v	v	ADP	Sa	Case=Acc	49	case	_	_
+49	vsebino	vsebina	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	47	obl	_	_
+50	zakona	zakon	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	49	nmod	_	_
+51	in	in	CCONJ	Cc	_	54	cc	_	_
+52	zato	zato	CCONJ	Cc	_	54	advmod	_	_
+53	smo	biti	AUX	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	54	aux	_	_
+54	pripravili	pripraviti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	47	conj	_	_
+55	amandma	amandma	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	54	obj	_	_
+56	v	v	ADP	Sl	Case=Loc	57	case	_	_
+57	smislu	smisel	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	55	nmod	_	SpaceAfter=No
+58	,	,	PUNCT	Z	_	75	punct	_	_
+59	ki	ki	SCONJ	Cs	_	75	mark	_	_
+60	namesto	namesto	ADP	Sg	Case=Gen	61	case	_	_
+61	tega	ta	DET	Pd-nsg	Case=Gen|Gender=Neut|Number=Sing|PronType=Dem	75	obl	_	SpaceAfter=No
+62	,	,	PUNCT	Z	_	66	punct	_	_
+63	kar	kar	PRON	Pr-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Rel	66	nsubj	_	_
+64	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	66	aux	_	_
+65	bilo	biti	AUX	Va-p-sn	Gender=Neut|Number=Sing|VerbForm=Part	66	cop	_	_
+66	sprejeto	sprejet	ADJ	Appnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing|VerbForm=Part	61	acl	_	SpaceAfter=No
+67	,	,	PUNCT	Z	_	66	punct	_	_
+68	sedmina	sedmina	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	75	nsubj	_	_
+69	otroci	otrok	NOUN	Ncmpn	Case=Nom|Gender=Masc|Number=Plur	75	nsubj	_	_
+70	s	z	ADP	Si	Case=Ins	73	case	_	_
+71	težjimi	težek	ADJ	Agcfpi	Case=Ins|Degree=Cmp|Gender=Fem|Number=Plur	73	amod	_	_
+72	specifičnimi	specifičen	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	73	amod	_	_
+73	motnjami	motnja	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	75	obl	_	_
+74	učenja	učenje	NOUN	Ncnsg	Case=Gen|Gender=Neut|Number=Sing	73	nmod	_	_
+75	uvaja	uvajati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	57	acl	_	_
+76	termin	termin	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	75	obj	_	SpaceAfter=No
+77	,	,	PUNCT	Z	_	78	punct	_	_
+78	otroci	otrok	NOUN	Ncmpn	Case=Nom|Gender=Masc|Number=Plur	76	appos	_	_
+79	z	z	ADP	Si	Case=Ins	82	case	_	_
+80	nevrološkimi	nevrološki	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	82	amod	_	_
+81	razvojnimi	razvojen	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	82	amod	_	_
+82	motnjami	motnja	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	78	nmod	_	SpaceAfter=No
+83	.	.	PUNCT	Z	_	6	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg15
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg15.s1
+# text = Povedati moram, da je bil v mesecu marcu ustanovljen pri ministrstvu poseben organ in sicer svet za vzgojo, izobraževanje in usposabljanje otrok in mladostnikov s posebnimi potrebami, kot strokovno posvetovalno telo ministra, ki smo ga ustanovili z namenom, da nam pomaga pri razčiščevanju strokovnih vprašanj in dilem na tem področju in da pravzaprav in tako usmerja delo na tem področju.
+1	Povedati	povedati	VERB	Vmen	Aspect=Perf|VerbForm=Inf	2	xcomp	_	_
+2	moram	morati	VERB	Vmpr1s	Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+3	,	,	PUNCT	Z	_	10	punct	_	_
+4	da	da	SCONJ	Cs	_	10	mark	_	_
+5	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	10	aux	_	_
+6	bil	biti	AUX	Va-p-sm	Gender=Masc|Number=Sing|VerbForm=Part	10	cop	_	_
+7	v	v	ADP	Sl	Case=Loc	8	case	_	_
+8	mesecu	mesec	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	10	obl	_	_
+9	marcu	marec	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	8	nmod	_	_
+10	ustanovljen	ustanovljen	ADJ	Appmsnn	Case=Nom|Definite=Ind|Degree=Pos|Gender=Masc|Number=Sing|VerbForm=Part	1	ccomp	_	_
+11	pri	pri	ADP	Sl	Case=Loc	12	case	_	_
+12	ministrstvu	ministrstvo	NOUN	Ncnsl	Case=Loc|Gender=Neut|Number=Sing	10	obl	_	_
+13	poseben	poseben	ADJ	Agpmsnn	Case=Nom|Definite=Ind|Degree=Pos|Gender=Masc|Number=Sing	14	amod	_	_
+14	organ	organ	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	10	nsubj	_	_
+15	in	in	CCONJ	Cc	_	17	cc	_	_
+16	sicer	sicer	CCONJ	Cc	_	17	cc	_	_
+17	svet	svet	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	14	conj	_	_
+18	za	za	ADP	Sa	Case=Acc	19	case	_	_
+19	vzgojo	vzgoja	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	17	nmod	_	SpaceAfter=No
+20	,	,	PUNCT	Z	_	21	punct	_	_
+21	izobraževanje	izobraževanje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	19	conj	_	_
+22	in	in	CCONJ	Cc	_	23	cc	_	_
+23	usposabljanje	usposabljanje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	19	conj	_	_
+24	otrok	otrok	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	23	nmod	_	_
+25	in	in	CCONJ	Cc	_	26	cc	_	_
+26	mladostnikov	mladostnik	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	24	conj	_	_
+27	s	z	ADP	Si	Case=Ins	29	case	_	_
+28	posebnimi	poseben	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	29	amod	_	_
+29	potrebami	potreba	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	26	nmod	_	SpaceAfter=No
+30	,	,	PUNCT	Z	_	34	punct	_	_
+31	kot	kot	SCONJ	Cs	_	34	cc	_	_
+32	strokovno	strokoven	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	34	amod	_	_
+33	posvetovalno	posvetovalen	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	34	amod	_	_
+34	telo	telo	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	14	conj	_	_
+35	ministra	minister	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	34	nmod	_	SpaceAfter=No
+36	,	,	PUNCT	Z	_	40	punct	_	_
+37	ki	ki	SCONJ	Cs	_	40	mark	_	_
+38	smo	biti	AUX	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	40	aux	_	_
+39	ga	on	PRON	Pp3msa--y	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs|Variant=Short	40	obj	_	_
+40	ustanovili	ustanoviti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	34	acl	_	_
+41	z	z	ADP	Si	Case=Ins	42	case	_	_
+42	namenom	namen	NOUN	Ncmsi	Case=Ins|Gender=Masc|Number=Sing	40	obl	_	SpaceAfter=No
+43	,	,	PUNCT	Z	_	46	punct	_	_
+44	da	da	SCONJ	Cs	_	46	mark	_	_
+45	nam	jaz	PRON	Pp1-pd	Case=Dat|Number=Plur|Person=1|PronType=Prs	46	obj	_	_
+46	pomaga	pomagati	VERB	Vmbr3s	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	42	acl	_	_
+47	pri	pri	ADP	Sl	Case=Loc	48	case	_	_
+48	razčiščevanju	razčiščevanje	NOUN	Ncnsl	Case=Loc|Gender=Neut|Number=Sing	46	obl	_	_
+49	strokovnih	strokoven	ADJ	Agpnpg	Case=Gen|Degree=Pos|Gender=Neut|Number=Plur	50	amod	_	_
+50	vprašanj	vprašanje	NOUN	Ncnpg	Case=Gen|Gender=Neut|Number=Plur	48	nmod	_	_
+51	in	in	CCONJ	Cc	_	52	cc	_	_
+52	dilem	dilema	NOUN	Ncfpg	Case=Gen|Gender=Fem|Number=Plur	50	conj	_	_
+53	na	na	ADP	Sl	Case=Loc	55	case	_	_
+54	tem	ta	DET	Pd-nsl	Case=Loc|Gender=Neut|Number=Sing|PronType=Dem	55	det	_	_
+55	področju	področje	NOUN	Ncnsl	Case=Loc|Gender=Neut|Number=Sing	52	nmod	_	_
+56	in	in	CCONJ	Cc	_	61	cc	_	_
+57	da	da	SCONJ	Cs	_	61	mark	_	_
+58	pravzaprav	pravzaprav	PART	Q	_	61	advmod	_	_
+59	in	in	CCONJ	Cc	_	60	cc	_	_
+60	tako	tako	ADV	Rgp	Degree=Pos	61	advmod	_	_
+61	usmerja	usmerjati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	46	conj	_	_
+62	delo	delo	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	61	obj	_	_
+63	na	na	ADP	Sl	Case=Loc	65	case	_	_
+64	tem	ta	DET	Pd-nsl	Case=Loc|Gender=Neut|Number=Sing|PronType=Dem	65	det	_	_
+65	področju	področje	NOUN	Ncnsl	Case=Loc|Gender=Neut|Number=Sing	62	nmod	_	SpaceAfter=No
+66	.	.	PUNCT	Z	_	2	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg15.s2
+# text = Tudi to strokovno telo je menilo, da bi predlagana sprememba, ki je bila sprejeta z amandmajem k 2. členu, pomenila velike probleme v praksi, ker bi bilo izredno težko opredeliti, katere otroke z učnimi težavami je potrebno usmerjati, in bi se lahko zgodilo, da bi bilo to število otrok precejšnje, lahko tudi do 20%.
+1	Tudi	tudi	PART	Q	_	6	advmod	_	_
+2	to	ta	DET	Pd-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	4	det	_	_
+3	strokovno	strokoven	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	4	amod	_	_
+4	telo	telo	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	6	nsubj	_	_
+5	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	6	aux	_	_
+6	menilo	meniti	VERB	Vmpp-sn	Aspect=Imp|Gender=Neut|Number=Sing|VerbForm=Part	0	root	_	SpaceAfter=No
+7	,	,	PUNCT	Z	_	23	punct	_	_
+8	da	da	SCONJ	Cs	_	23	mark	_	_
+9	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	23	aux	_	_
+10	predlagana	predlagan	ADJ	Appfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing|VerbForm=Part	11	amod	_	_
+11	sprememba	sprememba	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	23	nsubj	_	SpaceAfter=No
+12	,	,	PUNCT	Z	_	16	punct	_	_
+13	ki	ki	SCONJ	Cs	_	16	mark	_	_
+14	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	16	aux	_	_
+15	bila	biti	AUX	Va-p-sf	Gender=Fem|Number=Sing|VerbForm=Part	16	cop	_	_
+16	sprejeta	sprejet	ADJ	Appfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing|VerbForm=Part	11	acl	_	_
+17	z	z	ADP	Si	Case=Ins	18	case	_	_
+18	amandmajem	amandma	NOUN	Ncmsi	Case=Ins|Gender=Masc|Number=Sing	16	obl	_	_
+19	k	k	ADP	Sd	Case=Dat	21	case	_	_
+20	2.	2.	NUM	Mdo	NumForm=Digit|NumType=Ord	21	nummod	_	_
+21	členu	člen	NOUN	Ncmsd	Case=Dat|Gender=Masc|Number=Sing	18	nmod	_	SpaceAfter=No
+22	,	,	PUNCT	Z	_	16	punct	_	_
+23	pomenila	pomeniti	VERB	Vmbp-sf	Gender=Fem|Number=Sing|VerbForm=Part	6	ccomp	_	_
+24	velike	velik	ADJ	Agpmpa	Case=Acc|Degree=Pos|Gender=Masc|Number=Plur	25	amod	_	_
+25	probleme	problem	NOUN	Ncmpa	Case=Acc|Gender=Masc|Number=Plur	23	obj	_	_
+26	v	v	ADP	Sl	Case=Loc	27	case	_	_
+27	praksi	praksa	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	25	nmod	_	SpaceAfter=No
+28	,	,	PUNCT	Z	_	33	punct	_	_
+29	ker	ker	SCONJ	Cs	_	33	mark	_	_
+30	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	33	aux	_	_
+31	bilo	biti	AUX	Va-p-sn	Gender=Neut|Number=Sing|VerbForm=Part	33	cop	_	_
+32	izredno	izredno	ADV	Rgp	Degree=Pos	33	advmod	_	_
+33	težko	težko	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	23	advcl	_	_
+34	opredeliti	opredeliti	VERB	Vmen	Aspect=Perf|VerbForm=Inf	33	csubj	_	SpaceAfter=No
+35	,	,	PUNCT	Z	_	42	punct	_	_
+36	katere	kateri	DET	Pq-mpa	Case=Acc|Gender=Masc|Number=Plur|PronType=Int	37	det	_	_
+37	otroke	otrok	NOUN	Ncmpa	Case=Acc|Gender=Masc|Number=Plur	43	obj	_	_
+38	z	z	ADP	Si	Case=Ins	40	case	_	_
+39	učnimi	učen	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	40	amod	_	_
+40	težavami	težava	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	37	nmod	_	_
+41	je	biti	VERB	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	42	cop	_	_
+42	potrebno	potreben	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	34	ccomp	_	_
+43	usmerjati	usmerjati	VERB	Vmpn	Aspect=Imp|VerbForm=Inf	42	csubj	_	SpaceAfter=No
+44	,	,	PUNCT	Z	_	42	punct	_	_
+45	in	in	CCONJ	Cc	_	49	cc	_	_
+46	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	49	aux	_	_
+47	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	49	expl	_	_
+48	lahko	lahko	ADV	Rgp	Degree=Pos	49	advmod	_	_
+49	zgodilo	zgoditi	VERB	Vmep-sn	Aspect=Perf|Gender=Neut|Number=Sing|VerbForm=Part	43	conj	_	SpaceAfter=No
+50	,	,	PUNCT	Z	_	57	punct	_	_
+51	da	da	SCONJ	Cs	_	57	mark	_	_
+52	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	57	aux	_	_
+53	bilo	biti	AUX	Va-p-sn	Gender=Neut|Number=Sing|VerbForm=Part	57	cop	_	_
+54	to	ta	DET	Pd-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	55	det	_	_
+55	število	število	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	57	nsubj	_	_
+56	otrok	otrok	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	55	nmod	_	_
+57	precejšnje	precejšnji	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	49	csubj	_	SpaceAfter=No
+58	,	,	PUNCT	Z	_	57	punct	_	_
+59	lahko	lahko	ADV	Rgp	Degree=Pos	63	advmod	_	_
+60	tudi	tudi	PART	Q	_	63	advmod	_	_
+61	do	do	ADP	Sg	Case=Gen	62	case	_	_
+62	20	20	NUM	Mdc	NumForm=Digit|NumType=Card	63	nummod	_	SpaceAfter=No
+63	%	%	SYM	Z	_	57	obl	_	SpaceAfter=No
+64	.	.	PUNCT	Z	_	6	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg16
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg16.s1
+# text = Zato smo predlagali drugačno dikcijo v skladu z mnenjem tega strokovnega organa, ki pokriva praktično isto populacijo otrok.
+1	Zato	zato	CCONJ	Cc	_	3	cc	_	_
+2	smo	biti	AUX	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	3	aux	_	_
+3	predlagali	predlagati	VERB	Vmbp-pm	Gender=Masc|Number=Plur|VerbForm=Part	0	root	_	_
+4	drugačno	drugačen	ADJ	Agpfsa	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	5	amod	_	_
+5	dikcijo	dikcija	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	3	obj	_	_
+6	v	v	ADP	Sl	Case=Loc	7	case	_	_
+7	skladu	sklad	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	5	nmod	_	_
+8	z	z	ADP	Si	Case=Ins	9	case	_	_
+9	mnenjem	mnenje	NOUN	Ncnsi	Case=Ins|Gender=Neut|Number=Sing	7	nmod	_	_
+10	tega	ta	DET	Pd-msg	Case=Gen|Gender=Masc|Number=Sing|PronType=Dem	12	det	_	_
+11	strokovnega	strokoven	ADJ	Agpmsg	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	12	amod	_	_
+12	organa	organ	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	9	nmod	_	SpaceAfter=No
+13	,	,	PUNCT	Z	_	15	punct	_	_
+14	ki	ki	SCONJ	Cs	_	15	mark	_	_
+15	pokriva	pokrivati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	12	acl	_	_
+16	praktično	praktičen	ADJ	Agpfsa	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	18	amod	_	_
+17	isto	isti	DET	Pi-fsa	Case=Acc|Gender=Fem|Number=Sing|PronType=Ind	18	det	_	_
+18	populacijo	populacija	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	15	obj	_	_
+19	otrok	otrok	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	18	nmod	_	SpaceAfter=No
+20	.	.	PUNCT	Z	_	3	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg16.s2
+# text = Gre namreč za to, da se vsi strinjamo, da gre za 2-3% otrok z najtežjimi učnimi težavami.
+1	Gre	iti	VERB	Vmbr3s	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+2	namreč	namreč	CCONJ	Cc	_	1	advmod	_	_
+3	za	za	ADP	Sa	Case=Acc	4	case	_	_
+4	to	ta	DET	Pd-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	1	obl	_	SpaceAfter=No
+5	,	,	PUNCT	Z	_	9	punct	_	_
+6	da	da	SCONJ	Cs	_	9	mark	_	_
+7	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	9	expl	_	_
+8	vsi	ves	DET	Pg-mpn	Case=Nom|Gender=Masc|Number=Plur|PronType=Tot	9	nsubj	_	_
+9	strinjamo	strinjati	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	4	acl	_	SpaceAfter=No
+10	,	,	PUNCT	Z	_	12	punct	_	_
+11	da	da	SCONJ	Cs	_	12	mark	_	_
+12	gre	iti	VERB	Vmbr3s	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	ccomp	_	_
+13	za	za	ADP	Sa	Case=Acc	17	case	_	_
+14	2	2	NUM	Mdc	NumForm=Digit|NumType=Card	18	nummod	_	SpaceAfter=No
+15	-	-	PUNCT	Z	_	16	punct	_	SpaceAfter=No
+16	3	3	NUM	Mdc	NumForm=Digit|NumType=Card	14	conj	_	SpaceAfter=No
+17	%	%	SYM	Z	_	18	amod	_	_
+18	otrok	otrok	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	12	nsubj	_	_
+19	z	z	ADP	Si	Case=Ins	22	case	_	_
+20	najtežjimi	težek	ADJ	Agsfpi	Case=Ins|Degree=Sup|Gender=Fem|Number=Plur	22	amod	_	_
+21	učnimi	učen	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	22	amod	_	_
+22	težavami	težava	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	18	nmod	_	SpaceAfter=No
+23	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg16.s3
+# text = Zato menimo, da ta prelagana dikcija, se pravi otroci z nevrološkimi razvojnimi motnjami, pokriva prav to skupino in da bo na ta način mogoče tudi ustrezno opredeliti to skupino v podzakonskem aktu.
+1	Zato	zato	CCONJ	Cc	_	2	cc	_	_
+2	menimo	meniti	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+3	,	,	PUNCT	Z	_	10	punct	_	_
+4	da	da	SCONJ	Cs	_	10	mark	_	_
+5	ta	ta	DET	Pd-fsn	Case=Nom|Gender=Fem|Number=Sing|PronType=Dem	7	det	_	_
+6	prelagana	prelagan	ADJ	Appfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing|VerbForm=Part	7	amod	_	_
+7	dikcija	dikcija	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	10	nsubj	_	SpaceAfter=No
+8	,	,	PUNCT	Z	_	10	punct	_	_
+9	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	10	expl	_	_
+10	pravi	praviti	VERB	Vmbr3s	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	2	parataxis	_	_
+11	otroci	otrok	NOUN	Ncmpn	Case=Nom|Gender=Masc|Number=Plur	10	nsubj	_	_
+12	z	z	ADP	Si	Case=Ins	15	case	_	_
+13	nevrološkimi	nevrološki	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	15	amod	_	_
+14	razvojnimi	razvojen	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	15	amod	_	_
+15	motnjami	motnja	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	11	nmod	_	SpaceAfter=No
+16	,	,	PUNCT	Z	_	10	punct	_	_
+17	pokriva	pokrivati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	2	parataxis	_	_
+18	prav	prav	PART	Q	_	19	advmod	_	_
+19	to	ta	DET	Pd-fsa	Case=Acc|Gender=Fem|Number=Sing|PronType=Dem	20	det	_	_
+20	skupino	skupina	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	17	obj	_	_
+21	in	in	CCONJ	Cc	_	27	cc	_	_
+22	da	da	SCONJ	Cs	_	27	mark	_	_
+23	bo	biti	VERB	Va-f3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Fut|VerbForm=Fin	27	cop	_	_
+24	na	na	ADP	Sa	Case=Acc	26	case	_	_
+25	ta	ta	DET	Pd-msa	Case=Acc|Gender=Masc|Number=Sing|PronType=Dem	26	det	_	_
+26	način	način	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	30	obl	_	_
+27	mogoče	mogoč	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	17	conj	_	_
+28	tudi	tudi	PART	Q	_	27	advmod	_	_
+29	ustrezno	ustrezno	ADV	Rgp	Degree=Pos	30	advmod	_	_
+30	opredeliti	opredeliti	VERB	Vmen	Aspect=Perf|VerbForm=Inf	27	csubj	_	_
+31	to	ta	DET	Pd-fsa	Case=Acc|Gender=Fem|Number=Sing|PronType=Dem	32	det	_	_
+32	skupino	skupina	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	30	obj	_	_
+33	v	v	ADP	Sl	Case=Loc	35	case	_	_
+34	podzakonskem	podzakonski	ADJ	Agpmsl	Case=Loc|Degree=Pos|Gender=Masc|Number=Sing	35	amod	_	_
+35	aktu	akt	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	32	nmod	_	SpaceAfter=No
+36	.	.	PUNCT	Z	_	2	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg16.s4
+# text = Toliko morda za uvod.
+1	Toliko	toliko	DET	Rgp	PronType=Dem	0	root	_	_
+2	morda	morda	PART	Q	_	1	advmod	_	_
+3	za	za	ADP	Sa	Case=Acc	4	case	_	_
+4	uvod	uvod	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	1	obl	_	SpaceAfter=No
+5	.	.	PUNCT	Z	_	4	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg17
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg17.s1
+# text = Opazili smo tudi, da je potrebno še opraviti nekatere uradne popravke, na katere nas opozarja tudi mnenje sekretariata, ki smo ga danes prejeli in bomo to tudi pripravili do seje državnega zbora.
+1	Opazili	opaziti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	0	root	_	_
+2	smo	biti	AUX	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	1	aux	_	_
+3	tudi	tudi	PART	Q	_	1	advmod	_	SpaceAfter=No
+4	,	,	PUNCT	Z	_	7	punct	_	_
+5	da	da	SCONJ	Cs	_	7	mark	_	_
+6	je	biti	VERB	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	7	cop	_	_
+7	potrebno	potreben	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	1	ccomp	_	_
+8	še	še	PART	Q	_	7	advmod	_	_
+9	opraviti	opraviti	VERB	Vmen	Aspect=Perf|VerbForm=Inf	7	csubj	_	_
+10	nekatere	nekateri	DET	Pi-mpa	Case=Acc|Gender=Masc|Number=Plur|PronType=Ind	12	det	_	_
+11	uradne	uraden	ADJ	Agpmpa	Case=Acc|Degree=Pos|Gender=Masc|Number=Plur	12	amod	_	_
+12	popravke	popravek	NOUN	Ncmpa	Case=Acc|Gender=Masc|Number=Plur	9	obj	_	SpaceAfter=No
+13	,	,	PUNCT	Z	_	17	punct	_	_
+14	na	na	ADP	Sa	Case=Acc	15	case	_	_
+15	katere	kateri	DET	Pq-mpa	Case=Acc|Gender=Masc|Number=Plur|PronType=Int	17	obl	_	_
+16	nas	jaz	PRON	Pp1-pa	Case=Acc|Number=Plur|Person=1|PronType=Prs	17	obj	_	_
+17	opozarja	opozarjati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	12	acl	_	_
+18	tudi	tudi	PART	Q	_	17	advmod	_	_
+19	mnenje	mnenje	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	17	nsubj	_	_
+20	sekretariata	sekretariat	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	19	nmod	_	SpaceAfter=No
+21	,	,	PUNCT	Z	_	26	punct	_	_
+22	ki	ki	SCONJ	Cs	_	26	mark	_	_
+23	smo	biti	AUX	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	26	aux	_	_
+24	ga	on	PRON	Pp3msa--y	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs|Variant=Short	26	obj	_	_
+25	danes	danes	ADV	Rgp	Degree=Pos	26	advmod	_	_
+26	prejeli	prejeti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	19	acl	_	_
+27	in	in	CCONJ	Cc	_	31	cc	_	_
+28	bomo	biti	AUX	Va-f1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Fut|VerbForm=Fin	31	aux	_	_
+29	to	ta	DET	Pd-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	31	obj	_	_
+30	tudi	tudi	PART	Q	_	31	advmod	_	_
+31	pripravili	pripraviti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	26	conj	_	_
+32	do	do	ADP	Sg	Case=Gen	33	case	_	_
+33	seje	seja	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	31	obl	_	_
+34	državnega	državen	ADJ	Agpmsg	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	35	amod	_	_
+35	zbora	zbor	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	33	nmod	_	SpaceAfter=No
+36	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg17.s2
+# text = Hvala lepa.
+1	Hvala	hvala	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+2	lepa	lep	ADJ	Agpfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	1	amod	_	SpaceAfter=No
+3	.	.	PUNCT	Z	_	1	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg18
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg18.s1
+# text = Hvala lepa.
+1	Hvala	hvala	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+2	lepa	lep	ADJ	Agpfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	1	amod	_	SpaceAfter=No
+3	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg18.s2
+# text = Dobili smo mnenje sekretariata k predlogu zakona.
+1	Dobili	dobiti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	0	root	_	_
+2	smo	biti	AUX	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	1	aux	_	_
+3	mnenje	mnenje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	1	obj	_	_
+4	sekretariata	sekretariat	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	3	nmod	_	_
+5	k	k	ADP	Sd	Case=Dat	6	case	_	_
+6	predlogu	predlog	NOUN	Ncmsd	Case=Dat|Gender=Masc|Number=Sing	4	nmod	_	_
+7	zakona	zakon	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	6	nmod	_	SpaceAfter=No
+8	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg18.s3
+# text = To mnenje imate pred sabo.
+1	To	ta	DET	Pd-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	2	det	_	_
+2	mnenje	mnenje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	3	obj	_	_
+3	imate	imeti	VERB	Vmpr2p-n	Aspect=Imp|Mood=Ind|Number=Plur|Person=2|Polarity=Pos|Tense=Pres|VerbForm=Fin	0	root	_	_
+4	pred	pred	ADP	Si	Case=Ins	5	case	_	_
+5	sabo	se	PRON	Px---i	Case=Ins|PronType=Prs|Reflex=Yes	3	obl	_	SpaceAfter=No
+6	.	.	PUNCT	Z	_	3	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg18.s4
+# text = Ugotavlja kar nekaj pomanjkljivosti tega predloga, ki je sedaj pred nami v tretji obravnavi, pa bomo še za besedo prosim sekretarko.
+1	Ugotavlja	ugotavljati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+2	kar	kar	ADV	Rgp	Degree=Pos	3	advmod	_	_
+3	nekaj	nekaj	DET	Rgp	PronType=Ind	4	det	_	_
+4	pomanjkljivosti	pomanjkljivost	NOUN	Ncfpg	Case=Gen|Gender=Fem|Number=Plur	1	obj	_	_
+5	tega	ta	DET	Pd-msg	Case=Gen|Gender=Masc|Number=Sing|PronType=Dem	6	det	_	_
+6	predloga	predlog	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	4	nmod	_	SpaceAfter=No
+7	,	,	PUNCT	Z	_	9	punct	_	_
+8	ki	ki	SCONJ	Cs	_	9	mark	_	_
+9	je	biti	VERB	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	6	acl	_	_
+10	sedaj	sedaj	ADV	Rgp	Degree=Pos	9	advmod	_	_
+11	pred	pred	ADP	Si	Case=Ins	12	case	_	_
+12	nami	jaz	PRON	Pp1-pi	Case=Ins|Number=Plur|Person=1|PronType=Prs	9	obl	_	_
+13	v	v	ADP	Sl	Case=Loc	15	case	_	_
+14	tretji	tretji	ADJ	Mlofsl	Case=Loc|Gender=Fem|NumType=Ord|Number=Sing	15	amod	_	_
+15	obravnavi	obravnava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	9	obl	_	SpaceAfter=No
+16	,	,	PUNCT	Z	_	9	punct	_	_
+17	pa	pa	CCONJ	Cc	_	22	advmod	_	_
+18	bomo	biti	AUX	Va-f1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Fut|VerbForm=Fin	22	aux	_	_
+19	še	še	PART	Q	_	22	advmod	_	_
+20	za	za	ADP	Sa	Case=Acc	21	case	_	_
+21	besedo	beseda	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	22	obl	_	_
+22	prosim	prositi	VERB	Vmpr1s	Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	1	parataxis	_	_
+23	sekretarko	sekretarka	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	22	obj	_	SpaceAfter=No
+24	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg18.s5
+# text = Prosim!
+1	Prosim	prositi	VERB	Vmpr1s	Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+2	!	!	PUNCT	Z	_	1	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg19
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg19.s1
+# text = Hvala lepa.
+1	Hvala	hvala	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+2	lepa	lep	ADJ	Agpfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	1	amod	_	SpaceAfter=No
+3	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg19.s2
+# text = Bom samo na kratko povzela pisno mnenje.
+1	Bom	biti	AUX	Va-f1s-n	Mood=Ind|Number=Sing|Person=1|Polarity=Pos|Tense=Fut|VerbForm=Fin	5	aux	_	_
+2	samo	samo	PART	Q	_	5	advmod	_	_
+3	na	na	ADP	Sa	Case=Acc	4	case	_	_
+4	kratko	kratek	ADJ	Agpnsa	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	5	obl	_	_
+5	povzela	povzeti	VERB	Vmep-sf	Aspect=Perf|Gender=Fem|Number=Sing|VerbForm=Part	0	root	_	_
+6	pisno	pisen	ADJ	Agpnsa	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	7	amod	_	_
+7	mnenje	mnenje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	5	obj	_	SpaceAfter=No
+8	.	.	PUNCT	Z	_	5	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg19.s3
+# text = Ugotavljamo, da v tretji obravnavi niso vključeni vsi amandmaji, ki so bili sprejeti v drugi obravnavi, oziroma niso ustrezno vključeni.
+1	Ugotavljamo	ugotavljati	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+2	,	,	PUNCT	Z	_	8	punct	_	_
+3	da	da	SCONJ	Cs	_	8	mark	_	_
+4	v	v	ADP	Sl	Case=Loc	6	case	_	_
+5	tretji	tretji	ADJ	Mlofsl	Case=Loc|Gender=Fem|NumType=Ord|Number=Sing	6	amod	_	_
+6	obravnavi	obravnava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	8	obl	_	_
+7	niso	biti	AUX	Va-r3p-y	Mood=Ind|Number=Plur|Person=3|Polarity=Neg|Tense=Pres|VerbForm=Fin	8	cop	_	_
+8	vključeni	vključen	ADJ	Appmpn	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur|VerbForm=Part	1	ccomp	_	_
+9	vsi	ves	DET	Pg-mpn	Case=Nom|Gender=Masc|Number=Plur|PronType=Tot	10	det	_	_
+10	amandmaji	amandma	NOUN	Ncmpn	Case=Nom|Gender=Masc|Number=Plur	8	nsubj	_	SpaceAfter=No
+11	,	,	PUNCT	Z	_	15	punct	_	_
+12	ki	ki	SCONJ	Cs	_	15	mark	_	_
+13	so	biti	AUX	Va-r3p-n	Mood=Ind|Number=Plur|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	15	aux	_	_
+14	bili	biti	AUX	Va-p-pm	Gender=Masc|Number=Plur|VerbForm=Part	15	cop	_	_
+15	sprejeti	sprejet	ADJ	Appmpn	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur|VerbForm=Part	10	acl	_	_
+16	v	v	ADP	Sl	Case=Loc	18	case	_	_
+17	drugi	drug	ADJ	Mlpfsl	Case=Loc|Gender=Fem|Number=Sing	18	amod	_	_
+18	obravnavi	obravnava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	15	obl	_	SpaceAfter=No
+19	,	,	PUNCT	Z	_	15	punct	_	_
+20	oziroma	oziroma	CCONJ	Cc	_	23	cc	_	_
+21	niso	biti	AUX	Va-r3p-y	Mood=Ind|Number=Plur|Person=3|Polarity=Neg|Tense=Pres|VerbForm=Fin	23	cop	_	_
+22	ustrezno	ustrezno	ADV	Rgp	Degree=Pos	23	advmod	_	_
+23	vključeni	vključen	ADJ	Appmpn	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur|VerbForm=Part	15	conj	_	SpaceAfter=No
+24	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg19.s4
+# text = To velja za 3. člen, 7. člen in pri novem 14.a členu.
+1	To	ta	DET	Pd-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	2	nsubj	_	_
+2	velja	veljati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	za	za	ADP	Sa	Case=Acc	5	case	_	_
+4	3.	3.	NUM	Mdo	NumForm=Digit|NumType=Ord	5	nummod	_	_
+5	člen	člen	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	2	xcomp	_	SpaceAfter=No
+6	,	,	PUNCT	Z	_	8	punct	_	_
+7	7.	7.	NUM	Mdo	NumForm=Digit|NumType=Ord	8	nummod	_	_
+8	člen	člen	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	5	appos	_	_
+9	in	in	CCONJ	Cc	_	14	cc	_	_
+10	pri	pri	ADP	Sl	Case=Loc	14	case	_	_
+11	novem	nov	ADJ	Agpmsl	Case=Loc|Degree=Pos|Gender=Masc|Number=Sing	14	amod	_	_
+12	14.	14.	NUM	Mdo	NumForm=Digit|NumType=Ord	14	nummod	_	SpaceAfter=No
+13	a	A	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	14	nmod	_	_
+14	členu	člen	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	5	conj	_	SpaceAfter=No
+15	.	.	PUNCT	Z	_	2	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg19.s5
+# text = Poleg tega opozarjamo, da je predlagatelj spremenil besedilo predloga zakona na mestih, kjer ni bilo sprejetih amandmajev in zato torej tudi ni imel poslovniške podlage.
+1	Poleg	poleg	ADP	Sg	Case=Gen	2	case	_	_
+2	tega	ta	DET	Pd-nsg	Case=Gen|Gender=Neut|Number=Sing|PronType=Dem	3	obl	_	_
+3	opozarjamo	opozarjati	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+4	,	,	PUNCT	Z	_	8	punct	_	_
+5	da	da	SCONJ	Cs	_	8	mark	_	_
+6	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	8	aux	_	_
+7	predlagatelj	predlagatelj	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	8	nsubj	_	_
+8	spremenil	spremeniti	VERB	Vmep-sm	Aspect=Perf|Gender=Masc|Number=Sing|VerbForm=Part	3	ccomp	_	_
+9	besedilo	besedilo	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	8	obj	_	_
+10	predloga	predlog	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	9	nmod	_	_
+11	zakona	zakon	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	10	nmod	_	_
+12	na	na	ADP	Sl	Case=Loc	13	case	_	_
+13	mestih	mesto	NOUN	Ncnpl	Case=Loc|Gender=Neut|Number=Plur	11	nmod	_	SpaceAfter=No
+14	,	,	PUNCT	Z	_	18	punct	_	_
+15	kjer	kjer	SCONJ	Cs	_	18	mark	_	_
+16	ni	biti	AUX	Va-r3s-y	Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Pres|VerbForm=Fin	18	aux	_	_
+17	bilo	biti	AUX	Va-p-sn	Gender=Neut|Number=Sing|VerbForm=Part	13	acl	_	_
+18	sprejetih	sprejet	ADJ	Appmpg	Case=Gen|Degree=Pos|Gender=Masc|Number=Plur|VerbForm=Part	17	csubj	_	_
+19	amandmajev	amandma	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	18	nsubj	_	_
+20	in	in	CCONJ	Cc	_	25	cc	_	_
+21	zato	zato	CCONJ	Cc	_	25	advmod	_	_
+22	torej	torej	ADV	Rgp	Degree=Pos	25	advmod	_	_
+23	tudi	tudi	PART	Q	_	25	advmod	_	_
+24	ni	biti	AUX	Va-r3s-y	Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Pres|VerbForm=Fin	25	aux	_	_
+25	imel	imeti	VERB	Vmpp-sm	Aspect=Imp|Gender=Masc|Number=Sing|VerbForm=Part	18	conj	_	_
+26	poslovniške	poslovniški	ADJ	Agpfsg	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	27	amod	_	_
+27	podlage	podlaga	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	25	obj	_	SpaceAfter=No
+28	.	.	PUNCT	Z	_	3	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg20
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg20.s1
+# text = V tretji obravnavi smo pripravili tudi nekaj pripomb k posameznim členom, ki so bili amandmirani v drugi obravnavi.
+1	V	v	ADP	Sl	Case=Loc	3	case	_	_
+2	tretji	tretji	ADJ	Mlofsl	Case=Loc|Gender=Fem|NumType=Ord|Number=Sing	3	amod	_	_
+3	obravnavi	obravnava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	5	obl	_	_
+4	smo	biti	AUX	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	5	aux	_	_
+5	pripravili	pripraviti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	0	root	_	_
+6	tudi	tudi	PART	Q	_	5	advmod	_	_
+7	nekaj	nekaj	DET	Rgp	PronType=Ind	8	det	_	_
+8	pripomb	pripomba	NOUN	Ncfpg	Case=Gen|Gender=Fem|Number=Plur	5	obj	_	_
+9	k	k	ADP	Sd	Case=Dat	11	case	_	_
+10	posameznim	posamezen	ADJ	Agpmpd	Case=Dat|Degree=Pos|Gender=Masc|Number=Plur	11	amod	_	_
+11	členom	člen	NOUN	Ncmpd	Case=Dat|Gender=Masc|Number=Plur	8	nmod	_	SpaceAfter=No
+12	,	,	PUNCT	Z	_	16	punct	_	_
+13	ki	ki	SCONJ	Cs	_	16	mark	_	_
+14	so	biti	AUX	Va-r3p-n	Mood=Ind|Number=Plur|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	16	aux	_	_
+15	bili	biti	AUX	Va-p-pm	Gender=Masc|Number=Plur|VerbForm=Part	16	cop	_	_
+16	amandmirani	amandmiran	ADJ	Appmpn	Case=Nom|Degree=Pos|Gender=Masc|Number=Plur|VerbForm=Part	11	acl	_	_
+17	v	v	ADP	Sl	Case=Loc	19	case	_	_
+18	drugi	drug	ADJ	Mlpfsl	Case=Loc|Gender=Fem|Number=Sing	19	amod	_	_
+19	obravnavi	obravnava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	16	obl	_	SpaceAfter=No
+20	.	.	PUNCT	Z	_	5	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg20.s2
+# text = S sistemskega vidika se nam zlasti zastavlja vprašanje opredelitve otrok s posebnimi potrebami v razmerju tega zakona do nekaterih področnih zakonov s šolstva.
+1	S	z	ADP	Sg	Case=Gen	3	case	_	_
+2	sistemskega	sistemski	ADJ	Agpmsg	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	3	amod	_	_
+3	vidika	vidik	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	7	obl	_	_
+4	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	7	expl	_	_
+5	nam	jaz	PRON	Pp1-pd	Case=Dat|Number=Plur|Person=1|PronType=Prs	7	obj	_	_
+6	zlasti	zlasti	PART	Q	_	7	advmod	_	_
+7	zastavlja	zastavljati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+8	vprašanje	vprašanje	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	7	nsubj	_	_
+9	opredelitve	opredelitev	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	8	nmod	_	_
+10	otrok	otrok	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	9	nmod	_	_
+11	s	z	ADP	Si	Case=Ins	13	case	_	_
+12	posebnimi	poseben	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	13	amod	_	_
+13	potrebami	potreba	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	9	nmod	_	_
+14	v	v	ADP	Sl	Case=Loc	15	case	_	_
+15	razmerju	razmerje	NOUN	Ncnsl	Case=Loc|Gender=Neut|Number=Sing	13	nmod	_	_
+16	tega	ta	DET	Pd-msg	Case=Gen|Gender=Masc|Number=Sing|PronType=Dem	17	det	_	_
+17	zakona	zakon	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	15	nmod	_	_
+18	do	do	ADP	Sg	Case=Gen	21	case	_	_
+19	nekaterih	nekateri	DET	Pi-mpg	Case=Gen|Gender=Masc|Number=Plur|PronType=Ind	21	det	_	_
+20	področnih	področen	ADJ	Agpmpg	Case=Gen|Degree=Pos|Gender=Masc|Number=Plur	21	amod	_	_
+21	zakonov	zakon	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	17	nmod	_	_
+22	s	z	ADP	Sg	Case=Gen	23	case	_	_
+23	šolstva	šolstvo	NOUN	Ncnsg	Case=Gen|Gender=Neut|Number=Sing	21	nmod	_	SpaceAfter=No
+24	.	.	PUNCT	Z	_	7	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg20.s3
+# text = Opredelitve se namreč ne ujemajo.
+1	Opredelitve	opredelitev	NOUN	Ncfpn	Case=Nom|Gender=Fem|Number=Plur	5	nsubj	_	_
+2	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	5	expl	_	_
+3	namreč	namreč	CCONJ	Cc	_	5	advmod	_	_
+4	ne	ne	PART	Q	Polarity=Neg	5	advmod	_	_
+5	ujemajo	ujemati	VERB	Vmpr3p	Aspect=Imp|Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	.	.	PUNCT	Z	_	5	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg20.s4
+# text = Radi bi opozorili, da se ti zakoni sklicujejo drug na drugega, hkrati pa isto vprašanje urejajo različno.
+1	Radi	rad	ADV	Rgp	Degree=Pos	3	advmod	_	_
+2	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	3	aux	_	_
+3	opozorili	opozoriti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	0	root	_	SpaceAfter=No
+4	,	,	PUNCT	Z	_	9	punct	_	_
+5	da	da	SCONJ	Cs	_	9	mark	_	_
+6	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	9	expl	_	_
+7	ti	ta	DET	Pd-mpn	Case=Nom|Gender=Masc|Number=Plur|PronType=Dem	8	det	_	_
+8	zakoni	zakon	NOUN	Ncmpn	Case=Nom|Gender=Masc|Number=Plur	9	nsubj	_	_
+9	sklicujejo	sklicevati	VERB	Vmpr3p	Aspect=Imp|Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	3	ccomp	_	_
+10	drug	drug	ADJ	Mlpmsnn	Case=Nom|Definite=Ind|Gender=Masc|Number=Sing	9	obl	_	_
+11	na	na	ADP	Sa	Case=Acc	12	case	_	_
+12	drugega	drug	ADJ	Mlpmsa	Case=Acc|Gender=Masc|Number=Sing	9	obl	_	SpaceAfter=No
+13	,	,	PUNCT	Z	_	9	punct	_	_
+14	hkrati	hkrati	ADV	Rgp	Degree=Pos	18	advmod	_	_
+15	pa	pa	CCONJ	Cc	_	18	advmod	_	_
+16	isto	isti	DET	Pi-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Ind	17	det	_	_
+17	vprašanje	vprašanje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	18	obj	_	_
+18	urejajo	urejati	VERB	Vmpr3p	Aspect=Imp|Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	3	parataxis	_	_
+19	različno	različno	ADV	Rgp	Degree=Pos	18	advmod	_	SpaceAfter=No
+20	.	.	PUNCT	Z	_	3	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg21
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg21.s1
+# text = Potem smo pri 7. členu opozorili, da manjka zagotovitev dodatne strokovne pomoči predšolskim otrokom.
+1	Potem	potem	ADV	Rgp	Degree=Pos	6	advmod	_	_
+2	smo	biti	AUX	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	6	aux	_	_
+3	pri	pri	ADP	Sl	Case=Loc	5	case	_	_
+4	7.	7.	NUM	Mdo	NumForm=Digit|NumType=Ord	5	nummod	_	_
+5	členu	člen	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	6	obl	_	_
+6	opozorili	opozoriti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	0	root	_	SpaceAfter=No
+7	,	,	PUNCT	Z	_	9	punct	_	_
+8	da	da	SCONJ	Cs	_	9	mark	_	_
+9	manjka	manjkati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	ccomp	_	_
+10	zagotovitev	zagotovitev	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	9	nsubj	_	_
+11	dodatne	dodaten	ADJ	Agpfsg	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	13	amod	_	_
+12	strokovne	strokoven	ADJ	Agpfsg	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	13	amod	_	_
+13	pomoči	pomoč	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	10	nmod	_	_
+14	predšolskim	predšolski	ADJ	Agpmpd	Case=Dat|Degree=Pos|Gender=Masc|Number=Plur	15	amod	_	_
+15	otrokom	otrok	NOUN	Ncmpd	Case=Dat|Gender=Masc|Number=Plur	13	nmod	_	SpaceAfter=No
+16	.	.	PUNCT	Z	_	6	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg21.s2
+# text = Torej menimo, da bi bilo potrebno identično ureditev, kot velja za vse druge otroke, uvesti tudi za predšolske otroke.
+1	Torej	torej	CCONJ	Cc	_	2	advmod	_	_
+2	menimo	meniti	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+3	,	,	PUNCT	Z	_	7	punct	_	_
+4	da	da	SCONJ	Cs	_	7	mark	_	_
+5	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	7	aux	_	_
+6	bilo	biti	AUX	Va-p-sn	Gender=Neut|Number=Sing|VerbForm=Part	7	cop	_	_
+7	potrebno	potreben	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	2	ccomp	_	_
+8	identično	identičen	ADJ	Agpfsa	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	9	amod	_	_
+9	ureditev	ureditev	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	7	obj	_	SpaceAfter=No
+10	,	,	PUNCT	Z	_	12	punct	_	_
+11	kot	kot	SCONJ	Cs	_	12	mark	_	_
+12	velja	veljati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	9	acl	_	_
+13	za	za	ADP	Sa	Case=Acc	16	case	_	_
+14	vse	ves	DET	Pg-mpa	Case=Acc|Gender=Masc|Number=Plur|PronType=Tot	16	det	_	_
+15	druge	drug	ADJ	Mlpmpa	Case=Acc|Gender=Masc|Number=Plur	16	amod	_	_
+16	otroke	otrok	NOUN	Ncmpa	Case=Acc|Gender=Masc|Number=Plur	12	xcomp	_	SpaceAfter=No
+17	,	,	PUNCT	Z	_	12	punct	_	_
+18	uvesti	uvesti	VERB	Vmen	Aspect=Perf|VerbForm=Inf	12	xcomp	_	_
+19	tudi	tudi	PART	Q	_	18	advmod	_	_
+20	za	za	ADP	Sa	Case=Acc	22	case	_	_
+21	predšolske	predšolski	ADJ	Agpmpa	Case=Acc|Degree=Pos|Gender=Masc|Number=Plur	22	amod	_	_
+22	otroke	otrok	NOUN	Ncmpa	Case=Acc|Gender=Masc|Number=Plur	18	obl	_	SpaceAfter=No
+23	.	.	PUNCT	Z	_	2	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg22
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg22.s1
+# text = Pri oddaji otroka v rejništvo, v okviru 15. člena, pa menimo, da bi kazalo proučiti, glede na to, da je v tem primeru potrebno mnenje komisije za usmerjanje iz drugega odstavka 21. člena predloga zakona, ali bi tudi v tem primeru bilo ustrezno pred pridobitvijo tega mnenja posvetovanje s strokovnimi delavci, kot sicer to velja v postopku.
+1	Pri	pri	ADP	Sl	Case=Loc	2	case	_	_
+2	oddaji	oddaja	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	13	obl	_	_
+3	otroka	otrok	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	2	nmod	_	_
+4	v	v	ADP	Sa	Case=Acc	5	case	_	_
+5	rejništvo	rejništvo	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	3	nmod	_	SpaceAfter=No
+6	,	,	PUNCT	Z	_	8	punct	_	_
+7	v	v	ADP	Sl	Case=Loc	8	case	_	_
+8	okviru	okvir	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	5	appos	_	_
+9	15.	15.	NUM	Mdo	NumForm=Digit|NumType=Ord	10	nummod	_	_
+10	člena	člen	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	8	nmod	_	SpaceAfter=No
+11	,	,	PUNCT	Z	_	8	punct	_	_
+12	pa	pa	CCONJ	Cc	_	13	advmod	_	_
+13	menimo	meniti	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+14	,	,	PUNCT	Z	_	17	punct	_	_
+15	da	da	SCONJ	Cs	_	17	mark	_	_
+16	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	17	aux	_	_
+17	kazalo	kazati	VERB	Vmpp-sn	Aspect=Imp|Gender=Neut|Number=Sing|VerbForm=Part	13	ccomp	_	_
+18	proučiti	proučiti	VERB	Vmen	Aspect=Perf|VerbForm=Inf	17	xcomp	_	SpaceAfter=No
+19	,	,	PUNCT	Z	_	17	punct	_	_
+20	glede	glede	ADV	Rgp	Degree=Pos	22	advmod	_	_
+21	na	na	ADP	Sa	Case=Acc	22	case	_	_
+22	to	ta	DET	Pd-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	13	obl	_	SpaceAfter=No
+23	,	,	PUNCT	Z	_	29	punct	_	_
+24	da	da	SCONJ	Cs	_	29	mark	_	_
+25	je	biti	VERB	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	29	cop	_	_
+26	v	v	ADP	Sl	Case=Loc	28	case	_	_
+27	tem	ta	DET	Pd-msl	Case=Loc|Gender=Masc|Number=Sing|PronType=Dem	28	det	_	_
+28	primeru	primer	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	29	obl	_	_
+29	potrebno	potreben	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	22	acl	_	_
+30	mnenje	mnenje	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	29	nsubj	_	_
+31	komisije	komisija	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	30	nmod	_	_
+32	za	za	ADP	Sa	Case=Acc	33	case	_	_
+33	usmerjanje	usmerjanje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	31	nmod	_	_
+34	iz	iz	ADP	Sg	Case=Gen	36	case	_	_
+35	drugega	drug	ADJ	Mlpmsg	Case=Gen|Gender=Masc|Number=Sing	36	amod	_	_
+36	odstavka	odstavek	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	33	nmod	_	_
+37	21.	21.	NUM	Mdo	NumForm=Digit|NumType=Ord	38	nummod	_	_
+38	člena	člen	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	36	nmod	_	_
+39	predloga	predlog	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	38	nmod	_	_
+40	zakona	zakon	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	39	nmod	_	SpaceAfter=No
+41	,	,	PUNCT	Z	_	48	punct	_	_
+42	ali	ali	ADV	Rgp	Degree=Pos	48	mark	_	_
+43	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	48	aux	_	_
+44	tudi	tudi	PART	Q	_	48	advmod	_	_
+45	v	v	ADP	Sl	Case=Loc	47	case	_	_
+46	tem	ta	DET	Pd-msl	Case=Loc|Gender=Masc|Number=Sing|PronType=Dem	47	det	_	_
+47	primeru	primer	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	49	obl	_	_
+48	bilo	biti	AUX	Va-p-sn	Gender=Neut|Number=Sing|VerbForm=Part	54	cop	_	_
+49	ustrezno	ustrezno	ADV	Rgp	Degree=Pos	40	acl	_	_
+50	pred	pred	ADP	Si	Case=Ins	51	case	_	_
+51	pridobitvijo	pridobitev	NOUN	Ncfsi	Case=Ins|Gender=Fem|Number=Sing	49	obl	_	_
+52	tega	ta	DET	Pd-nsg	Case=Gen|Gender=Neut|Number=Sing|PronType=Dem	53	det	_	_
+53	mnenja	mnenje	NOUN	Ncnsg	Case=Gen|Gender=Neut|Number=Sing	51	nmod	_	_
+54	posvetovanje	posvetovanje	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	53	nmod	_	_
+55	s	z	ADP	Si	Case=Ins	57	case	_	_
+56	strokovnimi	strokoven	ADJ	Agpmpi	Case=Ins|Degree=Pos|Gender=Masc|Number=Plur	57	amod	_	_
+57	delavci	delavec	NOUN	Ncmpi	Case=Ins|Gender=Masc|Number=Plur	54	nmod	_	SpaceAfter=No
+58	,	,	PUNCT	Z	_	62	punct	_	_
+59	kot	kot	SCONJ	Cs	_	62	mark	_	_
+60	sicer	sicer	PART	Q	_	62	advmod	_	_
+61	to	ta	DET	Pd-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	62	nsubj	_	_
+62	velja	veljati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	57	acl	_	_
+63	v	v	ADP	Sl	Case=Loc	64	case	_	_
+64	postopku	postopek	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	62	obl	_	SpaceAfter=No
+65	.	.	PUNCT	Z	_	13	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg23
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg23.s1
+# text = Potem bi pri 17. členu opozorili, da je bila v drugi obravnavi uvedena novost, da se vzgoja in izobraževanje otrok s posebnimi potrebami ne izvaja le kot javna služba, kot je to veljalo doslej.
+1	Potem	potem	ADV	Rgp	Degree=Pos	6	advmod	_	_
+2	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	6	aux	_	_
+3	pri	pri	ADP	Sl	Case=Loc	5	case	_	_
+4	17.	17.	NUM	Mdo	NumForm=Digit|NumType=Ord	5	nummod	_	_
+5	členu	člen	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	6	obl	_	_
+6	opozorili	opozoriti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	0	root	_	SpaceAfter=No
+7	,	,	PUNCT	Z	_	14	punct	_	_
+8	da	da	SCONJ	Cs	_	14	mark	_	_
+9	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	14	aux	_	_
+10	bila	biti	AUX	Va-p-sf	Gender=Fem|Number=Sing|VerbForm=Part	14	cop	_	_
+11	v	v	ADP	Sl	Case=Loc	13	case	_	_
+12	drugi	drug	ADJ	Mlpfsl	Case=Loc|Gender=Fem|Number=Sing	13	amod	_	_
+13	obravnavi	obravnava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	14	obl	_	_
+14	uvedena	uveden	ADJ	Appfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing|VerbForm=Part	6	ccomp	_	_
+15	novost	novost	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	14	nsubj	_	SpaceAfter=No
+16	,	,	PUNCT	Z	_	27	punct	_	_
+17	da	da	SCONJ	Cs	_	27	mark	_	_
+18	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	27	expl	_	_
+19	vzgoja	vzgoja	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	27	nsubj	_	_
+20	in	in	CCONJ	Cc	_	21	cc	_	_
+21	izobraževanje	izobraževanje	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	19	conj	_	_
+22	otrok	otrok	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	21	nmod	_	_
+23	s	z	ADP	Si	Case=Ins	25	case	_	_
+24	posebnimi	poseben	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	25	amod	_	_
+25	potrebami	potreba	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	27	obl	_	_
+26	ne	ne	PART	Q	Polarity=Neg	27	advmod	_	_
+27	izvaja	izvajati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	15	acl	_	_
+28	le	le	PART	Q	_	27	advmod	_	_
+29	kot	kot	SCONJ	Cs	_	31	case	_	_
+30	javna	javen	ADJ	Agpfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	31	amod	_	_
+31	služba	služba	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	27	obl	_	SpaceAfter=No
+32	,	,	PUNCT	Z	_	36	punct	_	_
+33	kot	kot	SCONJ	Cs	_	36	mark	_	_
+34	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	36	aux	_	_
+35	to	ta	DET	Pd-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	36	nsubj	_	_
+36	veljalo	veljati	VERB	Vmpp-sn	Aspect=Imp|Gender=Neut|Number=Sing|VerbForm=Part	31	acl	_	_
+37	doslej	doslej	ADV	Rgp	Degree=Pos	36	advmod	_	SpaceAfter=No
+38	.	.	PUNCT	Z	_	6	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg23.s2
+# text = V zvezi s tem ocenjujemo, da bi kazalo proučiti, ali določba 17. člena zakona, ki je bila sprejeta v drugi obravnavi, dejansko zadostuje za izvajanje vzgoje in izobraževanja otrok s posebnimi potrebami v zasebnih vrtcih in šolah, glede na to, da je dosedanji zakon o organizaciji in financiranju vzgoje in izobraževanja to področje predvidel samo kot javna služba in za te namene ni določil posebnih kriterij za izvajanje in pa za financiranje teh programov.
+1	V	v	ADP	Sl	Case=Loc	2	case	_	_
+2	zvezi	zveza	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	5	obl	_	_
+3	s	z	ADP	Si	Case=Ins	4	case	_	_
+4	tem	ta	DET	Pd-nsi	Case=Ins|Gender=Neut|Number=Sing|PronType=Dem	5	obl	_	_
+5	ocenjujemo	ocenjevati	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+6	,	,	PUNCT	Z	_	9	punct	_	_
+7	da	da	SCONJ	Cs	_	9	mark	_	_
+8	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	9	aux	_	_
+9	kazalo	kazati	VERB	Vmpp-sn	Aspect=Imp|Gender=Neut|Number=Sing|VerbForm=Part	5	ccomp	_	_
+10	proučiti	proučiti	VERB	Vmen	Aspect=Perf|VerbForm=Inf	9	xcomp	_	SpaceAfter=No
+11	,	,	PUNCT	Z	_	27	punct	_	_
+12	ali	ali	ADV	Rgp	Degree=Pos	27	mark	_	_
+13	določba	določba	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	27	nsubj	_	_
+14	17.	17.	NUM	Mdo	NumForm=Digit|NumType=Ord	15	nummod	_	_
+15	člena	člen	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	13	nmod	_	_
+16	zakona	zakon	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	15	nmod	_	SpaceAfter=No
+17	,	,	PUNCT	Z	_	21	punct	_	_
+18	ki	ki	SCONJ	Cs	_	21	mark	_	_
+19	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	21	aux	_	_
+20	bila	biti	AUX	Va-p-sf	Gender=Fem|Number=Sing|VerbForm=Part	21	cop	_	_
+21	sprejeta	sprejet	ADJ	Appfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing|VerbForm=Part	16	acl	_	_
+22	v	v	ADP	Sl	Case=Loc	24	case	_	_
+23	drugi	drug	ADJ	Mlpfsl	Case=Loc|Gender=Fem|Number=Sing	24	amod	_	_
+24	obravnavi	obravnava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	21	obl	_	SpaceAfter=No
+25	,	,	PUNCT	Z	_	21	punct	_	_
+26	dejansko	dejansko	ADV	Rgp	Degree=Pos	27	advmod	_	_
+27	zadostuje	zadostovati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	5	ccomp	_	_
+28	za	za	ADP	Sa	Case=Acc	29	case	_	_
+29	izvajanje	izvajanje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	27	obl	_	_
+30	vzgoje	vzgoja	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	29	nmod	_	_
+31	in	in	CCONJ	Cc	_	32	cc	_	_
+32	izobraževanja	izobraževanje	NOUN	Ncnsg	Case=Gen|Gender=Neut|Number=Sing	30	conj	_	_
+33	otrok	otrok	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	32	nmod	_	_
+34	s	z	ADP	Si	Case=Ins	36	case	_	_
+35	posebnimi	poseben	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Fem|Number=Plur	36	amod	_	_
+36	potrebami	potreba	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	27	obl	_	_
+37	v	v	ADP	Sl	Case=Loc	39	case	_	_
+38	zasebnih	zaseben	ADJ	Agpmpl	Case=Loc|Degree=Pos|Gender=Masc|Number=Plur	39	amod	_	_
+39	vrtcih	vrtec	NOUN	Ncmpl	Case=Loc|Gender=Masc|Number=Plur	36	nmod	_	_
+40	in	in	CCONJ	Cc	_	41	cc	_	_
+41	šolah	šola	NOUN	Ncfpl	Case=Loc|Gender=Fem|Number=Plur	39	conj	_	SpaceAfter=No
+42	,	,	PUNCT	Z	_	45	punct	_	_
+43	glede	glede	ADV	Rgp	Degree=Pos	45	advmod	_	_
+44	na	na	ADP	Sa	Case=Acc	45	case	_	_
+45	to	ta	DET	Pd-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	29	conj	_	SpaceAfter=No
+46	,	,	PUNCT	Z	_	60	punct	_	_
+47	da	da	SCONJ	Cs	_	60	mark	_	_
+48	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	60	aux	_	_
+49	dosedanji	dosedanji	ADJ	Agpmsay	Case=Acc|Definite=Def|Degree=Pos|Gender=Masc|Number=Sing	50	amod	_	_
+50	zakon	zakon	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	60	nsubj	_	_
+51	o	o	ADP	Sl	Case=Loc	52	case	_	_
+52	organizaciji	organizacija	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	50	nmod	_	_
+53	in	in	CCONJ	Cc	_	54	cc	_	_
+54	financiranju	financiranje	NOUN	Ncnsl	Case=Loc|Gender=Neut|Number=Sing	52	conj	_	_
+55	vzgoje	vzgoja	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	54	nmod	_	_
+56	in	in	CCONJ	Cc	_	57	cc	_	_
+57	izobraževanja	izobraževanje	NOUN	Ncnsg	Case=Gen|Gender=Neut|Number=Sing	55	conj	_	_
+58	to	ta	DET	Pd-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	59	det	_	_
+59	področje	področje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	60	obj	_	_
+60	predvidel	predvideti	VERB	Vmep-sm	Aspect=Perf|Gender=Masc|Number=Sing|VerbForm=Part	45	acl	_	_
+61	samo	samo	PART	Q	_	60	advmod	_	_
+62	kot	kot	SCONJ	Cs	_	64	case	_	_
+63	javna	javen	ADJ	Agpfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	64	amod	_	_
+64	služba	služba	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	60	obl	_	_
+65	in	in	CCONJ	Cc	_	70	cc	_	_
+66	za	za	ADP	Sa	Case=Acc	68	case	_	_
+67	te	ta	DET	Pd-mpa	Case=Acc|Gender=Masc|Number=Plur|PronType=Dem	68	det	_	_
+68	namene	namen	NOUN	Ncmpa	Case=Acc|Gender=Masc|Number=Plur	70	obl	_	_
+69	ni	biti	AUX	Va-r3s-y	Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Pres|VerbForm=Fin	70	aux	_	_
+70	določil	določiti	VERB	Vmep-sm	Aspect=Perf|Gender=Masc|Number=Sing|VerbForm=Part	60	conj	_	_
+71	posebnih	poseben	ADJ	Agpmpg	Case=Gen|Degree=Pos|Gender=Masc|Number=Plur	72	amod	_	_
+72	kriterij	kriterij	NOUN	Ncfpg	Case=Gen|Gender=Masc|Number=Plur	70	obj	_	_
+73	za	za	ADP	Sa	Case=Acc	74	case	_	_
+74	izvajanje	izvajanje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	72	nmod	_	_
+75	in	in	CCONJ	Cc	_	78	cc	_	_
+76	pa	pa	CCONJ	Cc	_	70	advmod	_	_
+77	za	za	ADP	Sa	Case=Acc	78	case	_	_
+78	financiranje	financiranje	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	74	conj	_	_
+79	teh	ta	DET	Pd-mpg	Case=Gen|Gender=Masc|Number=Plur|PronType=Dem	80	det	_	_
+80	programov	program	NOUN	Ncmpg	Case=Gen|Gender=Masc|Number=Plur	78	nmod	_	SpaceAfter=No
+81	.	.	PUNCT	Z	_	5	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg24
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg24.s1
+# text = Potem pa še samo k amandmaju k 3. členu.
+1	Potem	potem	ADV	Rgp	Degree=Pos	6	advmod	_	_
+2	pa	pa	CCONJ	Cc	_	6	advmod	_	_
+3	še	še	PART	Q	_	6	advmod	_	_
+4	samo	samo	PART	Q	_	6	advmod	_	_
+5	k	k	ADP	Sd	Case=Dat	6	case	_	_
+6	amandmaju	amandma	NOUN	Ncmsd	Case=Dat|Gender=Masc|Number=Sing	0	root	_	_
+7	k	k	ADP	Sd	Case=Dat	9	case	_	_
+8	3.	3.	NUM	Mdo	NumForm=Digit|NumType=Ord	9	nummod	_	_
+9	členu	člen	NOUN	Ncmsd	Case=Dat|Gender=Masc|Number=Sing	6	nmod	_	SpaceAfter=No
+10	.	.	PUNCT	Z	_	6	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg24.s2
+# text = Menimo, da bi bilo potrebno vrste izobraževanja v tem zakonu usklajeno navajati.
+1	Menimo	meniti	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+2	,	,	PUNCT	Z	_	6	punct	_	_
+3	da	da	SCONJ	Cs	_	6	mark	_	_
+4	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	12	aux	_	_
+5	bilo	biti	AUX	Va-p-sn	Gender=Neut|Number=Sing|VerbForm=Part	12	cop	_	_
+6	potrebno	potreben	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	1	ccomp	_	_
+7	vrste	vrsta	NOUN	Ncfpa	Case=Acc|Gender=Fem|Number=Plur	13	obj	_	_
+8	izobraževanja	izobraževanje	NOUN	Ncnsg	Case=Gen|Gender=Neut|Number=Sing	7	nmod	_	_
+9	v	v	ADP	Sl	Case=Loc	11	case	_	_
+10	tem	ta	DET	Pd-msl	Case=Loc|Gender=Masc|Number=Sing|PronType=Dem	11	det	_	_
+11	zakonu	zakon	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	8	nmod	_	_
+12	usklajeno	usklajen	ADJ	Appnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing|VerbForm=Part	1	ccomp	_	_
+13	navajati	navajati	VERB	Vmpn	Aspect=Imp|VerbForm=Inf	12	csubj	_	SpaceAfter=No
+14	.	.	PUNCT	Z	_	1	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg25
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg25.s1
+# text = Hvala lepa.
+1	Hvala	hvala	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+2	lepa	lep	ADJ	Agpfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	1	amod	_	SpaceAfter=No
+3	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg25.s2
+# text = Sedaj bi jaz predlagal, da se dogovorimo tako.
+1	Sedaj	sedaj	ADV	Rgp	Degree=Pos	4	advmod	_	_
+2	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	4	aux	_	_
+3	jaz	jaz	PRON	Pp1-sn	Case=Nom|Number=Sing|Person=1|PronType=Prs	4	nsubj	_	_
+4	predlagal	predlagati	VERB	Vmbp-sm	Gender=Masc|Number=Sing|VerbForm=Part	0	root	_	SpaceAfter=No
+5	,	,	PUNCT	Z	_	8	punct	_	_
+6	da	da	SCONJ	Cs	_	8	mark	_	_
+7	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	8	expl	_	_
+8	dogovorimo	dogovoriti	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	4	ccomp	_	_
+9	tako	tako	ADV	Rgp	Degree=Pos	8	advmod	_	SpaceAfter=No
+10	.	.	PUNCT	Z	_	4	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg25.s3
+# text = Glede na te tehtne pripombe, ki so prišle iz sekretariata, da prekinemo to točko, nič ne izgubimo na času, ker imamo čas še naslednji teden, čas za odbore, za pripravo naslednje seje, da v skladu s temi pripombami predlagatelj popravi besedilo oziroma jih upošteva in da se potem dobimo s tem popravljenim besedilom ali še dodatnimi dopolnili naslednji teden, četrtek ali petek, ko je čas za odbore, in takrat zadevo damo skozi, lahko zelo na hitro.
+1	Glede	glede	ADV	Rgp	Degree=Pos	5	advmod	_	_
+2	na	na	ADP	Sa	Case=Acc	5	case	_	_
+3	te	ta	DET	Pd-fpa	Case=Acc|Gender=Fem|Number=Plur|PronType=Dem	5	det	_	_
+4	tehtne	tehten	ADJ	Agpfpa	Case=Acc|Degree=Pos|Gender=Fem|Number=Plur	5	amod	_	_
+5	pripombe	pripomba	NOUN	Ncfpa	Case=Acc|Gender=Fem|Number=Plur	20	obl	_	SpaceAfter=No
+6	,	,	PUNCT	Z	_	9	punct	_	_
+7	ki	ki	SCONJ	Cs	_	9	mark	_	_
+8	so	biti	AUX	Va-r3p-n	Mood=Ind|Number=Plur|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	9	aux	_	_
+9	prišle	priti	VERB	Vmep-pf	Aspect=Perf|Gender=Fem|Number=Plur|VerbForm=Part	5	acl	_	_
+10	iz	iz	ADP	Sg	Case=Gen	11	case	_	_
+11	sekretariata	sekretariat	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	9	obl	_	SpaceAfter=No
+12	,	,	PUNCT	Z	_	14	punct	_	_
+13	da	da	SCONJ	Cs	_	14	mark	_	_
+14	prekinemo	prekiniti	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	11	acl	_	_
+15	to	ta	DET	Pd-fsa	Case=Acc|Gender=Fem|Number=Sing|PronType=Dem	16	det	_	_
+16	točko	točka	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	14	obj	_	SpaceAfter=No
+17	,	,	PUNCT	Z	_	14	punct	_	_
+18	nič	nič	PRON	Pz-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Neg	20	obj	_	_
+19	ne	ne	PART	Q	Polarity=Neg	20	advmod	_	_
+20	izgubimo	izgubiti	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	_
+21	na	na	ADP	Sl	Case=Loc	22	case	_	_
+22	času	čas	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	20	obl	_	SpaceAfter=No
+23	,	,	PUNCT	Z	_	25	punct	_	_
+24	ker	ker	SCONJ	Cs	_	25	mark	_	_
+25	imamo	imeti	VERB	Vmpr1p-n	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	20	advcl	_	_
+26	čas	čas	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	25	obj	_	_
+27	še	še	PART	Q	_	25	advmod	_	_
+28	naslednji	naslednji	ADJ	Agpmsay	Case=Acc|Definite=Def|Degree=Pos|Gender=Masc|Number=Sing	29	amod	_	_
+29	teden	teden	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	25	obl	_	SpaceAfter=No
+30	,	,	PUNCT	Z	_	31	punct	_	_
+31	čas	čas	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	29	conj	_	_
+32	za	za	ADP	Sa	Case=Acc	33	case	_	_
+33	odbore	odbor	NOUN	Ncmpa	Case=Acc|Gender=Masc|Number=Plur	31	nmod	_	SpaceAfter=No
+34	,	,	PUNCT	Z	_	36	punct	_	_
+35	za	za	ADP	Sa	Case=Acc	36	case	_	_
+36	pripravo	priprava	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	31	nmod	_	_
+37	naslednje	naslednji	ADJ	Agpfsg	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	38	amod	_	_
+38	seje	seja	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	36	nmod	_	SpaceAfter=No
+39	,	,	PUNCT	Z	_	47	punct	_	_
+40	da	da	SCONJ	Cs	_	47	mark	_	_
+41	v	v	ADP	Sl	Case=Loc	42	case	_	_
+42	skladu	sklad	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	47	obl	_	_
+43	s	z	ADP	Si	Case=Ins	45	case	_	_
+44	temi	ta	DET	Pd-fpi	Case=Ins|Gender=Fem|Number=Plur|PronType=Dem	45	det	_	_
+45	pripombami	pripomba	NOUN	Ncfpi	Case=Ins|Gender=Fem|Number=Plur	42	nmod	_	_
+46	predlagatelj	predlagatelj	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	47	nsubj	_	_
+47	popravi	popraviti	VERB	Vmer3s	Aspect=Perf|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	38	acl	_	_
+48	besedilo	besedilo	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	47	obj	_	_
+49	oziroma	oziroma	CCONJ	Cc	_	51	cc	_	_
+50	jih	on	PRON	Pp3mpa--y	Case=Acc|Gender=Masc|Number=Plur|Person=3|PronType=Prs|Variant=Short	51	obj	_	_
+51	upošteva	upoštevati	VERB	Vmbr3s	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	47	conj	_	_
+52	in	in	CCONJ	Cc	_	56	cc	_	_
+53	da	da	SCONJ	Cs	_	56	mark	_	_
+54	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	56	expl	_	_
+55	potem	potem	ADV	Rgp	Degree=Pos	56	advmod	_	_
+56	dobimo	dobiti	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	51	conj	_	_
+57	s	z	ADP	Si	Case=Ins	60	case	_	_
+58	tem	ta	DET	Pd-nsi	Case=Ins|Gender=Neut|Number=Sing|PronType=Dem	60	det	_	_
+59	popravljenim	popravljen	ADJ	Appnsi	Case=Ins|Degree=Pos|Gender=Neut|Number=Sing|VerbForm=Part	60	amod	_	_
+60	besedilom	besedilo	NOUN	Ncnsi	Case=Ins|Gender=Neut|Number=Sing	56	obl	_	_
+61	ali	ali	CCONJ	Cc	_	64	cc	_	_
+62	še	še	PART	Q	_	56	advmod	_	_
+63	dodatnimi	dodaten	ADJ	Agpfpi	Case=Ins|Degree=Pos|Gender=Neut|Number=Plur	64	amod	_	_
+64	dopolnili	dopolnilo	NOUN	Ncnpi	Case=Ins|Gender=Neut|Number=Plur	60	conj	_	_
+65	naslednji	naslednji	ADJ	Agpmsay	Case=Acc|Definite=Def|Degree=Pos|Gender=Masc|Number=Sing	66	amod	_	_
+66	teden	teden	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	60	conj	_	SpaceAfter=No
+67	,	,	PUNCT	Z	_	68	punct	_	_
+68	četrtek	četrtek	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	60	conj	_	_
+69	ali	ali	CCONJ	Cc	_	70	cc	_	_
+70	petek	petek	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	68	conj	_	SpaceAfter=No
+71	,	,	PUNCT	Z	_	74	punct	_	_
+72	ko	ko	SCONJ	Cs	_	74	mark	_	_
+73	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	74	cop	_	_
+74	čas	čas	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	70	acl	_	_
+75	za	za	ADP	Sa	Case=Acc	76	case	_	_
+76	odbore	odbor	NOUN	Ncmpa	Case=Acc|Gender=Masc|Number=Plur	74	nmod	_	SpaceAfter=No
+77	,	,	PUNCT	Z	_	74	punct	_	_
+78	in	in	CCONJ	Cc	_	81	cc	_	_
+79	takrat	takrat	ADV	Rgp	Degree=Pos	81	advmod	_	_
+80	zadevo	zadeva	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	81	obj	_	_
+81	damo	dati	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	74	conj	_	_
+82	skozi	skozi	ADP	Sa	Case=Acc	81	nmod	_	SpaceAfter=No
+83	,	,	PUNCT	Z	_	81	punct	_	_
+84	lahko	lahko	ADV	Rgp	Degree=Pos	81	advmod	_	_
+85	zelo	zelo	ADV	Rgp	Degree=Pos	87	advmod	_	_
+86	na	na	ADP	Sa	Case=Acc	87	case	_	_
+87	hitro	hiter	ADJ	Agpnsa	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	81	obl	_	SpaceAfter=No
+88	.	.	PUNCT	Z	_	20	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg25.s4
+# text = To je moj predlog oziroma To je moj predlog oziroma moj predlog za dogovor.
+1	To	ta	DET	Pd-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	4	nsubj	_	_
+2	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	4	cop	_	_
+3	moj	moj	DET	Ps1msns	Case=Nom|Gender=Masc|Number=Sing|Number[psor]=Sing|Person=1|Poss=Yes|PronType=Prs	4	det	_	_
+4	predlog	predlog	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	0	root	_	_
+5	oziroma	oziroma	CCONJ	Cc	_	9	cc	_	_
+6	To	ta	DET	Pd-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	9	nsubj	_	_
+7	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	9	cop	_	_
+8	moj	moj	DET	Ps1msns	Case=Nom|Gender=Masc|Number=Sing|Number[psor]=Sing|Person=1|Poss=Yes|PronType=Prs	9	det	_	_
+9	predlog	predlog	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	4	conj	_	_
+10	oziroma	oziroma	CCONJ	Cc	_	12	cc	_	_
+11	moj	moj	DET	Ps1msns	Case=Nom|Gender=Masc|Number=Sing|Number[psor]=Sing|Person=1|Poss=Yes|PronType=Prs	12	det	_	_
+12	predlog	predlog	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	9	conj	_	_
+13	za	za	ADP	Sa	Case=Acc	14	case	_	_
+14	dogovor	dogovor	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	12	nmod	_	SpaceAfter=No
+15	.	.	PUNCT	Z	_	4	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg25.s5
+# text = Mislim, da bi bilo tako najboljše.
+1	Mislim	misliti	VERB	Vmpr1s	Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+2	,	,	PUNCT	Z	_	7	punct	_	_
+3	da	da	SCONJ	Cs	_	7	mark	_	_
+4	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	7	aux	_	_
+5	bilo	biti	AUX	Va-p-sn	Gender=Neut|Number=Sing|VerbForm=Part	7	cop	_	_
+6	tako	tako	ADV	Rgp	Degree=Pos	7	advmod	_	_
+7	najboljše	dober	ADJ	Agsnsn	Case=Nom|Degree=Sup|Gender=Neut|Number=Sing	1	ccomp	_	SpaceAfter=No
+8	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg25.s6
+# text = Želi kdo kaj reči k temu?
+1	Želi	želeti	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+2	kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	1	nsubj	_	_
+3	kaj	kaj	PRON	Pq-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Int	4	obj	_	_
+4	reči	reči	VERB	Vmen	Aspect=Perf|VerbForm=Inf	1	xcomp	_	_
+5	k	k	ADP	Sd	Case=Dat	6	case	_	_
+6	temu	ta	DET	Pd-nsd	Case=Dat|Gender=Neut|Number=Sing|PronType=Dem	4	obl	_	SpaceAfter=No
+7	?	?	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg25.s7
+# text = Gospa Tašanovska, prosim.
+1	Gospa	gospa	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	4	nsubj	_	_
+2	Tašanovska	Tašanovska	PROPN	Npfsn	Case=Nom|Gender=Fem|Number=Sing	1	nmod	_	SpaceAfter=No
+3	,	,	PUNCT	Z	_	4	punct	_	_
+4	prosim	prositi	VERB	Vmpr1s	Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+5	.	.	PUNCT	Z	_	4	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg26
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg26.s1
+# text = Gospod predsednik, ali menite, da ne bi bilo mogoče danes vendarle te vsebinske razprave opraviti, pa da mi pripravimo te popravke, s katerimi se tudi strinjamo do seje državnega zbora.
+1	Gospod	gospod	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	0	root	_	_
+2	predsednik	predsednik	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	1	nmod	_	SpaceAfter=No
+3	,	,	PUNCT	Z	_	5	punct	_	_
+4	ali	ali	ADV	Rgp	Degree=Pos	5	mark	_	_
+5	menite	meniti	VERB	Vmpr2p	Aspect=Imp|Mood=Ind|Number=Plur|Person=2|Tense=Pres|VerbForm=Fin	1	acl	_	SpaceAfter=No
+6	,	,	PUNCT	Z	_	11	punct	_	_
+7	da	da	SCONJ	Cs	_	11	mark	_	_
+8	ne	ne	PART	Q	Polarity=Neg	11	advmod	_	_
+9	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	11	aux	_	_
+10	bilo	biti	AUX	Va-p-sn	Gender=Neut|Number=Sing|VerbForm=Part	11	cop	_	_
+11	mogoče	mogoč	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	5	ccomp	_	_
+12	danes	danes	ADV	Rgp	Degree=Pos	17	advmod	_	_
+13	vendarle	vendarle	CCONJ	Cc	_	11	advmod	_	_
+14	te	ta	DET	Pd-fsg	Case=Gen|Gender=Fem|Number=Sing|PronType=Dem	16	det	_	_
+15	vsebinske	vsebinski	ADJ	Agpfsg	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	16	amod	_	_
+16	razprave	razprava	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	17	obj	_	_
+17	opraviti	opraviti	VERB	Vmen	Aspect=Perf|VerbForm=Inf	11	csubj	_	SpaceAfter=No
+18	,	,	PUNCT	Z	_	11	punct	_	_
+19	pa	pa	CCONJ	Cc	_	22	advmod	_	_
+20	da	da	SCONJ	Cs	_	22	mark	_	_
+21	mi	jaz	PRON	Pp1-sd--y	Case=Dat|Number=Sing|Person=1|PronType=Prs|Variant=Short	22	iobj	_	_
+22	pripravimo	pripraviti	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	1	parataxis	_	_
+23	te	ta	DET	Pd-mpa	Case=Acc|Gender=Masc|Number=Plur|PronType=Dem	24	det	_	_
+24	popravke	popravek	NOUN	Ncmpa	Case=Acc|Gender=Masc|Number=Plur	22	obj	_	SpaceAfter=No
+25	,	,	PUNCT	Z	_	30	punct	_	_
+26	s	z	ADP	Si	Case=Ins	27	case	_	_
+27	katerimi	kateri	DET	Pq-mpi	Case=Ins|Gender=Masc|Number=Plur|PronType=Int	30	obl	_	_
+28	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	30	expl	_	_
+29	tudi	tudi	PART	Q	_	30	advmod	_	_
+30	strinjamo	strinjati	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	24	acl	_	_
+31	do	do	ADP	Sg	Case=Gen	32	case	_	_
+32	seje	seja	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	30	obl	_	_
+33	državnega	državen	ADJ	Agpmsg	Case=Gen|Degree=Pos|Gender=Masc|Number=Sing	34	amod	_	_
+34	zbora	zbor	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	32	nmod	_	SpaceAfter=No
+35	.	.	PUNCT	Z	_	22	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg27
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg27.s1
+# text = Strinjam se, da opravimo vsebinsko razpravo, to se strinjam, čeprav smo zdaj v tretji obravnavi, kakšne široke vsebinske razprave tukaj ni.
+1	Strinjam	strinjati	VERB	Vmpr1s	Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	_
+2	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	1	expl	_	SpaceAfter=No
+3	,	,	PUNCT	Z	_	5	punct	_	_
+4	da	da	SCONJ	Cs	_	5	mark	_	_
+5	opravimo	opraviti	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	1	ccomp	_	_
+6	vsebinsko	vsebinski	ADJ	Agpfsa	Case=Acc|Degree=Pos|Gender=Fem|Number=Sing	7	amod	_	_
+7	razpravo	razprava	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	5	obj	_	SpaceAfter=No
+8	,	,	PUNCT	Z	_	5	punct	_	_
+9	to	ta	DET	Pd-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	11	nsubj	_	_
+10	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	11	expl	_	_
+11	strinjam	strinjati	VERB	Vmpr1s	Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	1	parataxis	_	SpaceAfter=No
+12	,	,	PUNCT	Z	_	14	punct	_	_
+13	čeprav	čeprav	SCONJ	Cs	_	14	mark	_	_
+14	smo	biti	VERB	Va-r1p-n	Mood=Ind|Number=Plur|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	11	advcl	_	_
+15	zdaj	zdaj	ADV	Rgp	Degree=Pos	14	advmod	_	_
+16	v	v	ADP	Sl	Case=Loc	18	case	_	_
+17	tretji	tretji	ADJ	Mlofsl	Case=Loc|Gender=Fem|NumType=Ord|Number=Sing	18	amod	_	_
+18	obravnavi	obravnava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	14	obl	_	SpaceAfter=No
+19	,	,	PUNCT	Z	_	25	punct	_	_
+20	kakšne	kakšen	DET	Pq-fsg	Case=Gen|Gender=Fem|Number=Sing|PronType=Int	23	det	_	_
+21	široke	širok	ADJ	Agpfsg	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	23	amod	_	_
+22	vsebinske	vsebinski	ADJ	Agpfsg	Case=Gen|Degree=Pos|Gender=Fem|Number=Sing	23	amod	_	_
+23	razprave	razprava	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	25	nsubj	_	_
+24	tukaj	tukaj	ADV	Rgp	Degree=Pos	25	advmod	_	_
+25	ni	biti	VERB	Va-r3s-y	Mood=Ind|Number=Sing|Person=3|Polarity=Neg|Tense=Pres|VerbForm=Fin	18	acl	_	SpaceAfter=No
+26	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg27.s2
+# text = Mi moramo pravzaprav samo o amandmajih govoriti, ne pa o vsebinski razpravi, celotni vsebinski razpravi.
+1	Mi	jaz	PRON	Pp1mpn	Case=Nom|Gender=Masc|Number=Plur|Person=1|PronType=Prs	2	nsubj	_	_
+2	moramo	morati	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	pravzaprav	pravzaprav	PART	Q	_	2	advmod	_	_
+4	samo	samo	PART	Q	_	2	advmod	_	_
+5	o	o	ADP	Sl	Case=Loc	6	case	_	_
+6	amandmajih	amandma	NOUN	Ncmpl	Case=Loc|Gender=Masc|Number=Plur	7	obl	_	_
+7	govoriti	govoriti	VERB	Vmpn	Aspect=Imp|VerbForm=Inf	2	xcomp	_	SpaceAfter=No
+8	,	,	PUNCT	Z	_	13	punct	_	_
+9	ne	ne	PART	Q	Polarity=Neg	13	cc:preconj	_	_
+10	pa	pa	CCONJ	Cc	_	9	fixed	_	_
+11	o	o	ADP	Sl	Case=Loc	13	case	_	_
+12	vsebinski	vsebinski	ADJ	Agpfsl	Case=Loc|Degree=Pos|Gender=Fem|Number=Sing	13	amod	_	_
+13	razpravi	razprava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	7	obl	_	SpaceAfter=No
+14	,	,	PUNCT	Z	_	17	punct	_	_
+15	celotni	celoten	ADJ	Agpfsl	Case=Loc|Degree=Pos|Gender=Fem|Number=Sing	17	amod	_	_
+16	vsebinski	vsebinski	ADJ	Agpfsl	Case=Loc|Degree=Pos|Gender=Fem|Number=Sing	17	amod	_	_
+17	razpravi	razprava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	13	conj	_	SpaceAfter=No
+18	.	.	PUNCT	Z	_	2	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg27.s3
+# text = Prosim, gospod Moge.
+1	Prosim	prositi	VERB	Vmpr1s	Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	SpaceAfter=No
+2	,	,	PUNCT	Z	_	3	punct	_	_
+3	gospod	gospod	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	1	parataxis	_	_
+4	Moge	Moge	PROPN	Npmsn	Case=Nom|Gender=Masc|Number=Sing	3	nmod	_	SpaceAfter=No
+5	.	.	PUNCT	Z	_	1	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg28
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg28.s1
+# text = Ja, predsednik, zdi se mi ta predlog umesten, jaz ga bom seveda podprl in sem vesel, da ravnamo pač racionalno v tem odboru.
+1	Ja	ja	PART	Q	_	5	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	Z	_	1	punct	_	_
+3	predsednik	predsednik	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	5	parataxis	_	SpaceAfter=No
+4	,	,	PUNCT	Z	_	1	punct	_	_
+5	zdi	zdeti	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	0	root	_	_
+6	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	5	expl	_	_
+7	mi	jaz	PRON	Pp1-sd--y	Case=Dat|Number=Sing|Person=1|PronType=Prs|Variant=Short	5	obj	_	_
+8	ta	ta	DET	Pd-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Dem	9	det	_	_
+9	predlog	predlog	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	5	nsubj	_	_
+10	umesten	umesten	ADJ	Agpmsnn	Case=Nom|Definite=Ind|Degree=Pos|Gender=Masc|Number=Sing	5	xcomp	_	SpaceAfter=No
+11	,	,	PUNCT	Z	_	16	punct	_	_
+12	jaz	jaz	PRON	Pp1-sn	Case=Nom|Number=Sing|Person=1|PronType=Prs	16	nsubj	_	_
+13	ga	on	PRON	Pp3msa--y	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs|Variant=Short	16	obj	_	_
+14	bom	biti	AUX	Va-f1s-n	Mood=Ind|Number=Sing|Person=1|Polarity=Pos|Tense=Fut|VerbForm=Fin	16	aux	_	_
+15	seveda	seveda	PART	Q	_	16	advmod	_	_
+16	podprl	podpreti	VERB	Vmep-sm	Aspect=Perf|Gender=Masc|Number=Sing|VerbForm=Part	5	parataxis	_	_
+17	in	in	CCONJ	Cc	_	19	cc	_	_
+18	sem	biti	AUX	Va-r1s-n	Mood=Ind|Number=Sing|Person=1|Polarity=Pos|Tense=Pres|VerbForm=Fin	19	cop	_	_
+19	vesel	vesel	ADJ	Agpmsnn	Case=Nom|Definite=Ind|Degree=Pos|Gender=Masc|Number=Sing	16	conj	_	SpaceAfter=No
+20	,	,	PUNCT	Z	_	22	punct	_	_
+21	da	da	SCONJ	Cs	_	22	mark	_	_
+22	ravnamo	ravnati	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	19	ccomp	_	_
+23	pač	pač	PART	Q	_	22	advmod	_	_
+24	racionalno	racionalno	ADV	Rgp	Degree=Pos	22	advmod	_	_
+25	v	v	ADP	Sl	Case=Loc	27	case	_	_
+26	tem	ta	DET	Pd-msl	Case=Loc|Gender=Masc|Number=Sing|PronType=Dem	27	det	_	_
+27	odboru	odbor	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	22	obl	_	SpaceAfter=No
+28	.	.	PUNCT	Z	_	5	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg28.s2
+# text = Bi pa prosil, do obravnave na nadaljevanju te seje, da bi dve stvari pridobili.
+1	Bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	3	aux	_	_
+2	pa	pa	CCONJ	Cc	_	3	advmod	_	_
+3	prosil	prositi	VERB	Vmpp-sm	Aspect=Imp|Gender=Masc|Number=Sing|VerbForm=Part	0	root	_	SpaceAfter=No
+4	,	,	PUNCT	Z	_	6	punct	_	_
+5	do	do	ADP	Sg	Case=Gen	6	case	_	_
+6	obravnave	obravnava	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	3	obl	_	_
+7	na	na	ADP	Sl	Case=Loc	8	case	_	_
+8	nadaljevanju	nadaljevanje	NOUN	Ncnsl	Case=Loc|Gender=Neut|Number=Sing	6	nmod	_	_
+9	te	ta	DET	Pd-fsg	Case=Gen|Gender=Fem|Number=Sing|PronType=Dem	10	det	_	_
+10	seje	seja	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	8	nmod	_	SpaceAfter=No
+11	,	,	PUNCT	Z	_	16	punct	_	_
+12	da	da	SCONJ	Cs	_	16	mark	_	_
+13	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	16	aux	_	_
+14	dve	dva	NUM	Mlcfda	Case=Acc|Gender=Fem|NumForm=Word|NumType=Card|Number=Dual	15	nummod	_	_
+15	stvari	stvar	NOUN	Ncfda	Case=Acc|Gender=Fem|Number=Dual	16	obj	_	_
+16	pridobili	pridobiti	VERB	Vmep-pm	Aspect=Perf|Gender=Masc|Number=Plur|VerbForm=Part	10	acl	_	SpaceAfter=No
+17	.	.	PUNCT	Z	_	3	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg28.s3
+# text = Ena stvar je mnenje tega sveta, če je bil, torej da je bil svet ustanovljen, to je ena reč, ampak mnenje tega sveta in podpis, neka dopis tega sveta, da so obravnavali in zakaj pač predlagajo takšen tekst, kot ga predlagajo v amandmaju.
+1	Ena	en	NUM	Mlpfsn	Case=Nom|Gender=Fem|NumForm=Word|NumType=Card|Number=Sing	2	nummod	_	_
+2	stvar	stvar	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+3	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	2	cop	_	_
+4	mnenje	mnenje	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	2	nsubj	_	_
+5	tega	ta	DET	Pd-msg	Case=Gen|Gender=Masc|Number=Sing|PronType=Dem	6	det	_	_
+6	sveta	svet	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	4	nmod	_	SpaceAfter=No
+7	,	,	PUNCT	Z	_	10	punct	_	_
+8	če	če	SCONJ	Cs	_	10	mark	_	_
+9	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	10	aux	_	_
+10	bil	biti	AUX	Va-p-sm	Gender=Masc|Number=Sing|VerbForm=Part	2	cop	_	SpaceAfter=No
+11	,	,	PUNCT	Z	_	17	punct	_	_
+12	torej	torej	CCONJ	Cc	_	17	mark	_	_
+13	da	da	SCONJ	Cs	_	12	fixed	_	_
+14	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	17	aux	_	_
+15	bil	biti	AUX	Va-p-sm	Gender=Masc|Number=Sing|VerbForm=Part	17	cop	_	_
+16	svet	svet	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	17	nsubj	_	_
+17	ustanovljen	ustanovljen	ADJ	Appmsnn	Case=Nom|Definite=Ind|Degree=Pos|Gender=Masc|Number=Sing|VerbForm=Part	22	advcl	_	SpaceAfter=No
+18	,	,	PUNCT	Z	_	17	punct	_	_
+19	to	ta	DET	Pd-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	22	nsubj	_	_
+20	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	22	cop	_	_
+21	ena	en	NUM	Mlpfsn	Case=Nom|Gender=Fem|NumForm=Word|NumType=Card|Number=Sing	22	nummod	_	_
+22	reč	reč	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	4	parataxis	_	SpaceAfter=No
+23	,	,	PUNCT	Z	_	25	punct	_	_
+24	ampak	ampak	CCONJ	Cc	_	25	cc	_	_
+25	mnenje	mnenje	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	22	conj	_	_
+26	tega	ta	DET	Pd-msg	Case=Gen|Gender=Masc|Number=Sing|PronType=Dem	27	det	_	_
+27	sveta	svet	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	25	nmod	_	_
+28	in	in	CCONJ	Cc	_	29	cc	_	_
+29	podpis	podpis	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	25	conj	_	SpaceAfter=No
+30	,	,	PUNCT	Z	_	32	punct	_	_
+31	neka	nek	DET	Pi-fsn	Case=Nom|Gender=Fem|Number=Sing|PronType=Ind	32	det	_	_
+32	dopis	dopis	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	25	conj	_	_
+33	tega	ta	DET	Pd-msg	Case=Gen|Gender=Masc|Number=Sing|PronType=Dem	34	det	_	_
+34	sveta	svet	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	32	nmod	_	SpaceAfter=No
+35	,	,	PUNCT	Z	_	38	punct	_	_
+36	da	da	SCONJ	Cs	_	38	mark	_	_
+37	so	biti	AUX	Va-r3p-n	Mood=Ind|Number=Plur|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	38	aux	_	_
+38	obravnavali	obravnavati	VERB	Vmpp-pm	Aspect=Imp|Gender=Masc|Number=Plur|VerbForm=Part	32	acl	_	_
+39	in	in	CCONJ	Cc	_	42	cc	_	_
+40	zakaj	zakaj	ADV	Rgp	Degree=Pos	42	advmod	_	_
+41	pač	pač	PART	Q	_	42	advmod	_	_
+42	predlagajo	predlagati	VERB	Vmbr3p	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	38	conj	_	_
+43	takšen	takšen	DET	Pd-msa	Case=Acc|Gender=Masc|Number=Sing|PronType=Dem	44	det	_	_
+44	tekst	tekst	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	42	obj	_	SpaceAfter=No
+45	,	,	PUNCT	Z	_	48	punct	_	_
+46	kot	kot	SCONJ	Cs	_	48	mark	_	_
+47	ga	on	PRON	Pp3msa--y	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs|Variant=Short	48	obj	_	_
+48	predlagajo	predlagati	VERB	Vmbr3p	Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	44	acl	_	_
+49	v	v	ADP	Sl	Case=Loc	50	case	_	_
+50	amandmaju	amandma	NOUN	Ncmsl	Case=Loc|Gender=Masc|Number=Sing	48	obl	_	SpaceAfter=No
+51	.	.	PUNCT	Z	_	2	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg28.s4
+# text = Po drugi strani bi pa lepo poprosil, da se zopet ne bi šli z lobiranjem pod mizo, to kar je naša z dobrim namenom poslanska kolegica dr. Majda Kregelj-Zbačnik naredila kot prej, neke liste od neke skupine prinašala pa na mizo dala, bi bilo dobro, da jo opozoriš, pa ji daj reči, naj ti ljudje na odbor pošljejo, tako da lahko to kot uradno gradivo v razpravi uporabljamo, ker se ti dve stvari, to gradivo in tisto, ki ga ministrstvo predlaga, diametralno nasprotno.
+1	Po	po	ADP	Sl	Case=Loc	3	case	_	_
+2	drugi	drug	ADJ	Mlpfsl	Case=Loc|Gender=Fem|Number=Sing	3	amod	_	_
+3	strani	stran	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	7	obl	_	_
+4	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	7	aux	_	_
+5	pa	pa	CCONJ	Cc	_	7	advmod	_	_
+6	lepo	lepo	ADV	Rgp	Degree=Pos	7	advmod	_	_
+7	poprosil	poprositi	VERB	Vmep-sm	Aspect=Perf|Gender=Masc|Number=Sing|VerbForm=Part	0	root	_	SpaceAfter=No
+8	,	,	PUNCT	Z	_	14	punct	_	_
+9	da	da	SCONJ	Cs	_	14	mark	_	_
+10	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	14	expl	_	_
+11	zopet	zopet	ADV	Rgp	Degree=Pos	14	advmod	_	_
+12	ne	ne	PART	Q	Polarity=Neg	14	advmod	_	_
+13	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	14	aux	_	_
+14	šli	iti	VERB	Vmbp-pm	Gender=Masc|Number=Plur|VerbForm=Part	7	ccomp	_	_
+15	z	z	ADP	Si	Case=Ins	16	case	_	_
+16	lobiranjem	lobiranje	NOUN	Ncnsi	Case=Ins|Gender=Neut|Number=Sing	14	obl	_	_
+17	pod	pod	ADP	Si	Case=Ins	18	case	_	_
+18	mizo	miza	NOUN	Ncfsi	Case=Ins|Gender=Fem|Number=Sing	16	nmod	_	SpaceAfter=No
+19	,	,	PUNCT	Z	_	14	punct	_	_
+20	to	ta	DET	Pd-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	32	obj	_	_
+21	kar	kar	PRON	Pr-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Rel	32	obj	_	_
+22	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	32	aux	_	_
+23	naša	naš	DET	Ps1fsnp	Case=Nom|Gender=Fem|Number=Sing|Number[psor]=Plur|Person=1|Poss=Yes|PronType=Prs	32	nsubj	_	_
+24	z	z	ADP	Si	Case=Ins	26	case	_	_
+25	dobrim	dober	ADJ	Agpmsi	Case=Ins|Degree=Pos|Gender=Masc|Number=Sing	26	amod	_	_
+26	namenom	namen	NOUN	Ncmsi	Case=Ins|Gender=Masc|Number=Sing	32	obl	_	_
+27	poslanska	poslanski	ADJ	Agpfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	28	amod	_	_
+28	kolegica	kolegica	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	32	nsubj	_	_
+29	dr.	dr.	X	Y	Abbr=Yes	30	nmod	_	_
+30	Majda	Majda	PROPN	Npfsn	Case=Nom|Gender=Fem|Number=Sing	28	nmod	_	_
+31	Kregelj-Zbačnik	Kregeljvzbačnik	PROPN	Npfsn	Case=Nom|Gender=Fem|Number=Sing	30	flat:name	_	_
+32	naredila	narediti	VERB	Vmep-sf	Aspect=Perf|Gender=Fem|Number=Sing|VerbForm=Part	7	ccomp	_	_
+33	kot	kot	SCONJ	Cs	_	34	case	_	_
+34	prej	prej	ADV	Rgc	Degree=Cmp	32	advmod	_	SpaceAfter=No
+35	,	,	PUNCT	Z	_	37	punct	_	_
+36	neke	nek	DET	Pi-mpa	Case=Acc|Gender=Fem|Number=Plur|PronType=Ind	37	det	_	_
+37	liste	list	NOUN	Ncfsg	Case=Acc|Gender=Masc|Number=Sing	41	obj	_	_
+38	od	od	ADP	Sg	Case=Gen	40	case	_	_
+39	neke	nek	DET	Pi-fsg	Case=Gen|Gender=Fem|Number=Sing|PronType=Ind	40	det	_	_
+40	skupine	skupina	NOUN	Ncfsg	Case=Gen|Gender=Fem|Number=Sing	37	nmod	_	_
+41	prinašala	prinašati	VERB	Vmpp-sf	Aspect=Imp|Gender=Fem|Number=Sing|VerbForm=Part	32	conj	_	_
+42	pa	pa	CCONJ	Cc	_	45	cc	_	_
+43	na	na	ADP	Sa	Case=Acc	44	case	_	_
+44	mizo	miza	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	45	obl	_	_
+45	dala	dati	VERB	Vmep-sf	Aspect=Perf|Gender=Fem|Number=Sing|VerbForm=Part	41	conj	_	SpaceAfter=No
+46	,	,	PUNCT	Z	_	41	punct	_	_
+47	bi	biti	AUX	Va-c	Mood=Cnd|VerbForm=Fin	49	aux	_	_
+48	bilo	biti	AUX	Va-p-sn	Gender=Neut|Number=Sing|VerbForm=Part	49	cop	_	_
+49	dobro	dober	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	7	parataxis	_	SpaceAfter=No
+50	,	,	PUNCT	Z	_	53	punct	_	_
+51	da	da	SCONJ	Cs	_	53	mark	_	_
+52	jo	on	PRON	Pp3fsa--y	Case=Acc|Gender=Fem|Number=Sing|Person=3|PronType=Prs|Variant=Short	53	obj	_	_
+53	opozoriš	opozoriti	VERB	Vmer2s	Aspect=Perf|Mood=Ind|Number=Sing|Person=2|Tense=Pres|VerbForm=Fin	49	csubj	_	SpaceAfter=No
+54	,	,	PUNCT	Z	_	53	punct	_	_
+55	pa	pa	CCONJ	Cc	_	57	advmod	_	_
+56	ji	on	PRON	Pp3fsd--y	Case=Dat|Gender=Fem|Number=Sing|Person=3|PronType=Prs|Variant=Short	57	obj	_	_
+57	daj	dati	VERB	Vmem2s	Aspect=Perf|Mood=Imp|Number=Sing|Person=2|VerbForm=Fin	7	parataxis	_	_
+58	reči	reči	VERB	Vmen	Aspect=Perf|VerbForm=Inf	57	xcomp	_	SpaceAfter=No
+59	,	,	PUNCT	Z	_	65	punct	_	_
+60	naj	naj	SCONJ	Cs	_	65	mark	_	_
+61	ti	ti	PRON	Pp2-sd--y	Case=Dat|Number=Plur|Person=2|PronType=Prs|Variant=Short	65	obj	_	_
+62	ljudje	človek	NOUN	Ncmpn	Case=Nom|Gender=Masc|Number=Plur	65	nsubj	_	_
+63	na	na	ADP	Sa	Case=Acc	64	case	_	_
+64	odbor	odbor	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	65	obl	_	_
+65	pošljejo	poslati	VERB	Vmer3p	Aspect=Perf|Mood=Ind|Number=Plur|Person=3|Tense=Pres|VerbForm=Fin	58	ccomp	_	SpaceAfter=No
+66	,	,	PUNCT	Z	_	65	punct	_	_
+67	tako	tako	CCONJ	Cc	_	76	cc	_	_
+68	da	da	SCONJ	Cs	_	67	fixed	_	_
+69	lahko	lahko	ADV	Rgp	Degree=Pos	76	advmod	_	_
+70	to	ta	DET	Pd-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	76	obj	_	_
+71	kot	kot	SCONJ	Cs	_	73	case	_	_
+72	uradno	uraden	ADJ	Agpnsa	Case=Acc|Degree=Pos|Gender=Neut|Number=Sing	73	amod	_	_
+73	gradivo	gradivo	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	70	obl	_	_
+74	v	v	ADP	Sl	Case=Loc	75	case	_	_
+75	razpravi	razprava	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	73	nmod	_	_
+76	uporabljamo	uporabljati	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	65	conj	_	SpaceAfter=No
+77	,	,	PUNCT	Z	_	82	punct	_	_
+78	ker	ker	SCONJ	Cs	_	82	mark	_	_
+79	se	se	PRON	Px------y	PronType=Prs|Reflex=Yes|Variant=Short	76	expl	_	_
+80	ti	ta	DET	Pd-mpn	Case=Nom|Gender=Fem|Number=Sing|PronType=Dem	82	det	_	_
+81	dve	dva	NUM	Mlcfdn	Case=Nom|Gender=Fem|NumForm=Word|NumType=Card|Number=Dual	82	nummod	_	_
+82	stvari	stvar	NOUN	Ncfdn	Case=Nom|Gender=Fem|Number=Dual	76	nsubj	_	SpaceAfter=No
+83	,	,	PUNCT	Z	_	85	punct	_	_
+84	to	ta	DET	Pd-nsn	Case=Nom|Gender=Neut|Number=Sing|PronType=Dem	85	det	_	_
+85	gradivo	gradivo	NOUN	Ncnsa	Case=Acc|Gender=Neut|Number=Sing	82	conj	_	_
+86	in	in	CCONJ	Cc	_	87	cc	_	_
+87	tisto	tisti	DET	Pd-nsn	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	85	conj	_	SpaceAfter=No
+88	,	,	PUNCT	Z	_	92	punct	_	_
+89	ki	ki	SCONJ	Cs	_	92	mark	_	_
+90	ga	on	PRON	Pp3msa--y	Case=Acc|Gender=Masc|Number=Sing|Person=3|PronType=Prs|Variant=Short	92	obj	_	_
+91	ministrstvo	ministrstvo	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	92	nsubj	_	_
+92	predlaga	predlagati	VERB	Vmbr3s	Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	87	acl	_	SpaceAfter=No
+93	,	,	PUNCT	Z	_	92	punct	_	_
+94	diametralno	diametralno	ADV	Rgp	Degree=Pos	95	advmod	_	_
+95	nasprotno	nasprotno	ADV	Rgp	Degree=Pos	87	acl	_	SpaceAfter=No
+96	.	.	PUNCT	Z	_	7	punct	_	_
+
+# newpar id = OZKSIS-Redna-034-2000-05-18.seg29
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg29.s1
+# text = Hvala lepa.
+1	Hvala	hvala	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+2	lepa	lep	ADJ	Agpfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	1	amod	_	SpaceAfter=No
+3	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg29.s2
+# text = Torej, jaz bom takole vprašal, ali kdo nasprotuje, da dobimo to, kar je predlagal gospod Moge, uradno mnenje sveta v zvezi s temi amandmaji in ali kdo nasprotuje temu, da prekinemo na tem mestu to točko in da nadaljujemo v četrtek ali petek, naslednji teden.
+1	Torej	torej	ADV	Rgp	Degree=Pos	6	discourse	_	SpaceAfter=No
+2	,	,	PUNCT	Z	_	1	punct	_	_
+3	jaz	jaz	PRON	Pp1-sn	Case=Nom|Number=Sing|Person=1|PronType=Prs	6	nsubj	_	_
+4	bom	biti	AUX	Va-f1s-n	Mood=Ind|Number=Sing|Person=1|Polarity=Pos|Tense=Fut|VerbForm=Fin	6	aux	_	_
+5	takole	takole	ADV	Rgp	Degree=Pos	6	advmod	_	_
+6	vprašal	vprašati	VERB	Vmep-sm	Aspect=Perf|Gender=Masc|Number=Sing|VerbForm=Part	0	root	_	SpaceAfter=No
+7	,	,	PUNCT	Z	_	10	punct	_	_
+8	ali	ali	ADV	Rgp	Degree=Pos	10	mark	_	_
+9	kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	10	nsubj	_	_
+10	nasprotuje	nasprotovati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	6	ccomp	_	SpaceAfter=No
+11	,	,	PUNCT	Z	_	13	punct	_	_
+12	da	da	SCONJ	Cs	_	13	mark	_	_
+13	dobimo	dobiti	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	10	ccomp	_	_
+14	to	ta	DET	Pd-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Dem	13	obj	_	SpaceAfter=No
+15	,	,	PUNCT	Z	_	18	punct	_	_
+16	kar	kar	PRON	Pr-nsa	Case=Acc|Gender=Neut|Number=Sing|PronType=Rel	18	obj	_	_
+17	je	biti	AUX	Va-r3s-n	Mood=Ind|Number=Sing|Person=3|Polarity=Pos|Tense=Pres|VerbForm=Fin	18	aux	_	_
+18	predlagal	predlagati	VERB	Vmbp-sm	Gender=Masc|Number=Sing|VerbForm=Part	14	acl	_	_
+19	gospod	gospod	NOUN	Ncmsn	Case=Nom|Gender=Masc|Number=Sing	18	nsubj	_	_
+20	Moge	Moge	PROPN	Npmsn	Case=Nom|Gender=Masc|Number=Sing	19	nmod	_	SpaceAfter=No
+21	,	,	PUNCT	Z	_	18	punct	_	_
+22	uradno	uraden	ADJ	Agpnsn	Case=Nom|Degree=Pos|Gender=Neut|Number=Sing	23	amod	_	_
+23	mnenje	mnenje	NOUN	Ncnsn	Case=Nom|Gender=Neut|Number=Sing	19	conj	_	_
+24	sveta	svet	NOUN	Ncmsg	Case=Gen|Gender=Masc|Number=Sing	23	nmod	_	_
+25	v	v	ADP	Sl	Case=Loc	26	case	_	_
+26	zvezi	zveza	NOUN	Ncfsl	Case=Loc|Gender=Fem|Number=Sing	23	nmod	_	_
+27	s	z	ADP	Si	Case=Ins	29	case	_	_
+28	temi	ta	DET	Pd-mpi	Case=Ins|Gender=Masc|Number=Plur|PronType=Dem	29	det	_	_
+29	amandmaji	amandma	NOUN	Ncmpi	Case=Ins|Gender=Masc|Number=Plur	26	nmod	_	_
+30	in	in	CCONJ	Cc	_	33	cc	_	_
+31	ali	ali	CCONJ	Cc	_	33	cc	_	_
+32	kdo	kdo	PRON	Pq-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Int	33	nsubj	_	_
+33	nasprotuje	nasprotovati	VERB	Vmpr3s	Aspect=Imp|Mood=Ind|Number=Sing|Person=3|Tense=Pres|VerbForm=Fin	23	acl	_	_
+34	temu	ta	DET	Pd-nsd	Case=Dat|Gender=Neut|Number=Sing|PronType=Dem	33	obj	_	SpaceAfter=No
+35	,	,	PUNCT	Z	_	37	punct	_	_
+36	da	da	SCONJ	Cs	_	37	mark	_	_
+37	prekinemo	prekiniti	VERB	Vmer1p	Aspect=Perf|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	34	acl	_	_
+38	na	na	ADP	Sl	Case=Loc	40	case	_	_
+39	tem	ta	DET	Pd-nsl	Case=Loc|Gender=Neut|Number=Sing|PronType=Dem	40	det	_	_
+40	mestu	mesto	NOUN	Ncnsl	Case=Loc|Gender=Neut|Number=Sing	37	obl	_	_
+41	to	ta	DET	Pd-fsa	Case=Acc|Gender=Fem|Number=Sing|PronType=Dem	42	det	_	_
+42	točko	točka	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	37	obj	_	_
+43	in	in	CCONJ	Cc	_	45	cc	_	_
+44	da	da	SCONJ	Cs	_	45	mark	_	_
+45	nadaljujemo	nadaljevati	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	37	conj	_	_
+46	v	v	ADP	Sa	Case=Acc	47	case	_	_
+47	četrtek	četrtek	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	45	obl	_	_
+48	ali	ali	CCONJ	Cc	_	49	cc	_	_
+49	petek	petek	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	47	conj	_	SpaceAfter=No
+50	,	,	PUNCT	Z	_	52	punct	_	_
+51	naslednji	naslednji	ADJ	Agpmsay	Case=Acc|Definite=Def|Degree=Pos|Gender=Masc|Number=Sing	52	amod	_	_
+52	teden	teden	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	47	conj	_	SpaceAfter=No
+53	.	.	PUNCT	Z	_	6	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg29.s3
+# text = Nihče.
+1	Nihče	nihče	PRON	Pz-msn	Case=Nom|Gender=Masc|Number=Sing|PronType=Neg	0	root	_	SpaceAfter=No
+2	.	.	PUNCT	Z	_	1	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg29.s4
+# text = Potem prekinjam tole sejo in jo nadaljujemo naslednji teden.
+1	Potem	potem	ADV	Rgp	Degree=Pos	2	advmod	_	_
+2	prekinjam	prekinjati	VERB	Vmpr1s	Aspect=Imp|Mood=Ind|Number=Sing|Person=1|Tense=Pres|VerbForm=Fin	0	root	_	_
+3	tole	tale	DET	Pd-fsa	Case=Acc|Gender=Fem|Number=Sing|PronType=Dem	4	det	_	_
+4	sejo	seja	NOUN	Ncfsa	Case=Acc|Gender=Fem|Number=Sing	2	obj	_	_
+5	in	in	CCONJ	Cc	_	7	cc	_	_
+6	jo	on	PRON	Pp3fsa--y	Case=Acc|Gender=Fem|Number=Sing|Person=3|PronType=Prs|Variant=Short	7	obj	_	_
+7	nadaljujemo	nadaljevati	VERB	Vmpr1p	Aspect=Imp|Mood=Ind|Number=Plur|Person=1|Tense=Pres|VerbForm=Fin	2	conj	_	_
+8	naslednji	naslednji	ADJ	Agpmsay	Case=Acc|Definite=Def|Degree=Pos|Gender=Masc|Number=Sing	9	amod	_	_
+9	teden	teden	NOUN	Ncmsan	Animacy=Inan|Case=Acc|Gender=Masc|Number=Sing	7	obl	_	SpaceAfter=No
+10	.	.	PUNCT	Z	_	2	punct	_	_
+
+# sent_id = OZKSIS-Redna-034-2000-05-18.seg29.s5
+# text = Hvala lepa.
+1	Hvala	hvala	NOUN	Ncfsn	Case=Nom|Gender=Fem|Number=Sing	0	root	_	_
+2	lepa	lep	ADJ	Agpfsn	Case=Nom|Degree=Pos|Gender=Fem|Number=Sing	1	amod	_	SpaceAfter=No
+3	.	.	PUNCT	Z	_	1	punct	_	_
+

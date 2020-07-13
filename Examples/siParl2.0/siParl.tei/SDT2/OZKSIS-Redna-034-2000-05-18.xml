@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TEI xmlns="http://www.tei-c.org/ns/1.0"
+     xml:id="OZKSIS-Redna-034-2000-05-18"
+     xml:lang="sl"
+     ana="#parl.sitting">
+   <teiHeader>
+      <fileDesc>
+         <titleStmt>
+            <title type="main" xml:lang="sl">Dobesedni zapis seje delovnih teles Državnega zbora Republike Slovenije [siParl]</title>
+            <title type="main" xml:lang="en">Verbatim record of the session of the working bodies of the National Assembly of the Republic of Slovenia [siParl]</title>
+            <title type="sub" xml:lang="sl">Odbor za kulturo šolstvo in šport: 34. redna seja (18. 5. 2000)</title>
+            <meeting n="34" corresp="#OZKSIS" ana="#parl.meeting.regular">Redna</meeting>
+            <meeting n="2" corresp="#DZ" ana="#parl.term #DZ.2">2. mandat</meeting>
+            <respStmt>
+               <persName>Andrej Pančur</persName>
+               <resp xml:lang="sl">Kodiranje TEI</resp>
+               <resp xml:lang="en">TEI corpus encoding</resp>
+            </respStmt>
+         </titleStmt>
+         <publicationStmt>
+            <publisher>
+               <orgName xml:lang="sl">Inštitut za novejšo zgodovino</orgName>
+               <orgName xml:lang="en">Institute of Contemporary History</orgName>
+               <ref target="http://www.inz.si/">http://www.inz.si/</ref>
+               <email>inz@inz.si</email>
+            </publisher>
+            <distributor>DARIAH-SI</distributor>
+            <distributor>CLARIN.SI</distributor>
+            <pubPlace>http://hdl.handle.net/11356/1300</pubPlace>
+            <availability status="free">
+               <licence>http://creativecommons.org/licenses/by/4.0/</licence>
+               <p xml:lang="en">This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Attribution 4.0 International License</ref>.</p>
+               <p xml:lang="sl">To delo je ponujeno pod <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons
+                                Priznanje avtorstva 4.0 mednarodna licenca</ref>.</p>
+            </availability>
+            <date when="2020-04-08+02:00">8. 4. 2020</date>
+         </publicationStmt>
+         <sourceDesc>
+            <bibl>
+               <title>Odbor za kulturo šolstvo in šport: 34. redna seja (18. 5. 2000)</title>
+               <edition xml:lang="sl">Nepreverjen zapis seje</edition>
+               <edition xml:lang="en">Unverified session record</edition>
+               <date when="2000-05-18"/>
+               <idno type="URI">https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/evidenca?mandat=II&amp;type=magdt&amp;uid=2B336249FEBBBDB2C12568EA002E7FD9</idno>
+            </bibl>
+         </sourceDesc>
+      </fileDesc>
+      <encodingDesc>
+         <tagsDecl>
+            <namespace name="http://www.tei-c.org/ns/1.0">
+               <tagUsage gi="text" occurs="1"/>
+               <tagUsage gi="front" occurs="1"/>
+               <tagUsage gi="div" occurs="2"/>
+               <tagUsage gi="head" occurs="2"/>
+               <tagUsage gi="note" occurs="21"/>
+               <tagUsage gi="body" occurs="1"/>
+               <tagUsage gi="u" occurs="9"/>
+               <tagUsage gi="seg" occurs="29"/>
+            </namespace>
+         </tagsDecl>
+      </encodingDesc>
+      <profileDesc>
+         <abstract>
+            <list type="agenda">
+               <item xml:id="OZKSIS-Redna-034-2000-05-18.toc-item1">
+                  <title>1. TOČKA - POTRDITEV ZAPISNIKOV 31., 32. IN 33. SEJE ODBORA ZA KULTURO, ŠOLSTVO IN ŠPORT</title>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg1"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg2"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg3"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg4"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg5"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg6"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg7"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg8"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg9"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg10"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg11"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg12"/>
+               </item>
+               <item xml:id="OZKSIS-Redna-034-2000-05-18.toc-item2">
+                  <title>2. TOČKA - PREDLOG ZAKONA O USMERJANJU OTROK S POSEBNIMI VZGOJNOIZOBRAŽEVALNIMI POTREBAMI - TRETJA OBRAVNAVA.</title>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg13"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg14"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg15"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg16"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg17"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg18"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg19"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg20"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg21"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg22"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg23"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg24"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg25"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg26"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg27"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg28"/>
+                  <ptr target="#OZKSIS-Redna-034-2000-05-18.seg29"/>
+               </item>
+            </list>
+         </abstract>
+         <settingDesc>
+            <setting>
+               <name type="city">Ljubljana</name>
+               <name type="country" key="SI">Slovenija</name>
+               <date when="2000-05-18" ana="#parl.sitting">18. 5. 2000</date>
+            </setting>
+         </settingDesc>
+      </profileDesc>
+   </teiHeader>
+   <text>
+      <front>
+         <div type="preface">
+            <head>ODBOR DRŽAVNEGA ZBORA REPUBLIKE SLOVENIJE ZA KULTURO, ŠOLSTVO IN ŠPORT</head>
+            <head type="session">34. seja</head>
+            <note type="chairman">Sejo je vodil Janez Mežan, predsednik odbora.</note>
+         </div>
+      </front>
+      <body>
+         <div>
+            <note type="time">Seja se je pričela ob 9.15 uri.</note>
+            <note type="speaker">PREDSEDNIK JANEZ MEŽAN:</note>
+            <u who="#MežanJanez"
+               xml:id="OZKSIS-Redna-034-2000-05-18.u1"
+               ana="#chair">
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg1">Gospodje poslanci, spoštovani predstavniki vlade in ostali vabljeni. Lepo pozdravljeni na 34. seji odbora državnega zbora Republike Slovenije za kulturo in šport. Dnevni red ste dobili s sklicem. Sprašujem, če kdo želi dodati kaj k dnevnemu redu?</seg>
+               <note>Ne želi.</note>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg2">Potem predlagam, da delamo po tem dnevnem redu. 1. TOČKA - POTRDITEV ZAPISNIKOV 31., 32. IN 33. SEJE ODBORA ZA KULTURO, ŠOLSTVO IN ŠPORT. 31. seja. Želi kdo kaj reči k temu zapisniku? Če ne, predlagam, da ga podpremo.</seg>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg3">Kdo je za?</seg>
+               <note>10 članov.</note>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg4">Je kdo proti?</seg>
+               <note>Nihče.</note>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg5">32. seja - zapisnik. Želi kdo kaj reči?</seg>
+               <note>Ne želi.</note>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg6">Predlagam, da ga podpremo.</seg>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg7">Kdo je za?</seg>
+               <note>10 članov.</note>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg8">Kdo proti?</seg>
+               <note>Nihče.</note>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg9">33. seja. Kdo želi kaj reči?</seg>
+               <note>Ne želi.</note>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg10">Predlagam, da ga podpremo.</seg>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg11">Kdo je za?</seg>
+               <note>10 članov.</note>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg12">Proti?</seg>
+               <note>Nihče.</note>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg13">Prvo točko smo zaključili. 2. TOČKA - PREDLOG ZAKONA O USMERJANJU OTROK S POSEBNIMI VZGOJNOIZOBRAŽEVALNIMI POTREBAMI - TRETJA OBRAVNAVA. Predlog zakona z amandmaji vlade je bil objavljen v Poročevalcu državnega zbora številka 25, 12. aprila 2000. Mnenje sekretariata ste dobili danes na klop. Predlagam, da za začetek damo najprej besedo predlagatelju. Gospa, verjetno državna sekretarka, prosim, vaša je beseda.</seg>
+            </u>
+            <note type="speaker">GOSPA _______________:</note>
+            <u who="#unknown-F"
+               xml:id="OZKSIS-Redna-034-2000-05-18.u2"
+               ana="#regular">
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg14">Hvala lepa gospod predsednik. V tretji obravnavi je bil zakon o posebnih potrebah o usmerjanju otrok s posebnimi potrebami obravnavan na 18. seji državnega zbora 10. februarja in takrat je bilo sprejeto sedem amandmajev in amandma k naslovu. Pri pregledu teh amandmajev smo upoštevali sprejete amandmaje in pripravili predlog zakona za tretjo obravnavo, k nekaterim členom pa smo vložili amandmaje, in sicer so to večinoma redakcijskega značaja, razen 2. člena, kjer se nam zdi, da je pa bistveni poseg bil v vsebino zakona in zato smo pripravili amandma v smislu, ki namesto tega, kar je bilo sprejeto, sedmina otroci s težjimi specifičnimi motnjami učenja uvaja termin, otroci z nevrološkimi razvojnimi motnjami.</seg>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg15">Povedati moram, da je bil v mesecu marcu ustanovljen pri ministrstvu poseben organ in sicer svet za vzgojo, izobraževanje in usposabljanje otrok in mladostnikov s posebnimi potrebami, kot strokovno posvetovalno telo ministra, ki smo ga ustanovili z namenom, da nam pomaga pri razčiščevanju strokovnih vprašanj in dilem na tem področju in da pravzaprav in tako usmerja delo na tem področju. Tudi to strokovno telo je menilo, da bi predlagana sprememba, ki je bila sprejeta z amandmajem k 2. členu, pomenila velike probleme v praksi, ker bi bilo izredno težko opredeliti, katere otroke z učnimi težavami je potrebno usmerjati, in bi se lahko zgodilo, da bi bilo to število otrok precejšnje, lahko tudi do 20%.</seg>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg16">Zato smo predlagali drugačno dikcijo v skladu z mnenjem tega strokovnega organa, ki pokriva praktično isto populacijo otrok. Gre namreč za to, da se vsi strinjamo, da gre za 2-3% otrok z najtežjimi učnimi težavami. Zato menimo, da ta prelagana dikcija, se pravi otroci z nevrološkimi razvojnimi motnjami, pokriva prav to skupino in da bo na ta način mogoče tudi ustrezno opredeliti to skupino v podzakonskem aktu. Toliko morda za uvod.</seg>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg17">Opazili smo tudi, da je potrebno še opraviti nekatere uradne popravke, na katere nas opozarja tudi mnenje sekretariata, ki smo ga danes prejeli in bomo to tudi pripravili do seje državnega zbora. Hvala lepa.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK JANEZ MEŽAN:</note>
+            <u who="#MežanJanez"
+               xml:id="OZKSIS-Redna-034-2000-05-18.u3"
+               ana="#chair">
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg18">Hvala lepa. Dobili smo mnenje sekretariata k predlogu zakona. To mnenje imate pred sabo. Ugotavlja kar nekaj pomanjkljivosti tega predloga, ki je sedaj pred nami v tretji obravnavi, pa bomo še za besedo prosim sekretarko. Prosim!</seg>
+            </u>
+            <note type="speaker">GOSPA _______________:</note>
+            <u who="#unknown-F"
+               xml:id="OZKSIS-Redna-034-2000-05-18.u4"
+               ana="#regular">
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg19">Hvala lepa. Bom samo na kratko povzela pisno mnenje. Ugotavljamo, da v tretji obravnavi niso vključeni vsi amandmaji, ki so bili sprejeti v drugi obravnavi, oziroma niso ustrezno vključeni. To velja za 3. člen, 7. člen in pri novem 14.a členu. Poleg tega opozarjamo, da je predlagatelj spremenil besedilo predloga zakona na mestih, kjer ni bilo sprejetih amandmajev in zato torej tudi ni imel poslovniške podlage.</seg>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg20">V tretji obravnavi smo pripravili tudi nekaj pripomb k posameznim členom, ki so bili amandmirani v drugi obravnavi. S sistemskega vidika se nam zlasti zastavlja vprašanje opredelitve otrok s posebnimi potrebami v razmerju tega zakona do nekaterih področnih zakonov s šolstva. Opredelitve se namreč ne ujemajo. Radi bi opozorili, da se ti zakoni sklicujejo drug na drugega, hkrati pa isto vprašanje urejajo različno.</seg>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg21">Potem smo pri 7. členu opozorili, da manjka zagotovitev dodatne strokovne pomoči predšolskim otrokom. Torej menimo, da bi bilo potrebno identično ureditev, kot velja za vse druge otroke, uvesti tudi za predšolske otroke.</seg>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg22">Pri oddaji otroka v rejništvo, v okviru 15. člena, pa menimo, da bi kazalo proučiti, glede na to, da je v tem primeru potrebno mnenje komisije za usmerjanje iz drugega odstavka 21. člena predloga zakona, ali bi tudi v tem primeru bilo ustrezno pred pridobitvijo tega mnenja posvetovanje s strokovnimi delavci, kot sicer to velja v postopku.</seg>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg23">Potem bi pri 17. členu opozorili, da je bila v drugi obravnavi uvedena novost, da se vzgoja in izobraževanje otrok s posebnimi potrebami ne izvaja le kot javna služba, kot je to veljalo doslej. V zvezi s tem ocenjujemo, da bi kazalo proučiti, ali določba 17. člena zakona, ki je bila sprejeta v drugi obravnavi, dejansko zadostuje za izvajanje vzgoje in izobraževanja otrok s posebnimi potrebami v zasebnih vrtcih in šolah, glede na to, da je dosedanji zakon o organizaciji in financiranju vzgoje in izobraževanja to področje predvidel samo kot javna služba in za te namene ni določil posebnih kriterij za izvajanje in pa za financiranje teh programov.</seg>
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg24">Potem pa še samo k amandmaju k 3. členu. Menimo, da bi bilo potrebno vrste izobraževanja v tem zakonu usklajeno navajati.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK JANEZ MEŽAN:</note>
+            <u who="#MežanJanez"
+               xml:id="OZKSIS-Redna-034-2000-05-18.u5"
+               ana="#chair">
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg25">Hvala lepa. Sedaj bi jaz predlagal, da se dogovorimo tako. Glede na te tehtne pripombe, ki so prišle iz sekretariata, da prekinemo to točko, nič ne izgubimo na času, ker imamo čas še naslednji teden, čas za odbore, za pripravo naslednje seje, da v skladu s temi pripombami predlagatelj popravi besedilo oziroma jih upošteva in da se potem dobimo s tem popravljenim besedilom ali še dodatnimi dopolnili naslednji teden, četrtek ali petek, ko je čas za odbore, in takrat zadevo damo skozi, lahko zelo na hitro. To je moj predlog oziroma To je moj predlog oziroma moj predlog za dogovor. Mislim, da bi bilo tako najboljše. Želi kdo kaj reči k temu? Gospa Tašanovska, prosim.</seg>
+            </u>
+            <note type="speaker">ALENKA TAŠANOVSKA:</note>
+            <u who="#TaštanoskaAlenka"
+               xml:id="OZKSIS-Redna-034-2000-05-18.u6"
+               ana="#regular">
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg26">Gospod predsednik, ali menite, da ne bi bilo mogoče danes vendarle te vsebinske razprave opraviti, pa da mi pripravimo te popravke, s katerimi se tudi strinjamo do seje državnega zbora.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK JANEZ MEŽAN:</note>
+            <u who="#MežanJanez"
+               xml:id="OZKSIS-Redna-034-2000-05-18.u7"
+               ana="#chair">
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg27">Strinjam se, da opravimo vsebinsko razpravo, to se strinjam, čeprav smo zdaj v tretji obravnavi, kakšne široke vsebinske razprave tukaj ni. Mi moramo pravzaprav samo o amandmajih govoriti, ne pa o vsebinski razpravi, celotni vsebinski razpravi. Prosim, gospod Moge.</seg>
+            </u>
+            <note type="speaker">RUDOLF MOGE:</note>
+            <u who="#MogeRudolf"
+               xml:id="OZKSIS-Redna-034-2000-05-18.u8"
+               ana="#regular">
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg28">Ja, predsednik, zdi se mi ta predlog umesten, jaz ga bom seveda podprl in sem vesel, da ravnamo pač racionalno v tem odboru. Bi pa prosil, do obravnave na nadaljevanju te seje, da bi dve stvari pridobili. Ena stvar je mnenje tega sveta, če je bil, torej da je bil svet ustanovljen, to je ena reč, ampak mnenje tega sveta in podpis, neka dopis tega sveta, da so obravnavali in zakaj pač predlagajo takšen tekst, kot ga predlagajo v amandmaju. Po drugi strani bi pa lepo poprosil, da se zopet ne bi šli z lobiranjem pod mizo, to kar je naša z dobrim namenom poslanska kolegica dr. Majda Kregelj-Zbačnik naredila kot prej, neke liste od neke skupine prinašala pa na mizo dala, bi bilo dobro, da jo opozoriš, pa ji daj reči, naj ti ljudje na odbor pošljejo, tako da lahko to kot uradno gradivo v razpravi uporabljamo, ker se ti dve stvari, to gradivo in tisto, ki ga ministrstvo predlaga, diametralno nasprotno.</seg>
+            </u>
+            <note type="speaker">PREDSEDNIK JANEZ MEŽAN:</note>
+            <u who="#MežanJanez"
+               xml:id="OZKSIS-Redna-034-2000-05-18.u9"
+               ana="#chair">
+               <seg xml:id="OZKSIS-Redna-034-2000-05-18.seg29">Hvala lepa. Torej, jaz bom takole vprašal, ali kdo nasprotuje, da dobimo to, kar je predlagal gospod Moge, uradno mnenje sveta v zvezi s temi amandmaji in ali kdo nasprotuje temu, da prekinemo na tem mestu to točko in da nadaljujemo v četrtek ali petek, naslednji teden. Nihče. Potem prekinjam tole sejo in jo nadaljujemo naslednji teden. Hvala lepa.</seg>
+            </u>
+            <note type="time">SEJA JE BILA PREKINJENA 19.5.2000 OB 9.27 URI.</note>
+         </div>
+      </body>
+   </text>
+</TEI>

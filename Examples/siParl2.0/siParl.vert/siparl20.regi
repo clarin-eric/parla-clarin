@@ -1,0 +1,209 @@
+# MAINTAINER "CLARIN.SI <info@clarin.si>"		#manatee@clarin
+MAINTAINER "Tomaž Erjavec <tomaz.erjavec@ijs.si>"	#manatee@ijs
+# MAINTAINER "Tomaž Erjavec <tomaz.erjavec@ijs.si>"	#manatee@cjvt
+NAME "siParl 2.0 (parlament 1990-2018)"
+INFO "Korpus parlamentarnih razprav Državnega zbora Republike Slovenije 1990-2018 v2.0 // Corpus of parliamentary debates of the National Assembly of the Republic of Slovenia 1990-2018 v2.0"
+ENCODING "UTF-8"
+LOCALE "sl_SI.UTF-8"
+DEFAULTLOCALE "sl_SI.UTF-8"
+LANGUAGE "Slovenian"
+INFOHREF "http://hdl.handle.net/11356/1300"
+TAGSETDOC "http://nl.ijs.si/ME/V6/msd/html/msd-sl.html#msd.msds-sl"
+
+# PATH "/data/manatee-data/siparl20/"			#manatee@clarin
+PATH "/project/corpora/noske/data/siparl20/"		#manatee@ijs
+# PATH "/var/lib/ske/manatee/siparl20/"			#manatee@cjvt
+
+# VERTICAL "| zcat /data/vert/siparl20.vert.gz"		#manatee@clarin
+VERTICAL "| zcat /project/cqp/vert/siparl20.vert.gz"		#manatee@ijs
+# VERTICAL "| zcat /var/lib/ske/vertical/siparl20.vert.gz"	#manatee@cjvt
+
+# WSDEF /var/lib/ske/wsdef/ws-fidaplus-SSJ-15-UTF8-JOS-tagset.txt	#manatee@cjvt
+# GDEXDEFAULTCONF "/var/lib/ske/gdex/Slovene-samostalnik-avt-v2"          #manatee@cjvt
+# TERMDEF "/var/lib/ske/wsdef/slovenian-mte-terms-1.3.wsdef.m4"		#manatee@cjvt
+# TERMBASE "/var/lib/ske/manatee/kas_dr_1/terms-ws"			#manatee@cjvt
+
+# WSPOSLIST ",samostalnik,-s,glagol,-g,pridevnik,-p,prislov,-r"		#manatee@cjvt
+WPOSLIST ",samostalnik,S.*,glagol,G.*,pridevnik,P.*,prislov,R.*,zaimek,Z.*,predlog,D.*,veznik,V.*,členek,L.*,medmet,M.*,števnik,K.*,okrajšava,O.*,neuvrščeno,N.*,ločilo,U.*"
+LPOSLIST ",samostalnik,-s,glagol,-g,pridevnik,-p,prislov,-r,zaimek,-z,predlog,-d,veznik,-v,členek,-l,medmet,-m,števnik,-k,okrajšava,-o,neuvrščeno,-n,ločilo,-u"
+
+DOCSTRUCTURE session
+MAXDETAIL 10000
+
+SUBCORPATTRS "session.mandate|session.mandate_en,session.type|session.type_en,session.organ,session.id|session.title,session.year|session.month|session.date,speech.type|speech.type_en,speech.role|speech.role_en,speech.party_init|speech.party|speech.party_en,speech.who|speech.name,speech.gender|speech.birth,name.type"
+SHORTREF "=speech.who,=session.date"
+FULLREF "speech.who,speech.name,speech.gender,speech.birth,speech.type,speech.type_en,speech.role,speech.role_en,speech.party_init,speech.party,speech.party_en,p.id,p.dl,session.id,session.title,session.date,session.mandate,session.mandate_en,session.type,session.type_en,session.organ"
+
+STRUCTURE session {
+    ATTRIBUTE id {
+      LABEL "Session ID"
+      TYPE "UNIQUE"
+    }    
+    ATTRIBUTE year
+    ATTRIBUTE month
+    ATTRIBUTE date
+    ATTRIBUTE title {
+      LABEL "Session title"
+      MULTIVALUE  "1"
+      MULTISEP "|"
+    }
+    ATTRIBUTE mandate {
+      LABEL "Legislative period (in Slovene)"
+    }
+    ATTRIBUTE mandate_en {
+      LABEL "Legislative period (in English)"
+    }
+    ATTRIBUTE organ {
+      LABEL "Working body of the National Assembly"
+      MULTIVALUE  "1"
+      MULTISEP "|"
+    }
+    ATTRIBUTE type {
+      LABEL "Type of session (in Slovene)"
+      MULTIVALUE  "1"
+      MULTISEP "|"
+    }
+    ATTRIBUTE type_en {
+      LABEL "Type of session (in English)"
+      MULTIVALUE  "1"
+      MULTISEP "|"
+    }
+    ATTRIBUTE "wordcount"
+}
+STRUCTURE speech {
+    ATTRIBUTE who {
+	LABEL "Speaker ID"
+    }
+    ATTRIBUTE name {
+	LABEL "Speaker name"
+    }
+    ATTRIBUTE gender
+    ATTRIBUTE birth
+    ATTRIBUTE type {
+	LABEL "Type of speaker (in Slovene)"
+    }
+    ATTRIBUTE type_en {
+	LABEL "Type of speaker (in English)"
+    }
+    ATTRIBUTE role {
+	LABEL "Role of speaker (in Slovene)"
+    }
+    ATTRIBUTE role_en {
+	LABEL "Role of speaker (in English)"
+    }
+    ATTRIBUTE party_init {
+	LABEL "Acronym of speaker's party"
+    }
+    ATTRIBUTE party {
+	LABEL "Name of speaker's party (in Slovene)"
+    }
+    ATTRIBUTE party_en {
+	LABEL "Name of speaker's party (in English)"
+    }
+}
+STRUCTURE p {
+    LABEL "Paragraph"
+    ATTRIBUTE id {
+      TYPE "UNIQUE"
+    }    
+    ATTRIBUTE dl {
+	LABEL "URL to digital library"
+    }
+    DISPLAYTAG 0
+    DISPLAYBEGIN " ¶ "
+}
+STRUCTURE s {
+    DISPLAYTAG 0
+}
+STRUCTURE name {
+    ATTRIBUTE type
+    DISPLAYTAG 0
+    DISPLAYBEGIN "[%(type):"
+    DISPLAYEND "]"
+}
+STRUCTURE gap {
+    DISPLAYTAG 0
+    DISPLAYBEGIN " […] "
+}
+STRUCTURE g {
+    DISPLAYTAG 0
+    DISPLAYBEGIN "_EMPTY_"
+}
+
+###Standard positional attributes
+ATTRIBUTE word {
+    LABEL "Corpus token"
+}
+ATTRIBUTE lc {
+	LABEL	"Word (lowercase)"
+	DYNAMIC  utf8lowercase
+	DYNLIB   internal
+	ARG1     "C"
+	FUNTYPE  s
+	FROMATTR word
+	DYNTYPE  index
+	TRANSQUERY	yes
+}
+ATTRIBUTE lempos {
+        LABEL "Lemma with PoS tag"
+}
+ATTRIBUTE lemma {
+        LABEL "Lemma"
+	DYNAMIC   "striplastn"
+	DYNLIB    "internal"
+	ARG1      "2"
+	FUNTYPE   "i"
+	FROMATTR  "lempos"
+	TYPE      "index"
+}
+ATTRIBUTE lemma_lc {
+        LABEL       "Lemma (lowercase)"
+	DYNAMIC     "utf8lowercase"
+	DYNLIB      "internal"
+	ARG1        "C"
+	FUNTYPE     "s"
+	FROMATTR    "lemma"
+	TYPE        "index"
+	TRANSQUERY  "yes"
+}
+ATTRIBUTE tag_en {
+    LABEL "MSD (English)"
+}
+ATTRIBUTE tag {
+    LABEL "MSD (Slovene)"
+}
+ATTRIBUTE ud_pos {
+    LABEL "UD part-of-speech"
+}
+ATTRIBUTE ud_feats {
+    LABEL "UD features"
+    MULTIVALUE yes
+    MULTISEP " "
+}
+ATTRIBUTE id {
+    LABEL "Token position in sentence"
+}
+ATTRIBUTE ud_dep {
+    LABEL "UD dependency label"
+}
+ATTRIBUTE ud_dep_head_lemma {
+    LABEL "Lemma of the UD dependency head"
+}
+ATTRIBUTE ud_dep_head_tag_en {
+    LABEL "MSD (English) of the UD dependency head"
+}
+ATTRIBUTE ud_dep_head_tag {
+    LABEL "MSD (Slovene) of the UD dependency head"
+}
+ATTRIBUTE ud_dep_head_ud_pos {
+    LABEL "UD part-of-speech of the UD dependency head"
+}
+ATTRIBUTE ud_dep_head_ud_feats {
+    LABEL "UD features of the UD dependency head"
+    MULTIVALUE yes
+    MULTISEP " "
+}
+ATTRIBUTE ud_dep_head_id {
+    LABEL "Token position of the UD dependency head"
+}
+
