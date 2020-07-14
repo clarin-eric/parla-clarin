@@ -7,10 +7,10 @@
    <xs:import namespace="http://www.isocat.org/ns/dcr" schemaLocation="dcr.tmp"/>
    <xs:import namespace="http://www.w3.org/XML/1998/namespace" schemaLocation="xml.tmp"/>
    <!--
-    Schema generated from ODD source 2019-11-22T10:00:43Z. .
-    TEI Edition: Version 3.5.0. Last updated on
-    	29th January 2019, revision 3c0c64ec4
-    TEI Edition Location: http://www.tei-c.org/Vault/P5/Version 3.5.0/
+    Schema generated from ODD source 2020-07-14T09:07:59Z. .
+    TEI Edition: Version 4.0.0. Last updated on
+    	13th February 2020, revision ccd19b0ba
+    TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.0.0/
     
   --><!-- This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions. --><xs:complexType name="tei_macro.paraContent" mixed="true">
       <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -211,7 +211,7 @@
       <xs:attribute name="unit">
          <xs:annotation>
             <xs:documentation>names the unit used for the measurement
-Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inches); 4] lines; 5] chars (characters)</xs:documentation>
+Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inches); 4] line; 5] char (characters)</xs:documentation>
          </xs:annotation>
          <xs:simpleType>
             <xs:union>
@@ -244,7 +244,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                </xs:simpleType>
                <xs:simpleType>
                   <xs:restriction base="xs:token">
-                     <xs:enumeration value="lines">
+                     <xs:enumeration value="line">
                         <xs:annotation>
                            <xs:documentation>lines of text</xs:documentation>
                         </xs:annotation>
@@ -253,7 +253,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                </xs:simpleType>
                <xs:simpleType>
                   <xs:restriction base="xs:token">
-                     <xs:enumeration value="chars">
+                     <xs:enumeration value="char">
                         <xs:annotation>
                            <xs:documentation>(characters) characters of text</xs:documentation>
                         </xs:annotation>
@@ -262,7 +262,7 @@ Suggested values include: 1] cm (centimetres); 2] mm (millimetres); 3] in (inche
                </xs:simpleType>
                <xs:simpleType>
                   <xs:restriction base="xs:token">
-                     <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                     <xs:pattern value="[^\p{C}\p{Z}]+"/>
                   </xs:restriction>
                </xs:simpleType>
             </xs:union>
@@ -331,7 +331,7 @@ Sample values include: 1] all; 2] most; 3] range</xs:documentation>
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -357,7 +357,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</xs:documentation>
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -411,7 +411,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</xs:documentation>
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -664,7 +664,7 @@ Sample values include: 1] approved; 2] candidate; 3] cleared; 4] deprecated; 5] 
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -778,7 +778,7 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</xs:documentat
                            </xs:simpleType>
                            <xs:simpleType>
                               <xs:restriction base="xs:token">
-                                 <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                 <xs:pattern value="[^\p{C}\p{Z}]+"/>
                               </xs:restriction>
                            </xs:simpleType>
                         </xs:union>
@@ -831,7 +831,7 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</xs:documentat
                   <xs:list>
                      <xs:simpleType>
                         <xs:restriction base="xs:token">
-                           <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                           <xs:pattern value="[^\p{C}\p{Z}]+"/>
                         </xs:restriction>
                      </xs:simpleType>
                   </xs:list>
@@ -979,7 +979,7 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</xs:documentat
                   <xs:list>
                      <xs:simpleType>
                         <xs:restriction base="xs:token">
-                           <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                           <xs:pattern value="[^\p{C}\p{Z}]+"/>
                         </xs:restriction>
                      </xs:simpleType>
                   </xs:list>
@@ -1029,7 +1029,7 @@ Suggested values include: 1] internal; 2] external; 3] conjecture</xs:documentat
                   <xs:list>
                      <xs:simpleType>
                         <xs:restriction base="xs:token">
-                           <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                           <xs:pattern value="[^\p{C}\p{Z}]+"/>
                         </xs:restriction>
                      </xs:simpleType>
                   </xs:list>
@@ -1107,7 +1107,7 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</xs:documen
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -1129,6 +1129,7 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</xs:documen
    </xs:attributeGroup>
    <xs:attributeGroup name="tei_att.measurement.attributes">
       <xs:attributeGroup ref="tei:tei_att.measurement.attribute.unit"/>
+      <xs:attributeGroup ref="tei:tei_att.measurement.attribute.unitRef"/>
       <xs:attributeGroup ref="tei:tei_att.measurement.attribute.quantity"/>
       <xs:attributeGroup ref="tei:tei_att.measurement.attribute.commodity"/>
    </xs:attributeGroup>
@@ -1136,7 +1137,7 @@ Sample values include: 1] image; 2] character; 3] theme; 4] allusion</xs:documen
       <xs:attribute name="unit">
          <xs:annotation>
             <xs:documentation>indicates the units used for the measurement, usually using the standard symbol for the desired units.
-Suggested values include: 1] m (metre); 2] kg (kilogram); 3] s (second); 4] Hz (hertz); 5] Pa (pascal); 6] Ω (ohm); 7] L (litre); 8] t (tonne); 9] ha (hectare); 10] Å (ångström); 11] mL (millilitre); 12] cm (centimetre); 13] dB (decibel); 14] kbit (kilobit); 15] Kibit (kibibit); 16] kB (kilobyte); 17] KiB (kibibyte); 18] MB (megabyte); 19] MiB (mebibyte)</xs:documentation>
+Suggested values include: 1] m (metre); 2] kg (kilogram); 3] s (second); 4] Hz (hertz); 5] Pa (pascal); 6] Ω (ohm); 7] L (litre); 8] t (tonne); 9] ha (hectare); 10] Å (ångström); 11] mL (millilitre); 12] cm (centimetre); 13] dB (decibel); 14] kbit (kilobit); 15] Kibit (kibibit); 16] kB (kilobyte); 17] KiB (kibibyte); 18] MB (megabyte); 19] MiB (mebibyte)</xs:documentation>
          </xs:annotation>
          <xs:simpleType>
             <xs:union>
@@ -1187,7 +1188,7 @@ Suggested values include: 1] m (metre); 2] kg (kilogram); 3] s (second); 4] Hz (
                </xs:simpleType>
                <xs:simpleType>
                   <xs:restriction base="xs:token">
-                     <xs:enumeration value="Ω">
+                     <xs:enumeration value="Ω">
                         <xs:annotation>
                            <xs:documentation>(ohm) SI unit of electric resistance</xs:documentation>
                         </xs:annotation>
@@ -1223,7 +1224,7 @@ Suggested values include: 1] m (metre); 2] kg (kilogram); 3] s (second); 4] Hz (
                </xs:simpleType>
                <xs:simpleType>
                   <xs:restriction base="xs:token">
-                     <xs:enumeration value="Å">
+                     <xs:enumeration value="Å">
                         <xs:annotation>
                            <xs:documentation>(ångström) 10⁻¹⁰ m</xs:documentation>
                         </xs:annotation>
@@ -1313,12 +1314,15 @@ Suggested values include: 1] m (metre); 2] kg (kilogram); 3] s (second); 4] Hz (
                </xs:simpleType>
                <xs:simpleType>
                   <xs:restriction base="xs:token">
-                     <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                     <xs:pattern value="[^\p{C}\p{Z}]+"/>
                   </xs:restriction>
                </xs:simpleType>
             </xs:union>
          </xs:simpleType>
       </xs:attribute>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="tei_att.measurement.attribute.unitRef">
+      <xs:attribute name="unitRef" type="xs:anyURI"/>
    </xs:attributeGroup>
    <xs:attributeGroup name="tei_att.measurement.attribute.quantity">
       <xs:attribute name="quantity">
@@ -1347,7 +1351,7 @@ Suggested values include: 1] m (metre); 2] kg (kilogram); 3] s (second); 4] Hz (
                   <xs:list>
                      <xs:simpleType>
                         <xs:restriction base="xs:token">
-                           <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                           <xs:pattern value="[^\p{C}\p{Z}]+"/>
                         </xs:restriction>
                      </xs:simpleType>
                   </xs:list>
@@ -1373,7 +1377,7 @@ Suggested values include: 1] m (metre); 2] kg (kilogram); 3] s (second); 4] Hz (
                   <xs:list>
                      <xs:simpleType>
                         <xs:restriction base="xs:token">
-                           <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                           <xs:pattern value="[^\p{C}\p{Z}]+"/>
                         </xs:restriction>
                      </xs:simpleType>
                   </xs:list>
@@ -1408,7 +1412,7 @@ Suggested values include: 1] m (metre); 2] kg (kilogram); 3] s (second); 4] Hz (
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -1520,7 +1524,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
                            </xs:simpleType>
                            <xs:simpleType>
                               <xs:restriction base="xs:token">
-                                 <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                 <xs:pattern value="[^\p{C}\p{Z}]+"/>
                               </xs:restriction>
                            </xs:simpleType>
                         </xs:union>
@@ -1543,7 +1547,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -1555,7 +1559,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -1658,17 +1662,17 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
                         <xs:union>
                            <xs:simpleType>
                               <xs:restriction base="xs:token">
-                                 <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                 <xs:pattern value="[^\p{C}\p{Z}]+"/>
                               </xs:restriction>
                            </xs:simpleType>
                            <xs:simpleType>
                               <xs:restriction base="xs:token">
-                                 <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                 <xs:pattern value="[^\p{C}\p{Z}]+"/>
                               </xs:restriction>
                            </xs:simpleType>
                            <xs:simpleType>
                               <xs:restriction base="xs:token">
-                                 <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                 <xs:pattern value="[^\p{C}\p{Z}]+"/>
                               </xs:restriction>
                            </xs:simpleType>
                         </xs:union>
@@ -1692,7 +1696,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -1707,7 +1711,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -1727,7 +1731,7 @@ Suggested values include: 1] below; 2] bottom; 3] margin; 4] top; 5] opposite; 6
                   <xs:list>
                      <xs:simpleType>
                         <xs:restriction base="xs:token">
-                           <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                           <xs:pattern value="[^\p{C}\p{Z}]+"/>
                         </xs:restriction>
                      </xs:simpleType>
                   </xs:list>
@@ -1840,7 +1844,7 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -1852,7 +1856,7 @@ Sample values include: 1] duplicate; 2] duplicate-partial; 3] excessStart; 4] ex
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -1964,7 +1968,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
                </xs:simpleType>
                <xs:simpleType>
                   <xs:restriction base="xs:token">
-                     <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                     <xs:pattern value="[^\p{C}\p{Z}]+"/>
                   </xs:restriction>
                </xs:simpleType>
             </xs:union>
@@ -1975,7 +1979,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <xs:attribute name="from">
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -1984,7 +1988,7 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
       <xs:attribute name="to">
          <xs:simpleType>
             <xs:restriction base="xs:token">
-               <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+               <xs:pattern value="[^\p{C}\p{Z}]+"/>
             </xs:restriction>
          </xs:simpleType>
       </xs:attribute>
@@ -3179,15 +3183,13 @@ Suggested values include: 1] volume; 2] issue; 3] page; 4] line; 5] chapter; 6] 
          <xs:element ref="tei:textDesc"/>
       </xs:sequence>
    </xs:group>
-   <xs:element name="tei_model.settingPart" abstract="true">
-      <xs:complexType>
-         <xs:complexContent>
-            <xs:extension base="tei:tei_macro.phraseSeq.limited">
-               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-            </xs:extension>
-         </xs:complexContent>
-      </xs:complexType>
-   </xs:element>
+   <xs:group name="tei_model.settingPart">
+      <xs:choice>
+         <xs:element ref="tei:locale"/>
+         <xs:element ref="tei:activity"/>
+         <xs:element ref="tei:placeName"/>
+      </xs:choice>
+   </xs:group>
    <xs:group name="tei_model.addressLike">
       <xs:choice>
          <xs:element ref="tei:email"/>
@@ -3444,6 +3446,7 @@ Sample values include: 1] debateSection; 2] address; 3] adjournment; 4] administ
       <xs:complexType>
          <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.headLike"/>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
          <xs:attribute name="type">
             <xs:annotation>
                <xs:documentation>specifies what type of generated text division (e.g. index, table of contents, etc.) is to appear.
@@ -3451,7 +3454,7 @@ Sample values include: 1] index; 2] toc; 3] figlist; 4] tablist</xs:documentatio
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -3505,6 +3508,24 @@ Sample values include: 1] index; 2] toc; 3] figlist; 4] tablist</xs:documentatio
          <xs:element ref="tei:listTranspose"/>
       </xs:choice>
    </xs:group>
+   <xs:group name="tei_model.standOffPart">
+      <xs:choice>
+         <xs:group ref="tei:tei_model.global.meta"/>
+         <xs:group ref="tei:tei_model.biblLike"/>
+         <xs:group ref="tei:tei_model.listLike"/>
+         <xs:element ref="tei:listChange"/>
+         <xs:element ref="tei:zone"/>
+         <xs:element ref="tei:u"/>
+         <xs:element ref="tei:annotationBlock"/>
+         <xs:element ref="tei:seg"/>
+      </xs:choice>
+   </xs:group>
+   <xs:attributeGroup name="tei_att.formula.attributes">
+      <xs:attributeGroup ref="tei:tei_att.formula.attribute.formula"/>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="tei_att.formula.attribute.formula">
+      <xs:attribute name="formula"/>
+   </xs:attributeGroup>
    <xs:group name="tei_model.correspActionPart">
       <xs:choice>
          <xs:group ref="tei:tei_model.dateLike"/>
@@ -3527,7 +3548,8 @@ Sample values include: 1] index; 2] toc; 3] figlist; 4] tablist</xs:documentatio
          <xs:element ref="tei:correspContext"/>
       </xs:choice>
    </xs:group>
-   <xs:element name="tei_model.resourceLike" abstract="true"/>
+   <xs:element name="tei_model.resource" abstract="true"/>
+   <xs:element name="tei_model.describedResource" abstract="true"/>
    <xs:group name="tei_model.objectLike">
       <xs:choice>
          <xs:element ref="tei:object"/>
@@ -3588,6 +3610,7 @@ Sample values include: 1] index; 2] toc; 3] figlist; 4] tablist</xs:documentatio
                <xs:group ref="tei:tei_model.noteLike"/>
                <xs:group ref="tei:tei_model.biblLike"/>
                <xs:element ref="tei:idno"/>
+               <xs:element ref="tei:ptr"/>
                <xs:element ref="tei:linkGrp"/>
                <xs:element ref="tei:link"/>
             </xs:choice>
@@ -3739,7 +3762,7 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
                </xs:simpleType>
                <xs:simpleType>
                   <xs:restriction base="xs:token">
-                     <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                     <xs:pattern value="[^\p{C}\p{Z}]+"/>
                   </xs:restriction>
                </xs:simpleType>
             </xs:union>
@@ -3806,13 +3829,14 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.phraseSeq">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
                <xs:attribute name="type">
                   <xs:annotation>
                      <xs:documentation>specifies the sublanguage or register to which the word or phrase is being assigned</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -4007,7 +4031,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
                         </xs:simpleType>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:union>
@@ -4072,7 +4096,7 @@ Suggested values include: 1] spoken; 2] thought; 3] written; 4] soCalled; 5] for
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -4267,7 +4291,7 @@ Suggested values include: 1] cancelled; 2] deleted; 3] editorial; 4] illegible; 
                               </xs:simpleType>
                               <xs:simpleType>
                                  <xs:restriction base="xs:token">
-                                    <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                    <xs:pattern value="[^\p{C}\p{Z}]+"/>
                                  </xs:restriction>
                               </xs:simpleType>
                            </xs:union>
@@ -4285,7 +4309,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -4390,7 +4414,7 @@ Suggested values include: 1] illegible; 2] inaudible; 3] faded; 4] background_no
                                     </xs:simpleType>
                                     <xs:simpleType>
                                        <xs:restriction base="xs:token">
-                                          <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                          <xs:pattern value="[^\p{C}\p{Z}]+"/>
                                        </xs:restriction>
                                     </xs:simpleType>
                                  </xs:union>
@@ -4408,7 +4432,7 @@ Sample values include: 1] rubbing; 2] mildew; 3] smoke</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -4522,6 +4546,7 @@ Measures]</xs:documentation>
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.phraseSeq">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
                <xs:attributeGroup ref="tei:tei_att.ranging.attributes"/>
                <xs:attribute name="type">
                   <xs:annotation>
@@ -4568,7 +4593,7 @@ Suggested values include: 1] cardinal; 2] ordinal; 3] fraction; 4] percentage</x
                         </xs:simpleType>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:union>
@@ -4601,6 +4626,7 @@ Measures]</xs:documentation>
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.phraseSeq">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
                <xs:attributeGroup ref="tei:tei_att.measurement.attributes"/>
                <xs:attribute name="type">
                   <xs:annotation>
@@ -4608,7 +4634,7 @@ Measures]</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -4676,6 +4702,7 @@ Measures]</xs:documentation>
          </xs:choice>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.datable.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.canonical.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.duration.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.editLike.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.dimensions.attributes"/>
@@ -4698,7 +4725,7 @@ Sample values include: 1] suspension; 2] contraction; 3] brevigraph; 4] superscr
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -4758,6 +4785,7 @@ Sample values include: 1] suspension; 2] contraction; 3] brevigraph; 4] superscr
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                <xs:group ref="tei:tei_model.divTop"/>
                <xs:group ref="tei:tei_model.global"/>
+               <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
             </xs:choice>
             <xs:choice>
                <xs:sequence maxOccurs="unbounded">
@@ -4833,7 +4861,7 @@ Suggested values include: 1] gloss; 2] index; 3] instructions; 4] litany; 5] syl
                   </xs:simpleType>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:union>
@@ -4994,7 +5022,7 @@ Sample values include: 1] narrative; 2] summary; 3] speaker; 4] vote; 5] locatio
                      <xs:list>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:list>
@@ -5250,8 +5278,8 @@ Elements]</xs:documentation>
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.paraContent">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-               <xs:attributeGroup ref="tei:tei_att.canonical.attributes"/>
                <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
+               <xs:attributeGroup ref="tei:tei_att.canonical.attributes"/>
                <xs:attributeGroup ref="tei:tei_att.datable.attributes"/>
                <xs:attribute name="type">
                   <xs:annotation>
@@ -5260,7 +5288,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -5444,6 +5472,7 @@ Sample values include: 1] main; 2] sub (subordinate); 3] alt (alternate); 4] sho
       <xs:complexType>
          <xs:sequence>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.headLike"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
             <xs:choice maxOccurs="unbounded">
                <xs:group ref="tei:tei_model.biblLike"/>
                <xs:element ref="tei:tei_model.milestoneLike"/>
@@ -5667,7 +5696,7 @@ Suggested values include: 1] setting; 2] entrance; 3] exit; 4] business; 5] nove
                               </xs:simpleType>
                               <xs:simpleType>
                                  <xs:restriction base="xs:token">
-                                    <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                    <xs:pattern value="[^\p{C}\p{Z}]+"/>
                                  </xs:restriction>
                               </xs:simpleType>
                            </xs:union>
@@ -5679,23 +5708,12 @@ Suggested values include: 1] setting; 2] entrance; 3] exit; 4] business; 5] nove
          </xs:complexContent>
       </xs:complexType>
    </xs:element>
-   <xs:element name="teiCorpus">
+   <xs:element name="teiCorpus" substitutionGroup="tei:tei_model.describedResource">
       <xs:complexType>
          <xs:sequence>
             <xs:element ref="tei:teiHeader"/>
-            <xs:choice>
-               <xs:sequence>
-                  <xs:element maxOccurs="unbounded" ref="tei:tei_model.resourceLike"/>
-                  <xs:choice minOccurs="0" maxOccurs="unbounded">
-                     <xs:element ref="tei:TEI"/>
-                     <xs:element ref="tei:teiCorpus"/>
-                  </xs:choice>
-               </xs:sequence>
-               <xs:choice maxOccurs="unbounded">
-                  <xs:element ref="tei:TEI"/>
-                  <xs:element ref="tei:teiCorpus"/>
-               </xs:choice>
-            </xs:choice>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.resource"/>
+            <xs:element maxOccurs="unbounded" ref="tei:tei_model.describedResource"/>
          </xs:sequence>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
@@ -5948,7 +5966,7 @@ Suggested values include: 1] setting; 2] entrance; 3] exit; 4] business; 5] nove
    </xs:element>
    <xs:element name="idno">
       <xs:annotation>
-         <xs:documentation>(identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [2.2.4. Publication, Distribution, Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Document, and Reprint Information]</xs:documentation>
+         <xs:documentation>(identifier) supplies any form of identifier used to identify some object, such as a bibliographic item, a person, a title, an organization, etc. in a standardized way. [13.3.1. Basic Principles 2.2.4. Publication, Distribution, Licensing, etc. 2.2.5. The Series Statement 3.11.2.4. Imprint, Size of a Document, and Reprint Information]</xs:documentation>
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
@@ -6027,7 +6045,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                   </xs:simpleType>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:union>
@@ -6113,7 +6131,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </xs:element>
    <xs:element name="sourceDesc">
       <xs:annotation>
-         <xs:documentation>(source description) describes the source from which an electronic text was derived or generated, typically a bibliographic description in the case of a digitized text, or a phrase such as "born digital" for a text which has no previous existence. [2.2.7. The Source Description]</xs:documentation>
+         <xs:documentation>(source description) describes the source(s) from which an electronic text was derived or generated, typically a bibliographic description in the case of a digitized text, or a phrase such as "born digital" for a text which has no previous existence. [2.2.7. The Source Description]</xs:documentation>
       </xs:annotation>
       <xs:complexType>
          <xs:choice>
@@ -6170,7 +6188,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
    </xs:element>
    <xs:element name="schemaRef" substitutionGroup="tei:tei_model.encodingDescPart">
       <xs:annotation>
-         <xs:documentation>(schema reference) describes or points to a related customization or schema file [2.3.9. The Schema Specification]</xs:documentation>
+         <xs:documentation>(schema reference) describes or points to a related customization or schema file [2.3.10. The Schema Specification]</xs:documentation>
       </xs:annotation>
       <xs:complexType>
          <xs:group minOccurs="0" ref="tei:tei_model.descLike"/>
@@ -6524,7 +6542,7 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</xs:d
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -6593,10 +6611,13 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</xs:d
          <xs:documentation>(list of prefix definitions) contains a list of definitions of prefixing schemes used in data.pointer values, showing how abbreviated URIs using each scheme may be expanded into full URIs. [16.2.3. Using Abbreviated Pointers]</xs:documentation>
       </xs:annotation>
       <xs:complexType>
-         <xs:choice maxOccurs="unbounded">
-            <xs:element ref="tei:prefixDef"/>
-            <xs:element ref="tei:listPrefixDef"/>
-         </xs:choice>
+         <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
+            <xs:choice maxOccurs="unbounded">
+               <xs:element ref="tei:prefixDef"/>
+               <xs:element ref="tei:listPrefixDef"/>
+            </xs:choice>
+         </xs:sequence>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
       </xs:complexType>
    </xs:element>
@@ -6689,6 +6710,7 @@ Sample values include: 1] first-line; 2] first-letter; 3] before; 4] after</xs:d
             <xs:group ref="tei:tei_model.catDescPart"/>
          </xs:choice>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.canonical.attributes"/>
       </xs:complexType>
    </xs:element>
    <xs:element name="geoDecl" substitutionGroup="tei:tei_model.encodingDescPart">
@@ -6742,7 +6764,7 @@ Suggested values include: 1] WGS84 (World Geodetic System); 2] MGRS (Military Gr
                         </xs:simpleType>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:union>
@@ -6752,9 +6774,51 @@ Suggested values include: 1] WGS84 (World Geodetic System); 2] MGRS (Military Gr
          </xs:complexContent>
       </xs:complexType>
    </xs:element>
+   <xs:element name="unitDecl" substitutionGroup="tei:tei_model.encodingDescPart">
+      <xs:annotation>
+         <xs:documentation>(unit declarations) provides information about units of measurement that are not members of the International System of Units. [2.3.9. The Unit Declaration]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element maxOccurs="unbounded" ref="tei:unitDef"/>
+         </xs:sequence>
+         <xs:attributeGroup ref="tei:tei_att.canonical.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.datable.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="unitDef">
+      <xs:annotation>
+         <xs:documentation>(unit definition) contains descriptive information related to a specific unit of measurement. [2.3.9. The Unit Declaration]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:choice maxOccurs="unbounded">
+            <xs:group ref="tei:tei_model.labelLike"/>
+            <xs:group minOccurs="0" ref="tei:tei_model.placeNamePart"/>
+            <xs:element minOccurs="0" ref="tei:conversion"/>
+            <xs:element minOccurs="0" ref="tei:unit"/>
+         </xs:choice>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.datable.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.canonical.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="conversion">
+      <xs:annotation>
+         <xs:documentation>defines how to calculate one unit of measure in terms of another. [2.3.9. The Unit Declaration]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.datable.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.formula.attributes"/>
+         <xs:attribute name="fromUnit" use="required" type="xs:anyURI"/>
+         <xs:attribute name="toUnit" use="required" type="xs:anyURI"/>
+      </xs:complexType>
+   </xs:element>
    <xs:element name="appInfo" substitutionGroup="tei:tei_model.encodingDescPart">
       <xs:annotation>
-         <xs:documentation>(application information) records information about an application which has edited the TEI file. [2.3.10. The Application Information Element]</xs:documentation>
+         <xs:documentation>(application information) records information about an application which has edited the TEI file. [2.3.11. The Application Information Element]</xs:documentation>
       </xs:annotation>
       <xs:complexType>
          <xs:sequence>
@@ -6765,7 +6829,7 @@ Suggested values include: 1] WGS84 (World Geodetic System); 2] MGRS (Military Gr
    </xs:element>
    <xs:element name="application" substitutionGroup="tei:tei_model.applicationLike">
       <xs:annotation>
-         <xs:documentation>provides information about an application which has acted upon the document. [2.3.10. The Application Information Element]</xs:documentation>
+         <xs:documentation>provides information about an application which has acted upon the document. [2.3.11. The Application Information Element]</xs:documentation>
       </xs:annotation>
    </xs:element>
    <xs:element name="profileDesc" substitutionGroup="tei:tei_model.teiHeaderPart">
@@ -7000,7 +7064,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
                   </xs:simpleType>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:union>
@@ -7076,21 +7140,30 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
          <xs:documentation>groups a number of change descriptions associated with either the creation of a source text or the revision of an encoded text. [2.6. The Revision Description 11.7. Identifying Changes and Revisions]</xs:documentation>
       </xs:annotation>
       <xs:complexType>
-         <xs:choice maxOccurs="unbounded">
-            <xs:element ref="tei:listChange"/>
-            <xs:element ref="tei:change"/>
-         </xs:choice>
+         <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
+            <xs:choice maxOccurs="unbounded">
+               <xs:element ref="tei:listChange"/>
+               <xs:element ref="tei:change"/>
+            </xs:choice>
+         </xs:sequence>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.sortable.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
          <xs:attribute name="ordered" default="true" type="xs:boolean"/>
       </xs:complexType>
    </xs:element>
-   <xs:element name="TEI">
+   <xs:element name="TEI" substitutionGroup="tei:tei_model.describedResource">
       <xs:complexType>
          <xs:sequence>
             <xs:element ref="tei:teiHeader"/>
-            <xs:element maxOccurs="unbounded" ref="tei:tei_model.resourceLike"/>
+            <xs:choice>
+               <xs:sequence>
+                  <xs:element maxOccurs="unbounded" ref="tei:tei_model.resource"/>
+                  <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:TEI"/>
+               </xs:sequence>
+               <xs:element maxOccurs="unbounded" ref="tei:TEI"/>
+            </xs:choice>
          </xs:sequence>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
@@ -7106,7 +7179,7 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
          </xs:attribute>
       </xs:complexType>
    </xs:element>
-   <xs:element name="text" substitutionGroup="tei:tei_model.resourceLike">
+   <xs:element name="text" substitutionGroup="tei:tei_model.resource">
       <xs:annotation>
          <xs:documentation>contains a single text of any kind, whether unitary or composite, for example a poem or drama, a collection of essays, a novel, a dictionary, or a corpus sample. [4. Default Text Structure 15.1. Varieties of Composite Text]</xs:documentation>
       </xs:annotation>
@@ -7379,32 +7452,14 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.phraseSeq.limited">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
                <xs:attribute name="type" default="single">
                   <xs:annotation>
                      <xs:documentation>specifies how the text was constituted.</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:enumeration value="single">
-                           <xs:annotation>
-                              <xs:documentation>a single complete text</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                        <xs:enumeration value="composite">
-                           <xs:annotation>
-                              <xs:documentation>a text made by combining several smaller items, each individually complete</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                        <xs:enumeration value="frags">
-                           <xs:annotation>
-                              <xs:documentation>(fragments) a text made by combining several smaller, not necessarily complete, items</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                        <xs:enumeration value="unknown">
-                           <xs:annotation>
-                              <xs:documentation>composition unknown or unspecified</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -7420,14 +7475,14 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.phraseSeq.limited">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
                <xs:attribute name="type">
                   <xs:annotation>
-                     <xs:documentation>categorizes the derivation of the text.
-Sample values include: 1] original; 2] revision; 3] translation; 4] abridgment; 5] plagiarism; 6] traditional</xs:documentation>
+                     <xs:documentation>categorizes the derivation of the text.</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -7443,14 +7498,14 @@ Sample values include: 1] original; 2] revision; 3] translation; 4] abridgment; 
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.phraseSeq.limited">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
                <xs:attribute name="type">
                   <xs:annotation>
-                     <xs:documentation>categorizes the domain of use.
-Sample values include: 1] art; 2] domestic; 3] religious; 4] business; 5] education; 6] govt (government); 7] public</xs:documentation>
+                     <xs:documentation>categorizes the domain of use.</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -7466,32 +7521,14 @@ Sample values include: 1] art; 2] domestic; 3] religious; 4] business; 5] educat
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.phraseSeq.limited">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
                <xs:attribute name="type">
                   <xs:annotation>
                      <xs:documentation>categorizes the factuality of the text.</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:enumeration value="fiction">
-                           <xs:annotation>
-                              <xs:documentation>the text is to be regarded as entirely imaginative</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                        <xs:enumeration value="fact">
-                           <xs:annotation>
-                              <xs:documentation>the text is to be regarded as entirely informative or factual</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                        <xs:enumeration value="mixed">
-                           <xs:annotation>
-                              <xs:documentation>the text contains a mixture of fact and fiction</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                        <xs:enumeration value="inapplicable">
-                           <xs:annotation>
-                              <xs:documentation>the fiction/fact distinction is not regarded as helpful or appropriate to this text</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -7507,32 +7544,14 @@ Sample values include: 1] art; 2] domestic; 3] religious; 4] business; 5] educat
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.phraseSeq.limited">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
                <xs:attribute name="type">
                   <xs:annotation>
                      <xs:documentation>specifies the degree of interaction between active and passive participants in the text.</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:enumeration value="none">
-                           <xs:annotation>
-                              <xs:documentation>no interaction of any kind, e.g. a monologue</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                        <xs:enumeration value="partial">
-                           <xs:annotation>
-                              <xs:documentation>some degree of interaction, e.g. a monologue with set responses</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                        <xs:enumeration value="complete">
-                           <xs:annotation>
-                              <xs:documentation>complete interaction, e.g. a face to face conversation</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
-                        <xs:enumeration value="inapplicable">
-                           <xs:annotation>
-                              <xs:documentation>this parameter is inappropriate or inapplicable in this case</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -7581,7 +7600,7 @@ Suggested values include: 1] singular; 2] plural; 3] corporate; 4] unknown</xs:d
                         </xs:simpleType>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:union>
@@ -7641,7 +7660,7 @@ Suggested values include: 1] self; 2] single; 3] many; 4] group; 5] world</xs:do
                         </xs:simpleType>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:union>
@@ -7659,14 +7678,14 @@ Suggested values include: 1] self; 2] single; 3] many; 4] group; 5] world</xs:do
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.phraseSeq.limited">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
                <xs:attribute name="type">
                   <xs:annotation>
-                     <xs:documentation>a keyword characterizing the type of preparedness.
-Sample values include: 1] none; 2] scripted; 3] formulaic; 4] revised</xs:documentation>
+                     <xs:documentation>a keyword characterizing the type of preparedness.</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -7682,55 +7701,15 @@ Sample values include: 1] none; 2] scripted; 3] formulaic; 4] revised</xs:docume
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.phraseSeq.limited">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
                <xs:attribute name="type">
                   <xs:annotation>
-                     <xs:documentation>specifies a particular kind of purpose.
-Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</xs:documentation>
+                     <xs:documentation>specifies a particular kind of purpose.</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
-                     <xs:union>
-                        <xs:simpleType>
-                           <xs:restriction base="xs:token">
-                              <xs:enumeration value="persuade">
-                                 <xs:annotation>
-                                    <xs:documentation>didactic, advertising, propaganda, etc.</xs:documentation>
-                                 </xs:annotation>
-                              </xs:enumeration>
-                           </xs:restriction>
-                        </xs:simpleType>
-                        <xs:simpleType>
-                           <xs:restriction base="xs:token">
-                              <xs:enumeration value="express">
-                                 <xs:annotation>
-                                    <xs:documentation>self expression, confessional, etc.</xs:documentation>
-                                 </xs:annotation>
-                              </xs:enumeration>
-                           </xs:restriction>
-                        </xs:simpleType>
-                        <xs:simpleType>
-                           <xs:restriction base="xs:token">
-                              <xs:enumeration value="inform">
-                                 <xs:annotation>
-                                    <xs:documentation>convey information, educate, etc.</xs:documentation>
-                                 </xs:annotation>
-                              </xs:enumeration>
-                           </xs:restriction>
-                        </xs:simpleType>
-                        <xs:simpleType>
-                           <xs:restriction base="xs:token">
-                              <xs:enumeration value="entertain">
-                                 <xs:annotation>
-                                    <xs:documentation>amuse, entertain, etc.</xs:documentation>
-                                 </xs:annotation>
-                              </xs:enumeration>
-                           </xs:restriction>
-                        </xs:simpleType>
-                        <xs:simpleType>
-                           <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
-                           </xs:restriction>
-                        </xs:simpleType>
-                     </xs:union>
+                     <xs:restriction base="xs:token">
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
+                     </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
                <xs:attribute name="degree">
@@ -7776,22 +7755,36 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</xs:d
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                <xs:group ref="tei:tei_model.nameLike.agent"/>
                <xs:group ref="tei:tei_model.dateLike"/>
-               <xs:element ref="tei:tei_model.settingPart"/>
+               <xs:group ref="tei:tei_model.settingPart"/>
             </xs:choice>
          </xs:choice>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
          <xs:attributeGroup ref="tei:tei_att.ascribed.attributes"/>
       </xs:complexType>
    </xs:element>
-   <xs:element name="locale" substitutionGroup="tei:tei_model.settingPart">
+   <xs:element name="locale">
       <xs:annotation>
          <xs:documentation>contains a brief informal description of the kind of place concerned, for example: a room, a restaurant, a park bench, etc. [15.2.3. The Setting Description]</xs:documentation>
       </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:tei_macro.phraseSeq.limited">
+               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
    </xs:element>
-   <xs:element name="activity" substitutionGroup="tei:tei_model.settingPart">
+   <xs:element name="activity">
       <xs:annotation>
          <xs:documentation>contains a brief informal description of what a participant in a language interaction is doing other than speaking, if anything. [15.2.3. The Setting Description]</xs:documentation>
       </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:tei_macro.phraseSeq.limited">
+               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
    </xs:element>
    <xs:attributeGroup name="tei_att.global.facs.attributes">
       <xs:attributeGroup ref="tei:tei_att.global.facs.attribute.facs"/>
@@ -7908,7 +7901,7 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</xs:d
    <xs:attributeGroup name="tei_att.coordinated.attribute.points">
       <xs:attribute name="points">
          <xs:annotation>
-            <xs:documentation>identifies a two dimensional area within the bounding box specified by the other attributes by means of a series of pairs of numbers, each of which gives the x,y coordinates of a point on a line enclosing the area.</xs:documentation>
+            <xs:documentation>identifies a two dimensional area by means of a series of pairs of numbers, each of which gives the x,y coordinates of a point on a line enclosing the area.</xs:documentation>
          </xs:annotation>
          <xs:simpleType>
             <xs:restriction>
@@ -7918,22 +7911,22 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</xs:d
                         <xs:union>
                            <xs:simpleType>
                               <xs:restriction base="xs:token">
-                                 <xs:pattern value="(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)"/>
+                                 <xs:pattern value="(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"/>
                               </xs:restriction>
                            </xs:simpleType>
                            <xs:simpleType>
                               <xs:restriction base="xs:token">
-                                 <xs:pattern value="(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)"/>
+                                 <xs:pattern value="(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"/>
                               </xs:restriction>
                            </xs:simpleType>
                            <xs:simpleType>
                               <xs:restriction base="xs:token">
-                                 <xs:pattern value="(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)"/>
+                                 <xs:pattern value="(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"/>
                               </xs:restriction>
                            </xs:simpleType>
                            <xs:simpleType>
                               <xs:restriction base="xs:token">
-                                 <xs:pattern value="(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)"/>
+                                 <xs:pattern value="(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"/>
                               </xs:restriction>
                            </xs:simpleType>
                         </xs:union>
@@ -7945,7 +7938,7 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</xs:d
          </xs:simpleType>
       </xs:attribute>
    </xs:attributeGroup>
-   <xs:element name="facsimile" substitutionGroup="tei:tei_model.resourceLike">
+   <xs:element name="facsimile" substitutionGroup="tei:tei_model.resource">
       <xs:annotation>
          <xs:documentation>contains a representation of some written source in the form of a set of images rather than as transcribed or encoded text. [11.1. Digital Facsimiles]</xs:documentation>
       </xs:annotation>
@@ -7963,7 +7956,7 @@ Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain</xs:d
          <xs:attributeGroup ref="tei:tei_att.declaring.attributes"/>
       </xs:complexType>
    </xs:element>
-   <xs:element name="sourceDoc" substitutionGroup="tei:tei_model.resourceLike">
+   <xs:element name="sourceDoc" substitutionGroup="tei:tei_model.resource">
       <xs:annotation>
          <xs:documentation>contains a transcription or other representation of a single source document potentially forming part of a dossier génétique or collection of sources. [11.1. Digital Facsimiles 11.2.2. Embedded Transcription]</xs:documentation>
       </xs:annotation>
@@ -8011,7 +8004,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -8040,6 +8033,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</xs:documentation>
    <xs:element name="zone">
       <xs:complexType mixed="true">
          <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:tei_model.gLike"/>
             <xs:element ref="tei:tei_model.graphicLike"/>
             <xs:group ref="tei:tei_model.global"/>
             <xs:element ref="tei:surface"/>
@@ -8074,17 +8068,17 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</xs:documentation>
                            <xs:union>
                               <xs:simpleType>
                                  <xs:restriction base="xs:token">
-                                    <xs:pattern value="(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)"/>
+                                    <xs:pattern value="(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"/>
                                  </xs:restriction>
                               </xs:simpleType>
                               <xs:simpleType>
                                  <xs:restriction base="xs:token">
-                                    <xs:pattern value="(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)"/>
+                                    <xs:pattern value="(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"/>
                                  </xs:restriction>
                               </xs:simpleType>
                               <xs:simpleType>
                                  <xs:restriction base="xs:token">
-                                    <xs:pattern value="(\-?[0-9]+\.?[0-9]*,\-?[0-9]+\.?[0-9]*)"/>
+                                    <xs:pattern value="(-?[0-9]+(\.[0-9]+)?,-?[0-9]+(\.[0-9]+)?)"/>
                                  </xs:restriction>
                               </xs:simpleType>
                            </xs:union>
@@ -8166,16 +8160,16 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</xs:documentation>
          <xs:complexContent>
             <xs:extension base="tei:tei_macro.phraseSeq">
                <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attribute.subtype"/>
                <xs:attributeGroup ref="tei:tei_att.placement.attributes"/>
                <xs:attributeGroup ref="tei:tei_att.written.attributes"/>
                <xs:attribute name="type">
                   <xs:annotation>
-                     <xs:documentation>classifies the material encoded according to some useful typology.
-Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNum (line number); 5] sig (signature); 6] catch (catchword)</xs:documentation>
+                     <xs:documentation>classifies the material encoded according to some useful typology.</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -8323,7 +8317,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
                            <xs:list>
                               <xs:simpleType>
                                  <xs:restriction base="xs:token">
-                                    <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                    <xs:pattern value="[^\p{C}\p{Z}]+"/>
                                  </xs:restriction>
                               </xs:simpleType>
                            </xs:list>
@@ -8356,7 +8350,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
                            <xs:list>
                               <xs:simpleType>
                                  <xs:restriction base="xs:token">
-                                    <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                    <xs:pattern value="[^\p{C}\p{Z}]+"/>
                                  </xs:restriction>
                               </xs:simpleType>
                            </xs:list>
@@ -8389,7 +8383,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
                            <xs:list>
                               <xs:simpleType>
                                  <xs:restriction base="xs:token">
-                                    <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                    <xs:pattern value="[^\p{C}\p{Z}]+"/>
                                  </xs:restriction>
                               </xs:simpleType>
                            </xs:list>
@@ -8424,6 +8418,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
       </xs:annotation>
       <xs:complexType>
          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
             <xs:element maxOccurs="unbounded" ref="tei:transpose"/>
          </xs:sequence>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
@@ -8445,7 +8440,7 @@ Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNu
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -8948,7 +8943,7 @@ Suggested values include: 1] tempo; 2] loud; 3] pitch; 4] tension; 5] rhythm; 6]
                   </xs:simpleType>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:union>
@@ -8960,7 +8955,7 @@ Suggested values include: 1] tempo; 2] loud; 3] pitch; 4] tension; 5] rhythm; 6]
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -9001,7 +8996,7 @@ Suggested values include: 1] tempo; 2] loud; 3] pitch; 4] tension; 5] rhythm; 6]
                   <xs:list>
                      <xs:simpleType>
                         <xs:restriction base="xs:token">
-                           <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                           <xs:pattern value="[^\p{C}\p{Z}]+"/>
                         </xs:restriction>
                      </xs:simpleType>
                   </xs:list>
@@ -9022,7 +9017,7 @@ Suggested values include: 1] tempo; 2] loud; 3] pitch; 4] tension; 5] rhythm; 6]
                   <xs:list>
                      <xs:simpleType>
                         <xs:restriction base="xs:token">
-                           <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                           <xs:pattern value="[^\p{C}\p{Z}]+"/>
                         </xs:restriction>
                      </xs:simpleType>
                   </xs:list>
@@ -9043,7 +9038,7 @@ Suggested values include: 1] tempo; 2] loud; 3] pitch; 4] tension; 5] rhythm; 6]
                   <xs:list>
                      <xs:simpleType>
                         <xs:restriction base="xs:token">
-                           <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                           <xs:pattern value="[^\p{C}\p{Z}]+"/>
                         </xs:restriction>
                      </xs:simpleType>
                   </xs:list>
@@ -9064,7 +9059,7 @@ Suggested values include: 1] tempo; 2] loud; 3] pitch; 4] tension; 5] rhythm; 6]
                   <xs:list>
                      <xs:simpleType>
                         <xs:restriction base="xs:token">
-                           <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                           <xs:pattern value="[^\p{C}\p{Z}]+"/>
                         </xs:restriction>
                      </xs:simpleType>
                   </xs:list>
@@ -9085,7 +9080,7 @@ Suggested values include: 1] tempo; 2] loud; 3] pitch; 4] tension; 5] rhythm; 6]
                   <xs:list>
                      <xs:simpleType>
                         <xs:restriction base="xs:token">
-                           <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                           <xs:pattern value="[^\p{C}\p{Z}]+"/>
                         </xs:restriction>
                      </xs:simpleType>
                   </xs:list>
@@ -9527,7 +9522,7 @@ Sample values include: 1] sponsor; 2] recommend; 3] discredit; 4] pledged</xs:do
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -9554,7 +9549,7 @@ Sample values include: 1] western; 2] sui; 3] subjective; 4] objective; 5] inWor
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -9587,7 +9582,7 @@ Sample values include: 1] caesarean (caesarean section); 2] vaginal (vaginal del
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -9639,7 +9634,7 @@ Sample values include: 1] proclaimed; 2] assumed; 3] verified; 4] clinical; 5] b
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -9666,7 +9661,7 @@ Sample values include: 1] primary; 2] secondary; 3] undergraduate; 4] graduate; 
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -9680,6 +9675,7 @@ Sample values include: 1] primary; 2] secondary; 3] undergraduate; 4] graduate; 
       </xs:annotation>
       <xs:complexType>
          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:idno"/>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.headLike"/>
             <xs:choice>
                <xs:group maxOccurs="unbounded" ref="tei:tei_model.pLike"/>
@@ -9690,6 +9686,8 @@ Sample values include: 1] primary; 2] secondary; 3] undergraduate; 4] graduate; 
                <xs:group ref="tei:tei_model.biblLike"/>
                <xs:element ref="tei:linkGrp"/>
                <xs:element ref="tei:link"/>
+               <xs:element ref="tei:idno"/>
+               <xs:element ref="tei:ptr"/>
             </xs:choice>
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:event"/>
          </xs:sequence>
@@ -9721,7 +9719,7 @@ Sample values include: 1] practicing; 2] clandestine; 3] patrilineal; 4] matrili
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -9770,7 +9768,7 @@ Sample values include: 1] listening; 2] speaking; 3] reading; 4] writing</xs:doc
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -9837,7 +9835,7 @@ Sample values include: 1] listening; 2] speaking; 3] reading; 4] writing</xs:doc
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -9852,6 +9850,7 @@ Sample values include: 1] listening; 2] speaking; 3] reading; 4] writing</xs:doc
       <xs:complexType>
          <xs:sequence>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.headLike"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
             <xs:choice maxOccurs="unbounded">
                <xs:element ref="tei:org"/>
                <xs:element ref="tei:listOrg"/>
@@ -9874,6 +9873,7 @@ Sample values include: 1] listening; 2] speaking; 3] reading; 4] writing</xs:doc
       <xs:complexType>
          <xs:sequence>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.headLike"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
             <xs:group maxOccurs="unbounded" ref="tei:tei_model.eventLike"/>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                <xs:element ref="tei:relation"/>
@@ -9893,6 +9893,7 @@ Sample values include: 1] listening; 2] speaking; 3] reading; 4] writing</xs:doc
       <xs:complexType>
          <xs:sequence>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.headLike"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
             <xs:choice maxOccurs="unbounded">
                <xs:element ref="tei:tei_model.personLike"/>
                <xs:element ref="tei:listPerson"/>
@@ -9915,6 +9916,7 @@ Sample values include: 1] listening; 2] speaking; 3] reading; 4] writing</xs:doc
       <xs:complexType>
          <xs:sequence>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.headLike"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
             <xs:choice maxOccurs="unbounded">
                <xs:element ref="tei:tei_model.placeLike"/>
                <xs:element ref="tei:listPlace"/>
@@ -9969,7 +9971,7 @@ Sample values include: 1] birth; 2] naturalised; 3] self-assigned</xs:documentat
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -9996,7 +9998,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -10028,6 +10030,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
                <xs:group ref="tei:tei_model.biblLike"/>
                <xs:element ref="tei:linkGrp"/>
                <xs:element ref="tei:link"/>
+               <xs:element ref="tei:ptr"/>
             </xs:choice>
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.personLike"/>
          </xs:sequence>
@@ -10045,7 +10048,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
                      <xs:list>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:list>
@@ -10063,6 +10066,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
       <xs:complexType>
          <xs:sequence>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.headLike"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
             <xs:choice>
                <xs:group ref="tei:tei_model.pLike"/>
                <xs:choice maxOccurs="unbounded">
@@ -10086,6 +10090,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                <xs:group ref="tei:tei_model.personPart"/>
                <xs:group ref="tei:tei_model.global"/>
+               <xs:element ref="tei:ptr"/>
             </xs:choice>
          </xs:choice>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
@@ -10101,7 +10106,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
                      <xs:list>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:list>
@@ -10120,7 +10125,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
                      <xs:list>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:list>
@@ -10135,7 +10140,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -10166,7 +10171,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
                      <xs:list>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:list>
@@ -10185,7 +10190,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
                      <xs:list>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:list>
@@ -10200,7 +10205,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -10226,7 +10231,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -10240,7 +10245,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
                      <xs:list>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:list>
@@ -10255,7 +10260,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -10269,7 +10274,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
                      <xs:list>
                         <xs:simpleType>
                            <xs:restriction base="xs:token">
-                              <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                              <xs:pattern value="[^\p{C}\p{Z}]+"/>
                            </xs:restriction>
                         </xs:simpleType>
                      </xs:list>
@@ -10332,7 +10337,7 @@ Sample values include: 1] primary; 2] other; 3] paid; 4] unpaid</xs:documentatio
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -10396,7 +10401,7 @@ Sample values include: 1] primary; 2] secondary; 3] temporary; 4] permanent</xs:
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -10422,7 +10427,7 @@ Sample values include: 1] explicit; 2] implicit</xs:documentation>
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -10436,7 +10441,7 @@ Sample values include: 1] explicit; 2] implicit</xs:documentation>
                            <xs:list>
                               <xs:simpleType>
                                  <xs:restriction base="xs:token">
-                                    <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                                    <xs:pattern value="[^\p{C}\p{Z}]+"/>
                                  </xs:restriction>
                               </xs:simpleType>
                            </xs:list>
@@ -10468,7 +10473,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
                   </xs:annotation>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:attribute>
@@ -10608,6 +10613,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
       <xs:complexType>
          <xs:sequence>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.headLike"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
             <xs:group maxOccurs="unbounded" ref="tei:tei_model.objectLike"/>
             <xs:choice minOccurs="0" maxOccurs="unbounded">
                <xs:element ref="tei:relation"/>
@@ -10640,6 +10646,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
       </xs:annotation>
       <xs:complexType>
          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:idno"/>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.pLike"/>
             <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:nym"/>
          </xs:sequence>
@@ -10668,6 +10675,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
       <xs:complexType>
          <xs:sequence>
             <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.headLike"/>
+            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:desc"/>
             <xs:choice maxOccurs="unbounded">
                <xs:element ref="tei:nym"/>
                <xs:element ref="tei:listNym"/>
@@ -10909,7 +10917,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
                   </xs:simpleType>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:union>
@@ -11010,7 +11018,7 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
                   </xs:simpleType>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                        <xs:pattern value="[^\p{C}\p{Z}]+"/>
                      </xs:restriction>
                   </xs:simpleType>
                </xs:union>
@@ -11177,6 +11185,17 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
          </xs:attribute>
       </xs:complexType>
    </xs:element>
+   <xs:element name="standOff" substitutionGroup="tei:tei_model.resource">
+      <xs:annotation>
+         <xs:documentation>Functions as a container element for linked data, contextual information, and stand-off annotations embedded in a TEI document. [16.10. The standOff Container]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:group maxOccurs="unbounded" ref="tei:tei_model.standOffPart"/>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.declaring.attributes"/>
+      </xs:complexType>
+   </xs:element>
    <xs:attributeGroup name="tei_att.tableDecoration.attributes">
       <xs:attributeGroup ref="tei:tei_att.tableDecoration.attribute.role"/>
       <xs:attributeGroup ref="tei:tei_att.tableDecoration.attribute.rows"/>
@@ -11210,7 +11229,7 @@ Suggested values include: 1] label; 2] data</xs:documentation>
                </xs:simpleType>
                <xs:simpleType>
                   <xs:restriction base="xs:token">
-                     <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                     <xs:pattern value="[^\p{C}\p{Z}]+"/>
                   </xs:restriction>
                </xs:simpleType>
             </xs:union>
@@ -11528,7 +11547,7 @@ Suggested values include: 1] label; 2] data</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -11593,7 +11612,7 @@ Suggested values include: 1] label; 2] data</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -11653,7 +11672,7 @@ Feature Value]</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -11706,7 +11725,7 @@ Feature Value]</xs:documentation>
             </xs:annotation>
             <xs:simpleType>
                <xs:restriction base="xs:token">
-                  <xs:pattern value="(\p{L}|\p{N}|\p{P}|\p{S})+"/>
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
                </xs:restriction>
             </xs:simpleType>
          </xs:attribute>
@@ -11828,31 +11847,2009 @@ Feature Value]</xs:documentation>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
       </xs:complexType>
    </xs:element>
+   <xs:attributeGroup name="tei_att.gaijiProp.attributes">
+      <xs:attributeGroup ref="tei:tei_att.gaijiProp.attribute.name"/>
+      <xs:attributeGroup ref="tei:tei_att.gaijiProp.attribute.value"/>
+      <xs:attributeGroup ref="tei:tei_att.gaijiProp.attribute.version"/>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="tei_att.gaijiProp.attribute.name">
+      <xs:attribute name="name" use="required" type="xs:NCName">
+         <xs:annotation>
+            <xs:documentation>provides the name of the character or glyph property being defined.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="tei_att.gaijiProp.attribute.value">
+      <xs:attribute name="value" use="required" type="xs:string">
+         <xs:annotation>
+            <xs:documentation>provides the value of the character or glyph property being defined.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+   </xs:attributeGroup>
+   <xs:attributeGroup name="tei_att.gaijiProp.attribute.version">
+      <xs:attribute name="version">
+         <xs:annotation>
+            <xs:documentation>specifies the version number of the Unicode Standard in which this property name is defined.
+Suggested values include: 1] 1.0.1; 2] 1.1; 3] 2.0; 4] 2.1; 5] 3.0; 6] 3.1; 7] 3.2; 8] 4.0; 9] 4.1; 10] 5.0; 11] 5.1; 12] 5.2; 13] 6.0; 14] 6.1; 15] 6.2; 16] 6.3; 17] 7.0; 18] 8.0; 19] 9.0; 20] 10.0; 21] 11.0; 22] 12.0; 23] 12.1; 24] unassigned</xs:documentation>
+         </xs:annotation>
+         <xs:simpleType>
+            <xs:union>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="1.0.1">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="1.1">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="2.0">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="2.1">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="3.0">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="3.1">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="3.2">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="4.0">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="4.1">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="5.0">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="5.1">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="5.2">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="6.0">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="6.1">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="6.2">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="6.3">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="7.0">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="8.0">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="9.0">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="10.0">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="11.0">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="12.0">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="12.1">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:enumeration value="unassigned">
+                        <xs:annotation>
+                           <xs:documentation/>
+                        </xs:annotation>
+                     </xs:enumeration>
+                  </xs:restriction>
+               </xs:simpleType>
+               <xs:simpleType>
+                  <xs:restriction base="xs:token">
+                     <xs:pattern value="[^\p{C}\p{Z}]+"/>
+                  </xs:restriction>
+               </xs:simpleType>
+            </xs:union>
+         </xs:simpleType>
+      </xs:attribute>
+   </xs:attributeGroup>
    <xs:element name="g" substitutionGroup="tei:tei_model.gLike">
       <xs:annotation>
          <xs:documentation>(character or glyph) represents a glyph, or a non-standard character. [5. Characters, Glyphs, and Writing Modes]</xs:documentation>
       </xs:annotation>
+   </xs:element>
+   <xs:element name="charDecl" substitutionGroup="tei:tei_model.encodingDescPart">
+      <xs:annotation>
+         <xs:documentation>(character declarations) provides information about nonstandard characters and glyphs. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:sequence>
+            <xs:element minOccurs="0" ref="tei:desc"/>
+            <xs:choice maxOccurs="unbounded">
+               <xs:element ref="tei:char"/>
+               <xs:element ref="tei:glyph"/>
+            </xs:choice>
+         </xs:sequence>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      </xs:complexType>
    </xs:element>
    <xs:element name="char">
       <xs:annotation>
          <xs:documentation>(character) provides descriptive information about a character. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
       </xs:annotation>
       <xs:complexType>
-         <xs:sequence>
-            <xs:element minOccurs="0" ref="tei:charName"/>
-            <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.descLike"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:charProp"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:mapping"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:figure"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.graphicLike"/>
-            <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.noteLike"/>
-         </xs:sequence>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:charName"/>
+            <xs:element ref="tei:charProp"/>
+            <xs:element ref="tei:unicodeProp"/>
+            <xs:element ref="tei:unihanProp"/>
+            <xs:element ref="tei:localProp"/>
+            <xs:element ref="tei:mapping"/>
+            <xs:element ref="tei:figure"/>
+            <xs:element ref="tei:tei_model.graphicLike"/>
+            <xs:group ref="tei:tei_model.noteLike"/>
+            <xs:group ref="tei:tei_model.descLike"/>
+         </xs:choice>
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
       </xs:complexType>
    </xs:element>
-   <xs:element name="charName">
+   <xs:element name="glyph">
       <xs:annotation>
-         <xs:documentation>(character name) contains the name of a character, expressed following Unicode conventions. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
+         <xs:documentation>(character glyph) provides descriptive information about a character glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:choice minOccurs="0" maxOccurs="unbounded">
+            <xs:element ref="tei:glyphName"/>
+            <xs:element ref="tei:charProp"/>
+            <xs:element ref="tei:unicodeProp"/>
+            <xs:element ref="tei:unihanProp"/>
+            <xs:element ref="tei:localProp"/>
+            <xs:element ref="tei:mapping"/>
+            <xs:element ref="tei:figure"/>
+            <xs:element ref="tei:tei_model.graphicLike"/>
+            <xs:group ref="tei:tei_model.noteLike"/>
+            <xs:group ref="tei:tei_model.descLike"/>
+         </xs:choice>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="localProp">
+      <xs:annotation>
+         <xs:documentation>(locally defined property) provides a locally defined character (or glyph) property. [5.2.1. Character Properties]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.gaijiProp.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="mapping">
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:tei_macro.xtext">
+               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+               <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="unihanProp">
+      <xs:annotation>
+         <xs:documentation>(unihan property) holds the name and value of a normative or informative Unihan character (or glyph) property as part of its attributes. [5.2.1. Character Properties]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.gaijiProp.attribute.version"/>
+         <xs:attribute name="name" use="required">
+            <xs:annotation>
+               <xs:documentation>specifies the normalized name of a unicode han database (Unihan) property</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+               <xs:restriction base="xs:token">
+                  <xs:enumeration value="kZVariant">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kAccountingNumeric">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kBigFive">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kCCCII">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kCNS1986">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kCNS1992">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kCangjie">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kCantonese">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kCheungBauer">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kCheungBauerIndex">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kCihaiT">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kCompatibilityVariant">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kCowles">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kDaeJaweon">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kDefinition">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kEACC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kFenn">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kFennIndex">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kFourCornerCode">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kFrequency">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kGB0">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kGB1">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kGB3">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kGB5">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kGB7">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kGB8">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kGSR">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kGradeLevel">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kHDZRadBreak">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kHKGlyph">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kHKSCS">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kHanYu">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kHangul">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kHanyuPinlu">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kHanyuPinyin">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIBMJapan">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIICore">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRGDaeJaweon">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRGDaiKanwaZiten">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRGHanyuDaZidian">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRGKangXi">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_GSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_HSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_JSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_KPSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_KSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_MSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_TSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_USource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_VSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kJIS0213">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kJa">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kJapaneseKun">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kJapaneseOn">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kJinmeiyoKanji">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kJis0">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kJis1">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kJoyoKanji">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kKPS0">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kKPS1">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kKSC0">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kKSC1">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kKangXi">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kKarlgren">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kKorean">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kKoreanEducationHanja">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kKoreanName">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kLau">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kMainlandTelegraph">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kMandarin">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kMatthews">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kMeyerWempe">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kMorohashi">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kNelson">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kOtherNumeric">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kPhonetic">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kPrimaryNumeric">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kPseudoGB1">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kRSAdobe_Japan1_6">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kRSJapanese">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kRSKanWa">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kRSKangXi">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kRSKorean">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kRSUnicode">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kSBGY">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kSemanticVariant">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kSimplifiedVariant">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kSpecializedSemanticVariant">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kTGH">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kTaiwanTelegraph">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kTang">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kTotalStrokes">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kTraditionalVariant">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kVietnamese">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kXHC1983">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kXerox">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:attribute>
+         <xs:attribute name="value" use="required">
+            <xs:annotation>
+               <xs:documentation>specifies the value of a named Unihan property</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+               <xs:restriction base="xs:token">
+                  <xs:pattern value="[^\p{C}\p{Z}]+"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:attribute>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="unicodeProp">
+      <xs:annotation>
+         <xs:documentation>(unicode property) provides a Unicode property for a character (or glyph). [5.2.1. Character Properties]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attributeGroup ref="tei:tei_att.gaijiProp.attribute.version"/>
+         <xs:attribute name="name" use="required">
+            <xs:annotation>
+               <xs:documentation>specifies the normalized name of a Unicode property.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+               <xs:restriction base="xs:token">
+                  <xs:enumeration value="Age">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="AHex">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Alpha">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Alphabetic">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="ASCII_Hex_Digit">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="bc">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Bidi_C">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Bidi_Class">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Bidi_Control">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Bidi_M">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Bidi_Mirrored">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Bidi_Mirroring_Glyph">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Bidi_Paired_Bracket">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Bidi_Paired_Bracket_Type">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="blk">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Block">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="bmg">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="bpb">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="bpt">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Canonical_Combining_Class">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Case_Folding">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Case_Ignorable">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Cased">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="ccc">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="CE">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="cf">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Changes_When_Casefolded">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Changes_When_Casemapped">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Changes_When_Lowercased">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Changes_When_NFKC_Casefolded">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Changes_When_Titlecased">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Changes_When_Uppercased">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="CI">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Comp_Ex">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Composition_Exclusion">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="CWCF">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="CWCM">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="CWKCF">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="CWL">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="CWT">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="CWU">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Dash">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Decomposition_Mapping">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Decomposition_Type">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Default_Ignorable_Code_Point">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Dep">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Deprecated">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="DI">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Dia">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Diacritic">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="dm">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="dt">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="ea">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="East_Asian_Width">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="EqUIdeo">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Equivalent_Unified_Ideograph">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Expands_On_NFC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Expands_On_NFD">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Expands_On_NFKC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Expands_On_NFKD">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Ext">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Extender">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="FC_NFKC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="FC_NFKC_Closure">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Full_Composition_Exclusion">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="gc">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="GCB">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="General_Category">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Gr_Base">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Gr_Ext">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Gr_Link">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Grapheme_Base">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Grapheme_Cluster_Break">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Grapheme_Extend">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Grapheme_Link">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Hangul_Syllable_Type">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Hex">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Hex_Digit">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="hst">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Hyphen">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="ID_Continue">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="ID_Start">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="IDC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Ideo">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Ideographic">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="IDS">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="IDS_Binary_Operator">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="IDS_Trinary_Operator">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="IDSB">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="IDST">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Indic_Positional_Category">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Indic_Syllabic_Category">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="InPC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="InSC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="isc">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="ISO_Comment">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Jamo_Short_Name">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="jg">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Join_C">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Join_Control">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Joining_Group">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Joining_Type">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="JSN">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="jt">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kAccountingNumeric">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kCompatibilityVariant">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIICore">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_GSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_HSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_JSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_KPSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_KSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_MSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_TSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_USource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kIRG_VSource">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kOtherNumeric">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kPrimaryNumeric">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="kRSUnicode">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="lb">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="lc">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Line_Break">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="LOE">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Logical_Order_Exception">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Lower">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Lowercase">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Lowercase_Mapping">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Math">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="na">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="na1">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Name">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Name_Alias">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="NChar">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="NFC_QC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="NFC_Quick_Check">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="NFD_QC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="NFD_Quick_Check">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="NFKC_Casefold">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="NFKC_CF">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="NFKC_QC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="NFKC_Quick_Check">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="NFKD_QC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="NFKD_Quick_Check">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Noncharacter_Code_Point">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="nt">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Numeric_Type">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Numeric_Value">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="nv">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="OAlpha">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="ODI">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="OGr_Ext">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="OIDC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="OIDS">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="OLower">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="OMath">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Other_Alphabetic">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Other_Default_Ignorable_Code_Point">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Other_Grapheme_Extend">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Other_ID_Continue">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Other_ID_Start">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Other_Lowercase">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Other_Math">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Other_Uppercase">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="OUpper">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Pat_Syn">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Pat_WS">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Pattern_Syntax">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Pattern_White_Space">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="PCM">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Prepended_Concatenation_Mark">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="QMark">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Quotation_Mark">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Radical">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Regional_Indicator">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="RI">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="SB">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="sc">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="scf">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Script">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Script_Extensions">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="scx">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="SD">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Sentence_Break">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Sentence_Terminal">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Simple_Case_Folding">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Simple_Lowercase_Mapping">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Simple_Titlecase_Mapping">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Simple_Uppercase_Mapping">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="slc">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Soft_Dotted">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="stc">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="STerm">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="suc">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="tc">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Term">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Terminal_Punctuation">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Titlecase_Mapping">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="uc">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="UIdeo">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Unicode_1_Name">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Unified_Ideograph">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Upper">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Uppercase">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Uppercase_Mapping">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Variation_Selector">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Vertical_Orientation">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="vo">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="VS">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="WB">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="White_Space">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="Word_Break">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="WSpace">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="XID_Continue">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="XID_Start">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="XIDC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="XIDS">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="XO_NFC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="XO_NFD">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="XO_NFKC">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+                  <xs:enumeration value="XO_NFKD">
+                     <xs:annotation>
+                        <xs:documentation/>
+                     </xs:annotation>
+                  </xs:enumeration>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:attribute>
+         <xs:attribute name="value" use="required" type="xs:string">
+            <xs:annotation>
+               <xs:documentation>specifies the value of a named Unicode property.</xs:documentation>
+            </xs:annotation>
+         </xs:attribute>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="value">
+      <xs:annotation>
+         <xs:documentation>contains a single value for some property, attribute, or other analysis. [5.2.1. Character Properties]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="tei:tei_macro.xtext">
+               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="unicodeName">
+      <xs:annotation>
+         <xs:documentation>(Unicode property name) contains the name of a registered Unicode normative or informative property. [5.2.1. Character Properties]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType mixed="true">
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+         <xs:attribute name="version">
+            <xs:annotation>
+               <xs:documentation>specifies the version number of the Unicode Standard in which this property name is defined.</xs:documentation>
+            </xs:annotation>
+            <xs:simpleType>
+               <xs:restriction base="xs:token">
+                  <xs:pattern value="[\d]+(\.[\d]+){0,2}"/>
+               </xs:restriction>
+            </xs:simpleType>
+         </xs:attribute>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="localName">
+      <xs:annotation>
+         <xs:documentation>(locally-defined property name) contains a locally defined name for some property. [5.2.1. Character Properties]</xs:documentation>
+      </xs:annotation>
+      <xs:complexType mixed="true">
+         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="glyphName">
+      <xs:annotation>
+         <xs:documentation>(character glyph name) contains the name of a glyph, expressed following Unicode conventions for character names. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
@@ -11874,92 +13871,12 @@ Feature Value]</xs:documentation>
          <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
       </xs:complexType>
    </xs:element>
-   <xs:element name="charDecl" substitutionGroup="tei:tei_model.encodingDescPart">
+   <xs:element name="charName">
       <xs:annotation>
-         <xs:documentation>(character declarations) provides information about nonstandard characters and glyphs. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType>
-         <xs:sequence>
-            <xs:element minOccurs="0" ref="tei:desc"/>
-            <xs:choice maxOccurs="unbounded">
-               <xs:element ref="tei:char"/>
-               <xs:element ref="tei:glyph"/>
-            </xs:choice>
-         </xs:sequence>
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="glyph">
-      <xs:annotation>
-         <xs:documentation>(character glyph) provides descriptive information about a character glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType>
-         <xs:sequence>
-            <xs:element minOccurs="0" ref="tei:glyphName"/>
-            <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.descLike"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:charProp"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:mapping"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:figure"/>
-            <xs:element minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.graphicLike"/>
-            <xs:group minOccurs="0" maxOccurs="unbounded" ref="tei:tei_model.noteLike"/>
-         </xs:sequence>
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="glyphName">
-      <xs:annotation>
-         <xs:documentation>(character glyph name) contains the name of a glyph, expressed following Unicode conventions for character names. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
+         <xs:documentation>(character name) contains the name of a character, expressed following Unicode conventions. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
       </xs:annotation>
       <xs:complexType mixed="true">
          <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="localName">
-      <xs:annotation>
-         <xs:documentation>(locally-defined property name) contains a locally defined name for some property. [5.2.1. Character Properties]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="mapping">
-      <xs:complexType>
-         <xs:complexContent>
-            <xs:extension base="tei:tei_macro.xtext">
-               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-               <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
-            </xs:extension>
-         </xs:complexContent>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="unicodeName">
-      <xs:annotation>
-         <xs:documentation>(unicode property name) contains the name of a registered Unicode normative or informative property. [5.2.1. Character Properties]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-         <xs:attribute name="version">
-            <xs:annotation>
-               <xs:documentation>specifies the version number of the Unicode Standard in which this property name is defined.</xs:documentation>
-            </xs:annotation>
-            <xs:simpleType>
-               <xs:restriction base="xs:token">
-                  <xs:pattern value="[\d]+(\.[\d]+){0,2}"/>
-               </xs:restriction>
-            </xs:simpleType>
-         </xs:attribute>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="value">
-      <xs:annotation>
-         <xs:documentation>contains a single value for some property, attribute, or other analysis. [5.2.1. Character Properties]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType>
-         <xs:complexContent>
-            <xs:extension base="tei:tei_macro.xtext">
-               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-            </xs:extension>
-         </xs:complexContent>
       </xs:complexType>
    </xs:element>
 </xs:schema>
