@@ -16,7 +16,7 @@
       </titleStmt>
       <publicationStmt>
         <publisher>CLARIN</publisher>
-        <date>2019</date>
+        <date>2020</date>
         <availability status="free">
           <p>This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.</p>
        </availability>
@@ -34,6 +34,7 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change when="2020-08-14">Tomaž Erjavec: documentation additions re questions received.</change>
       <change when="2019-08-23">Tomaž Erjavec: even more documentation.</change>
       <change when="2019-07-26">Tomaž Erjavec: some more documentation.</change>
       <change when="2019-06-06">Tomaž Erjavec: adding documentation.</change>
@@ -47,7 +48,7 @@
           <titlePart type="main"><ref target="https://github.com/clarin-eric/parla-clarin/">Parla-CLARIN</ref></titlePart>
           <titlePart type="sub">A TEI Schema for Corpora of Parliamentary Proceedings</titlePart>
         </docTitle>
-        <docEdition>v0.1</docEdition>
+        <docEdition>v0.2</docEdition>
         <!--byline>Tomaž Erjavec and Andrej Pančur</byline-->
       </titlePage>
       <p></p>
@@ -602,7 +603,7 @@
           appendices or texts that are related to the speeches.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-textstructure">
-            <TEI xml:id="id.1">
+            <TEI xml:id="id_1">
               <teiHeader>
                 <!-- Document metadata -->
               </teiHeader>
@@ -812,54 +813,79 @@
 
           Each <gi>person</gi> must have an <att>xml:id</att> attribute, so that it can be
           referred to from the transcription. Apart from that, the only required element is
-          <gi>persName</gi>, giving the name of the person, which can then be decomposed into
-          the person surname(s) and forename(s) as well as giving more details on the
-          decomposition of their name, as explained in the Section on <ref
+          <gi>persName</gi>, giving the name of the person. This can be contained directly in the element, or
+	  as the preferred option, further decomposed into
+          the person surname(s) and forename(s) or even other elements, as explained in the Section on <ref
           target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPER">Personal
           Names</ref> of the TEI Guidelines.</p>
 
-          <p>As illustrated, further person metadata can contain the sex of the person and
-          their birth date and place. Further elements are the persons <gi>death</gi> date and
-          place, as well as (time stamped) <gi>education</gi>, <gi>occupation</gi>, and
-          <gi>affiliation</gi>.</p>
+          <p>As illustrated above, further person metadata can contain the sex of the person and
+          their birth date and place. Other potentially useful elements are the persons
+          <gi>death</gi> date and place, as well as (possibly time stamped) <gi>education</gi>,
+          <gi>occupation</gi>, and <gi>affiliation</gi>.</p>
 
-          <p>In the context of PPCs, the <gi>affiliation</gi> is especially important, as it
-          denotes the person's party membership. As this is not necessarily fixed, a
-          <gi>person</gi> can contain several <gi>affiliation</gi> elements, each one with its
-          temporal duration.  Furthermore, the affiliation should not contain (only) directly
-          the name of the party, but rather the link to the party's definition, as explained in
-          Section on <ref target="#sec-party">Party metadata</ref>. The example below
-          illustrates this encoding.
+          <p>In the context of PPCs, the <gi>affiliation</gi> element is especially important, as it
+          can denote the person's membership in a political party, or their role in the parliament,
+          such as being an MP. Different types of affiliations are distinguished by the different
+          values of the <att>role</att> attribute, such as <q>member</q> (of a party) or <q>MP</q>.
+          As affiliations are not necessarily fixed, and the <gi>affiliation</gi> element can
+          be marked for its temporal duration, as explained in the Section on
+	  <ref target="#sec-temporal">Temporal information</ref>.
+	  The example below illustrates the encoding of various affiliations.
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-affiliation">
-            <person xml:id="JanezPodobnik1960">
+            <person xml:id="AnderličAnton">
               <persName>
-                <surname>Janez</surname>
-                <forename>Podobnik</forename>
+                <surname>Anderlič</surname>
+                <forename>Anton</forename>
               </persName>
-              <affiliation ref="#party.SDZ" from="1990-05-16" to="1991-05-08"/>
-              <affiliation ref="#party.FLM" from="1991-05-09" to="1993-05"/>
-              <affiliation ref="#party.ZZZ" from="1993-06-16"/>
-            </person>
+              <affiliation role="member" ref="#party.ZSMS" from="1990-05-08" to="1990-11-09"/>
+              <affiliation role="member" ref="#party.LDS.1" from="1990-11-10" to="1994-03-11"/>
+              <affiliation role="MP" ref="#DruzPolZb" from="1990-05-08" to="1992-12-22" ana="#SK.11"/>
+              <affiliation role="MP" ref="#DZ" from="1992-12-23" to="1996-11-27" ana="#DZ.1"/>
+	    </person>
+          </egXML>
+	  </p>
+	  
+          <p>The example above uses, via the <att>ref</att> attribute, stand-off annotation to refer
+          to the names of the parties, which should then be defined in a <gi>taxonomy</gi> element in
+          the <gi>teiHeader</gi>, as explained in the Section on <ref target="#sec-party">Party
+          metadata</ref>. The same can done for the MP affiliation to the national assembly,
+          where, additionally, a reference, via the <att>ana</att> attribute, is given to the
+          legislative period in which the person was an MP.</p>
+
+	  <p>Alternatively (or additionally), the name of the party or national assembly can also be
+	  given directly in the <gi>affiliation</gi> element using the <gi>orgName</gi> element, as
+	  illustrated below. The example also illustrates the additional information, encoded as an
+	  subordinate <gi>affiliation</gi> with the appropriate <att>role</att>, that the person was
+	  elected as an MP to represent a certain constituency, giving its name and location.
+	    
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-constituency">
+              <affiliation role="MP" ref="#DruzPolZb" from="1990-05-08" to="1996-11-27">
+                <orgName xml:lang="sl">Državni zbor Republike Slovenije</orgName>
+                <orgName xml:lang="en">National Assembly of the Republic of Slovenia</orgName>
+		<affiliation role="consituency">
+                  <placeName ref="https://www.geonames.org/3194351">Novo mesto</placeName>
+		</affiliation>
+	      </affiliation>
           </egXML>
           </p>
 
-          <p>Persons can have further attributes, and TEI offers various elements (typically
-          typed) to express them; they are introduced in the Section on <ref
+          <p>Persons can have further attributes, and TEI offers various elements (typically typed)
+          to express them; they are introduced in the Section on <ref
           target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSEpc">Personal
-          Characteristics</ref> of the TEI Guidelines. The two more general ones are
-          <gi>state</gi>, which contains the description of some status or quality attributed
-          to a person,(or organization) often at some specific time or for a specific date
-          range and <gi>trait</gi>, which differs from <gi>state</gi> that it is independent of
-          the volition or action of the holder and usually not at some specific time or for a
-          specific date range. The former could, for example, be used to encode the fact that a
-          PM was jailed for a given period of time, while the latter would e.g. be used for the
-          fact that a PM is handicapped.</p>
+          Characteristics</ref> of the TEI Guidelines. The two more general ones are <gi>state</gi>,
+          which contains the description of some status or quality attributed to a person (or
+          organization), often at some specific time or for a specific date range and <gi>trait</gi>,
+          which differs from <gi>state</gi> that it is independent of the volition or action of the
+          holder and usually not at some specific time or for a specific date range. The former
+          could, for example, be used to encode the fact that a PM was jailed for a given period of
+          time, while the latter would e.g. be used for the information that a PM is handicapped.</p>
 
-          <p>It is often advantageous to refer to external knowledge sources about a person,
-          such as Wikipedia or VIAF. This is encoded using the <gi>idno</gi> element, whose
-          content is typically an URI, while the <att>type</att> attribute denotes the kind
-          of knowledge source referred to.
+          <p>It is often advantageous to refer to external knowledge sources about a person, such as
+          Wikipedia or VIAF. This is encoded using the <gi>idno</gi> element, whose content is
+          typically an URI, while the <att>type</att> attribute denotes the kind of knowledge source
+          referred to.
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-external">
             <person xml:id="Kucan_Milan1941">
@@ -926,26 +952,24 @@
         <div xml:id="sec-relation">
           <head>Relationships between people and parties</head>
           
-          <p>It is also possible to encode relations between people and parties, e.g. kinship
-          between PMs, or the fact that one party is the successor of another one. For this
-          purpose, TEI defines the <gi>listRelation</gi> element explained in detail in the
-          Section on <ref
+          <p>It is also possible to encode relations between people and parties, e.g. kinship between
+          MPs, or that one party is the successor of another one. For this purpose, TEI defines the
+          <gi>listRelation</gi> element explained in detail in the Section on <ref
           target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSREL">Personal
-          Relationships</ref> of the TEI Guidelines. This element can be contained either by
-          the <gi>listPerson</gi> or <gi>listOrg</gi> elements and, in turn, contains the
-          <gi>relation</gi> element that defines one relation. The example below shows a
+          Relationships</ref> of the TEI Guidelines. This element can be contained by the
+          <gi>listPerson</gi> or <gi>listOrg</gi> elements and, in turn, contains the
+          <gi>relation</gi> elements, each of which defines one relation. The example below shows a
           relation between people.
 
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relatpers">
-            <relation name="parents" passive="#sbi243926" active="#sbi243926-0 #sbi243926-1"/>
+            <relation name="parent" passive="#sbi243926" active="#sbi243926-0 #sbi243926-1"/>
           </egXML>
 
-          The relation defines the relationship "parents" between the <att>active</att>
-          persons of this relationship (i.e. those defined in the <gi>person</gi> element
-          with the <att>xml:id</att> values of <val>sbi243926-0</val> and
-          <val>sbi243926-1</val>) and the <att>passive</att> person of this relationship
-          (i.e. the <gi>person</gi> element with the <att>xml:id</att> value of
-          <val>sbi243926</val>).</p>
+          The relation defines the relationship "parent" between the <att>active</att> persons of
+          this relationship (i.e. those defined in the <gi>person</gi> element with the
+          <att>xml:id</att> values of <val>sbi243926-0</val> and <val>sbi243926-1</val>) and the
+          <att>passive</att> person of this relationship (i.e. the <gi>person</gi> element with the
+          <att>xml:id</att> value of <val>sbi243926</val>).</p>
 
           <p>Relationships can also be mutual, e.g. in the case of spouses, as illustrated below
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relatmutual">
@@ -1108,6 +1132,38 @@
           this significantly simplifies their linguistic processing.</p>
         </div>
 
+        <div xml:id="sec-qa">
+	  <p>Sometimes particular speeches are in fact questions addressed to a person, or answers to
+	  particular questions, and it might be advantageous to encode this fact. Our approach is, to
+	  an extenet, borrowed from Akoma Ntoso and also discussed in the Section on <ref
+	  target="#sec-convakn-qa">Converting addressee, role, questions and answers</ref> from AKN,
+	  and is illustrated below.
+	  
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-qa">
+            <u xml:id="q_1" who="#kappa">
+              <seg>Mr. Kappa asked the Minister for Education about ...</seg>
+              <listRelation>
+                <relation name="directedTo" active="#kappa" passive="#ministerEducation"/>
+              </listRelation>
+            </u>
+            <u xml:id="a_1" who="#eta" ana="#ministerEducation">
+              <seg>Mr. Speaker, BNAT was the only umbrella professional body for ...</seg>
+	      <listRelation>
+                <relation name="questionAnswer" active="#q_1" passive="#a_1"/>
+	      </listRelation>
+            </u>
+          </egXML>
+	  
+	  As shown, the fact that the first speech is a question is given by <gi>relation</gi>
+	  element with the <att>name</att> value <code>directedTo</code> which is included in the
+	  utterance to which it is pertinent, while the relation between the questions and its answer
+	  is also expressed as a <gi>relation</gi> element, but here using <att>name</att> with
+	  the value <code>questionAnswer</code>. This <gi>listRelation</gi> could be placed in an
+	  arbitrary portion of the document, as it contains links to IDs of the question and answer;
+	  however, by convention it is best to place inside the answer.
+          </p>
+	</div>
+	
         <div xml:id="sec-voting">
           <head>Voting results</head>
           <p>One further aspects of the transcripts, which can be of particular interest for
@@ -1280,7 +1336,7 @@
                 <w>New</w>
                 <w>York</w>
               </name>
-              <pc ana="mte:Z" xml:id="ssj1.1.5.t6">.</pc>
+              <pc>.</pc>
             </s>
           </egXML>
           
@@ -1770,9 +1826,9 @@
 
             In the conversion to TEI the relation between the questions and its answer is also
             expressed as a <gi>relation</gi> element, but this time using <att>name</att> with
-            the value <code>questionAnswer</code>. Furthermore, the <gi>listRelation</gi> is
-            placed in an arbitrary portion of the document, as it contains links to IDs;
-            however, by convention it is best to place it after the answer. We exemplify below:
+            the value <code>questionAnswer</code>. Furthermore, while the <gi>listRelation</gi> can be
+            placed in an arbitrary portion of the document, as it contains links to IDs, it is,
+            by convention, best placed inside the answer. We exemplify below:
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-akn-qa-tei">
               <u xml:id="question_1" who="#kappa">
@@ -1783,10 +1839,10 @@
               </u>
               <u xml:id="answer_1" who="#eta" ana="#ministerEducation">
                 <seg>Mr. Speaker, BNAT was the only umbrella professional body for ...</seg>
+		<listRelation>
+                  <relation name="questionAnswer" active="#question_1" passive="#answer_1"/>
+		</listRelation>
               </u>
-              <listRelation>
-                <relation name="questionAnswer" active="#question_1" passive="#answer_1"/>
-              </listRelation>
             </egXML>
             </p>
           </div>          
