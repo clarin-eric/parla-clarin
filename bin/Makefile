@@ -4,9 +4,14 @@ all:	schema val-exa html
 
 val:	val-exa val-odd
 val-exa:
+	$j ../Schema/parla-clarin.rng ../Examples/Parla-CLARIN-Exemplar.xml
 	$j ../Schema/parla-clarin.rng ../Examples/AkomaNtosoCL-Example.xml
 	$j ../Schema/parla-clarin.rng ../Examples/AkomaNtosoKE-Example.xml
-	$j ../Schema/parla-clarin.rng ../Examples/Parla-CLARIN-Exemplar.xml
+	$j ../Schema/parla-clarin.rng ../Examples/slovParl2.0/teiCorpus.xml
+	xmllint --xinclude ../Examples/siParl2.0/siParl.tei/siParl-sample.xml | $j ../Schema/parla-clarin.rng
+	xmllint --xinclude ../Examples/siParl2.0/siParl.tei/SDT2-sample.xml | $j ../Schema/parla-clarin.rng
+	xmllint --xinclude ../Examples/siParl2.0/siParl.ana/siParl-ana-sample.xml | $j ../Schema/parla-clarin.rng
+	xmllint --xinclude ../Examples/siParl2.0/siParl.ana/SDT2-ana-sample.xml | $j ../Schema/parla-clarin.rng
 val-odd:
 	$j tei_odds.rng ../Schema/parla-clarin-odd.xml
 
