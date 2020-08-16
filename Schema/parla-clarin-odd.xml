@@ -1133,34 +1133,27 @@
         </div>
 
         <div xml:id="sec-qa">
-	  <p>Sometimes particular speeches are in fact questions addressed to a person, or answers to
-	  particular questions, and it might be advantageous to encode this fact. Our approach is, to
-	  an extenet, borrowed from Akoma Ntoso and also discussed in the Section on <ref
-	  target="#sec-convakn-qa">Converting addressee, role, questions and answers</ref> from AKN,
-	  and is illustrated below.
+          <head>Questions and answers and addresses</head>
+	  <p>Sometimes particular speeches are in fact questions (or statements) addressed to a
+	  person, or answers to particular questions, again, directed at the person that posed the
+	  question, and it might be advantageous to encode this fact. The encoding of a question and
+	  answer, and to whom it is directed is illustrated below.
 	  
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-qa">
-            <u xml:id="q_1" who="#kappa">
-              <seg>Mr. Kappa asked the Minister for Education about ...</seg>
-              <listRelation>
-                <relation name="directedTo" active="#kappa" passive="#ministerEducation"/>
-              </listRelation>
+            <u xml:id="q_1" who="#kappa" toWhom="#eta" ana="#question">
+              <seg>I would like to ask the Mr. Eta about ...</seg>
             </u>
-            <u xml:id="a_1" who="#eta" ana="#ministerEducation">
-              <seg>Mr. Speaker, BNAT was the only umbrella professional body for ...</seg>
-	      <listRelation>
-                <relation name="questionAnswer" active="#q_1" passive="#a_1"/>
-	      </listRelation>
+            <u xml:id="a_1" who="#eta" toWhom="#kappa" ana="#answer">
+              <seg>Mr. Kappa, BNAT was the only umbrella professional body for ...</seg>
             </u>
           </egXML>
 	  
-	  As shown, the fact that the first speech is a question is given by <gi>relation</gi>
-	  element with the <att>name</att> value <code>directedTo</code> which is included in the
-	  utterance to which it is pertinent, while the relation between the questions and its answer
-	  is also expressed as a <gi>relation</gi> element, but here using <att>name</att> with
-	  the value <code>questionAnswer</code>. This <gi>listRelation</gi> could be placed in an
-	  arbitrary portion of the document, as it contains links to IDs of the question and answer;
-	  however, by convention it is best to place inside the answer.
+	  The preson at whom a speech is directed is encoded in the <att>toWhom</att> attribute on
+	  the <gi>u</gi> element, which is, same as <att>who</att>, a reference which must point to a
+	  defined person. For the fact that the first speech is an question, and the second an
+	  answer, we here presuppose a taxononmy in the <gi>teiHeader</gi> of the corpus, which
+	  defines the types of utterances the we wish to distinguish, and the <val>question</val> and
+	  <val>answer</val> are IDs of the appropriate categories.
           </p>
 	</div>
 	
@@ -1791,22 +1784,16 @@
               </speech>
             </egXML>
 
-            TEI does not have attributes directly corresponding to the AKN <att>as</att> and
-            <att>to</att>, so the former is encoded as the value of the general <att>ana</att>
-            attribute, which should point to the appropriate <gi>category</gi> of the pertinent
-            ontology, while the latter is encoded (as also discussed in the Section on <ref
-            target="#sec-relation">Relationships between people and parties</ref>) as a
-            <gi>relation</gi> element with the <att>name</att> value <code>directedTo</code>
-            which should be included in the utterance to which it is pertinent, as exemplified
-            below:
+	    TEI has the attribute <att>toWhom</att>, which directly corresponds to the <att>to</att>
+	    attribute. TEI, however, does not have an attribute that would correspond to the AKN
+	    <att>as</att>, so this is encoded as the value of the general <att>ana</att> attribute,
+	    which should point to the appropriate <gi>category</gi> of the pertinent taxonomy for
+	    defining the roles of the speakers. The Parla-CLARIN encoding is thus:
 
             <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-akn-totei">
-              <u who="#khalwale" ana="#pm">
+              <u who="#khalwale" ana="#pm" toWhom="#speaker">
                 <seg>Mr. Speaker, Sir, I beg to give notice of the following Motion:-</seg>
                 ...
-                <listRelation>
-                  <relation name="directedTo" active="#khalwale" passive="#speaker"/>
-                </listRelation>
               </u>
             </egXML>
             </p>
@@ -1817,27 +1804,29 @@
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-akn-qa">
               <question eId="question_1" by="#kappa" to="#ministerEducation">
-                <p>Mr. Kappa asked the Minister for Education and ...</p>
+                <p>I would like to ask the Minister for Education about ...</p>
               </question>
               <answer eId="answer_1" by="#eta" as="#ministerEducation">
                 <p>Mr. Speaker, BNAT was the only umbrella professional body for...</p>
               </answer>
             </egXML>
 
-            In the conversion to TEI the relation between the questions and its answer is also
-            expressed as a <gi>relation</gi> element, but this time using <att>name</att> with
-            the value <code>questionAnswer</code>. Furthermore, while the <gi>listRelation</gi> can be
-            placed in an arbitrary portion of the document, as it contains links to IDs, it is,
-            by convention, best placed inside the answer. We exemplify below:
+            In the conversion to TEI we note that someting is a question or answer (or, in fact, any
+            other type of utterance) by assuming a taxonomy specifying the categories corresponding
+            to the types of speeches that we wish to distinguish, and the <val>question</val> and
+            <val>answer</val> are IDs of the appropriate categories. We can then refer to these
+            categories in the <att>ana</att> attribute of the utterance. Furthermore, and in case we
+            wish to direclty link the question and answer, we can use for this the <gi>relation</gi>
+            element using its <att>name</att> with the value <code>questionAnswer</code>. Such
+            <gi>listRelation</gi> can be placed in an arbitrary portion of the document, as it
+            contains links to IDs, but is, by convention, best placed inside the answer. We exemplify
+            the Parla-CLARIN encoding of a question and answer below:
             
             <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-akn-qa-tei">
-              <u xml:id="question_1" who="#kappa">
-                <seg>Mr. Kappa asked the Minister for Education and ...</seg>
-                <listRelation>
-                  <relation name="directedTo" active="#kappa" passive="#ministerEducation"/>
-                </listRelation>
+              <u xml:id="question_1" who="#kappa" toWhom="#ministerEducation" ana="#question">
+                <seg>I would like to ask the Minister for Education about ...</seg>
               </u>
-              <u xml:id="answer_1" who="#eta" ana="#ministerEducation">
+              <u xml:id="answer_1" who="#eta" ana="#ministerEducation #answer" toWhom="#kappa">
                 <seg>Mr. Speaker, BNAT was the only umbrella professional body for ...</seg>
 		<listRelation>
                   <relation name="questionAnswer" active="#question_1" passive="#answer_1"/>
