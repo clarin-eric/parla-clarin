@@ -1112,7 +1112,7 @@
             <item><gi>vocal</gi> marks any vocalized but not necessarily lexical phenomenon,
             e.g. laughter, sounds of (dis)agreement from the benches etc.</item>
             <item><gi>kinesic</gi> marks any communicative phenomenon, not necessarily
-            vocalized, for example a gesture, frown, etc.</item>
+            vocalized, for example clapping, a gesture or frown, etc.</item>
             <item><gi>incident</gi> marks any phenomenon or occurrence, not necessarily
             vocalized or communicative, for example incidental noises or other events
             affecting communication.</item>
@@ -1123,13 +1123,16 @@
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-incidents">
             <u xml:lang="sl" who="#SDZ5.AhačičMonika">Spoštovani kolegice poslanke!</u>
             <vocal who="#opposition"><desc xml:lang="en">shouting</desc></vocal>
-            <kinesic who="#SDZ5.AhačičMonika"><desc xml:lang="en">banging of the gavel</desc></kinesic>
-            <incident><desc xml:lang="en">Army storms the parliament</desc></incident>
+            <kinesic who="#SDZ5.AhačičMonika"><desc xml:lang="en">banging the gavel</desc></kinesic>
+            <incident><desc xml:lang="en">army storms the parliament</desc></incident>
+            <kinesic who="#governmet"><desc xml:lang="en">clapping</desc></kinesic>
           </egXML>
-          It should be noted that the three <q>incident</q> elements could have been also
-          encoded within the <gi>u</gi> element, however, it is recommended to have them placed
-          outside, because, ideally, the utterance elements should contain pure text only, as
-          this significantly simplifies their linguistic processing.</p>
+	  
+          It should be noted that the four <q>incident</q> elements could have been also encoded
+          within the <gi>u</gi> element, however, it is recommended to have them placed outside,
+          because, ideally, the utterance elements should contain pure text only, as this
+          significantly simplifies their linguistic processing. However, if the same speech continued
+          after these elements, then they would need to be encoded inside the utterance.</p>
         </div>
 
         <div xml:id="sec-qa">
