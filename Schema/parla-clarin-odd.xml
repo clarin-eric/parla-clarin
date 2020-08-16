@@ -1133,7 +1133,7 @@
         </div>
 
         <div xml:id="sec-qa">
-          <head>Questions and answers and addresses</head>
+          <head>Addressees, questions and answers</head>
 	  <p>Sometimes particular speeches are in fact questions (or statements) addressed to a
 	  person, or answers to particular questions, again, directed at the person that posed the
 	  question, and it might be advantageous to encode this fact. The encoding of a question and
