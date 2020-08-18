@@ -84,7 +84,7 @@
           <item>Speakers: sex, date of birth, education, party membership, links to external
           resources</item>
           <item>Political parties: name(s), history, relations</item>
-          <item>Speeches: speaker, text, comments, verbal and non-verbal interruptions</item>
+          <item>Speeches: speaker, text, comments, verbal interruptions, (non-)verbal incidents</item>
           <item>Linguistic annotation: PoS tagging, normalisation, syntax etc.</item>
           <item>Multimedia: audio and video, facsimile of original</item>
         </list>
@@ -1068,35 +1068,6 @@
           allow for internal paragraphs, a concept pertinent to written text.</note></p>
         </div>
         
-        <div xml:id="sec-interruptions">
-          <head>Interrupted utterances</head>
-          <p>A special case occurs when a transcription note states that somebody interrupted
-          the speaker and gives the transcript of the interruption, with the main speaker
-          then continuing with their speech, as in this snippet of a made-up transcript:
-          
-          <eg>Boris Johnson: I propose a no-deal Brexit. /Jeremy Corbyn: Traitor!/ Because 
-          England does not want any dealings with the European Union.</eg>
-          
-          While the interruption might be encoded as a <gi>note</gi>, it is more precisely
-          encoded as a separate utterance, which brings with it the problem that nested
-          utterances are not allowed, so the main utterance needs to be split into two (or
-          more) pieces. The example below illustrates how this is encoded:
-          
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-splitu">
-            <u who="#BorisJohnson" xml:id="GB001.8.3" next="#GB001.8.5">I propose a no-deal Brexit.</u>
-            <u who="#JeremyCorbyn" xml:id="GB001.8.4">Traitor!</u>
-            <u who="#BorisJohnson" xml:id="GB001.8.5" prev="#GB001.8.3">Because England does not want any dealings with the European Union.</u>
-          </egXML>
-          
-          As can be seen, the split is indicated by the use of the <att>next</att> attribute on
-          the first part of the split utterance, and, if so desired, by the <att>prev</att>
-          attribute of the next part of the split utterance. The values of the attributes are
-          pointers to the next of previous part of the split utterance.<note>Note that, in
-          general, the utterance can also be split in the middle of a sentence, which brings
-          with it problems for automatic linguistic processing, as, ideally, the parts should
-          be first joined, and only then processed.</note></p>
-        </div>
-        
         <div xml:id="sec-incidents">
           <head>Incidents</head>
           <p>In general, transcriber comments are encoded using <gi>note</gi> but some such
@@ -1135,6 +1106,53 @@
           after these elements, then they would need to be encoded inside the utterance.</p>
         </div>
 
+        <div xml:id="sec-gaps">
+          <head>Gaps</head>
+	  <p>The transcribers often note that a part of the speech was not transcribed due to
+	  the fact that the recording could not be understood, sometimes also noting the
+	  reason, e.g. that the the microphone was not turned on, that there was noise in the
+	  chamber or the speaker was speaking too quietly etc. These notes can be encoded as
+	  the <gi>gap</gi> element, which is then also marked by the <att>reason</att> <val>inaudible</val>.
+	  The original tracriber note can be left in the <gi>desc</gi> element, as illustrated below.
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-gap">
+	    ... I would further state that
+	    <gap reason="inaudible">
+	      <desc>Not understood, speaker mumbles</desc>
+	    </gap>
+	    and furthermore ....
+          </egXML>
+	  </p>
+	</div>
+	
+        <div xml:id="sec-interruptions">
+          <head>Interrupted utterances</head>
+          <p>A special case occurs when a transcription note states that somebody interrupted
+          the speaker and gives the transcript of the interruption, with the main speaker
+          then continuing with their speech, as in this snippet of a made-up transcript:
+          
+          <eg>Boris Johnson: I propose a no-deal Brexit. /Jeremy Corbyn: Traitor!/ Because 
+          England does not want any dealings with the European Union.</eg>
+          
+          While the interruption might be encoded as a <gi>note</gi>, it is more precisely
+          encoded as a separate utterance, which brings with it the problem that nested
+          utterances are not allowed, so the main utterance needs to be split into two (or
+          more) pieces. The example below illustrates how this is encoded:
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-splitu">
+            <u who="#BorisJohnson" xml:id="GB001.8.3" next="#GB001.8.5">I propose a no-deal Brexit.</u>
+            <u who="#JeremyCorbyn" xml:id="GB001.8.4">Traitor!</u>
+            <u who="#BorisJohnson" xml:id="GB001.8.5" prev="#GB001.8.3">Because England does not want any dealings with the European Union.</u>
+          </egXML>
+          
+          As can be seen, the split is indicated by the use of the <att>next</att> attribute on
+          the first part of the split utterance, and, if so desired, by the <att>prev</att>
+          attribute of the next part of the split utterance. The values of the attributes are
+          pointers to the next of previous part of the split utterance.<note>Note that, in
+          general, the utterance can also be split in the middle of a sentence, which brings
+          with it problems for automatic linguistic processing, as, ideally, the parts should
+          be first joined, and only then processed.</note></p>
+        </div>
+        
         <div xml:id="sec-qa">
           <head>Addressees, questions and answers</head>
 	  <p>Sometimes particular speeches are in fact questions (or statements) addressed to a
@@ -1886,8 +1904,10 @@
         <head>Example document</head>
         <p>This section gives a complete example document that validates according to Parla-CLARIN and
 	aims to illustrate the encoding of various aspects of parliamentary proceedings corpora.</p>
-        <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-exemplar">
-          <xi:include xmlns:xi="http://www.w3.org/2001/XInclude" href="../Examples/Parla-CLARIN-Exemplar.xml"/>
+        <egXML xmlns="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"
+	       xml:id="exa-exemplar">
+	  <!-- Does not render correctly! -->
+          <xi:include href="../Examples/Parla-CLARIN-Exemplar.xml"/>
         </egXML>
       </div>
       <div xml:id="schema">
@@ -1926,8 +1946,10 @@
                   <!-- debateSection -->
                   <valItem ident="debateSection">
                     <desc xml:lang="en">General purpose text division for all parts of
-                    parliamentary proceedings. It is a good practice to use the @subtype
-                    attribute for additional content classification.</desc>
+                    parliamentary proceedings. The suggested values below are
+		    adapted from Akoma Ntoso.
+		    If needed, the @subtype attribute can be used for
+		    additional content classification.</desc>
                   </valItem>
                   <valItem ident="address">
                     <desc xml:lang="en">Part of a debate relevant to addresses</desc>
