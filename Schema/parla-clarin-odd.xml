@@ -16,7 +16,7 @@
       </titleStmt>
       <publicationStmt>
         <publisher>CLARIN</publisher>
-        <date>2020</date>
+        <date>2020-09-03</date>
         <availability status="free">
           <p>This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.</p>
        </availability>
@@ -34,8 +34,9 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
-      <change when="2020-08-14">Tomaž Erjavec: documentation additions re questions received.</change>
+      <change when="2020-09-03">Tomaž Erjavec: add prefix option for @ana.</change>
       <change when="2019-08-23">Tomaž Erjavec: even more documentation.</change>
+      <change when="2020-08-14">Tomaž Erjavec: documentation additions re questions received.</change>
       <change when="2019-07-26">Tomaž Erjavec: some more documentation.</change>
       <change when="2019-06-06">Tomaž Erjavec: adding documentation.</change>
       <change when="2019-05-21">Tomaž Erjavec: first sketch.</change>
@@ -1268,7 +1269,7 @@
           Linguistic Annotation</ref> of the TEI Guidelines. The following example shows the
           basic principles of the annotation:
           
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis1">
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-ud">
             <s>
               <w msd="UposTag=DET|Case=Gen|Gender=Neut|Number=Sing|PronType=Dem" lemma="ta">Tega</w>
               <w msd="UposTag=PRON|PronType=Prs|Reflex=Yes|Variant=Short" lemma="se">se</w>
@@ -1298,13 +1299,14 @@
           target="https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html">Penn
           Treebank tagset</ref>, which have atomic tags that cannot always be decomposed into
           attribute-value pairs (e.g. "TO" for the word "to"), a better alternative is the
-          <att>pos</att> attribute. There is also the third option, for tags that are
-          strings, however, they are just a shorthand for a feature-structure representation,
-          as is the case with the <ref target="http://nl.ijs.si/ME/V6/msd/html/">MULTEXT-East
-          tagset</ref>. For these, it is best to use the generic <att>ana</att> attribute, as
-          shown in the following example:
+          <att>pos</att> attribute.</p>
+
+	  <p>There is also a third option, for tags that are strings, however, they are meant as
+	  a shorthand for a feature-structure representation, as is the case with the <ref
+	  target="http://nl.ijs.si/ME/V6/msd/html/">MULTEXT-East tagset</ref>. For these, it is
+	  best to use the generic <att>ana</att> attribute, as shown in the following example:
           
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis2">
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-msd">
             <s>
               <w ana="#Pd-nsg" lemma="ta">Tega</w>
               <w ana="#Px------y" lemma="se">se</w>
@@ -1319,8 +1321,8 @@
           identifiers define the appropriate feature-structures, i.e. pairs of attribute-values,
           as in the example below:
           
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis3">
-            <fs xml:id="Pd-nsg" xml:lang="en" corresp="#Zk-ser">
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-fs">
+            <fs xml:id="Pd-nsg" xml:lang="en">
               <f name="CATEGORY"><symbol value="Pronoun"/></f>
               <f name="Type"><symbol value="demonstrative"/></f>
               <f name="Gender"><symbol value="neuter"/></f>
@@ -1329,6 +1331,42 @@
             </fs>
           </egXML>
           </p>
+
+	  <p>Such feature structures are grouped together in the feature-value library
+	  (<gi>fvLib</gi>) element, which is best contained in its own <gi>TEI</gi> element of the
+	  corpus. As <att>ana</att> is a pointer, it can also contain complete URLs
+	  (e.g. <code>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib2-sl.xml#Pd-nsg</code>) which
+	  enables the feature-structure definitions to be stored externaly to the corpus. However,
+	  prefixing the PoS tag for each token by the complete URL would lead to very large
+	  files. This is why the TEI offers a mechanism to shorten such references to URLs. This
+	  mechanism is explained in the Section <ref
+	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAPU">Using
+	  Abbreviated Pointers</ref> of the TEI Guidelines, and we give below and example:
+	  
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-prefix">
+            <s>
+              <w ana="mte:Pd-nsg" lemma="ta">Tega</w>
+              <w ana="mte:Px------y" lemma="se">se</w>
+              <w ana="mte:Q" lemma="sploh">sploh</w>
+              <w ana="mte:Va-r1s-y" lemma="biti">nisem</w>
+              <w ana="mte:Vmep-sm" lemma="zavesti" join="right">zavedel</w>
+              <pc ana="mte:Z">.</pc>
+            </s>
+          </egXML>
+	  
+	  As can be seen, the only difference to the preceding example is that the values (IDs) of
+	  the tags are preceded by <code>mte:</code> rather than <code>#</code>. This prefix should
+	  be then expanded by the processing software to whatever the <gi>prefixDef</gi> element,
+	  defined in the TEI header, specifies, as shown in the example below:
+	  
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-prefixDef">
+            <prefixDef ident="mte" 
+                       matchPattern="(.+)"
+                       replacementPattern="http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml#$1">
+              <p xml:lang="en">Private MSD URIs with the prefix "mte" point to fs elements defining the Slovene MULTEXT-East Version 6 MSDs, cf. <ref target="http://nl.ijs.si/ME/V6/">http://nl.ijs.si/ME/V6/</ref> and <ref target="https://github.com/clarinsi/mte-msd">https://github.com/clarinsi/mte-msd</ref>.</p>
+            </prefixDef>
+          </egXML>
+	  </p>
         </div>
         
         <div xml:id="sec-anasegment">
@@ -1338,7 +1376,7 @@
           segmental annotation, where a stretch of text or tokens is simply enclosed in XML
           tags, as the following example illustrates:
           
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis4">
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-names">
             <s>
               <name type="person">
                 <w>John</w>
@@ -1391,7 +1429,7 @@
           the <att>part</att> attribute can be used to specify the type of the fragments, as
           shown in the following example:
           
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis5">
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-terms">
             <term xml:id="t1" part="I" next="#t3">di-</term> and
             <term xml:id="t2" part="I" next="#t3">poli</term><term xml:id="t3" part="F">methyl</term>
           </egXML>
@@ -1409,7 +1447,7 @@
           elements, which give two or more references to IDs, as illustrated in the following
           example:
           
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis6">
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-syntax">
             <s xml:id="ssj1.1.5">
               <w xml:id="ssj1.1.5.t1">Tega</w>
               <w xml:id="ssj1.1.5.t2">se</w>
