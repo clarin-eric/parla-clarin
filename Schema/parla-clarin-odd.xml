@@ -396,10 +396,10 @@
               <correction>
                 <p>Found typos in the source have been silently corrected.</p>
               </correction>
-              <normalisation>
+              <normalization>
                 <p>Tables have been omitted from the corpus. Spacing has been normalised
                 to single space. Soft hyphens have been removed.</p>
-              </normalisation>
+              </normalization>
               <hyphenation>
                 <p>End-of-line hyphens have been silently removed.</p>
               </hyphenation>
