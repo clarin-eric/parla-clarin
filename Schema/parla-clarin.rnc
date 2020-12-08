@@ -11,10 +11,10 @@ namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 namespace xsl = "http://www.w3.org/1999/XSL/Transform"
 
-# Schema generated from ODD source 2020-07-14T09:07:47Z. .
-# TEI Edition: Version 4.0.0. Last updated on
-#	13th February 2020, revision ccd19b0ba
-# TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.0.0/
+# Schema generated from ODD source 2020-12-08T11:59:37Z. .
+# TEI Edition: Version 4.1.0. Last updated on
+#	19th August 2020, revision b414ba550
+# TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.1.0/
 #
 
 # This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.
@@ -31,7 +31,7 @@ tei_macro.limitedContent =
 tei_macro.phraseSeq =
   (text
    | tei_model.gLike
-   | tei_model.qLike
+   | tei_model.attributable
    | tei_model.phrase
    | tei_model.global)*
 tei_macro.phraseSeq.limited =
@@ -786,15 +786,7 @@ tei_att.resourced.attribute.url =
   
   ## (uniform resource locator) specifies the URL from which the media concerned may be obtained.
   attribute url { xsd:anyURI }
-tei_att.interpLike.attributes =
-  tei_att.interpLike.attribute.type, tei_att.interpLike.attribute.inst
-tei_att.interpLike.attribute.type =
-  
-  ## indicates what kind of phenomenon is being noted in the passage.
-  ## Sample values include: 1] image; 2] character; 3] theme; 4] allusion
-  attribute type {
-    xsd:token { pattern = "[^\p{C}\p{Z}]+" }
-  }?
+tei_att.interpLike.attributes = tei_att.interpLike.attribute.inst
 tei_att.interpLike.attribute.inst =
   
   ## (instances) points to instances of the analysis or interpretation represented by the current element.
@@ -1346,12 +1338,12 @@ tei_model.nameLike.agent_sequenceRepeatable =
   tei_name+, tei_orgName+, tei_persName+
 tei_model.segLike =
   tei_seg | tei_s | tei_cl | tei_phr | tei_w | tei_m | tei_c | tei_pc
-tei_model.hiLike = tei_hi
-tei_model.hiLike_alternation = tei_hi
-tei_model.hiLike_sequence = tei_hi
-tei_model.hiLike_sequenceOptional = tei_hi?
-tei_model.hiLike_sequenceOptionalRepeatable = tei_hi*
-tei_model.hiLike_sequenceRepeatable = tei_hi+
+tei_model.hiLike = tei_hi | tei_q
+tei_model.hiLike_alternation = tei_hi | tei_q
+tei_model.hiLike_sequence = tei_hi, tei_q
+tei_model.hiLike_sequenceOptional = tei_hi?, tei_q?
+tei_model.hiLike_sequenceOptionalRepeatable = tei_hi*, tei_q*
+tei_model.hiLike_sequenceRepeatable = tei_hi+, tei_q+
 tei_model.emphLike =
   tei_foreign
   | tei_emph
@@ -1869,16 +1861,16 @@ tei_model.quoteLike_sequence = tei_quote, tei_cit
 tei_model.quoteLike_sequenceOptional = tei_quote?, tei_cit?
 tei_model.quoteLike_sequenceOptionalRepeatable = tei_quote*, tei_cit*
 tei_model.quoteLike_sequenceRepeatable = tei_quote+, tei_cit+
-tei_model.qLike = tei_model.quoteLike | tei_said | tei_q
-tei_model.qLike_alternation =
-  tei_model.quoteLike_alternation | tei_said | tei_q
-tei_model.qLike_sequence = tei_model.quoteLike_sequence, tei_said, tei_q
-tei_model.qLike_sequenceOptional =
-  tei_model.quoteLike_sequenceOptional?, tei_said?, tei_q?
-tei_model.qLike_sequenceOptionalRepeatable =
-  tei_model.quoteLike_sequenceOptionalRepeatable*, tei_said*, tei_q*
-tei_model.qLike_sequenceRepeatable =
-  tei_model.quoteLike_sequenceRepeatable+, tei_said+, tei_q+
+tei_model.attributable = tei_model.quoteLike | tei_said
+tei_model.attributable_alternation =
+  tei_model.quoteLike_alternation | tei_said
+tei_model.attributable_sequence = tei_model.quoteLike_sequence, tei_said
+tei_model.attributable_sequenceOptional =
+  tei_model.quoteLike_sequenceOptional?, tei_said?
+tei_model.attributable_sequenceOptionalRepeatable =
+  tei_model.quoteLike_sequenceOptionalRepeatable*, tei_said*
+tei_model.attributable_sequenceRepeatable =
+  tei_model.quoteLike_sequenceRepeatable+, tei_said+
 tei_model.respLike =
   tei_author
   | tei_editor
@@ -2011,8 +2003,8 @@ tei_model.inter =
   | tei_model.labelLike
   | tei_model.listLike
   | tei_model.stageLike
-  | tei_model.qLike
-tei_model.common = tei_model.divPart | tei_model.inter
+  | tei_model.attributable
+tei_model.common = tei_model.divPart | tei_model.inter | tei_q
 tei_model.phrase =
   tei_model.segLike
   | tei_model.highlighted
@@ -2035,6 +2027,9 @@ tei_model.limitedPhrase =
 tei_model.divLike = tei_div
 tei_model.divGenLike = tei_divGen
 tei_model.div1Like = notAllowed
+tei_model.annotationLike =
+  tei_note | tei_annotationBlock | tei_annotation
+tei_model.annotationPart.body = tei_ptr | tei_ref | tei_note
 tei_model.applicationLike = tei_application
 tei_model.teiHeaderPart =
   tei_encodingDesc | tei_profileDesc | tei_xenoData
@@ -2079,11 +2074,12 @@ tei_model.standOffPart =
   tei_model.global.meta
   | tei_model.biblLike
   | tei_model.listLike
+  | tei_model.annotationLike
   | tei_listChange
   | tei_zone
   | tei_u
-  | tei_annotationBlock
   | tei_seg
+  | tei_listAnnotation
 tei_att.formula.attributes = tei_att.formula.attribute.formula
 tei_att.formula.attribute.formula =
   [
@@ -2382,12 +2378,15 @@ tei_cit =
   
   ## (cited quotation) contains a quotation from some other document, together with a bibliographic reference to its source. In a dictionary it may contain an example text with at least one occurrence of the word form, used in the sense being described, or a translation of the headword, or an example. [3.3.3. Quotation 4.3.1. Grouped Texts 9.3.5.1. Examples]
   element cit {
-    (tei_model.qLike
+    (tei_model.biblLike
      | tei_model.egLike
-     | tei_model.biblLike
-     | tei_model.ptrLike
+     | tei_model.entryPart
      | tei_model.global
-     | tei_model.entryPart)+,
+     | tei_model.graphicLike
+     | tei_model.ptrLike
+     | tei_model.attributable
+     | tei_pc
+     | tei_q)+,
     tei_att.global.attributes,
     tei_att.typed.attributes,
     empty
@@ -2826,12 +2825,12 @@ tei_ptr =
          "\x{a}" ~
          "         "
        ],
-    tei_att.global.attributes,
-    tei_att.pointing.attributes,
-    tei_att.internetMedia.attributes,
-    tei_att.typed.attributes,
-    tei_att.declaring.attributes,
     tei_att.cReferencing.attributes,
+    tei_att.declaring.attributes,
+    tei_att.global.attributes,
+    tei_att.internetMedia.attributes,
+    tei_att.pointing.attributes,
+    tei_att.typed.attributes,
     empty
   }
 tei_ref =
@@ -2861,12 +2860,12 @@ tei_ref =
          "\x{a}" ~
          "         "
        ],
-    tei_att.global.attributes,
-    tei_att.pointing.attributes,
-    tei_att.internetMedia.attributes,
-    tei_att.typed.attributes,
-    tei_att.declaring.attributes,
     tei_att.cReferencing.attributes,
+    tei_att.declaring.attributes,
+    tei_att.global.attributes,
+    tei_att.internetMedia.attributes,
+    tei_att.pointing.attributes,
+    tei_att.typed.attributes,
     empty
   }
 tei_list =
@@ -3501,8 +3500,8 @@ tei_sp =
        | tei_model.pLike
        | tei_model.listLike
        | tei_model.stageLike
-       | tei_model.qLike),
-      tei_model.global*)+),
+       | tei_model.attributable),
+      (tei_model.global* | tei_q))+),
     tei_att.global.attributes,
     tei_att.ascribed.directed.attributes,
     empty
@@ -3650,7 +3649,7 @@ tei_fileDesc =
       tei_editionStmt?,
       tei_extent?,
       tei_publicationStmt,
-      tei_seriesStmt?,
+      tei_seriesStmt*,
       tei_notesStmt?),
      tei_sourceDesc+),
     tei_att.global.attributes,
@@ -3825,6 +3824,7 @@ tei_seriesStmt =
         (tei_editor | tei_respStmt)*,
         (tei_idno | tei_biblScope)*)),
     tei_att.global.attributes,
+    tei_att.declarable.attributes,
     empty
   }
 tei_notesStmt =
@@ -3855,7 +3855,7 @@ tei_biblFull =
        tei_editionStmt?,
        tei_extent?,
        tei_publicationStmt,
-       tei_seriesStmt?,
+       tei_seriesStmt*,
        tei_notesStmt?),
       tei_sourceDesc*)
      | (tei_fileDesc, tei_profileDesc)),
@@ -4205,7 +4205,7 @@ tei_cRefPattern =
   }
 tei_prefixDef =
   
-  ## (prefix definition) defines a prefixing scheme used in data.pointer values, showing how abbreviated URIs using the scheme may be expanded into full URIs. [16.2.3. Using Abbreviated Pointers]
+  ## (prefix definition) defines a prefixing scheme used in teidata.pointer values, showing how abbreviated URIs using the scheme may be expanded into full URIs. [16.2.3. Using Abbreviated Pointers]
   element prefixDef {
     tei_model.pLike*,
     tei_att.global.attributes,
@@ -4219,7 +4219,7 @@ tei_prefixDef =
   }
 tei_listPrefixDef =
   
-  ## (list of prefix definitions) contains a list of definitions of prefixing schemes used in data.pointer values, showing how abbreviated URIs using each scheme may be expanded into full URIs. [16.2.3. Using Abbreviated Pointers]
+  ## (list of prefix definitions) contains a list of definitions of prefixing schemes used in teidata.pointer values, showing how abbreviated URIs using each scheme may be expanded into full URIs. [16.2.3. Using Abbreviated Pointers]
   element listPrefixDef {
     (tei_desc*, (tei_prefixDef | tei_listPrefixDef)+),
     tei_att.global.attributes,
@@ -4589,7 +4589,7 @@ tei_revisionDesc =
   }
 tei_change =
   
-  ## documents a change or set of changes made during the production of a source document, or during the revision of an electronic file. [2.6. The Revision Description 2.4.1. Creation 11.7. Identifying Changes and Revisions]
+  ## documents a change or set of changes made during the production of a source document, or during the revision of an electronic file. [2.6. The Revision Description 2.4.1. Creation 11.6. Identifying Changes and Revisions]
   element change {
     tei_macro.specialPara,
     tei_att.ascribed.attributes,
@@ -4606,7 +4606,7 @@ tei_change =
   }
 tei_listChange =
   
-  ## groups a number of change descriptions associated with either the creation of a source text or the revision of an encoded text. [2.6. The Revision Description 11.7. Identifying Changes and Revisions]
+  ## groups a number of change descriptions associated with either the creation of a source text or the revision of an encoded text. [2.6. The Revision Description 11.6. Identifying Changes and Revisions]
   element listChange {
     (tei_desc*, (tei_listChange | tei_change)+),
     tei_att.global.attributes,
@@ -5525,7 +5525,7 @@ tei_ex =
   }
 tei_fw =
   
-  ## (forme work) contains a running head (e.g. a header, footer), catchword, or similar material appearing on the current page. [11.6. Headers, Footers, and Similar Matter]
+  ## (forme work) contains a running head (e.g. a header, footer), catchword, or similar material appearing on the current page. [11.5. Headers, Footers, and Similar Matter]
   element fw {
     tei_macro.phraseSeq,
     tei_att.global.attributes,
@@ -5578,7 +5578,7 @@ tei_restore =
   }
 tei_space =
   
-  ## indicates the location of a significant space in the text. [11.5.1. Space]
+  ## indicates the location of a significant space in the text. [11.4.1. Space]
   element space {
     (tei_model.descLike | tei_model.certLike)*,
     tei_att.global.attribute.xmlid,
@@ -5623,9 +5623,9 @@ tei_space =
   }
 tei_subst =
   
-  ## (substitution) groups one or more deletions with one or more additions when the combination is to be regarded as a single intervention in the text. [11.3.1.5. Substitutions]
+  ## (substitution) groups one or more deletions (or surplus text) with one or more additions when the combination is to be regarded as a single intervention in the text. [11.3.1.5. Substitutions]
   element subst {
-    ((tei_add | tei_del | tei_model.milestoneLike)+)
+    ((tei_add | tei_surplus | tei_del | tei_model.milestoneLike)+)
     >> sch:pattern [
          id = "tei_clarin-subst-substContents1-constraint-assert-17"
          "\x{a}" ~
@@ -5635,11 +5635,12 @@ tei_subst =
            "\x{a}" ~
            "               "
            sch:assert [
-             test = "child::tei:add and child::tei:del"
+             test =
+               "child::tei:add and (child::tei:del or child::tei:surplus)"
              "\x{a}" ~
              "                  "
              sch:name [ ]
-             " must have at least one child add and at least one child del"
+             " must have at least one child add and at least one child del or surplus"
            ]
            "\x{a}" ~
            "            "
@@ -5654,7 +5655,7 @@ tei_subst =
   }
 tei_substJoin =
   
-  ## (substitution join) identifies a series of possibly fragmented additions, deletions or other revisions on a manuscript that combine to make up a single intervention in the text [11.3.1.5. Substitutions]
+  ## (substitution join) identifies a series of possibly fragmented additions, deletions, or other revisions on a manuscript that combine to make up a single intervention in the text [11.3.1.5. Substitutions]
   element substJoin {
     (tei_model.descLike | tei_model.certLike)*,
     tei_att.global.attributes,
@@ -5794,7 +5795,7 @@ tei_transpose =
   
   ## describes a single textual transposition as an ordered list of at least two pointers specifying the order in which the elements indicated should be re-combined. [11.3.4.5. Transpositions]
   element transpose {
-    (tei_ptr, tei_ptr+), tei_att.global.attributes, empty
+    (tei_ptr, tei_ptr, tei_ptr*), tei_att.global.attributes, empty
   }
 tei_undo =
   
@@ -6811,7 +6812,7 @@ tei_occupation =
   }
 tei_org =
   
-  ## (organization) provides information about an identifiable organization such as a business, a tribe, or any other grouping of people. [13.2.2. Organizational Names]
+  ## (organization) provides information about an identifiable organization such as a business, a tribe, or any other grouping of people. [13.3.3. Organizational Data]
   element org {
     (tei_model.headLike*,
      (tei_model.pLike*
@@ -7511,7 +7512,7 @@ tei_when =
       | xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
     
-    ## specifies a time interval either as a number or as one of the keywords defined by the datatype data.interval
+    ## specifies a time interval either as a number or as one of the keywords defined by the datatype teidata.interval
     attribute interval {
       xsd:float
       | (
@@ -7764,6 +7765,125 @@ tei_standOff =
     tei_att.declaring.attributes,
     empty
   }
+tei_listAnnotation =
+  [
+    a:documentation [
+      "contains a list of annotations, typically encoded as "
+      ns1:code [ "<annotation>" ]
+      ", "
+      ns1:code [ "<annotationBlock>" ]
+      ", or "
+      ns1:code [ "<note>" ]
+      ", possibly organized with nested "
+      ns1:code [ "<listAnnotation>" ]
+      " elements. [16.10. The standOff Container]"
+    ]
+  ]
+  element listAnnotation {
+    (tei_model.headLike*,
+     tei_model.labelLike*,
+     (tei_model.annotationLike | tei_listAnnotation)+),
+    tei_att.global.attributes,
+    tei_att.typed.attributes,
+    tei_att.notated.attributes,
+    tei_att.declaring.attributes,
+    empty
+  }
+tei_annotation =
+  [
+    a:documentation [
+      "represents an annotation following the "
+      ns1:a [
+        href = "#WADM"
+        "Web\x{a}" ~
+        "      Annotation Data Model"
+      ]
+      ". [16.10. The standOff Container]"
+    ]
+  ]
+  element annotation {
+    (tei_respStmt*,
+     tei_revisionDesc*,
+     tei_licence*,
+     tei_model.annotationPart.body*),
+    tei_att.global.attribute.n,
+    tei_att.global.attribute.xmllang,
+    tei_att.global.attribute.xmlbase,
+    tei_att.global.attribute.xmlspace,
+    tei_att.global.rendition.attribute.rend,
+    tei_att.global.rendition.attribute.style,
+    tei_att.global.rendition.attribute.rendition,
+    tei_att.global.linking.attribute.corresp,
+    tei_att.global.linking.attribute.synch,
+    tei_att.global.linking.attribute.sameAs,
+    tei_att.global.linking.attribute.copyOf,
+    tei_att.global.linking.attribute.next,
+    tei_att.global.linking.attribute.prev,
+    tei_att.global.linking.attribute.exclude,
+    tei_att.global.linking.attribute.select,
+    tei_att.global.analytic.attribute.ana,
+    tei_att.global.facs.attribute.facs,
+    tei_att.global.change.attribute.change,
+    tei_att.global.responsibility.attribute.cert,
+    tei_att.global.responsibility.attribute.resp,
+    tei_att.global.source.attribute.source,
+    tei_att.pointing.attribute.targetLang,
+    tei_att.pointing.attribute.evaluate,
+    
+    ## (identifier) provides a unique identifier for the element bearing the attribute.
+    attribute xml:id { xsd:ID },
+    
+    ## specifies the destination of the reference by supplying one or more URI References
+    attribute target {
+      list { xsd:anyURI+ }
+    },
+    
+    ##
+    attribute motivation {
+      list {
+        (
+         ## intent is to assess the target resource in some way, rather than simply make a comment about it
+         "assessing"
+         | 
+           ## intent is to create a bookmark to the target or part thereof
+           "bookmarking"
+         | 
+           ## intent is to classify the target in some way
+           "classifying"
+         | 
+           ## intent is to comment about the target
+           "commenting"
+         | 
+           ## intent is to describe the target, rather than (for example) comment on it
+           "describing"
+         | 
+           ## intent is to request an edit or a change to the target resource
+           "editing"
+         | 
+           ## intent is to highlight the target resource or a segment thereof
+           "highlighting"
+         | 
+           ## intent is to assign an identity to the target
+           "identifying"
+         | 
+           ## intent is to link to a resource related to the target
+           "linking"
+         | 
+           ## intent is to assign some value or quality to the target
+           "moderating"
+         | 
+           ## intent is to ask a question about the target
+           "questioning"
+         | 
+           ## intent is to reply to a previous statement, either an annotation or another resource
+           "replying"
+         | 
+           ## intent is to associate a tag with the target
+           "tagging")+
+      }
+    }?,
+    empty
+  }
 tei_att.tableDecoration.attributes =
   tei_att.tableDecoration.attribute.role,
   tei_att.tableDecoration.attribute.rows,
@@ -7867,7 +7987,19 @@ tei_figDesc =
   element figDesc {
     tei_macro.limitedContent, tei_att.global.attributes, empty
   }
+tei_att.lexicographic.normalized.attributes =
+  tei_att.lexicographic.normalized.attribute.norm,
+  tei_att.lexicographic.normalized.attribute.orig
+tei_att.lexicographic.normalized.attribute.norm =
+  
+  ## (normalized) provides the normalized/standardized form of information present in the source text in a non-normalized form
+  attribute norm { xsd:string }?
+tei_att.lexicographic.normalized.attribute.orig =
+  
+  ## (original) gives the original string or is the empty string when the element does not appear in the source text.
+  attribute orig { xsd:string }?
 tei_att.linguistic.attributes =
+  tei_att.lexicographic.normalized.attributes,
   tei_att.linguistic.attribute.lemma,
   tei_att.linguistic.attribute.lemmaRef,
   tei_att.linguistic.attribute.pos,
@@ -8170,6 +8302,7 @@ tei_span =
     tei_att.global.attributes,
     tei_att.interpLike.attributes,
     tei_att.pointing.attributes,
+    tei_att.typed.attributes,
     [
       a:documentation [
         "gives the identifier of the node which is the starting point of the span of text being annotated; if not accompanied by a "
@@ -8190,6 +8323,7 @@ tei_spanGrp =
     tei_span*,
     tei_att.global.attributes,
     tei_att.interpLike.attributes,
+    tei_att.typed.attributes,
     empty
   }
 tei_fs =

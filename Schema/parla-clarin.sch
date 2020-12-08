@@ -1,22 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
 <schema xmlns="http://purl.oclc.org/dsdl/schematron" queryBinding="xslt2">
    <title>ISO Schematron rules</title>
-   <!-- This file generated 2020-07-14T09:08:02Z by 'extract-isosch.xsl'. -->
+   <!-- This file generated 2020-12-08T11:59:51Z by 'extract-isosch.xsl'. -->
 
-<!-- ********************* -->
-<!-- namespaces, declared: -->
-<!-- ********************* -->
+   <!-- ********************* -->
+   <!-- namespaces, declared: -->
+   <!-- ********************* -->
 
 
-<!-- ********************* -->
-<!-- namespaces, implicit: -->
-<!-- ********************* -->
-<ns prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
+   <!-- ********************* -->
+   <!-- namespaces, implicit: -->
+   <!-- ********************* -->
+   <ns prefix="tei" uri="http://www.tei-c.org/ns/1.0"/>
 
    <!-- ************ -->
-<!-- constraints: -->
-<!-- ************ -->
-<pattern id="schematron-constraint-tei_clarin-div-divtype-1">
+   <!-- constraints: -->
+   <!-- ************ -->
+   <pattern id="schematron-constraint-tei_clarin-div-divtype-1">
                 <rule context="tei:div[@type = $div.types.debate]">
                   <assert test="not(parent::tei:div[@type = $div.types.debate])">
                     A text division of type <value-of select="@type"/> should not occur inside div with type value <value-of select="parent::tei:div/@type"/>.

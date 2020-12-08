@@ -15,8 +15,8 @@ val-exa:
 val-odd:
 	$j tei_odds.rng ../Schema/parla-clarin-odd.xml
 
-# Have to have local source of p5subset, as my Java is too old to fetch it with https!
-PARAMS = --localsource=p5subset.xml ../Schema/parla-clarin-odd.xml
+#PARAMS = --localsource=p5subset.xml ../Schema/parla-clarin-odd.xml
+PARAMS = --localsource=https://tei-c.org/release/xml/tei/odd/p5subset.xml ../Schema/parla-clarin-odd.xml
 schema:	val-odd
 	Stylesheets/bin/teitorelaxng    ${PARAMS} ../Schema/parla-clarin.rng
 	Stylesheets/bin/teitornc        ${PARAMS} ../Schema/parla-clarin.rnc
@@ -27,7 +27,5 @@ H = /home/tomaz/Resources/CLARIN/DARIAH-SI/Parla-CLARIN/parla-clarin/bin
 html:	val-odd
 	Stylesheets/bin/teitohtml --profiledir=$H --profile=profile --odd ${PARAMS} ../docs/index.html
 
-j = java -jar /usr/local/bin/jing.jar
-#s = java -jar ~/bin/saxon9he.jar
-#s = java -jar /usr/local/bin/saxon9he.jar
-s = java -Djavax.xml.parsers.DocumentBuilderFactory=org.apache.xerces.jaxp.DocumentBuilderFactoryImpl -Djavax.xml.parsers.SAXParserFactory=org.apache.xerces.jaxp.SAXParserFactoryImpl net.sf.saxon.Transform
+j = java -jar /usr/share/java/jing.jar
+s = java -jar /usr/share/java/saxon.jar
