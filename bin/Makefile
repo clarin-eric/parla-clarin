@@ -23,7 +23,7 @@ schema:	val-odd
 	Stylesheets/bin/teitodtd        ${PARAMS} ../Schema/parla-clarin.dtd
 	Stylesheets/bin/teitoxsd        ${PARAMS} ../Schema/parla-clarin.xsd
 	Stylesheets/bin/teitoschematron ${PARAMS} ../Schema/parla-clarin.sch
-H = /home/tomaz/Resources/CLARIN/DARIAH-SI/Parla-CLARIN/parla-clarin/bin
+H = /project/corpora/Parla/Parla-CLARIN/parla-clarin/bin
 html:	val-odd
 	Stylesheets/bin/teitohtml --profiledir=$H --profile=profile --odd ${PARAMS} ../docs/index.html
 

@@ -16,7 +16,7 @@
       </titleStmt>
       <publicationStmt>
         <publisher>CLARIN</publisher>
-        <date>2020-09-03</date>
+        <date>2020-12-08</date>
         <availability status="free">
           <p>This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.</p>
        </availability>
@@ -34,6 +34,7 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change when="2020-12-08">Tomaž Erjavec: add Sec. about normalisation.</change>
       <change when="2020-09-03">Tomaž Erjavec: add prefix option for @ana.</change>
       <change when="2019-08-23">Tomaž Erjavec: even more documentation.</change>
       <change when="2020-08-14">Tomaž Erjavec: documentation additions re questions received.</change>
@@ -1241,30 +1242,29 @@
       
       <div xml:id="sec-linguistic">
         <head>Linguistic annotation</head>
-        <p>To be more useful, text corpora are typically linguistically annotated and this
-        section introduces some basic types of linguistic annotation that can be added to
-        PPCs; these examples should be sufficient for users to be able to add further types of
-        linguistic annotation to PPC corpora.</p>
-        <p>It is recommended that linguistically
-        annotated PPCs are stored in two versions, one with the linguistic annotations, and
-        the other without them. The reason for this is that many users prefer to use the
-        plain-text version, e.g. as they want to perform their own linguistic annotation, or
-        this kind of annotation is simply not relevant for their research questions.</p>
+        <p>This section introduces basic types of linguistic annotation that can be added
+        to PPCs; the examples should be sufficient for users to be able to add further types
+        of linguistic annotation to PPC corpora.</p>
+        <p>It is recommended that linguistically annotated PPCs are stored in two versions,
+        one with the linguistic annotations, and the other without them. The reason for this
+        is that many users prefer to use the plain-text version, e.g. as they want to perform
+        their own linguistic annotation, or this kind of annotation is simply not relevant for
+        their research questions.</p>
         
         <p>The TEI Guidelines discuss basic linguistic annotation in their Chapter on <ref
         target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html">Simple Analytic
         Mechanisms</ref> and we follow one particular option given there. In particular, it is
-	recommended that (where possible) the
-        annotation is in-line (as opposed to stand-off), i.e. that the linguistic annotation is
-        given in the main document, and therefore mixed with the other annotations, rather than
-        in a separate document with pointers into the base text.</p>
+        recommended that (where possible) the annotation is in-line (as opposed to stand-off),
+        i.e. that the linguistic annotation is given in the main document, and therefore mixed
+        with the other annotations, rather than in a separate document with pointers into the
+        base text.</p>
         
         <div xml:id="sec-anawords">
-          <head>Word-level annotation</head>
+          <head>Basic word-level annotation</head>
           
-          <p>Basic linguistic annotation comprises tokenisation, part-of-speech tagging and
-          lemmatisation, and (from a processing point of view) also sentence segmentation. The Parla-CLARIN
-          recommendations specialise the principles given in the Section on <ref
+          <p>Basic linguistic annotation comprises sentence segmentation, tokenisation,
+          part-of-speech tagging and lemmatisation. The Parla-CLARIN recommendations
+          specialise the recommendations given in the Section on <ref
           target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILALW">Lightweight
           Linguistic Annotation</ref> of the TEI Guidelines. The following example shows the
           basic principles of the annotation:
@@ -1281,30 +1281,31 @@
           </egXML>
           
           Sentences are marked up using the <gi>s</gi> element, words with the <gi>w</gi>
-          element and punctuation symbols with the <gi>pc</gi> element. To retain the linguistically
-          significant whitespace, the <att>join</att> element is used, with the main relevant
-          values being <val>no</val> (assumed to be the default), <val>right</val> (no
-          whitespace to the right of the token) and <val>left</val> (no whitespace to the left
-          of the token). While, in the preceding example, it would be more intuitive to have the
-          value <val>left</val> marked on the full-stop, we recommend that <val>right</val> is
-          used on the preceding token, as this simplifies processing.</p>
+          element and punctuation symbols with the <gi>pc</gi> element. To retain the
+          linguistically significant whitespace, the <att>join</att> element is used, with the
+          possible values being <val>no</val> (assumed to be the default), <val>right</val>
+          (no whitespace to the right of the token) and <val>left</val> (no whitespace to the
+          left of the token) and <val>both</val> (no whitespace to either side of the
+          token). While, in the preceding example, it would be more intuitive to have the
+          value <val>left</val> marked on the full-stop, we recommend that only the value
+          <val>right</val> is used on the preceding token, as this simplifies processing.</p>
           
-          <p>The base form of words is given in the <att>lemma</att> attribute,<note>Note
+          <p>The base form of a word is given in the <att>lemma</att> attribute,<note>Note
           that punctuation characters, <gi>pc</gi>, do not have a <att>lemma</att> attribute,
-          as they cannot sensibly be said to have lemmas.</note> while situation with the
+          as they cannot sensibly be said to have lemmas.</note> while the situation with the
           part-of-speech tags is somewhat more complicated. For analytic tagsets, where a
-          "part-of-speech tag" is actually a set of attribute-values, as in the example
-          above, the <att>msd</att> attribute should be used. For synthetic tagsets, such as
-          the <ref
+          "part-of-speech tag" is actually a set of attribute-values, as in the example above,
+          the <att>msd</att> attribute should be used. For synthetic tagsets, such as the <ref
           target="https://www.ling.upenn.edu/courses/Fall_2003/ling001/penn_treebank_pos.html">Penn
           Treebank tagset</ref>, which have atomic tags that cannot always be decomposed into
-          attribute-value pairs (e.g. "TO" for the word "to"), a better alternative is the
-          <att>pos</att> attribute.</p>
+          attribute-value pairs (e.g. "TO" for the word "to"), a better alternative is to use
+          of the <att>pos</att> attribute.</p>
 
-	  <p>There is also a third option, for tags that are strings, however, they are meant as
-	  a shorthand for a feature-structure representation, as is the case with the <ref
-	  target="http://nl.ijs.si/ME/V6/msd/html/">MULTEXT-East tagset</ref>. For these, it is
-	  best to use the generic <att>ana</att> attribute, as shown in the following example:
+	  <p>There is also a third option, for tags that are look like strings, however, they
+	  are meant as a shorthand for a feature-structure representation, as is the case with
+	  the <ref target="http://nl.ijs.si/ME/V6/msd/html/">MULTEXT-East tagset</ref>. For
+	  these, it is best to use the generic <att>ana</att> attribute, whose value is a
+	  pointer, as shown in the following example:
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-msd">
             <s>
@@ -1317,9 +1318,9 @@
             </s>
           </egXML>
           
-          Here, the tags are simply pointers to identifiers, where the elements bearing these
-          identifiers define the appropriate feature-structures, i.e. pairs of attribute-values,
-          as in the example below:
+          Here, the tags are pointers to identifiers, where the elements bearing these
+          identifiers define the appropriate feature-structures, i.e. pairs of
+          attribute-values, as in the example below:
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-fs">
             <fs xml:id="Pd-nsg" xml:lang="en">
@@ -1333,13 +1334,13 @@
           </p>
 
 	  <p>Such feature structures are grouped together in the feature-value library
-	  (<gi>fvLib</gi>) element, which is best contained in its own <gi>TEI</gi> element of the
-	  corpus. As <att>ana</att> is a pointer, it can also contain complete URLs
+	  (<gi>fvLib</gi>) element, which can be contained in its own <gi>TEI</gi> element of
+	  the corpus. As <att>ana</att> is a pointer, it can also contain complete URLs
 	  (e.g. <code>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib2-sl.xml#Pd-nsg</code>) which
-	  enables the feature-structure definitions to be stored externaly to the corpus. However,
-	  prefixing the PoS tag for each token by the complete URL would lead to very large
-	  files. This is why the TEI offers a mechanism to shorten such references to URLs. This
-	  mechanism is explained in the Section <ref
+	  enables the feature-structure definitions to be stored externaly to the
+	  corpus. However, prefixing such PoS tags for each token by the complete URL would
+	  lead to very large files. This is why the TEI offers a mechanism to shorten 
+	  references to URLs. This mechanism is explained in the Section <ref
 	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/SA.html#SAPU">Using
 	  Abbreviated Pointers</ref> of the TEI Guidelines, and we give below and example:
 	  
@@ -1363,12 +1364,57 @@
             <prefixDef ident="mte" 
                        matchPattern="(.+)"
                        replacementPattern="http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml#$1">
-              <p xml:lang="en">Private MSD URIs with the prefix "mte" point to fs elements defining the Slovene MULTEXT-East Version 6 MSDs, cf. <ref target="http://nl.ijs.si/ME/V6/">http://nl.ijs.si/ME/V6/</ref> and <ref target="https://github.com/clarinsi/mte-msd">https://github.com/clarinsi/mte-msd</ref>.</p>
+              <p xml:lang="en">Private MSD URIs with the prefix "mte" point to fs elements
+              defining the Slovene MULTEXT-East Version 6 MSDs, cf. <ref
+              target="http://nl.ijs.si/ME/V6/">http://nl.ijs.si/ME/V6/</ref> and <ref
+              target="https://github.com/clarinsi/mte-msd">https://github.com/clarinsi/mte-msd</ref>.</p>
             </prefixDef>
           </egXML>
 	  </p>
         </div>
         
+        <div xml:id="sec-ananorm">
+          <head>Normalised word-forms</head>
+          
+          <p>There are also cases where a word (or, in general, token) in the source
+          trascription needs to be normalised, in particular for very old PPCs that contain
+          archaic forms and where we also want to include their orthographically modernised
+          forms. For this the <att>norm</att> attribute on word or punctuation tokens should
+          be used, as explained at the end of the Section
+	  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILALW">Lightweight
+          Linguistic Annotation</ref> of the TEI Guidelines and in the
+	  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.lexicographic.normalized.html">definition
+	  of the att.lexicographic.normalized</ref> class of attributes.</p>
+
+	  <p>More challenging is the case where one original word token must be represented as
+	  several normalised words. Again, this can happen in historical corpora, but also in
+	  cases where a surface word should be decomposed into several syntactic words, as is
+	  e.g. allowed in the <ref
+	  target="https://universaldependencies.org/format.html#words-tokens-and-empty-nodes">Universal
+	  Dependencies schema</ref>. For this, we recommend using embedded empty words with
+	  associated <att>norm</att> attributes, and possibly other attributes with linguistic
+	  annotation. For example, Czech has the word <q>abyste</q> which is decomposed into
+	  two syntactic words, <q>aby</q> and <q>byste</q>, which should be encoded as in the
+	  following example:
+
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-1-2">
+	    <w>abyste<w norm="aby" lemma="aby"/><w norm="byste" lemma="být"/></w>
+          </egXML>
+	  </p>
+	  
+          <p>For historical corpora there are also cases where two (or more) original words
+          correspond to one modernised word. For such cases, it is the outer word that carries
+          the <att>norm</att> and other linguistic attributes, while the inner words are the
+          original ones. For example, Slovene used to form the superlative form of adjectives
+          with the word <q>naj</q> written separately (and often as <q>nar</q>), while in
+          contemporary Slovene the <q>naj</q> is a prefix of the adjective. This case would be
+          encoded as follows:
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-2-1">
+	    <w norm="najlepši" lemma="lep"><w>nar</w> <w>lepši</w></w>
+          </egXML>
+	  </p>
+	</div>
+	
         <div xml:id="sec-anasegment">
           <head>Segmental annotation</head>
           
