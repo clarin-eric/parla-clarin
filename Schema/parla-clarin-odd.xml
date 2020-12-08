@@ -1374,27 +1374,25 @@
         </div>
         
         <div xml:id="sec-ananorm">
-          <head>Normalised word-forms</head>
+          <head>Normalised words</head>
           
-          <p>There are also cases where a word (or, in general, token) in the source
-          trascription needs to be normalised, in particular for very old PPCs that contain
-          archaic forms and where we also want to include their orthographically modernised
-          forms. For this the <att>norm</att> attribute on word or punctuation tokens should
-          be used, as explained at the end of the Section
+          <p>In certain contexts a word (or, in general, a token) in the transcription needs to
+          be normalised, in particular for very old PPCs that contain archaic forms and where
+          we wish to include their orthographically modernised forms. For this the
+          <att>norm</att> attribute on word or punctuation tokens should be used, as explained
+          at the end of the Section
 	  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILALW">Lightweight
-          Linguistic Annotation</ref> of the TEI Guidelines and in the
-	  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ref-att.lexicographic.normalized.html">definition
-	  of the att.lexicographic.normalized</ref> class of attributes.</p>
+          Linguistic Annotation</ref> of the TEI Guidelines.</p>
 
 	  <p>More challenging is the case where one original word token must be represented as
 	  several normalised words. Again, this can happen in historical corpora, but also in
 	  cases where a surface word should be decomposed into several syntactic words, as is
 	  e.g. allowed in the <ref
 	  target="https://universaldependencies.org/format.html#words-tokens-and-empty-nodes">Universal
-	  Dependencies schema</ref>. For this, we recommend using embedded empty words with
+	  Dependencies schema</ref>. For this we recommend using embedded empty words with
 	  associated <att>norm</att> attributes, and possibly other attributes with linguistic
 	  annotation. For example, Czech has the word <q>abyste</q> which is decomposed into
-	  two syntactic words, <q>aby</q> and <q>byste</q>, which should be encoded as in the
+	  two syntactic words, <q>aby</q> and <q>byste</q>. This should be encoded as in the
 	  following example:
 
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-1-2">
@@ -1407,7 +1405,7 @@
           the <att>norm</att> and other linguistic attributes, while the inner words are the
           original ones. For example, Slovene used to form the superlative form of adjectives
           with the word <q>naj</q> written separately (and often as <q>nar</q>), while in
-          contemporary Slovene the <q>naj</q> is a prefix of the adjective. This case would be
+          contemporary Slovene the <q>naj</q> is a prefix of the adjective. This case should be
           encoded as follows:
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-2-1">
 	    <w norm="najlepši" lemma="lep"><w>nar</w> <w>lepši</w></w>
