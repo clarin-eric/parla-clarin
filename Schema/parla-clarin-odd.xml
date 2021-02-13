@@ -1615,12 +1615,15 @@
           </egXML>
           </p>
           
-          <p>The IDs of the timeline synchronisation are then used by elements in the
-          transcription (e.g. <gi>u</gi> or <gi>seg</gi>) via their <att>start</att> and
-          <att>end</att> attributes. In the examples below we see three cases of such linking:
-          the first one gives a straightforward temporal structure; the second one uses the
+          <p>The IDs of the timeline synchronisation are then used by the <gi>u</gi>
+	  elements in the transcription via their <att>start</att> and
+          <att>end</att> attributes. In the examples below we give three cases of such linking:
+          the first one gives a straightforward temporal structure on the <gi>u</gi>;
+	  the second one uses the
           empty <gi>anchor</gi> element to give additional temporal structure for cases where
-          the synchronised parts of the utterance are not further marked-up; and the third and
+          the synchronised parts of the utterance are not further marked-up
+	  (or the synchronisation is required for elements that don't have the <att>start</att> and
+          <att>end</att> attributes); while the third and
           fourth demonstrate the case where two utterances are partially overlapping:<note>Note
           that in such cases we would also use the <att>prev</att> and <att>next</att>
           attributes, as shown in the <ref target="#exa-splitu">Example on split
