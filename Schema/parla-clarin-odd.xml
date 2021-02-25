@@ -1374,39 +1374,45 @@
         </div>
         
         <div xml:id="sec-ananorm">
-          <head>Normalised words</head>
+          <head>Normalised and syntactic words</head>
           
-          <p>In certain contexts a word (or, in general, a token) in the transcription needs to
-          be normalised, in particular for very old PPCs that contain archaic forms and where
-          we wish to include their orthographically modernised forms. For this the
-          <att>norm</att> attribute on word or punctuation tokens should be used, as explained
-          at the end of the Section
-	  <ref target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILALW">Lightweight
-          Linguistic Annotation</ref> of the TEI Guidelines.</p>
+          <p>In certain contexts a word (or, in general, a token) in the transcription needs to be
+          normalised in a certain way. In the context of PPCs, this can happen with historical
+          transcripts, which contain archaic wordforms and where we wish to annotate them with
+          their modernised forms, or when the transcript is linguisticaly annotated, and the
+          annotation framework distinguishes original words form syntactic words (i.e. has the
+          concept of <q>multiwords</q>), as is the case in the <ref
+          target="https://universaldependencies.org/format.html#words-tokens-and-empty-nodes">Universal
+          Dependencies framework</ref>.</p>
+	  
+	  <p>For simple normalisation, where one word token is normalised into another word token,
+	  the <att>norm</att> attribute on word or punctuation tokens should be used, as explained
+	  at the end of the Section <ref
+	  target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILALW">Lightweight
+	  Linguistic Annotation</ref> of the TEI Guidelines.</p>
 
 	  <p>More challenging is the case where one original word token must be represented as
-	  several normalised words. Again, this can happen in historical corpora, but also in
-	  cases where a surface word should be decomposed into several syntactic words, as is
-	  e.g. allowed in the <ref
-	  target="https://universaldependencies.org/format.html#words-tokens-and-empty-nodes">Universal
-	  Dependencies schema</ref>. For this we recommend using embedded empty words with
+	  several normalised words, either in the context of historical corpora or, as mentioned
+	  above, in the context of multiword units. For this we use embedded empty words with
 	  associated <att>norm</att> attributes, and possibly other attributes with linguistic
-	  annotation. For example, Czech has the word <q>abyste</q> which is decomposed into
-	  two syntactic words, <q>aby</q> and <q>byste</q>. This should be encoded as in the
-	  following example:
+	  annotation. For example, Czech has the word <q>abyste</q> which is decomposed into two
+	  syntactic words, <q>aby</q> and <q>byste</q>. This should be encoded as in the following
+	  example:<note>Note that the example is rendered in three lines, however, the correct
+	  encoding in the corpus is actually in a single line, without any spaces between the
+	  elements, as otherwise the new line and indenting spaces are actually a part of the word
+	  <q>abyste</q>.</note>
 
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-1-2">
 	    <w>abyste<w norm="aby" lemma="aby"/><w norm="byste" lemma="být"/></w>
           </egXML>
 	  </p>
 	  
-          <p>For historical corpora there are also cases where two (or more) original words
-          correspond to one modernised word. For such cases, it is the outer word that carries
-          the <att>norm</att> and other linguistic attributes, while the inner words are the
-          original ones. For example, Slovene used to form the superlative form of adjectives
-          with the word <q>naj</q> written separately (and often as <q>nar</q>), while in
-          contemporary Slovene the <q>naj</q> is a prefix of the adjective. This case should be
-          encoded as follows:
+          <p>There are also cases where two (or more) original words correspond to one normalised
+          word. Here, it is the outer word that carries the <att>norm</att> and possibly other
+          linguistic attributes, while the inner words are the original ones. For example, Slovene
+          used to form the superlative form of adjectives with the word <q>naj</q> written
+          separately (and often as <q>nar</q>), while in contemporary Slovene the <q>naj</q> is a
+          prefix of the adjective. This case should be encoded as follows:
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-2-1">
 	    <w norm="najlepši" lemma="lep"><w>nar</w> <w>lepši</w></w>
           </egXML>
