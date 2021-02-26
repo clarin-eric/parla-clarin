@@ -191,7 +191,7 @@
 	<xsl:value-of select="@lemma"/>
       </xsl:otherwise>
     </xsl:choose>
-    <!-- e.g. ana="mte:Xf" msd="UposTag=X|Foreign=Yes" -->
+    <!-- e.g. ana="mte:Xf" msd="UPosTag=X|Foreign=Yes" -->
     <xsl:text>&#9;</xsl:text>
     <!-- 4/CPOSTAG -->
     <xsl:choose>
@@ -203,7 +203,7 @@
       </xsl:when>
       <xsl:otherwise>
 	<xsl:variable name="catfeat" select="replace(@msd, '\|.+', '')"/>
-	<xsl:value-of select="replace($catfeat, 'UposTag=', '')"/>
+	<xsl:value-of select="replace($catfeat, 'UPosTag=', '', 'i')"/>
       </xsl:otherwise>
     </xsl:choose>
     <xsl:text>&#9;</xsl:text>
@@ -227,7 +227,7 @@
     </xsl:choose>
     <xsl:text>&#9;</xsl:text>
     <!-- 6/FEATS -->
-    <xsl:variable name="feats" select="replace(@msd, 'UposTag=[^|]+\|?', '')"/>
+    <xsl:variable name="feats" select="replace(@msd, 'UPosTag=[^|]+\|?', '', 'i')"/>
     <xsl:choose>
       <xsl:when test="normalize-space($feats)">
 	<!-- In TEI : was changed to _ so it doesn't clash with value prefixes -->

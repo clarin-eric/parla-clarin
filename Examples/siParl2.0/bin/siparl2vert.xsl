@@ -301,9 +301,9 @@
 	</xsl:otherwise>
       </xsl:choose>
     </xsl:variable>
-    <xsl:variable name="ud-pos" select="replace(replace($token/@msd, 'UposTag=', ''), '\|.+', '')"/>
+    <xsl:variable name="ud-pos" select="replace(replace($token/@msd, 'UPosTag=', '', 'i'), '\|.+', '')"/>
     <xsl:variable name="ud-feats">
-      <xsl:variable name="fs" select="replace($token/@msd, 'UposTag=[^|]+\|?', '')"/>
+      <xsl:variable name="fs" select="replace($token/@msd, 'UPosTag=[^|]+\|?', '', 'i')"/>
       <xsl:choose>
 	<xsl:when test="normalize-space($fs)">
 	  <xsl:value-of select="replace($fs, '\|', ' ')"/>

@@ -1271,12 +1271,12 @@
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-analysis-ud">
             <s>
-              <w msd="UposTag=DET|Case=Gen|Gender=Neut|Number=Sing|PronType=Dem" lemma="ta">Tega</w>
-              <w msd="UposTag=PRON|PronType=Prs|Reflex=Yes|Variant=Short" lemma="se">se</w>
-              <w msd="UposTag=PART" lemma="sploh">sploh</w>
-              <w msd="UposTag=AUX|Mood=Ind|Number=Sing|Person=1|Polarity=Neg|Tense=Pres|VerbForm=Fin" lemma="biti">nisem</w>
-              <w msd="UposTag=VERB|Aspect=Perf|Gender=Masc|Number=Sing|VerbForm=Part" lemma="zavesti" join="right">zavedel</w>
-              <pc msd="UposTag=PUNCT">.</pc>
+              <w msd="UPosTag=DET|Case=Gen|Gender=Neut|Number=Sing|PronType=Dem" lemma="ta">Tega</w>
+              <w msd="UPosTag=PRON|PronType=Prs|Reflex=Yes|Variant=Short" lemma="se">se</w>
+              <w msd="UPosTag=PART" lemma="sploh">sploh</w>
+              <w msd="UPosTag=AUX|Mood=Ind|Number=Sing|Person=1|Polarity=Neg|Tense=Pres|VerbForm=Fin" lemma="biti">nisem</w>
+              <w msd="UPosTag=VERB|Aspect=Perf|Gender=Masc|Number=Sing|VerbForm=Part" lemma="zavesti" join="right">zavedel</w>
+              <pc msd="UPosTag=PUNCT">.</pc>
             </s>
           </egXML>
           
