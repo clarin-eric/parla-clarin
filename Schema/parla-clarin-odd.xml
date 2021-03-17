@@ -352,8 +352,8 @@
           simplify linguistic processing. It is recommended that this practice is documented
           in the TEI header of the corpus, in the <gi>hyphenation</gi> element.</p>
           
-          <p>Two characters, esp. prevalent when the source documents are in Word, deserve
-          special mention:
+          <p>The following characters, esp. prevalent when the source documents are in Word or
+	  HTML, deserve special mention:
           
           <list>
             <item>NO-BREAK SPACE (U+00A0) prevents, with some applications, an automatic
@@ -366,13 +366,13 @@
             used much less frequently.</item>
             
             <item>NON-BREAKING HYPHEN (U+2011), similarly to NO-BREAK SPACE, prevents a
-            line break following its position. With a smiliar reasoning as above, it is
-            recommended that this character is substituted by the normal hyphen
-            character ('-', U+002D).</item>
+            line break, in this case, following its position. With a smiliar reasoning
+	    as above, it is recommended that this character is substituted by the normal
+	    hyphen character ('-', U+002D).</item>
             
             <item>SOFT HYPHEN (U+00AD) indicates that a word can be hyphenated at that
             point. Occurences of this character should be removed from the corpus,
-            because they only complicate or break further processing.</item>
+            because, again, they only complicate or break further processing.</item>
           </list>
           </p>
           
