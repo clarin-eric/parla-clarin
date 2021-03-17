@@ -356,7 +356,7 @@
           special mention:
           
           <list>
-            <item>No-Break Space (U+00A0) prevents, with some applications, an automatic
+            <item>NO-BREAK SPACE (U+00A0) prevents, with some applications, an automatic
             line break at its position and collapsing consecutive white space characters
             into a single space. As Parla-CLARIN is not interested in preserving the
             details of the layout, and the use of this character complicates (or breaks)
@@ -365,7 +365,12 @@
             holds for other variants of spaces (U+2000 - U+200A), which are, however,
             used much less frequently.</item>
             
-            <item>Soft Hyphen (U+00AD) indicates that a word can be hyphenated at that
+            <item>NON-BREAKING HYPHEN (U+2011), similarly to NO-BREAK SPACE, prevents a
+            line break following its position. With a smiliar reasoning as above, it is
+            recommended that this character is substituted by the normal hyphen
+            character ('-', U+002D).</item>
+            
+            <item>SOFT HYPHEN (U+00AD) indicates that a word can be hyphenated at that
             point. Occurences of this character should be removed from the corpus,
             because they only complicate or break further processing.</item>
           </list>
