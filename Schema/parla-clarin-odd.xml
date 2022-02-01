@@ -16,7 +16,7 @@
       </titleStmt>
       <publicationStmt>
         <publisher>CLARIN</publisher>
-        <date>2020-12-08</date>
+        <date>2021-01-31</date>
         <availability status="free">
           <p>This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.</p>
        </availability>
@@ -51,6 +51,7 @@
           <titlePart type="sub">A TEI Schema for Corpora of Parliamentary Proceedings</titlePart>
         </docTitle>
         <docEdition>v0.2</docEdition>
+        <docDate>2021-01-31</docDate>
         <!--byline>Tomaž Erjavec and Andrej Pančur</byline-->
       </titlePage>
       <p></p>
@@ -172,7 +173,7 @@
       <div xml:id="sec-scope">
           <head>Scope and purpose</head>
           <p>These recommendations consists of guidelines, a formal TEI schema, and derived
-          XML schemas in various schema languages. Theye are intended for the encoding of
+          XML schemas in various schema languages. They are intended for the encoding of
           corpora of parliamentary proceedings, regardless of the language or country of
           origin, for the purposes of scholarly investigations, be they from the field of
           linguistics, political science, history or other humanities and social sciences
@@ -454,7 +455,7 @@
           that each element that contains text is either marked by this attribute, or one of
           its ancestors is; in particular, the root element of the corpus should have an
           <att>xml:lang</att> attribute. For multilingual documents (excluding cases where only
-          a minor part of the text is in another language), the language code if the root
+          a minor part of the text is in another language), the language code of the root
           element should be <q>mul</q> for <q>multiple languages</q>. Note that if, going by
           the ancestor axis, the values of two <att>xml:lang</att> are in conflict, the one
           closer to the context node is relevant one.
@@ -495,19 +496,24 @@
           <p>TEI offers a number of attributes that contain (URI) pointers.  Where the reference
           is to an element inside the document, the value of the <att>xml:id</att> being
           referred to should be preceded by a hash (#), as mandated by the XML standard. If the
-          ID pointed to is from another document, them the full URI needs to be used.  However,
-          as such URIs can be very long, TEI also offers another way of pointing, which can be
-          used to shorten such long URIs, and this is defined by the <gi>prefixDef</gi> element
-          in the TEI header. So, for example, if the definitions of MULTEXT-East feature
-          structures are stored in the XML document
-          <val>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml</val>, while the corpus uses
-          pointers to these definitions
-          (e.g. <val>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml#Pd-nsg</val>), then,
-          with the appropriate definition of the prefix, we can use in the corpus much shorter
-          pointers such as <val>mte:Pd-nsg</val>, which are then, via a regular expression
-          mapping in the prefix definition converted to the full URI.
+          ID pointed to is from another document, then the full URI needs to be used.</p>
+	  
+          <p>However, as such URIs can be very long, TEI also offers another way of pointing, which
+	  can be used to shorten such long URIs, and this is defined by the <gi>prefixDef</gi>
+	  element in the TEI header, as illustrated below:
+
+	  <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-prefixDef">
+            <prefixDef ident="mte" matchPattern="(.+)" 
+                       replacementPattern="http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml#$1">
+              <p xml:lang="en">Private URIs with this prefix point to feature-structure elements defining the Slovenian MULTEXT-East Version 6 MSDs.</p>
+            </prefixDef>
+          </egXML>
+
+	  With such a definition, we can use the much shorter pointers in the mark-up of words,
+	  such as <val>mte:Pd-nsg</val>, which are then, via a regular expression mapping in the
+	  prefix definition converted to the full URI <val>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml#Pd-nsg</val>.
           </p>
-        </div>
+	</div>
         
         <div xml:id="sec-temporal">
           <head>Temporal information</head>
@@ -529,7 +535,7 @@
             <item><att>when</att>: when a certain event happened;</item>
             <item><att>from</att>, <att>to</att>: the start and end of an event or state;</item>
             <item><att>notBefore</att>, <att>notAfter</att>: the earliest and latest known
-            time that where an event or state took place, used in cases where the exact time
+            time that an event or state took place, used in cases where the exact time
             is not known.</item>
           </list>
           </p>
@@ -537,7 +543,7 @@
         
         <div xml:id="sec-files">
           <head>Files</head>
-          <p>While this recommendations make the assumption that a complete PPC is one TEI XML
+          <p>While these recommendations make the assumption that a complete PPC is one TEI XML
           document, this does not mean that it also has to be stored in one file, as the file
           structure is distinct from the concept of XML documents. To enable one XML document
           to be composed of many files, the <ref
@@ -567,11 +573,11 @@
 
           <!-- Komentar, da <teiCorpus> ni nujen -->
           
-          <p>As illustrated below, a CLARIN-Parla corpus is typically rooted in a
+          <p>As illustrated below, a Parla-CLARIN corpus is typically rooted in a
           <gi>teiCorpus</gi> element. The <gi>teiHeader</gi> of the corpus then contains the
           metadata for the complete corpus, including the metadata that is marked with
           the <att>xml:id</att> attribute and referred to by the subordinate <gi>TEI</gi> elements,
-	  such as the defined taxonomies and the list of speakers.</p>
+	       such as the defined taxonomies and the list of speakers.</p>
           
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-docstructure">
             <teiCorpus xml:lang="xx">
@@ -595,7 +601,7 @@
           <p>We do not specify what an individual <gi>TEI</gi> element should contain, as
           the size and granularity of parliamentary proceedings corpora, not to mention the
           national rules of structuring the workings of the parliament, will differ
-          substantially. Typically, however, and individual <gi>TEI</gi> element would
+          substantially. Typically, however, an individual <gi>TEI</gi> element would
           contain one sitting or session or one day, in any case such data that has common
           metadata that distinguishes it from the other <gi>TEI</gi> elements in the
           corpus.</p>
@@ -635,7 +641,7 @@
           
           <p>In the text <gi>body</gi>, as well as in the <gi>front</gi> and <gi>back</gi>
           matter, the element that further organises the content into sections is the division,
-          <gi>div</gi>, and each of the three <gi>text</gi> elements (if present) should
+          <gi>div</gi>, and each of the three text-bearing elements (if present) should
           contain at least one division.</p>
 
           <p>The divisions can be nested, as shown in the example below:
@@ -776,8 +782,8 @@
         contained in the <gi>teiHeader</gi> element, which in corpora can appear at two
         levels:
         <list>
-          <item>the overall corpus teiHeader;</item>
-          <item>the teiHeader of the individual corpus texts, i.e. the <gi>TEI</gi> element.</item>
+          <item>the overall corpus teiHeader, i.e. as part of the <gi>teiCorpus</gi> element;</item>
+          <item>the teiHeader of individual corpus texts, i.e. as part of a <gi>TEI</gi> element.</item>
         </list>
         It is recommended that the metadata that is common to the whole corpus is stored in
         the corpus TEI header, whereas the text-specific metadata is in the corpus text TEI
@@ -818,11 +824,11 @@
             </person>
           </egXML>
 
-          Each <gi>person</gi> must have an <att>xml:id</att> attribute, so that it can be
-          referred to from the transcription. Apart from that, the only required element is
-          <gi>persName</gi>, giving the name of the person. This can be contained directly in the element, or
-	  as the preferred option, further decomposed into
-          the person surname(s) and forename(s) or even other elements, as explained in the Section on <ref
+          Each <gi>person</gi> must have an <att>xml:id</att> attribute, so that it can be referred
+          to from the transcription. Apart from that, the only required element is
+          <gi>persName</gi>, giving the name of the person. This can be contained directly in the
+          element, or, as the preferred option, further decomposed into the person surname(s) and
+          forename(s) or even other elements, as explained in the Section on <ref
           target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPER">Personal
           Names</ref> of the TEI Guidelines.</p>
 
@@ -1017,75 +1023,81 @@
         
         <p>The transcriptions of the parliamentary debates the central part of these
         recommendations and this section explains how to encode the transcriptions of speeches
-        proper, the commentary inserted by the transcribers, and the encoding of interruption
-        of speeches and various verbal and non-verbal incidents in the parliament. Most of
-        these elements are explained in the Chapter on <ref
+        proper, and how to treat the commentary inserted by the transcribers, which often marks
+        interruption of speeches and various verbal and non-verbal incidents.
+        Most of these elements are explained in the Chapter on <ref
         target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html">Transcription of
         Speech</ref> of the TEI Guidelines.</p>
         
         <div xml:id="sec-uterrance">
-          <head>Utterances and commentary</head>
-          <p>In the transcriptions the main distinction to be made is between the
-          transcriptions of the utterances of the speakers against the commentary inserted by
-          the transcriber, such as the titles of the divisions, results of voting, comments on
-          what is happening in the chamber etc. The former should be encoded using the
-          utterance element, <gi>u</gi>, while latter are encoded using a variety of elements,
-          such as <gi>head</gi> or <gi>note</gi>, and possibly others, as further discussed
-          below. Below we give an example of a rather straightforward start of a division:
+          <head>Utterances</head>
+          <p>A speech is marked up using the <gi>u</gi> (utterance) element, as illustrated below:
         
-          <!-- Do we / will we have a typology of notes as well? -->
-          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-relations">
-            <div>
-              <head>REPUBLIKA SLOVENIJA DRŽAVNI ZBOR</head>
-              <head type="session">nadaljevanje 39. seje</head>
-              <note type="chairman">Sejo so vodili predsednik Državnega zbora dr. Milan Brglez
-              in podpredsednika Primož Hainz ter Matjaž Nemec.</note>
-              <note type="time">Seja se je začela ob 10.03.</note>
-              <note type="speaker">PREDSEDNIK DR. MILAN BRGLEZ:</note>
-              <u who="#SDZ7.BrglezMilan" ana="#chair">
-                <seg xml:id="SDZ7-Redna-39-2018-03-27.seg1">Spoštovani kolegice poslanke in
-                kolegi poslanci, gospe in gospodje!</seg>
-                <seg xml:id="SDZ7-Redna-39-2018-03-27.seg2">Začenjam z nadaljevanjem 39. seje
-                Državnega zbora.</seg>
-                ...
-              </u>
-              ...
-            </div>
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-speech">
+            <u who="#DavidPrior" ana="#regular">
+               <seg>I ask that the draft Regulations laid before the House on 5 December be approved.</seg>
+               <seg>The relevant document is the 20th Report from the Legislation Committee.</seg>
+            </u>
           </egXML>
           
-          The example starts with the division heading, saying that this is the National Assembly
-          of the Republic of Slovenia, with the second heading specifying that this is the
-          continuation of the 39th session. Next come three notes, first one specifying who
-          chaired the session, the second when the session started and the third the name of the
-          first speaker. It should be noted that these are not formal specifications, rather,
-          they are simply parts of the transcript that have been wrapped in certain elements.</p>
-          
-          <p>After these preliminary notes comes the transcript of the speech proper, which, as
-          mentioned, is encoded using the <gi>u</gi> element. Its main attribute is
-          <att>who</att>, giving the pointer to the <gi>person</gi> element containing the
-          metadata of the speaker. The <gi>u</gi> element can also have the <att>ana</att>
-          attribute giving one or more pointers to a typology of types of speakers. In our case,
-          it would point to a category that specifies that the speaker is the chair of the
+          The main attribute of an utterance is <att>who</att>, which gives the pointer to the
+          <gi>person</gi> element containing the metadata of the speaker. The <gi>u</gi>
+          element can also have the <att>ana</att> attribute giving one or more pointers to a
+          typology of types of speakers. In our case, it would point to a category that
+          specifies that the speaker is a regular speaker (rather than, e.g., the chair) of the
           session.</p>
           
           <p>The utterances can (but are not required to) be segmented using the generic
-          TEI element for segments, <gi>seg</gi>, encoding the paragraphs of the source
+          TEI element for segments, <gi>seg</gi>, which encodes the paragraphs of the source
           transcription.<note>The reason why the TEI element for paragraphs (<gi>p</gi>) is not
           used is that utterances, being essentially (transcriptions of) spoken text, do not
           allow for internal paragraphs, a concept pertinent to written text.</note></p>
         </div>
         
-        <div xml:id="sec-incidents">
-          <head>Incidents</head>
-          <p>In general, transcriber comments are encoded using <gi>note</gi> but some such
-          comments can be encoded using more precise TEI elements.<note>Whether these specific
-          elements will be used or simply encoded using notes, and, indeed, whether such notes
-          are preserved in the Parla-CLARIN encoding at all, will depend on the needs and
-          resources of each particular project.</note> In particular, the TEI module for
-          Transcription of Speech (<q><ref
+        <div xml:id="sec-comments">
+           <head>Transcriber comments</head>
+           
+          <p>Transcriber comments encode information such as interruptions, notes on
+          what is happening in the chamber, results of voting, etc.
+          Note that while section headings can also be taken as a kind of transcriber comments, these
+          serve to structure a document, and are therefore treated in the Section on
+          <ref target="#sec-textstruct">Text divisions</ref>.</p>
+
+          <p>In general, transcriber comments are encoded using <gi>note</gi>, although some
+          comments can be encoded using more precise TEI elements, as explained below.  Whether
+          <gi>note</gi> or these more specific elements will be used, and, indeed, whether
+          comments are preserved in the encoding at all, will depend on the needs and resources
+          of each particular project.</p>
+
+          <p>The example below lists some typically transcriber comments, which are here further
+          qualified by their <att>type</att> attribute:
+          
+          <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-notes">
+             <note type="speaker">The president, Dr. Milan Brglez:</note>
+             <note type="time">The sesssion began at 10 o'clock.</note>
+             <note type="vote-ayes">84 voted for the adotion of the measure.</note>
+             <note type="vote-noes">2 voted against the adotion of the measure.</note>
+          </egXML>
+          </p>
+          
+          <p>The first note simply gives the speaker of the utterance that would follow it, the
+          second one gives the time when the session started, while the third and fourth are
+          notes on the voting results. Note that in all three cases, instead of, or in addition
+          to retaining such notes, the information contained in them can also be further
+          explicated in dedicated mark-up. So, the information given in the first note will
+          typically be encoded in the <code>u/@who</code> attribute, the second could be
+          encoded in the <code>u/@when</code> attribute, while how to encode the last two is
+          explained in the Section on <ref target="sec-voting">Voting results</ref>.  It is
+          therefore a matter of editorial policy whether to faithfully reproduce the
+          transcription, including comments, or whether to remove the comments when they have
+          already been taken into account when processing the transcriptions.</p>
+
+          <p>Some types of transcriber comments can also be encoded using more specific TEI
+          elements than <gi>note</gi>.
+          In particular, the TEI module for Transcription of Speech (<q><ref
           target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/TS.html#TSBA">Elements
-          unique to spoken texts</ref></q>) defines the following elements that can correspond
-          to various types of transcriber's comments:
+          unique to spoken texts</ref></q>) defines the following <q>incident</q>
+          elements that correspond to various types of transcriber's comments:
           <list>
             <item><gi>vocal</gi> marks any vocalized but not necessarily lexical phenomenon,
             e.g. laughter, sounds of (dis)agreement from the benches etc.</item>
@@ -1096,21 +1108,30 @@
             affecting communication.</item>
           </list>
           
-          The artificial example below illustrates the use of these three elements:
-          
+          The example below illustrates the use of these three elements:
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-incidents">
-            <u xml:lang="sl" who="#SDZ5.AhačičMonika">Spoštovani kolegice poslanke!</u>
+            <u xml:lang="sl" who="#SDZ5.AhačičMonika">Esteemed member of the parliament!</u>
             <vocal who="#opposition"><desc xml:lang="en">shouting</desc></vocal>
             <kinesic who="#SDZ5.AhačičMonika"><desc xml:lang="en">banging the gavel</desc></kinesic>
             <incident><desc xml:lang="en">army storms the parliament</desc></incident>
             <kinesic who="#governmet"><desc xml:lang="en">clapping</desc></kinesic>
           </egXML>
-	  
-          It should be noted that the four <q>incident</q> elements could have been also encoded
-          within the <gi>u</gi> element, however, it is recommended to have them placed outside,
-          because, ideally, the utterance elements should contain pure text only, as this
-          significantly simplifies their linguistic processing. However, if the same speech continued
-          after these elements, then they would need to be encoded inside the utterance.</p>
+	       As the example shows, the content of the transcriber comment is retained in the
+	       <gi>desc</gi> element, while the <att>who</att> attribute can be used to specify who
+	       is responsible for the incident. All three elements can also be futher qualified using their
+          <att>type</att> and <att>subtype</att> attributes.
+          </p>
+
+          <p>It should be noted that <gi>note</gi> and the four <q>incident</q> elements can be
+          placed either on the same level as the <gi>u</gi> elements, or directly inside them
+          (so, on the same level as <gi>seg</gi> elements) or even inside <gi>seg</gi>
+          elements. It is recommended to place them as far up the hierarchy as possible, and
+          especially avoid having them inside segments, as these contain text, and placing
+          elements here leads to mixed content, which is difficult to process further, in
+          particular if the text is to be linguistically annotated. However, if transcriber
+          comment is placed in the middle of a segment, then they would need to be encoded
+          inside the utterance, except if the utterance is split, as is further explained in
+          the Section on <ref target="#sec-interruptions">Interrupted utterances</ref>.</p>
         </div>
 
         <div xml:id="sec-gaps">

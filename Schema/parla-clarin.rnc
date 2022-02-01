@@ -11,10 +11,10 @@ namespace xi = "http://www.w3.org/2001/XInclude"
 namespace xlink = "http://www.w3.org/1999/xlink"
 namespace xsl = "http://www.w3.org/1999/XSL/Transform"
 
-# Schema generated from ODD source 2021-03-17T14:38:58Z. .
-# TEI Edition: Version 4.2.1. Last updated on
-#	1st March 2021, revision 654a5c551
-# TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.2.1/
+# Schema generated from ODD source 2022-01-31T21:59:21Z. 2021-01-31.
+# TEI Edition: Version 4.4.0a. Last updated on
+#         19th January 2022, revision daab99ca7
+# TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0a./
 #
 
 # This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.
@@ -354,7 +354,7 @@ sch:pattern [
   sch:rule [
     context = "tei:*[@when]"
     "\x{a}" ~
-    "        "
+    "         "
     sch:report [
       test = "@notBefore|@notAfter|@from|@to"
       role = "nonfatal"
@@ -374,7 +374,7 @@ sch:pattern [
   sch:rule [
     context = "tei:*[@from]"
     "\x{a}" ~
-    "        "
+    "         "
     sch:report [
       test = "@notBefore"
       role = "nonfatal"
@@ -393,7 +393,7 @@ sch:pattern [
   sch:rule [
     context = "tei:*[@to]"
     "\x{a}" ~
-    "        "
+    "         "
     sch:report [
       test = "@notAfter"
       role = "nonfatal"
@@ -413,8 +413,10 @@ tei_att.datable.attributes =
   tei_att.datable.attribute.period
 tei_att.datable.attribute.calendar =
   
-  ## indicates the system or calendar to which the date represented by the content of this element belongs.
-  attribute calendar { xsd:anyURI }?
+  ## indicates one or more systems or calendars to which the date represented by the content of this element belongs.
+  attribute calendar {
+    list { xsd:anyURI+ }
+  }?
 sch:pattern [
   id = "tei_clarin-att.datable-calendar-calendar-constraint-rule-4"
   "\x{a}" ~
@@ -422,25 +424,34 @@ sch:pattern [
   sch:rule [
     context = "tei:*[@calendar]"
     "\x{a}" ~
-    "            "
+    "         "
     sch:assert [
       test = "string-length(.) gt 0"
-      " @calendar indicates the system or calendar to\x{a}" ~
+      " @calendar indicates one or more systems or calendars to\x{a}" ~
       "              which the date represented by the content of this element belongs, but this\x{a}" ~
       "              "
       sch:name [ ]
       " element has no textual content."
     ]
     "\x{a}" ~
-    "          "
+    "      "
   ]
   "\x{a}" ~
   "   "
 ]
 tei_att.datable.attribute.period =
-  
-  ## supplies a pointer to some location defining a named period of time within which the datable item is understood to have occurred.
-  attribute period { xsd:anyURI }?
+  [
+    a:documentation [
+      "supplies pointers to one or more definitions of named periods of time (typically "
+      ns1:code [ "<category>" ]
+      "s or "
+      ns1:code [ "<calendar>" ]
+      "s) within which the datable item is understood to have occurred."
+    ]
+  ]
+  attribute period {
+    list { xsd:anyURI+ }
+  }?
 tei_att.datcat.attributes =
   tei_att.datcat.attribute.datcat, tei_att.datcat.attribute.valueDatcat
 tei_att.datcat.attribute.datcat =
@@ -909,7 +920,7 @@ sch:pattern [
   sch:rule [
     context = "tei:*[@unitRef]"
     "\x{a}" ~
-    "        "
+    "         "
     sch:report [
       test = "@unit"
       role = "info"
@@ -1013,7 +1024,7 @@ sch:pattern [
   sch:rule [
     context = "tei:*[@subtype]"
     "\x{a}" ~
-    "        "
+    "         "
     sch:assert [
       test = "@type"
       "The "
@@ -1056,7 +1067,7 @@ sch:pattern [
   sch:rule [
     context = "tei:*[not(self::tei:schemaSpec)][@targetLang]"
     "\x{a}" ~
-    "            "
+    "         "
     sch:assert [
       test = "@target"
       "@targetLang should only be used on "
@@ -1064,7 +1075,7 @@ sch:pattern [
       " if @target is specified."
     ]
     "\x{a}" ~
-    "          "
+    "      "
   ]
   "\x{a}" ~
   "   "
@@ -1166,7 +1177,7 @@ sch:pattern [
   sch:rule [
     context = "tei:*[@spanTo]"
     "\x{a}" ~
-    "            "
+    "         "
     sch:assert [
       test =
         "id(substring(@spanTo,2)) and following::*[@xml:id=substring(current()/@spanTo,2)]"
@@ -1176,10 +1187,10 @@ sch:pattern [
       ") must follow the current element "
       sch:name [ ]
       "\x{a}" ~
-      "                  "
+      "         "
     ]
     "\x{a}" ~
-    "          "
+    "      "
   ]
   "\x{a}" ~
   "   "
@@ -1223,7 +1234,7 @@ sch:pattern [
   sch:rule [
     context = "tei:*[@schemeVersion]"
     "\x{a}" ~
-    "            "
+    "         "
     sch:assert [
       test = "@scheme and not(@scheme = 'free')"
       "\x{a}" ~
@@ -1231,7 +1242,7 @@ sch:pattern [
       "            "
     ]
     "\x{a}" ~
-    "          "
+    "      "
   ]
   "\x{a}" ~
   "   "
@@ -1715,7 +1726,12 @@ tei_model.featureVal.single =
 tei_model.entryPart = notAllowed
 tei_model.eventLike = tei_event | tei_listEvent
 tei_model.global.edit =
-  tei_gap | tei_addSpan | tei_damageSpan | tei_delSpan | tei_space
+  tei_gap
+  | tei_ellipsis
+  | tei_addSpan
+  | tei_damageSpan
+  | tei_delSpan
+  | tei_space
 tei_model.divPart =
   tei_model.lLike
   | tei_model.pLike
@@ -2084,17 +2100,6 @@ tei_model.standOffPart =
   | tei_u
   | tei_seg
   | tei_listAnnotation
-tei_att.citeStructurePart.attributes =
-  tei_att.citeStructurePart.attribute.use
-tei_att.citeStructurePart.attribute.use =
-  [
-    a:documentation [
-      "(use) supplies an XPath selection pattern using the syntax defined in . The XPath pattern is relative to the context given in "
-      ns1:code [ "@match" ]
-      ", which will either be a sibling attribute in the case of  or on the parent  in the case of ."
-    ]
-  ]
-  attribute use { text }
 tei_att.formula.attributes = tei_att.formula.attribute.formula
 tei_att.formula.attribute.formula =
   [
@@ -2105,6 +2110,18 @@ tei_att.formula.attribute.formula =
     ]
   ]
   attribute formula { text }?
+tei_att.locatable.attributes = tei_att.locatable.attribute.where
+tei_att.locatable.attribute.where =
+  [
+    a:documentation [
+      "indicates one or more locations by pointing to a "
+      ns1:code [ "<place>" ]
+      " element or other canonical description."
+    ]
+  ]
+  attribute where {
+    list { xsd:anyURI+ }
+  }?
 tei_model.correspActionPart =
   tei_model.dateLike
   | tei_model.addressLike
@@ -2245,9 +2262,9 @@ tei_p =
            "               "
            sch:report [
              test =
-               "ancestor::tei:l[not(.//tei:note//tei:p[. = current()])]"
+               "(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)"
              "\x{a}" ~
-             "        Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab.\x{a}" ~
+             "        Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab, unless p is a child of figure or note, or is a descendant of floatingText.\x{a}" ~
              "      "
            ]
            "\x{a}" ~
@@ -2421,7 +2438,7 @@ tei_soCalled =
   }
 tei_desc =
   
-  ## (description) contains a brief description of the object documented by its parent element, typically a documentation element or an entity. [22.4.1. Description of Components]
+  ## (description) contains a short description of the purpose, function, or use of its parent element, or when the parent is a documentation element, describes or defines the object being documented.  [22.4.1. Description of Components]
   element desc {
     tei_macro.limitedContent
     >> sch:pattern [
@@ -2451,8 +2468,13 @@ tei_desc =
     tei_att.typed.attribute.subtype,
     
     ## characterizes the element in some sense, using any convenient classification scheme or typology.
+    ## Suggested values include: 1] deprecationInfo (deprecation information)
     attribute type {
-      xsd:token { pattern = "[^\p{C}\p{Z}]+" }
+      
+      ## (deprecation
+      ##           information) This element describes why or how its parent element is being deprecated, typically including recommendations for alternate encoding.
+      "deprecationInfo"
+      | xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
     empty
   }
@@ -2668,6 +2690,16 @@ tei_gap =
     attribute agent {
       xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
+    empty
+  }
+tei_ellipsis =
+  
+  ## (deliberately marked omission) indicates a purposeful marking in the source document signalling that content has been omitted, and may also supply or describe the omitted content. [3.5.3. Additions, Deletions, and Omissions]
+  element ellipsis {
+    (tei_metamark, tei_model.descLike?, tei_supplied?),
+    tei_att.global.attributes,
+    tei_att.dimensions.attributes,
+    tei_att.timed.attributes,
     empty
   }
 tei_add =
@@ -3000,7 +3032,7 @@ tei_list =
          sch:rule [
            context = "tei:list[@type='gloss']"
            "\x{a}" ~
-           "	              "
+           "               "
            sch:assert [
              test = "tei:label"
              'The content of a "gloss" list should include a sequence of one or more pairs of a label element followed by an item element'
@@ -3741,6 +3773,17 @@ tei_textLang =
     }?,
     empty
   }
+tei_att.citeStructurePart.attributes =
+  tei_att.citeStructurePart.attribute.use
+tei_att.citeStructurePart.attribute.use =
+  [
+    a:documentation [
+      "(use) supplies an XPath selection pattern using the syntax defined in . The XPath pattern is relative to the context given in "
+      ns1:code [ "@match" ]
+      ", which will either be a sibling attribute in the case of `<citeStructure>` or on the parent `<citeStructure>` in the case of `<citeData>`."
+    ]
+  ]
+  attribute use { text }
 tei_att.patternReplacement.attributes =
   tei_att.patternReplacement.attribute.matchPattern,
   tei_att.patternReplacement.attribute.replacementPattern
@@ -4361,7 +4404,7 @@ tei_citeStructure =
        ],
     [
       a:documentation [
-        "(match) supplies an XPath selection pattern using the syntax defined in  which identifies a set of nodes which are citable structural components. The expression may be absolute (beginning with ) or relative. "
+        "(match) supplies an XPath selection pattern using the syntax defined in  which identifies a set of nodes which are citable structural components. The expression may be absolute (beginning with `/`) or relative. "
         ns1:code [ "@match" ]
         " on a "
         ns1:code [ "<citeStructure>" ]
@@ -4592,6 +4635,7 @@ tei_conversion =
     tei_att.global.attributes,
     tei_att.datable.attributes,
     tei_att.formula.attributes,
+    tei_att.locatable.attributes,
     [
       a:documentation [
         "indicates a source unit of measure that is to be converted into another unit indicated in "
@@ -4927,7 +4971,7 @@ tei_body =
      ((tei_model.divLike, (tei_model.global | tei_model.divGenLike)*)+
       | (tei_model.div1Like,
          (tei_model.global | tei_model.divGenLike)*)+
-      | ((tei_model.common, tei_model.global*)+,
+      | (((tei_model.common), tei_model.global*)+,
          ((tei_model.divLike,
            (tei_model.global | tei_model.divGenLike)*)+
           | (tei_model.div1Like,
@@ -4943,7 +4987,7 @@ tei_div =
   element div {
     ((tei_model.divTop | tei_model.global)*,
      ((((tei_model.divLike | tei_model.divGenLike), tei_model.global*)+
-       | ((tei_model.common, tei_model.global*)+,
+       | (((tei_model.common), tei_model.global*)+,
           ((tei_model.divLike | tei_model.divGenLike),
            tei_model.global*)*)),
       (tei_model.divBottom, tei_model.global*)*)?)
@@ -4954,7 +4998,7 @@ tei_div =
          sch:rule [
            context = "tei:div[@type = $div.types.debate]"
            "\x{a}" ~
-           "                  "
+           "               "
            sch:assert [
              test = "not(parent::tei:div[@type = $div.types.debate])"
              "\x{a}" ~
@@ -4966,7 +5010,7 @@ tei_div =
              "                  "
            ]
            "\x{a}" ~
-           "                "
+           "            "
          ]
          "\x{a}" ~
          "         "
@@ -4981,9 +5025,10 @@ tei_div =
            "\x{a}" ~
            "               "
            sch:report [
-             test = "ancestor::tei:l"
+             test =
+               "(ancestor::tei:l or ancestor::tei:lg) and not(ancestor::tei:floatingText)"
              "\x{a}" ~
-             "        Abstract model violation: Lines may not contain higher-level structural elements such as div.\x{a}" ~
+             "        Abstract model violation: Lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.\x{a}" ~
              "      "
            ]
            "\x{a}" ~
@@ -5003,9 +5048,9 @@ tei_div =
            "               "
            sch:report [
              test =
-               "ancestor::tei:p or ancestor::tei:ab and not(ancestor::tei:floatingText)"
+               "(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)"
              "\x{a}" ~
-             "        Abstract model violation: p and ab may not contain higher-level structural elements such as div.\x{a}" ~
+             "        Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.\x{a}" ~
              "      "
            ]
            "\x{a}" ~
@@ -5164,7 +5209,18 @@ tei_constitution =
     ## specifies how the text was constituted.
     [ a:defaultValue = "single" ]
     attribute type {
-      xsd:token { pattern = "[^\p{C}\p{Z}]+" }
+      
+      ## a single complete text
+      "single"
+      | 
+        ## a text made by combining several smaller items, each individually complete
+        "composite"
+      | 
+        ## (fragments) a text made by combining several smaller, not necessarily complete, items
+        "frags"
+      | 
+        ## composition unknown or unspecified
+        "unknown"
     }?,
     empty
   }
@@ -5177,6 +5233,7 @@ tei_derivation =
     tei_att.typed.attribute.subtype,
     
     ## categorizes the derivation of the text.
+    ## Sample values include: 1] original; 2] revision; 3] translation; 4] abridgment; 5] plagiarism; 6] traditional
     attribute type {
       xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
@@ -5191,6 +5248,7 @@ tei_domain =
     tei_att.typed.attribute.subtype,
     
     ## categorizes the domain of use.
+    ## Sample values include: 1] art; 2] domestic; 3] religious; 4] business; 5] education; 6] govt (government); 7] public
     attribute type {
       xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
@@ -5206,7 +5264,18 @@ tei_factuality =
     
     ## categorizes the factuality of the text.
     attribute type {
-      xsd:token { pattern = "[^\p{C}\p{Z}]+" }
+      
+      ## the text is to be regarded as entirely imaginative
+      "fiction"
+      | 
+        ## the text is to be regarded as entirely informative or factual
+        "fact"
+      | 
+        ## the text contains a mixture of fact and fiction
+        "mixed"
+      | 
+        ## the fiction/fact distinction is not regarded as helpful or appropriate to this text
+        "inapplicable"
     }?,
     empty
   }
@@ -5220,7 +5289,18 @@ tei_interaction =
     
     ## specifies the degree of interaction between active and passive participants in the text.
     attribute type {
-      xsd:token { pattern = "[^\p{C}\p{Z}]+" }
+      
+      ## no interaction of any kind, e.g. a monologue
+      "none"
+      | 
+        ## some degree of interaction, e.g. a monologue with set responses
+        "partial"
+      | 
+        ## complete interaction, e.g. a face to face conversation
+        "complete"
+      | 
+        ## this parameter is inappropriate or inapplicable in this case
+        "inapplicable"
     }?,
     
     ## specifies the number of active participants (or addressors) producing parts of the text.
@@ -5272,6 +5352,7 @@ tei_preparedness =
     tei_att.typed.attribute.subtype,
     
     ## a keyword characterizing the type of preparedness.
+    ## Sample values include: 1] none; 2] scripted; 3] formulaic; 4] revised
     attribute type {
       xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
@@ -5286,8 +5367,21 @@ tei_purpose =
     tei_att.typed.attribute.subtype,
     
     ## specifies a particular kind of purpose.
+    ## Suggested values include: 1] persuade; 2] express; 3] inform; 4] entertain
     attribute type {
-      xsd:token { pattern = "[^\p{C}\p{Z}]+" }
+      
+      ## didactic, advertising, propaganda, etc.
+      "persuade"
+      | 
+        ## self expression, confessional, etc.
+        "express"
+      | 
+        ## convey information, educate, etc.
+        "inform"
+      | 
+        ## amuse, entertain, etc.
+        "entertain"
+      | xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
     
     ## specifies the extent to which this purpose predominates.
@@ -5334,7 +5428,7 @@ tei_activity =
 tei_att.global.facs.attributes = tei_att.global.facs.attribute.facs
 tei_att.global.facs.attribute.facs =
   
-  ## (facsimile) points to all or part of an image which corresponds with the content of the element.
+  ## (facsimile) points to one or more images, portions of an image, or surfaces which correspond to the current element.
   attribute facs {
     list { xsd:anyURI+ }
   }?
@@ -5519,7 +5613,6 @@ tei_path =
          sch:rule [
            context = "tei:path[@points]"
            "\x{a}" ~
-           "        \x{a}" ~
            "               "
            sch:let [
              name = "firstPair"
@@ -5782,6 +5875,7 @@ tei_fw =
     tei_att.written.attributes,
     
     ## classifies the material encoded according to some useful typology.
+    ## Sample values include: 1] header; 2] footer; 3] pageNum (page number); 4] lineNum (line number); 5] sig (signature); 6] catch (catchword)
     attribute type {
       xsd:token { pattern = "[^\p{C}\p{Z}]+" }
     }?,
@@ -6839,14 +6933,7 @@ tei_event =
     tei_att.typed.attributes,
     tei_att.naming.attributes,
     tei_att.sortable.attributes,
-    [
-      a:documentation [
-        "indicates the location of an event by pointing to a "
-        ns1:code [ "<place>" ]
-        " element"
-      ]
-    ]
-    attribute where { xsd:anyURI }?,
+    tei_att.locatable.attributes,
     empty
   }
 tei_faith =
@@ -7511,7 +7598,7 @@ tei_object =
       | tei_model.biblLike
       | tei_linkGrp
       | tei_link)*,
-     tei_object?),
+     tei_object*),
     tei_att.global.attributes,
     tei_att.sortable.attributes,
     tei_att.typed.attributes,
@@ -7677,7 +7764,7 @@ tei_linkGrp =
   
   ## (link group) defines a collection of associations or hypertextual links. [16.1. Links]
   element linkGrp {
-    (tei_link | tei_ptr)+,
+    (tei_model.descLike*, (tei_link | tei_ptr)+),
     tei_att.global.attributes,
     tei_att.pointing.group.attributes,
     empty
@@ -7719,9 +7806,10 @@ tei_ab =
            "\x{a}" ~
            "               "
            sch:report [
-             test = "ancestor::tei:l or ancestor::tei:lg"
+             test =
+               "(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)"
              "\x{a}" ~
-             "        Abstract model violation: Lines may not contain higher-level divisions such as p or ab.\x{a}" ~
+             "        Abstract model violation: Lines may not contain higher-level divisions such as p or ab, unless ab is a child of figure or note, or is a descendant of floatingText.\x{a}" ~
              "      "
            ]
            "\x{a}" ~
@@ -7941,7 +8029,7 @@ tei_joinGrp =
     ]
   ]
   element joinGrp {
-    ((tei_gloss)*, (tei_join | tei_ptr)+),
+    ((tei_gloss | tei_model.descLike)*, (tei_join | tei_ptr)+),
     tei_att.global.attributes,
     tei_att.pointing.group.attributes,
     [
@@ -8003,7 +8091,7 @@ tei_altGrp =
     ]
   ]
   element altGrp {
-    (tei_alt | tei_ptr)*,
+    (tei_model.descLike*, (tei_alt | tei_ptr)*),
     tei_att.global.attributes,
     tei_att.pointing.group.attributes,
     
@@ -8616,7 +8704,7 @@ tei_spanGrp =
   
   ## (span group) collects together span tags. [17.3. Spans and Interpretations]
   element spanGrp {
-    tei_span*,
+    (tei_model.descLike*, tei_span*),
     tei_att.global.attributes,
     tei_att.interpLike.attribute.inst,
     tei_att.typed.attribute.subtype,
@@ -9953,12 +10041,12 @@ tei_charName =
 start = tei_TEI | tei_teiCorpus
 sch:pattern [
   "\x{a}" ~
-  "                "
+  "      "
   sch:let [
     name = "div.types.debate"
     value =
       "('address', 'adjournment', 'administrationOfOath', 'communication', 'declarationOfVote', 'ministerialStatements', 'nationalInterest', 'noticesOfMotion', 'oralStatements', 'papers', 'petitions', 'prayers', 'proceduralMotions', 'pointOfOrder', 'personalStatements', 'questions', 'resolutions', 'rollCall', 'writtenStatements')"
   ]
   "\x{a}" ~
-  "              "
+  "   "
 ]
