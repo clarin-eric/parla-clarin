@@ -27,8 +27,10 @@
    <!--xsl:param name="STDOUT">false</xsl:param>
    <xsl:param name="outputDir">../docs</xsl:param>
    <xsl:param name="outputName">parla-clarin</xsl:param-->
-   <xsl:param name="outputEncoding">utf-8</xsl:param>
+   
+   <!-- Split does not work - produces only top level file!?! -->
    <xsl:param name="splitLevel">-1</xsl:param>
+   
    <xsl:param name="autoToc">false</xsl:param>
    <xsl:param name="tocFront">false</xsl:param>
    <xsl:param name="tocBack">true</xsl:param>
@@ -37,4 +39,6 @@
    <xsl:param name="numberFigures"/>
    <xsl:param name="footnoteBackLink">true</xsl:param>
    <xsl:param name="autoEndNotes">true</xsl:param>
+   
+   <xsl:param name="outputEncoding">utf-8</xsl:param>
 </xsl:stylesheet>
