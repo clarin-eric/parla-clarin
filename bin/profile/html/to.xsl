@@ -4,6 +4,7 @@
     xmlns:html="http://www.w3.org/1999/xhtml"
     xmlns:tei="http://www.tei-c.org/ns/1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+    xmlns:xs="http://www.w3.org/2001/XMLSchema"                
     exclude-result-prefixes="tei html"
     version="2.0">
     <!-- import base conversion style -->
@@ -38,7 +39,6 @@
    <xsl:param name="subTocDepth">5</xsl:param>
    <xsl:param name="numberFigures"/>
    <xsl:param name="footnoteBackLink">true</xsl:param>
-   <xsl:param name="autoEndNotes">true</xsl:param>
-   
+   <xsl:param name="autoEndNotes">true</xsl:param>   
    <xsl:param name="outputEncoding">utf-8</xsl:param>
 </xsl:stylesheet>

@@ -1,32 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?xml-model href="../Schema/parla-clarin.rng" type="application/xml" schematypens="http://relaxng.org/ns/structure/1.0"?>
 <?xml-model href="../Schema/parla-clarin.sch" type="application/xml" schematypens="http://purl.oclc.org/dsdl/schematron"?>
-<!-- If teiCorpus has the correct TEI namespace, then Stylesheet die:
-     Conversion to HTML ../Schema/parla-clarin-odd.xml 
-     which XIncludes this file inside an <egXML> :
-       <egXML xmlns="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"
-	       xml:id="exa-exemplar">
-          <xi:include href="../Examples/Parla-CLARIN-Exemplar.xml"/>
-        </egXML>
-
-     but:
-java -jar /usr/share/java/jing.jar tei_odds.rng ../Schema/parla-clarin-odd.xml
-Stylesheets/bin/teitohtml -profiledir=parla-clarin/bin -profile=profile -odd -localsource=p5subset.xml ../Schema/parla-clarin-odd.xml ../docs/index.html
-using local file parla-clarin/bin/p5subset.xml as default source
-Convert parla-clarin-odd.xml to parla-clarin/docs/index.html (tei to html) using profile profile
-     [echo] Do ODD expand processing and conversion to TEI Lite (schema )
-...
-BUILD FAILED
-parla-clarin/bin/Stylesheets/html/build-to.xml:33: The following error occurred while executing this line:
-parla-clarin/bin/Stylesheets/common/teianttasks.xml:317: Fatal error during transformation using parla-clarin/bin/profile/html/to.xsl: Effective boolean value is not defined for a sequence of two or more items starting with a boolean; SystemID: file:parla-clarin/bin/Stylesheets/html/html.xsl; Line#: 871; Column#: 17
-
-Therefore, added 'XXX':
--->
-<teiCorpus xmlns="XXXhttp://www.tei-c.org/ns/1.0" xml:id="Parla-CLARIN-Exemplar" xml:lang="en">
+<teiCorpus xmlns="http://www.tei-c.org/ns/1.0" xml:id="Parla-CLARIN-Exemplar" xml:lang="en">
    <teiHeader>
       <fileDesc>
          <titleStmt>
-            <title>Exemplar PPC to illustrate Parla-CLARIN encoding</title>
+            <title>Exemplar to illustrate Parla-CLARIN encoding</title>
             <!-- Persons responsible for creating a corpus, for example: -->
             <!-- author of the corpus -->
             <author ref="http://viaf.org/viaf/305936424">
@@ -47,7 +26,7 @@ Therefore, added 'XXX':
             <funder>CLARIN ERIC</funder>
          </titleStmt>
          <editionStmt>
-            <edition>0.1</edition>
+            <edition>0.3</edition>
          </editionStmt>
          <extent>
             <measure unit="texts" quantity="1">1 text</measure>
@@ -66,11 +45,11 @@ Therefore, added 'XXX':
          <!-- Source description for the whole corpus: -->
          <sourceDesc>
             <!-- Use a more or less structured bibliographic record in accordance with the guidelines in
-                      https://tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3
-                      Minimum requirements:
-                       - Use the <bibl> element with the following child elements:
-                           - mandatory <title> and 
-                           - optional <idno> and <date>  -->
+                 https://tei-c.org/release/doc/tei-p5-doc/en/html/HD.html#HD3
+                 Minimum requirements:
+                 - Use the <bibl> element with the following child elements:
+                 - mandatory <title> and 
+                 - optional <idno> and <date>  -->
             <bibl>
                <title type="main">Website of the National Assembly</title>
                <title type="sub">Hansard</title>
@@ -98,37 +77,37 @@ Therefore, added 'XXX':
             </segmentation>
          </editorialDecl>
          <appInfo>
-           <application version="1.0" ident="web-scraper">
-             <label>WebScraper WWW spider</label>
-             <desc>Tool used to download source documents for this corpus.</desc>
-           </application>
+            <application version="1.0" ident="web-scraper">
+               <label>WebScraper WWW spider</label>
+               <desc>Tool used to download source documents for this corpus.</desc>
+            </application>
          </appInfo>
          <classDecl>
-           <!-- One or more optional taxonomies, with which we further classify the content and structure of parliamentary debates -->
+            <!-- One or more optional taxonomies, with which we further classify the content and structure of parliamentary debates -->
             <taxonomy>
                <desc>Types of speakers</desc>
                <category xml:id="chair">
                   <catDesc>
-                     <term>Chairperson</term>: chairman of a meeting. See also <term>The Speaker</term>: an MP who has been elected by other MPs to act as Chair during debates in the House of Commons.</catDesc>
+                  <term>Chairperson</term>: chairman of a meeting. See also <term>The Speaker</term>: an MP who has been elected by other MPs to act as Chair during debates in the House of Commons.</catDesc>
                </category>
             </taxonomy>
             <!-- Project-specific classification of the structure of parliamentary periods: -->
             <taxonomy>
                <category xml:id="parla.term">
                   <catDesc><term>Legislative period</term>: term of the parliament between
-                     general elections.</catDesc>
+                  general elections.</catDesc>
                   <category xml:id="parla.session">
                      <catDesc><term>Legislative session</term>: the period of time in which
-                        a legislature is convened for purpose of lawmaking, usually being
-                        one of two or more smaller divisions of the entire time between two
-                        elections. A session is a meeting or series of connected meetings
-                        devoted to a single order of business, program, agenda, or announced
-                        purpose.</catDesc>
+                     a legislature is convened for purpose of lawmaking, usually being
+                     one of two or more smaller divisions of the entire time between two
+                     elections. A session is a meeting or series of connected meetings
+                     devoted to a single order of business, program, agenda, or announced
+                     purpose.</catDesc>
                      <category xml:id="parla.meeting">
                         <catDesc><term>Meeting</term>: Each meeting may be a
-                           separate session or part of a group of meetings constituting a
-                           session. The session/meeting may take one or more
-                           days.</catDesc>
+                        separate session or part of a group of meetings constituting a
+                        session. The session/meeting may take one or more
+                        days.</catDesc>
                         <category xml:id="parla.sitting">
                            <catDesc><term>Sitting</term>: sitting day</catDesc>
                         </category>
@@ -150,32 +129,29 @@ Therefore, added 'XXX':
             </setting>
          </settingDesc>
          <particDesc>
-           <!-- List of speakers with their metadata -->
-           <listPerson>
-             
-              <!-- The opposition is defined as a group of persons -->
-              <personGrp xml:id="opposition.1" role="opposition" sex="mixed"/>
-              
-              <person xml:id="KucanMilan1941">
-                <persName>
-                  <surname>Kučan</surname>
-                  <forename>Milan</forename>
-                </persName>
-                <sex value="M">male</sex>
-                <birth when="1941-01-14">
-                  <placeName ref="http://www.geonames.org/3197229">Križevci</placeName>
-                </birth>
-                <idno type="wikimedia" xml:lang="sl">https://sl.wikipedia.org/wiki/Milan_Ku%C4%8Dan</idno>
-                <idno type="wikimedia" xml:lang="en">https://en.wikipedia.org/wiki/Milan_Ku%C4%8Dan</idno>
-                <idno type="viaf">https://viaf.org/viaf/68121580/</idno>
-              </person>
-              <person xml:id="JohnDoe1960">
-                <persName>
-                  <surname>John</surname>
-                  <forename>Doe</forename>
-                </persName>
-                <affiliation ref="#party.SDZ" from="1990-05-16" to="1991-05-08"/>
-                <affiliation ref="#party.DZ" from="1991-05-08"/>
+            <!-- List of speakers with their metadata -->
+            <listPerson>
+               
+               <person xml:id="KučanMilan">
+                  <persName>
+                     <surname>Kučan</surname>
+                     <forename>Milan</forename>
+                  </persName>
+                  <sex value="M">male</sex>
+                  <birth when="1941-01-14">
+                     <placeName ref="http://www.geonames.org/3197229">Križevci</placeName>
+                  </birth>
+                  <idno type="wikimedia" xml:lang="sl">https://sl.wikipedia.org/wiki/Milan_Ku%C4%8Dan</idno>
+                  <idno type="wikimedia" xml:lang="en">https://en.wikipedia.org/wiki/Milan_Ku%C4%8Dan</idno>
+                  <idno type="viaf">https://viaf.org/viaf/68121580/</idno>
+               </person>
+               <person xml:id="JohnDoe1960">
+                  <persName>
+                     <surname>John</surname>
+                     <forename>Doe</forename>
+                  </persName>
+                  <affiliation ref="#party.SDZ" from="1990-05-16" to="1991-05-08"/>
+                  <affiliation ref="#party.DZ" from="1991-05-08"/>
                </person>
                <person xml:id="JohnsonBoris1964">
                   <persName>
@@ -200,41 +176,45 @@ Therefore, added 'XXX':
                   </birth>
                   <idno type="wikimedia">https://en.wikipedia.org/wiki/Jeremy_Corbyn</idno>
                </person>
-           </listPerson>
-           <!-- List of "organisations", i.e. political parties and other formally established groupings -->
+            </listPerson>
+            <!-- List of "organisations", i.e. political parties and other formally established groupings -->
             <listOrg>
                <org xml:id="DZ">
                   <orgName xml:lang="sl">Državni zbor Republike Slovenije</orgName>
-                  <orgName xml:lang="en">National Assembly of the Republic of Slovenia</orgName>
+                  <orgName>National Assembly of the Republic of Slovenia</orgName>
                   <event from="1991-11-11">
-                     <label xml:lang="en">existence</label>
+                     <label>existence</label>
                   </event>
                </org>
-               <org xml:id="party.SDZ" role="political_party"
-                  xml:lang="sl">
+               <org xml:id="party.SDZ" role="politicalParty"
+                    xml:lang="sl">
                   <event from="1989-01-11" to="1991-10-13">
-                     <label xml:lang="en">existence</label>
+                     <label>existence</label>
                   </event>
-                  <orgName full="yes">Slovenska demokratična zveza</orgName>
-                  <orgName full="yes" xml:lang="en">Slovenian Democratic Union</orgName>
-                  <orgName full="init">SDZ</orgName>
+                  <orgName full="yes" xml:lang="sl">Slovenska demokratična zveza</orgName>
+                  <orgName full="yes">Slovenian Democratic Union</orgName>
+                  <orgName full="init" xml:lang="sl">SDZ</orgName>
                   <idno type="wikimedia">https://en.wikipedia.org/wiki/Slovenian_Democratic_Union</idno>
                </org>
-               <org xml:id="party.DS" role="political_party">
+               <org xml:id="party.DS" role="politicalParty">
                   <orgName full="yes" from="1989-02-16"
-                     to="2003-09">Socialdemokratska stranka Slovenije</orgName>
-                  <orgName full="yes" xml:lang="en"
-                     from="1989-02-16" to="2003-09">Social Democratic Party of Slovenia</orgName>
+                           to="2003-09" xml:lang="sl">Socialdemokratska stranka Slovenije</orgName>
+                  <orgName full="yes"
+                           from="1989-02-16" to="2003-09">Social Democratic Party of Slovenia</orgName>
                   <orgName full="init" from="1989-02-16"
-                     to="2003-09">SDSS</orgName>
-                  <orgName full="yes" from="2003-09">Slovenska demokratska stranka</orgName>
-                  <orgName full="yes" xml:lang="en"
-                     from="2003-09">Slovenian Democratic Party</orgName>
-                  <orgName full="init" from="2003-09">SDS</orgName>
+                           to="2003-09" xml:lang="sl">SDSS</orgName>
+                  <orgName full="yes" from="2003-09" xml:lang="sl">Slovenska demokratska stranka</orgName>
+                  <orgName full="yes"
+                           from="2003-09">Slovenian Democratic Party</orgName>
+                  <orgName full="init" from="2003-09"  xml:lang="sl">SDS</orgName>
                   <idno type="wikimedia">https://en.wikipedia.org/wiki/Slovenian_Democratic_Party</idno>
                </org>
                <listRelation>
                   <relation name="successor" passive="#pp.SDZ" active="#pp.DS"/>
+                  <relation xml:id="opposition.1"
+                            name="opposition"
+                            active="#party.SDZ"
+                            passive="#DZ"/>
                </listRelation>
             </listOrg>
          </particDesc>
@@ -245,50 +225,50 @@ Therefore, added 'XXX':
       </profileDesc>
    </teiHeader>
    <TEI xml:id="document.id" xml:lang="en">
-     <teiHeader>
-       <fileDesc>
-         <titleStmt>
-           <!-- There are no rules on how these titles should be written -->
-           <title>The parliament of the Republic of Slovenia</title>
-            <title>Continuation of the second session</title>
-           <title>30th January 2011</title>
-           <!-- All relevant information about the type of session/meeting/sitting (in accordance with the project specific taxonomy) is given in the meeting element:
-                - @n: ordinal number of the session/meeting/sitting
-                - @corresp: a link to an organization holding a meeting
-                - @ana: one or more links to taxonomy on the different types of parliamentary sessions
-           -->
-           <meeting n="2" corresp="#DZ" ana="#parla.meeting"/>
-         </titleStmt>
-         <!-- Publication statement same as in teiCorpus/teiHeader -->
-         <publicationStmt>
-           <authority>CLARIN ERIC</authority>
-           <availability>
-             <licence target="http://creativecommons.org/licenses/by/4.0/"/>
-             <p>This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</ref>.</p>
-           </availability>
-           <distributor>CLARIN Git repository</distributor>
-           <date when="2019-07-24">24. 7. 2019</date>
-         </publicationStmt>
-         <sourceDesc>
-           <bibl>
-             <title>Continuation of the second session</title>
-              <idno type="URI">https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/evidenca?mandat=III&amp;type=sz&amp;uid=6A9C9127BB26C19AC12569E600561164</idno>
-              <date when="2001-01-30">30. 1. 2001</date>
-           </bibl>
-         </sourceDesc>
-       </fileDesc>
-       <profileDesc>
-         <settingDesc>
-           <setting>
-              <!-- Location (posible values: city, street, address) of parliamentary sessions -->
-              <name type="city">Ljubljana</name>
-              <!-- In which country the parliament is located: in attribute @key use ISO 3166 country code -->
-              <name type="country" key="SI">Slovenia</name>
-              <!-- Date of the parliamentary debate. An ana attribute may contain additional classifications -->
-             <date when="2011-06-10" ana="#parl.sitting">10th June 2011</date>
-           </setting>
-         </settingDesc>
-       </profileDesc>
+      <teiHeader>
+         <fileDesc>
+            <titleStmt>
+               <!-- There are no rules on how these titles should be written -->
+               <title>The parliament of the Republic of Slovenia</title>
+               <title>Continuation of the second session</title>
+               <title>30th January 2011</title>
+               <!-- All relevant information about the type of session/meeting/sitting (in accordance with the project specific taxonomy) is given in the meeting element:
+                    - @n: ordinal number of the session/meeting/sitting
+                    - @corresp: a link to an organization holding a meeting
+                    - @ana: one or more links to taxonomy on the different types of parliamentary sessions
+               -->
+               <meeting n="2" corresp="#DZ" ana="#parla.meeting"/>
+            </titleStmt>
+            <!-- Publication statement same as in teiCorpus/teiHeader -->
+            <publicationStmt>
+               <authority>CLARIN ERIC</authority>
+               <availability>
+                  <licence target="http://creativecommons.org/licenses/by/4.0/"/>
+                  <p>This work is licensed under the <ref target="http://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</ref>.</p>
+               </availability>
+               <distributor>CLARIN Git repository</distributor>
+               <date when="2019-07-24">24. 7. 2019</date>
+            </publicationStmt>
+            <sourceDesc>
+               <bibl>
+                  <title>Continuation of the second session</title>
+                  <idno type="URI">https://www.dz-rs.si/wps/portal/Home/deloDZ/seje/evidenca?mandat=III&amp;type=sz&amp;uid=6A9C9127BB26C19AC12569E600561164</idno>
+                  <date when="2001-01-30">30. 1. 2001</date>
+               </bibl>
+            </sourceDesc>
+         </fileDesc>
+         <profileDesc>
+            <settingDesc>
+               <setting>
+                  <!-- Location (posible values: city, street, address) of parliamentary sessions -->
+                  <name type="city">Ljubljana</name>
+                  <!-- In which country the parliament is located: in attribute @key use ISO 3166 country code -->
+                  <name type="country" key="SI">Slovenia</name>
+                  <!-- Date of the parliamentary debate. An ana attribute may contain additional classifications -->
+                  <date when="2011-06-10" ana="#parl.sitting">10th June 2011</date>
+               </setting>
+            </settingDesc>
+         </profileDesc>
       </teiHeader>
       <text>
          <front>
@@ -300,7 +280,7 @@ Therefore, added 'XXX':
             </div>
          </front>
          <body>
-            <!-- metadata about voting -->
+            <!-- Metadata about voting -->
             <listEvent>
                <event xml:id="vote.1" type="voting" corresp="#agenda.1 #quorum.1 #vote.1.ayes #vote.1.noes">
                   <desc>
@@ -324,7 +304,7 @@ Therefore, added 'XXX':
                <!-- An example of starting a new meeting and recorded time -->
                <note type="time">The meeting opened at <time from="2011-01-30T10:03:00">10.03</time>.</note>
                <note type="speaker">MILAN KUČAN:</note>
-               <u who="#KucanMilan1941" ana="#chair">
+               <u who="#KučanMilan" ana="#chair">
                   <seg>Dear Members, Colleagues, ladies and gentlemen!</seg>
                   <seg>I begin with the continuation of the second session of the National Assembly.</seg>
                   <seg>How many members of the parliament are present?</seg>
@@ -336,7 +316,7 @@ Therefore, added 'XXX':
                   <head>THIRD AMENDMENT</head>
                   <!-- example of voting -->
                   <note type="speaker">MILAN KUČAN:</note>
-                  <u who="#KucanMilan1941" ana="#chair">
+                  <u who="#KučanMilan" ana="#chair">
                      <seg>We will now vote on the Third Amendment.</seg>
                      <seg>How are you going to vote?</seg>
                   </u>
@@ -348,9 +328,9 @@ Therefore, added 'XXX':
                      <desc>Applause.</desc>
                   </incident>
                   <note type="vote">For <measure xml:id="vote.1.ayes" type="ayes" quantity="47">47</measure>.
-                     Against <measure xml:id="vote.1.noes" type="noes" quantity="19">19</measure>.</note>
+                  Against <measure xml:id="vote.1.noes" type="noes" quantity="19">19</measure>.</note>
                   <note type="speaker">MILAN KUČAN:</note>
-                  <u who="#KucanMilan1941" ana="#chair">
+                  <u who="#KučanMilan" ana="#chair">
                      <seg>There was an error voting. I ask you to repeat the vote.</seg>
                   </u>
                   <!-- example of recount of votes -->

@@ -851,7 +851,7 @@
             the metadata that is esp. relevant to parliamentary proceedings corpora.</p>
 
             <div xml:id="sec-vocabs">
-               <head>Terms and Typologies</head>
+               <head>Typologies</head>
                <p>Parla-CLARIN corpora can make many distinctions, such as types of
                governance or sessions, that can have controlled vocabularies.
 
@@ -895,10 +895,10 @@
                information on an individual person, as the example below illustrates.
                
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-speakers">
-                  <person xml:id="KucanMilan1941">
+                  <person xml:id="KučanMilan">
                      <persName>
-                        <surname>Kučan</surname>
                         <forename>Milan</forename>
+                        <surname>Kučan</surname>
                      </persName>
                      <sex value="M">male</sex>
                      <birth when="1941-01-14">
@@ -984,7 +984,7 @@
                referred to.
                
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-external">
-                  <person xml:id="Kucan_Milan1941">
+                  <person xml:id="KučanMilan">
                      <persName>
                         <surname>Kučan</surname>
                         <forename>Milan</forename>
@@ -1016,7 +1016,7 @@
                init (initial letter) the name component is indicated only by one initial.
                -->
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-parties">
-                  <org xml:id="pp.SDZ" role="political_party" xml:lang="sl">
+                  <org xml:id="pp.SDZ" role="politicalParty" xml:lang="sl">
                      <event from="1989-01-11" to="1991-10-13">
                         <label xml:lang="en">existence</label>
                      </event>
@@ -1025,7 +1025,7 @@
                      <orgName full="init">SDZ</orgName>
                      <idno type="wikimedia">https://en.wikipedia.org/wiki/Slovenian_Democratic_Union</idno>
                   </org>
-                  <org xml:id="pp.DS" role="political_party">
+                  <org xml:id="pp.DS" role="politicalParty">
                      <orgName full="yes" from="1989-02-16" to="2003-09">Socialdemokratska stranka Slovenije</orgName>
                      <orgName full="yes"  xml:lang="en" from="1989-02-16" to="2003-09">Social Democratic Party of Slovenia</orgName>
                      <orgName full="init" from="1989-02-16" to="2003-09">SDSS</orgName>

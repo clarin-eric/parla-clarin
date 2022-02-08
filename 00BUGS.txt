@@ -1,0 +1,19 @@
+If teiCorpus has the correct TEI namespace, then Stylesheet die:
+     Conversion to HTML ../Schema/parla-clarin-odd.xml 
+     which XIncludes this file inside an <egXML> :
+       <egXML xmlns="http://www.tei-c.org/ns/Examples" xmlns:xi="http://www.w3.org/2001/XInclude"
+	       xml:id="exa-exemplar">
+          <xi:include href="../Examples/Parla-CLARIN-Exemplar.xml"/>
+        </egXML>
+
+     but:
+java -jar /usr/share/java/jing.jar tei_odds.rng ../Schema/parla-clarin-odd.xml
+Stylesheets/bin/teitohtml -profiledir=parla-clarin/bin -profile=profile -odd -localsource=p5subset.xml ../Schema/parla-clarin-odd.xml ../docs/index.html
+using local file parla-clarin/bin/p5subset.xml as default source
+Convert parla-clarin-odd.xml to parla-clarin/docs/index.html (tei to html) using profile profile
+     [echo] Do ODD expand processing and conversion to TEI Lite (schema )
+...
+BUILD FAILED
+parla-clarin/bin/Stylesheets/html/build-to.xml:33: The following error occurred while executing this line:
+parla-clarin/bin/Stylesheets/common/teianttasks.xml:317: Fatal error during transformation using parla-clarin/bin/profile/html/to.xsl: Effective boolean value is not defined for a sequence of two or more items starting with a boolean; SystemID: file:parla-clarin/bin/Stylesheets/html/html.xsl; Line#: 871; Column#: 17
+
