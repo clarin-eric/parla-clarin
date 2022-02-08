@@ -123,14 +123,14 @@
                <item>Since these recommendations are very much work in progress, we have left the formal
                specification (i.e. the XML schema) rather unconstrained, so it can accommodate
                encoding practices that we have not (yet) foreseen. The downside of this is that the
-               XML schemas will allow constructs that are at odds to those that we propose in the
+               XML schemas will allow constructs that are at odds with those that we propose in the
                prose of the recommendations. Therefore, the prose should be taken as the definitive
                way of encoding the phenomena under discussion, i.e. even if a PPC validates against
                the schema, it might still not be encoded according to these recommendations.</item>
 
                <item>In the text of these recommendations, every mention of an element is linked to
                its definition, where examples of use are also given. The text also makes frequent
-               reference to the text of the TEI Guidelines. However, the TEI
+               references to the text of the TEI Guidelines. However, the TEI
                Guidelines give generic examples and explanations, which can be at odds with 
                particular recommendations that are made here, so the ones from the TEI Guidelines
 	            should be taken with a grain of salt.</item>
@@ -176,7 +176,7 @@
             
             <div xml:id="sec-scope">
                <head>Scope and purpose</head>
-               <p>These recommendations consists of guidelines, a formal TEI schema, and derived
+               <p>These recommendations consist of guidelines, a formal TEI schema, and derived
                XML schemas in various schema languages. They are intended for the encoding of
                corpora of parliamentary proceedings, regardless of the language or country of
                origin, for the purposes of scholarly investigations, be they from the field of
@@ -216,7 +216,7 @@
                   
                   <p>The Parla-CLARIN proposal is developed as a project of the <ref
                   target="https://www.clarin.eu/">CLARIN</ref> European Research Infrastructure for
-                  Language Resources and Technology. Before the beginning of this development CLARIN
+                  Language Resources and Technology. Before the beginning of this development, CLARIN
                   had already organised a number of initiatives and events that deal with
                   parliamentary corpora:
                   <list>
@@ -230,7 +230,7 @@
                      <item><ref target="http://lrec-conf.org/workshops/lrec2018/W2/index.html">ParlaCLARIN workshop</ref> at LREC 2018</item>
                      <item><ref target="https://www.clarin.eu/event/2018/clarin-annual-conference-2018-pisa-italy">CLARIN Annual Conference</ref>, Pisa 2018: Work on proposal for COST Action Parlant: "Parliamentary Data and Language Technology" (proposers Maciej Ogrodniczuk, Petya Osenova)</item>
                   </list>
-                  At these events it became clear that existing parliamentary corpora are
+                  At these events, it became clear that existing parliamentary corpora are
                   encoded in many different ways, presenting a barrier to their
                   interchange. Therefore the CLARIN Interoperability Committee organised a
                   focused
@@ -331,11 +331,11 @@
                   so, again, the question arises why not use RDF to encode such data, rather than
                   developing a TEI-based solution.</p>
 
-                  <p>In this case the answer is, at least partially, to do with the community addressed
+                  <p>In this case, the answer is, at least partially, to do with the community addressed
                   by the Parla-CLARIN recommendations and the preferences of this community: while LOD
                   is targeted to computer scientists and the concept of a machine-processable and
                   linked Word-Wide Web, TEI much more addresses researchers from (digital) humanities
-                  and of internally complete resources. In practical terms this is seen in the
+                  and of internally complete resources. In practical terms, this is seen in the
                   difference between RDF encoded data, which is machine processable but hardly human
                   readable or editable and highly connected to external data sources, while TEI
                   documents are relatively self-explanatory, esp. after some exposure to the TEI
@@ -349,7 +349,7 @@
                   <p>But while this specification does not see RDF data as the ideal framework to
                   encode parliamentary proceedings corpora for storage and interchange, it does take RDF
                   as a useful down-stream model for exploiting such corpora, i.e. developing a TEI to
-                  RDF conversion is a concern, which it taken further in the Section on the <ref
+                  RDF conversion is a concern, which is taken further in the Section on the <ref
                   target="#sec-conrdf">Conversion to RDF</ref>.</p>
                </div>
                
@@ -390,7 +390,7 @@
                HTML, deserve special mention:
                
                <list>
-                  <item>TAB (U+0009) character helps the lignment of strings on successive
+                  <item>TAB (U+0009) character helps the alignment of strings on successive
                   lines.  As Parla-CLARIN is not interested in preserving the details of the
                   layout, it is recommended that tab characters are substituted by the 
                   space character (U+0020).</item>
@@ -398,18 +398,18 @@
                   <item>NO-BREAK SPACE (U+00A0) prevents, with some applications, an automatic
                   line break at its position and collapsing consecutive such space characters
                   into a single space. As the use of this character complicates (or breaks)
-                  further processing, esp. lingistic annotation, it is recommended that these
+                  further processing, esp. linguistic annotation, it is recommended that these
                   characters are substituted by the normal space character (U+0020). The same
                   holds for other variants of spaces (U+2000 - U+200A), which are, however,
                   used much less frequently.</item>
                   
                   <item>NON-BREAKING HYPHEN (U+2011), similarly to NO-BREAK SPACE, prevents a
-                  line break, in this case following its position. With a smiliar reasoning as
+                  line break, in this case following its position. With a similiar reasoning as
                   above, and, additionally, complicates searching, it is recommended that this
                   character is substituted by the normal hyphen character ('-', U+002D).</item>
                   
                   <item>SOFT HYPHEN (U+00AD) indicates that a word can be hyphenated at that
-                  point. Occurences of this character should be removed from the corpus.</item>
+                  point. Occurrences of this character should be removed from the corpus.</item>
                </list>
                </p>
                
@@ -490,7 +490,7 @@
                its ancestors is; in particular, the root element of the corpus should always have an
                <att>xml:lang</att> attribute. For multilingual documents (excluding cases where only
                a minor part of the text is in another language), the language code of the root
-               element should be <q>mul</q> for <q>multiple languages</q>. Note that if, going by
+               element should be <q>mul</q> for <q>multiple languages</q>. Note that if going by
                the ancestor axis, the values of two <att>xml:lang</att> are in conflict, the one
                closer to the context node is relevant one.
                </p>
@@ -519,7 +519,7 @@
                
                <p>Apart from the above considerations, a related question is where to draw the line
                between the object and meta languages, i.e. the language of the corpus and the
-               language of the mark-up. The TEI defines the names of the elements and attributes in
+               language of the markup. The TEI defines the names of the elements and attributes in
                English, and the language of the corpus will, of course, depend on the country of the
                parliament. It is less straightforward to decide in which language the attribute
                values (such as the values of the <att>type</att> attribute) should be. Parla-CLARIN
@@ -537,7 +537,7 @@
                each corpus file, which should, furthermore, be identical to the filename (modulo
                the file extension).  Parla-CLARIN also recommends that the divisions of the
                document (element <gi>div</gi>) should also be given identifiers. While any
-               element can be given an <att>xml:id</att>, this is in general, not a good idea;
+               element can be given an <att>xml:id</att>, this is, in general, not a good idea;
                rather, only those elements that will or could be referenced should be marked with
                this attribute.</p>
                
@@ -557,7 +557,7 @@
                   </prefixDef>
                </egXML>
 
-	            With such a definition, we can use much shorter pointers in the mark-up of words,
+	            With such a definition, we can use much shorter pointers in the markup of words,
 	            such as <val>mte:Pd-nsg</val>, which are then, via a regular expression mapping in the
 	            prefix definition, converted to the full URI <val>http://nl.ijs.si/ME/V6/msd/tables/msd-fslib-sl.xml#Pd-nsg</val>.
                </p>
@@ -632,7 +632,7 @@
 
                <p>A Parla-CLARIN corpus has the <gi>teiCorpus</gi> element as the root
                element of the corpus XML document. It contains the <gi>teiHeader</gi> of
-               the corpus contains the metadata for the corpus as a whole, followed by a
+               the corpus containing the metadata for the corpus as a whole, followed by a
                series of <gi>TEI</gi> elements that each contain one corpus component.
                </p>
                
@@ -946,13 +946,13 @@
                <p>The example above uses, via the <att>ref</att> attribute, stand-off annotation to refer
                to the names of the parties, which should then be defined in a <gi>taxonomy</gi> element in
                the <gi>teiHeader</gi>, as explained in the Section on <ref target="#sec-party">Party
-               metadata</ref>. The same can done for the MP affiliation to the national assembly,
+               metadata</ref>. The same can be done for the MP affiliation to the national assembly,
                where, additionally, a reference, via the <att>ana</att> attribute, is given to the
                legislative period in which the person was an MP.</p>
 
 	            <p>Alternatively (or additionally), the name of the party or national assembly can also be
 	            given directly in the <gi>affiliation</gi> element using the <gi>orgName</gi> element, as
-	            illustrated below. The example also illustrates the additional information, encoded as an
+	            illustrated below. The example also illustrates the additional information, encoded as a
 	            subordinate <gi>affiliation</gi> with the appropriate <att>role</att>, that the person was
 	            elected as an MP to represent a certain constituency, giving its name and location.
 	            
@@ -972,7 +972,7 @@
                target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/ND.html#NDPERSEpc">Personal
                Characteristics</ref> of the TEI Guidelines. The two more general ones are <gi>state</gi>,
                which contains the description of some status or quality attributed to a person (or
-               organization), often at some specific time or for a specific date range and <gi>trait</gi>,
+               organisation), often at some specific time or for a specific date range and <gi>trait</gi>,
                which differs from <gi>state</gi> that it is independent of the volition or action of the
                holder and usually not at some specific time or for a specific date range. The former
                could, for example, be used to encode the fact that a PM was jailed for a given period of
@@ -980,7 +980,7 @@
 
                <p>It is often advantageous to refer to external knowledge sources about a person, such as
                Wikipedia or VIAF. This is encoded using the <gi>idno</gi> element, whose content is
-               typically an URI, while the <att>type</att> attribute denotes the kind of knowledge source
+               typically a URI, while the <att>type</att> attribute denotes the kind of knowledge source
                referred to.
                
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-external">
@@ -1135,7 +1135,7 @@
          <div xml:id="sec-transcript">
             <head>Transcriptions</head>
             
-            <p>The transcriptions of the parliamentary debates the central part of these
+            <p>The transcriptions of the parliamentary debates are the central part of these
             recommendations and this section explains how to encode the transcriptions of
             speeches proper, and how to treat the commentary inserted by the
             transcribers, which often marks various verbal and non-verbal incidents, such
@@ -1200,7 +1200,7 @@
                second one gives the time when the session started, while the third and fourth are
                notes on the voting results. Note that in all three cases, instead of, or in addition
                to retaining such notes, the information contained in them can also be further
-               explicated in dedicated mark-up. So, the information given in the first note will
+               explicated in dedicated markup. So, the information given in the first note will
                typically be encoded in the <att>who</att> attribute, the second could be
                encoded in the <code>u/@when</code> attribute, while how to encode the last two is
                explained in the Section on <ref target="sec-voting">Voting results</ref>.  It is
@@ -1236,7 +1236,7 @@
                
 	            As the example shows, the content of the transcriber comment is retained in the
 	            <gi>desc</gi> element, while the <att>who</att> attribute can be used to specify who
-	            is responsible for the incident. All three elements can also be futher qualified using their
+	            is responsible for the incident. All three elements can also be further qualified using their
                <att>type</att> and <att>subtype</att> attributes.
                </p>
 
@@ -1258,7 +1258,7 @@
 
 	            <p>The transcribers can also comment that a part of the speech was not
 	            transcribed, e.g. because the recording was not understood, sometimes also noting
-	            the reason why, such as that the the microphone was not turned on, that there was
+	            the reason why, such as that the microphone was not turned on, that there was
 	            noise in the chamber, or that the speaker was speaking too quietly. These notes
 	            can be encoded as the <gi>gap</gi> element, which is then also marked by
 	            <att>reason</att>=<val>inaudible</val>.  The original transcriber note can be
@@ -1273,16 +1273,16 @@
                </egXML>
 	            </p>
 
-	            <p>The other reason for ommitting a part of the transcription can be an editorial
+	            <p>The other reason for omitting a part of the transcription can be an editorial
 	            decision of the corpus compilers. The transcript can, for example, contain
-	            material which they do not want to include in the corpus, such as tables, or
-	            parts of the transcription cannot be converted to text. In these cases, the
+	            material that they do not want to include in the corpus, such as tables, or
+	            parts of the transcription that cannot be converted to text. In these cases, the
 	            reason given should be "editorial", while the <gi>desc</gi> should contain what
-	            has been ommitted, as illustrated below.
+	            has been omitted, as illustrated below.
                
                <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-gap-editorial">
                   <gap reason="editorial">
-                     <desc xml:lang="en">Table ommitted</desc>
+                     <desc xml:lang="en">Table omitted</desc>
                   </gap>
                </egXML>
 	            </p>
@@ -1336,11 +1336,11 @@
                   </u>
                </egXML>
 	            
-	            The preson at whom a speech is directed is encoded in the <att>toWhom</att> attribute on
+	            The person at whom a speech is directed is encoded in the <att>toWhom</att> attribute on
 	            the <gi>u</gi> element, which is, same as <att>who</att>, a reference which must point to a
-	            defined person. For the fact that the first speech is an question, and the second an
-	            answer, we here presuppose a taxononmy in the <gi>teiHeader</gi> of the corpus, which
-	            defines the types of utterances the we wish to distinguish, and the <val>question</val> and
+	            defined person. For the fact that the first speech is a question, and the second an
+	            answer, we here presuppose a taxonomy in the <gi>teiHeader</gi> of the corpus, which
+	            defines the types of utterances we wish to distinguish, and the <val>question</val> and
 	            <val>answer</val> are IDs of the appropriate categories.
                </p>
 	         </div>
@@ -1546,13 +1546,13 @@
                <p>In certain contexts a word (or, in general, a token) in the transcription needs to be
                normalised in a certain way. In the context of PPCs, this can happen with historical
                transcripts, which contain archaic wordforms and where we wish to annotate them with
-               their modernised forms, or when the transcript is linguisticaly annotated, and the
+               their modernised forms, or when the transcript is linguistically annotated, and the
                annotation framework distinguishes original words form syntactic words (i.e. has the
                concept of <q>multiwords</q>), as is the case in the <ref
                target="https://universaldependencies.org/format.html#words-tokens-and-empty-nodes">Universal
                Dependencies framework</ref>.</p>
 	            
-	            <p>For simple normalisation, where one word token is normalised into another word token,
+	            <p>For simple normalisation, where a one-word token is normalised into another word token,
 	            the <att>norm</att> attribute on word or punctuation tokens should be used, as explained
 	            at the end of the Section <ref
 	            target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/AI.html#AILALW">Lightweight
@@ -1560,7 +1560,7 @@
 
 	            <p>More challenging is the case where one original word token must be represented as
 	            several normalised words, either in the context of historical corpora or, as mentioned
-	            above, in the context of multiword units. For this we use embedded empty words with
+	            above, in the context of multiword units. For this, we use embedded empty words with
 	            associated <att>norm</att> attributes, and possibly other attributes with linguistic
 	            annotation. For example, Czech has the word <q>abyste</q> which is decomposed into two
 	            syntactic words, <q>aby</q> and <q>byste</q>. This should be encoded as in the following
@@ -1692,7 +1692,7 @@
                
                In the example, each token, as well as the sentence element are given an ID, and the
                first link group specifies the Universal Dependencies syntactic analysis of the
-               sentence, while the second one give its semantic role labels.  They are distinguished
+               sentence, while the second one gives its semantic role labels.  They are distinguished
                by their <att>type</att> attribute<note>We do not specify the values of
                <att>type</att> of the link gropu as the range of possibilities is too great and not
                known in advance.</note>, while the <att>targFunc</att> attribute explains the
@@ -1820,7 +1820,7 @@
                (especially valuable for older parliamentary proceedings, where the exact
                appearance of the original proceedings is of interest), it is advantageous to
                enable viewing the original together with the encoded transcription. How to
-               achieve this in general is explained in the <ref
+               achieve this, in general, is explained in the <ref
                target="https://www.tei-c.org/release/doc/tei-p5-doc/en/html/PH.html">Chapter on
                Representation of Primary Sources</ref> of the TEI Guidelines.</p>
                
