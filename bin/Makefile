@@ -29,7 +29,7 @@ val-schema:
 
 # Validate examples
 val-examples:
-	$j ../Schema/parla-clarin.rng ../Examples/Parla-CLARIN-Exemplar.xml
+	-$j ../Schema/parla-clarin.rng ../Examples/Parla-CLARIN-Exemplar.xml
 	$j ../Schema/parla-clarin.rng ../Examples/AkomaNtosoCL-Example.xml
 	$j ../Schema/parla-clarin.rng ../Examples/AkomaNtosoKE-Example.xml
 	$j ../Schema/parla-clarin.rng ../Examples/slovParl2.0/teiCorpus.xml
