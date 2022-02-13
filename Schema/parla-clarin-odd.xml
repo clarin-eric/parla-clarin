@@ -1694,7 +1694,7 @@
                first link group specifies the Universal Dependencies syntactic analysis of the
                sentence, while the second one gives its semantic role labels.  They are distinguished
                by their <att>type</att> attribute<note>We do not specify the values of
-               <att>type</att> of the link gropu as the range of possibilities is too great and not
+               <att>type</att> of the link group as the range of possibilities is too great and not
                known in advance.</note>, while the <att>targFunc</att> attribute explains the
                functions of the references given in the <att>target</att> attributes of the contained
                <gi>link</gi> elements.</p>
