@@ -975,8 +975,8 @@
                organisation), often at some specific time or for a specific date range and <gi>trait</gi>,
                which differs from <gi>state</gi> that it is independent of the volition or action of the
                holder and usually not at some specific time or for a specific date range. The former
-               could, for example, be used to encode the fact that a PM was jailed for a given period of
-               time, while the latter would e.g. be used for the information that a PM is handicapped.</p>
+               could, for example, be used to encode the fact that a MP was jailed for a given period of
+               time, while the latter would e.g. be used for the information that a MP is handicapped.</p>
 
                <p>It is often advantageous to refer to external knowledge sources about a person, such as
                Wikipedia or VIAF. This is encoded using the <gi>idno</gi> element, whose content is
@@ -1843,7 +1843,7 @@
                <att>facs</att> attribute represents the whole of the text following the
                <gi>pb</gi> element, up to the next <gi>pb</gi> element. The page break element
                can also contain a reference to the source HTML of web-harvested proceeding using
-               the <att>source</att> attribute, and per-page links to audio or vidoe (cf.  the
+               the <att>source</att> attribute, and per-page links to audio or video (cf.  the
                Section on <ref target="#sec-speechvideo">Speech and video</ref>), as illustrated
                in the following example:
                
