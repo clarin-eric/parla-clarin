@@ -9,7 +9,7 @@ SUBSET = --localsource=p5subset.xml
 #SUBSET = --localsource=https://tei-c.org/release/xml/tei/odd/p5subset.xml
 
 # Location and directory name of the profile for conversion to HTML
-PROFILE = --profiledir=/project/corpora/Parla/Parla-CLARIN/parla-clarin/bin --profile=profile
+PROFILE = --profiledir=$(shell pwd) --profile=profile
 
 # Convert to HTML
 html:	val-schema
