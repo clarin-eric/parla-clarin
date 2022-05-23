@@ -16,7 +16,7 @@
       </titleStmt>
       <publicationStmt>
         <publisher>CLARIN</publisher>
-        <date>2022-05-03</date>
+        <date>2022-05-23</date>
         <availability status="free">
           <p>This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.</p>
         </availability>
@@ -34,6 +34,7 @@
       </projectDesc>
     </encodingDesc>
     <revisionDesc>
+      <change when="2022-05-23">Tomaž Erjavec: change affiliation/@role from MP to member.</change>
       <change when="2022-05-03">Tomaž Erjavec: make sex empty element, as per ParlaMint fix.</change>
       <change when="2022-02-08">Tomaž Erjavec: take into account lessons from ParlaMint.</change>
       <change when="2020-12-08">Tomaž Erjavec: add Sec. about normalisation.</change>
@@ -920,9 +921,9 @@
           <gi>occupation</gi>, and <gi>affiliation</gi>.</p>
 
           <p>In the context of PPCs, the <gi>affiliation</gi> element is especially important, as it
-          can denote the person's membership in a political party, or their role in the parliament,
-          such as being an MP. Different types of affiliations are distinguished by the different
-          values of the <att>role</att> attribute, such as <q>member</q> (of a party) or <q>MP</q>.
+          can denote the person's membership in a political party or in the
+	  parliament. Different types of affiliations are distinguished by the different
+          values of the <att>role</att> attribute, such as <q>member</q>.
           As affiliations are not necessarily fixed, and the <gi>affiliation</gi> element can
           be marked for its temporal duration, as explained in the Section on
 	  <ref target="#sec-temporal">Temporal information</ref>.
@@ -936,8 +937,8 @@
               </persName>
               <affiliation role="member" ref="#party.ZSMS" from="1990-05-08" to="1990-11-09"/>
               <affiliation role="member" ref="#party.LDS.1" from="1990-11-10" to="1994-03-11"/>
-              <affiliation role="MP" ref="#DruzPolZb" from="1990-05-08" to="1992-12-22" ana="#SK.11"/>
-              <affiliation role="MP" ref="#DZ" from="1992-12-23" to="1996-11-27" ana="#DZ.1"/>
+              <affiliation role="member" ref="#DruzPolZb" from="1990-05-08" to="1992-12-22" ana="#SK.11"/>
+              <affiliation role="member" ref="#DZ" from="1992-12-23" to="1996-11-27" ana="#DZ.1"/>
 	    </person>
           </egXML>
 	  </p>
@@ -945,7 +946,8 @@
           <p>The example above uses, via the <att>ref</att> attribute, stand-off annotation to refer
           to the names of the parties, which should then be defined in a <gi>taxonomy</gi> element in
           the <gi>teiHeader</gi>, as explained in the Section on <ref target="#sec-party">Party
-          metadata</ref>. The same can be done for the MP affiliation to the national assembly,
+          metadata</ref>. The same can be done for the affiliation to the national assembly
+	  (i.e. that the person is an MP),
           where, additionally, a reference, via the <att>ana</att> attribute, is given to the
           legislative period in which the person was an MP.</p>
 
@@ -956,7 +958,7 @@
 	  elected as an MP to represent a certain constituency, giving its name and location.
 	  
           <egXML xmlns="http://www.tei-c.org/ns/Examples" xml:id="exa-constituency">
-            <affiliation role="MP" ref="#DruzPolZb" from="1990-05-08" to="1996-11-27">
+            <affiliation role="member" ref="#DruzPolZb" from="1990-05-08" to="1996-11-27">
               <orgName xml:lang="sl">Državni zbor Republike Slovenije</orgName>
               <orgName xml:lang="en">National Assembly of the Republic of Slovenia</orgName>
 	      <affiliation role="consituency">

@@ -8,9 +8,9 @@
    <xs:import namespace="http://www.w3.org/XML/1998/namespace"
               schemaLocation="xml.tmp"/>
    <!--
-    Schema generated from ODD source 2022-05-03T13:22:42Z. 2022-05-03.
+    Schema generated from ODD source 2022-05-23T16:29:29Z. 2022-05-03.
     TEI Edition: Version 4.4.0a. Last updated on
-            19th January 2022, revision daab99ca7
+            14th March 2022, revision 3a89ab0a0
     TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0a./
     
   -->
@@ -6200,11 +6200,7 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                   </xs:simpleType>
                   <xs:simpleType>
                      <xs:restriction base="xs:token">
-                        <xs:enumeration value="URI">
-                           <xs:annotation>
-                              <xs:documentation>Uniform Resource Identifier: a string of characters to uniquely identify a resource which usually contains indication of the means of accessing that resource, the name of its host, and its filepath.</xs:documentation>
-                           </xs:annotation>
-                        </xs:enumeration>
+                        <xs:enumeration value="URI"/>
                      </xs:restriction>
                   </xs:simpleType>
                   <xs:simpleType>
@@ -12792,8 +12788,6 @@ Suggested values include: 1] 1.0.1; 2] 1.1; 3] 2.0; 4] 2.1; 5] 3.0; 6] 3.1; 7] 3
       </xs:annotation>
       <xs:complexType>
          <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element ref="tei:charName"/>
-            <xs:element ref="tei:charProp"/>
             <xs:element ref="tei:unicodeProp"/>
             <xs:element ref="tei:unihanProp"/>
             <xs:element ref="tei:localProp"/>
@@ -12812,8 +12806,6 @@ Suggested values include: 1] 1.0.1; 2] 1.1; 3] 2.0; 4] 2.1; 5] 3.0; 6] 3.1; 7] 3
       </xs:annotation>
       <xs:complexType>
          <xs:choice minOccurs="0" maxOccurs="unbounded">
-            <xs:element ref="tei:glyphName"/>
-            <xs:element ref="tei:charProp"/>
             <xs:element ref="tei:unicodeProp"/>
             <xs:element ref="tei:unihanProp"/>
             <xs:element ref="tei:localProp"/>
@@ -14474,76 +14466,6 @@ Suggested values include: 1] 1.0.1; 2] 1.1; 3] 2.0; 4] 2.1; 5] 3.0; 6] 3.1; 7] 3
                <xs:documentation>specifies the value of a named Unicode property.</xs:documentation>
             </xs:annotation>
          </xs:attribute>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="value">
-      <xs:annotation>
-         <xs:documentation>(value) contains a single value for some property, attribute, or other analysis. [5.2.1. Character Properties]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType>
-         <xs:complexContent>
-            <xs:extension base="tei:tei_macro.xtext">
-               <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-            </xs:extension>
-         </xs:complexContent>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="unicodeName">
-      <xs:annotation>
-         <xs:documentation>(Unicode property name) contains the name of a registered Unicode normative or informative property. [5.2.1. Character Properties]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-         <xs:attribute name="version">
-            <xs:annotation>
-               <xs:documentation>specifies the version number of the Unicode Standard in which this property name is defined.</xs:documentation>
-            </xs:annotation>
-            <xs:simpleType>
-               <xs:restriction base="xs:token">
-                  <xs:pattern value="[\d]+(\.[\d]+){0,2}"/>
-               </xs:restriction>
-            </xs:simpleType>
-         </xs:attribute>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="localName">
-      <xs:annotation>
-         <xs:documentation>(locally-defined property name) contains a locally defined name for some property. [5.2.1. Character Properties]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="glyphName">
-      <xs:annotation>
-         <xs:documentation>(character glyph name) contains the name of a glyph, expressed following Unicode conventions for character names. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="charProp">
-      <xs:annotation>
-         <xs:documentation>(character property) provides a name and value for some property of the parent character or glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType>
-         <xs:sequence>
-            <xs:choice>
-               <xs:element ref="tei:unicodeName"/>
-               <xs:element ref="tei:localName"/>
-            </xs:choice>
-            <xs:element ref="tei:value"/>
-         </xs:sequence>
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
-         <xs:attributeGroup ref="tei:tei_att.typed.attributes"/>
-      </xs:complexType>
-   </xs:element>
-   <xs:element name="charName">
-      <xs:annotation>
-         <xs:documentation>(character name) contains the name of a character, expressed following Unicode conventions. [5.2. Markup Constructs for Representation of Characters and Glyphs]</xs:documentation>
-      </xs:annotation>
-      <xs:complexType mixed="true">
-         <xs:attributeGroup ref="tei:tei_att.global.attributes"/>
       </xs:complexType>
    </xs:element>
 </xs:schema>

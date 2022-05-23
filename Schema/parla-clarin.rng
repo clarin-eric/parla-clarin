@@ -5,9 +5,9 @@
          xmlns:xlink="http://www.w3.org/1999/xlink"
          datatypeLibrary="http://www.w3.org/2001/XMLSchema-datatypes"
          ns="http://www.tei-c.org/ns/1.0"><!--
-Schema generated from ODD source 2022-05-03T13:22:28Z. 2022-05-03.
+Schema generated from ODD source 2022-05-23T16:29:15Z. 2022-05-03.
 TEI Edition: Version 4.4.0a. Last updated on
-        19th January 2022, revision daab99ca7
+        14th March 2022, revision 3a89ab0a0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0a./
   
 --><!--This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.-->
@@ -1499,7 +1499,7 @@ Suggested values include: 1] top; 2] bottom; 3] margin; 4] opposite; 5] overleaf
       </optional>
    </define>
    <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-            id="tei_clarin-att.spanning-spanTo-spanTo-2-constraint-rule-8">
+            id="tei_clarin-att.spanning-spanTo-spanTo-points-to-following-constraint-rule-8">
       <sch:rule xmlns="http://www.tei-c.org/ns/1.0"
                 xmlns:eg="http://www.tei-c.org/ns/Examples"
                 xmlns:egXML="http://www.tei-c.org/ns/Examples"
@@ -3827,29 +3827,31 @@ Suggested values include: 1] page; 2] column; 3] line; 4] book; 5] poem; 6] cant
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(paragraph) marks paragraphs in prose. [3.1. Paragraphs 7.2.5. Speech Contents]</a:documentation>
          <ref name="tei_macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-p-abstractModel-structure-p-constraint-report-5">
+                  id="tei_clarin-p-abstractModel-structure-p-in-ab-or-p-constraint-report-5">
             <rule context="tei:p">
-               <report xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="not(ancestor::tei:floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum                |parent::tei:item                |parent::tei:note                |parent::tei:q                |parent::tei:quote                |parent::tei:remarks                |parent::tei:said                |parent::tei:sp                |parent::tei:stage                |parent::tei:cell                |parent::tei:figure                )">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="    (ancestor::tei:ab or ancestor::tei:p)                          and not( ancestor::tei:floatingText                                 |parent::tei:exemplum                                 |parent::tei:item                                 |parent::tei:note                                 |parent::tei:q                                 |parent::tei:quote                                 |parent::tei:remarks                                 |parent::tei:said                                 |parent::tei:sp                                 |parent::tei:stage                                 |parent::tei:cell                                 |parent::tei:figure                                )">
         Abstract model violation: Paragraphs may not occur inside other paragraphs or ab elements.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-p-abstractModel-structure-l-constraint-report-6">
+                  id="tei_clarin-p-abstractModel-structure-p-in-l-or-lg-constraint-report-6">
             <rule context="tei:p">
-               <report xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="    (ancestor::tei:l or ancestor::tei:lg)                          and not( ancestor::tei:floatingText                                 |parent::tei:figure                                 |parent::tei:note                                )">
         Abstract model violation: Lines may not contain higher-level structural elements such as div, p, or ab, unless p is a child of figure or note, or is a descendant of floatingText.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
@@ -5443,16 +5445,17 @@ relatedItem element must be empty</sch:report>
             </choice>
          </zeroOrMore>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-l-abstractModel-structure-l-constraint-report-11">
+                  id="tei_clarin-l-abstractModel-structure-l-in-l-constraint-report-11">
             <rule context="tei:l">
-               <report xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="ancestor::tei:l[not(.//tei:note//tei:l[. = current()])]">
         Abstract model violation: Lines may not contain lines or lg elements.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
@@ -5508,16 +5511,17 @@ relatedItem element must be empty</sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-lg-abstractModel-structure-l-constraint-report-12">
+                  id="tei_clarin-lg-abstractModel-structure-lg-in-l-constraint-report-12">
             <rule context="tei:lg">
-               <report xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="ancestor::tei:l[not(.//tei:note//tei:lg[. = current()])]">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="ancestor::tei:l[not(.//tei:note//tei:lg[. = current()])]">
         Abstract model violation: Lines may not contain line groups.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
@@ -5912,7 +5916,8 @@ Suggested values include: 1] ISBN; 2] ISSN; 3] DOI; 4] URI; 5] VIAF; 6] ESTC; 7]
                   <value>DOI</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Digital Object Identifier: a unique string of letters and numbers assigned to an electronic document.</a:documentation>
                   <value>URI</value>
-                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Uniform Resource Identifier: a string of characters to uniquely identify a resource which usually contains indication of the means of accessing that resource, the name of its host, and its filepath.</a:documentation>
+                  <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">Uniform Resource Identifier: a string of characters to uniquely identify a resource, following the syntax of <a xmlns="http://www.w3.org/1999/xhtml"
+                        href="https://datatracker.ietf.org/doc/html/rfc3986">RFC 3986</a>.</a:documentation>
                   <value>VIAF</value>
                   <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">A data number in the Virtual Internet Authority File assigned to link different names in catalogs around the world for the same entity.</a:documentation>
                   <value>ESTC</value>
@@ -7395,29 +7400,31 @@ Suggested values include: 1] sent; 2] received; 3] transmitted; 4] redirected; 5
             </sch:rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-div-abstractModel-structure-l-constraint-report-14">
+                  id="tei_clarin-div-abstractModel-structure-div-in-l-or-lg-constraint-report-14">
             <rule context="tei:div">
-               <report xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="(ancestor::tei:l or ancestor::tei:lg) and not(ancestor::tei:floatingText)">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="(ancestor::tei:l or ancestor::tei:lg) and not(ancestor::tei:floatingText)">
         Abstract model violation: Lines may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-div-abstractModel-structure-p-constraint-report-15">
+                  id="tei_clarin-div-abstractModel-structure-div-in-ab-or-p-constraint-report-15">
             <rule context="tei:div">
-               <report xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="(ancestor::tei:p or ancestor::tei:ab) and not(ancestor::tei:floatingText)">
         Abstract model violation: p and ab may not contain higher-level structural elements such as div, unless div is a descendant of floatingText.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
@@ -8219,7 +8226,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(added span of text) marks the beginning of a longer sequence of text added by an author, scribe, annotator or corrector (see also <code xmlns="http://www.w3.org/1999/xhtml">&lt;add&gt;</code>). [11.3.1.4. Additions and Deletions]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-addSpan-spanTo-constraint-assert-16">
+                  id="tei_clarin-addSpan-addSpan-requires-spanTo-constraint-assert-16">
             <rule context="tei:addSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -8232,7 +8239,7 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-addSpan-spanTo_fr-constraint-assert-17">
+                  id="tei_clarin-addSpan-addSpan-requires-spanTo-fr-constraint-assert-17">
             <rule context="tei:addSpan">
                <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
                            xmlns:eg="http://www.tei-c.org/ns/Examples"
@@ -8268,28 +8275,29 @@ Sample values include: 1] glued; 2] pinned; 3] sewn</a:documentation>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(damaged span of text) marks the beginning of a longer sequence of text which is damaged in some way but still legible. [11.3.3.1. Damage, Illegibility, and Supplied Text]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-damageSpan-spanTo-constraint-assert-18">
+                  id="tei_clarin-damageSpan-damageSpan-requires-spanTo-constraint-assert-18">
             <rule context="tei:damageSpan">
-               <assert xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="@spanTo">
-The @spanTo attribute of <name/> is required.</assert>
+               <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xi="http://www.w3.org/2001/XInclude"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="@spanTo">The @spanTo attribute of <sch:name/> is required.</sch:assert>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-damageSpan-spanTo_fr-constraint-assert-19">
+                  id="tei_clarin-damageSpan-damageSpan-requires-spanTo-fr-constraint-assert-19">
             <rule context="tei:damageSpan">
-               <assert xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="@spanTo">L'attribut spanTo est requis.</assert>
+               <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xi="http://www.w3.org/2001/XInclude"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="@spanTo">L'attribut spanTo est requis.</sch:assert>
             </rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
@@ -8304,27 +8312,29 @@ The @spanTo attribute of <name/> is required.</assert>
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(deleted span of text) marks the beginning of a longer sequence of text deleted, marked as deleted, or otherwise signaled as superfluous or spurious by an author, scribe, annotator, or corrector. [11.3.1.4. Additions and Deletions]</a:documentation>
          <empty/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-delSpan-spanTo-constraint-assert-20">
+                  id="tei_clarin-delSpan-delSpan-requires-spanTo-constraint-assert-20">
             <rule context="tei:delSpan">
-               <assert xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="@spanTo">The @spanTo attribute of <name/> is required.</assert>
+               <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xi="http://www.w3.org/2001/XInclude"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="@spanTo">The @spanTo attribute of <sch:name/> is required.</sch:assert>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-delSpan-spanTo_fr-constraint-assert-21">
+                  id="tei_clarin-delSpan-delSpan-requires-spanTo-fr-constraint-assert-21">
             <rule context="tei:delSpan">
-               <assert xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="@spanTo">L'attribut spanTo est requis.</assert>
+               <sch:assert xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xi="http://www.w3.org/2001/XInclude"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="@spanTo">L'attribut spanTo est requis.</sch:assert>
             </rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
@@ -11073,31 +11083,33 @@ Sample values include: 1] atBirth; 2] atDeath; 3] dependent; 4] inherited; 5] in
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(anonymous block) contains any arbitrary component-level unit of text, acting as an anonymous container for phrase or inter level elements analogous to, but without the semantic baggage of, a paragraph. [16.3. Blocks, Segments, and Anchors]</a:documentation>
          <ref name="tei_macro.paraContent"/>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-ab-abstractModel-structure-ab-constraint-report-20">
+                  id="tei_clarin-ab-abstractModel-structure-ab-in-ab-or-p-constraint-report-20">
             <rule context="tei:ab">
-               <report xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="not(ancestor::tei:floatingText) and (ancestor::tei:p or ancestor::tei:ab)          and not(parent::tei:exemplum         |parent::tei:item         |parent::tei:note         |parent::tei:q         |parent::tei:quote         |parent::tei:remarks         |parent::tei:said         |parent::tei:sp         |parent::tei:stage         |parent::tei:cell         |parent::tei:figure)">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xi="http://www.w3.org/2001/XInclude"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="    (ancestor::tei:p or ancestor::tei:ab)                          and not( ancestor::tei:floatingText                                  |parent::tei:exemplum                                 |parent::tei:item                                 |parent::tei:note                                 |parent::tei:q                                 |parent::tei:quote                                 |parent::tei:remarks                                 |parent::tei:said                                 |parent::tei:sp                                 |parent::tei:stage                                 |parent::tei:cell                                 |parent::tei:figure                                )">
         Abstract model violation: ab may not occur inside paragraphs or other ab elements.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
          <pattern xmlns="http://purl.oclc.org/dsdl/schematron"
-                  id="tei_clarin-ab-abstractModel-structure-l-constraint-report-21">
+                  id="tei_clarin-ab-abstractModel-structure-ab-in-l-or-lg-constraint-report-21">
             <rule context="tei:ab">
-               <report xmlns:eg="http://www.tei-c.org/ns/Examples"
-                       xmlns:egXML="http://www.tei-c.org/ns/Examples"
-                       xmlns:rng="http://relaxng.org/ns/structure/1.0"
-                       xmlns:sch="http://purl.oclc.org/dsdl/schematron"
-                       xmlns:xi="http://www.w3.org/2001/XInclude"
-                       xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-                       test="(ancestor::tei:l or ancestor::tei:lg) and not(parent::tei:figure or parent::tei:note or ancestor::tei:floatingText)">
+               <sch:report xmlns="http://www.tei-c.org/ns/1.0"
+                           xmlns:eg="http://www.tei-c.org/ns/Examples"
+                           xmlns:egXML="http://www.tei-c.org/ns/Examples"
+                           xmlns:rng="http://relaxng.org/ns/structure/1.0"
+                           xmlns:sch="http://purl.oclc.org/dsdl/schematron"
+                           xmlns:xi="http://www.w3.org/2001/XInclude"
+                           xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
+                           test="    (ancestor::tei:l or ancestor::tei:lg)                         and not( ancestor::tei:floatingText                                 |parent::tei:figure                                 |parent::tei:note                                )">
         Abstract model violation: Lines may not contain higher-level divisions such as p or ab, unless ab is a child of figure or note, or is a descendant of floatingText.
-      </report>
+      </sch:report>
             </rule>
          </pattern>
          <ref name="tei_att.global.attributes"/>
@@ -12378,8 +12390,6 @@ Suggested values include: 1] 1.0.1; 2] 1.1; 3] 2.0; 4] 2.1; 5] 3.0; 6] 3.1; 7] 3
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(character) provides descriptive information about a character. [5.2. Markup Constructs for Representation of Characters and Glyphs]</a:documentation>
          <zeroOrMore>
             <choice>
-               <ref name="tei_charName"/>
-               <ref name="tei_charProp"/>
                <ref name="tei_unicodeProp"/>
                <ref name="tei_unihanProp"/>
                <ref name="tei_localProp"/>
@@ -12399,8 +12409,6 @@ Suggested values include: 1] 1.0.1; 2] 1.1; 3] 2.0; 4] 2.1; 5] 3.0; 6] 3.1; 7] 3
          <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(character glyph) provides descriptive information about a character glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]</a:documentation>
          <zeroOrMore>
             <choice>
-               <ref name="tei_glyphName"/>
-               <ref name="tei_charProp"/>
                <ref name="tei_unicodeProp"/>
                <ref name="tei_unihanProp"/>
                <ref name="tei_localProp"/>
@@ -13100,69 +13108,6 @@ Suggested values include: 1] 1.0.1; 2] 1.1; 3] 2.0; 4] 2.1; 5] 3.0; 6] 3.1; 7] 3
             <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the value of a named Unicode property.</a:documentation>
             <data type="string"/>
          </attribute>
-         <empty/>
-      </element>
-   </define>
-   <define name="tei_value">
-      <element name="value">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(value) contains a single value for some property, attribute, or other analysis. [5.2.1. Character Properties]</a:documentation>
-         <ref name="tei_macro.xtext"/>
-         <ref name="tei_att.global.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="tei_unicodeName">
-      <element name="unicodeName">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(Unicode property name) contains the name of a registered Unicode normative or informative property. [5.2.1. Character Properties]</a:documentation>
-         <text/>
-         <ref name="tei_att.global.attributes"/>
-         <optional>
-            <attribute name="version">
-               <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">specifies the version number of the Unicode Standard in which this property name is defined.</a:documentation>
-               <data type="token">
-                  <param name="pattern">[\d]+(\.[\d]+){0,2}</param>
-               </data>
-            </attribute>
-         </optional>
-         <empty/>
-      </element>
-   </define>
-   <define name="tei_localName">
-      <element name="localName">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(locally-defined property name) contains a locally defined name for some property. [5.2.1. Character Properties]</a:documentation>
-         <text/>
-         <ref name="tei_att.global.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="tei_glyphName">
-      <element name="glyphName">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(character glyph name) contains the name of a glyph, expressed following Unicode conventions for character names. [5.2. Markup Constructs for Representation of Characters and Glyphs]</a:documentation>
-         <text/>
-         <ref name="tei_att.global.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="tei_charProp">
-      <element name="charProp">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(character property) provides a name and value for some property of the parent character or glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs]</a:documentation>
-         <group>
-            <choice>
-               <ref name="tei_unicodeName"/>
-               <ref name="tei_localName"/>
-            </choice>
-            <ref name="tei_value"/>
-         </group>
-         <ref name="tei_att.global.attributes"/>
-         <ref name="tei_att.typed.attributes"/>
-         <empty/>
-      </element>
-   </define>
-   <define name="tei_charName">
-      <element name="charName">
-         <a:documentation xmlns:a="http://relaxng.org/ns/compatibility/annotations/1.0">(character name) contains the name of a character, expressed following Unicode conventions. [5.2. Markup Constructs for Representation of Characters and Glyphs]</a:documentation>
-         <text/>
-         <ref name="tei_att.global.attributes"/>
          <empty/>
       </element>
    </define>

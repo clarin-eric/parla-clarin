@@ -1,8 +1,8 @@
 
 <!--
-DTD generated from ODD source 2022-05-03T13:22:37Z. 2022-05-03.This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.
+DTD generated from ODD source 2022-05-23T16:29:25Z. 2022-05-03.This file is freely available and you are hereby authorised to copy, modify, and redistribute it in any way without further reference or permissions.
 TEI Edition: Version 4.4.0a. Last updated on
-        19th January 2022, revision daab99ca7
+        14th March 2022, revision 3a89ab0a0
 TEI Edition Location: https://www.tei-c.org/Vault/P5/Version 4.4.0a./
 
 -->
@@ -1680,7 +1680,7 @@ target CDATA  #IMPLIED >
  %tei_att.global.attributes;
 mode (s|w|sw|ws|m|x) "x"  >
 <!--doc:(character) provides descriptive information about a character. [5.2. Markup Constructs for Representation of Characters and Glyphs] -->
-<!ELEMENT char (charName|charProp|unicodeProp|unihanProp|localProp|mapping|figure|%model.graphicLike;|%model.noteLike;|%model.descLike;)*>
+<!ELEMENT char (unicodeProp|unihanProp|localProp|mapping|figure|%model.graphicLike;|%model.noteLike;|%model.descLike;)*>
 <!ATTLIST char xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST char
  %tei_att.global.attributes; >
@@ -1689,17 +1689,6 @@ mode (s|w|sw|ws|m|x) "x"  >
 <!ATTLIST charDecl xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST charDecl
  %tei_att.global.attributes; >
-<!--doc:(character name) contains the name of a character, expressed following Unicode conventions. [5.2. Markup Constructs for Representation of Characters and Glyphs] -->
-<!ELEMENT charName (#PCDATA)>
-<!ATTLIST charName xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST charName
- %tei_att.global.attributes; >
-<!--doc:(character property) provides a name and value for some property of the parent character or glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs] -->
-<!ELEMENT charProp (((unicodeName|localName),value))>
-<!ATTLIST charProp xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST charProp
- %tei_att.global.attributes;
- %tei_att.typed.attributes; >
 <!--doc:(choice) groups a number of alternative encodings for the same point in a text. [3.5. Simple Editorial Changes] -->
 <!ELEMENT choice (%model.choicePart;|choice)+>
 <!ATTLIST choice xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -2232,14 +2221,9 @@ datum %teidata.enumerated;  "WGS84"  >
  %tei_att.pointing.attributes;
  %tei_att.cReferencing.attributes; >
 <!--doc:(character glyph) provides descriptive information about a character glyph. [5.2. Markup Constructs for Representation of Characters and Glyphs] -->
-<!ELEMENT glyph (glyphName|charProp|unicodeProp|unihanProp|localProp|mapping|figure|%model.graphicLike;|%model.noteLike;|%model.descLike;)*>
+<!ELEMENT glyph (unicodeProp|unihanProp|localProp|mapping|figure|%model.graphicLike;|%model.noteLike;|%model.descLike;)*>
 <!ATTLIST glyph xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST glyph
- %tei_att.global.attributes; >
-<!--doc:(character glyph name) contains the name of a glyph, expressed following Unicode conventions for character names. [5.2. Markup Constructs for Representation of Characters and Glyphs] -->
-<!ELEMENT glyphName (#PCDATA)>
-<!ATTLIST glyphName xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST glyphName
  %tei_att.global.attributes; >
 <!--doc:(graphic) indicates the location of a graphic or illustration, either forming part of a text, or providing an image of it. [3.10. Graphics and Other Non-textual Components 11.1. Digital Facsimiles] -->
 <!ELEMENT graphic (%model.descLike;)*>
@@ -2561,11 +2545,6 @@ ordered %teidata.truthValue;  "true"  >
 <!ELEMENT listTranspose (((desc)*,(transpose)+))>
 <!ATTLIST listTranspose xmlns CDATA "http://www.tei-c.org/ns/1.0">
 <!ATTLIST listTranspose
- %tei_att.global.attributes; >
-<!--doc:(locally-defined property name) contains a locally defined name for some property. [5.2.1. Character Properties] -->
-<!ELEMENT localName (#PCDATA)>
-<!ATTLIST localName xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST localName
  %tei_att.global.attributes; >
 <!--doc:(locally defined property) provides a locally defined character (or glyph) property. [5.2.1. Character Properties] -->
 <!ELEMENT localProp  EMPTY>
@@ -3762,12 +3741,6 @@ agent %teidata.enumerated;  #IMPLIED >
  %tei_att.transcriptional.attributes;
  %tei_att.dimensions.attributes;
 target CDATA  #IMPLIED >
-<!--doc:(Unicode property name) contains the name of a registered Unicode normative or informative property. [5.2.1. Character Properties] -->
-<!ELEMENT unicodeName (#PCDATA)>
-<!ATTLIST unicodeName xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST unicodeName
- %tei_att.global.attributes;
-version %teidata.version;  #IMPLIED >
 <!--doc:(unicode property) provides a Unicode property for a character (or glyph). [5.2.1. Character Properties] -->
 <!ELEMENT unicodeProp  EMPTY>
 <!ATTLIST unicodeProp xmlns CDATA "http://www.tei-c.org/ns/1.0">
@@ -3818,11 +3791,6 @@ Measures] -->
 <!ATTLIST vColl
  %tei_att.global.attributes;
 org (set|bag|list) #IMPLIED >
-<!--doc:(value) contains a single value for some property, attribute, or other analysis. [5.2.1. Character Properties] -->
-<!ELEMENT value %macro.xtext;>
-<!ATTLIST value xmlns CDATA "http://www.tei-c.org/ns/1.0">
-<!ATTLIST value
- %tei_att.global.attributes; >
 <!--doc:(vocal) marks any vocalized but not necessarily lexical phenomenon, for example voiced pauses, non-lexical backchannels, etc. [8.3.3. Vocal, Kinesic, Incident] -->
 <!ELEMENT vocal (%model.descLike;)*>
 <!ATTLIST vocal xmlns CDATA "http://www.tei-c.org/ns/1.0">
